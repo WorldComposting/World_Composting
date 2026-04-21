@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Composting | My Gear</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --navy: #0a1f3d;
+            --forest: #1b433  ; /* Using a slightly darker forest green for consistency */
+            --forest-dark: #0b261d;
+        }
+        body {
+            background-color: #1b4332;
+            color: white;
+            font-family: sans-serif;
+        }
+        .card-gradient {
+            background: linear-gradient(135deg, rgba(27, 67, 50, 0.8) 0%, rgba(10, 31, 61, 0.8) 100%);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center p-4">
+
+    <header class="mt-8 mb-12 text-center">
+        <a href="../index.html" class="text-sm text-gray-300 hover:underline">← Back to Home</a>
+        <h1 class="text-3xl font-bold mt-4 text-white">My Composting Gear</h1>
+        <p class="text-gray-300 italic">The tools I use for a sustainable life</p>
+    </header>
+
+    <main id="gear-container" class="w-full max-w-md space-y-8">
+        <!-- Categories and items will be injected here -->
+    </main>
+
+    <footer class="mt-16 mb-8 text-xs text-gray-40_0 text-center">
+        &copy; 2026 World Composting
+    </footer>
+
+    <script>
+        async function init() {
+            try {
+                // Fetching the products from our JSON file
+                const res = await fetch('../src/data/products.json');
+                if (!res.ok) throw new Error("Could not load product data.");
+                const products = await res.json();
+                renderGear(products);
+            } catch (err) {
+                console.error("Error loading gear:", err);
+                document.body.innerHTML += '<div class="mt-4 p-4 bg-red-900/50 text-xs rounded">Error loading gear items. Please ensure you are viewing this through a local web server.</div>';
+            }
+        }
+
+        function renderGear(products) {
+            const container = document.getElementById('gear-container');
+            let html = '';
+
+            for (const [category, items] of Object.entries(products)) {
+                html += `
+                    <div class="space-y-3">
+                        <h2 class="text-lg font-bold text-white border-b border-white/20 pb-1">${category}</h2>
+                        <div class="flex flex-col gap-3">
+                            ${items.map(item => `
+                                <a href="${item.url}" target="_blank" class="card-gradient flex items-center p-4 rounded-xl border border-white/5 hover:border-white/30 transition-all group">
+                                    <span class="text-2xl mr-4">${item.icon}</span>
+                                    <span class="flex-grow text-sm font-medium text-left">${item.name}</span>
+                                    <span class="text-[10px] opacity-50 group-hover:opacity-100 transition-opacity">View on Amazon ➔</span>
+                                </a>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+            }
+            container.innerHTML = html;
+        }
+
+        init();
+    </script>
+</body>
+</html>
