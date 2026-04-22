@@ -56,7 +56,15 @@
             const container = document.getElementById('gear-container');
             let html = '';
 
-            for (const [category, items] of Object.entries(products)) {
+            // Group items by category since the JSON is a flat array
+            const categories = {};
+            products.forEach(item => {
+                const cat = item['Category'] || 'Other';
+                if (!categories[cat]) categories[cat] = [];
+                categories[cat].push(item);
+            });
+
+            for (const [category, items] of Object.entries(categories)) {
                 html += `
                     <div class="space-y-3">
                         <h2 class="text-lg font-bold text-white border-b border-white/20 pb-1">${category}</h2>
@@ -67,7 +75,7 @@
                                     <span class="text-[10px] opacity-50 group-hover:opacity-100 transition-opacity">View Item ➔</span>
                                 </a>
                             `).join('')}
-
+                        </div>
                     </div>
                 `;
             }
