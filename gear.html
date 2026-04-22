@@ -35,7 +35,9 @@
                 // Group products by category
                 const categories = {};
                 products.forEach(p => {
-                    const cat = p.Category || 'Other';
+                    // Robustly check for Category, handle case sensitivity and missing keys
+                    const cat = p['Category'] || p['category'] || 'Other';
+                    
                     if (!categories[cat]) categories[cat] = [];
                     categories[cat].push(p);
                 });
@@ -49,15 +51,23 @@
                     section.innerHTML = `<div class="section-title">${cat}</div>`;
                     
                     const listContainer = document.createElement('div');
-                    list
-                        .className = 'product-list';
+                    listContainer.className = 'product-list';
 
                     categories[cat].forEach(p => {
+                        // Skip items with broken/NaN links to prevent errors
+                        const amazonLink = p['Amazon Link'];
+                        const otherLink = p['Other Link'];
+                        const validLink = (typeof amazonLink === 'string' && amazonLink.startsWith('http')) 
+                                        ? amazonLink 
+                                        : (typeof otherLink === 'string' && otherLink.startsWith('http') ? otherLink : null);
+
+                        if (!validLink) return; 
+
                         const link = document.createElement('a');
-                        link.href = p['Amazon Link'] || p['Other Link'] || '#';
+                        link.href = validLink;
                         link.className = 'product-link';
                         link.target = '_blank';
-                        link.innerHTML = `<span>${p.Item}</span>`;
+                        link.innerHTML = `<span>${p['Item'] || 'Unknown Item'}</span>`;
                         listContainer.appendChild(link);
                     });
 
