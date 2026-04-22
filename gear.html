@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommended Gear | World Composting</title>
+    <link rel="stylesheet" href="src/styles/theme.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <img src="src/assets/logo.png" alt="Logo" onerror="this.src='https://via.placeholder.com/110?text=WC'">
+            <h1 style="margin-top: 1rem;">Recommended Gear</h1>
+            <p class="subtitle">Everything you need for successful composting.</p>
+            <a href="index.html" style="display: inline-block; margin-top: 1rem; text-decoration: none; color: var(--forest-green); font-weight: 600;">&larr; Back to Home</a>
+        </header>
+
+        <div id="gear-container">
+            <!-- Categories will be injected here -->
+        </div>
+
+        <footer style="margin-top: 4rem; opacity: 0.5; font-size: 0.8rem;">
+            &copy; 2026 World Composting
+        </footer>
+    </div>
+
+    <script>
+        async function loadGear() {
+            const container = document.getElementById('gear-container');
+            try {
+                const res = await fetch('src/data/products.json');
+                if (!res.ok) throw new Error("Products not found");
+                const products = await res.json();
+
+                // Group products by category
+                const categories = {};
+                products.forEach(p => {
+                    const cat = p.Category || 'Other';
+                    if (!categories[cat]) categories[cat] = [];
+                    categories[cat].push(p);
+                });
+
+                // Sort categories alphabetically
+                const sortedCats = Object.keys(categories).sort();
+
+                sortedCats.forEach(cat => {
+                    // Create Category Section
+                    const section = document.createElement('div');
+                    section.innerHTML = `<div class="section-title">${cat}</div>`;
+                    
+                    const listContainer = document.createElement('div');
+                    list
+                        .className = 'product-list';
+
+                    categories[cat].forEach(p => {
+                        const link = document.createElement('a');
+                        link.href = p['Amazon Link'] || p['Other Link'] || '#';
+                        link.className = 'product-link';
+                        link.target = '_blank';
+                        link.innerHTML = `<span>${p.Item}</span>`;
+                        listContainer.appendChild(link);
+                    });
+
+                    section.appendChild(listContainer);
+                    container.appendChild(section);
+                });
+
+            } catch (e) {
+                console.error("Error loading gear:", e);
+                container.innerHTML = `<p style="color: red;">Error loading gear list.</p>`;
+            }
+        }
+        loadGear();
+    </script>
+</body>
+</html>
