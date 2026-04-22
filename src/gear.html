@@ -62,13 +62,12 @@
                         <h2 class="text-lg font-bold text-white border-b border-white/20 pb-1">${category}</h2>
                         <div class="flex flex-col gap-3">
                             ${items.map(item => `
-                                <a href="${item.url}" target="_blank" class="card-gradient flex items-center p-4 rounded-xl border border-white/5 hover:border-white/30 transition-all group">
-                                    <span class="text-2xl mr-4">${item.icon}</span>
-                                    <span class="flex-grow text-sm font-medium text-left">${item.name}</span>
-                                    <span class="text-[10px] opacity-50 group-hover:opacity-100 transition-opacity">View on Amazon ➔</span>
+                                <a href="${item['Amazon Link'] !== null && item['Amazon Link'] !== 'NaN' ? item['Amazon Link'] : (item['Other Link'] !== null && item['Other Link'] !== 'NaN' ? item['Other Link'] : '#')}" target="_blank" class="card-gradient flex items-center p-4 rounded-xl border border-white/5 hover:border-white/30 transition-all group">
+                                    <span class="flex-grow text-sm font-medium text-left">${item['Item']}</span>
+                                    <span class="text-[10px] opacity-50 group-hover:opacity-100 transition-opacity">View Item ➔</span>
                                 </a>
                             `).join('')}
-                        </div>
+
                     </div>
                 `;
             }
