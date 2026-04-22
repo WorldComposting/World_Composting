@@ -6,36 +6,6 @@
         "Other Link": "http://bit.ly/2XXy18v"
     },
     {
-        "Item": "Mosquito Dunks",
-        "Category": "Fly Control",
-        "Amazon Link": "https://amzn.to/31z7fFf",
-        "Other Link": "NaN"
-    },
-    {
-        "Item": "Sticky Fly Trap",
-        "Category": "Fly Control",
-        "Amazon Link": "https://amzn.to/39eLIFA",
-        "Other Link": "NaN"
-    },
-    {
-        "Item": "Bug Zapper Bulb",
-        "Category": "Fly Control",
-        "Amazon Link": "https://amzn.to/3cDH4nV",
-        "Other Link": "NaN"
-    },
-    {
-        "Item": "Mosquito Bits Bti",
-        "Category": "Fly Control",
-        "Amazon Link": "https://amzn.to/3pZSWng",
-        "Other Link": "NaN"
-    },
-    {
-        "Item": "Diatomaceous Earth Food Grade",
-        "Category": "Fly Control",
-        "Amazon Link": "https://amzn.to/3eMZVu6",
-        "Other Link": "NaN"
-    },
-    {
         "Item": "Urban Worm Bag (affiliate link)",
         "Category": "Worm Bag",
         "Amazon Link": "https://amzn.to/3eMZVu6",
@@ -78,15 +48,45 @@
         "Other Link": "NaN"
     },
     {
-        "Item": "Chapin Sprayer",
-        "Category": "Water Gear",
-        "Amazon Link": "https://amzn.to/2KWLpHk",
-        "Other Link": "NaN"
-    },
-    {
         "Item": "KN95 Masks",
         "Category": "Worm Bin Items",
         "Amazon Link": "https://amzn.to/2Gay7Vb",
+        "Other Link": "NaN"
+    },
+    {
+        "Item": "Mosquito Dunks",
+        "Category": "Fly Control",
+        "Amazon Link": "https://amzn.to/31z7fFf",
+        "Other Link": "NaN"
+    },
+    {
+        "Item": "Sticky Fly Trap",
+        "Category": "Fly Control",
+        "Amazon Link": "https://amzn.to/39eLIFA",
+        "Other Link": "NaN"
+    },
+    {
+        "Item": "Bug Zapper Bulb",
+        "Category": "Fly Control",
+        "Amazon Link": "https://amzn.to/3cDH4nV",
+        "Other Link": "NaN"
+    },
+    {
+        "Item": "Mosquito Bits Bti",
+        "Category": "Fly Control",
+        "Amazon Link": "https://amzn.to/3pZSWng",
+        "Other Link": "NaN"
+    },
+    {
+        "Item": "Diatomaceous Earth Food Grade",
+        "Category": "Fly Control",
+        "Amazon Link": "https://amzn.to/3eMZVu6",
+        "Other Link": "NaN"
+    },
+    {
+        "Item": "Chapin Sprayer",
+        "Category": "Water Gear",
+        "Amazon Link": "https://amzn.to/2KWLpHk",
         "Other Link": "NaN"
     },
     {
