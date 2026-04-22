@@ -59,10 +59,10 @@
 
                 products.forEach(p => {
                     const link = document.createElement('a');
-                    link.href = p.url;
+                    link.href = p['Amazon Link'] || p['Other Link'] || '#';
                     link.className = 'product-link';
                     link.target = '_blank';
-                    link.innerHTML = `<span>${p.name}</span>`;
+                    link.innerHTML = `<span>${p['Item']}</span>`;
                     prodList.appendChild(link);
                 });
             } catch (e) {

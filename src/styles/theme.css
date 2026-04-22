@@ -2,10 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Lora:ital,wght@0,400;1,500&display=format&display=swap');
 
 :root {
+:root {
   --forest-green: #2d5a27;
   --leaf-lime: #a4c639;
   --compost-brown: #4b3621;
-  --earth-tan: #f4e1d2;
+  --sky-blue: #e0f2f1;
+  --ocean-blue: #00796b;
   --off-white: #faf9f6;
   --text-dark: #2c2c2c;
   --card-shadow: 0 10px 25px -5px rgba(75, 54, 33, 0.1), 0 8px 10px -6px rgba(75, 54, 33, 0.1);
@@ -17,17 +19,17 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Inter', sans-serif;
-  background-color: var(--earth-tan);
-  background-image: radial-gradient(circle at top, #fdf6ee 0%, var(--earth-tan) 100%);
+  background-color: var(--sky-blue);
+  background-image: radial-gradient(circle at top, #ffffff 0%, var(--sky-blue) 100%);
   color: var(--text-dark);
   display: flex;
-  justify-content: center;
+  justify_content: center;
   align-items: center;
   min-height: 100vh;
 }
 
 #app {
-  max-width: 500px;
+  max-width: 600px;
   width: 100%;
   padding: 3rem 1.5rem;
   text-align: center;
@@ -60,7 +62,7 @@ h1 {
 
 p.subtitle { 
   font-family: 'Lora', serif;
-  color: var(--compost-brown); 
+  color: var(--ocean-blue); 
   font-style: italic; 
   font-size: 1.1rem;
   opacity: 0.8;
@@ -69,7 +71,7 @@ p.subtitle {
 
 .section-title {
   text-align: left;
-  border-left: 4px solid var(--leaf-lime);
+  border-left: 4px solid var(--forest-green);
   padding-left: 1rem;
   margin: 3rem 0 1.5rem 0;
   font-weight: 800;
@@ -95,12 +97,12 @@ p.subtitle {
   box-shadow: 0 20px 25px -5px rgba(75, 54, 33, 0.15);
 }
 
-   .video-thumbnail {
-    width: 100%;
-    aspect-ratio: 16/9;
-    object-fit: cover;
-    display: block;
-  }
+.video-thumbnail {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  display: block;
+}
 
 .video-info { padding: 1.2rem; text-align: left; }
 .video-title { 
@@ -123,8 +125,8 @@ p.subtitle {
   margin-bottom: 1rem;
   border-radius: 12px;
   text-decoration: none;
-  color: var(--compost-brown);
-  font-weight: 600;
+  color: var(--forest-green);
+  font-weight: 60_0;
   transition: all 0.3s ease;
   box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
   border: 1px solid transparent;
@@ -133,14 +135,14 @@ p.subtitle {
 .product-link::after {
   content: '→';
   font-size: 1.2rem;
-  color: var(--leaf-lime);
+  color: var(--ocean-blue);
   transition: transform 0.3s ease;
 }
 
 .product-link:hover {
-  border-color: var(--leaf-lime);
+  border-color: var(--forest-green);
   transform: translateX(5px);
-  background-color: var(--off-white);
+  background-color: var(--sky-blue);
 }
 
 .product-link:hover::after { transform: translateX(5px); }
