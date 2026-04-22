@@ -5,145 +5,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>World Composting | Links</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        /* Colors extracted from logo: Navy Blue (#0a1f3d), Forest Green (#1b4332), White (#FFFFFF) */
-        :root {
-            --navy: #0a1f3d;
-            --forest: #1b4332;
-            --cream: #f8f9fa;
-        }
-        body {
-            background-color: var(--forest);
-            color: white;
-            font-family: sans-serif;
-        }
-        .card-gradient {
-            background: linear-gradient(135deg, rgba(27, 67, 50, 0.8) 0%, rgba(10, 31, 61, 0.8) 100%);
-        }
-    </style>
+    <link rel="stylesheet" href="../src/styles/theme.css">
 </head>
-<body class="min-h-screen flex flex-col items-center p-4">
+<body>
+    <div id="app">
+        <header>
+            <img src="../public/assets/logo.png" alt="Logo" onerror="this.src='https://via.placeholder.com/100?text=WC'">
+            <h1>World Composting</h1>
+            <p>Turning waste into wonder.</p>
+        </header>
 
-    <!-- Header / Logo Section -->
-    
-    <header class="mt-8 mb-12 text-center">
-        <div class="w-32 h-32 mx-auto mb-4 overflow-hidden rounded-full border-4 border-[#ffffff33] shadow-lg">
-            <img src="assets/logo.png" alt="World Composting Logo" class="w-full h-full object-cover">
+        <div class="section-title">Latest Videos</div>
+        <div id="video-list">
+            <!-- Video cards will be injected here -->
         </div>
-        <h1 class="text-2xl font-bold tracking-tight text-white">World Composting</h1>
-        <p class="text-sm text-gray-300 italic">Sustainability & DIY</p>
-    </header>
 
+        <div class="section-title">Recommended Gear</div>
+        <div id="product-list">
+            <!-- Product links will be injected here -->
+        </div>
+    </div>
 
-    <!-- Main Content Area -->
-    <main class="w-full max-w-md space-y-12">
-        
-        <!-- Section 1: Latest Videos (Grid of small thumbnails) -->
-        <section>
-            <h2 class="text-lg font-semibold mb-4 border-b border-white/20 pb-2 flex items-center gap-2">
-                <span class="text-xl">📺</span> Latest Videos
-            </h2>
-            <div id="video-grid" class="grid grid-cols-2 gap-3">
-                <!-- Video cards will be injected here -->
-            </div>
-        </segment>
-
-        <!-- Section 2: Navigation Links (Linktree style) -->
-        <section>
-            <h2 class="text-lg font-semibold mb-4 border-b border-white/20 pb-2 flex items-center gap-2">
-                <span class="text-xl">🔗</span> Quick Links
-            </h2>
-            
-            <div class="flex flex-col gap-3">
-                <a href="https://youtube.com/@worldcomposting" target="_blank" class="card-gradient p-4 rounded-xl text-center font-medium hover:scale-105 transition-transform border border-white/10">Visit YouTube Channel</a>
-                <a href="gear.html" class="card-gradient p-4 rounded-xl text-center font-medium hover:scale-105 transition-transform border border-white/10">🛒 Shop My Gear</a>
-                <a href="https://www.instagram.com/worldcomposting/" target="_blank" class="card-gradient p-4 rounded-xl text-center font-medium hover:scale-105 transition-transform border border-white/10">Follow on Instagram</a>
-            </div>
-
-        </section>
-
-        <!-- Section 3: Products (Categorized List) -->
-        <section>
-            <h2 class="text-lg font-semibold mb-4 border-b border-white/20 pb-2 flex items-center gap-2">
-                <span class="text-xl">🛒</span> My Amazon Gear
-            </h2>
-            <div id="product-list" class="space-y-6">
-                <!-- Product categories will be injected here -->
-            </div>
-            <a href="gear.html" class="card-gradient mt-6 block p-4 rounded-xl text-center font-medium hover:scale-105 transition-transform border border-white/10">
-                🛒 Shop All My Gear
-            </a>
-        </singles>
-        </section>
-    </main>
-
-    <footer class="mt-16 mb-8 text-xs text-gray-400 text-center">
-        &copy; 2026 World Composting
-    </footer>
-
-    <!-- Data Injection Logic -->
     <script>
-        async function init() {
+        async function loadData() {
             try {
-                // Since we're running locally without a server, we simulate fetching from the local json files.
-                // In a real deployment (e.g., GitHub Pages), these relative paths would work perfectly.
-                const [videoRes, productRes] = await Promise.all([
-                    fetch('src/data/videos.json'),
-                    fetch('src/data/products.json')
-                ]);
+                const vRes = await fetch('../src/data/videos.json');
+                const videos = await vRes.json();
+                const videoList = document.getElementById('video-list');
                 
-                const videos = await videoRes.json();
-                const products = await productRes.json();
+                videos.forEach(v => {
+                    const card = document.createElement('div');
+                    card.className = 'video-card';
+                    card.innerHTML = `
+                        <a href="${v.url}" target="_blank">
+                            <img src="${v.thumbnail}" class="video-thumbnail" alt="${v.title}">
+                            <div class="video-info">
+                                <span class="video-title">${v.title}</span>
+                            </div>
+                        </a>
+                    `;
+                    videoList.appendChild(card);
+                });
 
-                renderVideos(videos);
-                renderProducts(products);
-            } catch (err) {
-                console.error("Error loading data:", err);
-                // Fallback for local file access restrictions in browsers
-                document.body.innerHTML += '<div class="mt-4 p-4 bg-red-900/50 text-xs rounded">Note: To see the dynamic content, this folder must be served via a web server (e.g., Live Server) because of browser CORS restrictions on local file access.</div>';
+                const pRes = await fetch('../src/data/products.json');
+                const products = await pRes.json();
+                const prodList = document.getElementById('product-list');
+
+                products.forEach(p => {
+                    const link = document.createElement('a');
+                    link.href = p.url;
+                    link.className = 'product-link';
+                    link.target = '_blank';
+                    link.innerText = p.name;
+                    prodList.appendChild(link);
+                });
+            } catch (e) {
+                console.error("Error loading data:", e);
             }
         }
-
-        function renderVideos(videos) {
-            const grid = document.getElementById('video-grid');
-            if (!grid) return;
-            grid.innerHTML = videos.map(v => `
-                <a href="https://youtube.com/watch?v=${v.id}" target="_blank" class="group">
-                    <div class="relative aspect-video rounded-lg overflow-hidden border border-white/10 group-hover:border-white/40 transition-all">
-                        <img src="${v.thumbnail}" alt="${v.title}" class="object-cover w-full h-full">
-                        <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"></div>
-                    </div>
-                    <p class="text-[10px] mt-1 text-center truncate text-gray-200">${v.title}</p>
-                </a>
-            `).join('');
-        }
-
-        function renderProducts(products) {
-            const container = document.getElementById('product-list');
-            if (!container) return;
-            let html = '';
-
-            for (const [category, items] of Object.entries(products)) {
-                html += `
-                    <div class="space-y-3">
-                        <h3 class="text-sm font-bold text-grayrit uppercase tracking-wide opacity-70">${category}</h3>
-                        <div class="grid grid-cols-1 gap-2">
-                            ${items.map(item => `
-                                <a href="${item.url}" target="_blank" class="card-gradient flex items-center p-3 rounded-lg border border-white/5 hover:border-white/20 transition-all group">
-                                    <span class="text-2xl mr-3">${item.icon}</span>
-                                    <span class="flex-grow text-sm font-medium text-left">${item.name}</span>
-                                    <span class="text-[10px] opacity-50 group-hover:opacity-100 transition-opacity">View ➔</span>
-                                </a>
-                            `).join('')}
-                        </div>
-                    </div>
-                `;
-            }
-            container.innerHTML = html;
-        }
-
-        init();
+        loadData();
     </script>
 </body>
 </html>
