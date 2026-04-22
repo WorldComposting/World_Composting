@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>World Composting | Links</title>
-    <link rel="stylesheet" href="../src/styles/theme.css">
+    <link rel="stylesheet" href="src/styles/theme.css">
 </head>
 <body>
     <div id="app">
@@ -29,7 +29,7 @@
     <script>
         async function loadData() {
             try {
-                const vRes = await fetch('../src/data/videos.json');
+                const vRes = await fetch('src/data/videos.json');
                 const videos = await vRes.json();
                 const videoList = document.getElementById('video-list');
                 
@@ -47,7 +47,7 @@
                     videoList.appendChild(card);
                 });
 
-                const pRes = await fetch('../src/data/products.json');
+                const pRes = await fetch('src/data/products.json');
                 const products = await pRes.json();
                 const prodList = document.getElementById('product-list');
 
