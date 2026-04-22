@@ -4,32 +4,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>World Composting | Links</title>
+    <title>World Composting | Official Links</title>
     <link rel="stylesheet" href="src/styles/theme.css">
 </head>
 <body>
     <div id="app">
         <header>
-            <img src="../public/assets/logo.png" alt="Logo" onerror="this.src='https://via.placeholder.com/100?text=WC'">
+            <img src="src/assets/logo.png" alt="Logo" onerror="this.src='https://via.placeholder.com/110?text=WC'">
             <h1>World Composting</h1>
-            <p>Turning waste into wonder.</p>
+            <p class="subtitle">Turning waste into wonder.</p>
         </header>
 
-        <div class="section-title">Latest Videos</div>
-        <div id="video-list">
-            <!-- Video cards will be injected here -->
+        <div id="video-container">
+            <div class="section-title">Latest from YouTube</div>
+            <div id="video-list"></div>
         </div>
 
-        <div class="section-title">Recommended Gear</div>
-        <div id="product-list">
-            <!-- Product links will be injected here -->
+        <div id="product-container">
+            <div class="section-title">My Recommended Gear</div>
+            <div id="product-list"></div>
         </div>
+
+        <footer style="margin-top: 4rem; opacity: 0.5; font-size: 0.8rem;">
+            &copy; 2026 World Composting
+        </footer>
     </div>
 
     <script>
         async function loadData() {
             try {
                 const vRes = await fetch('src/data/videos.json');
+                if (!vRes.ok) throw new Error("Videos not found");
                 const videos = await vRes.json();
                 const videoList = document.getElementById('video-list');
                 
@@ -37,7 +42,7 @@
                     const card = document.createElement('div');
                     card.className = 'video-card';
                     card.innerHTML = `
-                        <a href="${v.url}" target="_blank">
+                        <a href="${v.url}" target="_blank" style="text-decoration:none;">
                             <img src="${v.thumbnail}" class="video-thumbnail" alt="${v.title}">
                             <div class="video-info">
                                 <span class="video-title">${v.title}</span>
@@ -48,6 +53,7 @@
                 });
 
                 const pRes = await fetch('src/data/products.json');
+                if (!pRes.ok) throw new Error("Products not found");
                 const products = await pRes.json();
                 const prodList = document.getElementById('product-list');
 
@@ -56,11 +62,11 @@
                     link.href = p.url;
                     link.className = 'product-link';
                     link.target = '_blank';
-                    link.innerText = p.name;
+                    link.innerHTML = `<span>${p.name}</span>`;
                     prodList.appendChild(link);
                 });
             } catch (e) {
-                console.error("Error loading data:", e);
+                console.error("Error loading content:", e);
             }
         }
         loadData();
