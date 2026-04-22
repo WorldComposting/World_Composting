@@ -64,7 +64,17 @@
                 categories[cat].push(item);
             });
 
-            for (const [category, items] of Object.entries(categories)) {
+            // Sort categories: Worm-related first, then alphabetical
+            const sortedCategories = Object.keys(categories).sort((a, b) => {
+                const aIsWorm = /Worm/i.test(a);
+                const bIsWorm = /Worm/i.test(b);
+                if (aIsWorm && !bIsWorm) return -1;
+                if (!aIsWorm && bIsWorm) return 1;
+                return a.localeCompare(b);
+            });
+
+            for (const category of sortedCategories) {
+                const items = categories[category];
                 html += `
                     <div class="space-y-3">
                         <h2 class="text-lg font-bold text-white border-b border-white/20 pb-1">${category}</h2>
