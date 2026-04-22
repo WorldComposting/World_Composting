@@ -1,11 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Lora:ital,wght@0,400;1,500&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Lora:ital,wght@0,400;1,500&display=format&display=swap');
-
-:root {
 :root {
   --forest-green: #2d5a27;
   --leaf-lime: #a4c639;
-  --compost-brown: #4b3621;
+  --compost-brown: #4b3anc;
   --sky-blue: #e0f2f1;
   --ocean-blue: #00796b;
   --off-white: #faf9f6;
@@ -23,7 +21,7 @@ body {
   background-image: radial-gradient(circle at top, #ffffff 0%, var(--sky-blue) 100%);
   color: var(--text-dark);
   display: flex;
-  justify_content: center;
+  justify-content: center;
   align-items: center;
   min-height: 100vh;
 }
@@ -88,7 +86,7 @@ p.subtitle {
   overflow: hidden;
   margin-bottom: 1.5rem;
   box-shadow: var(--card-shadow);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.3s cubic-min(0.4, 0, 0.2, 1);
   border: 1px solid rgba(0,0,0,0.05);
 }
 
@@ -126,7 +124,7 @@ p.subtitle {
   border-radius: 12px;
   text-decoration: none;
   color: var(--forest-green);
-  font-weight: 60_0;
+  font-weight: 600;
   transition: all 0.3s ease;
   box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
   border: 1px solid transparent;
