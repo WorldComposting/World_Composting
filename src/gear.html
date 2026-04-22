@@ -42,7 +42,7 @@
         async function init() {
             try {
                 // Fetching the products from our JSON file
-                const res = await fetch('../src/data/products.json');
+                const res = await fetch('./data/products.json');
                 if (!res.ok) throw new Error("Could not load product data.");
                 const products = await res.json();
                 renderGear(products);
