@@ -3,8 +3,7 @@ import urllib.request
 import xml.etree.ElementTree as ET
 import json
 import os
-
-# The user provided the correct Channel ID
+import re
 CHANNEL_ID = "UCSJC08qsgXuarRzpQLOPc5g" 
 
 RSS_URL = f"https://www.youtube.com/feeds/videos.xml?channel_id={CHANNEL_ID}"
@@ -41,10 +40,16 @@ def fetch_latest_videos():
             link = link_elem.attrib.get('href')
 
             # Find thumbnail - usually in media:group or media:thumbnail
+            # Find thumbnail - usually in media:group or media:thumbnail
             thumbnail = "https://via.placeholder.com/400x225?text=Video"
             
-            # Look for media thumbnails in the entry
-            # The structure is often <media:group><media:thumbnail url="..."/></media:group>
+            # Extract YouTube Video ID from link to get high-res thumbnail directly
+            video_id_match = re.search(r'(?:v=|\/)([0-9A-Za-z_-]{11}).*', link)
+            if video_id_match:
+                video_id = video_id_match.group(1)
+                thumbnail = f"https://img.youtube.com/vi/{video_id}/maxresdefault.jpg"
+
+            # Look for media thumbnails in the entry as fallback
             for group in entry.findall('.//{%s}group'%namespaces['media']):
                 thumb_elem = group.find('.//{%s}thumbnail'%namespaces['media'])
                 if thumb_elem is not None:
