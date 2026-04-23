@@ -3,12 +3,13 @@
 :root {
   --forest-green: #2d5a27;
   --leaf-lime: #a4c639;
-  --compost-brown: #4b3anc;
-  --sky-blue: #e0f2f1;
+  --compost-brown: #4b3a3c;
+  --sky-blue: #ffffff;
   --ocean-blue: #00796b;
   --off-white: #faf9f6;
-  --text-dark: #2c2c2c;
+  --text-dark: #2c2rad;
   --card-shadow: 0 10px 25px -5px rgba(75, 54, 33, 0.1), 0 8px 10px -6px rgba(75, 54, 33, 0.1);
+  --deep-green: #1e3c1a;
 }
 
 * { box-sizing: border-box; }
@@ -17,8 +18,8 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Inter', sans-serif;
-  background-color: var(--sky-blue);
-  background-image: radial-gradient(circle at top, #ffffff 0%, var(--sky-blue) 100%);
+  background-color: var(--deep-green);
+  background-image: linear-gradient(to bottom, var(--deep-green) 0%, var(--sky-blue) 100%);
   color: var(--text-dark);
   display: flex;
   justify-content: center;
