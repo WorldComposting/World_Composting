@@ -8,70 +8,98 @@
     <link rel="stylesheet" href="src/styles/theme.css">
 </head>
 <body>
-    <div id="app">
-        <header>
-            <img src="src/assets/logo.png" alt="Logo" onerror="this.src='https://via.placeholder.com/110?text=WC'">
-            <h1>World Composting</h1>
-            <p class="subtitle">Turning waste into wonder.</p>
-        </header>
+        <div id="app">
+            <header>
+                <img src="src/assets/logo.png" alt="Logo" onerror="this.src='https://via.placeholder.com/110?text=WC'">
+                <h1>World Composting</h1>
+                <p class="subtitle">Turning waste into wonder.</p>
+            </header>
 
-        <div id="video-container">
-            <div class="section-title">Latest from YouTube</div>
-            <div id="video-list"></div>
+            <!-- FEATURED VIDEO SECTION -->
+            <div id="featured-video-container" style="display: none;">
+                <div class="section-title">Featured Video</div>
+                <div id="featured-video-card" class="video-card">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+
+            <div id="video-container">
+                <div class="section-title">Latest from YouTube</div>
+                <div id="video-list"></div>
+            </div>
+
+            <div id="product-container">
+                <div class="section-title">My Recommended Gear</div>
+                <div id="product-list"></div>
+                <hr style="margin: 2rem 0; opacity: 0.3; border: 0; border-top: 1px solid var(--forest-green);">
+                <a href="gear.html" style="text-decoration: none; color: var(--ocean-blue); font-weight: 600;">View All Gear &rarr;</a>
+            </div>
+
+            <footer style="margin-top: 4rem; opacity: 0.5; font-size: 0.8rem;">
+                &copy; 2026 World Composting
+            </footer>
         </div>
 
-        <div id="product-container">
-            <div class="section-title">My Recommended Gear</div>
-            <div id="product-list"></div>
-            <hr style="margin: 2rem 0; opacity: 0.3; border: 0; border-top: 1px solid var(--forest-green);">
-            <a href="gear.html" style="text-decoration: none; color: var(--ocean-blue); font-weight: 600;">View All Gear &rarr;</a>
-        </div>
+        <script>
+            async function loadData() {
+                try {
+                    const vRes = await fetch('src/data/videos.json');
+                    if (!vRes.ok) throw new Error("Videos not found");
+                    const videos = await vRes.json();
+                    
+                    // Handle Featured Video (First video in list becomes featured)
+                    if (videos.length > 0) {
+                        const featuredContainer = document.getElementById('featured-video-container');
+                        const featuredCard = document.getElementById('featured-video-card');
+                        const featured = videos[0];
+                        
+                        featuredContainer.style.display = 'block';
+                        featuredCard.innerHTML = `
+                            <a href="${featured.url}" target="_blank" style="text-decoration:none;">
+                                <img src="${featured.thumbnail}" class="video-thumbnail featured-highlight" alt="${featured.title}">
+                                <div class="video-info">
+                                    <span class="video-title">${featured.title}</span>
+                                </div>
+                            </a>
+                        `;
+                    }
 
-        <footer style="margin-top: 4rem; opacity: 0.5; font-size: 0.8rem;">
-            &copy; 2026 World Composting
-        </footer>
-    </div>
+                    // Handle Rest of Video List (Skip the first one if it's featured)
+                    const videoList = document.getElementById('video-list');
+                    const videosToDisplay = videos.slice(1); 
 
-    <script>
-        async function loadData() {
-            try {
-                const vRes = await fetch('src/data/videos.json');
-                if (!vRes.ok) throw new Error("Videos not found");
-                const videos = await vRes.json();
-                const videoList = document.getElementById('video-list');
-                
-                videos.forEach(v => {
-                    const card = document.createElement('div');
-                    card.className = 'video-card';
-                    card.innerHTML = `
-                        <a href="${v.url}" target="_blank" style="text-decoration:none;">
-                            <img src="${v.thumbnail}" class="video-thumbnail" alt="${v.title}">
-                            <div class="video-info">
-                                <span class="video-title">${v.title}</span>
-                            </div>
-                        </a>
-                    `;
-                    videoList.appendChild(card);
-                });
+                    videosToDisplay.forEach(v => {
+                        const card = document.createElement('div');
+                        card.className = 'video-card';
+                        card.innerHTML = `
+                            <a href="${v.url}" target="_blank" style="text-decoration:none;">
+                                <img src="${v.thumbnail}" class="video-thumbnail" alt="${v.title}">
+                                <div class="video-info">
+                                    <span class="video-title">${v.title}</span>
+                                </div>
+                            </a>
+                        `;
+                        videoList.appendChild(card);
+                    });
 
-                const pRes = await fetch('src/data/products.json');
-                if (!pRes.ok) throw new Error("Products not found");
-                const products = await pRes.json();
-                const prodList = document.getElementById('product-list');
+                    const pRes = await fetch('src/data/products.json');
+                    if (!pRes.ok) throw new Error("Products not found");
+                    const products = await pRes.json();
+                    const prodList = document.getElementById('product-list');
 
-                products.forEach(p => {
-                    const link = document.createElement('a');
-                    link.href = p['Amazon Link'] || p['Other Link'] || '#';
-                    link.className = 'product-link';
-                    link.target = '_blank';
-                    link.innerHTML = `<span>${p['Item']}</span>`;
-                    prodList.appendChild(link);
-                });
-            } catch (e) {
-                console.error("Error loading content:", e);
+                    products.forEach(p => {
+                        const link = document.createElement('a');
+                        link.href = p['Amazon Link'] || p['Other Link'] || '#';
+                        link.className = 'product-link';
+                        link.target = '_blank';
+                        link.innerHTML = `<span class="product-name">${p['Item']}</span>`;
+                        prodList.appendChild(link);
+                    });
+                } catch (e) {
+                    console.error("Error loading content:", e);
+                }
             }
-        }
-        loadData();
-    </script>
-</body>
+            loadData();
+        </script>
+
 </html>

@@ -86,8 +86,13 @@ p.subtitle {
   overflow: hidden;
   margin-bottom: 1.5rem;
   box-shadow: var(--card-shadow);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0::3s cubic-bezier(0.4, 0, 0.2, 1);
   border: 1px solid rgba(0,0,0,0.05);
+}
+
+.video-card.featured-highlight {
+  border: 2px solid var(--leaf-lime);
+  transform: scale(1.02);
 }
 
 .video-card:hover { 
@@ -102,18 +107,25 @@ p.subtitle {
   display: block;
 }
 
-/* Mobile Optimization: Shrink video thumbnails on small screens */
+/* Mobile Optimization */
 @media (max-width: 480px) {
+  #app {
+    padding: 2rem 1rem;
+  }
+
   .video-card {
-    margin-bottom: 1rem;
+    margin-bottom: 1.25rem;
   }
-  .video-info {
-    padding: 0.8rem;
-  }
+
   .video-thumbnail {
-    width: 85%; /* Shrink the image width */
-    margin: 0 auto; /* Center the thumbnail */
-    border-radius: 12px; /* Rounded corners for a cleaner look when smaller */
+    width: 95%;
+    margin: 0 auto;
+    border-radius: 12px;
+  }
+
+  .product-link {
+    padding: 1rem;
+    font-size: 0.95rem;
   }
 }
 
@@ -130,8 +142,13 @@ p.subtitle {
   color: var(--forest-green);
   font-weight: 600;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+  box: 0 4px 6px -1px rgba(0,0,0,0.05);
   border: 1px solid transparent;
+}
+
+.product-name {
+    flex-grow: 1;
+    text-align: left;
 }
 
 .product-link::after {
