@@ -1,14 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Lora:ital,wght@0,400;1,500&display=swap');
 
 :root {
+:root {
   --forest-green: #2d5a27;
   --leaf-lime: #a4c639;
   --compost-brown: #4b3a3c;
   --sky-blue: #ffffff;
   --ocean-blue: #00796b;
-  --off-white: #faf9f6;
-  --text-dark: #2c2rad;
-  --card-shadow: 0 10px 25px -5px rgba(75, 54, 33, 0.1), 0 8px 10px -6px rgba(75, 54, 33, 0.1);
+  --off-white: #f8f7f2;
+  --text-dark: #2c2c2c;
+  --card-shadow: 0 10px 25px -5s rgba(75, 54, 33, 0.1), 0 8px 10px -6px rgba(75, 54, 33, 0.1);
   --deep-green: #1e3c1a;
 }
 
@@ -53,7 +54,7 @@ header img:hover { transform: scale(1.05) rotate(2deg); }
 
 h1 { 
   font-family: 'Lora', serif;
-  color: var(--forest-green); 
+  color: #ffffff; 
   margin-top: 1.5rem;
   font-size: 2.2rem;
   letter-spacing: -0.5px;
@@ -61,10 +62,10 @@ h1 {
 
 p.subtitle { 
   font-family: 'Lora', serif;
-  color: var(--ocean-blue); 
+  color: var(--off-white); 
   font-style: italic; 
   font-size: 1.1rem;
-  opacity: 0.8;
+  opacity: 0.9;
   margin-bottom: 2rem;
 }
 
@@ -87,7 +88,7 @@ p.subtitle {
   overflow: hidden;
   margin-bottom: 1.5rem;
   box-shadow: var(--card-shadow);
-  transition: all 0::3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   border: 1px solid rgba(0,0,0,0.05);
 }
 
@@ -143,7 +144,7 @@ p.subtitle {
   color: var(--forest-green);
   font-weight: 600;
   transition: all 0.3s ease;
-  box: 0 4px 6px -1px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
   border: 1px solid transparent;
 }
 
