@@ -9,8 +9,8 @@
   --ocean-blue: #00796b;
   --off-white: #f8f7f2;
   --text-dark: #2c2c2c;
-  --card-shadow: 0 10px 25px -5s rgba(75, 54, 33, 0.1), 0 8px 10px -6px rgba(75, 54, 33, 0.1);
-  --deep-green: #1e3c1a;
+  --card-shadow: 0 10px 25px -5px rgba(75, 54, 33, 0.1), 0 8px 10px -6px rgba(75, 54, 33, 0.1);
+  --sage-green: #d4e0d4;
 }
 
 * { box-sizing: border-box; }
@@ -19,8 +19,8 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Inter', sans-serif;
-  background-color: var(--deep-green);
-  background-image: linear-gradient(to bottom, var(--deep-green) 0%, var(--sky-blue) 100%);
+  background-color: var(--sage-green);
+  background-image: linear-gradient(to bottom, var(--sage-green) 0%, var(--sky-blue) 100%);
   color: var(--text-dark);
   display: flex;
   justify-content: center;
@@ -54,7 +54,7 @@ header img:hover { transform: scale(1.05) rotate(2deg); }
 
 h1 { 
   font-family: 'Lora', serif;
-  color: #ffffff; 
+  color: var(--forest-green); 
   margin-top: 1.5rem;
   font-size: 2.2rem;
   letter-spacing: -0.5px;
@@ -62,7 +62,7 @@ h1 {
 
 p.subtitle { 
   font-family: 'Lora', serif;
-  color: var(--off-white); 
+  color: var(--ocean-blue); 
   font-style: italic; 
   font-size: 1.1rem;
   opacity: 0.9;
@@ -78,7 +78,7 @@ p.subtitle {
   text-transform: uppercase;
   letter-spacing: 1px;
   font-size: 0.9rem;
-  color: var(--forest-green);
+  color: var(--forestelse-green);
 }
 
 /* Video Card Styles */
