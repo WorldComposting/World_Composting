@@ -87,9 +87,19 @@
                     const products = await pRes.json();
                     const prodList = document.getElementById('product-list');
 
-                    products.forEach(p => {
+                    // Filter for only the featured items to keep the main page clean
+                    const featuredItems = products.filter(p => 
+                        p['Item'].includes("Meme's Worms") || 
+                        p['Item'].includes("Urban Worm Bag") || 
+                        p['Item'].includes("Vermibag")
+                    );
+
+                    featuredItems.forEach(p => {
                         const link = document.createElement('a');
-                        link.href = p['Amazon Link'] || p['Other Link'] || '#';
+                        // Handle 'NaN' strings from the JSON to ensure valid links
+                        const href = (p['Amazon Link'] !== 'NaN' && p['Amazon Link']) || 
+                                     (p['Other Link'] !== 'NaN' && p['Other Link']) || '#';
+                        link.href = href;
                         link.className = 'product-link';
                         link.target = '_blank';
                         link.innerHTML = `<span class="product-name">${p['Item']}</span>`;
