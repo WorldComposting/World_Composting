@@ -64,12 +64,20 @@
                 categories[cat].push(item);
             });
 
-            // Sort categories: Worm-related first, then alphabetical
+            // Sort categories based on custom user priority, then alphabetically
+            const priorityOrder = ["Worm Bin Items", "Worm Bag", "Fly Control", "Bokashi Items"];
             const sortedCategories = Object.keys(categories).sort((a, b) => {
-                const aIsWorm = /Worm/i.test(a);
-                const bIsWorm = /Worm/i.test(b);
-                if (aIsWorm && !bIsWorm) return -1;
-                if (!aIsWorm && bIsWorm) return 1;
+                const aIndex = priorityOrder.indexOf(a);
+                const bIndex = priorityOrder.indexOf(b);
+
+                // If both are in the priority list, sort by their index in priorityOrder
+                if (aIndex !== -1 && bIndex !== -1) return aIndex - bIndex;
+                // If only A is in priority, move it up
+                if (aIndex !== -1) return -1;
+                // If only B is in priority, move it up
+                if (bIndex !== -1) return 1;
+
+                // Otherwise, fall back to alphabetical
                 return a.localeCompare(b);
             });
 
