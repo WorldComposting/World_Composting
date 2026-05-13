@@ -1,17 +1,17 @@
 # PROJECT MANIFEST: World Composting Landing Page
 
 ## 📌 Project Overview
-**Goal:** A high-legibility, ADA-compliant "Linktree-style" landing page for the [World Composting](http://worldcomposting.com) YouTube channel. The page must showcase latest videos, Amazon product links, and core channel information.
+**Goal:** A high-legibility, ADA-compliant "Linktree-style" landing page for the [World Composting](http://worldcompost.com) YouTube channel. The page must showcase latest videos, Amazon product links, and core channel information.
 **Core Values:** High contrast (for accessibility), frequent automated updates, and minimal maintenance.
 
 ## 📂 Project Root
 `/mnt/h/Hermes/landing-page-fixed`
 
 ## 🛠 Tech Stack
-- **Frontend:** HTML5, CSS3 (Custom Theme), JavaScript.
+- **Frontend:** HTML5, CSS3 (Custom Theme via `theme.css`), JavaScript.
 - **Backend/Automation:** Python (for YouTube API scraping and thumbnail syncing).
 - **Data Layer:** JSON (`videos.json`, `products.json`) acting as a lightweight database.
-- **Deployment Target:** Static Web Hosting (e.g., GitHub Pages, Netlify, or local server).
+- **Deployment Target:** Static Web Hosting (GitHub Pages).
 
 ## 🏗 Architecture & Key Files
 ### Automation Scripts
@@ -23,22 +23,24 @@
 - `src/data/products.json`: Curated list of Amazon affiliate products.
 
 ### Frontend Structure
-- `src/components/`: Reusable UI elements (Video Cards, Product Cards, Social Links).
+- `index.html`: Main landing page (Linktree-style).
+- `gear.html`: Detailed gear list (now in root for visibility).
 - `src/styles/theme.css`: The central source of truth for the visual design and accessibility settings.
-- `public/assets/`: Static assets including logo and global images.
+- `src/assets/`: Static assets including logo and thumbnails.
+- `src/components/`: Reusable UI elements.
 
 ## ✅ Completed Milestones
 - [x] Initial project structure and folder hierarchy established.
 - [x] Python automation logic for video fetching and thumbnail syncing.
 - [x] Basic JSON-driven data pipeline implemented.
 - [x] Core CSS theme (High contrast/ADA focused) initialized.
+- [x] Unified branding across landing page and gear page via `theme.css`.
+- [x] Refactored `gear.html` to root for GitHub Pages visibility.
+- [x] Cleaned up redundant backups and duplicate files in project root.
 
 ## 🚀 Next Steps & Pending Changes
-*Note to Agent: When resuming, start by discussing the items listed here.*
-
-- [ ] **[PENDING]** Refine Linktree-style UI (User mentioned "a couple of changes" are needed).
-- [ ] **[PENDING]** Implement/Verify Amazon Product sync logic.
-- [ ] **[PENDING]** Finalize responsive layout testing for mobile devices.
+- [ ] **Implement/Verify Amazon Product sync logic.**
+- [ ] **Finalize responsive layout testing for mobile devices.**
 
 ---
 **How to Resume this Session:**
