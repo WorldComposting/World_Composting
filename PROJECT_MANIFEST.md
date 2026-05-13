@@ -17,6 +17,7 @@
 ### Automation Scripts
 - `scripts/fetch_videos.py`: Fetches latest videos from YouTube and updates `src/data/videos.json`.
 - `scripts/sync_thumbnails.py`: Ensures thumbnails are locally available in `src/assets/thumbnails`.
+- `scripts/sync_products.py`: Syncs `products.json` from Google Sheets CSV export (source of truth).
 
 ### Data Structure
 - `src/data/videos.json`: List of processed video metadata.
@@ -37,10 +38,8 @@
 - [x] Unified branding across landing page and gear page via `theme.css`.
 - [x] Refactored `gear.html` to root for GitHub Pages visibility.
 - [x] Cleaned up redundant backups and duplicate files in project root.
-
-## 🚀 Next Steps & Pending Changes
-- [ ] **Implement/Verify Amazon Product sync logic.**
-- [ ] **Finalize responsive layout testing for mobile devices.**
+- [x] CSS responsive/mobile audit — fixed contrast, added breakpoints, focus styles, overflow guards.
+- [x] Synced `products.json` from Google Sheets CSV — fixed NaN→null, duplicate links, category ordering.
 
 ---
 **How to Resume this Session:**
