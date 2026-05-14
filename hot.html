@@ -1,0 +1,651 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Composting | Hot Composting Checklist</title>
+    <link rel="stylesheet" href="src/styles/theme.css">
+    <style>
+        #app {
+            max-width: 720px;
+            text-align: left;
+        }
+        .back-link {
+            display: inline-block;
+            font-size: 0.85rem;
+            color: var(--ocean-blue);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            transition: opacity 0.2s;
+        }
+        .back-link:hover { opacity: 0.7; }
+        .back-link:focus-visible {
+            outline: 2px solid var(--ocean-blue);
+            outline-offset: 2px;
+            border-radius: 2px;
+        }
+        header {
+            text-align: center;
+        }
+        .hero-intro {
+            background: white;
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: var(--card-shadow);
+            margin: 2rem 0;
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--text-dark);
+        }
+        .hero-intro strong { color: var(--forest-green); }
+
+        /* Progress Tracker */
+        #progress-wrapper {
+            background: white;
+            border-radius: 16px;
+            padding: 1.25rem 1.5rem;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 2rem;
+        }
+        #progress-text {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--forest-green);
+            margin-bottom: 0.6rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #progress-percent {
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: var(--ocean-blue);
+        }
+        #progress-bar {
+            height: 10px;
+            background: var(--sage-green);
+            border-radius: 99px;
+            overflow: hidden;
+        }
+        #progress-fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, var(--leaf-lime), var(--forest-green));
+            border-radius: 99px;
+            transition: width 0.4s ease;
+        }
+
+        /* Phase (Collapsible Section) */
+        .phase {
+            background: white;
+            border-radius: 16px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 1.25rem;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.04);
+            transition: box-shadow 0.3s ease;
+        }
+        .phase:hover {
+            box-shadow: 0 12px 25px -5px rgba(75, 54, 33, 0.12);
+        }
+        .phase-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 1.25rem 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: var(--forest-green);
+            text-align: left;
+            transition: background 0.2s ease;
+            gap: 0.75rem;
+        }
+        .phase-header:hover { background: rgba(45, 90, 39, 0.04); }
+        .phase-header:focus-visible {
+            outline: 2px solid var(--ocean-blue);
+            outline-offset: -2px;
+            border-radius: 16px 16px 0 0;
+        }
+        .phase-header .phase-arrow {
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+            color: var(--ocean-blue);
+            flex-shrink: 0;
+        }
+        .phase.active .phase-arrow { transform: rotate(180deg); }
+        .phase-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.3s ease;
+            padding: 0 1.5rem;
+        }
+        .phase.active .phase-body {
+            max-height: 5000px;
+            padding: 0 1.5rem 1.25rem;
+        }
+
+        /* Checklist Items */
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            cursor: pointer;
+            transition: opacity 0.2s ease;
+        }
+        .checklist-item:last-of-type { border-bottom: none; }
+        .checklist-item input[type="checkbox"] {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--forest-green);
+            border-radius: 5px;
+            flex-shrink: 0;
+            margin-top: 2px;
+            cursor: pointer;
+            position: relative;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .checklist-item input[type="checkbox"]:checked {
+            background: var(--forest-green);
+            border-color: var(--forest-green);
+        }
+        .checklist-item input[type="checkbox"]:checked::after {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 1px;
+            width: 6px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+        .checklist-item input[type="checkbox"]:focus-visible {
+            outline: 2px solid var(--ocean-blue);
+            outline-offset: 2px;
+        }
+        .check-emoji {
+            font-size: 1.3rem;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+        .check-content { flex: 1; min-width: 0; }
+        .check-title {
+            display: block;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            transition: color 0.2s;
+        }
+        .check-desc {
+            display: block;
+            font-size: 0.82rem;
+            color: #666;
+            margin-top: 2px;
+            line-height: 1.5;
+            transition: color 0.2s;
+        }
+        .check-desc a {
+            color: var(--ocean-blue);
+            text-decoration: underline;
+            font-weight: 500;
+        }
+        .check-desc a:hover { color: var(--forest-green); }
+        .checklist-item.completed .check-title {
+            color: #999;
+            text-decoration: line-through;
+        }
+        .checklist-item.completed .check-desc { color: #aaa; }
+        .checklist-item.completed .check-emoji { opacity: 0.5; }
+
+        /* Gear Section */
+        #gear-section {
+            margin-top: 3rem;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 4rem;
+            text-align: center;
+        }
+        .footer-copy {
+            opacity: 0.7;
+            font-size: 0.85rem;
+            color: var(--forest-green);
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            .phase-header { padding: 1rem 1.2rem; font-size: 0.95rem; }
+            .phase.active .phase-body { padding: 0 1.2rem 1rem; }
+            .checklist-item { gap: 0.6rem; padding: 0.6rem 0; }
+            .check-emoji { font-size: 1.1rem; }
+            .check-title { font-size: 0.9rem; }
+            .check-desc { font-size: 0.78rem; }
+            .hero-intro { padding: 1.2rem; font-size: 0.92rem; }
+            #progress-wrapper { padding: 1rem 1.2rem; }
+        }
+        @media (max-width: 375px) {
+            .phase-header { padding: 0.85rem 1rem; font-size: 0.88rem; }
+            .phase.active .phase-body { padding: 0 1rem 0.85rem; }
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <a href="index.html" class="back-link">← Back to Home</a>
+            <img src="src/assets/logo.png" alt="Logo" onerror="this.src='https://via.placeholder.com/110?text=WC'">
+            <h1>Hot Composting Checklist</h1>
+            <p class="subtitle">Build a pile that cooks your scraps into gold.</p>
+        </header>
+
+        <!-- Progress Tracker -->
+        <div id="progress-wrapper">
+            <div id="progress-text">
+                <span id="progress-label">0 of 30 items completed</span>
+                <span id="progress-percent">0%</span>
+            </div>
+            <div id="progress-bar"><div id="progress-fill"></div></div>
+        </div>
+
+        <!-- Hero Intro -->
+        <div class="hero-intro">
+            <p>🔥 Hot composting is the <strong>fastest</strong> way to turn organic waste into finished compost — in as little as 18-21 days if managed well! By maintaining a pile temperature of <strong>130-160°F (55-71°C)</strong>, thermophilic bacteria break down materials rapidly, killing weed seeds and pathogens in the process. The secret? Balancing carbon and nitrogen at a <strong>25-30:1 ratio</strong>, keeping the pile at least <strong>3x3x3 feet</strong> to retain heat, and turning at the right moments. Follow this checklist to build, manage, and harvest a properly cooked pile!</p>
+        </div>
+
+        <!-- Checklist Phases -->
+        <div id="phases">
+
+            <!-- Phase 1 -->
+            <div class="phase active">
+                <button class="phase-header" onclick="togglePhase(this)">
+                    <span>Phase 1: Before You Start 📋</span>
+                    <span class="phase-arrow">▼</span>
+                </button>
+                <div class="phase-body">
+                    <label class="checklist-item" for="h1_0">
+                        <input type="checkbox" id="h1_0" data-id="h1_0">
+                        <span class="check-emoji">🧬</span>
+                        <span class="check-content">
+                            <span class="check-title">Understand the science of hot composting</span>
+                            <span class="check-desc">Hot composting relies on <strong>thermophilic bacteria</strong> that thrive at 130-160°F. These heat-loving microbes break down organic matter rapidly and generate their own heat. Unlike cold composting, you actively manage the pile to keep it in the thermophilic zone for fastest results.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="h1_1">
+                        <input type="checkbox" id="h1_1" data-id="h1_1">
+                        <span class="check-emoji">📍</span>
+                        <span class="check-content">
+                            <span class="check-title">Choose a suitable location</span>
+                            <span class="check-desc">Pick a level, well-drained spot with easy access to water. The pile needs to be <strong>at least 3x3x3 feet</strong> to retain sufficient heat — smaller piles won't reach thermophilic temperatures. Partial sun helps warm things up, but avoid full afternoon sun in hot climates to prevent drying out.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="h1_2">
+                        <input type="checkbox" id="h1_2" data-id="h1_2">
+                        <span class="check-emoji">🛠️</span>
+                        <span class="check-content">
+                            <span class="check-title">Gather essential tools and materials</span>
+                            <span class="check-desc">You'll need a <a href="https://amzn.to/3m21vfp" target="_blank">compost thermometer</a> (at least 20-inch stem), a <a href="https://amzn.to/3pP7vKv" target="_blank">pitchfork or compost aerator</a>, a <a href="https://amzn.to/3rXmPGY" target="_blank">tarp</a> for covering, waterproof gloves, and a hose with a spray nozzle for moisture control.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="h1_3">
+                        <input type="checkbox" id="h1_3" data-id="h1_3">
+                        <span class="check-emoji">🏗️</span>
+                        <span class="check-content">
+                            <span class="check-title">Build a bin, frame, or windrow</span>
+                            <span class="check-desc">Hot compost needs containment to hold heat. Build a <strong>3-bin system</strong> with wooden pallets, use a <strong>wire cylinder</strong>, or create a free-standing windrow. The bin should have slatted sides for airflow while being large enough to retain core heat.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="h1_4">
+                        <input type="checkbox" id="h1_4" data-id="h1_4">
+                        <span class="check-emoji">🟢🟤</span>
+                        <span class="check-content">
+                            <span class="check-title">Learn greens vs browns</span>
+                            <span class="check-desc"><strong>Greens</strong> are nitrogen-rich materials: food scraps, grass clippings, coffee grounds, fresh plant trimmings, and manure. <strong>Browns</strong> are carbon-rich materials: dried leaves, straw, cardboard, wood chips, and paper. You need roughly <strong>3 parts browns to 1 part greens by volume</strong> to hit the ideal C:N ratio.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="h1_5">
+                        <input type="checkbox" id="h1_5" data-id="h1_5">
+                        <span class="check-emoji">⚖️</span>
+                        <span class="check-content">
+                            <span class="check-title">Calculate your C:N ratio</span>
+                            <span class="check-desc">The sweet spot for hot composting is a <strong>carbon-to-nitrogen ratio of 25-30:1</strong>. Too much carbon = pile won't heat up. Too much nitrogen = smells like ammonia. Mix roughly 3:1 browns to greens by volume. Manure (10-15:1) mixed with leaves (50-80:1) creates a near-perfect blend.</span>
+                        </span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Phase 2 -->
+            <div class="phase">
+                <button class="phase-header" onclick="togglePhase(this)">
+                    <span>Phase 2: Building Your Pile 🛠️</span>
+                    <span class="phase-arrow">▼</span>
+                </button>
+                <div class="phase-body">
+                    <label class="checklist-item" for="h2_0">
+                        <input type="checkbox" id="h2_0" data-id="h2_0">
+                        <span class="check-emoji">🟤</span>
+                        <span class="check-content">
+                            <span class="check-title">Start with a brown base layer</span>
+                            <span class="check-desc">Begin with a <strong>6-inch layer</strong> of coarse browns like small branches, straw, or wood chips. This allows air to flow up from the bottom and catches any liquid that drains. Good drainage and airflow from the start prevent anaerobic pockets.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="h2_1">
+                        <input type="checkbox" id="h2_1" data-id="h2_1">
+                        <span class="check-emoji">🥞</span>
+                        <span class="check-content">
+                            <span class="check-title">Layer greens and browns alternately</span>
+                            <span class="check-desc">Add alternating <strong>3-4 inch layers</strong> of browns and 2-3 inch layers of greens. This isn't a lasagna you need to preserve — the goal is to mix them, so rough layering followed by gentle mixing on the go works great. Shred or chop large materials for faster breakdown.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="h2_2">
+                        <input type="checkbox" id="h2_2" data-id="h2_2">
+                        <span class="check-emoji">🌾</span>
+                        <span class="check-content">
+                            <span class="check-title">Add a starter or activator</span>
+                            <span class="check-desc">Kickstart the thermophilic population with a <strong>compost starter</strong>, a shovelful of finished compost, garden soil, or well-aged manure. This inoculates the pile with the right microbes. Without a starter, it takes longer for native bacteria to build up to thermophilic levels.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="h2_3">
+                        <input type="checkbox" id="h2_3" data-id="h2_3">
+                        <span class="check-emoji">💧</span>
+                        <span class="check-content">
+                            <span class="check-title">Check moisture — wrung sponge test</span>
+                            <span class="check-desc">Water each layer as you build. The pile should feel like a <strong>wrung-out sponge</strong> — damp but only yielding a drop or two when squeezed. Aim for <strong>40-60% moisture</strong>. Too dry = bacteria go dormant. Too wet = anaerobic conditions and bad smells.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="h2_4">
+                        <input type="checkbox" id="h2_4" data-id="h2_4">
+                        <span class="check-emoji">📏</span>
+                        <span class="check-content">
+                            <span class="check-title">Build the pile to 3-4 feet tall</span>
+                            <span class="check-desc">A properly sized pile is the #1 factor for reaching thermophilic temperatures. <strong>3 feet minimum, 4-5 feet maximum</strong>. Any smaller and heat escapes faster than bacteria can produce it. Any larger and the core won't get enough oxygen. Aim for a squat trapezoid shape — wide base, slightly narrower top.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="h2_5">
+                        <input type="checkbox" id="h2_5" data-id="h2_5">
+                        <span class="check-emoji">🎪</span>
+                        <span class="check-content">
+                            <span class="check-title">Cover the pile with a tarp</span>
+                            <span class="check-desc">Cover with a <a href="https://amzn.to/3rXmPGY" target="_blank">tarp</a> or thick layer of finished compost. This retains heat, prevents rain from saturating the pile, and slows moisture evaporation. Don't seal it tight — leave sides slightly open for airflow. Weigh down the tarp with bricks or logs.</span>
+                        </span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Phase 3 -->
+            <div class="phase">
+                <button class="phase-header" onclick="togglePhase(this)">
+                    <span>Phase 3: Temperature Management 🌡️</span>
+                    <span class="phase-arrow">▼</span>
+                </button>
+                <div class="phase-body">
+                    <label class="checklist-item" for="h3_0">
+                        <input type="checkbox" id="h3_0" data-id="h3_0">
+                        <span class="check-emoji">🌡️</span>
+                        <span class="check-content">
+                            <span class="check-title">Get a compost thermometer</span>
+                            <span class="check-desc">You need a <strong>thermometer with a 20-inch stem</strong> to read the core temperature. A standard kitchen thermometer won't reach deep enough. The core is where the action happens — surface temps can be 50°F cooler than the center at 18-24 inches deep.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="h3_1">
+                        <input type="checkbox" id="h3_1" data-id="h3_1">
+                        <span class="check-emoji">📊</span>
+                        <span class="check-content">
+                            <span class="check-title">Monitor temperature daily</span>
+                            <span class="check-desc">Take the core temperature at the same time each day. A healthy heating cycle goes: <strong>mesophilic (70-100°F) → thermophilic (130-160°F) → cooling → curing</strong>. Within 24-48 hours of building, you should see the temp begin to rise. Record your readings to spot trends!</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="h3_2">
+                        <input type="checkbox" id="h3_2" data-id="h3_2">
+                        <span class="check-emoji">🎯</span>
+                        <span class="check-content">
+                            <span class="check-title">Know your peak temperature targets</span>
+                            <span class="check-desc">The sweet spot is <strong>130-150°F</strong>. This is hot enough to kill most weed seeds and pathogens while keeping thermophilic bacteria active. Above <strong>160°F</strong>, beneficial microbes start dying off — the pile goes sterile. If it exceeds 160°F, turn immediately to cool it down and add moisture.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="h3_3">
+                        <input type="checkbox" id="h3_3" data-id="h3_3">
+                        <span class="check-emoji">🔄</span>
+                        <span class="check-content">
+                            <span class="check-title">Turn when temperature drops 10-15°F</span>
+                            <span class="check-desc">When the core temperature peaks and begins to fall by <strong>10-15°F</strong>, it's time to turn. This means the bacteria in the core have run out of oxygen or food. Turning brings fresh O₂ and undecomposed material from the outside into the hot core. Don't wait too long — the pile will start cooling.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="h3_4">
+                        <input type="checkbox" id="h3_4" data-id="h3_4">
+                        <span class="check-emoji">👃</span>
+                        <span class="check-content">
+                            <span class="check-title">Recognize signs the pile is working</span>
+                            <span class="check-desc">A properly working hot pile <strong>steams</strong> visibly on cold mornings, has an earthy (not rotten) smell, shrinks in volume noticeably each week, and is teeming with white actinomycetes bacteria (look like cobwebs). Steam rising when you turn is a great sign!</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="h3_5">
+                        <input type="checkbox" id="h3_5" data-id="h3_5">
+                        <span class="check-emoji">🫧</span>
+                        <span class="check-content">
+                            <span class="check-title">Adjust moisture when turning</span>
+                            <span class="check-desc">Each time you turn, check moisture throughout the pile. The center is often dry while the edges are wet. Add water with a hose sprayer if dry, or mix in dry browns if soggy. Consistent moisture <strong>throughout</strong> the pile is critical for even decomposition.</span>
+                        </span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Phase 4 -->
+            <div class="phase">
+                <button class="phase-header" onclick="togglePhase(this)">
+                    <span>Phase 4: Turning Schedule 🔄</span>
+                    <span class="phase-arrow">▼</span>
+                </button>
+                <div class="phase-body">
+                    <label class="checklist-item" for="h4_0">
+                        <input type="checkbox" id="h4_0" data-id="h4_0">
+                        <span class="check-emoji">⚡</span>
+                        <span class="check-content">
+                            <span class="check-title">Week 1-2: Turn every 2-3 days</span>
+                            <span class="check-desc">This the <strong>active thermophilic phase</strong>. Turn the pile every 2-3 days whenever the temperature drops. Each turn should bring outside material to the center and break up any clumps. The pile should reheat to 130-150°F within hours of each turn. This is peak composting speed!</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="h4_1">
+                        <input type="checkbox" id="h4_1" data-id="h4_1">
+                        <span class="check-emoji">🐢</span>
+                        <span class="check-content">
+                            <span class="check-title">Week 3-4: Slow down turning</span>
+                            <span class="check-desc">Around week 3-4, you'll notice the pile no longer reheats as vigorously after turning. The <strong>thermophilic phase is winding down</strong>. Turn every 4-7 days now. Most of the easy-to-digest material has been consumed, and the pile is transitioning from active decomposition to finishing.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="h4_2">
+                        <input type="checkbox" id="h4_2" data-id="h4_2">
+                        <span class="check-emoji">❄️</span>
+                        <span class="check-content">
+                            <span class="check-title">Week 5-6: Cooling phase</span>
+                            <span class="check-desc">The pile temperature will hover around <strong>70-90°F</strong> and won't rise after turning. Mesophilic organisms and fungi take over, finishing what the thermophiles started. Turn once a week to keep it aerated. Earthworms and sow bugs will move in as it cools.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="h4_3">
+                        <input type="checkbox" id="h4_3" data-id="h4_3">
+                        <span class="check-emoji">👁️</span>
+                        <span class="check-content">
+                            <span class="check-title">Check for uniform dark color</span>
+                            <span class="check-desc">By now the pile should look <strong>dark brown to black</strong> throughout, with only a few recognizable woody bits remaining. The volume will have shrunk by <strong>50-70%</strong> from the original pile size. If you still see large chunks of food or distinct layers, it needs more time.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="h4_4">
+                        <input type="checkbox" id="h4_4" data-id="h4_4">
+                        <span class="check-emoji">✅</span>
+                        <span class="check-content">
+                            <span class="check-title">Recognize signs it's ready to cure</span>
+                            <span class="check-desc">The pile no longer heats up after turning, smells like <strong>rich forest earth</strong> (not ammonia or sour), has a crumbly texture, and you can no longer identify most of the original ingredients. The temperature should be stable and close to ambient air temperature.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="h4_5">
+                        <input type="checkbox" id="h4_5" data-id="h4_5">
+                        <span class="check-emoji">🪱</span>
+                        <span class="check-content">
+                            <span class="check-title">Let beneficial critters move in</span>
+                            <span class="check-desc">As the pile cools below 90°F, <strong>red wigglers, sow bugs, millipedes, and fungi</strong> will naturally colonize it. These creatures help finish the decomposition process and indicate a healthy, mature compost ecosystem. If you see them, you're close to finished compost!</span>
+                        </span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Phase 5 -->
+            <div class="phase">
+                <button class="phase-header" onclick="togglePhase(this)">
+                    <span>Phase 5: Harvesting 🎉</span>
+                    <span class="phase-arrow">▼</span>
+                </button>
+                <div class="phase-body">
+                    <label class="checklist-item" for="h5_0">
+                        <input type="checkbox" id="h5_0" data-id="h5_0">
+                        <span class="check-emoji">⏰</span>
+                        <span class="check-content">
+                            <span class="check-title">Cure the compost for 2-4 weeks</span>
+                            <span class="check-desc">Even after the pile cools, the compost needs a <strong>curing period of 2-4 weeks</strong>. This allows microbial communities to stabilize and any residual ammonia or organic acids to break down. Let it sit undisturbed in a loosely covered pile. Cured compost has a sweet, earthy smell.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="h5_1">
+                        <input type="checkbox" id="h5_1" data-id="h5_1">
+                        <span class="check-emoji">🗂️</span>
+                        <span class="check-content">
+                            <span class="check-title">Screen the finished compost</span>
+                            <span class="check-desc">Use a <strong>1/2-inch or 3/8-inch hardware cloth screen</strong> to separate finished compost from larger chunks. Set the screen over a wheelbarrow and shovel compost through it. Large pieces that don't pass through go back into a new batch. Screened compost is ready for refined use.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="h5_2">
+                        <input type="checkbox" id="h5_2" data-id="h5_2">
+                        <span class="check-emoji">🫙</span>
+                        <span class="check-content">
+                            <span class="check-title">Store finished compost properly</span>
+                            <span class="check-desc">Keep finished compost in a <strong>breathable container</strong> — a cardboard box, fabric grow bag, or a bin with loose-fitting lid. Store in a cool, dry place out of direct sunlight. Use within 6 months for peak microbial activity. Don't let it dry out completely or get waterlogged.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="h5_3">
+                        <input type="checkbox" id="h5_3" data-id="h5_3">
+                        <span class="check-emoji">🌱</span>
+                        <span class="check-content">
+                            <span class="check-title">Apply compost to your garden</span>
+                            <span class="check-desc">Mix <strong>1-2 inches of compost</strong> into garden beds, add a handful to planting holes, or use as a <strong>1/2-inch top-dressing</strong> around perennials and trees. For potting mix, blend 1 part compost with 2 parts soil. Compost feeds soil life, improves water retention, and supplies slow-release nutrients.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="h5_4">
+                        <input type="checkbox" id="h5_4" data-id="h5_4">
+                        <span class="check-emoji">🍵</span>
+                        <span class="check-content">
+                            <span class="check-title">Brew compost tea</span>
+                            <span class="check-desc">Steep a handful of finished compost in a 5-gallon bucket of water for <strong>24-48 hours</strong> with an aquarium aerator. The result is compost tea — a liquid inoculant of beneficial microbes. Dilute 1:1 with water and apply as a soil drench or foliar spray. Use within 4 hours of brewing for best microbial life.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="h5_5">
+                        <input type="checkbox" id="h5_5" data-id="h5_5">
+                        <span class="check-emoji">🧹</span>
+                        <span class="check-content">
+                            <span class="check-title">Clean and store your equipment</span>
+                            <span class="check-desc">Rinse your thermometer, pitchfork, and screen with water and a stiff brush. Let everything dry before storing to prevent rust. A well-maintained <a href="https://amzn.to/3rXmPGY" target="_blank">tarp</a> can be folded and reused. Properly cared-for tools last for years of hot composting!</span>
+                        </span>
+                    </label>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- My Recommended Gear -->
+        <div id="gear-section">
+            <div class="section-title">My Recommended Gear</div>
+            <div id="gear-list"></div>
+        </div>
+
+        <footer>
+            <p class="footer-copy">&copy; 2026 World Composting</p>
+        </footer>
+    </div>
+
+    <script>
+        // Phase toggle
+        function togglePhase(btn) {
+            const phase = btn.closest('.phase');
+            phase.classList.toggle('active');
+        }
+
+        // Progress tracking
+        const TOTAL_ITEMS = 30;
+
+        function updateProgress() {
+            const checkboxes = document.querySelectorAll('.checklist-item input[type="checkbox"]');
+            let checked = 0;
+            checkboxes.forEach(cb => {
+                if (cb.checked) checked++;
+                const item = cb.closest('.checklist-item');
+                if (item) item.classList.toggle('completed', cb.checked);
+            });
+            const pct = Math.round((checked / TOTAL_ITEMS) * 100);
+            document.getElementById('progress-label').textContent = `${checked} of ${TOTAL_ITEMS} items completed`;
+            document.getElementById('progress-percent').textContent = `${pct}%`;
+            document.getElementById('progress-fill').style.width = `${pct}%`;
+        }
+
+        // localStorage persistence
+        function saveCheckbox(id, checked) {
+            if (checked) {
+                localStorage.setItem('hot_' + id, '1');
+            } else {
+                localStorage.removeItem('hot_' + id);
+            }
+        }
+
+        function loadCheckboxes() {
+            const checkboxes = document.querySelectorAll('.checklist-item input[type="checkbox"]');
+            checkboxes.forEach(cb => {
+                const saved = localStorage.getItem('hot_' + cb.dataset.id);
+                if (saved === '1') cb.checked = true;
+                cb.addEventListener('change', function() {
+                    saveCheckbox(this.dataset.id, this.checked);
+                    updateProgress();
+                });
+            });
+            updateProgress();
+        }
+
+        // Load gear products
+        async function loadGear() {
+            try {
+                const res = await fetch('src/data/products.json');
+                if (!res.ok) throw new Error('Could not load product data.');
+                const products = await res.json();
+
+                const categories = ['Worm Bin Items', 'Water Gear', 'Fly Control'];
+                const filtered = products.filter(p => categories.includes(p['Category']));
+
+                const list = document.getElementById('gear-list');
+                filtered.forEach(p => {
+                    const href = (p['Amazon Link'] !== 'NaN' && p['Amazon Link']) ||
+                                 (p['Other Link'] !== 'NaN' && p['Other Link']) || '#';
+                    const link = document.createElement('a');
+                    link.href = href;
+                    link.className = 'product-link';
+                    link.target = '_blank';
+                    link.innerHTML = '<span class="product-name">' + p['Item'] + '</span>';
+                    list.appendChild(link);
+                });
+            } catch (e) {
+                console.error('Error loading gear:', e);
+                document.getElementById('gear-list').innerHTML = '<p style="opacity:0.6;font-size:0.9rem;">Gear recommendations coming soon.</p>';
+            }
+        }
+
+        // Init
+        loadCheckboxes();
+        loadGear();
+    </script>
+</body>
+</html>

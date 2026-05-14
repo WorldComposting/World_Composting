@@ -1,0 +1,655 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Composting | Compost Tea Checklist</title>
+    <link rel="stylesheet" href="src/styles/theme.css">
+    <style>
+        #app {
+            max-width: 720px;
+            text-align: left;
+        }
+        .back-link {
+            display: inline-block;
+            font-size: 0.85rem;
+            color: var(--ocean-blue);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            transition: opacity 0.2s;
+        }
+        .back-link:hover { opacity: 0.7; }
+        .back-link:focus-visible {
+            outline: 2px solid var(--ocean-blue);
+            outline-offset: 2px;
+            border-radius: 2px;
+        }
+        header {
+            text-align: center;
+        }
+        .hero-intro {
+            background: white;
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: var(--card-shadow);
+            margin: 2rem 0;
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--text-dark);
+        }
+        .hero-intro strong { color: var(--forest-green); }
+
+        /* Progress Tracker */
+        #progress-wrapper {
+            background: white;
+            border-radius: 16px;
+            padding: 1.25rem 1.5rem;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 2rem;
+        }
+        #progress-text {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--forest-green);
+            margin-bottom: 0.6rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #progress-percent {
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: var(--ocean-blue);
+        }
+        #progress-bar {
+            height: 10px;
+            background: var(--sage-green);
+            border-radius: 99px;
+            overflow: hidden;
+        }
+        #progress-fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, var(--leaf-lime), var(--forest-green));
+            border-radius: 99px;
+            transition: width 0.4s ease;
+        }
+
+        /* Phase (Collapsible Section) */
+        .phase {
+            background: white;
+            border-radius: 16px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 1.25rem;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.04);
+            transition: box-shadow 0.3s ease;
+        }
+        .phase:hover {
+            box-shadow: 0 12px 25px -5px rgba(75, 54, 33, 0.12);
+        }
+        .phase-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 1.25rem 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: var(--forest-green);
+            text-align: left;
+            transition: background 0.2s ease;
+            gap: 0.75rem;
+        }
+        .phase-header:hover { background: rgba(45, 90, 39, 0.04); }
+        .phase-header:focus-visible {
+            outline: 2px solid var(--ocean-blue);
+            outline-offset: -2px;
+            border-radius: 16px 16px 0 0;
+        }
+        .phase-header .phase-arrow {
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+            color: var(--ocean-blue);
+            flex-shrink: 0;
+        }
+        .phase.active .phase-arrow { transform: rotate(180deg); }
+        .phase-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.3s ease;
+            padding: 0 1.5rem;
+        }
+        .phase.active .phase-body {
+            max-height: 5000px;
+            padding: 0 1.5rem 1.25rem;
+        }
+
+        /* Checklist Items */
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            cursor: pointer;
+            transition: opacity 0.2s ease;
+        }
+        .checklist-item:last-of-type { border-bottom: none; }
+        .checklist-item input[type="checkbox"] {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--forest-green);
+            border-radius: 5px;
+            flex-shrink: 0;
+            margin-top: 2px;
+            cursor: pointer;
+            position: relative;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .checklist-item input[type="checkbox"]:checked {
+            background: var(--forest-green);
+            border-color: var(--forest-green);
+        }
+        .checklist-item input[type="checkbox"]:checked::after {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 1px;
+            width: 6px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+        .checklist-item input[type="checkbox"]:focus-visible {
+            outline: 2px solid var(--ocean-blue);
+            outline-offset: 2px;
+        }
+        .check-emoji {
+            font-size: 1.3rem;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+        .check-content { flex: 1; min-width: 0; }
+        .check-title {
+            display: block;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            transition: color 0.2s;
+        }
+        .check-desc {
+            display: block;
+            font-size: 0.82rem;
+            color: #666;
+            margin-top: 2px;
+            line-height: 1.5;
+            transition: color 0.2s;
+        }
+        .check-desc a {
+            color: var(--ocean-blue);
+            text-decoration: underline;
+            font-weight: 500;
+        }
+        .check-desc a:hover { color: var(--forest-green); }
+        .checklist-item.completed .check-title {
+            color: #999;
+            text-decoration: line-through;
+        }
+        .checklist-item.completed .check-desc { color: #aaa; }
+        .checklist-item.completed .check-emoji { opacity: 0.5; }
+
+        /* Gear Section */
+        #gear-section {
+            margin-top: 3rem;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 4rem;
+            text-align: center;
+        }
+        .footer-copy {
+            opacity: 0.7;
+            font-size: 0.85rem;
+            color: var(--forest-green);
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            .phase-header { padding: 1rem 1.2rem; font-size: 0.95rem; }
+            .phase.active .phase-body { padding: 0 1.2rem 1rem; }
+            .checklist-item { gap: 0.6rem; padding: 0.6rem 0; }
+            .check-emoji { font-size: 1.1rem; }
+            .check-title { font-size: 0.9rem; }
+            .check-desc { font-size: 0.78rem; }
+            .hero-intro { padding: 1.2rem; font-size: 0.92rem; }
+            #progress-wrapper { padding: 1rem 1.2rem; }
+        }
+        @media (max-width: 375px) {
+            .phase-header { padding: 0.85rem 1rem; font-size: 0.88rem; }
+            .phase.active .phase-body { padding: 0 1rem 0.85rem; }
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <a href="index.html" class="back-link">← Back to Home</a>
+            <img src="src/assets/logo.png" alt="Logo" onerror="this.src='https://via.placeholder.com/110?text=WC'">
+            <h1>Compost Tea Checklist</h1>
+            <p class="subtitle">Brew liquid gold for your plants.</p>
+        </header>
+
+        <!-- Progress Tracker -->
+        <div id="progress-wrapper">
+            <div id="progress-text">
+                <span id="progress-label">0 of 30 items completed</span>
+                <span id="progress-percent">0%</span>
+            </div>
+            <div id="progress-bar"><div id="progress-fill"></div></div>
+        </div>
+
+        <!-- Hero Intro -->
+        <div class="hero-intro">
+            <p>☕ Compost tea is a liquid fertilizer brewed by steeping finished compost in aerated water — it awakens and multiplies the beneficial microbes from your compost, creating a living brew that feeds your soil and plants. Aerated compost tea (ACT) boosts soil biology, suppresses foliar diseases, and delivers nutrients in a form plants can use immediately. Whether you use worm castings or traditional compost, this checklist will guide you from setup to application.</p>
+        </div>
+
+        <!-- Checklist Phases -->
+        <div id="phases">
+
+            <!-- Phase 1 -->
+            <div class="phase active">
+                <button class="phase-header" onclick="togglePhase(this)">
+                    <span>Phase 1: Before You Start 📋</span>
+                    <span class="phase-arrow">▼</span>
+                </button>
+                <div class="phase-body">
+                    <label class="checklist-item" for="p1_0">
+                        <input type="checkbox" id="p1_0" data-id="p1_0">
+                        <span class="check-emoji">🧪</span>
+                        <span class="check-content">
+                            <span class="check-title">Understand compost tea vs worm castings tea</span>
+                            <span class="check-desc">Both are brewed the same way, but worm castings tea typically has a more diverse microbial population. Finished compost works well too — the key is using <strong>fully cured, aerobic compost</strong> with no foul odor. Avoid immature compost.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="p1_1">
+                        <input type="checkbox" id="p1_1" data-id="p1_1">
+                        <span class="check-emoji">⚙️</span>
+                        <span class="check-content">
+                            <span class="check-title">Gather your equipment</span>
+                            <span class="check-desc">You'll need a 5-gallon bucket, an aquarium air pump (at least 2 outlets), an air stone or diffuser, tubing, cheesecloth or a paint strainer bag, and dechlorinated water. A <a href="https://amzn.to/2Z0oa2v" target="_blank">5-gallon bucket with gamma seal lid</a> is great for brewing.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="p1_2">
+                        <input type="checkbox" id="p1_2" data-id="p1_2">
+                        <span class="check-emoji">🔍</span>
+                        <span class="check-content">
+                            <span class="check-title">Source quality compost or castings</span>
+                            <span class="check-desc">Use finished, earthy-smelling compost or worm castings from a trusted source. If using store-bought, check that it's not too old — beneficial microbes need to be alive. Your own <a href="beginner.html">worm bin</a> is the best source!</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="p1_3">
+                        <input type="checkbox" id="p1_3" data-id="p1_3">
+                        <span class="check-emoji">🌿</span>
+                        <span class="check-content">
+                            <span class="check-title">Choose your tea ingredients</span>
+                            <span class="check-desc">Base ingredients: compost or castings. Additives: unsulfured molasses (microbial food), kelp meal (trace minerals), or rock dust. Avoid synthetic fertilizers and chlorinated water. Molasses feeds bacteria; kelp feeds fungi.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="p1_4">
+                        <input type="checkbox" id="p1_4" data-id="p1_4">
+                        <span class="check-emoji">🦠</span>
+                        <span class="check-content">
+                            <span class="check-title">Understand beneficial microbes</span>
+                            <span class="check-desc">ACT grows bacteria, fungi, protozoa, and nematodes. Bacteria break down organic matter, fungi build soil structure, and protozoa release nutrients. A well-brewed tea has a complex food web that revitalizes tired soil.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="p1_5">
+                        <input type="checkbox" id="p1_5" data-id="p1_5">
+                        <span class="check-emoji">⚠️</span>
+                        <span class="check-content">
+                            <span class="check-title">Safety precautions</span>
+                            <span class="check-desc">Always brew with clean equipment to prevent anaerobic pathogens. Wear gloves when handling compost. Keep tea away from edible plant parts 24 hours before harvest. Never use tea brewed with animal manure on food crops.</span>
+                        </span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Phase 2 -->
+            <div class="phase">
+                <button class="phase-header" onclick="togglePhase(this)">
+                    <span>Phase 2: Setting Up Your Brewer 🛠️</span>
+                    <span class="phase-arrow">▼</span>
+                </button>
+                <div class="phase-body">
+                    <label class="checklist-item" for="p2_0">
+                        <input type="checkbox" id="p2_0" data-id="p2_0">
+                        <span class="check-emoji">🫧</span>
+                        <span class="check-content">
+                            <span class="check-title">Assemble air pump and airstone</span>
+                            <span class="check-desc">Place the air pump above the water level (to prevent backflow). Connect tubing to the pump and attach an air stone or diffuser at the bottom of the bucket. Use at least 2 outlets for 5 gallons — more aeration means better microbial growth.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="p2_1">
+                        <input type="checkbox" id="p2_1" data-id="p2_1">
+                        <span class="check-emoji">🧼</span>
+                        <span class="check-content">
+                            <span class="check-title">Clean your brewer</span>
+                            <span class="check-desc">Sanitize the bucket, tubing, and airstone with hot water and a splash of hydrogen peroxide or vinegar. Never use soap — residues can harm microbes. Rinse thoroughly before starting.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="p2_2">
+                        <input type="checkbox" id="p2_2" data-id="p2_2">
+                        <span class="check-emoji">👜</span>
+                        <span class="check-content">
+                            <span class="check-title">Add compost to the brew bag</span>
+                            <span class="check-desc">Fill a paint strainer bag or cheesecloth with 1 cup of finished compost or worm castings per gallon of water. Tie it securely and place it in the bucket. The bag keeps solids contained for easy cleanup.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="p2_3">
+                        <input type="checkbox" id="p2_3" data-id="p2_3">
+                        <span class="check-emoji">💧</span>
+                        <span class="check-content">
+                            <span class="check-title">Fill with dechlorinated water</span>
+                            <span class="check-desc">Fill the bucket with water that has been dechlorinated. The easiest method: let tap water sit in an open container for <strong>24 hours</strong> to allow chlorine to evaporate. Or use a aquarium dechlorinator drops for instant use. Chloramine won't evaporate — use a filter or dechlorinator.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="p2_4">
+                        <input type="checkbox" id="p2_4" data-id="p2_4">
+                        <span class="check-emoji">🏞️</span>
+                        <span class="check-content">
+                            <span class="check-title">Use rainwater or filtered water (optional)</span>
+                            <span class="check-desc">Rainwater or spring water is ideal — it's naturally chlorine-free and contains trace minerals. If using tap water, a carbon filter removes chlorine and chloramine. Distilled water lacks minerals microbes need.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="p2_5">
+                        <input type="checkbox" id="p2_5" data-id="p2_5">
+                        <span class="check-emoji">⚡</span>
+                        <span class="check-content">
+                            <span class="check-title">Start aeration</span>
+                            <span class="check-desc">Turn on the air pump and adjust to a steady, vigorous bubble stream. The water should look like a rolling boil. Aeration keeps the brew aerobic — without it, beneficial microbes die and harmful anaerobes take over.</span>
+                        </span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Phase 3 -->
+            <div class="phase">
+                <button class="phase-header" onclick="togglePhase(this)">
+                    <span>Phase 3: Feeding the Brew 🍯</span>
+                    <span class="phase-arrow">▼</span>
+                </button>
+                <div class="phase-body">
+                    <label class="checklist-item" for="p3_0">
+                        <input type="checkbox" id="p3_0" data-id="p3_0">
+                        <span class="check-emoji">🍯</span>
+                        <span class="check-content">
+                            <span class="check-title">Add molasses as microbial food</span>
+                            <span class="check-desc">Add 1 tablespoon of <strong>unsulfured blackstrap molasses</strong> per gallon of water. Molasses feeds bacteria — they consume the sugars and multiply rapidly. Avoid sulfured molasses, which can inhibit microbial growth.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="p3_1">
+                        <input type="checkbox" id="p3_1" data-id="p3_1">
+                        <span class="check-emoji">🌊</span>
+                        <span class="check-content">
+                            <span class="check-title">Add kelp meal or rock dust (optional)</span>
+                            <span class="check-desc">Add 1 teaspoon of kelp meal per gallon to feed fungi and add trace minerals. A pinch of basalt rock dust or azomite can further diversify the microbial community. Add these along with molasses at the start.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="p3_2">
+                        <input type="checkbox" id="p3_2" data-id="p3_2">
+                        <span class="check-emoji">⏰</span>
+                        <span class="check-content">
+                            <span class="check-title">Time your feeding correctly</span>
+                            <span class="check-desc">Add molasses at <strong>hour 2–4</strong> of brewing, not at the very start. This gives the microbes a chance to wake up and stabilise before their food source is added. Early feeding can cause a bacterial bloom that crashes before brewing finishes.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="p3_3">
+                        <input type="checkbox" id="p3_3" data-id="p3_3">
+                        <span class="check-emoji">🫧</span>
+                        <span class="check-content">
+                            <span class="check-title">Watch for foam</span>
+                            <span class="check-desc">A thin layer of foam on top of the brew is a <strong>good sign</strong> — it indicates active microbial growth and protein frothing. Thick, slimy foam or a bad smell means things are going anaerobic. If that happens, dump the batch and start fresh.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="p3_4">
+                        <input type="checkbox" id="p3_4" data-id="p3_4">
+                        <span class="check-emoji">⚗️</span>
+                        <span class="check-content">
+                            <span class="check-title">Avoid chemical additives</span>
+                            <span class="check-desc">Never add synthetic fertilizers, chemical wetting agents, or chlorine to your brew. These kill the very microbes you're trying to cultivate. Stick to natural ingredients — molasses, kelp, rock dust, fish hydrolysate (not fish emulsion).</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="p3_5">
+                        <input type="checkbox" id="p3_5" data-id="p3_5">
+                        <span class="check-emoji">🌡️</span>
+                        <span class="check-content">
+                            <span class="check-title">Monitor brew temperature</span>
+                            <span class="check-desc">The ideal temperature range is 65–75°F (18–24°C). Too cold and microbes grow slowly; too hot and beneficials die off. Brew in a shaded spot indoors or out of direct sunlight. Keep the pump running continuously.</span>
+                        </span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Phase 4 -->
+            <div class="phase">
+                <button class="phase-header" onclick="togglePhase(this)">
+                    <span>Phase 4: Brewing Timeline ⏳</span>
+                    <span class="phase-arrow">▼</span>
+                </button>
+                <div class="phase-body">
+                    <label class="checklist-item" for="p4_0">
+                        <input type="checkbox" id="p4_0" data-id="p4_0">
+                        <span class="check-emoji">⏱️</span>
+                        <span class="check-content">
+                            <span class="check-title">Stick to 24–36 hours brew time</span>
+                            <span class="check-desc">Aim for <strong>24–36 hours</strong> of continuous aeration. At 24 hours, microbial populations peak. Beyond 36 hours, the food supply depletes and the population begins to crash. Set a timer so you don't forget!</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="p4_1">
+                        <input type="checkbox" id="p4_1" data-id="p4_1">
+                        <span class="check-emoji">👃</span>
+                        <span class="check-content">
+                            <span class="check-title">Check for earthy smell</span>
+                            <span class="check-desc">A successful brew smells <strong>earthy and fresh</strong> — like a forest after rain. If it smells sour, rotten, or like ammonia, the brew went anaerobic. Do not apply anaerobic tea to plants — it can spread pathogens and harm roots.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="p4_2">
+                        <input type="checkbox" id="p4_2" data-id="p4_2">
+                        <span class="check-emoji">🫗</span>
+                        <span class="check-content">
+                            <span class="check-title">Strain the tea</span>
+                            <span class="check-desc">Remove the brew bag and squeeze out the liquid. For finer filtration, pour the tea through a mesh strainer or cheesecloth into your application container. This prevents clogging in sprayers. Add the spent compost back to your garden or pile.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="p4_3">
+                        <input type="checkbox" id="p4_3" data-id="p4_3">
+                        <span class="check-emoji">🔬</span>
+                        <span class="check-content">
+                            <span class="check-title">Check the appearance</span>
+                            <span class="check-desc">Finished tea should look like <strong>weak coffee</strong> — slightly cloudy with a light brown color. It should have small bubbles on the surface from active aeration. If it's dark and murky or has a thick film, something went wrong.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="p4_4">
+                        <input type="checkbox" id="p4_4" data-id="p4_4">
+                        <span class="check-emoji">⏳</span>
+                        <span class="check-content">
+                            <span class="check-title">Apply within 4–6 hours</span>
+                            <span class="check-desc">Compost tea is a <strong>living product</strong> — use it within 4–6 hours of brewing for maximum microbial activity. After that, oxygen depletion causes die-off. Do not store tea for later use; always brew fresh for best results.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="p4_5">
+                        <input type="checkbox" id="p4_5" data-id="p4_5">
+                        <span class="check-emoji">🧴</span>
+                        <span class="check-content">
+                            <span class="check-title">Test with a microscope (optional)</span>
+                            <span class="check-desc">Serious brewers use a microscope (100–400x) to check for active bacteria, fungi, and protozoa. You should see tiny organisms swimming — that's the living tea in action! It's not required but is a great way to verify quality.</span>
+                        </span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Phase 5 -->
+            <div class="phase">
+                <button class="phase-header" onclick="togglePhase(this)">
+                    <span>Phase 5: Application Methods 🌱</span>
+                    <span class="phase-arrow">▼</span>
+                </button>
+                <div class="phase-body">
+                    <label class="checklist-item" for="p5_0">
+                        <input type="checkbox" id="p5_0" data-id="p5_0">
+                        <span class="check-emoji">🌫️</span>
+                        <span class="check-content">
+                            <span class="check-title">Foliar spray at 1:10 dilution</span>
+                            <span class="check-desc">For foliar feeding, dilute tea with dechlorinated water at a <strong>1:10 ratio</strong> (1 part tea to 10 parts water). Strain through a fine filter to prevent clogging. Apply early morning or late evening using a <a href="https://amzn.to/2KWLpHk" target="_blank">Chapin sprayer</a> — stomates are open and UV is low.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="p5_1">
+                        <input type="checkbox" id="p5_1" data-id="p5_1">
+                        <span class="check-emoji">🪣</span>
+                        <span class="check-content">
+                            <span class="check-title">Soil drench at 1:5 dilution</span>
+                            <span class="check-desc">For soil application, dilute tea <strong>1:5</strong> (1 part tea to 5 parts water) and pour directly around the root zone of plants. This feeds the soil food web — earthworms and beneficial microbes will flourish. Use about 1 cup per small plant, 1 gallon per large shrub.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="p5_2">
+                        <input type="checkbox" id="p5_2" data-id="p5_2">
+                        <span class="check-emoji">📅</span>
+                        <span class="check-content">
+                            <span class="check-title">Set a frequency schedule</span>
+                            <span class="check-desc">Apply compost tea <strong>every 2–4 weeks</strong> during the growing season. For seedlings, use a weaker dilution (1:20) to avoid burning tender roots. For heavy feeders like tomatoes and peppers, weekly applications yield dramatic results.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="p5_3">
+                        <input type="checkbox" id="p5_3" data-id="p5_3">
+                        <span class="check-emoji">🧊</span>
+                        <span class="check-content">
+                            <span class="check-title">Storage tips for unused tea</span>
+                            <span class="check-desc">If you must store tea, keep it in an open container with continuous aeration for up to 24 hours. Refrigeration slows microbial activity but doesn't stop it. Never store in a sealed container — pressure builds and anaerobic conditions develop.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="p5_4">
+                        <input type="checkbox" id="p5_4" data-id="p5_4">
+                        <span class="check-emoji">🧹</span>
+                        <span class="check-content">
+                            <span class="check-title">Clean equipment after use</span>
+                            <span class="check-desc">Rinse the bucket, tubing, and airstone with hot water immediately after use. Soak in a dilute hydrogen peroxide solution (1 tbsp per gallon) for 30 minutes to kill lingering microbes. Let everything air dry before storing.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="p5_5">
+                        <input type="checkbox" id="p5_5" data-id="p5_5">
+                        <span class="check-emoji">📓</span>
+                        <span class="check-content">
+                            <span class="check-title">Track your brews</span>
+                            <span class="check-desc">Keep a simple brewing log — note the compost source, ingredients, brew time, temperature, smell, and how plants responded. Over time you'll dial in the perfect recipe for your garden. Healthy soil = healthy plants!</span>
+                        </span>
+                    </label>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- My Recommended Gear -->
+        <div id="gear-section">
+            <div class="section-title">My Recommended Gear</div>
+            <div id="gear-list"></div>
+        </div>
+
+        <footer>
+            <p class="footer-copy">&copy; 2026 World Composting</p>
+        </footer>
+    </div>
+
+    <script>
+        // Phase toggle
+        function togglePhase(btn) {
+            const phase = btn.closest('.phase');
+            phase.classList.toggle('active');
+        }
+
+        // Progress tracking
+        const TOTAL_ITEMS = 30;
+
+        function updateProgress() {
+            const checkboxes = document.querySelectorAll('.checklist-item input[type="checkbox"]');
+            let checked = 0;
+            checkboxes.forEach(cb => {
+                if (cb.checked) checked++;
+                const item = cb.closest('.checklist-item');
+                if (item) item.classList.toggle('completed', cb.checked);
+            });
+            const pct = Math.round((checked / TOTAL_ITEMS) * 100);
+            document.getElementById('progress-label').textContent = `${checked} of ${TOTAL_ITEMS} items completed`;
+            document.getElementById('progress-percent').textContent = `${pct}%`;
+            document.getElementById('progress-fill').style.width = `${pct}%`;
+        }
+
+        // localStorage persistence
+        function saveCheckbox(id, checked) {
+            if (checked) {
+                localStorage.setItem('tea_' + id, '1');
+            } else {
+                localStorage.removeItem('tea_' + id);
+            }
+        }
+
+        function loadCheckboxes() {
+            const checkboxes = document.querySelectorAll('.checklist-item input[type="checkbox"]');
+            checkboxes.forEach(cb => {
+                const saved = localStorage.getItem('tea_' + cb.dataset.id);
+                if (saved === '1') cb.checked = true;
+                cb.addEventListener('change', function() {
+                    saveCheckbox(this.dataset.id, this.checked);
+                    updateProgress();
+                });
+            });
+            updateProgress();
+        }
+
+        // Load gear products
+        async function loadGear() {
+            try {
+                const res = await fetch('src/data/products.json');
+                if (!res.ok) throw new Error('Could not load product data.');
+                const products = await res.json();
+
+                const categories = ['Water Gear', 'Bokashi Items'];
+                const filtered = products.filter(p => categories.includes(p['Category']));
+
+                const list = document.getElementById('gear-list');
+                if (filtered.length === 0) {
+                    list.innerHTML = '<p style="opacity:0.6;font-size:0.9rem;">Gear recommendations coming soon.</p>';
+                    return;
+                }
+                filtered.forEach(p => {
+                    const href = (p['Amazon Link'] !== 'NaN' && p['Amazon Link']) ||
+                                 (p['Other Link'] !== 'NaN' && p['Other Link']) || '#';
+                    const link = document.createElement('a');
+                    link.href = href;
+                    link.className = 'product-link';
+                    link.target = '_blank';
+                    link.innerHTML = '<span class="product-name">' + p['Item'] + '</span>';
+                    list.appendChild(link);
+                });
+            } catch (e) {
+                console.error('Error loading gear:', e);
+                document.getElementById('gear-list').innerHTML = '<p style="opacity:0.6;font-size:0.9rem;">Gear recommendations coming soon.</p>';
+            }
+        }
+
+        // Init
+        loadCheckboxes();
+        loadGear();
+    </script>
+</body>
+</html>

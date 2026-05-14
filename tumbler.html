@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Composting | Tumbler Composting Checklist</title>
+    <link rel="stylesheet" href="src/styles/theme.css">
+    <style>
+        #app {
+            max-width: 720px;
+            text-align: left;
+        }
+        .back-link {
+            display: inline-block;
+            font-size: 0.85rem;
+            color: var(--ocean-blue);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            transition: opacity 0.2s;
+        }
+        .back-link:hover { opacity: 0.7; }
+        .back-link:focus-visible {
+            outline: 2px solid var(--ocean-blue);
+            outline-offset: 2px;
+            border-radius: 2px;
+        }
+        header {
+            text-align: center;
+        }
+        .hero-intro {
+            background: white;
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: var(--card-shadow);
+            margin: 2rem 0;
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--text-dark);
+        }
+        .hero-intro strong { color: var(--forest-green); }
+
+        /* Progress Tracker */
+        #progress-wrapper {
+            background: white;
+            border-radius: 16px;
+            padding: 1.25rem 1.5rem;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 2rem;
+        }
+        #progress-text {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--forest-green);
+            margin-bottom: 0.6rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #progress-percent {
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: var(--ocean-blue);
+        }
+        #progress-bar {
+            height: 10px;
+            background: var(--sage-green);
+            border-radius: 99px;
+            overflow: hidden;
+        }
+        #progress-fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, var(--leaf-lime), var(--forest-green));
+            border-radius: 99px;
+            transition: width 0.4s ease;
+        }
+
+        /* Phase (Collapsible Section) */
+        .phase {
+            background: white;
+            border-radius: 16px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 1.25rem;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.04);
+            transition: box-shadow 0.3s ease;
+        }
+        .phase:hover {
+            box-shadow: 0 12px 25px -5px rgba(75, 54, 33, 0.12);
+        }
+        .phase-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 1.25rem 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: var(--forest-green);
+            text-align: left;
+            transition: background 0.2s ease;
+            gap: 0.75rem;
+        }
+        .phase-header:hover { background: rgba(45, 90, 39, 0.04); }
+        .phase-header:focus-visible {
+            outline: 2px solid var(--ocean-blue);
+            outline-offset: -2px;
+            border-radius: 16px 16px 0 0;
+        }
+        .phase-header .phase-arrow {
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+            color: var(--ocean-blue);
+            flex-shrink: 0;
+        }
+        .phase.active .phase-arrow { transform: rotate(180deg); }
+        .phase-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.3s ease;
+            padding: 0 1.5rem;
+        }
+        .phase.active .phase-body {
+            max-height: 5000px;
+            padding: 0 1.5rem 1.25rem;
+        }
+
+        /* Checklist Items */
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            cursor: pointer;
+            transition: opacity 0.2s ease;
+        }
+        .checklist-item:last-of-type { border-bottom: none; }
+        .checklist-item input[type="checkbox"] {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--forest-green);
+            border-radius: 5px;
+            flex-shrink: 0;
+            margin-top: 2px;
+            cursor: pointer;
+            position: relative;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .checklist-item input[type="checkbox"]:checked {
+            background: var(--forest-green);
+            border-color: var(--forest-green);
+        }
+        .checklist-item input[type="checkbox"]:checked::after {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 1px;
+            width: 6px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+        .checklist-item input[type="checkbox"]:focus-visible {
+            outline: 2px solid var(--ocean-blue);
+            outline-offset: 2px;
+        }
+        .check-emoji {
+            font-size: 1.3rem;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+        .check-content { flex: 1; min-width: 0; }
+        .check-title {
+            display: block;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            transition: color 0.2s;
+        }
+        .check-desc {
+            display: block;
+            font-size: 0.82rem;
+            color: #666;
+            margin-top: 2px;
+            line-height: 1.5;
+            transition: color 0.2s;
+        }
+        .check-desc a {
+            color: var(--ocean-blue);
+            text-decoration: underline;
+            font-weight: 500;
+        }
+        .check-desc a:hover { color: var(--forest-green); }
+        .checklist-item.completed .check-title {
+            color: #999;
+            text-decoration: line-through;
+        }
+        .checklist-item.completed .check-desc { color: #aaa; }
+        .checklist-item.completed .check-emoji { opacity: 0.5; }
+
+        /* Gear Section */
+        #gear-section {
+            margin-top: 3rem;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 4rem;
+            text-align: center;
+        }
+        .footer-copy {
+            opacity: 0.7;
+            font-size: 0.85rem;
+            color: var(--forest-green);
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            .phase-header { padding: 1rem 1.2rem; font-size: 0.95rem; }
+            .phase.active .phase-body { padding: 0 1.2rem 1rem; }
+            .checklist-item { gap: 0.6rem; padding: 0.6rem 0; }
+            .check-emoji { font-size: 1.1rem; }
+            .check-title { font-size: 0.9rem; }
+            .check-desc { font-size: 0.78rem; }
+            .hero-intro { padding: 1.2rem; font-size: 0.92rem; }
+            #progress-wrapper { padding: 1rem 1.2rem; }
+        }
+        @media (max-width: 375px) {
+            .phase-header { padding: 0.85rem 1rem; font-size: 0.88rem; }
+            .phase.active .phase-body { padding: 0 1rem 0.85rem; }
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <a href="index.html" class="back-link">← Back to Home</a>
+            <img src="src/assets/logo.png" alt="Logo" onerror="this.src='https://via.placeholder.com/110?text=WC'">
+            <h1>Tumbler Composting Checklist</h1>
+            <p class="subtitle">Spin your scraps into compost in weeks.</p>
+        </header>
+
+        <!-- Progress Tracker -->
+        <div id="progress-wrapper">
+            <div id="progress-text">
+                <span id="progress-label">0 of 30 items completed</span>
+                <span id="progress-percent">0%</span>
+            </div>
+            <div id="progress-bar"><div id="progress-fill"></div></div>
+        </div>
+
+        <!-- Hero Intro -->
+        <div class="hero-intro">
+            <p>Ready to spin your way to rich compost? 🌀 Tumbler composting is the perfect solution for small yards, patios, and apartments. By simply giving your composter a few spins every few days, you aerate the pile naturally — no pitchfork required. With a dual-chamber tumbler you can load fresh scraps on one side while the other side finishes breaking down. Expect finished compost in as little as <strong>3–8 weeks</strong> when you manage the right balance of greens, browns, and moisture!</p>
+        </div>
+
+        <!-- Checklist Phases -->
+        <div id="phases">
+
+            <!-- Phase 1: Before You Start -->
+            <div class="phase active">
+                <button class="phase-header" onclick="togglePhase(this)">
+                    <span>Phase 1: Before You Start 🎯</span>
+                    <span class="phase-arrow">▼</span>
+                </button>
+                <div class="phase-body">
+                    <label class="checklist-item" for="t_p1_0">
+                        <input type="checkbox" id="t_p1_0" data-id="t_p1_0">
+                        <span class="check-emoji">🔄</span>
+                        <span class="check-content">
+                            <span class="check-title">Choose dual chamber vs single tumbler</span>
+                            <span class="check-desc">Dual-chamber tumblers let you load fresh scraps in one side while the other finishes — continuous composting. Singles are simpler but require you to empty before reloading. <a href="https://amzn.to/3R3qYtQ" target="_blank">Dual-chamber tumblers</a> are worth the upgrade.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="t_p1_1">
+                        <input type="checkbox" id="t_p1_1" data-id="t_p1_1">
+                        <span class="check-emoji">📍</span>
+                        <span class="check-content">
+                            <span class="check-title">Pick the right location</span>
+                            <span class="check-desc">Place your tumbler on level ground in a spot with partial sun — heat accelerates breakdown. Make sure you have clearance to spin the drum freely. Near the kitchen door is ideal for convenience.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="t_p1_2">
+                        <input type="checkbox" id="t_p1_2" data-id="t_p1_2">
+                        <span class="check-emoji">🧤</span>
+                        <span class="check-content">
+                            <span class="check-title">Gather your materials</span>
+                            <span class="check-desc">Stock up on browns (shredded cardboard, dry leaves, paper), greens (kitchen scraps, grass clippings), a <a href="https://amzn.to/2KWLpHk" target="_blank">spray bottle or small sprayer</a> for moisture, and <a href="https://amzn.to/3m21vfp" target="_blank">waterproof gloves</a> for handling.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="t_p1_3">
+                        <input type="checkbox" id="t_p1_3" data-id="t_p1_3">
+                        <span class="check-emoji">🧪</span>
+                        <span class="check-content">
+                            <span class="check-title">Learn what goes in a tumbler</span>
+                            <span class="check-desc">Fruit &amp; veggie scraps, coffee grounds, eggshells, grass clippings, and shredded paper are perfect. Avoid meat, dairy, bones, and large woody branches — they won't break down fast enough.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="t_p1_4">
+                        <input type="checkbox" id="t_p1_4" data-id="t_p1_4">
+                        <span class="check-emoji">⚖️</span>
+                        <span class="check-content">
+                            <span class="check-title">Understand the 30:1 C:N ratio</span>
+                            <span class="check-desc">Tumblers need roughly 30 parts carbon (browns) to 1 part nitrogen (greens) by volume. Too much green = smelly; too much brown = slow. Aim for about 2/3 browns to 1/3 greens.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="t_p1_5">
+                        <input type="checkbox" id="t_p1_5" data-id="t_p1_5">
+                        <span class="check-emoji">📆</span>
+                        <span class="check-content">
+                            <span class="check-title">Plan your loading schedule</span>
+                            <span class="check-desc">Don't fill the tumbler all at once — add scraps gradually over a week or two until the drum is 2/3 to 3/4 full, then stop adding and let it cook while you start the other chamber.</span>
+                        </span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Phase 2: Loading Your Tumbler -->
+            <div class="phase">
+                <button class="phase-header" onclick="togglePhase(this)">
+                    <span>Phase 2: Loading Your Tumbler 📦</span>
+                    <span class="phase-arrow">▼</span>
+                </button>
+                <div class="phase-body">
+                    <label class="checklist-item" for="t_p2_0">
+                        <input type="checkbox" id="t_p2_0" data-id="t_p2_0">
+                        <span class="check-emoji">✂️</span>
+                        <span class="check-content">
+                            <span class="check-title">Shred materials into small pieces</span>
+                            <span class="check-desc">Cut or shred everything into 1–2 inch pieces. Smaller surface area means faster decomposition. Use a <a href="https://amzn.to/39169FP" target="_blank">utility knife</a> or <a href="https://amzn.to/4aVcRhy" target="_blank">paper shredder</a> for cardboard and paper.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="t_p2_1">
+                        <input type="checkbox" id="t_p2_1" data-id="t_p2_1">
+                        <span class="check-emoji">🥬</span>
+                        <span class="check-content">
+                            <span class="check-title">Layer greens and browns</span>
+                            <span class="check-desc">Start with a layer of browns at the bottom, then alternate greens and browns as you fill. This creates the perfect environment for microbes to thrive and prevents matting.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="t_p2_2">
+                        <input type="checkbox" id="t_p2_2" data-id="t_p2_2">
+                        <span class="check-emoji">🌱</span>
+                        <span class="check-content">
+                            <span class="check-title">Add a scoop of starter compost</span>
+                            <span class="check-desc">Kickstart the microbial population by adding a handful of finished compost, garden soil, or a commercial compost starter. This inoculates the pile with the good bugs that break things down.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="t_p2_3">
+                        <input type="checkbox" id="t_p2_3" data-id="t_p2_3">
+                        <span class="check-emoji">💧</span>
+                        <span class="check-content">
+                            <span class="check-title">Check moisture as you fill</span>
+                            <span class="check-desc">Each layer should feel like a wrung-out sponge — damp but not dripping. Mist with a sprayer as you go if ingredients seem dry. Tumblers dry out faster than piles on the ground.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="t_p2_4">
+                        <input type="checkbox" id="t_p2_4" data-id="t_p2_4">
+                        <span class="check-emoji">📐</span>
+                        <span class="check-content">
+                            <span class="check-title">Fill to 2/3 to 3/4 capacity</span>
+                            <span class="check-desc">Don't overfill — leave air space for tumbling. The contents need room to tumble and mix. Overfilling leads to clumping and poor aeration. 2/3 full is the sweet spot.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="t_p2_5">
+                        <input type="checkbox" id="t_p2_5" data-id="t_p2_5">
+                        <span class="check-emoji">🔄</span>
+                        <span class="check-content">
+                            <span class="check-title">Give it an initial tumble</span>
+                            <span class="check-desc">After filling, give the drum 5–10 full rotations to thoroughly mix everything. This distributes moisture, microbes, and oxygen evenly throughout the batch.</span>
+                        </span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Phase 3: Turning Schedule -->
+            <div class="phase">
+                <button class="phase-header" onclick="togglePhase(this)">
+                    <span>Phase 3: Turning Schedule ⏰</span>
+                    <span class="phase-arrow">▼</span>
+                </button>
+                <div class="phase-body">
+                    <label class="checklist-item" for="t_p3_0">
+                        <input type="checkbox" id="t_p3_0" data-id="t_p3_0">
+                        <span class="check-emoji">🏃</span>
+                        <span class="check-content">
+                            <span class="check-title">Turn every 1–2 days initially</span>
+                            <span class="check-desc">In the first two weeks, spin the tumbler every day or two. Frequent turning keeps oxygen flowing and heats up the pile quickly. Set a daily reminder on your phone!</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="t_p3_1">
+                        <input type="checkbox" id="t_p3_1" data-id="t_p3_1">
+                        <span class="check-emoji">🐢</span>
+                        <span class="check-content">
+                            <span class="check-title">Slow to every 3–4 days after peak heat</span>
+                            <span class="check-desc">Once the pile stops heating up (2–3 weeks in), reduce turning to every 3–4 days. The microbes have done their main work — now it's curing time.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="t_p3_2">
+                        <input type="checkbox" id="t_p3_2" data-id="t_p3_2">
+                        <span class="check-emoji">✅</span>
+                        <span class="check-content">
+                            <span class="check-title">Recognize signs of good breakdown</span>
+                            <span class="check-desc">You should see steam on cool mornings, smell a rich earthy odor, and notice the volume shrinking by about half. The contents will look darker and less recognizable each week.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="t_p3_3">
+                        <input type="checkbox" id="t_p3_3" data-id="t_p3_3">
+                        <span class="check-emoji">💦</span>
+                        <span class="check-content">
+                            <span class="check-title">Adjust moisture during turns</span>
+                            <span class="check-desc">If the contents feel dry when you spin, add a splash of water. If they're soggy or clumpy, add dry browns (shredded paper or leaves). Tumblers lose moisture fast — check every time.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="t_p3_4">
+                        <input type="checkbox" id="t_p3_4" data-id="t_p3_4">
+                        <span class="check-emoji">⚖️</span>
+                        <span class="check-content">
+                            <span class="check-title">Re-balance ingredients as needed</span>
+                            <span class="check-desc">Smell ammonia? Add more browns. Pile not heating? Add more greens or a splash of water. Too wet? Toss in shredded cardboard. Listen to what your tumbler tells you.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="t_p3_5">
+                        <input type="checkbox" id="t_p3_5" data-id="t_p3_5">
+                        <span class="check-emoji">🌡️</span>
+                        <span class="check-content">
+                            <span class="check-title">Watch for heat</span>
+                            <span class="check-desc">A well-managed tumbler should reach 110–140°F (43–60°C) in the core within a week. Heat means the microbes are working hard. If it stays cool, increase greens or moisture.</span>
+                        </span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Phase 4: Monitoring Progress -->
+            <div class="phase">
+                <button class="phase-header" onclick="togglePhase(this)">
+                    <span>Phase 4: Monitoring Progress 🔍</span>
+                    <span class="phase-arrow">▼</span>
+                </button>
+                <div class="phase-body">
+                    <label class="checklist-item" for="t_p4_0">
+                        <input type="checkbox" id="t_p4_0" data-id="t_p4_0">
+                        <span class="check-emoji">👁️</span>
+                        <span class="check-content">
+                            <span class="check-title">Check texture changes weekly</span>
+                            <span class="check-desc">Over 3–8 weeks the contents will transform from recognizable scraps into a dark, crumbly, soil-like material. It should feel spongy and smell like a forest floor when ready.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="t_p4_1">
+                        <input type="checkbox" id="t_p4_1" data-id="t_p4_1">
+                        <span class="check-emoji">👃</span>
+                        <span class="check-content">
+                            <span class="check-title">Smell should be earthy, not foul</span>
+                            <span class="check-desc">A healthy tumbler smells like damp earth or mushrooms. A rotten egg or ammonia smell means too much green or not enough oxygen — add browns and spin more frequently.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="t_p4_2">
+                        <input type="checkbox" id="t_p4_2" data-id="t_p4_2">
+                        <span class="check-emoji">✅</span>
+                        <span class="check-content">
+                            <span class="check-title">Know when it's ready</span>
+                            <span class="check-desc">Finished compost is dark brown, crumbly, and smells earthy. You shouldn't be able to identify the original ingredients. If it's still recognizable, give it more time and keep turning.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="t_p4_3">
+                        <input type="checkbox" id="t_p4_3" data-id="t_p4_3">
+                        <span class="check-emoji">🚫</span>
+                        <span class="check-content">
+                            <span class="check-title">Avoid overfilling each chamber</span>
+                            <span class="check-desc">Never pack a chamber more than 3/4 full — the contents need room to tumble freely. Overpacking creates anaerobic pockets that smell bad and slow down decomposition.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="t_p4_4">
+                        <input type="checkbox" id="t_p4_4" data-id="t_p4_4">
+                        <span class="check-emoji">🐜</span>
+                        <span class="check-content">
+                            <span class="check-title">Prevent pests</span>
+                            <span class="check-desc">Tumblers are naturally pest-resistant thanks to the sealed drum, but ants and flies can still be a problem. Keep the area clean, use <a href="https://amzn.to/39eLIFA" target="_blank">sticky traps</a> if needed, and always bury fresh scraps under browns.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="t_p4_5">
+                        <input type="checkbox" id="t_p4_5" data-id="t_p4_5">
+                        <span class="check-emoji">🌤️</span>
+                        <span class="check-content">
+                            <span class="check-title">Adjust for seasons</span>
+                            <span class="check-desc">In summer, tumblers heat up fast — monitor moisture closely and consider partial shade. In winter, microbial activity slows down significantly. Bring indoors if possible or accept the winter slowdown.</span>
+                        </span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Phase 5: Harvesting -->
+            <div class="phase">
+                <button class="phase-header" onclick="togglePhase(this)">
+                    <span>Phase 5: Harvesting 🎉</span>
+                    <span class="phase-arrow">▼</span>
+                </button>
+                <div class="phase-body">
+                    <label class="checklist-item" for="t_p5_0">
+                        <input type="checkbox" id="t_p5_0" data-id="t_p5_0">
+                        <span class="check-emoji">🟤</span>
+                        <span class="check-content">
+                            <span class="check-title">Harvest when dark, crumbly, and earthy</span>
+                            <span class="check-desc">Finished compost looks like dark chocolate cake crumbs and smells like a forest floor. Stop turning and let it cure for 3–5 days before harvesting.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="t_p5_1">
+                        <input type="checkbox" id="t_p5_1" data-id="t_p5_1">
+                        <span class="check-emoji">🔍</span>
+                        <span class="check-content">
+                            <span class="check-title">Screen if you want a fine finish</span>
+                            <span class="check-desc">Use a 1/2-inch hardware cloth screen or simple DIY frame to sift out larger chunks. Return the oversize pieces to the active chamber for another round.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="t_p5_2">
+                        <input type="checkbox" id="t_p5_2" data-id="t_p5_2">
+                        <span class="check-emoji">📦</span>
+                        <span class="check-content">
+                            <span class="check-title">Transfer to second chamber</span>
+                            <span class="check-desc">If using a dual-chamber tumbler, swing the finished side down to empty and start loading the other chamber. This continuous cycle gives you a steady supply of compost.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="t_p5_3">
+                        <input type="checkbox" id="t_p5_3" data-id="t_p5_3">
+                        <span class="check-emoji">🫙</span>
+                        <span class="check-content">
+                            <span class="check-title">Store finished compost properly</span>
+                            <span class="check-desc">Keep compost in a breathable container (cardboard box, fabric bag, or bin with air holes) and use within 6 months for the best microbial activity and nutrient content.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="t_p5_4">
+                        <input type="checkbox" id="t_p5_4" data-id="t_p5_4">
+                        <span class="check-emoji">🌱</span>
+                        <span class="check-content">
+                            <span class="check-title">Apply to your garden</span>
+                            <span class="check-desc">Mix into garden beds at a 1:3 ratio, use as a 2-inch top-dress around perennials, or brew compost tea. Tumbler compost is nutrient-rich and ready to feed your plants.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="t_p5_5">
+                        <input type="checkbox" id="t_p5_5" data-id="t_p5_5">
+                        <span class="check-emoji">🧼</span>
+                        <span class="check-content">
+                            <span class="check-title">Clean your tumbler between batches</span>
+                            <span class="check-desc">After emptying a chamber, rinse the drum with a hose and scrub off any caked-on material. A clean start prevents mold and keeps your next batch healthy.</span>
+                        </span>
+                    </label>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- My Recommended Gear -->
+        <div id="gear-section">
+            <div class="section-title">My Recommended Gear</div>
+            <div id="gear-list"></div>
+        </div>
+
+        <footer>
+            <p class="footer-copy">&copy; 2026 World Composting</p>
+        </footer>
+    </div>
+
+    <script>
+        // Phase toggle
+        function togglePhase(btn) {
+            const phase = btn.closest('.phase');
+            phase.classList.toggle('active');
+        }
+
+        // Progress tracking
+        const TOTAL_ITEMS = 30;
+
+        function updateProgress() {
+            const checkboxes = document.querySelectorAll('.checklist-item input[type="checkbox"]');
+            let checked = 0;
+            checkboxes.forEach(cb => {
+                if (cb.checked) checked++;
+                const item = cb.closest('.checklist-item');
+                if (item) item.classList.toggle('completed', cb.checked);
+            });
+            const pct = Math.round((checked / TOTAL_ITEMS) * 100);
+            document.getElementById('progress-label').textContent = `${checked} of ${TOTAL_ITEMS} items completed`;
+            document.getElementById('progress-percent').textContent = `${pct}%`;
+            document.getElementById('progress-fill').style.width = `${pct}%`;
+        }
+
+        // localStorage persistence
+        function saveCheckbox(id, checked) {
+            if (checked) {
+                localStorage.setItem('tumbler_' + id, '1');
+            } else {
+                localStorage.removeItem('tumbler_' + id);
+            }
+        }
+
+        function loadCheckboxes() {
+            const checkboxes = document.querySelectorAll('.checklist-item input[type="checkbox"]');
+            checkboxes.forEach(cb => {
+                const saved = localStorage.getItem('tumbler_' + cb.dataset.id);
+                if (saved === '1') cb.checked = true;
+                cb.addEventListener('change', function() {
+                    saveCheckbox(this.dataset.id, this.checked);
+                    updateProgress();
+                });
+            });
+            updateProgress();
+        }
+
+        // Load gear products
+        async function loadGear() {
+            try {
+                const res = await fetch('src/data/products.json');
+                if (!res.ok) throw new Error('Could not load product data.');
+                const products = await res.json();
+
+                const categories = ['Worm Bin Items', 'Fly Control', 'Water Gear', 'Paper', 'Worm Bag'];
+                const filtered = products.filter(p => categories.includes(p['Category']));
+
+                const list = document.getElementById('gear-list');
+                filtered.forEach(p => {
+                    const href = (p['Amazon Link'] !== 'NaN' && p['Amazon Link']) ||
+                                 (p['Other Link'] !== 'NaN' && p['Other Link']) || '#';
+                    const link = document.createElement('a');
+                    link.href = href;
+                    link.className = 'product-link';
+                    link.target = '_blank';
+                    link.innerHTML = '<span class="product-name">' + p['Item'] + '</span>';
+                    list.appendChild(link);
+                });
+            } catch (e) {
+                console.error('Error loading gear:', e);
+                document.getElementById('gear-list').innerHTML = '<p style="opacity:0.6;font-size:0.9rem;">Gear recommendations coming soon.</p>';
+            }
+        }
+
+        // Init
+        loadCheckboxes();
+        loadGear();
+    </script>
+</body>
+</html>

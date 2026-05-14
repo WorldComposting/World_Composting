@@ -1,0 +1,651 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Composting | Lasagna Composting Checklist</title>
+    <link rel="stylesheet" href="src/styles/theme.css">
+    <style>
+        #app {
+            max-width: 720px;
+            text-align: left;
+        }
+        .back-link {
+            display: inline-block;
+            font-size: 0.85rem;
+            color: var(--ocean-blue);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            transition: opacity 0.2s;
+        }
+        .back-link:hover { opacity: 0.7; }
+        .back-link:focus-visible {
+            outline: 2px solid var(--ocean-blue);
+            outline-offset: 2px;
+            border-radius: 2px;
+        }
+        header {
+            text-align: center;
+        }
+        .hero-intro {
+            background: white;
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: var(--card-shadow);
+            margin: 2rem 0;
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--text-dark);
+        }
+        .hero-intro strong { color: var(--forest-green); }
+
+        /* Progress Tracker */
+        #progress-wrapper {
+            background: white;
+            border-radius: 16px;
+            padding: 1.25rem 1.5rem;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 2rem;
+        }
+        #progress-text {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--forest-green);
+            margin-bottom: 0.6rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #progress-percent {
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: var(--ocean-blue);
+        }
+        #progress-bar {
+            height: 10px;
+            background: var(--sage-green);
+            border-radius: 99px;
+            overflow: hidden;
+        }
+        #progress-fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, var(--leaf-lime), var(--forest-green));
+            border-radius: 99px;
+            transition: width 0.4s ease;
+        }
+
+        /* Phase (Collapsible Section) */
+        .phase {
+            background: white;
+            border-radius: 16px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 1.25rem;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.04);
+            transition: box-shadow 0.3s ease;
+        }
+        .phase:hover {
+            box-shadow: 0 12px 25px -5px rgba(75, 54, 33, 0.12);
+        }
+        .phase-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 1.25rem 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: var(--forest-green);
+            text-align: left;
+            transition: background 0.2s ease;
+            gap: 0.75rem;
+        }
+        .phase-header:hover { background: rgba(45, 90, 39, 0.04); }
+        .phase-header:focus-visible {
+            outline: 2px solid var(--ocean-blue);
+            outline-offset: -2px;
+            border-radius: 16px 16px 0 0;
+        }
+        .phase-header .phase-arrow {
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+            color: var(--ocean-blue);
+            flex-shrink: 0;
+        }
+        .phase.active .phase-arrow { transform: rotate(180deg); }
+        .phase-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.3s ease;
+            padding: 0 1.5rem;
+        }
+        .phase.active .phase-body {
+            max-height: 5000px;
+            padding: 0 1.5rem 1.25rem;
+        }
+
+        /* Checklist Items */
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            cursor: pointer;
+            transition: opacity 0.2s ease;
+        }
+        .checklist-item:last-of-type { border-bottom: none; }
+        .checklist-item input[type="checkbox"] {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--forest-green);
+            border-radius: 5px;
+            flex-shrink: 0;
+            margin-top: 2px;
+            cursor: pointer;
+            position: relative;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .checklist-item input[type="checkbox"]:checked {
+            background: var(--forest-green);
+            border-color: var(--forest-green);
+        }
+        .checklist-item input[type="checkbox"]:checked::after {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 1px;
+            width: 6px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+        .checklist-item input[type="checkbox"]:focus-visible {
+            outline: 2px solid var(--ocean-blue);
+            outline-offset: 2px;
+        }
+        .check-emoji {
+            font-size: 1.3rem;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+        .check-content { flex: 1; min-width: 0; }
+        .check-title {
+            display: block;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            transition: color 0.2s;
+        }
+        .check-desc {
+            display: block;
+            font-size: 0.82rem;
+            color: #666;
+            margin-top: 2px;
+            line-height: 1.5;
+            transition: color 0.2s;
+        }
+        .check-desc a {
+            color: var(--ocean-blue);
+            text-decoration: underline;
+            font-weight: 500;
+        }
+        .check-desc a:hover { color: var(--forest-green); }
+        .checklist-item.completed .check-title {
+            color: #999;
+            text-decoration: line-through;
+        }
+        .checklist-item.completed .check-desc { color: #aaa; }
+        .checklist-item.completed .check-emoji { opacity: 0.5; }
+
+        /* Gear Section */
+        #gear-section {
+            margin-top: 3rem;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 4rem;
+            text-align: center;
+        }
+        .footer-copy {
+            opacity: 0.7;
+            font-size: 0.85rem;
+            color: var(--forest-green);
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            .phase-header { padding: 1rem 1.2rem; font-size: 0.95rem; }
+            .phase.active .phase-body { padding: 0 1.2rem 1rem; }
+            .checklist-item { gap: 0.6rem; padding: 0.6rem 0; }
+            .check-emoji { font-size: 1.1rem; }
+            .check-title { font-size: 0.9rem; }
+            .check-desc { font-size: 0.78rem; }
+            .hero-intro { padding: 1.2rem; font-size: 0.92rem; }
+            #progress-wrapper { padding: 1rem 1.2rem; }
+        }
+        @media (max-width: 375px) {
+            .phase-header { padding: 0.85rem 1rem; font-size: 0.88rem; }
+            .phase.active .phase-body { padding: 0 1rem 0.85rem; }
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <a href="index.html" class="back-link">← Back to Home</a>
+            <img src="src/assets/logo.png" alt="Logo" onerror="this.src='https://via.placeholder.com/110?text=WC'">
+            <h1>Lasagna Composting Checklist</h1>
+            <p class="subtitle">Build no-dig garden beds from the ground up.</p>
+        </header>
+
+        <!-- Progress Tracker -->
+        <div id="progress-wrapper">
+            <div id="progress-text">
+                <span id="progress-label">0 of 30 items completed</span>
+                <span id="progress-percent">0%</span>
+            </div>
+            <div id="progress-bar"><div id="progress-fill"></div></div>
+        </div>
+
+        <!-- Hero Intro -->
+        <div class="hero-intro">
+            <p>Sheet mulching — also called <strong>lasagna composting</strong> — builds rich garden beds right where you want them. No tilling, no digging. Just layer organic materials like cardboard, compost, straw, and leaves directly on top of grass or soil. Worms and microbes do the work of turning it all into dark, crumbly earth. Build it in fall or early spring, let the layers break down, and <strong>plant directly into pure compost</strong> when it's ready.</p>
+        </div>
+
+        <!-- Checklist Phases -->
+        <div id="phases">
+
+            <!-- Phase 1 -->
+            <div class="phase active">
+                <button class="phase-header" onclick="togglePhase(this)">
+                    <span>Phase 1: Before You Start 🗺️</span>
+                    <span class="phase-arrow">▼</span>
+                </button>
+                <div class="phase-body">
+                    <label class="checklist-item" for="p1_0">
+                        <input type="checkbox" id="p1_0" data-id="p1_0">
+                        <span class="check-emoji">📖</span>
+                        <span class="check-content">
+                            <span class="check-title">Understand sheet mulching</span>
+                            <span class="check-desc">Sheet mulching (lasagna composting) smothers grass with cardboard, then builds alternating layers of carbon-rich browns and nitrogen-rich greens on top. Microbes, worms, and fungi break it all down into garden soil — no tilling required.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="p1_1">
+                        <input type="checkbox" id="p1_1" data-id="p1_1">
+                        <span class="check-emoji">📍</span>
+                        <span class="check-content">
+                            <span class="check-title">Choose your site</span>
+                            <span class="check-desc">Pick a spot with at least 6–8 hours of sun for most vegetables. Good drainage matters — avoid low spots where water pools. You can build directly on grass, lawn, or bare soil.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="p1_2">
+                        <input type="checkbox" id="p1_2" data-id="p1_2">
+                        <span class="check-emoji">📅</span>
+                        <span class="check-content">
+                            <span class="check-title">Decide timing — fall or spring</span>
+                            <span class="check-desc">Fall is ideal because layers break down over winter so beds are ready for spring planting. Spring builds work too — use more finished compost on top so you can plant sooner. Either way, the bed needs <strong>at least 4–6 weeks</strong> to begin settling.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="p1_3">
+                        <input type="checkbox" id="p1_3" data-id="p1_3">
+                        <span class="check-emoji">📋</span>
+                        <span class="check-content">
+                            <span class="check-title">Gather materials list</span>
+                            <span class="check-desc">You'll need corrugated cardboard (remove tape &amp; labels), finished compost, straw or dried leaves, nitrogen sources (grass clippings, manure, green trimmings), and a <a href="https://amzn.to/2KWLpHk" target="_blank">garden sprayer</a> for soaking each layer. Lay it all out before you start.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="p1_4">
+                        <input type="checkbox" id="p1_4" data-id="p1_4">
+                        <span class="check-emoji">📏</span>
+                        <span class="check-content">
+                            <span class="check-title">Mark bed boundaries</span>
+                            <span class="check-desc">Use string, stakes, or a hose to outline your bed. Standard sizes: 3–4 ft wide (so you can reach the center) and as long as you like. Make sure paths around the bed are wide enough for a wheelbarrow.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="p1_5">
+                        <input type="checkbox" id="p1_5" data-id="p1_5">
+                        <span class="check-emoji">📦</span>
+                        <span class="check-content">
+                            <span class="check-title">Kill existing grass with cardboard</span>
+                            <span class="check-desc">Cardboard is the foundation. It smothers grass and weeds by <strong>blocking all sunlight</strong> while letting water and air pass through. Use plain corrugated cardboard (no glossy coating, no colored ink, remove all tape and staples). Overlap edges by 6 inches so grass can't sneak through.</span>
+                        </span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Phase 2 -->
+            <div class="phase">
+                <button class="phase-header" onclick="togglePhase(this)">
+                    <span>Phase 2: Building Base Layers 🥞</span>
+                    <span class="phase-arrow">▼</span>
+                </button>
+                <div class="phase-body">
+                    <label class="checklist-item" for="p2_0">
+                        <input type="checkbox" id="p2_0" data-id="p2_0">
+                        <span class="check-emoji">📦</span>
+                        <span class="check-content">
+                            <span class="check-title">Lay cardboard over grass</span>
+                            <span class="check-desc">Cover the entire bed area with overlapping corrugated cardboard. Extend 6 inches past your bed boundaries. Wet the cardboard lightly so it stays in place. This is your weed barrier and the start of your lasagna.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="p2_1">
+                        <input type="checkbox" id="p2_1" data-id="p2_1">
+                        <span class="check-emoji">💧</span>
+                        <span class="check-content">
+                            <span class="check-title">Soak cardboard thoroughly</span>
+                            <span class="check-desc">Use a garden hose or <a href="https://amzn.to/4wGyP0X" target="_blank">sprayer</a> to soak the cardboard until it's fully saturated. Wet cardboard molds to the ground better and starts breaking down faster. It also signals to worms that food is on the way up.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="p2_2">
+                        <input type="checkbox" id="p2_2" data-id="p2_2">
+                        <span class="check-emoji">🧫</span>
+                        <span class="check-content">
+                            <span class="check-title">Add first compost layer</span>
+                            <span class="check-desc">Spread 2–3 inches of finished compost directly on the wet cardboard. This introduces beneficial microbes right at the grass layer and gives decomposers a foothold. Use quality compost from a local nursery or your own pile.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="p2_3">
+                        <input type="checkbox" id="p2_3" data-id="p2_3">
+                        <span class="check-emoji">🌾</span>
+                        <span class="check-content">
+                            <span class="check-title">Add straw or leaves</span>
+                            <span class="check-desc">Top the first compost layer with 4–6 inches of straw, dried leaves, or untreated grass clippings. This is your first carbon (brown) layer. Straw is ideal because it's fluffy and holds air — skip hay, which brings weed seeds.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="p2_4">
+                        <input type="checkbox" id="p2_4" data-id="p2_4">
+                        <span class="check-emoji">🧪</span>
+                        <span class="check-content">
+                            <span class="check-title">Add second compost layer</span>
+                            <span class="check-desc">Add another 1–2 inches of compost on top of the straw to jumpstart decomposition and add nutrients. This inoculates the carbon layer with microbes and nitrogen, getting the whole pile cooking.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="p2_5">
+                        <input type="checkbox" id="p2_5" data-id="p2_5">
+                        <span class="check-emoji">🪵</span>
+                        <span class="check-content">
+                            <span class="check-title">Build edges</span>
+                            <span class="check-desc">If you want a clean border, use untreated lumber, landscape timbers, or stone to edge the bed. Edging keeps layers from spilling into paths and helps retain moisture. A 6–12 inch tall frame is plenty — the bed settles to about half its height.</span>
+                        </span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Phase 3 -->
+            <div class="phase">
+                <button class="phase-header" onclick="togglePhase(this)">
+                    <span>Phase 3: Adding Middle Layers 🧱</span>
+                    <span class="phase-arrow">▼</span>
+                </button>
+                <div class="phase-body">
+                    <label class="checklist-item" for="p3_0">
+                        <input type="checkbox" id="p3_0" data-id="p3_0">
+                        <span class="check-emoji">🟫🟩</span>
+                        <span class="check-content">
+                            <span class="check-title">Alternate green and brown layers</span>
+                            <span class="check-desc">Keep building with alternating layers: browns (straw, dried leaves, cardboard, wood chips) and greens (grass clippings, vegetable scraps, coffee grounds, fresh trimmings). A roughly <strong>3:1 brown-to-green ratio</strong> by volume prevents the pile from getting slimy or too dry.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="p3_1">
+                        <input type="checkbox" id="p3_1" data-id="p3_1">
+                        <span class="check-emoji">💩</span>
+                        <span class="check-content">
+                            <span class="check-title">Add manure layer</span>
+                            <span class="check-desc">Aged horse, cow, or chicken manure is a powerful nitrogen boost. Spread a 1–2 inch layer in the middle of the pile. <strong>Only use well-aged manure</strong> — fresh manure can burn roots and may harbor pathogens. If you're planting food crops, let it age at least 6 months.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="p3_2">
+                        <input type="checkbox" id="p3_2" data-id="p3_2">
+                        <span class="check-emoji">🪨</span>
+                        <span class="check-content">
+                            <span class="check-title">Sprinkle rock dust or minerals</span>
+                            <span class="check-desc">A light dusting of basalt rock dust, azomite, or crushed oyster shells adds trace minerals that feed soil biology and slowly release over time. Think of it as a <strong>multivitamin for your soil</strong> — a few handfuls spread across the middle layers go a long way.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="p3_3">
+                        <input type="checkbox" id="p3_3" data-id="p3_3">
+                        <span class="check-emoji">📏</span>
+                        <span class="check-content">
+                            <span class="check-title">Maintain 3–6 inch layer height</span>
+                            <span class="check-desc">Each individual layer should be 3–6 inches thick. Thinner layers mat together and restrict airflow; thicker layers take too long to break down. The total pile should reach <strong>12–18 inches tall</strong> — it will settle to roughly half that within a season.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="p3_4">
+                        <input type="checkbox" id="p3_4" data-id="p3_4">
+                        <span class="check-emoji">💧</span>
+                        <span class="check-content">
+                            <span class="check-title">Water each layer</span>
+                            <span class="check-desc">After every 2–3 layers, <strong>soak everything thoroughly</strong> with a hose or <a href="https://amzn.to/2KWLpHk" target="_blank">sprayer</a>. Moisture is what drives decomposition — a dry lasagna bed won't break down. Each layer should feel like a wrung-out sponge before you add the next.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="p3_5">
+                        <input type="checkbox" id="p3_5" data-id="p3_5">
+                        <span class="check-emoji">🥇</span>
+                        <span class="check-content">
+                            <span class="check-title">Add final thick compost layer</span>
+                            <span class="check-desc">Once you've built up your green/brown layers to 10–14 inches, cap everything with 3–4 inches of finished compost. This is your <strong>planting layer</strong> — the only layer you'll dig into. Make sure it's quality compost, screened and dark, smelling like earth.</span>
+                        </span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Phase 4 -->
+            <div class="phase">
+                <button class="phase-header" onclick="togglePhase(this)">
+                    <span>Phase 4: Topping Off 🎂</span>
+                    <span class="phase-arrow">▼</span>
+                </button>
+                <div class="phase-body">
+                    <label class="checklist-item" for="p4_0">
+                        <input type="checkbox" id="p4_0" data-id="p4_0">
+                        <span class="check-emoji">🧤</span>
+                        <span class="check-content">
+                            <span class="check-title">Add 3–4 inches of finished compost on top</span>
+                            <span class="check-desc">The top compost layer is where roots will establish. Use the <strong>best finished compost you can find</strong> — dark, crumbly, earthy-smelling. This layer protects the bed, retains moisture, and gives transplants an immediate nutrient source.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="p4_1">
+                        <input type="checkbox" id="p4_1" data-id="p4_1">
+                        <span class="check-emoji">🌾</span>
+                        <span class="check-content">
+                            <span class="check-title">Mulch with straw or leaves</span>
+                            <span class="check-desc">Spread a 2–4 inch layer of straw or shredded leaves on top of the finished compost. This acts as a protective blanket — it retains moisture, moderates soil temperature, stops weeds from germinating, and slowly feeds the bed as it breaks down.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="p4_2">
+                        <input type="checkbox" id="p4_2" data-id="p4_2">
+                        <span class="check-emoji">💧</span>
+                        <span class="check-content">
+                            <span class="check-title">Water thoroughly</span>
+                            <span class="check-desc">Give the entire bed a deep, slow watering until water runs from the bottom. This settles all the layers together, eliminates air pockets, and activates the decomposition process. A good rule: the bed should feel heavy and moist, like a wet sponge.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="p4_3">
+                        <input type="checkbox" id="p4_3" data-id="p4_3">
+                        <span class="check-emoji">🧺</span>
+                        <span class="check-content">
+                            <span class="check-title">Cover with landscape fabric for first month</span>
+                            <span class="check-desc">If you build in hot weather or need to suppress weeds while the bed establishes, cover with landscape fabric or a <a href="https://amzn.to/3rXmPGY" target="_blank">tarp</a> for the first month. This traps heat and moisture, speeding decomposition. Remove it once you're ready to plant.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="p4_4">
+                        <input type="checkbox" id="p4_4" data-id="p4_4">
+                        <span class="check-emoji">🌱</span>
+                        <span class="check-content">
+                            <span class="check-title">Plant immediately or wait</span>
+                            <span class="check-desc">You can plant into a fresh lasagna bed right away using the top compost layer — good for seedlings and transplants. For <strong>best results, wait 4–8 weeks</strong> to let layers settle and decomposition begin. Seeds like lettuce and beans do fine planted directly into the top 3 inches.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="p4_5">
+                        <input type="checkbox" id="p4_5" data-id="p4_5">
+                        <span class="check-emoji">☃️</span>
+                        <span class="check-content">
+                            <span class="check-title">Protect for the season</span>
+                            <span class="check-desc">If building in fall, top with 4–6 inches of straw and let the bed overwinter. Winter frost and thaw cycles help break down layers naturally. Come spring, pull back the straw mulch and plant directly into the rich compost layer.</span>
+                        </span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Phase 5 -->
+            <div class="phase">
+                <button class="phase-header" onclick="togglePhase(this)">
+                    <span>Phase 5: Maintenance and Planting 🌿</span>
+                    <span class="phase-arrow">▼</span>
+                </button>
+                <div class="phase-body">
+                    <label class="checklist-item" for="p5_0">
+                        <input type="checkbox" id="p5_0" data-id="p5_0">
+                        <span class="check-emoji">💧</span>
+                        <span class="check-content">
+                            <span class="check-title">Watering schedule first month</span>
+                            <span class="check-desc">For the first month, check moisture every 2–3 days. The bed should stay consistently damp but not soggy. Stick your finger 4 inches in — if it feels dry, water deeply. A <a href="https://amzn.to/4wGyP0X" target="_blank">garden sprayer</a> makes it easy to water evenly without disturbing the mulch.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="p5_1">
+                        <input type="checkbox" id="p5_1" data-id="p5_1">
+                        <span class="check-emoji">🧹</span>
+                        <span class="check-content">
+                            <span class="check-title">Add more mulch as layers settle</span>
+                            <span class="check-desc">The bed will shrink — sometimes by <strong>50% or more</strong> — as layers decompose. Top up the straw mulch layer every few weeks to maintain 2–4 inches of cover. This keeps weeds down and moisture in. As the bed sinks, you can also add thin layers of finished compost.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="p5_2">
+                        <input type="checkbox" id="p5_2" data-id="p5_2">
+                        <span class="check-emoji">🌿</span>
+                        <span class="check-content">
+                            <span class="check-title">When to plant transplants</span>
+                            <span class="check-desc">Wait until the bed has settled for <strong>4–8 weeks</strong> before planting large transplants like tomatoes, peppers, or squash. Dig a small hole through the compost top layer into the partially decomposed material below. Roots will quickly colonize the loose, rich layers.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="p5_3">
+                        <input type="checkbox" id="p5_3" data-id="p5_3">
+                        <span class="check-emoji">🌰</span>
+                        <span class="check-content">
+                            <span class="check-title">Direct seeding tips</span>
+                            <span class="check-desc">Small seeds (lettuce, carrots, radishes, beans) can be sown directly into the top 1–2 inches of compost. Rake the surface smooth, sow seeds, and cover lightly with compost or seed-starting mix. Keep the surface moist until germination — the compost layer holds moisture well.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="p5_4">
+                        <input type="checkbox" id="p5_4" data-id="p5_4">
+                        <span class="check-emoji">🍽️</span>
+                        <span class="check-content">
+                            <span class="check-title">Feed the bed long-term</span>
+                            <span class="check-desc">Each season, top-dress with 1–2 inches of fresh compost. You can also water with compost tea or dilute worm casting tea for a microbial boost. The decomposing lower layers feed plants all season long — lasagna beds often <strong>get better with age</strong> as the soil food web establishes.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="p5_5">
+                        <input type="checkbox" id="p5_5" data-id="p5_5">
+                        <span class="check-emoji">🔄</span>
+                        <span class="check-content">
+                            <span class="check-title">Next year refresh</span>
+                            <span class="check-desc">By year two, the original layers will have fully broken down into rich, dark soil. Refresh the bed by adding 2–3 inches of compost on top and a fresh layer of straw mulch. The cardboard will be gone, worms will be abundant, and you'll have the <strong>best soil on your property</strong>.</span>
+                        </span>
+                    </label>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- My Recommended Gear -->
+        <div id="gear-section">
+            <div class="section-title">My Recommended Gear</div>
+            <div id="gear-list"></div>
+        </div>
+
+        <footer>
+            <p class="footer-copy">&copy; 2026 World Composting</p>
+        </footer>
+    </div>
+
+    <script>
+        // Phase toggle
+        function togglePhase(btn) {
+            const phase = btn.closest('.phase');
+            phase.classList.toggle('active');
+        }
+
+        // Progress tracking
+        const TOTAL_ITEMS = 30;
+
+        function updateProgress() {
+            const checkboxes = document.querySelectorAll('.checklist-item input[type="checkbox"]');
+            let checked = 0;
+            checkboxes.forEach(cb => {
+                if (cb.checked) checked++;
+                const item = cb.closest('.checklist-item');
+                if (item) item.classList.toggle('completed', cb.checked);
+            });
+            const pct = Math.round((checked / TOTAL_ITEMS) * 100);
+            document.getElementById('progress-label').textContent = `${checked} of ${TOTAL_ITEMS} items completed`;
+            document.getElementById('progress-percent').textContent = `${pct}%`;
+            document.getElementById('progress-fill').style.width = `${pct}%`;
+        }
+
+        // localStorage persistence
+        function saveCheckbox(id, checked) {
+            if (checked) {
+                localStorage.setItem('lasagna_' + id, '1');
+            } else {
+                localStorage.removeItem('lasagna_' + id);
+            }
+        }
+
+        function loadCheckboxes() {
+            const checkboxes = document.querySelectorAll('.checklist-item input[type="checkbox"]');
+            checkboxes.forEach(cb => {
+                const saved = localStorage.getItem('lasagna_' + cb.dataset.id);
+                if (saved === '1') cb.checked = true;
+                cb.addEventListener('change', function() {
+                    saveCheckbox(this.dataset.id, this.checked);
+                    updateProgress();
+                });
+            });
+            updateProgress();
+        }
+
+        // Load gear products
+        async function loadGear() {
+            try {
+                const res = await fetch('src/data/products.json');
+                if (!res.ok) throw new Error('Could not load product data.');
+                const products = await res.json();
+
+                const categories = ['Water Gear', 'Worm Bin Items'];
+                const filtered = products.filter(p => categories.includes(p['Category']));
+
+                const list = document.getElementById('gear-list');
+                filtered.forEach(p => {
+                    const href = (p['Amazon Link'] !== 'NaN' && p['Amazon Link']) ||
+                                 (p['Other Link'] !== 'NaN' && p['Other Link']) || '#';
+                    const link = document.createElement('a');
+                    link.href = href;
+                    link.className = 'product-link';
+                    link.target = '_blank';
+                    link.innerHTML = '<span class="product-name">' + p['Item'] + '</span>';
+                    list.appendChild(link);
+                });
+            } catch (e) {
+                console.error('Error loading gear:', e);
+                document.getElementById('gear-list').innerHTML = '<p style="opacity:0.6;font-size:0.9rem;">Gear recommendations coming soon.</p>';
+            }
+        }
+
+        // Init
+        loadCheckboxes();
+        loadGear();
+    </script>
+</body>
+</html>
