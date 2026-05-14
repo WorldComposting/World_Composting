@@ -1,0 +1,651 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Composting | Bokashi Checklist</title>
+    <link rel="stylesheet" href="src/styles/theme.css">
+    <style>
+        #app {
+            max-width: 720px;
+            text-align: left;
+        }
+        .back-link {
+            display: inline-block;
+            font-size: 0.85rem;
+            color: var(--ocean-blue);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            transition: opacity 0.2s;
+        }
+        .back-link:hover { opacity: 0.7; }
+        .back-link:focus-visible {
+            outline: 2px solid var(--ocean-blue);
+            outline-offset: 2px;
+            border-radius: 2px;
+        }
+        header {
+            text-align: center;
+        }
+        .hero-intro {
+            background: white;
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: var(--card-shadow);
+            margin: 2rem 0;
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--text-dark);
+        }
+        .hero-intro strong { color: var(--forest-green); }
+
+        /* Progress Tracker */
+        #progress-wrapper {
+            background: white;
+            border-radius: 16px;
+            padding: 1.25rem 1.5rem;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 2rem;
+        }
+        #progress-text {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--forest-green);
+            margin-bottom: 0.6rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #progress-percent {
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: var(--ocean-blue);
+        }
+        #progress-bar {
+            height: 10px;
+            background: var(--sage-green);
+            border-radius: 99px;
+            overflow: hidden;
+        }
+        #progress-fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, var(--leaf-lime), var(--forest-green));
+            border-radius: 99px;
+            transition: width 0.4s ease;
+        }
+
+        /* Phase (Collapsible Section) */
+        .phase {
+            background: white;
+            border-radius: 16px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 1.25rem;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.04);
+            transition: box-shadow 0.3s ease;
+        }
+        .phase:hover {
+            box-shadow: 0 12px 25px -5px rgba(75, 54, 33, 0.12);
+        }
+        .phase-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 1.25rem 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: var(--forest-green);
+            text-align: left;
+            transition: background 0.2s ease;
+            gap: 0.75rem;
+        }
+        .phase-header:hover { background: rgba(45, 90, 39, 0.04); }
+        .phase-header:focus-visible {
+            outline: 2px solid var(--ocean-blue);
+            outline-offset: -2px;
+            border-radius: 16px 16px 0 0;
+        }
+        .phase-header .phase-arrow {
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+            color: var(--ocean-blue);
+            flex-shrink: 0;
+        }
+        .phase.active .phase-arrow { transform: rotate(180deg); }
+        .phase-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.3s ease;
+            padding: 0 1.5rem;
+        }
+        .phase.active .phase-body {
+            max-height: 5000px;
+            padding: 0 1.5rem 1.25rem;
+        }
+
+        /* Checklist Items */
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            cursor: pointer;
+            transition: opacity 0.2s ease;
+        }
+        .checklist-item:last-of-type { border-bottom: none; }
+        .checklist-item input[type="checkbox"] {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--forest-green);
+            border-radius: 5px;
+            flex-shrink: 0;
+            margin-top: 2px;
+            cursor: pointer;
+            position: relative;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .checklist-item input[type="checkbox"]:checked {
+            background: var(--forest-green);
+            border-color: var(--forest-green);
+        }
+        .checklist-item input[type="checkbox"]:checked::after {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 1px;
+            width: 6px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+        .checklist-item input[type="checkbox"]:focus-visible {
+            outline: 2px solid var(--ocean-blue);
+            outline-offset: 2px;
+        }
+        .check-emoji {
+            font-size: 1.3rem;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+        .check-content { flex: 1; min-width: 0; }
+        .check-title {
+            display: block;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            transition: color 0.2s;
+        }
+        .check-desc {
+            display: block;
+            font-size: 0.82rem;
+            color: #666;
+            margin-top: 2px;
+            line-height: 1.5;
+            transition: color 0.2s;
+        }
+        .check-desc a {
+            color: var(--ocean-blue);
+            text-decoration: underline;
+            font-weight: 500;
+        }
+        .check-desc a:hover { color: var(--forest-green); }
+        .checklist-item.completed .check-title {
+            color: #999;
+            text-decoration: line-through;
+        }
+        .checklist-item.completed .check-desc { color: #aaa; }
+        .checklist-item.completed .check-emoji { opacity: 0.5; }
+
+        /* Gear Section */
+        #gear-section {
+            margin-top: 3rem;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 4rem;
+            text-align: center;
+        }
+        .footer-copy {
+            opacity: 0.7;
+            font-size: 0.85rem;
+            color: var(--forest-green);
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            .phase-header { padding: 1rem 1.2rem; font-size: 0.95rem; }
+            .phase.active .phase-body { padding: 0 1.2rem 1rem; }
+            .checklist-item { gap: 0.6rem; padding: 0.6rem 0; }
+            .check-emoji { font-size: 1.1rem; }
+            .check-title { font-size: 0.9rem; }
+            .check-desc { font-size: 0.78rem; }
+            .hero-intro { padding: 1.2rem; font-size: 0.92rem; }
+            #progress-wrapper { padding: 1rem 1.2rem; }
+        }
+        @media (max-width: 375px) {
+            .phase-header { padding: 0.85rem 1rem; font-size: 0.88rem; }
+            .phase.active .phase-body { padding: 0 1rem 0.85rem; }
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <a href="index.html" class="back-link">← Back to Home</a>
+            <img src="src/assets/logo.png" alt="Logo" onerror="this.src='https://via.placeholder.com/110?text=WC'">
+            <h1>Bokashi Checklist</h1>
+            <p class="subtitle">Ferment your scraps into garden gold.</p>
+        </header>
+
+        <!-- Progress Tracker -->
+        <div id="progress-wrapper">
+            <div id="progress-text">
+                <span id="progress-label">0 of 30 items completed</span>
+                <span id="progress-percent">0%</span>
+            </div>
+            <div id="progress-bar"><div id="progress-fill"></div></div>
+        </div>
+
+        <!-- Hero Intro -->
+        <div class="hero-intro">
+            <p>🌱 Welcome to the world of Bokashi! Unlike worm composting, Bokashi is an <strong>anaerobic fermentation</strong> process using EM-1 (Effective Microorganisms) to pickle your food waste. The magic? It handles <strong>ALL</strong> food waste — meat, dairy, cooked foods, bones, citrus, onions, and garlic — things worms can't eat. A pickle-brine smell means it's working, not rotting! Follow this checklist to set up your bucket, ferment your scraps, and turn them into garden gold.</p>
+        </div>
+
+        <!-- Checklist Phases -->
+        <div id="phases">
+
+            <!-- Phase 1 -->
+            <div class="phase active">
+                <button class="phase-header" onclick="togglePhase(this)">
+                    <span>Phase 1: Before You Start 📋</span>
+                    <span class="phase-arrow">▼</span>
+                </button>
+                <div class="phase-body">
+                    <label class="checklist-item" for="b1_0">
+                        <input type="checkbox" id="b1_0" data-id="b1_0">
+                        <span class="check-emoji">🧠</span>
+                        <span class="check-content">
+                            <span class="check-title">Understand what Bokashi is</span>
+                            <span class="check-desc">Bokashi is a Japanese method of <strong>anaerobic fermentation</strong> using EM-1 (Effective Microorganisms). Unlike composting, it pickles your food waste — a pickle-brine smell means it's working, not rotting! It's a two-stage process: ferment in the bucket, then bury in soil to finish breaking down.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="b1_1">
+                        <input type="checkbox" id="b1_1" data-id="b1_1">
+                        <span class="check-emoji">🏠</span>
+                        <span class="check-content">
+                            <span class="check-title">Choose a location</span>
+                            <span class="check-desc">Bokashi buckets can live indoors (under the sink, pantry, garage) or outdoors. Keep out of direct sunlight in a stable temperature. Because the bucket is airtight, there are no odors — it's perfect for apartment living!</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="b1_2">
+                        <input type="checkbox" id="b1_2" data-id="b1_2">
+                        <span class="check-emoji">📦</span>
+                        <span class="check-content">
+                            <span class="check-title">Pick your container</span>
+                            <span class="check-desc">You need an <strong>airtight bucket with a drain tap</strong> — this is non-negotiable. A <a href="https://amzn.to/2Z0oa2v" target="_blank">5-gallon bucket with a Gamma Seal lid</a> works great. The tap lets you collect the liquid (Bokashi tea) that drains off during fermentation.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="b1_3">
+                        <input type="checkbox" id="b1_3" data-id="b1_3">
+                        <span class="check-emoji">🛒</span>
+                        <span class="check-content">
+                            <span class="check-title">Order Bokashi inoculant</span>
+                            <span class="check-desc">Get <strong>EM-1 inoculated bran</strong> (aka Bokashi bran). <a href="https://amzn.to/2Op2Gu3" target="_blank">Bokashi Brother Bran</a> is a popular choice. This bran contains the lactic-acid bacteria and yeasts that drive the anaerobic fermentation process.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="b1_4">
+                        <input type="checkbox" id="b1_4" data-id="b1_4">
+                        <span class="check-emoji">🥩</span>
+                        <span class="check-content">
+                            <span class="check-title">Know what Bokashi can handle</span>
+                            <span class="check-desc">This is Bokashi's superpower! It handles <strong>ALL</strong> food waste: meat, dairy, cooked foods, bones, citrus, onions, garlic, eggs, moldy leftovers — things worms and traditional compost can't handle. If it was once alive, Bokashi can ferment it.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="b1_5">
+                        <input type="checkbox" id="b1_5" data-id="b1_5">
+                        <span class="check-emoji">✂️</span>
+                        <span class="check-content">
+                            <span class="check-title">Gather supplies</span>
+                            <span class="check-desc">Besides the bucket and bran, grab a cutting board and knife for chopping scraps into small pieces, a spray bottle for misting, and a small collection container for your kitchen counter to hold scraps between bucket trips.</span>
+                        </span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Phase 2 -->
+            <div class="phase">
+                <button class="phase-header" onclick="togglePhase(this)">
+                    <span>Phase 2: Setting Up Your Bucket 🛠️</span>
+                    <span class="phase-arrow">▼</span>
+                </button>
+                <div class="phase-body">
+                    <label class="checklist-item" for="b2_0">
+                        <input type="checkbox" id="b2_0" data-id="b2_0">
+                        <span class="check-emoji">🪣</span>
+                        <span class="check-content">
+                            <span class="check-title">Prepare your bucket</span>
+                            <span class="check-desc">Wash and dry your bucket thoroughly. Make sure the drain tap is in the <strong>closed position</strong>. Place it on a stable, level surface where it won't be knocked over — a full bucket is heavy!</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="b2_1">
+                        <input type="checkbox" id="b2_1" data-id="b2_1">
+                        <span class="check-emoji">🧂</span>
+                        <span class="check-content">
+                            <span class="check-title">Add a base layer of inoculant</span>
+                            <span class="check-desc">Sprinkle about 1/2 inch of Bokashi bran across the bottom of the bucket. This "starter culture" ensures fermentation begins immediately when you add your first layer of scraps.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="b2_2">
+                        <input type="checkbox" id="b2_2" data-id="b2_2">
+                        <span class="check-emoji">🥬</span>
+                        <span class="check-content">
+                            <span class="check-title">Add food scraps</span>
+                            <span class="check-desc">Chop scraps into <strong>1-inch pieces</strong> — smaller pieces ferment faster and more completely. Add about 2 inches of scraps as your first layer. Avoid large chunks that create air pockets.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="b2_3">
+                        <input type="checkbox" id="b2_3" data-id="b2_3">
+                        <span class="check-emoji">🌾</span>
+                        <span class="check-content">
+                            <span class="check-title">Sprinkle more inoculant</span>
+                            <span class="check-desc">Sprinkle a generous handful of bran (about 2 tablespoons) evenly over each 2-inch layer of scraps. The golden rule: a handful of bran for every 2 inches of food. Don't skimp!</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="b2_4">
+                        <input type="checkbox" id="b2_4" data-id="b2_4">
+                        <span class="check-emoji">👊</span>
+                        <span class="check-content">
+                            <span class="check-title">Press it down</span>
+                            <span class="check-desc">Use a potato masher, a plate, or your fist to <strong>firmly press</strong> the scraps down. Removing air pockets is critical — Bokashi is anaerobic (without oxygen)! The more compacted, the better the fermentation.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="b2_5">
+                        <input type="checkbox" id="b2_5" data-id="b2_5">
+                        <span class="check-emoji">🔒</span>
+                        <span class="check-content">
+                            <span class="check-title">Seal it airtight</span>
+                            <span class="check-desc">Close the lid tightly. A proper seal is essential for anaerobic fermentation. If your bucket has a gasket, make sure it's clean and seated correctly. An airtight bucket produces no odors!</span>
+                        </span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Phase 3 -->
+            <div class="phase">
+                <button class="phase-header" onclick="togglePhase(this)">
+                    <span>Phase 3: Daily Fermentation 🔄</span>
+                    <span class="phase-arrow">▼</span>
+                </button>
+                <div class="phase-body">
+                    <label class="checklist-item" for="b3_0">
+                        <input type="checkbox" id="b3_0" data-id="b3_0">
+                        <span class="check-emoji">📅</span>
+                        <span class="check-content">
+                            <span class="check-title">Add scraps as you go</span>
+                            <span class="check-desc">Open the bucket, add your daily food scraps, and repeat the layering process. No need to wait — Bokashi works continuously as you generate waste. Add scraps every 1-3 days as your kitchen produces them.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="b3_1">
+                        <input type="checkbox" id="b3_1" data-id="b3_1">
+                        <span class="check-emoji">🌾</span>
+                        <span class="check-content">
+                            <span class="check-title">Keep layering inoculant</span>
+                            <span class="check-desc">Each time you add scraps, sprinkle more bran. Maintain the ratio of one handful per 2 inches of food. Running low on bran slows down fermentation — it's better to use a little extra than not enough.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="b3_2">
+                        <input type="checkbox" id="b3_2" data-id="b3_2">
+                        <span class="check-emoji">👊</span>
+                        <span class="check-content">
+                            <span class="check-title">Press and compact</span>
+                            <span class="check-desc">After every addition, press down firmly to squeeze out air pockets. The more compacted, the better the fermentation. Think of it as packing a suitcase — you want everything tight and snug.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="b3_3">
+                        <input type="checkbox" id="b3_3" data-id="b3_3">
+                        <span class="check-emoji">🔒</span>
+                        <span class="check-content">
+                            <span class="check-title">Seal after each addition</span>
+                            <span class="check-desc">Always close the lid tightly after adding scraps. A properly sealed bucket produces no odors — if you smell anything unpleasant, check your seal! A healthy bucket should smell like pickles only when open.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="b3_4">
+                        <input type="checkbox" id="b3_4" data-id="b3_4">
+                        <span class="check-emoji">💧</span>
+                        <span class="check-content">
+                            <span class="check-title">Drain the liquid every few days</span>
+                            <span class="check-desc">Open the tap and drain the liquid (Bokashi tea) into a container every <strong>2-3 days</strong>. If you don't drain, the bucket can get too wet and develop unpleasant odors. Don't skip this step!</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="b3_5">
+                        <input type="checkbox" id="b3_5" data-id="b3_5">
+                        <span class="check-emoji">👃</span>
+                        <span class="check-content">
+                            <span class="check-title">Trust the pickle smell</span>
+                            <span class="check-desc">A healthy Bokashi bucket smells like <strong>pickles, sourdough, or vinegar</strong>. This is the good smell of fermentation! If it smells rotten or putrid, air is getting in — press harder, seal better, and drain more often.</span>
+                        </span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Phase 4 -->
+            <div class="phase">
+                <button class="phase-header" onclick="togglePhase(this)">
+                    <span>Phase 4: Burying and Burping 🌍</span>
+                    <span class="phase-arrow">▼</span>
+                </button>
+                <div class="phase-body">
+                    <label class="checklist-item" for="b4_0">
+                        <input type="checkbox" id="b4_0" data-id="b4_0">
+                        <span class="check-emoji">⏳</span>
+                        <span class="check-content">
+                            <span class="check-title">Let it rest 2 weeks</span>
+                            <span class="check-desc">Once the bucket is full, close it tight and <strong>let it sit for 2 full weeks</strong>. During this time, the fermentation process completes. Open it only to drain liquid. Patience is key!</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="b4_1">
+                        <input type="checkbox" id="b4_1" data-id="b4_1">
+                        <span class="check-emoji">🕳️</span>
+                        <span class="check-content">
+                            <span class="check-title">Dig a trench 8-12 inches deep</span>
+                            <span class="check-desc">Choose a garden bed (not a pot). Dig a trench or hole <strong>8-12 inches deep</strong> — deep enough that dogs, raccoons, and other critters won't dig it up. The fermented waste will be sour-smelling and attractive to animals.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="b4_2">
+                        <input type="checkbox" id="b4_2" data-id="b4_2">
+                        <span class="check-emoji">🪣</span>
+                        <span class="check-content">
+                            <span class="check-title">Bury the fermented waste</span>
+                            <span class="check-desc">Dump the fermented scraps into the trench. The smell will be strong and sour — this is normal! It means fermentation worked. Spread it evenly along the trench for even breakdown.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="b4_3">
+                        <input type="checkbox" id="b4_3" data-id="b4_3">
+                        <span class="check-emoji">🧹</span>
+                        <span class="check-content">
+                            <span class="check-title">Cover completely with soil</span>
+                            <span class="check-desc">Fill the trench back in with soil, packing it down firmly. <strong>No scraps should be visible</strong> on the surface, or you'll attract pests. Level the soil and water lightly to kickstart soil microbial activity.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="b4_4">
+                        <input type="checkbox" id="b4_4" data-id="b4_4">
+                        <span class="check-emoji">⏰</span>
+                        <span class="check-content">
+                            <span class="check-title">Wait 2-6 weeks before planting</span>
+                            <span class="check-desc">The buried waste needs <strong>2-6 weeks</strong> to finish breaking down in the soil. The fermentation continues underground as soil microbes take over. Don't plant directly into it too soon — it can be too acidic for young roots.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="b4_5">
+                        <input type="checkbox" id="b4_5" data-id="b4_5">
+                        <span class="check-emoji">🌱</span>
+                        <span class="check-content">
+                            <span class="check-title">Check that it's broken down</span>
+                            <span class="check-desc">After 3-4 weeks, dig a small test hole. The scraps should have broken down into dark, crumbly soil with no recognizable food pieces. If not, cover and wait longer. The result is rich, living soil teaming with microbes!</span>
+                        </span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Phase 5 -->
+            <div class="phase">
+                <button class="phase-header" onclick="togglePhase(this)">
+                    <span>Phase 5: Using Bokashi Tea 🧪</span>
+                    <span class="phase-arrow">▼</span>
+                </button>
+                <div class="phase-body">
+                    <label class="checklist-item" for="b5_0">
+                        <input type="checkbox" id="b5_0" data-id="b5_0">
+                        <span class="check-emoji">🫗</span>
+                        <span class="check-content">
+                            <span class="check-title">Collect the tea from the tap</span>
+                            <span class="check-desc">Every 2-3 days, place a container under the spigot and open the tap. The liquid (Bokashi tea) is dark brown, smells strong, and is packed with beneficial microbes and soluble nutrients. This is liquid gold for your garden!</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="b5_1">
+                        <input type="checkbox" id="b5_1" data-id="b5_1">
+                        <span class="check-emoji">💧</span>
+                        <span class="check-content">
+                            <span class="check-title">Dilute 1:1000 for plants</span>
+                            <span class="check-desc">Mix <strong>1 teaspoon of Bokashi tea per 1 gallon of water</strong> (1:1000 ratio). This dilution is perfect for feeding plants without burning roots. Less is more — the tea is potent and concentrated!</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="b5_2">
+                        <input type="checkbox" id="b5_2" data-id="b5_2">
+                        <span class="check-emoji">🌿</span>
+                        <span class="check-content">
+                            <span class="check-title">Water your garden</span>
+                            <span class="check-desc">Use diluted tea to water your garden, houseplants, and lawn. Plants respond with vigorous growth thanks to the microbes and soluble nutrients. Use immediately after diluting for best results.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="b5_3">
+                        <input type="checkbox" id="b5_3" data-id="b5_3">
+                        <span class="check-emoji">🚽</span>
+                        <span class="check-content">
+                            <span class="check-title">Clean drains with undiluted tea</span>
+                            <span class="check-desc">Pour undiluted Bokashi tea down kitchen or bathroom drains. The microbes eat away grease and organic buildup — it's nature's Drano! This keeps your pipes clean and odor-free without harsh chemicals.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="b5_4">
+                        <input type="checkbox" id="b5_4" data-id="b5_4">
+                        <span class="check-emoji">🫙</span>
+                        <span class="check-content">
+                            <span class="check-title">Store extra tea properly</span>
+                            <span class="check-desc">If you have excess tea, store it in a sealed container in the fridge for up to a week. After that, it loses potency — the microbes die off. Label the container clearly so nobody mistakes it for a beverage!</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="b5_5">
+                        <input type="checkbox" id="b5_5" data-id="b5_5">
+                        <span class="check-emoji">🧪</span>
+                        <span class="check-content">
+                            <span class="check-title">Monitor your fermentation</span>
+                            <span class="check-desc">Healthy tea is dark brown with a sour, yeasty smell. If it smells rotten or has mold on the surface, your fermentation went aerobic — drain more often and press harder when adding scraps. Adjust and keep going!</span>
+                        </span>
+                    </label>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- My Recommended Gear -->
+        <div id="gear-section">
+            <div class="section-title">My Recommended Gear</div>
+            <div id="gear-list"></div>
+        </div>
+
+        <footer>
+            <p class="footer-copy">&copy; 2026 World Composting</p>
+        </footer>
+    </div>
+
+    <script>
+        // Phase toggle
+        function togglePhase(btn) {
+            const phase = btn.closest('.phase');
+            phase.classList.toggle('active');
+        }
+
+        // Progress tracking
+        const TOTAL_ITEMS = 30;
+
+        function updateProgress() {
+            const checkboxes = document.querySelectorAll('.checklist-item input[type="checkbox"]');
+            let checked = 0;
+            checkboxes.forEach(cb => {
+                if (cb.checked) checked++;
+                const item = cb.closest('.checklist-item');
+                if (item) item.classList.toggle('completed', cb.checked);
+            });
+            const pct = Math.round((checked / TOTAL_ITEMS) * 100);
+            document.getElementById('progress-label').textContent = `${checked} of ${TOTAL_ITEMS} items completed`;
+            document.getElementById('progress-percent').textContent = `${pct}%`;
+            document.getElementById('progress-fill').style.width = `${pct}%`;
+        }
+
+        // localStorage persistence
+        function saveCheckbox(id, checked) {
+            if (checked) {
+                localStorage.setItem('bokashi_' + id, '1');
+            } else {
+                localStorage.removeItem('bokashi_' + id);
+            }
+        }
+
+        function loadCheckboxes() {
+            const checkboxes = document.querySelectorAll('.checklist-item input[type="checkbox"]');
+            checkboxes.forEach(cb => {
+                const saved = localStorage.getItem('bokashi_' + cb.dataset.id);
+                if (saved === '1') cb.checked = true;
+                cb.addEventListener('change', function() {
+                    saveCheckbox(this.dataset.id, this.checked);
+                    updateProgress();
+                });
+            });
+            updateProgress();
+        }
+
+        // Load gear products
+        async function loadGear() {
+            try {
+                const res = await fetch('src/data/products.json');
+                if (!res.ok) throw new Error('Could not load product data.');
+                const products = await res.json();
+
+                const categories = ['Bokashi Items'];
+                const filtered = products.filter(p => categories.includes(p['Category']));
+
+                const list = document.getElementById('gear-list');
+                filtered.forEach(p => {
+                    const href = (p['Amazon Link'] !== 'NaN' && p['Amazon Link']) ||
+                                 (p['Other Link'] !== 'NaN' && p['Other Link']) || '#';
+                    const link = document.createElement('a');
+                    link.href = href;
+                    link.className = 'product-link';
+                    link.target = '_blank';
+                    link.innerHTML = '<span class="product-name">' + p['Item'] + '</span>';
+                    list.appendChild(link);
+                });
+            } catch (e) {
+                console.error('Error loading gear:', e);
+                document.getElementById('gear-list').innerHTML = '<p style="opacity:0.6;font-size:0.9rem;">Gear recommendations coming soon.</p>';
+            }
+        }
+
+        // Init
+        loadCheckboxes();
+        loadGear();
+    </script>
+</body>
+</html>
