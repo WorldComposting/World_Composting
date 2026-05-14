@@ -1,0 +1,651 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Composting | Beginner's Checklist</title>
+    <link rel="stylesheet" href="src/styles/theme.css">
+    <style>
+        #app {
+            max-width: 720px;
+            text-align: left;
+        }
+        .back-link {
+            display: inline-block;
+            font-size: 0.85rem;
+            color: var(--ocean-blue);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            transition: opacity 0.2s;
+        }
+        .back-link:hover { opacity: 0.7; }
+        .back-link:focus-visible {
+            outline: 2px solid var(--ocean-blue);
+            outline-offset: 2px;
+            border-radius: 2px;
+        }
+        header {
+            text-align: center;
+        }
+        .hero-intro {
+            background: white;
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: var(--card-shadow);
+            margin: 2rem 0;
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--text-dark);
+        }
+        .hero-intro strong { color: var(--forest-green); }
+
+        /* Progress Tracker */
+        #progress-wrapper {
+            background: white;
+            border-radius: 16px;
+            padding: 1.25rem 1.5rem;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 2rem;
+        }
+        #progress-text {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--forest-green);
+            margin-bottom: 0.6rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #progress-percent {
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: var(--ocean-blue);
+        }
+        #progress-bar {
+            height: 10px;
+            background: var(--sage-green);
+            border-radius: 99px;
+            overflow: hidden;
+        }
+        #progress-fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, var(--leaf-lime), var(--forest-green));
+            border-radius: 99px;
+            transition: width 0.4s ease;
+        }
+
+        /* Phase (Collapsible Section) */
+        .phase {
+            background: white;
+            border-radius: 16px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 1.25rem;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.04);
+            transition: box-shadow 0.3s ease;
+        }
+        .phase:hover {
+            box-shadow: 0 12px 25px -5px rgba(75, 54, 33, 0.12);
+        }
+        .phase-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 1.25rem 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: var(--forest-green);
+            text-align: left;
+            transition: background 0.2s ease;
+            gap: 0.75rem;
+        }
+        .phase-header:hover { background: rgba(45, 90, 39, 0.04); }
+        .phase-header:focus-visible {
+            outline: 2px solid var(--ocean-blue);
+            outline-offset: -2px;
+            border-radius: 16px 16px 0 0;
+        }
+        .phase-header .phase-arrow {
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+            color: var(--ocean-blue);
+            flex-shrink: 0;
+        }
+        .phase.active .phase-arrow { transform: rotate(180deg); }
+        .phase-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.3s ease;
+            padding: 0 1.5rem;
+        }
+        .phase.active .phase-body {
+            max-height: 5000px;
+            padding: 0 1.5rem 1.25rem;
+        }
+
+        /* Checklist Items */
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            cursor: pointer;
+            transition: opacity 0.2s ease;
+        }
+        .checklist-item:last-of-type { border-bottom: none; }
+        .checklist-item input[type="checkbox"] {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--forest-green);
+            border-radius: 5px;
+            flex-shrink: 0;
+            margin-top: 2px;
+            cursor: pointer;
+            position: relative;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .checklist-item input[type="checkbox"]:checked {
+            background: var(--forest-green);
+            border-color: var(--forest-green);
+        }
+        .checklist-item input[type="checkbox"]:checked::after {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 1px;
+            width: 6px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+        .checklist-item input[type="checkbox"]:focus-visible {
+            outline: 2px solid var(--ocean-blue);
+            outline-offset: 2px;
+        }
+        .check-emoji {
+            font-size: 1.3rem;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+        .check-content { flex: 1; min-width: 0; }
+        .check-title {
+            display: block;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            transition: color 0.2s;
+        }
+        .check-desc {
+            display: block;
+            font-size: 0.82rem;
+            color: #666;
+            margin-top: 2px;
+            line-height: 1.5;
+            transition: color 0.2s;
+        }
+        .check-desc a {
+            color: var(--ocean-blue);
+            text-decoration: underline;
+            font-weight: 500;
+        }
+        .check-desc a:hover { color: var(--forest-green); }
+        .checklist-item.completed .check-title {
+            color: #999;
+            text-decoration: line-through;
+        }
+        .checklist-item.completed .check-desc { color: #aaa; }
+        .checklist-item.completed .check-emoji { opacity: 0.5; }
+
+        /* Gear Section */
+        #gear-section {
+            margin-top: 3rem;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 4rem;
+            text-align: center;
+        }
+        .footer-copy {
+            opacity: 0.7;
+            font-size: 0.85rem;
+            color: var(--forest-green);
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            .phase-header { padding: 1rem 1.2rem; font-size: 0.95rem; }
+            .phase.active .phase-body { padding: 0 1.2rem 1rem; }
+            .checklist-item { gap: 0.6rem; padding: 0.6rem 0; }
+            .check-emoji { font-size: 1.1rem; }
+            .check-title { font-size: 0.9rem; }
+            .check-desc { font-size: 0.78rem; }
+            .hero-intro { padding: 1.2rem; font-size: 0.92rem; }
+            #progress-wrapper { padding: 1rem 1.2rem; }
+        }
+        @media (max-width: 375px) {
+            .phase-header { padding: 0.85rem 1rem; font-size: 0.88rem; }
+            .phase.active .phase-body { padding: 0 1rem 0.85rem; }
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <a href="index.html" class="back-link">← Back to Home</a>
+            <img src="src/assets/logo.png" alt="Logo" onerror="this.src='https://via.placeholder.com/110?text=WC'">
+            <h1>Beginner's Checklist</h1>
+            <p class="subtitle">Your step-by-step guide to worm composting.</p>
+        </header>
+
+        <!-- Progress Tracker -->
+        <div id="progress-wrapper">
+            <div id="progress-text">
+                <span id="progress-label">0 of 30 items completed</span>
+                <span id="progress-percent">0%</span>
+            </div>
+            <div id="progress-bar"><div id="progress-fill"></div></div>
+        </div>
+
+        <!-- Hero Intro -->
+        <div class="hero-intro">
+            <p>Welcome, future worm wrangler! 🪱 You're about to start one of the most rewarding gardening practices — turning kitchen scraps into <strong>garden gold</strong>. This step-by-step checklist will guide you from absolute beginner to confident composter. Take it one phase at a time, check off each item as you go, and don't stress — worms are forgiving teachers!</p>
+        </div>
+
+        <!-- Checklist Phases -->
+        <div id="phases">
+
+            <!-- Phase 1 -->
+            <div class="phase active">
+                <button class="phase-header" onclick="togglePhase(this)">
+                    <span>Phase 1: Before You Start 📋</span>
+                    <span class="phase-arrow">▼</span>
+                </button>
+                <div class="phase-body">
+                    <label class="checklist-item" for="p1_0">
+                        <input type="checkbox" id="p1_0" data-id="p1_0">
+                        <span class="check-emoji">🧠</span>
+                        <span class="check-content">
+                            <span class="check-title">Learn what vermicomposting is</span>
+                            <span class="check-desc">Vermicomposting uses red wiggler worms (<em>Eisenia fetida</em>) to turn food scraps into nutrient-rich castings — nature's best fertilizer.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="p1_1">
+                        <input type="checkbox" id="p1_1" data-id="p1_1">
+                        <span class="check-emoji">🏠</span>
+                        <span class="check-content">
+                            <span class="check-title">Choose a bin location</span>
+                            <span class="check-desc">Worms thrive between 55–77°F (13–25°C). A basement, laundry room, garage, or under the kitchen sink all work great. Avoid direct sunlight and extreme temperatures.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="p1_2">
+                        <input type="checkbox" id="p1_2" data-id="p1_2">
+                        <span class="check-emoji">📦</span>
+                        <span class="check-content">
+                            <span class="check-title">Pick your bin</span>
+                            <span class="check-desc">Choose a <a href="https://amzn.to/3m3BlJq" target="_blank">10-gallon tote</a>, a breathable <a href="https://amzn.to/3R3qYtQ" target="_blank">Urban Worm Bag</a>, or a <a href="https://bit.ly/3sLhq5W" target="_blank">Vermibag</a>. Each has its perks — totes are cheap, bags have great airflow.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="p1_3">
+                        <input type="checkbox" id="p1_3" data-id="p1_3">
+                        <span class="check-emoji">🛒</span>
+                        <span class="check-content">
+                            <span class="check-title">Gather supplies</span>
+                            <span class="check-desc">You'll need bedding (shredded cardboard or <a href="https://amzn.to/3pP7vKv" target="_blank">pine shavings</a>), a spray bottle, <a href="https://amzn.to/3m21vfp" target="_blank">waterproof gloves</a>, and a <a href="https://amzn.to/3rXmPGY" target="_blank">tarp</a> for harvesting day.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="p1_4">
+                        <input type="checkbox" id="p1_4" data-id="p1_4">
+                        <span class="check-emoji">🐛</span>
+                        <span class="check-content">
+                            <span class="check-title">Order your worms</span>
+                            <span class="check-desc">You need <strong>red wigglers</strong>, not common earthworms! Start with 1 lb (~1,000 worms). <a href="http://bit.ly/2XXy18v" target="_blank">Meme's Worms</a> is a trusted source for healthy, active worms.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="p1_5">
+                        <input type="checkbox" id="p1_5" data-id="p1_5">
+                        <span class="check-emoji">📰</span>
+                        <span class="check-content">
+                            <span class="check-title">Stockpile bedding materials</span>
+                            <span class="check-desc">Start collecting shredded newspaper, cardboard, coconut coir, and dried leaves. A good carbon-to-nitrogen ratio (roughly 2:1 carbon to food) keeps the bin healthy and odor-free.</span>
+                        </span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Phase 2 -->
+            <div class="phase">
+                <button class="phase-header" onclick="togglePhase(this)">
+                    <span>Phase 2: Setting Up Your Bin 🛠️</span>
+                    <span class="phase-arrow">▼</span>
+                </button>
+                <div class="phase-body">
+                    <label class="checklist-item" for="p2_0">
+                        <input type="checkbox" id="p2_0" data-id="p2_0">
+                        <span class="check-emoji">🛏️</span>
+                        <span class="check-content">
+                            <span class="check-title">Add bedding</span>
+                            <span class="check-desc">Fill the bin about 3/4 full with shredded cardboard, coconut coir, or newspaper. Fluff it up to create air pockets — worms need oxygen too!</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="p2_1">
+                        <input type="checkbox" id="p2_1" data-id="p2_1">
+                        <span class="check-emoji">💧</span>
+                        <span class="check-content">
+                            <span class="check-title">Moisten the bedding</span>
+                            <span class="check-desc">Add water a little at a time and mix. The goal is the <strong>wrung-out sponge</strong> feel — damp but not dripping. Aim for 70–80% moisture.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="p2_2">
+                        <input type="checkbox" id="p2_2" data-id="p2_2">
+                        <span class="check-emoji">🪨</span>
+                        <span class="check-content">
+                            <span class="check-title">Add a handful of grit</span>
+                            <span class="check-desc">Crushed eggshells or oyster shell flour give worms the grit they need to digest food and help buffer pH. Sprinkle a handful over the bedding.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="p2_3">
+                        <input type="checkbox" id="p2_3" data-id="p2_3">
+                        <span class="check-emoji">🐛</span>
+                        <span class="check-content">
+                            <span class="check-title">Add the worms</span>
+                            <span class="check-desc">Gently place worms on top of the bedding and leave the lid off for a bit — they'll burrow down on their own to escape the light. No need to bury them!</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="p2_4">
+                        <input type="checkbox" id="p2_4" data-id="p2_4">
+                        <span class="check-emoji">🍎</span>
+                        <span class="check-content">
+                            <span class="check-title">Bury a small first meal</span>
+                            <span class="check-desc">Add about a cup of soft fruit/vegetable scraps in one corner of the bin. Bury it 2–3 inches deep to prevent fruit flies and give worms a clear starting point.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="p2_5">
+                        <input type="checkbox" id="p2_5" data-id="p2_5">
+                        <span class="check-emoji">🧺</span>
+                        <span class="check-content">
+                            <span class="check-title">Cover and close</span>
+                            <span class="check-desc">Place a damp layer of newspaper or cardboard on top of the bedding to retain moisture and discourage pests. Secure the lid (with air holes!) and you're all set.</span>
+                        </span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Phase 3 -->
+            <div class="phase">
+                <button class="phase-header" onclick="togglePhase(this)">
+                    <span>Phase 3: First Week ⏰</span>
+                    <span class="phase-arrow">▼</span>
+                </button>
+                <div class="phase-body">
+                    <label class="checklist-item" for="p3_0">
+                        <input type="checkbox" id="p3_0" data-id="p3_0">
+                        <span class="check-emoji">⏳</span>
+                        <span class="check-content">
+                            <span class="check-title">Let worms settle in</span>
+                            <span class="check-desc">Leave your worms alone for 2–3 days. They've been through a journey and need time to adjust to their new home. Resist the urge to check on them constantly!</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="p3_1">
+                        <input type="checkbox" id="p3_1" data-id="p3_1">
+                        <span class="check-emoji">💧</span>
+                        <span class="check-content">
+                            <span class="check-title">Check moisture levels</span>
+                            <span class="check-desc">Squeeze a handful of bedding — a few drops of water should appear. If too dry, mist with water. If too wet, add dry bedding.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="p3_2">
+                        <input type="checkbox" id="p3_2" data-id="p3_2">
+                        <span class="check-emoji">👀</span>
+                        <span class="check-content">
+                            <span class="check-title">Observe worm behavior</span>
+                            <span class="check-desc">Healthy worms will explore the surface at night and burrow during the day. If they're trying to escape, check moisture, temperature, and airflow.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="p3_3">
+                        <input type="checkbox" id="p3_3" data-id="p3_3">
+                        <span class="check-emoji">🍌</span>
+                        <span class="check-content">
+                            <span class="check-title">Start a small feeding schedule</span>
+                            <span class="check-desc">On day 3–4, offer soft scraps like banana peels or melon rinds. Only feed in one spot so you can track how fast they eat. Worms eat about half their weight per week.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="p3_4">
+                        <input type="checkbox" id="p3_4" data-id="p3_4">
+                        <span class="check-emoji">🕳️</span>
+                        <span class="check-content">
+                            <span class="check-title">Bury food properly</span>
+                            <span class="check-desc">Always bury food 2–3 inches deep under the bedding. This prevents fruit flies, odors, and gives worms easy access.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="p3_5">
+                        <input type="checkbox" id="p3_5" data-id="p3_5">
+                        <span class="check-emoji">✅</span>
+                        <span class="check-content">
+                            <span class="check-title">Know what to feed</span>
+                            <span class="check-desc">Worms love: fruit &amp; vegetable scraps, coffee grounds &amp; filters, crushed eggshells, tea bags (no staples), and shredded paper. Variety is key!</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="p3_6">
+                        <input type="checkbox" id="p3_6" data-id="p3_6">
+                        <span class="check-emoji">❌</span>
+                        <span class="check-content">
+                            <span class="check-title">Know what to avoid</span>
+                            <span class="check-desc">No meat, dairy, oily foods, citrus, onions, garlic, or spicy peppers. These create odors, attract pests, and harm your worms. Stick to plant-based scraps!</span>
+                        </span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Phase 4 -->
+            <div class="phase">
+                <button class="phase-header" onclick="togglePhase(this)">
+                    <span>Phase 4: Ongoing Care 🔄</span>
+                    <span class="phase-arrow">▼</span>
+                </button>
+                <div class="phase-body">
+                    <label class="checklist-item" for="p4_0">
+                        <input type="checkbox" id="p4_0" data-id="p4_0">
+                        <span class="check-emoji">📅</span>
+                        <span class="check-content">
+                            <span class="check-title">Feed once a week</span>
+                            <span class="check-desc">Stick to a weekly feeding routine. Rotate feeding spots around the bin. If food accumulates before it's eaten, you're overfeeding — cut back.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="p4_1">
+                        <input type="checkbox" id="p4_1" data-id="p4_1">
+                        <span class="check-emoji">💧</span>
+                        <span class="check-content">
+                            <span class="check-title">Maintain moisture</span>
+                            <span class="check-desc">Check weekly. Add water with a spray bottle if dry, or mix in dry bedding if too wet. The wrung-out sponge rule never fails.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="p4_2">
+                        <input type="checkbox" id="p4_2" data-id="p4_2">
+                        <span class="check-emoji">🐜</span>
+                        <span class="check-content">
+                            <span class="check-title">Bury food scraps</span>
+                            <span class="check-desc">Always cover fresh food with bedding. This prevents fruit flies, mites, and odors. A healthy bin should smell like fresh earth, not garbage!</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="p4_3">
+                        <input type="checkbox" id="p4_3" data-id="p4_3">
+                        <span class="check-emoji">👃</span>
+                        <span class="check-content">
+                            <span class="check-title">Trust your nose</span>
+                            <span class="check-desc">A healthy bin smells earthy. If it smells rotten or sour, add dry bedding, stop feeding for a week, and mix gently to add airflow.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="p4_4">
+                        <input type="checkbox" id="p4_4" data-id="p4_4">
+                        <span class="check-emoji">🔬</span>
+                        <span class="check-content">
+                            <span class="check-title">Watch for reproduction</span>
+                            <span class="check-desc">Happy worms reproduce! Look for small yellow cocoons (lemon-shaped) and tiny baby worms. This means your bin is thriving.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="p4_5">
+                        <input type="checkbox" id="p4_5" data-id="p4_5">
+                        <span class="check-emoji">🔧</span>
+                        <span class="check-content">
+                            <span class="check-title">Troubleshoot common issues</span>
+                            <span class="check-desc">Fruit flies → bury food deeper. Worms escaping → check moisture, pH (add eggshells). Mold on food → normal, just bury better. Smell → add dry bedding, stop feeding.</span>
+                        </span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Phase 5 -->
+            <div class="phase">
+                <button class="phase-header" onclick="togglePhase(this)">
+                    <span>Phase 5: Harvesting 🎉</span>
+                    <span class="phase-arrow">▼</span>
+                </button>
+                <div class="phase-body">
+                    <label class="checklist-item" for="p5_0">
+                        <input type="checkbox" id="p5_0" data-id="p5_0">
+                        <span class="check-emoji">⏳</span>
+                        <span class="check-content">
+                            <span class="check-title">Know when it's ready</span>
+                            <span class="check-desc">Castings are ready in 2–4 months. Look for dark, crumbly, soil-like material with few visible food scraps. It should smell like a forest floor.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="p5_1">
+                        <input type="checkbox" id="p5_1" data-id="p5_1">
+                        <span class="check-emoji">📥</span>
+                        <span class="check-content">
+                            <span class="check-title">Try the push method</span>
+                            <span class="check-desc">Push finished castings to one side of the bin. Add fresh bedding and food to the empty side. Worms migrate over 1–2 weeks, leaving the castings mostly worm-free.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="p5_2">
+                        <input type="checkbox" id="p5_2" data-id="p5_2">
+                        <span class="check-emoji">🗂️</span>
+                        <span class="check-content">
+                            <span class="check-title">Or use dump-and-sort</span>
+                            <span class="check-desc">Dump bin contents onto a <a href="https://amzn.to/3rXmPGY" target="_blank">tarp</a> in cone-shaped piles. Worms burrow to the bottom from the light — scrape off top layers of castings every few minutes.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="p5_3">
+                        <input type="checkbox" id="p5_3" data-id="p5_3">
+                        <span class="check-emoji">🫙</span>
+                        <span class="check-content">
+                            <span class="check-title">Store castings properly</span>
+                            <span class="check-desc">Keep finished castings in a breathable container (like a cardboard box or fabric bag). Use within 6 months for the best microbial activity.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="p5_4">
+                        <input type="checkbox" id="p5_4" data-id="p5_4">
+                        <span class="check-emoji">🌱</span>
+                        <span class="check-content">
+                            <span class="check-title">Apply to your garden</span>
+                            <span class="check-desc">Mix 1 part castings with 3 parts soil for potting mix, top-dress houseplants, or brew compost tea. Your plants will thank you with vigorous growth!</span>
+                        </span>
+                    </label>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- My Recommended Gear -->
+        <div id="gear-section">
+            <div class="section-title">My Recommended Gear</div>
+            <div id="gear-list"></div>
+        </div>
+
+        <footer>
+            <p class="footer-copy">&copy; 2026 World Composting</p>
+        </footer>
+    </div>
+
+    <script>
+        // Phase toggle
+        function togglePhase(btn) {
+            const phase = btn.closest('.phase');
+            phase.classList.toggle('active');
+        }
+
+        // Progress tracking
+        const TOTAL_ITEMS = 30;
+
+        function updateProgress() {
+            const checkboxes = document.querySelectorAll('.checklist-item input[type="checkbox"]');
+            let checked = 0;
+            checkboxes.forEach(cb => {
+                if (cb.checked) checked++;
+                const item = cb.closest('.checklist-item');
+                if (item) item.classList.toggle('completed', cb.checked);
+            });
+            const pct = Math.round((checked / TOTAL_ITEMS) * 100);
+            document.getElementById('progress-label').textContent = `${checked} of ${TOTAL_ITEMS} items completed`;
+            document.getElementById('progress-percent').textContent = `${pct}%`;
+            document.getElementById('progress-fill').style.width = `${pct}%`;
+        }
+
+        // localStorage persistence
+        function saveCheckbox(id, checked) {
+            if (checked) {
+                localStorage.setItem('beginner_' + id, '1');
+            } else {
+                localStorage.removeItem('beginner_' + id);
+            }
+        }
+
+        function loadCheckboxes() {
+            const checkboxes = document.querySelectorAll('.checklist-item input[type="checkbox"]');
+            checkboxes.forEach(cb => {
+                const saved = localStorage.getItem('beginner_' + cb.dataset.id);
+                if (saved === '1') cb.checked = true;
+                cb.addEventListener('change', function() {
+                    saveCheckbox(this.dataset.id, this.checked);
+                    updateProgress();
+                });
+            });
+            updateProgress();
+        }
+
+        // Load gear products
+        async function loadGear() {
+            try {
+                const res = await fetch('src/data/products.json');
+                if (!res.ok) throw new Error('Could not load product data.');
+                const products = await res.json();
+
+                const categories = ['Worm Bin Items', 'Worm Bag', 'Worms'];
+                const filtered = products.filter(p => categories.includes(p['Category']));
+
+                const list = document.getElementById('gear-list');
+                filtered.forEach(p => {
+                    const href = (p['Amazon Link'] !== 'NaN' && p['Amazon Link']) ||
+                                 (p['Other Link'] !== 'NaN' && p['Other Link']) || '#';
+                    const link = document.createElement('a');
+                    link.href = href;
+                    link.className = 'product-link';
+                    link.target = '_blank';
+                    link.innerHTML = '<span class="product-name">' + p['Item'] + '</span>';
+                    list.appendChild(link);
+                });
+            } catch (e) {
+                console.error('Error loading gear:', e);
+                document.getElementById('gear-list').innerHTML = '<p style="opacity:0.6;font-size:0.9rem;">Gear recommendations coming soon.</p>';
+            }
+        }
+
+        // Init
+        loadCheckboxes();
+        loadGear();
+    </script>
+</body>
+</html>
