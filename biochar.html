@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BioChar Composting Checklist | World Composting</title>
+    <title>BioChar Checklist | World Composting</title>
     <link rel="stylesheet" href="src/styles/theme.css">
 </head>
 <body>
@@ -17,8 +17,14 @@
         </header>
 
         <main style="margin-top: 2rem;">
-            <div class="section-title">The Process</div>
-            <p style="padding: 0 1rem; color: var(--text-color);">Follow these steps to create and integrate biochar into your composting workflow.</p>
+            <div class="section-title">BioChar Introduction</div>
+            <p style="padding: 0 1rem; color: var(--text.color, #333); line-height: 1.6;">
+                Biochar is a highly porous form of charcoal created through pyrolysis. When added to compost or soil, it acts like a "permanent sponge," providing a habitat for beneficial microbes and significantly increasing nutrient and moisture retention.
+            </p>
+
+            <div id="progress-container" style="padding: 0 1rem; margin-top: 1rem; margin-bottom: 1rem;">
+                <small>Progress: <span id="progress-count">0</span> / 9 steps completed</small>
+            </div>
             
             <div id="checklist-container" style="margin-top: 1.5rem;">
                 <!-- Checklist items will be injected here -->
@@ -34,48 +40,64 @@
         <footer style="margin-top: 4rem; opacity: 0.7; font-size: 0.85rem; padding: 2rem;">
             &copy; 2026 World Composting
         </footer>
+
+        <script>
+            const checklistItems = [
+                { id: 1, text: "Gather organic feedstock (wood scraps, coconut husint or corn stalks)." },
+                { id: 2, text: "Prepare a flame-cap kiln or a simple metal drum for pyrolysis." },
+                { id: 3, text: "Ensure the container is well-ventilated but prevents direct oxygen contact with hot coals." },
+                { id: 4, text: "Start the fire and add feedstock in layers, allowing it to char without fully turning to ash." },
+                { id: 5, text: "Once charred, quench the material immediately with water to stop combustion." },
+                { id: 6, text: "Crush the biochar into smaller, usable pieces." },
+                { id: 7, text: "CRITICAL: 'Charge' or activate the biochar by soaking it in liquid compost tea or nutrient-rich leachate for 24-48 hours." },
+                { id: 8, text: "Mix the activated biochar into your active worm bin or hot compost pile." },
+                { id: 9, text: "Monitor soil moisture; biochar helps retain water and beneficial microbes." }
+            ];
+
+            const container = document.getElementById('checklist-container');
+            const progressCount = document.getElementById('progress-count');
+
+            function updateProgress() {
+                const checkedCount = document.querySelectorAll('.checklist-checkbox:checked').length;
+                progressCount.textContent = checkedCount;
+                localStorage.setItem('biochar-progress', JSON.stringify(checkedCount));
+            }
+
+            // Load saved progress
+            const savedProgress = localStorage.getItem('biochar-progress');
+            const completedIds = savedProgress ? Array.from({length: parseInt(savedProgress)}, (_, i) => i + 1) : [];
+
+            checklistItems.forEach(item => {
+                const wrapper = document.createElement('div');
+                wrapper.className = 'checklist-item-wrapper';
+                wrapper.style.display = 'flex';
+                wrapper.style.alignItems = 'flex-start';
+                wrapper.style.gap = '10px';
+                wrapper.style.padding = '10px 15px';
+                wrapper.style.marginBottom = '8px';
+                wrapper.style.background = 'white';
+                wrapper.style.borderRadius = '8px';
+
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.id = 'item-' + item.id;
+                checkbox.className = 'checklist-checkbox';
+                if (completedIds.includes(item.id)) checkbox.checked = true;
+                checkbox.addEventListener('change', updateProgress);
+
+                const label = document.createElement('label');
+                label.htmlFor = 'item-' + item.id;
+                label.className = 'checklist-label';
+                label.textContent = item.text;
+
+                wrapper.appendChild(checkbox);
+                wrapper.appendChild(label);
+                container.appendChild(wrapper);
+            });
+
+            // Initialize progress display
+            updateProgress();
+        </script>
     </div>
-
-    <script>
-        const checklistItems = [
-            { id: 1, text: "Gather organic feedstock (wood scraps, coconut husks, or corn stalks)." },
-            { id: 2, text: "Prepare a flame-cap kiln or a simple metal drum for pyrolysis." },
-            { id: 3, text: "Ensure the container is well-ventilated but prevents direct oxygen contact with hot coals." },
-            { id: 4, text: "Start the fire and add feedstock in layers, allowing it to char without fully turning to ash." },
-            { id: 5, text: "Once charred, quench the material immediately with water to stop combustion." },
-            { id: 6, text: "Crush the biochar into smaller, usable pieces." },
-            { id: 7, text: "CRITICAL: 'Charge' or activate the biochar by soaking it in liquid compost tea or nutrient-rich leachate for 24-48 hours." },
-            { id: 8, text: "Mix the activated biochar into your active worm bin or hot compost pile." },
-            { id: 9, text: "Monitor soil moisture; biochar helps retain water and beneficial microbes." }
-        ];
-
-        const container = document.getElementById('checklist-container');
-
-        checklistItems.forEach(item => {
-            const checkbox = document.createElement('input');
-            checkbox.type = 'checkbox';
-            checkbox.id = 'item-' + item.id;
-            checkbox.className = 'checklist-checkbox'; // Assumes CSS handles this for accessibility
-
-            const label = document.createElement('label');
-            label.htmlFor = 'item-' + item.id;
-            label.className = 'checklist-label';
-            label.textContent = item.text;
-
-            const wrapper = document.createElement('div');
-            wrapper.className = 'checklist-item-wrapper';
-            wrapper.style.display = 'flex';
-            wrapper.style.alignItems = 'flex-start';
-            wrapper.style.gap = '10px';
-            wrapper.style.padding = '10px 15px';
-            wrapper.style.marginBottom = '8px';
-            wrapper.style.background = 'white';
-            wrapper.style.borderRadius = '8px';
-
-            wrapper.appendChild(checkbox);
-            wrapper.appendChild(label);
-            container.appendChild(wrapper);
-        });
-    </script>
 </body>
 </html>
