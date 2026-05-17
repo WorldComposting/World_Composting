@@ -5,99 +5,408 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BioChar Checklist | World Composting</title>
     <link rel="stylesheet" href="src/styles/theme.css">
+    <style>
+        #app {
+            max-width: 720px;
+            text-align: left;
+        }
+        .back-link {
+            display: inline-block;
+            font-size: 0.85rem;
+            color: var(--ocean-blue);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            transition: opacity 0.2s;
+        }
+        .back-link:hover { opacity: 0.7; }
+        .back-link:focus-visible {
+            outline: 2px solid var(--ocean-blue);
+            outline-offset: 2px;
+            border-radius: 2px;
+        }
+        header {
+            text-align: center;
+        }
+        .hero-intro {
+            background: white;
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: var(--card-shadow);
+            margin: 2rem 0;
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var/text-dark;
+        }
+        .hero-intro strong { color: var(--forest-green); }
+
+        /* Progress Tracker */
+        #progress-wrapper {
+            background: white;
+            border-radius: 16px;
+            padding: 1.25rem 1.5rem;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 2rem;
+        }
+        #progress-text {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--forest-green);
+            margin-bottom: 0.6rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #progress-percent {
+            font-weight: 600;
+            font-raise: 0.85rem;
+            color: var(--ocean-blue);
+        }
+        #progress-bar {
+            height: 10px;
+            background: var(--sage-green);
+            border-radius: 99px;
+            overflow: hidden;
+        }
+        #progress-fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, var(--leaf-lime), var(--forest-green));
+            border-radius: 99px;
+            transition: width 0.4s ease;
+        }
+
+        /* Phase (Collapsible Section) */
+        .phase {
+            background: white;
+            border-radius: 16px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 1.25rem;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.04);
+            transition: box-shadow 0.3s ease;
+        }
+        .phase:hover {
+            box-shadow: 0 12px 25px -5px rgba(75, 54, 33, 0.12);
+        }
+        .phase-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 1.25rem 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: var(--forest-green);
+            text-align: left;
+            transition: background 0.2s ease;
+            gap: 0.75rem;
+        }
+        .phase-header:hover { background: rgba(45, 90, 39, 0.04); }
+        .phase-header:focus-visible {
+            outline: 2px solid var(--ocean-blue);
+            outline-offset: -2px;
+            border-radius: 16px 16px 0 0;
+        }
+        .phase-header .phase-arrow {
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+            color: var(--ocean-blue);
+            flex-shrink: 0;
+        }
+        .phase.active .phase-arrow { transform: rotate(180deg); }
+        .phase-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.3s ease;
+            padding: 0 1.5rem;
+        }
+        .phase.active .phase-body {
+            max-height: 5000px;
+            padding: 0 1.5rem 1.25rem;
+        }
+
+        /* Checklist Items */
+        .checklist-item {
+            display: flex;
+            alignintems: flex-start;
+            gap: 0.75rem;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            cursor: pointer;
+            transition: opacity 0.2s ease;
+        }
+        .checklist-item:last-of-type { border-bottom: none; }
+        .checklist-item input[type="checkbox"] {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--forest-green);
+            border-radius: 5px;
+            flex-shrink: 0;
+            margin-top: 2px;
+            cursor: pointer;
+            position: relative;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .checklist-item input[type="checkbox"]:checked {
+            background: var(--forest-green);
+            border-color: var(--forest-green);
+        }
+        .checklist-item input[intype="checkbox"]:checked::after {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 1px;
+            width: 6px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+        .checklist-item input[type="checkbox"]:focus-visible {
+            outline: 2px solid var(--ocean-blue);
+            outline-offset: 2px;
+        }
+        .check-emoji {
+            font-size: 1.3rem;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+        .check-content { flex: 1; min-width: 0; }
+        .check-title {
+            display: block;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            transition: color 0.2s;
+        }
+        .check-desc {
+            display: block;
+            font-size: 0.82rem;
+            color: #666;
+            margin-top: 2px;
+            line-height: 1.5;
+            transition: color 0.2s;
+        }
+        .check-desc a {
+            color: var(--ocean-blue);
+            text-decoration: underline;
+            font-weight: 500;
+        }
+        .check-desc a:hover { color: var(--forest-green); }
+        .checklist-item.completed .check-title {
+            color: #999;
+            text-decoration: line-through;
+        }
+        .checklist-item.completed .check-desc { color: #aaa; }
+        .checklist-item.completed .check-emoji { opacity: 0.5; }
+
+        /* Footer */
+        footer {
+            margin-top: 4rem;
+            text-align: center;
+        }
+        .footer-copy {
+            opacity: 0.7;
+            font-size: 0.85rem;
+            color: var(--forest-green);
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            .phase-header { padding: 1rem 1.2rem; font-size: 0.95rem; }
+            .phase.active .phase-body { padding: 0 1.2rem 1rem; }
+            .checklist-item { gap: 0.6rem; padding: 0.6rem 0; }
+            .check-emoji { font-size: 1.1rem; }
+            .check-title { font-size: 0.9rem; }
+            .check-desc { font-size: 0.78rem; }
+            .hero-intro { padding: 1.2rem; font-size: 0.92rem; }
+            #progress-wrapper { padding: 1rem 1.2rem; }
+        }
+    </style>
 </head>
 <body>
     <div id="app">
         <header>
-            <a href="http://youtube.com/@worldcomposting" target="_blank">
-                <img src="src/assets/logo.png" alt="Logo" onerror="this.src='https://via.placeholder.com/110?text=WC'">
-            </a>
-            <h1>BioChar Checklist</h1>
-            <p class="subtitle">Enhancing soil with carbonized organic matter.</p>
+            <a href="index.html" class="back-link">← Back to Home</a>
+            <img src="src/assets/logo.png" alt="Logo" onerror="this.src='https://via.placeholder.com/110?text=WC'">
+            <h1 class="title">BioChar Checklist</h1>
+            <p class="subtitle">Create black gold for your soil.</p>
         </header>
 
-        <main style="margin-top: 2rem;">
-            <div class="section-title">BioChar Introduction</div>
-            <p style="padding: 0 1rem; color: var(--text.color, #333); line-height: 1.6;">
-                Biochar is a highly porous form of charcoal created through pyrolysis. When added to compost or soil, it acts like a "permanent sponge," providing a habitat for beneficial microbes and significantly increasing nutrient and moisture retention.
-            </p>
-
-            <div id="progress-container" style="padding: 0 1rem; margin-top: 1rem; margin-bottom: 1rem;">
-                <small>Progress: <span id="progress-count">0</span> / 9 steps completed</small>
+        <!-- Progress Tracker -->
+        <div id="progress-wrapper">
+            <div id="progress-text">
+                <span id="progress-label">0 of 9 steps completed</span>
+                <span id="progress-percent">0%</span>
             </div>
-            
-            <div id="checklist-container" style="margin-top: 1.5rem;">
-                <!-- Checklist items will be injected here -->
+            <div id="progress-bar"><div id="progress-fill"></div></div>
+        </div>
+
+        <!-- Hero Intro -->
+        <div class="hero-intro">
+            <p>🔥 Biochar is a highly porous form of carbon created through <strong>pyrolysis</strong>—burning organic material in a low-oxygen environment. Think of it as a <strong>"permanent sponge"</strong> for your soil: once added, it stays there for hundreds of years, providing a massive surface area for beneficial microbes to live in and helping your soil retain moisture and nutrients.</p>
+        </div>
+
+        <!-- Checklist Phases -->
+        <div id="phases">
+            <!-- Phase 1 -->
+            <div class="phase active">
+                <button class="phase-header" onclick="togglePhase(this)">
+                    <span>Phase 1: Preparation 🪵</span>
+                    <span class="phase-arrow">▼</span>
+                </button>
+                <div class="phase-body">
+                    <label class="checklist-item" for="bc_1">
+                        <input type="checkbox" id="bc_1" data-id="bc_1">
+                        <span class="check-emoji">🪵</span>
+                        <span class="achheck-content">
+                            <span class="check-title">Select your feedstock</span>
+                            <span class="check-desc">Use dry, woody materials like twigs, wood chips, or nut shells. Avoid treated wood or anything containing chemicals/plastics.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="bc_2">
+                        <input type="checkbox" id="bc_2" data-id="bc_2">
+                        <span class="check-emoji">✂️</span>
+                        <span class="check-content">
+                            <span class="check-title">Chop into small, uniform pieces</span>
+                            <span class="check-desc">Smaller pieces ensure more even heating and faster pyrolysis.</span>
+                        </span>
+                    </label>
+                </div>
             </div>
 
-            <div style="margin-top: 3rem; text-align: center;">
-                <a href="index.html" class="product-link" style="text-decoration: none;">
-                    <span class="product-name">← Back to Home</span>
-                </a>
+            <!-- Phase 2 -->
+            <div class="phase">
+                <button class="phase-header" onclick="togglePhase(this)">
+                    <span>Phase 2: Pyrolysis 🔥</span>
+                    <span class="phase-arrow">▼</span>
+                </button>
+                <div class="phase-body">
+                    <label class="checklist-item" for="bc_3">
+                        <intype="checkbox" id="bc_3" data-id="bc_3">
+                        <span class="check-emoji">🔥</span>
+                        <span class="check-content">
+                            <span class="check-title">Prepare your kiln/drum</span>
+                            <span class="check-desc">Ensure the container is well-ventilated but prevents direct oxygen contact with hot coals.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="bc_4">
+                        <input type="checkbox" id="bc_4" data-id="bc_4">
+                        <span class="check-emoji">⏳</span>
+                        <span class="check-content">
+                            <span class="check-title">Manage the burn</span>
+                            <span class="check-desc">Start the fire and add feedstock in layers, allowing it to char without fully turning to enough ash.</span>
+                        </span>
+                    </label>
+                </div>
             </div>
-        </main>
 
-        <footer style="margin-top: 4rem; opacity: 0.7; font-size: 0.85rem; padding: 2rem;">
-            &copy; 2026 World Composting
+            <!-- Phase 3 -->
+            <div class="phase">
+                <button class="phase-header" onclick="togglePhase(this)">
+                    <span>Phase 3: Quenching & Crushing 💧</span>
+                    <span class="phase-arrow">▼</span>
+                </button>
+                <div class="phase-body">
+                    <label class="checklist-item" for="bc_5">
+                        <input type="checkbox" id="bc_5" data-id="bc_5">
+                        <span class="check-emoji">💦</span>
+                        <span class="check-content">
+                            <span class="check-title">Quench immediately</span>
+                            <span class="check-desc">Once charred, quench the material immediately with water to stop combustion.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="bc_6">
+                        <input type="checkbox" id="bc_6" data-id="bc_6">
+                        <span class="check-emoji">🔨</span>
+                        <span class="check-content">
+                            <span class="check-title">Crush the biochar</span>
+                            <span class="check-desc">Crush the biochar into smaller, usable pieces.</span>
+                        </span>
+                    </label>
+                </div>
+            </div>
+
+             <!-- Phase 4 -->
+             <div class="phase">
+                <button class="phase-header" onclick="togglePhase(this)">
+                    <span>Phase 4: Activation & Use ✨</span>
+                    <span class="phase-arrow">▼</span>
+                </button>
+                <div class="phase-body">
+                    <label class="checklist-item" for="bc_7">
+                        <input type="checkbox" id="bc_7" data-id="bc_7">
+                        <span class="check-emoji">🧪</span>
+                        <span class="check-content">
+                            <span class="check-title">CRITICAL: Activate the char</span>
+                            <span class="check-desc">'Charge' or activate the biochar by soaking it in liquid compost tea or nutrient-rich leachate for 24-48 hours.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="bc_8">
+                        <input type="checkbox" id="bc_8" data-id="bc_8">
+                        <span class="check-emoji">🪣</span>
+                        <span class="check-content">
+                            <span class="check-title">Mix into soil/compost</span>
+                            <span class="check-desc">Mix the activated biochar into your active worm bin or hot compost pile.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="bc_9">
+                        <input type="checkbox" id="bc_9" data-id="bc_9">
+                        <span class="check-emoji">👀</span>
+                        <span class="check-content">
+                            <span class="check-title">Monitor moisture</span>
+                            <span class="check-desc">Monitor soil moisture; biochar helps retain water and beneficial microbes.</span>
+                        </span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p class="footer-copy">&copy; 2026 World Composting</p>
         </footer>
-
-        <script>
-            const checklistItems = [
-                { id: 1, text: "Gather organic feedstock (wood scraps, coconut husint or corn stalks)." },
-                { id: 2, text: "Prepare a flame-cap kiln or a simple metal drum for pyrolysis." },
-                { id: 3, text: "Ensure the container is well-ventilated but prevents direct oxygen contact with hot coals." },
-                { id: 4, text: "Start the fire and add feedstock in layers, allowing it to char without fully turning to ash." },
-                { id: 5, text: "Once charred, quench the material immediately with water to stop combustion." },
-                { id: 6, text: "Crush the biochar into smaller, usable pieces." },
-                { id: 7, text: "CRITICAL: 'Charge' or activate the biochar by soaking it in liquid compost tea or nutrient-rich leachate for 24-48 hours." },
-                { id: 8, text: "Mix the activated biochar into your active worm bin or hot compost pile." },
-                { id: 9, text: "Monitor soil moisture; biochar helps retain water and beneficial microbes." }
-            ];
-
-            const container = document.getElementById('checklist-container');
-            const progressCount = document.getElementById('progress-count');
-
-            function updateProgress() {
-                const checkedCount = document.querySelectorAll('.checklist-checkbox:checked').length;
-                progressCount.textContent = checkedCount;
-                localStorage.setItem('biochar-progress', JSON.stringify(checkedCount));
-            }
-
-            // Load saved progress
-            const savedProgress = localStorage.getItem('biochar-progress');
-            const completedIds = savedProgress ? Array.from({length: parseInt(savedProgress)}, (_, i) => i + 1) : [];
-
-            checklistItems.forEach(item => {
-                const wrapper = document.createElement('div');
-                wrapper.className = 'checklist-item-wrapper';
-                wrapper.style.display = 'flex';
-                wrapper.style.alignItems = 'flex-start';
-                wrapper.style.gap = '10px';
-                wrapper.style.padding = '10px 15px';
-                wrapper.style.marginBottom = '8px';
-                wrapper.style.background = 'white';
-                wrapper.style.borderRadius = '8px';
-
-                const checkbox = document.createElement('input');
-                checkbox.type = 'checkbox';
-                checkbox.id = 'item-' + item.id;
-                checkbox.className = 'checklist-checkbox';
-                if (completedIds.includes(item.id)) checkbox.checked = true;
-                checkbox.addEventListener('change', updateProgress);
-
-                const label = document.createElement('label');
-                label.htmlFor = 'item-' + item.id;
-                label.className = 'checklist-label';
-                label.textContent = item.text;
-
-                wrapper.appendChild(checkbox);
-                wrapper.appendChild(label);
-                container.appendChild(wrapper);
-            });
-
-            // Initialize progress display
-            updateProgress();
-        </script>
     </div>
+
+    <script>
+        function togglePhase(button) {
+            const phase = button.parentElement;
+            phase.classList.toggle('active');
+        }
+
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        const progressLabel = document.getElementById('progress-label');
+        const progressPercent = document.getElementById('progress-percent');
+        const progressFill = document.getElementById('progress-fill');
+
+        function updateProgress() {
+            const total = checkboxes.length;
+            const checked = document.querySelectorAll('input[type="checkbox"]:checked').length;
+            if (progressLabel) progressLabel.textContent = `${checked} of ${total} steps completed`;
+            const percent = Math.round((checked / total) * 100);
+            if (progressPercent) progressPercent.textContent = percent + '%';
+            if (progressFill) progressFill.style.width = percent + '%';
+            localStorage.setItem('biochar-progress', JSON.stringify(checked));
+        }
+
+        // Load saved progress
+        const saved = localStorage.getItem('biochar-progress');
+        if (saved) {
+            const count = parseInt(saved);
+            let i = 0;
+            for(; i < count && i < checkboxes.length; i++) {
+                checkboxes[i].checked = true;
+            }
+        }
+
+        checkboxes.forEach(cb => cb.addEventListener('change', updateProgress));
+        updateProgress(); // Init
+    </script>
 </body>
 </html>
