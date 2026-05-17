@@ -157,11 +157,11 @@
                     // Handle Playlists (Replacing Video List)
                     const playlistList = document.getElementById('playlist-list');
                     const playlists = [
-                        {title: "Urban Worm Bag: Step-by-Step Setup & Maintenance", url: "https://www.youtube.com/watch?v=0QvS2l6zWYk&list=PLLEZ5krxcR7bezWFtUcb56uAuRdSKyMPt"},
-                        {title: "DIY Tote Systems & Advanced ANC Management", url: "https://www.youtube.com/watch?v=ej9gRwssrgk&list=PLLEZ5krxcR7bWov7DVUCX7W9_nmttf-XV"},
-                        {title: "Pre-Compost", url: "https://www.youtube.com/watch?v=LMO-FwynYeY&list=PLLEZ5krxcR7YaEocIy3Cd0hYG_T0_OZKN"},
-                        {title: "BN-LINK Grow Bag Worm System", url: "https://www.youtube.com/watch?v=kLiHqQ-kWm8&list=PLLEZ5krxcR7ZzsodUDnvRrUCPENQayutk"},
-                        {title: "Vitamix FoodCycler Eco 5", url: "https://www.youtube.com/watch?v=3vsWZyp2KVw&list=PLLEZ5krxcR7btHNJN-GkRklKCTsJr9Y99"}
+                        {title: "Urban Worm Bag: Step-by-Step Setup & Maintenance", url: "https://www.youtube.com/watch?v=0QvS2l6zWYk&list=PLLEZ5krxcR7bezWFtUcb56uAuRdSKyMPt", id: "0QvS2l6zWYk"},
+                        {title: "DIY Tote Systems & Advanced ANC Management", url: "https://www.youtube.com/watch?v=ej9gRwssrgk&list=PLLEZ5krxcR7bWov7DVUCX7W9_nmttf-XV", id: "ej9gRwssrgk"},
+                        {title: "Pre-Compost", url: "https://www.youtube.com/watch?v=LMO-FwynYeY&list=PLLEZ5krxcR7YaEocIy3Cd0hYG_T0_OZKN", id: "LMO-FwynYeY"},
+                        {title: "BN-LINK Grow Bag Worm System", url: "https://www.youtube.com/watch?v=kLiHqQ-kWm8&list=PLLEZ5krxcR7ZzsodUDnvRrUCPENQayutk", id: "kLiHqQ-kWm8"},
+                        {title: "Vitamix FoodCycler Eco 5", url: "https://www.youtube.com/watch?v=3vsWZyp2KVw&list=PLLEZ5krxcR7btHNJN-GkRklKCTsJr9Y99", id: "3vsWZyp2KVw"}
                     ];
 
                     playlists.forEach(p => {
@@ -169,6 +169,7 @@
                         card.className = 'video-card';
                         card.innerHTML = `
                             <a href="${p.url}" target="_blank" style="text-decoration:none;">
+                                <img src="https://img.youtube.com/vi/${p.id}/mqdefault.jpg" class="video-thumbnail" alt="${p.title}">
                                 <div class="video-info">
                                     <span class="video-title">${p.title}</span>
                                 </div>
