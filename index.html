@@ -72,14 +72,16 @@
 <body>
         <div id="app">
             <header>
+                <a href="http://youtube.com/@worldcomposting" target="_blank">
                 <img src="src/assets/logo.png" alt="Logo" onerror="this.src='https://via.placeholder.com/110?text=WC'">
+            </a>
                 <h1>World Composting</h1>
                 <p class="subtitle">Turning waste into wonder.</p>
             </header>
 
             <!-- FEATURED VIDEO SECTION -->
             <div id="featured-video-container" style="display: none;">
-                <div class="section-title">Featured Video</div>
+                <div class="section-title">Latest Video</div>
                 <div id="featured-video-card" class="video-card">
                     <!-- Populated by JS -->
                 </div>
@@ -106,14 +108,14 @@
                 <a href="lasagna.html" class="product-link" style="text-decoration: none;">
                     <span class="product-name">🥘 Lasagna Composting Checklist</span>
                 </a>
-                <a href="troubleshoot.html" class="product-link" style="text-decoration: none;">
-                    <span class="product-name">⚠️ Troubleshooting Guide</span>
+                <a href="biochar.html" class="product-link" style="text-decoration: none;">
+                    <span class="product-name">🌿 BioChar Composting Checklist</span>
                 </a>
             </div>
 
             <div id="video-container">
-                <div class="section-title">Latest from YouTube</div>
-                <div id="video-list"></div>
+                <div class="section-title">Top Playlists</div>
+                <div id="playlist-list"></div>
             </div>
 
             <div id="product-container">
@@ -152,22 +154,27 @@
                         `;
                     }
 
-                    // Handle Rest of Video List (Skip the first one if it's featured)
-                    const videoList = document.getElementById('video-list');
-                    const videosToDisplay = videos.slice(1); 
+                    // Handle Playlists (Replacing Video List)
+                    const playlistList = document.getElementById('playlist-list');
+                    const playlists = [
+                        {title: "Urban Worm Bag: Step-by-Step Setup & Maintenance", url: "https://www.youtube.com/watch?v=0QvS2l6zWYk&list=PLLEZ5krxcR7bezWFtUcb56uAuRdSKyMPt"},
+                        {title: "DIY Tote Systems & Advanced ANC Management", url: "https://www.youtube.com/watch?v=ej9gRwssrgk&list=PLLEZ5krxcR7bWov7DVUCX7W9_nmttf-XV"},
+                        {title: "Pre-Compost", url: "https://www.youtube.com/watch?v=LMO-FwynYeY&list=PLLEZ5krxcR7YaEocIy3Cd0hYG_T0_OZKN"},
+                        {title: "BN-LINK Grow Bag Worm System", url: "https://www.youtube.com/watch?v=kLiHqQ-kWm8&list=PLLEZ5krxcR7ZzsodUDnvRrUCPENQayutk"},
+                        {title: "Vitamix FoodCycler Eco 5", url: "https://www.youtube.com/watch?v=3vsWZyp2KVw&list=PLLEZ5krxcR7btHNJN-GkRklKCTsJr9Y99"}
+                    ];
 
-                    videosToDisplay.forEach(v => {
+                    playlists.forEach(p => {
                         const card = document.createElement('div');
                         card.className = 'video-card';
                         card.innerHTML = `
-                            <a href="${v.url}" target="_blank" style="text-decoration:none;">
-                                <img src="${v.thumbnail}" class="video-thumbnail" alt="${v.title}">
+                            <a href="${p.url}" target="_blank" style="text-decoration:none;">
                                 <div class="video-info">
-                                    <span class="video-title">${v.title}</span>
+                                    <span class="video-title">${p.title}</span>
                                 </div>
                             </a>
                         `;
-                        videoList.appendChild(card);
+                        playlistList.appendChild(card);
                     });
 
                     const pRes = await fetch('src/data/products.json');
