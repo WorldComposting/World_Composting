@@ -60,9 +60,10 @@ p.subtitle {
   margin-bottom: 2rem;
 }
 .section-title {
-  text-align: left;
+  text-align: center;
   border-left: 4px solid var(--forest-green);
-  padding-left: 1rem;
+  border-right: 4px solid var(--forest-green);
+  padding: 0 1rem;
   margin: 3rem 0 1.5rem 0;
   font-weight: 800;
   text-transform: uppercase;
