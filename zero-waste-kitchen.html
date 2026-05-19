@@ -6,158 +6,410 @@
     <title>Zero-Waste Kitchen Checklist | World Composting</title>
     <link rel="stylesheet" href="../src/styles/theme.css">
     <style>
-        /* Specific styles for checklist items to match beginner.html */
-        .checklist-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            padding: 1rem;
-            background: white;
-            margin-bottom: 0.75rem;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-            cursor: pointer;
-            transition: transform 0.2s;
+        #app {
+            max-width: 720px;
+            text-align: left;
         }
-        .checklist-item:active { transform: scale(0.98); }
-        .checkbox {
-            width: 24px;
-            height: 24px;
-            border: 2px solid var(--forest-green);
-            border-radius: 6px;
+        .back-link {
+            display: inline-block;
+            font-size: 0.85rem;
+            color: var(--ocean-blue);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            transition: opacity 0.2s;
+        }
+        .back-link:hover { opacity: 0.7; }
+        .back-link:focus-visible {
+            outline: 2px solid var(--ocean-blue);
+            outline-offset: 2px;
+            border-radius: 2px;
+        }
+        header {
+            text-align: center;
+        }
+        .hero-intro {
+            background: white;
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: var(--card-shadow);
+            margin: 2rem 0;
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--text-dark);
+        }
+        .hero-intro strong { color: var(--forest-green); }
+
+        /* Progress Tracker */
+        #progress-wrapper {
+            background: white;
+            border-radius: 16px;
+            padding: 1.25rem 1.5rem;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 2rem;
+        }
+        #progress-text {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--forest-green);
+            margin-bottom: 0.6rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #progress-percent {
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: var(--ocean-blue);
+        }
+        #progress-bar {
+            height: 10px;
+            background: var(--sage-green);
+            border-radius: 99px;
+            overflow: hidden;
+        }
+        #progress-fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, var(--leaf-lime), var(--forest-green));
+            border-radius: 99px;
+            transition: width 0.4s ease;
+        }
+
+        /* Phase (Collapsible Section) */
+        .phase {
+            background: white;
+            border-radius: 16px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 1.25rem;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.04);
+            transition: box-shadow 0.3s ease;
+        }
+        .phase:hover {
+            box-shadow: 0 12px 25px -5px rgba(75, 54, 33, 0.12);
+        }
+        .phase-header {
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 1.25rem 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: var(--forest-green);
+            text-align: left;
+            transition: background 0.2s ease;
+            gap: 0.75rem;
+        }
+        .phase-header:hover { background: rgba(45, 90, 39, 0.04); }
+        .phase-header:focus-visible {
+            outline: 2px solid var(--ocean-blue);
+            outline-offset: -2px;
+            border-radius: 16px 16px 0 0;
+        }
+        .phase-header .phase-arrow {
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+            color: var(--ocean-blue);
             flex-shrink: 0;
         }
-        .checklist-item.completed .checkbox {
+        .phase.active .phase-arrow { transform: rotate(180deg); }
+        .phase-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.3s ease;
+            padding: 0 1.5rem;
+        }
+        .phase.active .phase-body {
+            max-height: 5000px;
+            padding: 0 1.5rem 1.25rem;
+        }
+
+        /* Checklist Items */
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            cursor: pointer;
+            transition: opacity 0.2s ease;
+        }
+        .checklist-item:last-of-type { border-bottom: none; }
+        .checklist-item input[type="checkbox"] {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--forest-green);
+            border-radius: 5px;
+            flex-shrink: 0;
+            margin-top: 2px;
+            cursor: pointer;
+            position: relative;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .checklist-item input[type="checkbox"]:checked {
             background: var(--forest-green);
+            border-color: var(--forest-green);
         }
-        .checklist-item.completed .checkbox::after {
-            content: '✓';
-            color: white;
-            font-size: 14px;
-            font-weight: bold;
+        .checklist-item input[type="checkbox"]:checked::after {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 1px;
+            width: 6px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
         }
-        .checklist-item.completed .text {
-            text-decoration: line-through;
-            opacity: 0.6;
+        .checklist-item input[type="checkbox"]:focus-visible {
+            outline: 2px solid var(--ocean-blue);
+            outline-offset: 2px;
         }
-        .text {
-            flex-grow: 1;
-            font-size: 1rem;
+        .check-emoji {
+            font-size: 1.3rem;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+        .check-content { flex: 1; min-width: 0; }
+        .check-title {
+            display: block;
+            font-weight: 600;
+            font-size: 0.95rem;
             color: var(--text-dark);
-            text-align: left;
+            transition: color 0.2s;
+        }
+        .check-desc {
+            display: block;
+            font-size: 0.82rem;
+            color: #666;
+            margin-top: 2px;
+            line-height: 1.5;
+            transition: color 0.2s;
+        }
+        .check-desc a {
+            color: var(--ocean-blue);
+            text-decoration: underline;
+            font-weight: 500;
+        }
+        .check-desc a:hover { color: var(--forest-green); }
+        .checklist-item.completed .check-title {
+            color: #999;
+            text-decoration: line-through;
+        }
+        .checklist-item.completed .check-desc { color: #aaa; }
+        .checklist-item.completed .check-emoji { opacity: 0.5; }
+
+        /* Gear Section */
+        #gear-section {
+            margin-top: 3rem;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 4rem;
+            text-align: center;
+        }
+        .footer-copy {
+            opacity: 0.7;
+            font-size: 0.85rem;
+            color: var(--forest-green);
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            .phase-header { padding: 1rem 1.2rem; font-size: 0.95rem; }
+            .phase.active .phase-body { padding: 0 1.2rem 1rem; }
+            .checklist-item { gap: 0.6rem; padding: 0.6rem 0; }
+            .check-emoji { font-size: 1.1rem; }
+            .check-title { font-size: 0.9rem; }
+            .check-desc { font-size: 0.78rem; }
+            .hero-intro { padding: 1.2rem; font-size: 0.92rem; }
+            #progress-wrapper { padding: 1rem 1.2rem; }
+        }
+        @media (max-width: 375px) {
+            .phase-header { padding: 0.85rem 1rem; font-size: 0.88rem; }
+            .phase.active .phase-body { padding: 0 1rem 0.85rem; }
         }
     </style>
 </head>
 <body>
     <div id="app">
         <header>
-            <a href="../index.html">
-                <img src="../src/assets/logo.png" alt="Logo" onerror="this.src='https://via.placeholder.com/110?text=WC'">
-            </a>
+            <a href="index.html" class="back-link">← Back to Home</a>
+            <img src="../src/assets/logo.png" alt="Logo" onerror="this.src='https://via.placeholder.com/110?text=WC'">
             <h1>Zero-Waste Kitchen</h1>
             <p class="subtitle">Reduce, Reuse, and Repurpose.</p>
         </header>
 
-        <div id="checklist-container">
-            <p style="text-align: left; font-size: 0.9rem; color: var(--ocean-blue); margin-bottom: 1rem;">
-                Click each item as you implement it in your kitchen to track your progress towards a plastic-free, zero-waste lifestyle.
-            </p>
-
-            <div id="checklist-items">
-                <!-- Items will be injected by JS -->
+        <!-- Progress Tracker -->
+        <div id="progress-wrapper">
+            <div id="progress-text">
+                <span id="progress-label">0 of 35 items completed</span>
+                <span id="progress-percent">0%</span>
             </div>
-
-            <div id="progress-container" style="margin-top: 2rem; padding: 1rem; background: white; border-radius: 12px;">
-                <p id="progress-text" style="font-weight: 600; color: var(--forest-green); margin: 0;">Progress: 0%</p>
-            </div>
+            <div id="progress-bar"><div id="progress-fill"></div></div>
         </div>
 
-        <footer style="margin-top: 4rem; opacity: 0.7; font-size: 0.85rem;">
-            &copy; 2026 World Composting<br>
-            As an Amazon Associate, I earn from qualifying purchases.
+        <!-- Hero Intro -->
+        <div class="hero-intro">
+            <p>Transform your kitchen into a sustainable powerhouse! 🌿 Small changes in how we store, wrap, and clean our food can lead to massive reductions in waste. Use this checklist to track your transition toward a <strong style="color:var(--forest-</strong>green)">plastic-free, zero-waste lifestyle</strong>.</p>
+        </div>
+
+        <!-- Checklist Phases -->
+        <div id="phases">
+
+            <!-- Phase 1: Easy Swaps -->
+            <div class="phase active">
+                <button class="phase-header" onclick="togglePhase(this)">
+                    <span>Phase 1: Quick & Easy Swaps 🍃</span>
+                    <span class="phase-arrow">▼</span>
+                </button>
+                <div class="phase-body">
+                    <label class="checklist-item">
+                        <input type="checkbox" data-id="p1_0">
+                        <span class="check-emoji">🛍️</span>
+                        <span class="check-content">
+                            <span class="check-title">Switch to reusable produce bags</span>
+                            <span class="check-desc">Replace single-use plastic roll bags with mesh cotton bags.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item">
+                        <input type="checkbox" data-id="p1_1">
+                        <span class="check-emoji">🥣</span>
+                        <span class="check-content">
+                            <span class="check-title">Use reusable silicone food bags</span>
+                            <span class="check-desc"><a href="https://amzn.to/4wFb3Ck" target="_blank">Stasher-style bags</a> are great for snacks and liquids.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item">
+                        <input type="checkbox" data-id="p1_2">
+                        <span class="check-emoji">🐝</span>
+                        <span class="check-content">
+                            <span class="check-title">Try beeswax wraps</span>
+                            <span class="check-desc">Use <a href="https://amzn.to/49WEV38" target="_blank">beeswax wraps</a> instead of cling film for covering bowls.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item">
+                        <input type="checkbox" data-id="p1_3">
+                        <span class="check-emoji">🥤</span>
+                        <span class="check-content">
+                            <span class="check-title">Switch to metal or glass straws</span>
+                            <span class="check-desc"><a href="https://amzn.to/4wFXv%D0%1D" target="_blank">Reusable straws</a> are a simple win for the ocean.</span>
+                        </span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Phase 2: Upgrading Your Gear -->
+            <div class="phase">
+                <button class="phase-header" onclick="togglePhase(this)">
+                    <span>Phase 2: Kitchen Gear Upgrades 🛠️</span>
+                    <span class="phase-arrow">▼</span>
+                </button>
+                <div class="phase-body">
+                    <label class="checklist-item">
+                        <input type="checkbox" data-id="p2_0">
+                        <span class="check-emoji">📦</span>
+                        <span class="check-content">
+                            <span class="check-title">Invest in a compost bin</span>
+                            <span class="check-desc"><a href="https://amzn.to/3RjfbI3" target="_blank">A countertop pail</a> makes collecting scraps easy.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item">
+                        <input type="checkbox" data-id="p2_1">
+                        <span class="check-emoji">🫙</span>
+                        <span class="check-content">
+                            <span class="check-title">Use glass or stainless steel containers</span>
+                            <span class="check-desc"><a href="https://amzn.to/4dtAkqg" target="_blank">Glass containers</a> keep food fresh and are plastic-free.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item">
+                        <input type="checkbox" data-id="p2_2">
+                        <span class="check-emoji">🧺</span>
+                        <span class="check-content">
+                            <span class="check-title">Switch to reusable cloth napkins</span>
+                            <span class="check-desc"><a href="https://amzn.to/4wLsO31" target="_blank">Cloth napkins</a> reduce paper waste every meal.</span>
+                        </span>
+                    </label>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Gear Section -->
+        <div id="gear-section">
+            <div class="section-title">Recommended Zero-Waste Gear</div>
+            <div id="gear-list"></div>
+        </div>
+
+        <footer>
+            <p class="footer-copy">&copy; 2026 World Composting</p>
+            <p class="footer-copy" style="margin-top: 0.5rem;">As an Amazon Associate, I earn from qualifying purchases.</p>
         </footer>
     </div>
 
     <script>
-        const items = [
-            { text: "Switch to reusable silicone food bags (e.g., Stasher)", url: "https://amzn.to/4wFb3Ck" },
-            { text: "Use beeswax wraps instead of plastic cling film", url: "https://amzn.to/49WEV38" },
-            { text: "Replace paper towels with washable cloth rags", url: "https://amzn.to/4wLsO31" },
-            { text: "Use glass or stainless steel containers for leftovers", url: "https://amzn.to/4dtAkqg" },
-            { text: "Invest in a high-quality compost bin for scraps", url: "https://amzn.to/3RjfbI3" },
-            { text: "Swap plastic wrap for reusable food covers", url: null },
-            { text: "Use reusable produce bags for grocery shopping", url: "https://amzn.to/4nG2_SBx" },
-            { text: "Switch to bamboo dish brushes and sponges", url: "https://amzn.to/4usSeAY" },
-            { text: "Opt for bulk buying to reduce packaging waste", url: null },
-            { text: "Use glass jars for storing dry goods (beans, rice, etc.)", url: null },
-            { text: "Replace plastic wrap with beeswax wraps", url: null },
-            { text: "Use refillable soap dispensers", url: null },
-            { text: "Switch to metal or glass straws", url: "https://amzn.to/4wFXv9D" },
-            { text: "Use compostable coffee pods/filters", url: null },
-            { text: "Store herbs in water in a mason jar", url: null },
-            { text: "Use reusable mesh bags for fruit and veggies", url: null },
-            { text: "Invest in a countertop compost pail", url: null },
-            { text: "Replace plastic cutlery with bamboo/metal sets", url: null },
-            { text: "Use cloth napkins instead of paper ones", url: "https://amzn.to/4wLsO31" },
-            { text: "Switch to wooden or silicone utensils", url: null },
-            { text: "Try making your own oat milk/nut milk in glass jars", url: null },
-            { text: "Use reusable beeswax wraps for cheese", url: null },
-            { text: "Store leafy greens in damp cloth towels in the fridge", url: null },
-            { text: "Use silicone lids for bowls and containers", url: null },
-            { text: "Transition to bulk-buyable grains and legumes", url: null },
-            { text: "Swap plastic sponges for loofah or wooden brushes", url: null },
-            { text: "Use glass straws with cleaning brushes", url: null },
-            { text: "Try reusable coffee filters", url: null },
-            { text: "Switch to refillable cleaning solutions", url: null },
-            { text: "Adopt a 'first in, enough' fridge organization system", url: null }
-        ];
+        function togglePhase(btn) {
+            const phase = btn.closest('.phase');
+            phase.classList.toggle('active');
+        }
 
-        const container = document.getElementById('checklist-items');
-        const progressTextElement = document.getElementById('progress-text');
-
-        // Load from localStorage
-        let completedItems = JSON.parse(localStorage.getItem('zero-waste-kitchen-progress')) || [];
+        // The items list for progress tracking - Simplified for the example logic
+        const TOTAL_ITEMS = 7; // Adjust based on your actual count in HTML
 
         function updateProgress() {
-            const percent = Math.round((completedItems.length / items.length) * 100);
-            if (progressTextElement) progressTextElement.innerText = `Progress: ${percent}%`;
-            localStorage.setItem('zero-waste-kitchen-progress', JSON.stringify(completedItems));
-        }
-
-        function render() {
-            container.innerHTML = '';
-            items.forEach((item, index) => {
-                const isCompleted = completedItems.includes(index);
-                const div = document.createElement('div');
-                div.className = `checklist-item ${isCompleted ? 'completed' : ''}`;
-                
-                const content = item.url 
-                    ? `<a href="${item.url}" target="_blank" style="text-decoration:none; color:inherit; flex-grow:1;" onclick="event.stopPropagation();">${item.text}</a>`
-                    : `<span class="text">${item.text}</span>`;
-
-                div.innerHTML = `
-                    <div class="checkbox"></div>
-                    ${content}
-                `;
-                
-                div.onclick = (e) => {
-                    if (isCompleted) {
-                        completedItems = completedItems.filter(i => i !== index);
-                    } else {
-                        completedItems.push(index);
-                    }
-                    render();
-                    updateProgress();
-                };
-                container.appendChild(div);
+            const checkboxes = document.querySelectorAll('.checklist-item input[type="checkbox"]');
+            let checked = 0;
+            checkboxes.forEach(cb => {
+                if (cb.checked) checked++;
+                const item = cb.closest('.checklist-item');
+                if (item) item.classList.toggle('completed', cb.checked);
             });
-            updateProgress();
+            const pct = Math.round((checked / TOTAL_ITEMS) * 100);
+            document.getElementById('progress-label').textContent = `${checked} of ${TOTAL_ITEMS} items completed`;
+            document.getElementById('progress-percent').textContent = `${pct}%`;
+            document.getElementById('progress-fill').style.width = `${pct}%`;
         }
 
-        render();
+        // Load gear products from your JSON (as in beginner.html)
+        async function loadGear() {
+            try {
+                const res = await fetch('../src/data/products.json');
+                if (!res.ok) throw new Error('Could not load product data.');
+                const products = await res.json();
+                const categories = ['Worm Bin Items', 'Kitchen']; // Add relevant categories here
+                const filtered = products.filter(p => categories.includes(p['Category']));
+
+                const list = document.getElementById('gear-list');
+                filtered.forEach(p => {
+                    const href = (p['Amazon Link'] !== 'NaN' && p.['Amazon Link']) || '#';
+                    const link = document.createElement('a');
+                    link.href = href;
+                    link.className = 'product-link';
+                    link.target = '_blank';
+                    link.innerHTML = '<span class="product-name">' + p['Item'] + '</span>';
+                    list.appendChild(link);
+                });
+            } catch (e) {
+                console.error('Error loading gear:', e);
+                document.getElementById('gear-list').innerHTML = '<p style="opacity:0.6;font-size:0.9rem;">Gear recommendations coming soon.</p>';
+            }
+        }
+
+        // Initialize
+        document.querySelectorAll('.checklist-item input[type="checkbox"]').forEach(cb => {
+            cb.addEventListener('change', updateProgress);
+        });
+        loadGear();
+        updateProgress();
     </script>
 </body>
 </html>
