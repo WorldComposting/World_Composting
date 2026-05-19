@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zero-Waste Kitchen Checklist | World Composting</title>
+    <link rel="stylesheet" href="../src/styles/theme.css">
+    <style>
+        /* Specific styles for checklist items to match beginner.html */
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: white;
+            margin-bottom: 0.75rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .checklist-item:active { transform: scale(0.98); }
+        .checkbox {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--forest-green);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .checklist-item.completed .checkbox {
+            background: var(--forest-green);
+        }
+        .checklist-item.completed .checkbox::after {
+            content: '✓';
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .checklist-item.completed .text {
+            text-decoration: line-through;
+            opacity: 0.6;
+        }
+        .text {
+            flex-grow: 1;
+            font-size: 1rem;
+            color: var(--text-dark);
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <a href="../index.html">
+                <img src="../src/assets/logo.png" alt="Logo" onerror="this.src='https://via.placeholder.com/110?text=WC'">
+            </a>
+            <h1>Zero-Waste Kitchen</h1>
+            <p class="subtitle">Reduce, Reuse, and Repurpose.</p>
+        </header>
+
+        <div id="checklist-container">
+            <p style="text-align: left; font-size: 0.9rem; color: var(--ocean-blue); margin-bottom: 1rem;">
+                Click each item as you implement it in your kitchen to track your progress towards a plastic-free, zero-waste lifestyle.
+            </p>
+
+            <div id="checklist-items">
+                <!-- Items will be injected by JS -->
+            </div>
+
+            <div id="progress-container" style="margin-top: 2rem; padding: 1rem; background: white; border-radius: 12px;">
+                <p id="progress-text" style="font-weight: 600; color: var(--forest-green); margin: 0;">Progress: 0%</p>
+            </div>
+        </div>
+
+        <footer style="margin-top: 4rem; opacity: 0.7; font-size: 0.85rem;">
+            &copy; 2026 World Composting<br>
+            As an Amazon Associate, I earn from qualifying purchases.
+        </footer>
+    </div>
+
+    <script>
+        const items = [
+            { text: "Switch to reusable silicone food bags (e.g., Stasher)", url: "https://amzn.to/4wFb3Ck" },
+            { text: "Use beeswax wraps instead of plastic cling film", url: "https://amzn.to/49WEV38" },
+            { text: "Replace paper towels with washable cloth rags", url: "https://amzn.to/4wLsO31" },
+            { text: "Use glass or stainless steel containers for leftovers", url: "https://amzn.to/4dtAkqg" },
+            { text: "Invest in a high-quality compost bin for scraps", url: "https://amzn.to/3RjfbI3" },
+            { text: "Swap plastic wrap for reusable food covers", url: null },
+            { text: "Use reusable produce bags for grocery shopping", url: "https://amzn.to/4nG2_SBx" },
+            { text: "Switch to bamboo dish brushes and sponges", url: "https://amzn.to/4usSeAY" },
+            { text: "Opt for bulk buying to reduce packaging waste", url: null },
+            { text: "Use glass jars for storing dry goods (beans, rice, etc.)", url: null },
+            { text: "Replace plastic wrap with beeswax wraps", url: null },
+            { text: "Use refillable soap dispensers", url: null },
+            { text: "Switch to metal or glass straws", url: "https://amzn.to/4wFXv9D" },
+            { text: "Use compostable coffee pods/filters", url: null },
+            { text: "Store herbs in water in a mason jar", url: null },
+            { text: "Use reusable mesh bags for fruit and veggies", url: null },
+            { text: "Invest in a countertop compost pail", url: null },
+            { text: "Replace plastic cutlery with bamboo/metal sets", url: null },
+            { text: "Use cloth napkins instead of paper ones", url: "https://amzn.to/4wLsO31" },
+            { text: "Switch to wooden or silicone utensils", url: null },
+            { text: "Try making your own oat milk/nut milk in glass jars", url: null },
+            { text: "Use reusable beeswax wraps for cheese", url: null },
+            { text: "Store leafy greens in damp cloth towels in the fridge", url: null },
+            { text: "Use silicone lids for bowls and containers", url: null },
+            { text: "Transition to bulk-buyable grains and legumes", url: null },
+            { text: "Swap plastic sponges for loofah or wooden brushes", url: null },
+            { text: "Use glass straws with cleaning brushes", url: null },
+            { text: "Try reusable coffee filters", url: null },
+            { text: "Switch to refillable cleaning solutions", url: null },
+            { text: "Adopt a 'first in, enough' fridge organization system", url: null }
+        ];
+
+        const container = document.getElementById('checklist-items');
+        const progressTextElement = document.getElementById('progress-text');
+
+        // Load from localStorage
+        let completedItems = JSON.parse(localStorage.getItem('zero-waste-kitchen-progress')) || [];
+
+        function updateProgress() {
+            const percent = Math.round((completedItems.length / items.length) * 100);
+            if (progressTextElement) progressTextElement.innerText = `Progress: ${percent}%`;
+            localStorage.setItem('zero-waste-kitchen-progress', JSON.stringify(completedItems));
+        }
+
+        function render() {
+            container.innerHTML = '';
+            items.forEach((item, index) => {
+                const isCompleted = completedItems.includes(index);
+                const div = document.createElement('div');
+                div.className = `checklist-item ${isCompleted ? 'completed' : ''}`;
+                
+                const content = item.url 
+                    ? `<a href="${item.url}" target="_blank" style="text-decoration:none; color:inherit; flex-grow:1;" onclick="event.stopPropagation();">${item.text}</a>`
+                    : `<span class="text">${item.text}</span>`;
+
+                div.innerHTML = `
+                    <div class="checkbox"></div>
+                    ${content}
+                `;
+                
+                div.onclick = (e) => {
+                    if (isCompleted) {
+                        completedItems = completedItems.filter(i => i !== index);
+                    } else {
+                        completedItems.push(index);
+                    }
+                    render();
+                    updateProgress();
+                };
+                container.appendChild(div);
+            });
+            updateProgress();
+        }
+
+        render();
+    </script>
+</body>
+</html>
