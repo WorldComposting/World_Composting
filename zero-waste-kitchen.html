@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zero-Waste Kitchen Checklist | World Composting</title>
-    <link rel="stylesheet" href="../src/styles/theme.css">
+    <link rel="stylesheet" href="src/styles/theme.css">
     <style>
         #app {
             max-width: 720px;
@@ -244,7 +244,7 @@
     <div id="app">
         <header>
             <a href="index.html" class="back-link">← Back to Home</a>
-            <img src="../src/assets/logo.png" alt="Logo" onerror="this.src='https://via.placeholder.com/110?text=WC'">
+            <img src="src/assets/logo.png" alt="Logo" onerror="this.src='https://via.placeholder.com/110?text=WC'">
             <h1>Zero-Waste Kitchen</h1>
             <p class="subtitle">Reduce, Reuse, and Repurpose.</p>
         </header>
@@ -260,7 +260,7 @@
 
         <!-- Hero Intro -->
         <div class="hero-intro">
-            <p>Transform your kitchen into a sustainable powerhouse! 🌿 Small changes in how we store, wrap, and clean our food can lead to massive reductions in waste. Use this checklist to track your transition toward a <strong style="color:var(--forest-</strong>green)">plastic-free, zero-waste lifestyle</strong>.</p>
+            <p>Transform your kitchen into a sustainable powerhouse! 🌿 Small changes in how we store, wrap, and clean our food can lead to massive reductions in waste. Use this checklist to track your transition toward a <strong>plastic-free, zero-waste lifestyle</strong>.</p>
         </div>
 
         <!-- Checklist Phases -->
@@ -273,36 +273,36 @@
                     <span class="phase-arrow">▼</span>
                 </button>
                 <div class="phase-body">
-                    <label class="checklist-item">
-                        <input type="checkbox" data-id="p1_0">
+                    <label class="checklist-item" for="p1_0">
+                        <input type="checkbox" id="p1_0" data-id="p1_0">
                         <span class="check-emoji">🛍️</span>
                         <span class="check-content">
                             <span class="check-title">Switch to reusable produce bags</span>
                             <span class="check-desc">Replace single-use plastic roll bags with mesh cotton bags.</span>
                         </span>
                     </label>
-                    <label class="checklist-item">
-                        <input type="checkbox" data-id="p1_1">
+                    <label class="checklist-item" for="p1_1">
+                        <input type="checkbox" id="p1_1" data-id="p1_1">
                         <span class="check-emoji">🥣</span>
                         <span class="check-content">
                             <span class="check-title">Use reusable silicone food bags</span>
                             <span class="check-desc"><a href="https://amzn.to/4wFb3Ck" target="_blank">Stasher-style bags</a> are great for snacks and liquids.</span>
                         </span>
                     </label>
-                    <label class="checklist-item">
-                        <input type="checkbox" data-id="p1_2">
+                    <label class="checklist-item" for="p1_2">
+                        <input type="checkbox" id="p1_2" data-id="p1_2">
                         <span class="check-emoji">🐝</span>
                         <span class="check-content">
                             <span class="check-title">Try beeswax wraps</span>
                             <span class="check-desc">Use <a href="https://amzn.to/49WEV38" target="_blank">beeswax wraps</a> instead of cling film for covering bowls.</span>
                         </span>
                     </label>
-                    <label class="checklist-item">
-                        <input type="checkbox" data-id="p1_3">
+                    <label class="checklist-item" for="p1_3">
+                        <input type="checkbox" id="p1_3" data-id="p1_3">
                         <span class="check-emoji">🥤</span>
                         <span class="check-content">
                             <span class="check-title">Switch to metal or glass straws</span>
-                            <span class="check-desc"><a href="https://amzn.to/4wFXv%D0%1D" target="_blank">Reusable straws</a> are a simple win for the ocean.</span>
+                            <span class="check-desc"><a href="https://amzn.to/4wFXv9D" target="_blank">Reusable straws</a> are a simple win for the ocean.</span>
                         </span>
                     </label>
                 </div>
@@ -315,24 +315,24 @@
                     <span class="phase-arrow">▼</span>
                 </button>
                 <div class="phase-body">
-                    <label class="checklist-item">
-                        <input type="checkbox" data-id="p2_0">
+                    <label class="checklist-item" for="p2_0">
+                        <input type="checkbox" id="p2_0" data-id="p2_0">
                         <span class="check-emoji">📦</span>
                         <span class="check-content">
                             <span class="check-title">Invest in a compost bin</span>
                             <span class="check-desc"><a href="https://amzn.to/3RjfbI3" target="_blank">A countertop pail</a> makes collecting scraps easy.</span>
                         </span>
                     </label>
-                    <label class="checklist-item">
-                        <input type="checkbox" data-id="p2_1">
+                    <label class="checklist-item" for="p2_1">
+                        <input type="checkbox" id="p2_1" data-id="p2_1">
                         <span class="check-emoji">🫙</span>
                         <span class="check-content">
                             <span class="check-title">Use glass or stainless steel containers</span>
                             <span class="check-desc"><a href="https://amzn.to/4dtAkqg" target="_blank">Glass containers</a> keep food fresh and are plastic-free.</span>
                         </span>
                     </label>
-                    <label class="checklist-item">
-                        <input type="checkbox" data-id="p2_2">
+                    <label class="checklist-item" for="p2_2">
+                        <input type="checkbox" id="p2_2" data-id="p2_2">
                         <span class="check-emoji">🧺</span>
                         <span class="check-content">
                             <span class="check-title">Switch to reusable cloth napkins</span>
@@ -362,8 +362,8 @@
             phase.classList.toggle('active');
         }
 
-        // The items list for progress tracking - Simplified for the example logic
-        const TOTAL_ITEMS = 7; // Adjust based on your actual count in HTML
+        // Progress tracking
+        const TOTAL_ITEMS = 7;
 
         function updateProgress() {
             const checkboxes = document.querySelectorAll('.checklist-item input[type="checkbox"]');
@@ -379,10 +379,32 @@
             document.getElementById('progress-fill').style.width = `${pct}%`;
         }
 
+        // localStorage persistence
+        function saveCheckbox(id, checked) {
+            if (checked) {
+                localStorage.setItem('zero-waste-kitchen_' + id, '1');
+            } else {
+                localStorage.removeItem('zero-waste-kitchen_' + id);
+            }
+        }
+
+        function loadCheckboxes() {
+            const checkboxes = document.querySelectorAll('.checklist-item input[type="checkbox"]');
+            checkboxes.forEach(cb => {
+                const saved = localStorage.getItem('zero-waste-kitchen_' + cb.dataset.id);
+                if (saved === '1') cb.checked = true;
+                cb.addEventListener('change', function() {
+                    saveCheckbox(this.dataset.id, this.checked);
+                    updateProgress();
+                });
+            });
+            updateProgress();
+        }
+
         // Load gear products from your JSON (as in beginner.html)
         async function loadGear() {
             try {
-                const res = await fetch('../src/data/products.json');
+                const res = await fetch('src/data/products.json');
                 if (!res.ok) throw new Error('Could not load product data.');
                 const products = await res.json();
                 const categories = ['Worm Bin Items', 'Kitchen']; // Add relevant categories here
@@ -390,7 +412,8 @@
 
                 const list = document.getElementById('gear-list');
                 filtered.forEach(p => {
-                    const href = (p['Amazon Link'] !== 'NaN' && p.['Amazon Link']) || '#';
+                    const href = (p['Amazon Link'] !== 'NaN' && p['Amazon Link']) ||
+                                 (p['Other Link'] !== 'NaN' && p['Other Link']) || '#';
                     const link = document.createElement('a');
                     link.href = href;
                     link.className = 'product-link';
@@ -404,12 +427,9 @@
             }
         }
 
-        // Initialize
-        document.querySelectorAll('.checklist-item input[type="checkbox"]').forEach(cb => {
-            cb.addEventListener('change', updateProgress);
-        });
+        // Init
+        loadCheckboxes();
         loadGear();
-        updateProgress();
     </script>
 </body>
 </html>
