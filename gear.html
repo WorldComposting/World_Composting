@@ -3,17 +3,43 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>World Composting | My Gear</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    
+    <!-- Primary SEO -->
+    <title>Essential Composting Gear & Tools | World Composting</title>
+    <meta name="description" content="Discover the best worms, bins, and tools for your composting journey via our curated gear list.">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://worldcomposting.com/gear">
+    <meta property="og:title" content="Essential Composting Gear & Tools | World Composting">
+    <meta property="og:description" content="Discover the best worms, bins, and tools for your composting journey via our curated gear list.">
+    <meta property="og:image" content="src/assets/logo.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://worldcomposting.com/gear">
+    <meta property="twitter:title" content="Essential Composting Gear & Tools | World Composting">
+    <meta property="twitter:description" content="Discover the best worms, bins, and tools for your composting journey via our curated gear list.">
+    <meta property="twitter:image" content="src/assets/logo.png">
+
+    <!-- Structured Data (Schema.org) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Essential Composting Gear & Tools | World Composting",
+      "description": "Discover the best worms, bins, and tools for your composting journey via our curated gear list.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "World Comforming"
+      }
+    }
+    </script>
+
     <link rel="stylesheet" href="src/styles/theme.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        /* Override for Gear Page specifically to keep the card look */
-        .card-gradient {
-            background: linear-gradient(135deg, rgba(27, 67, 50, 0.8) 0%, rgba(10, 31, 61, 0.8) 100%);
-        }
-    </style>
-</head>
+    </head>
 <body class="min-h-screen flex flex-col items-center p-4">
 
     <header class="mt-8 mb-12 text-center">
@@ -77,7 +103,7 @@
                                              (item['Other Link'] !== 'NaN' && item['Other Link']) || '#';
                                 return `
                                     <a href="${href}" target="_blank" class="product-link group">
-                                        <span class="product-name">${item['Item']}</span>
+                                        <span class="product-name">${item['Item']} (Affiliate Link)</span>
                                     </a>`;
                             }).join('')}
                         </div>

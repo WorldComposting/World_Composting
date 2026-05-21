@@ -4,7 +4,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>World Composting | Official Links</title>
+    
+    <!-- Primary SEO -->
+    <title>World Composting | Free Worm Composting Checklists & Urban Guides</title>
+    <meta name="description" content="Discover free worm composting checklists, home vermicomposting guides, and essential urban composting gear. Master Bokashi, Hot, and Indoor composting easily.">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://worldcomposting.com/">
+    <meta property="og:title" content="World Composting | Free Worm Composting Checklists & Urban Guides">
+    <meta property="og:description" content="Master urban composting with our free, interactive checklists for worm bins, Bokashi, and more. Find the best gear for your composting journey.">
+    <meta property="og:image" content="src/assets/logo.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://worldcomposting.com/">
+    <meta property="twitter:title" content="World Composting | Free Worm Composting Checklists & Urban Guides">
+    <meta property="twitter:description" content="Master urban composting with our free, interactive checklists for worm bins, Bokashi, and more.">
+    <meta property="twitter:image" content="src/assets/logo.png">
+
+    <!-- Structured Data (Schema.org) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "World Composting - Free Composting Guides & Gear",
+      "description": "A collection of interactive checklists and guides for worm composting, Bokelse, and urban waste reduction.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "World Composting"
+      }
+    }
+    </script>
+
     <link rel="stylesheet" href="src/styles/theme.css">
     <style>
         /* Video cards: thumbnail left of title */
@@ -72,11 +105,15 @@
 <body>
         <div id="app">
             <header>
-                <a href="http://youtube.com/@worldcomposting" target="_blank">
-                <img src="src/assets/logo.png" alt="Logo" onerror="this.src='https://via.placeholder.com/110?text=WC'">
+                <a href="http://youtube.com/@worldcomposting" target="_blank" aria-label="Visit World Composting YouTube Channel">
+                <img src="src/assets/logo.png" alt="World Composting Logo" onerror="this.src='https://via.placeholder.com/110?text=WC'">
             </a>
-                <h1>World Composting</h1>
+                <h1 id="main-heading">World Composting</h1>
                 <p class="subtitle">Turning waste into wonder.</p>
+            </string>
+            <nav aria-label="Main Navigation">
+            <!-- This is a simple landing page, no nav links yet, but adding structure -->
+            </nav>
             </header>
 
             <!-- FEATURED VIDEO SECTION -->
@@ -93,25 +130,25 @@
             </div>
 
             <!-- GET STARTED — moved below videos for better flow -->
-            <div id="checklist-container" style="margin-top: 2rem;">
+            <div id="checklist-container" style="margin-top: 2rem;" aria-label="Composting Checklists">
                 <div class="section-title">Get Started</div>
-                <a href="beginner.html" class="product-link" style="text-decoration: none;">
-                    <span class="product-name">🪱 Worm Composting Checklist</span>
+                <a href="beginner.html" class="product-link" style="text-decoration: none;" aria-label="Start Worm Composting Checklist">
+                    <span class="product-name">🪱 Worm Composting Checklist (Affiliate Link)</span>
                 </a>
-                <a href="bokashi.html" class="product-link" style="text-decoration: none;">
-                    <span class="product-name">🍚 Bokashi Composting Checklist</span>
+                <a href="bokashi.html" class="product-link" style="text-decoration: none;" aria-label="Start Bokashi Composting Checklist">
+                    <span class="product-name">🍚 Bokashi Composting Checklist (Affiliate Link)</span>
                 </a>
-                <a href="biochar.html" class="product-link" style="text-decoration: none;">
-                    <span class="product-name">🌿 BioChar Composting Checklist</span>
+                <a href="biochar.html" class="product-link" style="text-decoration: none;" aria-label="Start BioChar Composting Checklist">
+                    <span class="product-name">🌿 BioChar Composting Checklist (Affiliate Link)</span>
                 </a>
-                <a href="hot.html" class="product-link" style="text-decoration: none;">
-                    <span class="product-name">🔥 Hot Composting Checklist</span>
+                <a href="hot.html" class="product-link" style="text-decoration: none;" aria-label="Start Hot Composting Checklist">
+                    <span class="product-name">🔥 Hot Composting Checklist (Affiliate Link)</span>
                 </a>
-                <a href="tea.html" class="product-link" style="text-decoration: none;">
-                    <span class="product-name">🍵 Compost Tea Checklist</span>
+                <a href="tea.html" class="product-link" style="text-decoration: none;" aria-label="Start Compost Tea Checklist">
+                    <span class="product-name">🍵 Compost Tea Checklist (Affiliate Link)</span>
                 </a>
-                <a href="lasagna.html" class="product-link" style="text-decoration: none;">
-                    <span class="product-name">🥘 Lasagna Composting Checklist</span>
+                <a href="lasagna.html" class="product-link" style="text-decoration: none;" aria-label="Start Lasagna Composting Checklist">
+                    <span class="product-name">🥘 Lasagnas Composting Checklist (Affiliate Link)</span>
                 </a>
             </div>
 
@@ -196,7 +233,7 @@
                         link.href = href;
                         link.className = 'product-link';
                         link.target = '_blank';
-                        link.innerHTML = `<span class="product-name">${p['Item']}</span>`;
+                        link.innerHTML = `<span class="product-name">${p['Item']} (Affiliate Link)</span>`;
                         prodList.appendChild(link);
                     });
                 } catch (e) {

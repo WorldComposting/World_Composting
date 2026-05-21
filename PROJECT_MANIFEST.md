@@ -64,12 +64,13 @@
 - [x] Zero-Waste Kitchen checklist (reusable swaps, gear upgrades, localStorage persistence).
 
 ## ⏳ Pending Changes
-- [ ] Verify custom domain (`worldcomposting.com`) propagation and SSL functionality on GitHub Pages.
-- [ ] Indoor/Windowsill Worm Bin checklist (small-space vermicomposting).
-- [ ] Balcony/Urban Composting checklist (apartment-friendly methods).
-- [ ] Kitchen Scraps Prep Guide (what to chop, soak, or avoid before composting).
-- [ ] Seasonal Composting checklist (winter insulation vs summer cooling techniques).
-- [ ] Backyard Bin Setup checklist (traditional 3-bin or single-bin outdoor setup).
+|- [ ] Verify custom domain (`worldcomposting.com`) propagation and SSL functionality on GitHub Pages.
+|- [ ] Indoor/Windowsill Worm Bin checklist (small-space vermicomposting).
+|- [ ] Balcony/Urban Composting checklist (apartment-friendly methods).
+|- [ ] Kitchen Scraps Prep Guide (what to chop, soak, or avoid before composting).
+|- [ ] Seasonal Composting checklist (winter insulation vs summer cooling techniques).
+|- [ ] Backyard Bin Setup checklist (traditional 3-bin or single-bin outdoor setup).
+|- [ ] Implement Email Marketing/Newsletter integration (future task).
 
 ## 🔄 Development Workflow
 - **Project Manager (this chat):** Plans scope, reviews results, makes design/content decisions.
