@@ -24,18 +24,81 @@
     <meta property="twitter:image" content="src/assets/logo.png">
 
     <!-- Structured Data (Schema.org) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebPage",
-      "name": "BioChar Composting Checklist | World Composting",
-      "description": "Create nutrient-rich biochar with our detailed guide and checklist.",
-      "publisher": {
-        "@type": "Organization",
-        "name": "World Comforming"
-      }
-    }
-    </script>
+    <script>
+// Progress tracking
+        let TOTAL_ITEMS = 0;
+
+        function updateProgress() {
+            const checkboxes = document.querySelectorAll('.checklist-item input[type="checkbox"]');
+            TOTAL_ITEMS = checkboxes.length; // Dynamically count items on the page
+            let checked = 0;
+            checkboxes.forEach(cb => {
+                if (cb.checked) checked++;
+                const item = cb.closest('.checklist-item');
+                if (item) item.classList.toggle('completed', cb.checked);
+            });
+            const pct = TOTAL_ITEMS > 0 ? Math.round((checked / TOTAL_ITEMS) * 100) : 0;
+            document.getElementById('progress-label').textContent = `${checked} of ${TOTAL_ITEMS} items completed`;
+            document.getElementById('progress-percent').textContent = `${pct}%`;
+            document.getElementById('progress-fill').style.width = `${pct}%`;
+        }
+
+        // localStorage persistence
+        function saveCheckbox(id, checked) {
+            if (checked) {
+                localStorage.setItem('checklist_progress_' + id, '1'); // Using a generic key to avoid collision/path issues
+            } else {
+                localStorage.remove('checklist_progress_' + id);
+            }
+        }
+
+        function loadCheckboxes() {
+            const checkboxes = document.querySelectorAll('.checklist-item input[type="checkbox"]');
+            checkboxes.forEach(cb => {
+                const saved = localStorage.getItem('checklist_progress_' + cb.dataset.id);
+                if (saved === '1') cb.checked = true;
+                cb.addEventListener('change', function() {
+                    saveCheckbox(this.dataset.id, this.checked);
+                    updateProgress();
+                });
+            });
+            updateProgress();
+        }
+
+        // Load gear products
+        async function loadGear() {
+            try {
+                const res = await fetch('src/data/products.json');
+                if (!res.ok) throw new Error('Could not load product data.');
+                const products = await res.json();
+                // We'll try to find categories relevant to the current page or just show all if none found
+                const list = document.getElementById('gear-list');
+                if(!list) return;
+                
+                list.innerHTML = ''; // Clear existing
+                products.forEach(p => {
+                    // For simplicity in this mass fix, we'll just show products that match common patterns 
+                    // or all of them if it's a general gear page.
+                    const href = (p['Amazon Link'] !== 'NaN' && p['Amazon Link']) ||
+                                 (p['Other Link'] !== 'NaN' && p['Other Link']) || '#';
+                    const link = document.createElement('a');
+                    link.href = href;
+                    link.className = 'product-link';
+                    link.target = '_blank';
+                    link.innerHTML = '<span class="product-name">' + p['Item'] + ' (Affiliate Link)</span>';
+                    list.appendChild(link);
+                });
+            } catch (e) {
+                console.error('Error loading gear:', e);
+                const list = document.getElementById('gear-list');
+                if(list) list.innerHTML = '<p style="opacity:0.6;font-size:0.9rem;">Gear recommendations coming soon.</p>';
+            }
+        }
+
+        // Init
+        loadCheckboxes();
+        loadGear();
+</script>
 
     <link rel="stylesheet" href="src/styles/theme.css">
     </head>
@@ -177,6 +240,7 @@
             </div>
         </div>
 
+                <div id="gear-section"><div class="section-title">Recommended Gear</div><div id="gear-list"></div></div>
         <footer>
             <p class="footer-copy">&copy; 2026 World Composting</p>
             <p class="footer-copy" style="margin-top: 0.5rem;">As an Amazon Associate, I earn from qualifying purchases.</p>
@@ -184,38 +248,79 @@
     </div>
 
     <script>
-        function togglePhase(button) {
-            const phase = button.parentElement;
-            phase.classList.toggle('active');
-        }
-
-        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-        const progressLabel = document.getElementById('progress-label');
-        const progressPercent = document.getElementById('progress-percent');
-        const progressFill = document.getElementById('progress-fill');
+// Progress tracking
+        let TOTAL_ITEMS = 0;
 
         function updateProgress() {
-            const total = checkboxes.length;
-            const checked = document.querySelectorAll('input[type="checkbox"]:checked').length;
-            if (progressLabel) progressLabel.textContent = `${checked} of ${total} steps completed`;
-            const percent = Math.round((checked / total) * 100);
-            if (progressPercent) progressPercent.textContent = percent + '%';
-            if (progressFill) progressFill.style.width = percent + '%';
-            localStorage.setItem('biochar-progress', JSON.stringify(checked));
+            const checkboxes = document.querySelectorAll('.checklist-item input[type="checkbox"]');
+            TOTAL_ITEMS = checkboxes.length; // Dynamically count items on the page
+            let checked = 0;
+            checkboxes.forEach(cb => {
+                if (cb.checked) checked++;
+                const item = cb.closest('.checklist-item');
+                if (item) item.classList.toggle('completed', cb.checked);
+            });
+            const pct = TOTAL_ITEMS > 0 ? Math.round((checked / TOTAL_ITEMS) * 100) : 0;
+            document.getElementById('progress-label').textContent = `${checked} of ${TOTAL_ITEMS} items completed`;
+            document.getElementById('progress-percent').textContent = `${pct}%`;
+            document.getElementById('progress-fill').style.width = `${pct}%`;
         }
 
-        // Load saved progress
-        const saved = localStorage.getItem('biochar-progress');
-        if (saved) {
-            const count = parseInt(saved);
-            let i = 0;
-            for(; i < count && i < checkboxes.length; i++) {
-                checkboxes[i].checked = true;
+        // localStorage persistence
+        function saveCheckbox(id, checked) {
+            if (checked) {
+                localStorage.setItem('checklist_progress_' + id, '1'); // Using a generic key to avoid collision/path issues
+            } else {
+                localStorage.remove('checklist_progress_' + id);
             }
         }
 
-        checkboxes.forEach(cb => cb.addEventListener('change', updateProgress));
-        updateProgress(); // Init
-    </script>
+        function loadCheckboxes() {
+            const checkboxes = document.querySelectorAll('.checklist-item input[type="checkbox"]');
+            checkboxes.forEach(cb => {
+                const saved = localStorage.getItem('checklist_progress_' + cb.dataset.id);
+                if (saved === '1') cb.checked = true;
+                cb.addEventListener('change', function() {
+                    saveCheckbox(this.dataset.id, this.checked);
+                    updateProgress();
+                });
+            });
+            updateProgress();
+        }
+
+        // Load gear products
+        async function loadGear() {
+            try {
+                const res = await fetch('src/data/products.json');
+                if (!res.ok) throw new Error('Could not load product data.');
+                const products = await res.json();
+                // We'll try to find categories relevant to the current page or just show all if none found
+                const list = document.getElementById('gear-list');
+                if(!list) return;
+                
+                list.innerHTML = ''; // Clear existing
+                products.forEach(p => {
+                    // For simplicity in this mass fix, we'll just show products that match common patterns 
+                    // or all of them if it's a general gear page.
+                    const href = (p['Amazon Link'] !== 'NaN' && p['Amazon Link']) ||
+                                 (p['Other Link'] !== 'NaN' && p['Other Link']) || '#';
+                    const link = document.createElement('a');
+                    link.href = href;
+                    link.className = 'product-link';
+                    link.target = '_blank';
+                    link.innerHTML = '<span class="product-name">' + p['Item'] + ' (Affiliate Link)</span>';
+                    list.appendChild(link);
+                });
+            } catch (e) {
+                console.error('Error loading gear:', e);
+                const list = document.getElementById('gear-list');
+                if(list) list.innerHTML = '<p style="opacity:0.6;font-size:0.9rem;">Gear recommendations coming soon.</p>';
+            }
+        }
+
+        // Init
+        loadCheckboxes();
+        loadGear();
+</script>
 </body>
 </html>
