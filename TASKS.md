@@ -110,10 +110,6 @@
   - [ ] Test USB-C power solution for long runs
   - [ ] Plan first timelapse subject (worms consuming specific items)
 
-- [ ] **Recording Camera**
-  - [ ] Research and purchase replacement camera (~$2,000 budget)
-  - [ ] Requirements: 4K 60fps, mic input, external power support
-
 ---
 
 *Last updated: June 29, 2026*
