@@ -75,9 +75,10 @@
                             ${items.map(item => {
                                 const href = (item['Amazon Link'] !== 'NaN' && item['Amazon Link']) || 
                                              (item['Other Link'] !== 'NaN' && item['Other Link']) || '#';
+                                const isAmazon = item['Amazon Link'] && item['Amazon Link'].includes('amzn.to');
                                 return `
                                     <a href="${href}" target="_blank" class="product-link group">
-                                        <span class="product-name">${item['Item']}</span>
+                                        <span class="product-name">${item['Item']}${isAmazon ? ' (Affiliate Link)' : ''}</span>
                                     </a>`;
                             }).join('')}
                         </div>

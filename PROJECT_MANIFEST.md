@@ -57,6 +57,11 @@
 - [x] Index.html restructured — "Get Started" checklists above video feed for better newcomer onboarding.
 - [x] Video cards redesigned — compact thumbnails left of titles (140×79px), mobile-responsive.
 
+## 📋 Pending Changes
+- [ ] Update all affiliate links to display "(Affiliate Link)" label (Amazon disclosure compliance).
+- [ ] Create a new blog section for posting blog updates.
+- [ ] Set up Google Analytics on the site.
+
 ## 🔄 Development Workflow
 - **Project Manager (this chat):** Plans scope, reviews results, makes design/content decisions.
 - **OpenCode (coding agent):** Executes file changes, creates pages, implements features via `opencode run`.
