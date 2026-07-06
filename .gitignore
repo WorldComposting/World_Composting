@@ -1,4 +1,5 @@
 # Internal working files - not for public repo
 TASKS.md
+PROJECT_MANIFEST.md
 *.todo
 *.work-in-progress

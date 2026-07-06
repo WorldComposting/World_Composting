@@ -91,25 +91,25 @@
             <div id="checklist-container" style="margin-top: 2rem;">
                 <div class="section-title">Get Started</div>
                 <a href="sustainability.html" class="product-link" style="text-decoration: none;">
-                    <span class="product-name">🌱 Sustainability</span><small class="playlist-title">Journey Checklist</small>
+                    <span class="product-name">🌱 Sustainability Journey Checklist</span>
                 </a>
                 <a href="beginner.html" class="product-link" style="text-decoration: none;">
-                    <span class="product-name">🪱 Worm Composting</span><small class="playlist-title">Checklist</small>
+                    <span class="product-name">🪱 Worm Composting Checklist</span>
                 </a>
                 <a href="bokashi.html" class="product-link" style="text-decoration: none;">
-                    <span class="product-name">🍚 Bokashi Composting</span><small class="playlist-title">Checklist</small>
+                    <span class="product-name">🍚 Bokashi Composting Checklist</span>
                 </a>
                 <a href="biochar.html" class="product-link" style="text-decoration: none;">
-                    <span class="product-name">🌿 BioChar Composting</span><small class="playlist-title">Checklist</small>
+                    <span class="product-name">🌿 BioChar Composting Checklist</span>
                 </a>
                 <a href="hot.html" class="product-link" style="text-decoration: none;">
-                    <span class="product-name">🔥 Hot Composting</span><small class="playlist-title">Checklist</small>
+                    <span class="product-name">🔥 Hot Comting Checklist</span>
                 </a>
                 <a href="tea.html" class="product-link" style="text-decoration: none;">
-                    <span class="product-name">🍵 Compost Tea</span><small class="playlist-title">Checklist</small>
+                    <span class="product-name">🍵 Compost Tea Checklist</span>
                 </a>
                 <a href="lasagna.html" class="product-link" style="text-decoration: none;">
-                    <span class="product-name">🥘 Lasagna Composting</span><small class="playlist-title">Checklist</small>
+                    <span class="product-name">🥘 Lasagna Composting Checklist</span>
                 </a>
             </div>
 
@@ -158,11 +158,11 @@
                     // Handle Playlists (Replacing Video List)
                     const playlistList = document.getElementById('playlist-list');
                     const playlists = [
-                        {title: "Urban Worm Bag", url: "https://www.youtube.com/watch?v=0QvS2l6zWYk&list=PLLEZ5krxcR7bezWFtUcb56uAuRdSKyMPt", id: "0QvS2l6zWYk"},
-                        {title: "DIY Tote Systems", url: "https://www.youtube.com/watch?v=ej9gRwssrgk&list=PLLEZ5krxcR7bWov7DVUCX7W9_nmttf-XV", id: "ej9gRwssrgk"},
+                        {title: "Urban Worm Bag: Step-by-Step Setup & Maintenance", url: "https://www.youtube.com/watch?v=0QvS2l6zWYk&list=PLLEZ5krxcR7bezWFtUcb56uAuRdSKyMPt", id: "0QvS2l6zWYk"},
+                        {title: "DIY Tote Systems & Advanced ANC Management", url: "https://www.youtube.com/watch?v=ej9gRwssrgk&list=PLLEZ5krxcR7bWov7DVUCX7W9_nmttf-XV", id: "ej9gRwssrgk"},
                         {title: "Pre-Compost", url: "https://www.youtube.com/watch?v=LMO-FwynYeY&list=PLLEZ5krxcR7YaEocIy3Cd0hYG_T0_OZKN", id: "LMO-FwynYeY"},
                         {title: "BN-LINK Grow Bag Worm System", url: "https://www.youtube.com/watch?v=kLiHqQ-kWm8&list=PLLEZ5krxcR7ZzsodUDnvRrUCPENQayutk", id: "kLiHqQ-kWm8"},
-                        {title: "FoodCycler Eco 5", url: "https://www.youtube.com/watch?v=3vsWZyp2KVw&list=PLLEZ5krxcR7btHNJN-GkRklKCTsJr9Y99", id: "3vsWZyp2KVw"}
+                        {title: "Vitamix FoodCycler Eco 5", url: "https://www.youtube.com/watch?v=3vsWZyp2KVw&list=PLLEZ5krxcR7btHNJN-GkRklKCTsJr9Y99", id: "3vsWZyp2KVw"}
                     ];
 
                     playlists.forEach(p => {
@@ -197,10 +197,10 @@
                         const href = (p['Amazon Link'] !== 'NaN' && p['Amazon Link']) || 
                                      (p['Other Link'] !== 'NaN' && p['Other Link']) || '#';
                         const isAmazon = p['Amazon Link'] && p['Amazon Link'].includes('amzn.to');
+                        link.href = href;
                         link.className = 'product-link';
                         link.target = '_blank';
-                        const affiliateText = isAmazon ? ' (Affiliate Link)' : '';
-                        link.innerHTML = `<span class="product-name">${p['Item']}</span><small class="playlist-title">${affiliateText}</small>`;
+                        link.innerHTML = `<span class="product-name">${p['Item']}${isAmazon ? ' (Affiliate Link)' : ''}</span>`;
                         prodList.appendChild(link);
                     });
                 } catch (e) {

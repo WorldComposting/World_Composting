@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Composting | Official Links</title>
+    <link rel="stylesheet" href="src/styles/theme.css">
+    <style>
+        /* Video cards: thumbnail left of title */
+        .video-card {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.75rem;
+            margin-bottom: 0.5rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: box-shadow 0.2s;
+        }
+        .video-card:hover {
+            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+        }
+        .video-card a {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            width: 100%;
+            text-decoration: none;
+        }
+        .video-thumbnail {
+            width: 140px;
+            height: 79px;
+            object-fit: cover;
+            border-radius: 6px;
+            flex-shrink: 0;
+        }
+        .video-thumbnail.featured-highlight {
+            width: 180px;
+            height: 101px;
+        }
+        .video-info {
+            flex: 1;
+            min-width: 0;
+        }
+        .video-title {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            font-size: 0.95rem;
+            line-height: 1.4;
+            color: var(--forest-green, #1a5e2a);
+            font-weight: 500;
+        }
+        @media (max-width: 480px) {
+            .video-thumbnail {
+                width: 110px;
+                height: 62px;
+            }
+            .video-thumbnail.featured-highlight {
+                width: 140px;
+                height: 79px;
+            }
+            .video-title {
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+
+<body>
+    <div id="app">
+        <header>
+            
+                <a href="http://youtube.com/@worldcomposting" target="_blank">
+                <img src="src/assets/logo.png" alt="Logo" onerror="this.src='https://via.placeholder.com/110?text=WC'">
+            </a>
+                <h1>World Composting</h1>
+                <p class="subtitle">Turning waste into wonder.</p>
+            
+            <!-- Added specific back button for blog context -->
+            <div style="margin-top: 1rem; text-align: center;">
+                <a href="index.html" style="text-decoration: none; color: var(--ocean-blue, #0077b6); font-weight: 600;">&larr; Back to Home</a>
+            </div>
+        </header>
+
+        <div id="blog-list-container" style="margin-top: 2rem;">
+            <div class="section-title">Latest Blog Posts</div>
+            <div id="blog-list">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+
+        
+    </div>
+
+    <script>
+        async function loadBlogPosts() {
+            const listContainer = document.getElementById('blog-list');
+            try {
+                const response = await fetch('src/data/blog.json');
+                if (!response.ok) throw new Error("Blog posts not found");
+                const posts = await response.json();
+
+                if (posts.length === 0) {
+                    listContainer.innerHTML = '<p>No posts available yet.</p>';
+                    return;
+                }
+
+                // Clear container first
+                listContainer.innerHTML = '';
+
+                posts.forEach(post => {
+                    const card = document.createElement('div');
+                    card.className = 'video-card'; // Use existing video-card styling for consistency!
+                    card.style.cursor = 'default';
+                    card.innerHTML = `
+                        <div class="video-info">
+                            <span style="font-size: 0.8rem; color: var(--forest-green); font-weight: bold;">${post.date}</span>
+                            <div class="video-title" style="font-size: 1.1rem;">${post.title}</div>
+                            <p style="margin: 0; font-size: 0.9rem; color: #555;">${post.summary}</p>
+                        </div>
+                    `;
+                    listContainer.appendChild(card);
+                });
+            } catch (e) {
+                console.error("Error loading blog posts:", e);
+                listContainer.innerHTML = '<p>Error loading blog posts. Please check back later.</p>';
+            }
+        }
+        loadBlogPosts();
+    </script>
+</body>
+</html>

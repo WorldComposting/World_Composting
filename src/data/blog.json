@@ -1,0 +1,16 @@
+[
+    {
+        "title": "Welcome to the World Composting Blog!",
+        "date": "2026-07-01",
+        "summary": "A first look at what's coming to our new blog section.",
+        "content": "Welcome to the official World Composting blog! \n\nI am excited to start sharing more detailed stories, deep dives into composting techniques, and gear reviews right here on this site. This blog will complement our YouTube channel, providing a written space for troubleshooting guides, checklists, and project updates that you can read at your own pace.\n\nStay tuned for more updates coming soon!",
+        "slug": "2026-07-01"
+    },
+    {
+        "title": "Welcome to the World Composting Blog",
+        "date": "2026-07-01",
+        "summary": "Our first post! Learn about the basics of composting and why it matters for our planet.",
+        "content": "Composting is a magical process that turns kitchen scraps into \"black gold\" for your garden. In this post, we'll explore the essentials of starting your own pile...",
+        "slug": "first-post"
+    }
+]
