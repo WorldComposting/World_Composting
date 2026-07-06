@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Composting | Sustainability Journey Checklist</title>
+    <link rel="stylesheet" href="src/styles/theme.css">
+    <style>
+        #app {
+            max-width: 720px;
+            text-align: left;
+        }
+        .back-link {
+            display: inline-block;
+            font-size: 0.85rem;
+            color: var(--ocean-blue);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            transition: opacity 0.2s;
+        }
+        .back-link:hover { opacity: 0.7; }
+        .back-link:focus-visible {
+            outline: 2px solid var(--ocean-blue);
+            outline-offset: 2px;
+            border-radius: 2px;
+        }
+        header {
+            text-align: center;
+        }
+        .hero-intro {
+            background: white;
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: var(--card-shadow);
+            margin: 2rem 0;
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--text-dark);
+        }
+        .hero-intro strong { color: var(--forest-green); }
+
+        /* Progress Tracker */
+        #progress-wrapper {
+            background: white;
+            border-radius: 16px;
+            padding: 1.25rem 1.5rem;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 2rem;
+        }
+        #progress-text {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--forest-green);
+            margin-bottom: 0.6rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #progress-percent {
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: var(--ocean-blue);
+        }
+        #progress-bar {
+            height: 10px;
+            background: var(--sage-green);
+            border-radius: 99px;
+            overflow: hidden;
+        }
+        #progress-fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, var(--leaf-lime), var(--forest-green));
+            border-radius: 99px;
+            transition: width 0.4s ease;
+        }
+
+        /* Phase (Collapsible Section) */
+        .phase {
+            background: white;
+            border-radius: 16px;
+            box_shadow: var(--card-shadow);
+            margin-bottom: 1.25rem;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.04);
+            transition: box-shadow 0.3s ease;
+        }
+        .phase:hover {
+            box-shadow: 0 12px 25px -5px rgba(75, 54, 33, 0.12);
+        }
+        .phase-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 1.25rem 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: var(--forest-green);
+            text-align: left;
+            transition: background 0.2s ease;
+            gap: 0.75rem;
+        }
+        .phase-header:hover { background: rgba(45, 90, 3rium, 0.04); }
+        .phase-header:focus-visible {
+            outline: 2px solid var(--ocean-blue);
+            outline-offset: -2px;
+            border-radius: 16px 16px 0 0;
+        }
+        .phase-header .phase-arrow {
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+            color: var(--ocean-blue);
+            flex-shrink: 0;
+        }
+        .phase.active .phase-arrow { transform: rotate(180deg); }
+        .phase-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.3s ease;
+            padding: 0 1.5rem;
+        }
+        .phase.active .phase-body {
+            max-height: 5000px;
+            padding: 0 1.5rem 1.25rem;
+        }
+
+        /* Checklist Items */
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            cursor: pointer;
+            transition: opacity 0.2s ease;
+        }
+        .checklist-item:last-of-type { border-bottom: none; }
+        .checklist-item input[type="checkbox"] {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--forest-green);
+            border-radius: 5px;
+            flex-shrink: 0;
+            margin-top: 2px;
+            cursor: pointer;
+            position: relative;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .checklist-item input[type="checkbox"]:checked {
+            background: var(--forest-green);
+            border-color: var(--forest-green);
+        }
+        .checklist-item input[type="checkbox"]:checked::after {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 1px;
+            width: 6px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+        .checklist-item input[type="checkbox"]:focus-visible {
+            outline: 2px solid var(--ocean-blue);
+            outline-offset: 2px;
+        }
+        .check-emoji {
+            font-size: 1.3rem;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+        .check-content { flex: 1; min-width: 0; }
+        .check-title {
+            display: block;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            transition: color 0.2s;
+        }
+        .check-desc {
+            display: block;
+            font-size: 0.82rem;
+            color: #666;
+            margin-top: 2px;
+            line-height: 1.5;
+            transition: color 0.2s;
+        }
+        .check-desc a {
+            color: var(--ocean-blue);
+            text-decoration: underline;
+            font-weight: 500;
+        }
+        .check-desc a:hover { color: var(--forest-green); }
+        .checklist-item.completed .check-title {
+            color: #999;
+            text-decoration: line-through;
+        }
+        .checklist-item.completed .check-desc { color: #aaa; }
+        .checklist-item.completed .check-emoji { opacity: 0.5; }
+
+        /* Footer */
+        footer {
+            margin-top: 4rem;
+            text-align: center;
+        }
+        .footer-copy {
+            opacity: 0.7;
+            font-size: 0.85rem;
+            color: var(--forest-green);
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            .phase-header { padding: 1rem 1.2rem; font-size: 0.95rem; }
+            .phase.active .phase-body { padding: 0 1.2rem 1rem; }
+            .checklist-item { gap: 0.6rem; padding: 0.6rem 0; }
+            .check-emoji { font-size: 1.1rem; }
+            .check-title { font-size: 0.9rem; }
+            .check-desc { font-size: 0.78rem; }
+            .hero-intro { padding: 1.2rem; font-size: 0.92rem; }
+            #progress-wrapper { padding: 1rem 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <a href="index.html" class="back-link">← Back to Home</a>
+            <img src="src/assets/logo.png" alt="Logo" onerror="this.src='https://via.placeholder.com/110?text=WC'">
+            <h1 id="page-title">Sustainability Journey Checklist</h1>
+            <p class="subtitle">Small steps toward a much larger impact.</p>
+        </header>
+
+        <!-- Progress Tracker -->
+        <div id="progress-wrapper">
+            <div id="progress-text">
+                <span id="progress-label">0 of 0 items completed</span>
+                <span id="progress-percent">0%</span>
+            </div>
+            <div id="progress-bar"><div id="progress-fill"></div></div>
+        </div>
+
+        <!-- Hero Intro -->
+        <div class="hero-intro" id="hero-desc">
+            <p>Follow this step-by-step guide to transition your lifestyle toward a more sustainable and eco-friendly future. Start with the easiest wins and work your way up!</p>
+        </div>
+
+        <!-- Checklist Phases -->
+        <div id	id="phases">
+            <!-- Phase 1 -->
+            <div class="phase active">
+                <button class="phase-header" onclick="togglePhase(this)">
+                    <span>🌱 Phase 1: Easy Changes</span>
+                    <span class="phase-arrow">▼</span>
+                </button>
+                <div class="phase-body" id="phase1-items">
+                    <!-- Items injected via JS -->
+                </div>
+            </div>
+
+            <!-- Phase 2 -->
+            <div class="phase">
+                <button class="phase-header" onclick="togglePhase(this)">
+                    <span>🌿 Phase 2: Moderate Changes</span>
+                    <span class="phase-arrow">▼</span>
+                </button>
+                <div class="phase-body" id="phase2-items">
+                    <!-- Items injected via JS -->
+                </div>
+            </div>
+
+            <!-- Phase 3 -->
+            <div class="phase">
+                <button class="phase-header" onclick="togglePhase(this)">
+                    <span>🌳 Phase 3: Difficult or Expensive Changes</span>
+                    <span class="phase-arrow">▼</span>
+                </button>
+                <div class="phase-body" id="phase3-items">
+                    <!-- Items injected via JS -->
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p class="footer-copy">&copy; 2026 World Composting. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        const checklistData = {
+            phase1: [
+                { title: "Switch to reusable water bottles", desc: "Reduces plastic waste.", score: 4, emoji: "💧" },
+                { title: "Turn off lights/devices when not in use", desc: "Saves energy.", score: 3, emoji: "💡" },
+                { title: "Use cloth bags for groceries", desc: "Reduces single-use plastic.", score: 4, emoji: "🛍️" },
+                { title: "Shorten shower times", desc: "Conserves water.", score: 5, emoji: "🚿" },
+                { title: "Adjusting Thermostat Deadbands", desc: "Lowering the heat by just 2°F in the winter or raising the AC by 2°F in the summer to reduce energy load.", score: 3, emoji: "🌡️" },
+                { title: "Recycling and/or giving old items away", desc: "Reduces landfill waste and extends product lifecycles.", score: 4, emoji: "♻️" },
+                { title: "Meatless Mondays (Vegetarian one day per week)", desc: "A great entry point to reducing meat footprint.", score: 6, emoji: "🥗" },
+                { title: "Switch to LED light bulbs", desc: "Low effort, significant long-term energy savings.", score: 3, emoji: "💡" },
+                { title: "Use cold water for laundry", desc: "Reduces energy used for heating water.", score: 3, emoji: "🧺" },
+                { title: "Carry a reusable coffee cup", desc: "Reduces single-use paper/plastic waste.", score: 4, emoji: "☕" },
+                { title: "Spread the word about sustainable living", desc: "Raises awareness and builds community momentum.", score: 3, emoji: "📢" },
+                { title: "Support sustainability-focused policies and candidates", desc: "Drives systemic change through legislative action.", score: 5, emoji: "🗳️" }
+            ],
+            phase2: [
+                { title: "Reduce food waste via better meal planning", desc: "Reduces methane from landfills.", score: 7, emoji: "🍎" },
+                { title: "Eat more organic/locally sourced produce", desc: "Supports biodiversity and reduces transport emissions.", score: 6, emoji: "🚜" },
+                { title: "Compost organic scraps", desc: "Keeps nutrients in the soil cycle instead of landfill.", score: 8, emoji: "🍂" },
+                { title: "Reduce meat consumption (Transitioning to Vegetarian)", desc: "Significant reduction in carbon/water footprint.", score: 9, emoji: "🥦" },
+                { title: "Stop using paper towels; use cloth rags instead", desc: "Reduces forest consumption and waste.", score: 4, emoji: "🧣" },
+                { title: "Reduce single-use plastic in the bathroom (e.g., bar soap, bamboo toothbrush)", desc: "Lowers microplastic pollution/waste.", score: 5, emoji: "🪥" },
+                { title: "Reduce water usage in gardening (e.g., rain barrels, mulching)", desc: "Conserves local water resources.", score: 5, emoji: "🌻" },
+                { title: "Install a smart thermostat", desc: "Helps optimize heating/cooling energy usage.", score: 4, emoji: "📱" },
+                { title: "Switching to Concentrated Home Products", desc: "Purchasing waterless or concentrated product variants (like laundry detergent sheets, solid shampoo bars, or tablet hand soaps) to radically cut down on heavy water shipping weights and single enough plastic packaging.", score: 5, emoji: "🧼" },
+                { title: "Home Energy Audits & DIY Weatherization", desc: "Buying a roll of weatherstripping, window film, or outlet insulation pads to seal drafts around doors and windows.", score: 6, emoji: "🏠" }
+            ],
+            phase3: [
+                { title: "Switch to Public Transportation/Biking/Walking", desc: "Reduces personal vehicle carbon emissions.", score: 8, emoji: "🚲" },
+                { title: "Transition to an Electric Vehicle (EV)", desc: "Lowers tailpipe emissions and reliance on fossil fuels.", score: 7, emoji: "🚗" },
+                { title: "Solar Energy Installation", desc: "Uses renewable energy to power your home and reduces grid dependency.", score: 9, emoji: "☀️" },
+                { title: "Heat Pump Installation", desc: "Highly efficient way to transition away from gas/oil heating.", score: 8, emoji: "🔥" },
+                { title: "Home energy retrofitting (Insulation, Solar panels)", desc: "Large scale upgrades to improve thermal efficiency.", score: 9, emoji: "🏗️" },
+                { title: "Transitioning to a Vegan Diet", desc: "The highest tier of dietary environmental impact reduction.", score: 10, emoji: "🌱" },
+                { title: "Repair clothing instead of buying new", desc: "Slows down the 'fast fashion' waste cycle.", score: 6, emoji: "🧵" },
+                { title: "Transition to a zero-waste lifestyle", desc: "Extreme discipline in minimizing all landfill contributions.", score: 9, emoji: "🗑️" },
+                { title: "Replacing Conventional Lawn with Edible Permaculture", desc: "Tearing up resource-intensive turf grass to build dense food gardens or food forests, supporting biodiversity and local food security.", score: 8, emoji: "🌳" }
+            ]
+        };
+
+        function renderChecklist() {
+            const phases = ['phase1', 'phase2', 'phase3'];
+            let totalItems = 0;
+
+            phases.forEach(phaseId => {
+                const container = document.getElementById(`${phaseId}-items`);
+                const items = checklistData[phaseId];
+                totalItems += items.length;
+                
+                container.innerHTML = items.map((item, idx) => `
+                    <label class="checklist-item" for="${phaseId}_${idx}">
+                        <input type="checkbox" id="${phaseId}_${idx}" data-id="${phaseId}_${idx}" onchange="updateProgress()">
+                        <span class="check-emoji">${item.emoji}</span>
+                        <span class="check-content">
+                            <span class="check-title">${item.title} (Score: ${item.score})</span>
+                            <span class="check-desc">${item.desc}</span>
+                        </span>
+                    </label>
+                `).join('');
+            });
+
+            // Store total items in a way we can access for progress calculation
+            window.totalChecklistItems = totalItems;
+            updateProgress();
+        }
+
+        function togglePhase(btn) {
+            const phase = btn.parentElement;
+            phase.classList.toggle('active');
+        }
+
+        function updateProgress() {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            const checked = document.querySelectorAll('input[type="checkbox"]:checked');
+            const total = window.totalChecklistItems;
+            const completed = checked.length;
+            const percent = total > 0 ? Math.round((completed / total) * 100) : 0;
+
+            document.getElementById('progress-label').textContent = `${completed} of ${total} items completed`;
+            document.getElementById('progress-percent').textContent = `${percent}%`;
+            document.getElementById('progress-fill').style.width = `${percent}%`;
+
+            // Update item styles
+            checkboxes.forEach(cb => {
+                const label = cb.closest('.checklist-item');
+                if (cb.checked) {
+                    label.classList.add('completed');
+                } else {
+                    label.classList.remove('completed');
+                }
+            });
+        }
+
+        window.onload = renderChecklist;
+    </script>
+</body>
+</html>
