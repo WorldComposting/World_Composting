@@ -32,7 +32,10 @@
 - `tumbler.html`: 🔄 Tumbler Composting checklist.
 - `tea.html`: 🍵 Compost Tea checklist.
 - `lasagna.html`: 🥘 Lasagna/Sheet Mulching checklist.
+- `sustainability.html`: 🌱 Sustainability Journey Checklist (tiered difficulty levels).
 - `troubleshoot.html`: ⚠️ Troubleshooting diagnostic guide.
+- `troubleshoot.html`: ⚠️ Troubleshooting diagnostic guide.
+    |- `troubleshoot.html`: ⚠️ Troubleshooting diagnostic guide.
 - `src/styles/theme.css`: Central source of truth for visual design and accessibility settings.
 - `src/assets/`: Static assets including logo and thumbnails.
 - `src/components/`: Reusable UI elements.
@@ -61,6 +64,9 @@
 - [ ] Update all affiliate links to display "(Affiliate Link)" label (Amazon disclosure compliance).
 - [ ] Create a new blog section for posting blog updates.
 - [ ] Set up Google Analytics on the site.
+- [ ] **SEO Sprint: Increase text density on checklist pages (300–500 words per page) to improve search crawling and ranking.**
+- [ ] **SEO Sprint: Refactor playlist/product titles in `index.html` to semantically separate processes from product names (e.g., using spans or separators).**
+- [ ] **SEO Sprint: Optimize landing page for QR code/mobile arrival (ensure "Quick Start" experience is seamless).**
 
 ## 🔄 Development Workflow
 - **Project Manager (this chat):** Plans scope, reviews results, makes design/content decisions.
