@@ -1,0 +1,434 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Composting | Composting Glossary</title>
+    <meta name="description" content="A complete composting glossary with clear definitions for every term you need to know — from vermicomposting and bokashi to thermophilic decomposition and worm castings.">
+    <!-- Google Search Console Verification -->
+    <meta name="google-site-verification" content="google8a4b2c3d1e5f6789">
+    <link rel="stylesheet" href="src/styles/theme.css">
+    <style>
+        #app {
+            max-width: 720px;
+            text-align: left;
+        }
+        .back-link {
+            display: inline-block;
+            font-size: 0.85rem;
+            color: var(--ocean-blue);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            transition: opacity 0.2s;
+        }
+        .back-link:hover { opacity: 0.7; }
+        .back-link:focus-visible {
+            outline: 2px solid var(--ocean-blue);
+            outline-offset: 2px;
+            border-radius: 2px;
+        }
+        header {
+            text-align: center;
+        }
+        .hero-intro {
+            background: white;
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: var(--card-shadow);
+            margin: 2rem 0;
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--text-dark);
+        }
+        .hero-intro strong { color: var(--forest-green); }
+
+        /* Glossary */
+        #glossary-wrapper {
+            background: white;
+            border-radius: 16px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 2rem;
+            overflow: hidden;
+        }
+        .glossary-letter {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            padding: 1.25rem 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: var(--forest-green);
+            text-align: left;
+            transition: background 0.2s ease;
+            gap: 0.75rem;
+        }
+        .glossary-letter:hover { background: rgba(45, 90, 39, 0.04); }
+        .glossary-letter:focus-visible {
+            outline: 2px solid var(--ocean-blue);
+            outline-offset: -2px;
+            border-radius: 16px 16px 0 0;
+        }
+        .glossary-letter .letter-arrow {
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+            color: var(--ocean-blue);
+            flex-shrink: 0;
+        }
+        .glossary-letter.active .letter-arrow { transform: rotate(180deg); }
+        .glossary-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.3s ease;
+            padding: 0 1.5rem;
+        }
+        .glossary-letter.active + .glossary-body {
+            max-height: 8000px;
+            padding: 0 1.5rem 1.25rem;
+        }
+        .glossary-entry {
+            display: block;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        .glossary-entry:last-of-type { border-bottom: none; }
+        .glossary-term {
+            display: block;
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+        }
+        .glossary-def {
+            display: block;
+            font-size: 0.82rem;
+            color: #666;
+            margin-top: 2px;
+            line-height: 1.5;
+        }
+        .glossary-def a {
+            color: var(--ocean-blue);
+            text-decoration: underline;
+            font-weight: 500;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 4rem;
+            text-align: center;
+        }
+        .footer-copy {
+            opacity: 0.7;
+            font-size: 0.85rem;
+            color: var(--forest-green);
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            .glossary-letter { padding: 1rem 1.2rem; font-size: 0.95rem; }
+            .glossary-letter.active + .glossary-body { padding: 0 1.2rem 1rem; }
+            .glossary-term { font-size: 0.9rem; }
+            .glossary-def { font-size: 0.78rem; }
+            .hero-intro { padding: 1.2rem; font-size: 0.92rem; }
+        }
+    </style>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KRHYVJXZLE"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-KRHYVJXZLE');
+    </script>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <a href="index.html" class="back-link">← Back to Home</a>
+            <img src="src/assets/logo.png" alt="Logo" onerror="this.src='https://via.placeholder.com/110?text=WC'">
+            <h1>Glossary of Composting Terms</h1>
+            <p class="subtitle">Every term you need to know, explained simply.</p>
+        </header>
+
+        <!-- Hero Intro -->
+        <div class="hero-intro">
+            <h2>About This Glossary</h2>
+            <p>Composting has its own language. Whether you are reading about <strong>carbon-to-nitrogen ratios</strong>, <strong>thermophilic bacteria</strong>, or the difference between a <strong>brown</strong> and a <strong>green</strong>, this glossary gives you clear, plain-English definitions for every term used across our composting checklists. Bookmark it and refer back whenever a word puzzles you.</p>
+        </div>
+
+        <!-- Glossary Entries -->
+        <div id="glossary-wrapper">
+
+            <!-- A -->
+            <button class="glossary-letter" onclick="toggleGlossary(this)">
+                <span>A</span>
+                <span class="letter-arrow">▼</span>
+            </button>
+            <div class="glossary-body">
+                <div class="glossary-entry">
+                    <span class="glossary-term">Aerobic</span>
+                    <span class="glossary-def">Decomposition that occurs in the presence of oxygen. Healthy composting is an aerobic process — it requires air to function properly and produces a pleasant, earthy smell rather than foul odors.</span>
+                </div>
+            </div>
+
+            <!-- B -->
+            <button class="glossary-letter" onclick="toggleGlossary(this)">
+                <span>B</span>
+                <span class="letter-arrow">▼</span>
+            </button>
+            <div class="glossary-body">
+                <div class="glossary-entry">
+                    <span class="glossary-term">Bokashi</span>
+                    <span class="glossary-def">A Japanese method of composting that ferments food waste in an airtight bucket using inoculated bran (EM-1). Unlike traditional composting, bokashi can handle meat, dairy, and cooked foods without attracting pests.</span>
+                </div>
+                <div class="glossary-entry">
+                    <span class="glossary-term">Bokashi Bran</span>
+                    <span class="glossary-def">A mixture of bran (such as wheat or rice) inoculated with effective microorganisms (EM-1). It is sprinkled between layers of food waste in a bokashi bucket to initiate the fermentation process.</span>
+                </div>
+                <div class="glossary-entry">
+                    <span class="glossary-term">Bokashi Tea</span>
+                    <span class="glossary-def">The liquid that drains from the bottom of a bokashi bucket. It is rich in organic acids and beneficial microbes. Dilute it 1:100 with water before applying to garden soil as a soil drench.</span>
+                </div>
+                <div class="glossary-entry">
+                    <span class="glossary-term">Brown</span>
+                    <span class="glossary-def">Carbon-rich dry materials such as shredded cardboard, dried leaves, straw, and paper. Browns provide energy for decomposers and must be balanced with greens to maintain a healthy compost pile.</span>
+                </div>
+            </div>
+
+            <!-- C -->
+            <button class="glossary-letter" onclick="toggleGlossary(this)">
+                <span>C</span>
+                <span class="letter-arrow">▼</span>
+            </button>
+            <div class="glossary-body">
+                <div class="glossary-entry">
+                    <span class="glossary-term">Carbon-to-Nitrogen Ratio (C:N)</span>
+                    <span class="glossary-def">The balance between carbon-rich browns and nitrogen-rich greens in a compost pile. An ideal ratio is approximately 25:1 to 30:1, which translates roughly to three parts browns for every one part greens by volume.</span>
+                </div>
+                <div class="glossary-entry">
+                    <span class="glossary-term">Castings (Worm Castings)</span>
+                    <span class="glossary-def">The dark, crumbly, nutrient-rich waste produced by worms after digesting organic matter. Worm castings are one of the most valuable soil amendments available, packed with beneficial microbes and plant-available nutrients.</span>
+                </div>
+            </div>
+
+            <!-- D -->
+            <button class="glossary-letter" onclick="toggleGlossary(this)">
+                <span>D</span>
+                <span class="letter-arrow">▼</span>
+            </button>
+            <div class="glossary-body">
+                <div class="glossary-entry">
+                    <span class="glossary-term">Decomposition</span>
+                    <span class="glossary-def">The natural process by which organic matter is broken down into simpler substances by bacteria, fungi, and other microorganisms. Composting accelerates decomposition under controlled conditions.</span>
+                </div>
+            </div>
+
+            <!-- E -->
+            <button class="glossary-letter" onclick="toggleGlossary(this)">
+                <span>E</span>
+                <span class="letter-arrow">▼</span>
+            </button>
+            <div class="glossary-body">
+                <div class="glossary-entry">
+                    <span class="glossary-term">Earthworm</span>
+                    <span class="glossary-def">A worm that lives in soil and burrows deep underground. Do not use garden earthworms for composting — they prefer deep, undisturbed soil and will escape a bin environment.</span>
+                </div>
+                <div class="glossary-entry">
+                    <span class="glossary-term">EM-1 (Effective Microorganisms)</span>
+                    <span class="glossary-def">A proprietary blend of beneficial microorganisms including lactic acid bacteria, yeast, and photosynthetic bacteria. EM-1 is the active ingredient in bokashi bran that ferments food waste anaerobically.</span>
+                </div>
+            </div>
+
+            <!-- F -->
+            <button class="glossary-letter" onclick="toggleGlossary(this)">
+                <span>F</span>
+                <span class="letter-arrow">▼</span>
+            </button>
+            <div class="glossary-body">
+                <div class="glossary-entry">
+                    <span class="glossary-term">Food Waste</span>
+                    <span class="glossary-def">All organic kitchen scraps including fruit and vegetable peels, coffee grounds, tea bags, eggshells, and leftover cooked food. Food waste is the primary nitrogen-rich input for most composting systems.</span>
+                </div>
+            </div>
+
+            <!-- G -->
+            <button class="glossary-letter" onclick="toggleGlossary(this)">
+                <span>G</span>
+                <span class="letter-arrow">▼</span>
+            </button>
+            <div class="glossary-body">
+                <div class="glossary-entry">
+                    <span class="glossary-term">Green</span>
+                    <span class="glossary-def">Nitrogen-rich materials such as food scraps, grass clippings, coffee grounds, and fresh plant trimmings. Greens provide the protein that decomposers need to multiply and break down organic matter.</span>
+                </div>
+            </div>
+
+            <!-- H -->
+            <button class="glossary-letter" onclick="toggleGlossary(this)">
+                <span>H</span>
+                <span class="letter-arrow">▼</span>
+            </button>
+            <div class="glossary-body">
+                <div class="glossary-entry">
+                    <span class="glossary-term">Hot Composting</span>
+                    <span class="glossary-def">An active composting method that builds a large pile (at least 3x3x3 feet) and manages carbon-to-nitrogen ratios, moisture, and turning to reach temperatures above 130°F (54°C). This kills weed seeds and pathogens while breaking down waste in weeks rather than months.</span>
+                </div>
+            </div>
+
+            <!-- L -->
+            <button class="glossary-letter" onclick="toggleGlossary(this)">
+                <span>L</span>
+                <span class="letter-arrow">▼</span>
+            </button>
+            <div class="glossary-body">
+                <div class="glossary-entry">
+                    <span class="glossary-term">Lasagna Bed (Lasagna Composting)</span>
+                    <span class="glossary-def">A no-dig gardening method that builds a raised garden bed by layering carbon-rich browns and nitrogen-rich greens directly on the ground. Each layer is soaked with water, and over time the materials decompose into rich soil.</span>
+                </div>
+            </div>
+
+            <!-- M -->
+            <button class="glossary-letter" onclick="toggleGlossary(this)">
+                <span>M</span>
+                <span class="letter-arrow">▼</span>
+            </button>
+            <div class="glossary-body">
+                <div class="glossary-entry">
+                    <span class="glossary-term">Methane</span>
+                    <span class="glossary-def">A potent greenhouse gas produced when organic matter decomposes without oxygen (anaerobically). When food waste sits in a landfill, it generates methane. Composting with proper airflow prevents methane production by keeping the process aerobic.</span>
+                </div>
+            </div>
+
+            <!-- M -->
+            <button class="glossary-letter" onclick="toggleGlossary(this)">
+                <span>M</span>
+                <span class="letter-arrow">▼</span>
+            </button>
+            <div class="glossary-body">
+                <div class="glossary-entry">
+                    <span class="glossary-term">Moisture (in Composting)</span>
+                    <span class="glossary-def">The amount of water content in a compost pile. Ideal moisture is approximately 70–80%, often described as the feel of a wrung-out sponge. Too much moisture causes anaerobic conditions and odors; too little slows decomposition.</span>
+                </div>
+            </div>
+
+            <!-- N -->
+            <button class="glossary-letter" onclick="toggleGlossary(this)">
+                <span>N</span>
+                <span class="letter-arrow">▼</span>
+            </button>
+            <div class="glossary-body">
+                <div class="glossary-entry">
+                    <span class="glossary-term">Nitrogen (in Composting)</span>
+                    <span class="glossary-def">An essential nutrient that decomposers need to build proteins and reproduce. Nitrogen-rich materials are called greens and include food scraps, grass clippings, and coffee grounds. Too much nitrogen causes foul odors; too little slows decomposition.</span>
+                </div>
+            </div>
+
+            <!-- O -->
+            <button class="glossary-letter" onclick="toggleGlossary(this)">
+                <span>O</span>
+                <span class="letter-arrow">▼</span>
+            </button>
+            <div class="glossary-body">
+                <div class="glossary-entry">
+                    <span class="glossary-term">Organic Waste</span>
+                    <span class="glossary-def">Any biodegradable waste derived from living organisms, including food scraps, yard trimmings, paper products, and plant matter. Organic waste makes up roughly 30 percent of landfill material.</span>
+                </div>
+            </div>
+
+            <!-- R -->
+            <button class="glossary-letter" onclick="toggleGlossary(this)">
+                <span>R</span>
+                <span class="letter-arrow">▼</span>
+            </button>
+            <div class="glossary-body">
+                <div class="glossary-entry">
+                    <span class="glossary-term">Red Wiggler (Eisenia fetida)</span>
+                    <span class="glossary-def">The most common species of worm used in vermicomposting. Red wigglers thrive in compost bins, eat approximately half their body weight per day, and produce nutrient-rich castings. They are not the same as garden earthworms.</span>
+                </div>
+            </div>
+
+            <!-- S -->
+            <button class="glossary-letter" onclick="toggleGlossary(this)">
+                <span>S</span>
+                <span class="letter-arrow">▼</span>
+            </button>
+            <div class="glossary-body">
+                <div class="glossary-entry">
+                    <span class="glossary-term">Sheet Mulching</span>
+                    <span class="glossary-def">Another name for lasagna composting. It involves smothering grass or weeds with cardboard and then layering organic materials on top to build fertile soil without tilling or digging.</span>
+                </div>
+            </div>
+
+            <!-- T -->
+            <button class="glossary-letter" onclick="toggleGlossary(this)">
+                <span>T</span>
+                <span class="letter-arrow">▼</span>
+            </button>
+            <div class="glossary-body">
+                <div class="glossary-entry">
+                    <span class="glossary-term">Thermophilic</span>
+                    <span class="glossary-def">Heat-loving microorganisms that drive the hot composting process. Thermophilic bacteria raise pile temperatures to 130–160°F (54–71°C), which rapidly breaks down organic matter and kills weed seeds, pathogens, and grass seeds.</span>
+                </div>
+            </div>
+
+            <!-- V -->
+            <button class="glossary-letter" onclick="toggleGlossary(this)">
+                <span>V</span>
+                <span class="letter-arrow">▼</span>
+            </button>
+            <div class="glossary-body">
+                <div class="glossary-entry">
+                    <span class="glossary-term">Vermicomposting</span>
+                    <span class="glossary-def">The process of using worms — primarily red wigglers — to decompose organic waste into nutrient-rich castings. Vermicomposting can be done indoors or outdoors in a compact bin and is ideal for apartment dwellers, urban gardeners, and classrooms.</span>
+                </div>
+            </div>
+
+            <!-- W -->
+            <button class="glossary-letter" onclick="toggleGlossary(this)">
+                <span>W</span>
+                <span class="letter-arrow">▼</span>
+            </button>
+            <div class="glossary-body">
+                <div class="glossary-entry">
+                    <span class="glossary-term">Worm Bin (Vermicomposting Bin)</span>
+                    <span class="glossary-def">A container designed to house a worm composting system. Common options include 10-gallon plastic totes with air holes, breathable fabric bags like the Urban Worm Bag or Vermibag, and commercial stacked-tray systems.</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p class="footer-copy">&copy; 2026 World Composting. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        function toggleGlossary(btn) {
+            const body = btn.nextElementSibling;
+            const isActive = btn.classList.contains('active');
+            // Close all
+            document.querySelectorAll('.glossary-letter').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.glossary-body').forEach(b => b.style.maxHeight = '0');
+            if (!isActive) {
+                btn.classList.add('active');
+                body.style.maxHeight = body.scrollHeight + 'px';
+            }
+        }
+
+        // Open first letter by default
+        document.addEventListener('DOMContentLoaded', function() {
+            const firstBtn = document.querySelector('.glossary-letter');
+            if (firstBtn) {
+                firstBtn.classList.add('active');
+                const firstBody = firstBtn.nextElementSibling;
+                firstBody.style.maxHeight = firstBody.scrollHeight + 'px';
+            }
+        });
+    </script>
+</body>
+</html>
