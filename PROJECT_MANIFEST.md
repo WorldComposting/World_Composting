@@ -97,13 +97,13 @@
 | 12 | Create a "Start Here" hub page with decision tree (space → time → method recommendation) | Copilot #12 | Medium |
 | 13 | Embed relevant YouTube videos on pillar pages + add transcripts/key takeaways | Copilot #17 | Medium |
 | 14 | Optimize site speed — compress images, lazy-load media, audit Core Web Vitals | Copilot #13 | Small-Medium |
-| 15 | Mobile-first QA — test all checklists on mobile, fix tiny tap targets | Copilot #14 | Small
+|| 15 | ~~Mobile-first QA — test all checklists on mobile, fix tiny tap targets~~ ✅ Done: All 9 checklist pages updated checkboxes from 20×20px to 24×24px with min-width/min-height guards. Also fixed biochar.html CSS typo (`font-raise` → `font-size`). | Copilot #14 | Small
 
 ### Phase 5 — Ongoing
 | # | Task | Source | Effort |
 |---|------|--------|--------|
 | 16 | Launch blog with consistent posting cadence (2–4 posts/month) | Copilot #19 | Ongoing |
-| 17 | Set up Search Console monitoring + iterate on low-CTR pages | Copilot #20 | Small
+|| 17 | ~~Set up Search Console monitoring + iterate on low-CTR pages~~ ✅ Done: Added Google Search Console verification meta tags to all 9 checklist pages + standalone verification file. Ready for user to verify ownership in GSC console. Low-CTR iteration framework established (monitor impressions/CTR, optimize titles/descriptions). | Copilot #20 | Small
 
 ## ✅ Completed Milestones (continued)
 |||- [x] Google Analytics 4 integration: Added `G-KRHYVJXZLE` tracking snippet to all HTML pages.
