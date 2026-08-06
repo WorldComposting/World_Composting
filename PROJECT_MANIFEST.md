@@ -69,48 +69,41 @@
 
 ## 📋 Pending Changes
 ### Phase 1 — Quick SEO Wins
-| # | Task | Source | Effort |
-|---|------|--------|--------|
-| 1 | Add unique `<title>` and `<meta description>` to every checklist page (8 pages) | Copilot #4 | Small |
-| 2 | Fix heading hierarchy — ensure one H1 per page, proper H2/H3 structure | Copilot #5 | Small |
-| 3 | Add HowTo JSON-LD schema to all 9 checklist pages | Copilot #7 | Medium |
-| 4 | Add FAQ schema to gear.html and blog.html | Copilot #8 | Medium
-
-### Phase 2 — Content Expansion
-| # | Task | Source | Effort |
-|---|------|--------|--------|
-| 5 | Create pillar pages: "Complete Guide to Worm Composting", "Hot Composting Guide" (1,500–3,000 words each) | Copilot #1 | Large |
-| 6 | Build topic clusters — write 4–8 supporting articles per pillar (e.g., "Best bedding for worm bins", "Fruit fly control") | Copilot #2 | Large |
-| 7 | Create a composting glossary page with alphabetized terms | Copilot #3 | Medium |
-| 8 | Add troubleshooting sections to every method page (smells, pests, too wet/dry, slow breakdown) | Copilot #11 | Medium
+|| # | Task | Source | Effort |
+||---|------|--------|--------|
+|| 5 | Create pillar pages: "Complete Guide to Worm Composting", "Hot Composting Guide" (1,500–3,000 words each) | Copilot #1 | Large |
+|| 6 | Build topic clusters — write 4–8 supporting articles per pillar (e.g., "Best bedding for worm bins", "Fruit fly control") | Copilot #2 | Large
 
 ### Phase 3 — Conversion & Trust
-| # | Task | Source | Effort |
-|---|------|--------|--------|
-| 9 | Create an "About" page with E-E-A-T content (background, YouTube channel, projects) | Copilot #16 | Medium |
-| 10 | Add email capture / lead magnet ("Download the beginner composting guide") | Copilot #18 | Medium |
-| 11 | Expand gear.html into comparison guides with tables (capacity, material, ventilation, price, pros/cons) | Copilot #10 | Large
+|| # | Task | Source | Effort |
+||---|------|--------|--------|
+|| 9 | Create an "About" page with E-E-A-T content (background, YouTube channel, projects) | Copilot #16 | Medium |
+|| 10 | Add email capture / lead magnet ("Download the beginner composting guide") | Copilot #18 | Medium |
+|| 11 | Expand gear.html into comparison guides with tables (capacity, material, ventilation, price, pros/cons) | Copilot #10 | Large
 
 ### Phase 4 — UX & Technical
-| # | Task | Source | Effort |
-|---|------|--------|--------|
-| 12 | Create a "Start Here" hub page with decision tree (space → time → method recommendation) | Copilot #12 | Medium |
-| 13 | Embed relevant YouTube videos on pillar pages + add transcripts/key takeaways | Copilot #17 | Medium |
-| 14 | Optimize site speed — compress images, lazy-load media, audit Core Web Vitals | Copilot #13 | Small-Medium |
-|| 15 | ~~Mobile-first QA — test all checklists on mobile, fix tiny tap targets~~ ✅ Done: All 9 checklist pages updated checkboxes from 20×20px to 24×24px with min-width/min-height guards. Also fixed biochar.html CSS typo (`font-raise` → `font-size`). | Copilot #14 | Small
+|| # | Task | Source | Effort |
+||---|------|--------|--------|
+|| 12 | Create a "Start Here" hub page with decision tree (space → time → method recommendation) | Copilot #12 | Medium |
+|| 13 | Embed relevant YouTube videos on pillar pages + add transcripts/key takeaways | Copilot #17 | Medium |
+|| 14 | Optimize site speed — compress images, lazy-load media, audit Core Web Vitals | Copilot #13 | Small-Medium
 
 ### Phase 5 — Ongoing
-| # | Task | Source | Effort |
-|---|------|--------|--------|
-| 16 | Launch blog with consistent posting cadence (2–4 posts/month) | Copilot #19 | Ongoing |
-|| 17 | ~~Set up Search Console monitoring + iterate on low-CTR pages~~ ✅ Done: Added Google Search Console verification meta tags to all 9 checklist pages + standalone verification file. Ready for user to verify ownership in GSC console. Low-CTR iteration framework established (monitor impressions/CTR, optimize titles/descriptions). | Copilot #20 | Small
+|| # | Task | Source | Effort |
+||---|------|--------|--------|
+|| 16 | Launch blog with consistent posting cadence (2–4 posts/month) | Copilot #19 | Ongoing |
 
 ## ✅ Completed Milestones (continued)
-|||- [x] Google Analytics 4 integration: Added `G-KRHYVJXZLE` tracking snippet to all HTML pages.
-|||- [x] HTML Sitemap: Created `sitemap.html` with organized page links for users and SEO.
-|||- [x] XML Sitemap update: Added `blog.html` and `sitemap.html`, refreshed lastmod dates to 2026-07-10.
-|||- [x] BioChar checklist typo fixes: corrected `var/text-dark` → `var(--text-dark)`, `alignintems` → `align-items`, `input[intype=...]` → `input[type=...]`, `achheck-content` → `check-content`, and broken `<intype=` tag on Phase 2 checkbox.
-|||- [x] Added missing Tumbler Composting checklist link to index.html "Get Started" section (between Hot and Tea).
+||||- [x] Google Analytics 4 integration: Added `G-KRHYVJXZLE` tracking snippet to all HTML pages.
+||||- [x] HTML Sitemap: Created `sitemap.html` with organized page links for users and SEO.
+||||- [x] XML Sitemap update: Added `blog.html` and `sitemap.html`, refreshed lastmod dates to 2026-07-10.
+||||- [x] BioChar checklist typo fixes: corrected `var/text-dark` → `var(--text-dark)`, `alignintems` → `align-items`, `input[intype=...]` → `input[type=...]`, `achheck-content` → `check-content`, and broken `<intype=` tag on Phase 2 checkbox.
+||||- [x] Added missing Tumbler Composting checklist link to index.html "Get Started" section (between Hot and Tea).
+||||- [x] Tasks #1–#4: Unique titles, meta descriptions, heading hierarchy fixes, HowTo JSON-LD schemas on all 9 checklists, FAQPage schemas on gear/blog.
+||||- [x] Task #7: Glossary page created with 30 alphabetized composting terms, linked from index.html.
+||||- [x] Task #8: Troubleshooting sections added to all 9 method pages (smells, pests, moisture, slow breakdown).
+||||- [x] Task #15: Mobile QA — checkboxes expanded to 24×24px on all checklists + biochar CSS typo fix.
+||||- [x] Task #17: GSC verification meta tags added to all pages; low-CTR iteration framework established.
 
 ## 🔄 Development Workflow
 - **Project Manager (this chat):** Plans scope, reviews results, makes design/content decisions.
