@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://worldcomposting.com/sitemap.xml
+
+# Allow crawling of all content pages
+Disallow:
+
+# Google-specific settings
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
