@@ -1,0 +1,247 @@
+/* Article / Deep Dive Styles for World Composting */
+/* Shared by all pillar and cluster articles */
+
+/* Page Container */
+.container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 1.5rem;
+}
+
+/* Breadcrumb Navigation */
+.breadcrumb {
+    font-size: 0.85rem;
+    color: var(--ocean-blue);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+.breadcrumb a {
+    color: var(--forest-green);
+    text-decoration: none;
+    font-weight: 600;
+}
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+/* Article Card */
+.content-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: var(--card-shadow);
+    margin-bottom: 2rem;
+}
+
+/* Lead / Intro Paragraph */
+.lead {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: var(--text-dark);
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
+
+/* Headings */
+.content-card h2 {
+    font-family: 'Lora', serif;
+    color: var(--forest-green);
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+.content-card h3 {
+    font-family: 'Inter', sans-serif;
+    color: var(--ocean-blue);
+    font-size: 1.15rem;
+    margin-top: 1.75rem;
+    margin-bottom: 0.75rem;
+}
+
+/* Body Paragraphs */
+.content-card p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-dark);
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+/* Lists (ordered and unordered) */
+.content-card ul,
+.content-card ol {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-dark);
+    margin-top: 0;
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+}
+.content-card li {
+    margin-bottom: 0.5rem;
+}
+
+/* Checklist-style lists */
+.checklist {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+}
+.checklist li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+.checklist li:last-child {
+    border-bottom: none;
+}
+.checklist input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+    min-height: 24px;
+    border: 2px solid var(--forest-green);
+    border-radius: 5px;
+    flex-shrink: 0;
+    margin-top: 3px;
+    cursor: pointer;
+    position: relative;
+    transition: background 0.2s, border-color 0.2s;
+}
+.checklist input[type="checkbox"]:checked {
+    background: var(--forest-green);
+    border-color: var(--forest-green);
+}
+.checklist input[type="checkbox"]:checked::after {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 1px;
+    width: 6px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+.checklist input[type="checkbox"]:focus-visible {
+    outline: 2px solid var(--ocean-blue);
+    outline-offset: 2px;
+}
+.checklist label {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-dark);
+    cursor: pointer;
+}
+
+/* Comparison Tables */
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+.comparison-table thead th {
+    background: var(--forest-green);
+    color: white;
+    padding: 0.75rem 1rem;
+    text-align: left;
+    font-weight: 600;
+}
+.comparison-table tbody td {
+    padding: 0.65rem 1rem;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+    color: var(--text-dark);
+}
+.comparison-table tbody tr:nth-child(even) {
+    background: var(--off-white);
+}
+.comparison-table tbody tr:hover {
+    background: var(--sage-green);
+}
+
+/* CTA / Call-to-action paragraph */
+.cta {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-dark);
+    margin-top: 2rem;
+    padding: 1.25rem;
+    background: var(--sage-green);
+    border-radius: 12px;
+    text-align: center;
+}
+.cta a {
+    color: var(--forest-green);
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+/* Article page layout — override body flex centering */
+body {
+    display: block;
+    align-items: normal;
+}
+
+/* Site Header */
+.site-header {
+    text-align: center;
+    padding-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+.home-link {
+    display: inline-block;
+    margin-bottom: 0.75rem;
+}
+.home-link img {
+    width: 50px;
+    height: 50px;
+}
+
+/* Site Footer */
+.site-footer {
+    text-align: center;
+    padding: 2rem 1.5rem;
+    font-size: 0.85rem;
+    color: var(--text-dark);
+    opacity: 0.7;
+    margin-top: 2rem;
+}
+
+/* Mobile Responsive */
+@media (max-width: 480px) {
+    .container {
+        padding: 1rem;
+    }
+    .content-card {
+        padding: 1.25rem;
+    }
+    .lead {
+        font-size: 1.05rem;
+    }
+    .comparison-table {
+        font-size: 0.85rem;
+    }
+    .comparison-table thead th,
+    .comparison-table tbody td {
+        padding: 0.5rem 0.6rem;
+    }
+}
+
+@media (max-width: 375px) {
+    .content-card {
+        padding: 1rem;
+    }
+    .content-card h2 {
+        font-size: 1.3rem;
+    }
+    .content-card h3 {
+        font-size: 1.05rem;
+    }
+}

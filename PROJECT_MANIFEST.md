@@ -92,7 +92,7 @@
 || # | Task | Source | Effort |
 ||---|------|--------|--------|
 | 5 | Create pillar pages: "Complete Guide to Worm Composting", "Hot Composting Guide" (1,500–3,000 words each) | Copilot #1 | Large | ✅ DONE — Both ~3k-word guides created with FAQPage schema, internal links, verified rendering |
-| 6 | Build topic clusters — write 4–8 supporting articles per pillar (e.g., "Best bedding for worm bins", "Fruit fly control") | Copilot #2 | Large |
+| 6 | Build topic clusters — write 4–8 supporting articles per pillar (e.g., "Best bedding for worm bins", "Fruit fly control") | Copilot #2 | Large | ✅ DONE — 8 cluster articles created with internal linking, sitemap updated, index.html Deep Dive grid added |
 
 ### Phase 3 — Conversion & Trust
 || # | Task | Source | Effort |
