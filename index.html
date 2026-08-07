@@ -423,7 +423,8 @@
             { href: "tea.html", icon: "🍵", name: "Compost Tea", label: "Checklist" },
             { href: "lasagna.html", icon: "🥘", name: "Lasagna Composting", label: "Checklist" },
             { href: "zero-waste-kitchen.html", icon: "♻️", name: "Zero Waste Kitchen", label: "Checklist" },
-            { href: "glossary.html", icon: "📖", name: "Glossary", label: "Composting Terms" }
+            { href: "glossary.html", icon: "📖", name: "Glossary", label: "Composting Terms" },
+            { href: "about.html", icon: "👤", name: "About", label: "World Composting & Newell Davis" }
         ];
 
         // Render checklist cards
@@ -537,7 +538,7 @@
                     link.target = '_blank';
                     link.className = 'product-link';
                     const affiliateText = isAmazon ? ' (Affiliate Link)' : '';
-                    link.innerHTML = `<span class="product-name">${p['Item']}</span><small style="color:var(--text-dark);opacity:0.6;font-size:0.8rem;">${affiliateText}</small>`;
+                    link.innerHTML = `<span class="product-name" style="color:var(--forest-green);">${p['Item']}</span><small style="color:var(--text-dark);opacity:0.6;font-size:0.8rem;">${affiliateText}</small>`;
                     prodList.appendChild(link);
                 });
             } catch (e) {
