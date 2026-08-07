@@ -70,42 +70,33 @@
 ## 📋 Recently Completed (2026-08-07)
 ### Index.html Overhaul — Hub Site Redesign
 || # | Task | Details | Status |
-|---|------|--------|--------|
-| 1 | Preserve original index.html | Copied to `quick_links.html` for Instagram traffic | ✅ DONE |
-| 2 | Rewrite index.html as SEO hub page | Hero section with H1 + keyword-rich intro, featured pillar guide cards (worm + hot composting), checklist grid (11 items), video playlists, recommended gear | ✅ DONE |
-| 3 | Em-dash cleanup | Removed all em dashes from `index.html` — replaced with commas, colons, or hyphens per user constraint | ✅ DONE |
+||---|------|--------|--------|
+|| 1 | Preserve original index.html | Copied to `quick_links.html` for Instagram traffic | ✅ DONE |
+|| 2 | Rewrite index.html as SEO hub page | Hero section with H1 + keyword-rich intro, featured pillar guide cards (worm + hot composting), checklist grid (11 items), video playlists, recommended gear | ✅ DONE |
+|| 3 | Em-dash cleanup | Removed all em dashes from `index.html` — replaced with commas, colons, or hyphens per user constraint | ✅ DONE |
 
 ### SEO Infrastructure
 || # | Task | Details | Status |
-|---|------|--------|--------|
-| 4 | Create robots.txt | New file: allows all crawlers, points to sitemap.xml, no crawl delay for Googlebot | ✅ DONE |
-| 5 | Update sitemap.xml | Added worm-composting.html, hot-composting.html, quick_links.html; updated lastmod dates to 2026-08-07; set priority hierarchy (1.0 for homepage + pillars, 0.9 for checklists) | ✅ DONE |
-| 6 | Submit sitemap to Google Search Console | Sitemap submitted and accepted by GSC | ✅ DONE |
+||---|------|--------|--------|
+|| 4 | Create robots.txt | New file: allows all crawlers, points to sitemap.xml, no crawl delay for Googlebot | ✅ DONE |
+|| 5 | Update sitemap.xml | Added worm-composting.html, hot-composting.html, quick_links.html; updated lastmod dates to 2026-08-07; set priority hierarchy (1.0 for homepage + pillars, 0.9 for checklists) | ✅ DONE |
+|| 6 | Submit sitemap to Google Search Console | Sitemap submitted and accepted by GSC | ✅ DONE |
 
 ### Git Deployment
 || # | Task | Details | Status |
-|---|------|--------|--------|
-| 7 | Push all changes to GitHub | Commit: "Redesign index.html as SEO hub, add pillar pages (worm-composting, hot-composting), quick_links backup, robots.txt, updated sitemap.xml" — pushed to main branch | ✅ DONE |
+||---|------|--------|--------|
+|| 7 | Push all changes to GitHub | Commit: "Redesign index.html as SEO hub, add pillar pages (worm-composting, hot-composting), quick_links backup, robots.txt, updated sitemap.xml" — pushed to main branch | ✅ DONE |
 
-## 📋 Pending Changes
-### Phase 1 — Quick SEO Wins
-||| # | Task | Source | Effort |
-|||---|------|--------|--------|
-|| 5 | Create pillar pages: "Complete Guide to Worm Composting", "Hot Composting Guide" (1,500–3,000 words each) | Copilot #1 | Large | ✅ DONE — Both ~3k-word guides created with FAQPage schema, internal links, verified rendering |
-|| 6 | Build topic clusters — write 4–8 supporting articles per pillar (e.g., "Best bedding for worm bins", "Fruit fly control") | Copilot #2 | Large | ✅ DONE — 8 cluster articles created with internal linking, sitemap updated, index.html Deep Dive grid added |
-
-### Phase 2 — Article Styling & Polish
-||| # | Task | Source | Effort |
-|||---|------|--------|--------|
-|| 18 | Create article.css for deep dive article formatting (container, cards, breadcrumbs, typography, tables, CTAs) | Hermes Agent | Small | ✅ DONE — Shared stylesheet covering all article-specific elements, mobile breakpoints |
-|| 19 | Fix logo asset path across deep dive articles (home.png → logo.png) | Hermes Agent | Small | ✅ DONE — Corrected in all 8 affected HTML files |
-|| 20 | Fix logo sizing on article pages to match checklist pages (50px → 110px, CSS specificity override) | Hermes Agent | Small | ✅ DONE — Overrode theme.css .home-link img with !important in article.css |
+### About Page & Trust Signals
+|| # | Task | Details | Status |
+||---|------|--------|--------|
+|| 9 | Create an "About" page with E-E-A-T content (background, YouTube channel, projects) | Created `about.html` with story section, content pillars, presentations mention, trust/credibility section, community CTA; added About card to index.html checklist grid; updated sitemap.xml; pushed to GitHub | ✅ DONE |
+|| 21 | Fix product link colors on index.html | Featured gear links (Urban Worm Bag, Vermibag, Meme's Worms) were rendering black — added forest-green color override in JS template | ✅ DONE |
 
 ### Phase 3 — Conversion & Trust
 || # | Task | Source | Effort |
-||---|------|--------|--------|
-|| 9 | Create an "About" page with E-E-A-T content (background, YouTube channel, projects) | Copilot #16 | Medium |
-|| 10 | Add email capture / lead magnet ("Download the beginner composting guide") | Copilot #18 | Medium |
+|||---|------|--------|--------|
+||| 10 | Add email capture / lead magnet ("Download the beginner composting guide") | Copilot #18 | Medium |
 || 11 | Expand gear.html into comparison guides with tables (capacity, material, ventilation, price, pros/cons) | Copilot #10 | Large
 
 ### Phase 4 — UX & Technical
