@@ -89,10 +89,17 @@
 
 ## 📋 Pending Changes
 ### Phase 1 — Quick SEO Wins
-|| # | Task | Source | Effort |
-||---|------|--------|--------|
-| 5 | Create pillar pages: "Complete Guide to Worm Composting", "Hot Composting Guide" (1,500–3,000 words each) | Copilot #1 | Large | ✅ DONE — Both ~3k-word guides created with FAQPage schema, internal links, verified rendering |
-| 6 | Build topic clusters — write 4–8 supporting articles per pillar (e.g., "Best bedding for worm bins", "Fruit fly control") | Copilot #2 | Large | ✅ DONE — 8 cluster articles created with internal linking, sitemap updated, index.html Deep Dive grid added |
+||| # | Task | Source | Effort |
+|||---|------|--------|--------|
+|| 5 | Create pillar pages: "Complete Guide to Worm Composting", "Hot Composting Guide" (1,500–3,000 words each) | Copilot #1 | Large | ✅ DONE — Both ~3k-word guides created with FAQPage schema, internal links, verified rendering |
+|| 6 | Build topic clusters — write 4–8 supporting articles per pillar (e.g., "Best bedding for worm bins", "Fruit fly control") | Copilot #2 | Large | ✅ DONE — 8 cluster articles created with internal linking, sitemap updated, index.html Deep Dive grid added |
+
+### Phase 2 — Article Styling & Polish
+||| # | Task | Source | Effort |
+|||---|------|--------|--------|
+|| 18 | Create article.css for deep dive article formatting (container, cards, breadcrumbs, typography, tables, CTAs) | Hermes Agent | Small | ✅ DONE — Shared stylesheet covering all article-specific elements, mobile breakpoints |
+|| 19 | Fix logo asset path across deep dive articles (home.png → logo.png) | Hermes Agent | Small | ✅ DONE — Corrected in all 8 affected HTML files |
+|| 20 | Fix logo sizing on article pages to match checklist pages (50px → 110px, CSS specificity override) | Hermes Agent | Small | ✅ DONE — Overrode theme.css .home-link img with !important in article.css |
 
 ### Phase 3 — Conversion & Trust
 || # | Task | Source | Effort |
