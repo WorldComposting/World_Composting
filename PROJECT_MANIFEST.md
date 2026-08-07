@@ -67,12 +67,32 @@
 |||- [x] Mobile responsive breakpoint updated for `.product-name`.
 |||- [x] Header logo fix across all 8 checklist pages (hot, sustainability, beginner, bokashi, biochar, lasagna, tea): replaced large YouTube logo with smaller centered home image (50×50px) above "← Back to Home" text; changed `.back-link` from `inline-block` to `block`.
 
+## 📋 Recently Completed (2026-08-07)
+### Index.html Overhaul — Hub Site Redesign
+|| # | Task | Details | Status |
+|---|------|--------|--------|
+| 1 | Preserve original index.html | Copied to `quick_links.html` for Instagram traffic | ✅ DONE |
+| 2 | Rewrite index.html as SEO hub page | Hero section with H1 + keyword-rich intro, featured pillar guide cards (worm + hot composting), checklist grid (11 items), video playlists, recommended gear | ✅ DONE |
+| 3 | Em-dash cleanup | Removed all em dashes from `index.html` — replaced with commas, colons, or hyphens per user constraint | ✅ DONE |
+
+### SEO Infrastructure
+|| # | Task | Details | Status |
+|---|------|--------|--------|
+| 4 | Create robots.txt | New file: allows all crawlers, points to sitemap.xml, no crawl delay for Googlebot | ✅ DONE |
+| 5 | Update sitemap.xml | Added worm-composting.html, hot-composting.html, quick_links.html; updated lastmod dates to 2026-08-07; set priority hierarchy (1.0 for homepage + pillars, 0.9 for checklists) | ✅ DONE |
+| 6 | Submit sitemap to Google Search Console | Sitemap submitted and accepted by GSC | ✅ DONE |
+
+### Git Deployment
+|| # | Task | Details | Status |
+|---|------|--------|--------|
+| 7 | Push all changes to GitHub | Commit: "Redesign index.html as SEO hub, add pillar pages (worm-composting, hot-composting), quick_links backup, robots.txt, updated sitemap.xml" — pushed to main branch | ✅ DONE |
+
 ## 📋 Pending Changes
 ### Phase 1 — Quick SEO Wins
 || # | Task | Source | Effort |
 ||---|------|--------|--------|
-|| 5 | Create pillar pages: "Complete Guide to Worm Composting", "Hot Composting Guide" (1,500–3,000 words each) | Copilot #1 | Large |
-|| 6 | Build topic clusters — write 4–8 supporting articles per pillar (e.g., "Best bedding for worm bins", "Fruit fly control") | Copilot #2 | Large
+| 5 | Create pillar pages: "Complete Guide to Worm Composting", "Hot Composting Guide" (1,500–3,000 words each) | Copilot #1 | Large | ✅ DONE — Both ~3k-word guides created with FAQPage schema, internal links, verified rendering |
+| 6 | Build topic clusters — write 4–8 supporting articles per pillar (e.g., "Best bedding for worm bins", "Fruit fly control") | Copilot #2 | Large |
 
 ### Phase 3 — Conversion & Trust
 || # | Task | Source | Effort |

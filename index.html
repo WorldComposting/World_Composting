@@ -248,12 +248,60 @@
             margin-top: 2rem;
         }
 
+        /* ===== DEEP DIVE ARTICLES GRID ===== */
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.25rem;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 1.5rem 2rem;
+        }
+        .article-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.07);
+            padding: 1.5rem;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+        .article-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 24px rgba(0,0,0,0.12);
+        }
+        .article-card h3 {
+            font-size: 1.1rem;
+            color: var(--forest-green);
+            margin-bottom: 0.5rem;
+            line-height: 1.3;
+        }
+        .article-card p {
+            flex: 1;
+            font-size: 0.9rem;
+            color: var(--text-dark);
+            opacity: 0.8;
+            margin-bottom: 0.75rem;
+            line-height: 1.5;
+        }
+        .article-card .card-tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            padding: 0.25rem 0.6rem;
+            border-radius: 4px;
+            background: var(--off-white);
+            color: var(--ocean-blue);
+            font-weight: 600;
+        }
+
         /* ===== RESPONSIVE ===== */
         @media (max-width: 600px) {
             .hero h1 { font-size: 1.75rem; }
             .hero .subtitle { font-size: 1.05rem; }
             .pillar-grid { grid-template-columns: 1fr; padding: 0 1rem 2rem; }
             .checklist-grid { grid-template-columns: 1fr; padding: 0 1rem 2rem; }
+            .articles-grid { grid-template-columns: 1fr; padding: 0 1rem 2rem; }
             .section-header h2 { font-size: 1.4rem; }
         }
     </style>
@@ -320,6 +368,15 @@
             <!-- Populated by JS below -->
         </div>
 
+        <!-- ===== DEEP DIVE ARTICLES ===== -->
+        <div class="section-header">
+            <h2>Deep Dive Articles</h2>
+            <p>Expert-level guides covering specific topics in detail.</p>
+        </div>
+        <div class="articles-grid" id="articles-container">
+            <!-- Populated by JS below -->
+        </div>
+
         <!-- ===== VIDEO PLAYLISTS ===== -->
         <div class="section-header">
             <h2>Watch & Learn</h2>
@@ -382,6 +439,30 @@
                     <small>${c.label}</small>
                 </div>`;
             checklistContainer.appendChild(card);
+        });
+
+        // ===== DEEP DIVE ARTICLES DATA & RENDERING =====
+        const articles = [
+            { href: "worm-bedding.html", title: "Best Bedding Materials for Worm Bins", desc: "Compare shredded paper, coconut coir, aged leaves and more to find the ideal bedding for your worm bin.", tag: "Worm Composting" },
+            { href: "worm-fruit-flies.html", title: "How to Control Fruit Flies in Indoor Worm Bins", desc: "Practical strategies to keep fruit flies out of your indoor vermicomposting system without chemicals.", tag: "Worm Composting" },
+            { href: "worm-forbidden-foods.html", title: "What Not to Feed Worms: Complete List of Forbidden Foods", desc: "Avoid these common mistakes. A comprehensive list of foods that harm or kill your red wigglers.", tag: "Worm Composting" },
+            { href: "worm-harvesting.html", title: "How to Harvest Worm Castings: Step-by-Step Guide", desc: "Learn the light method, migration method and more to safely collect nutrient-rich worm castings.", tag: "Worm Composting" },
+            { href: "hot-best-materials.html", title: "Best Materials for Hot Composting Piles", desc: "Green and brown materials ranked by effectiveness. Build a pile that heats up fast and stays hot.", tag: "Hot Composting" },
+            { href: "hot-not-heating.html", title: "Why Is My Hot Compost Not Heating Up? Troubleshooting Guide", desc: "Diagnose common causes of cold compost piles including size, moisture, aeration and C:N ratio issues.", tag: "Hot Composting" },
+            { href: "hot-speed-tips.html", title: "How to Turn Compost Faster: Speed Tips and Techniques", desc: "Proven methods to accelerate decomposition from months down to weeks without sacrificing quality.", tag: "Hot Composting" },
+            { href: "hot-cn-ratio.html", title: "C:N Ratio Guide for Hot Composting", desc: "Master the carbon to nitrogen balance with a reference table of common materials and their ratios.", tag: "Hot Composting" }
+        ];
+
+        const articlesContainer = document.getElementById('articles-container');
+        articles.forEach(a => {
+            const card = document.createElement('a');
+            card.href = a.href;
+            card.className = 'article-card';
+            card.innerHTML = `
+                <h3>${a.title}</h3>
+                <p>${a.desc}</p>
+                <span class="card-tag">${a.tag}</span>`;
+            articlesContainer.appendChild(card);
         });
 
         // ===== VIDEO PLAYLISTS (existing logic) =====
