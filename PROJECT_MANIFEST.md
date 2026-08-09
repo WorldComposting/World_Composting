@@ -14,10 +14,12 @@
 - **Deployment Target:** Static Web Hosting (GitHub Pages).
 
 ## 🏗 Architecture & Key Files
-### Automation Scripts
+### Automation Scripts ⚠️ DO NOT RUN
 - `scripts/fetch_videos.py`: Fetches latest videos from YouTube and updates `src/data/videos.json`.
 - `scripts/sync_thumbnails.py`: Ensures thumbnails are locally available in `src/assets/thumbnails`.
 - `scripts/sync_products.py`: Syncs `products.json` from Google Sheets CSV export (source of truth).
+
+> **⚠️ NEVER run these scripts.** They have repeatedly backfired, making changes that break the site. Treat them as deprecated — do not execute them under any circumstances. Data files (`videos.json`, `products.json`) should be updated manually or via external processes only when explicitly directed by the user.
 
 ### Data Structure
 - `src/data/videos.json`: List of processed video metadata.
