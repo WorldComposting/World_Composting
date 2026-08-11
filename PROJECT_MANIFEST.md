@@ -123,7 +123,57 @@
 ||||- [x] Task #7: Glossary page created with 30 alphabetized composting terms, linked from index.html.
 ||||- [x] Task #8: Troubleshooting sections added to all 9 method pages (smells, pests, moisture, slow breakdown).
 ||||- [x] Task #15: Mobile QA — checkboxes expanded to 24×24px on all checklists + biochar CSS typo fix.
-||||- [x] Task #17: GSC verification meta tags added to all pages; low-CTR iteration framework established.
+|||||- [x] Task #17: GSC verification meta tags added to all pages; low-CTR iteration framework established.
+
+## 📄 Additional Pages & Content (Post-Manifest Update)
+|||||- [x] Biochar overview page (`biochar.html`).
+|||||- [x] Blog section (`blog.html`) with `src/data/blog.json` data store.
+|||||- [x] Glossary/definitions page (`glossary.html`) with 30 alphabetized composting terms.
+|||||- [x] Start-here onboarding hub page (`start-here.html`) with decision tree.
+|||||- [x] Quick links backup of original index.html (`quick_links.html`).
+|||||- [x] HTML Sitemap display page (`sitemap.html`) with organized page links.
+|||||- [x] Zero-waste kitchen guide (`zero-waste-kitchen.html`).
+
+## 🌡 Hot Composting Deep-Dive Pages
+|||||- [x] Best materials for hot composting (`hot-best-materials.html`).
+|||||- [x] Carbon-to-Nitrogen ratio guide (`hot-cn-ratio.html`).
+|||||- [x] Hot composting overview pillar page (`hot-composting.html`).
+|||||- [x] Troubleshooting: pile not heating (`hot-not-heating.html`).
+|||||- [x] Speed-up tips for hot composting (`hot-speed-tips.html`).
+
+## 🪱 Worm Composting Deep-Dive Pages
+|||||- [x] Worm composting overview pillar page (`worm-composting.html`).
+|||||- [x] Bedding guide (`worm-bedding.html`).
+|||||- [x] Forbidden foods list (`worm-forbidden-foods.html`).
+|||||- [x] Fruit fly prevention (`worm-fruit-flies.html`).
+|||||- [x] Harvesting methods (`worm-harvesting.html`).
+
+## 🎨 New Stylesheets & Assets
+|||||- [x] Article-specific styling (`src/styles/article.css`).
+|||||- [x] Video section styling (`src/styles/video-section.css`).
+||||||- [x] Blog data store (`src/data/blog.json`).
+
+## 📋 Pending Changes
+|||||||---|------|--------|--------|
+||||||| 14 | Optimize site speed — compress images, lazy-load media, audit Core Web Vitals | Copilot #13 | Small-Medium | ✅ DONE (2026-08-11)
+
+### Site Speed Optimization (#14) — Completed 2026-08-11
+|||||||---|------|--------|--------|
+||||||| a | Compress logo.png | PNG → optimized JPEG via ffmpeg q:v=75: 140KB → 11KB (92% reduction) | ✅ DONE
+||||||| b | Add loading="lazy" to all static <img> tags | Added lazy loading to 26 of 27 images across all HTML pages; hero logo on index.html kept eager (above-the-fold critical asset) | ✅ DONE
+||||||| c | Add width/height attributes to all <img> tags | Prevents Cumulative Layout Shift (CLS); applied to every static image with correct dimensions per context | ✅ DONE
+||||||| d | Compress thumbnail images | All 15 thumbnails re-encoded via ffmpeg q:v=30: 3.1MB → 552KB total (82% reduction, ~30-40KB each at 140×79px display size) | ✅ DONE
+
+### Updated Pages (26 files)
+|||||||---|------|--------|--------|
+||||||| 1–8 | Home-link logos (lazy only): hot-best-materials, hot-cn-ratio, hot-not-heating, hot-speed-tips, worm-bedding, worm-forbidden-foods, worm-fruit-flies, worm-harvesting | ✅ DONE
+||||||| 9–24 | Logo images (dimensions + lazy): about, beginner, biochar, blog, bokashi, glossary, hot-composting, hot, lasagna, start-here (80×80), sustainability, tea, troubleshoot, tumbler, worm-composting, zero-waste-kitchen | ✅ DONE
+||||||| 25 | index.html: hero logo dimensions only, featured video thumbnail lazy+140×79, 5 playlist thumbnails lazy+140×79 | ✅ DONE
+
+### Asset Changes
+|||||||---|------|--------|--------|
+||||||| src/assets/logo.png | Replaced with JPEG variant (11KB) | ✅ DONE
+||||||| src/assets/thumbnails/video_000–014.jpg | All re-encoded at quality 30 | ✅ DONE
 
 ## 🔄 Development Workflow
 - **Project Manager (this chat):** Plans scope, reviews results, makes design/content decisions.

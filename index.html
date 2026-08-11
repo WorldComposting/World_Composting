@@ -207,7 +207,7 @@
             flex: 1;
             min-width: 0;
         }
-        .video-title {
+        .product-name {
             display: -webkit-box;
             -webkit-line-clamp: 2;
             -webkit-box-orient: vertical;
@@ -215,7 +215,14 @@
             font-size: 0.95rem;
             line-height: 1.4;
             color: var(--forest-green, #1a5e2a);
-            font-weight: 500;
+            font-weight: 600;
+        }
+        .playlist-title {
+            display: block;
+            font-size: 0.8rem;
+            color: var(--text-dark);
+            opacity: 0.6;
+            margin-top: 0.25rem;
         }
 
         /* ===== PRODUCT LINKS (existing styles preserved) ===== */
@@ -232,10 +239,6 @@
         .product-link:hover {
             transform: translateY(-1px);
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-        .product-name {
-            font-weight: 600;
-            color: var(--text-dark);
         }
 
         /* ===== FOOTER ===== */
@@ -319,7 +322,7 @@
 
         <!-- ===== HERO SECTION ===== -->
         <header class="hero">
-            <img src="src/assets/logo.png" alt="World Composting Logo" class="hero-logo" onerror="this.src='https://via.placeholder.com/120?text=WC'">
+            <img src="src/assets/logo.png" alt="World Composting Logo" class="hero-logo" width="120" height="120" onerror="this.src='https://via.placeholder.com/120?text=WC'">
             <h1>World Composting</h1>
             <p class="subtitle">Turning waste into wonder.</p>
             <p class="intro-text">
@@ -481,9 +484,10 @@
                     const featured = videos[0];
                     featuredCard.innerHTML = `
                         <a href="${featured.url}" target="_blank" style="text-decoration:none;">
-                            <img src="${featured.thumbnail}" class="video-thumbnail" alt="${featured.title}">
+                            <img src="${featured.thumbnail}" class="video-thumbnail" alt="${featured.title}" loading="lazy" width="140" height="79">
                             <div class="video-info">
-                                <span class="video-title">${featured.title}</span>
+                                <span class="product-name">${featured.title}</span>
+                                <small class="playlist-title">Latest Video</small>
                             </div>
                         </a>`;
                     document.getElementById('playlist-list').appendChild(featuredCard);
@@ -503,9 +507,10 @@
                     card.className = 'video-card';
                     card.innerHTML = `
                         <a href="${p.url}" target="_blank" style="text-decoration:none;">
-                            <img src="https://img.youtube.com/vi/${p.id}/mqdefault.jpg" class="video-thumbnail" alt="${p.title}">
+                            <img src="https://img.youtube.com/vi/${p.id}/mqdefault.jpg" class="video-thumbnail" alt="${p.title}" loading="lazy" width="140" height="79">
                             <div class="video-info">
-                                <span class="video-title">${p.title}</span>
+                                <span class="product-name">${p.title}</span>
+                                <small class="playlist-title">Playlist</small>
                             </div>
                         </a>`;
                     document.getElementById('playlist-list').appendChild(card);
