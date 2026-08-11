@@ -9,6 +9,7 @@
     <!-- Google Search Console Verification -->
     <meta name="google-site-verification" content="google8a4b2c3d1e5f6789">
     <link rel="stylesheet" href="src/styles/theme.css">
+    <link rel="stylesheet" href="src/styles/video-section.css">
     <style>
         #app {
             max-width: 720px;
@@ -667,6 +668,9 @@
             </div>
         </div>
 
+        <!-- Video Section -->
+        <div id="video-container-tea"></div>
+
         <!-- My Recommended Gear -->
         <div id="gear-section">
             <div class="section-title">My Recommended Gear</div>
@@ -759,6 +763,19 @@
         // Init
         loadCheckboxes();
         loadGear();
+
+        // Load and render videos
+        (async function() {
+            await new Promise(function(resolve) {
+                var s = document.createElement('script');
+                s.src = 'src/js/video-renderer.js';
+                s.onload = resolve;
+                document.head.appendChild(s);
+            });
+            if (window.renderVideoSection) {
+                window.renderVideoSection('video-container-tea', 'tea');
+            }
+        })();
     </script>
 </body>
 </html>

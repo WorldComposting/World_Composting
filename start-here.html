@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Where to Start Composting — Decision Guide | World Composting</title>
+    <meta name="description" content="Not sure which composting method is right for you? Answer 4 quick questions about your space, time, and goals to get a personalized recommendation.">
+    <link rel="stylesheet" href="src/styles/theme.css">
+    <style>
+        /* ===== START HERE WIZARD ===== */
+        .wizard-header {
+            text-align: center;
+            padding: 2rem 1.5rem 1rem;
+        }
+        .wizard-logo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 20px rgba(45,90,39,0.15);
+        }
+        .wizard-header h1 {
+            font-family: 'Lora', serif;
+            color: var(--forest-green);
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        .wizard-header p {
+            color: var(--text-dark);
+            opacity: 0.75;
+            font-size: 1rem;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        /* Progress bar */
+        .progress-bar {
+            display: flex;
+            justify-content: center;
+            gap: 0.75rem;
+            padding: 1rem 1.5rem;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        .progress-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--sage-green);
+            transition: background 0.3s, transform 0.3s;
+        }
+        .progress-dot.active {
+            background: var(--forest-green);
+            transform: scale(1.3);
+        }
+        .progress-dot.completed {
+            background: var(--ocean-blue);
+        }
+
+        /* Question container */
+        #wizard-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 0 1.5rem 2rem;
+        }
+        .question-step {
+            display: none;
+            animation: fadeInStep 0.4s ease-out;
+        }
+        .question-step.active {
+            display: block;
+        }
+        @keyframes fadeInStep {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .question-step h2 {
+            font-family: 'Lora', serif;
+            color: var(--forest-green);
+            font-size: 1.4rem;
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+        .question-step .step-label {
+            display: block;
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-dark);
+            opacity: 0.6;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Option cards */
+        .options-grid {
+            display: grid;
+            gap: 0.75rem;
+        }
+        .option-card {
+            background: white;
+            border: 2px solid var(--sage-green);
+            border-radius: 12px;
+            padding: 1rem 1.25rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: left;
+            font-size: 1rem;
+            color: var(--text-dark);
+        }
+        .option-card:hover {
+            border-color: var(--forest-green);
+            box-shadow: 0 4px 16px rgba(45,90,39,0.12);
+        }
+        .option-card.selected {
+            background: var(--forest-green);
+            color: white;
+            border-color: var(--forest-green);
+        }
+
+        /* Navigation buttons */
+        .wizard-nav {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+            padding: 0 1.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .btn-wizard {
+            display: inline-block;
+            padding: 0.75rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.15s;
+        }
+        .btn-wizard:hover {
+            transform: translateY(-1px);
+        }
+        .btn-next {
+            background: var(--forest-green);
+            color: white;
+            border: none;
+        }
+        .btn-next:hover {
+            background: var(--ocean-blue);
+        }
+        .btn-back {
+            background: transparent;
+            color: var(--text-dark);
+            opacity: 0.6;
+            border: none;
+        }
+        .btn-back:hover {
+            opacity: 1;
+        }
+
+        /* Results section */
+        #results-container {
+            display: none;
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 0 1.5rem 2rem;
+            animation: fadeInStep 0.5s ease-out;
+        }
+        #results-container.active {
+            display: block;
+        }
+        .results-header h2 {
+            font-family: 'Lora', serif;
+            color: var(--forest-green);
+            font-size: 1.75rem;
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+        .results-header p {
+            text-align: center;
+            color: var(--text-dark);
+            opacity: 0.75;
+            font-size: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Recommendation cards */
+        .rec-card {
+            background: white;
+            border-radius: 16px;
+            box-shadow: var(--card-shadow);
+            padding: 1.5rem;
+            margin-bottom: 1.25rem;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .rec-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(75,54,33,0.15);
+        }
+        .rec-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        .rec-card h3 {
+            font-family: 'Lora', serif;
+            color: var(--forest-green);
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+        .rec-card p {
+            color: var(--text-dark);
+            opacity: 0.85;
+            line-height: 1.6;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+        .rec-link {
+            display: inline-block;
+            color: var(--ocean-blue);
+            font-weight: 600;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .rec-link:hover {
+            color: var(--forest-green);
+        }
+
+        /* Fallback link */
+        .fallback-section {
+            text-align: center;
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+        }
+        .fallback-section p {
+            color: var(--text-dark);
+            opacity: 0.75;
+            font-size: 0.95rem;
+            margin-bottom: 0.75rem;
+        }
+        .btn-fallback {
+            display: inline-block;
+            padding: 0.6rem 1.25rem;
+            background: var(--ocean-blue);
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+        .btn-fallback:hover {
+            background: var(--forest-green);
+        }
+
+        /* Back to home link */
+        .back-home {
+            display: block;
+            text-align: center;
+            margin-top: 1.5rem;
+            color: var(--ocean-blue);
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+        .back-home:hover {
+            color: var(--forest-green);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 480px) {
+            .wizard-header h1 { font-size: 1.5rem; }
+            .question-step h2 { font-size: 1.2rem; }
+            .option-card { padding: 0.85rem 1rem; font-size: 0.95rem; }
+            #wizard-container, #results-container { padding: 0 1rem 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+
+        <!-- ===== WIZARD HEADER ===== -->
+        <header class="wizard-header">
+            <img src="src/assets/logo.png" alt="World Composting Logo" class="wizard-logo" onerror="this.src='https://via.placeholder.com/80?text=WC'">
+            <h1>Where to Start Composting</h1>
+            <p>Answer 4 quick questions and we will recommend the best composting method for your situation.</p>
+        </header>
+
+        <!-- ===== PROGRESS DOTS ===== -->
+        <div class="progress-bar" id="progress-bar">
+            <div class="progress-dot active"></div>
+            <div class="progress-dot"></div>
+            <div class="progress-dot"></div>
+            <div class="progress-dot"></div>
+        </div>
+
+        <!-- ===== QUESTIONS ===== -->
+        <div id="wizard-container">
+            <!-- Step 1: Space -->
+            <div class="question-step active" data-step="1">
+                <h2>How much space do you have?</h2>
+                <span class="step-label">Step 1 of 4</span>
+                <div class="options-grid">
+                    <div class="option-card" data-value="apartment">Apartment or Indoor Only</div>
+                    <div class="option-card" data-value="balcony">Balcony or Patio</div>
+                    <div class="option-card" data-value="backyard">Backyard</div>
+                    <div class="option-card" data-value="large">Large Yard or Farm</div>
+                </div>
+                <div class="wizard-nav">
+                    <button class="btn-wizard btn-next" id="next-btn-1">Next &rarr;</button>
+                </div>
+            </div>
+
+            <!-- Step 2: What -->
+            <div class="question-step" data-step="2">
+                <h2>What are you composting?</h2>
+                <span class="step-label">Step 2 of 4</span>
+                <div class="options-grid">
+                    <div class="option-card" data-value="kitchen">Kitchen Scraps Only</div>
+                    <div class="option-card" data-value="garden">Garden Waste Too</div>
+                    <div class="option-card" data-value="both">Both Kitchen and Garden</div>
+                </div>
+                <div class="wizard-nav">
+                    <button class="btn-wizard btn-back" id="back-btn-2">&larr; Back</button>
+                    <button class="btn-wizard btn-next" id="next-btn-2">Next &rarr;</button>
+                </div>
+            </div>
+
+            <!-- Step 3: Effort -->
+            <div class="question-step" data-step="3">
+                <h2>How hands-on do you want to be?</h2>
+                <span class="step-label">Step 3 of 4</span>
+                <div class="options-grid">
+                    <div class="option-card" data-value="minimal">Minimal Effort (Set and Forget)</div>
+                    <div class="option-card" data-value="moderate">Moderate (Weekly Check-ins)</div>
+                    <div class="option-card" data-value="hands-on">Hands-On (Active Management)</div>
+                </div>
+                <div class="wizard-nav">
+                    <button class="btn-wizard btn-back" id="back-btn-3">&larr; Back</button>
+                    <button class="btn-wizard btn-next" id="next-btn-3">Next &rarr;</button>
+                </div>
+            </div>
+
+            <!-- Step 4: Goal -->
+            <div class="question-step" data-step="4">
+                <h2>What is your main goal?</h2>
+                <span class="step-label">Step 4 of 4</span>
+                <div class="options-grid">
+                    <div class="option-card" data-value="waste">Reduce Household Waste</div>
+                    <div class="option-card" data-value="garden-goal">Grow Plants or Garden</div>
+                    <div class="option-card" data-value="save">Save Money on Soil and Fertilizer</div>
+                    <div class="option-card" data-value="educate">Educate Kids or Family</div>
+                </div>
+                <div class="wizard-nav">
+                    <button class="btn-wizard btn-back" id="back-btn-4">&larr; Back</button>
+                    <button class="btn-wizard btn-next" id="next-btn-4">See My Recommendations</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== RESULTS ===== -->
+        <div id="results-container">
+            <div class="results-header">
+                <h2>Your Personalized Recommendations</h2>
+                <p>Based on your answers, here are the composting methods that fit you best.</p>
+            </div>
+            <div id="recommendations"></div>
+
+            <!-- Fallback -->
+            <div class="fallback-section">
+                <p>Not sure which method to pick?</p>
+                <a href="beginner.html" class="btn-fallback">Start with Our Beginner's Checklist &rarr;</a>
+            </div>
+
+            <a href="index.html" class="back-home">&larr; Back to Home</a>
+        </div>
+
+    </div>
+
+    <script>
+        // ===== WIZARD STATE =====
+        let currentStep = 1;
+        const answers = {};
+
+        // ===== DOM ELEMENTS =====
+        const steps = document.querySelectorAll('.question-step');
+        const wizardContainer = document.getElementById('wizard-container');
+        const resultsContainer = document.getElementById('results-container');
+        const progressBar = document.getElementById('progress-bar');
+        const recContainer = document.getElementById('recommendations');
+
+        // ===== OPTION CARD SELECTION =====
+        steps.forEach(step => {
+            const cards = step.querySelectorAll('.option-card');
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    // Deselect all in this step
+                    cards.forEach(c => c.classList.remove('selected'));
+                    // Select clicked
+                    card.classList.add('selected');
+                    // Store answer
+                    const stepNum = parseInt(step.dataset.step);
+                    answers[stepNum] = card.dataset.value;
+                });
+            });
+        });
+
+        // ===== NAVIGATION =====
+        function updateProgress() {
+            const dots = progressBar.querySelectorAll('.progress-dot');
+            dots.forEach((dot, i) => {
+                dot.classList.remove('active', 'completed');
+                if (i + 1 === currentStep) {
+                    dot.classList.add('active');
+                } else if (i + 1 < currentStep) {
+                    dot.classList.add('completed');
+                }
+            });
+        }
+
+        function showResults() {
+            wizardContainer.style.display = 'none';
+            progressBar.style.display = 'none';
+            resultsContainer.classList.add('active');
+            renderRecommendations();
+        }
+
+        // ===== DECISION LOGIC =====
+        function getRecommendations() {
+            const space = answers[1];
+            const what = answers[2];
+            const effort = answers[3];
+            const goal = answers[4];
+
+            let recs = [];
+
+            // Base recommendations by space + effort
+            if (space === 'apartment') {
+                recs.push({
+                    icon: '\uD83E\uDDC1',
+                    title: 'Worm Composting (Vermicomposting)',
+                    desc: 'Perfect for indoor spaces. Red wigglers break down kitchen scraps in a compact bin, producing nutrient-rich castings year-round.',
+                    href: 'worm-composting.html'
+                });
+                if (what === 'kitchen') {
+                    recs.push({
+                        icon: '\uD83C\uDF5A',
+                        title: 'Bokashi Composting',
+                        desc: 'Ferment all kitchen scraps including meat and dairy in a sealed bucket. Great for small spaces with no odor issues.',
+                        href: 'bokashi.html'
+                    });
+                }
+            }
+
+            if (space === 'balcony') {
+                recs.push({
+                    icon: '\uD83D\uDD04',
+                    title: 'Tumbler Composting',
+                    desc: 'Compact tumblers fit on balconies or patios. Easy to turn, fast decomposition, and keeps pests out.',
+                    href: 'tumbler.html'
+                });
+                recs.push({
+                    icon: '\uD83C\uDF5A',
+                    title: 'Bokashi Composting',
+                    desc: 'Ferment kitchen scraps indoors, then bury the pre-compost in outdoor soil. Ideal for balcony dwellers.',
+                    href: 'bokashi.html'
+                });
+            }
+
+            if (space === 'backyard') {
+                recs.push({
+                    icon: '\uD83D\uDD25',
+                    title: 'Hot Composting',
+                    desc: 'Build a thermophilic pile that heats to 130-160 degrees F. Fast decomposition in 18-21 days with active management.',
+                    href: 'hot-composting.html'
+                });
+                if (effort === 'minimal') {
+                    recs.push({
+                        icon: '\uD83C\uDF5A',
+                        title: 'Bokashi Composting',
+                        desc: 'Set and forget fermentation system. Perfect if you want low-effort composting with kitchen scraps.',
+                        href: 'bokashi.html'
+                    });
+                }
+            }
+
+            if (space === 'large') {
+                recs.push({
+                    icon: '\uD83D\uDD25',
+                    title: 'Hot Composting',
+                    desc: 'Scale up thermophilic composting for large volumes. Ideal for farms and large properties with abundant organic waste.',
+                    href: 'hot-composting.html'
+                });
+                recs.push({
+                    icon: '\uD83E\uDD58',
+                    title: 'Lasagna / Sheet Mulching',
+                    desc: 'Build no-dig garden beds layer by layer. Uses garden waste, leaves, and kitchen scraps to create rich soil.',
+                    href: 'lasagna.html'
+                });
+            }
+
+            // Add beginner checklist as a universal option if they have multiple recs
+            if (recs.length === 1) {
+                recs.push({
+                    icon: '\uD83C\uDF3F',
+                    title: "Beginner's Checklist",
+                    desc: 'Not ready to commit? Start with our step-by-step beginner checklist that covers the fundamentals of all composting methods.',
+                    href: 'beginner.html'
+                });
+            }
+
+            return recs;
+        }
+
+        function renderRecommendations() {
+            const recs = getRecommendations();
+            recContainer.innerHTML = '';
+
+            recs.forEach(rec => {
+                const card = document.createElement('a');
+                card.href = rec.href;
+                card.className = 'rec-card';
+                card.innerHTML = `
+                    <div class="rec-icon">${rec.icon}</div>
+                    <h3>${rec.title}</h3>
+                    <p>${rec.desc}</p>
+                    <span class="rec-link">Read the guide &rarr;</span>`;
+                recContainer.appendChild(card);
+            });
+        }
+
+        // ===== EVENT LISTENERS FOR BUTTONS =====
+        document.getElementById('next-btn-1').addEventListener('click', () => {
+            if (!answers[1]) return;
+            steps[0].classList.remove('active');
+            currentStep = 2;
+            steps[1].classList.add('active');
+            updateProgress();
+        });
+
+        document.getElementById('next-btn-2').addEventListener('click', () => {
+            if (!answers[2]) return;
+            steps[1].classList.remove('active');
+            currentStep = 3;
+            steps[2].classList.add('active');
+            updateProgress();
+        });
+
+        document.getElementById('back-btn-2').addEventListener('click', () => {
+            steps[1].classList.remove('active');
+            currentStep = 1;
+            steps[0].classList.add('active');
+            updateProgress();
+        });
+
+        document.getElementById('next-btn-3').addEventListener('click', () => {
+            if (!answers[3]) return;
+            steps[2].classList.remove('active');
+            currentStep = 4;
+            steps[3].classList.add('active');
+            updateProgress();
+        });
+
+        document.getElementById('back-btn-3').addEventListener('click', () => {
+            steps[2].classList.remove('active');
+            currentStep = 2;
+            steps[1].classList.add('active');
+            updateProgress();
+        });
+
+        document.getElementById('next-btn-4').addEventListener('click', () => {
+            if (!answers[4]) return;
+            showResults();
+        });
+
+        document.getElementById('back-btn-4').addEventListener('click', () => {
+            steps[3].classList.remove('active');
+            currentStep = 3;
+            steps[2].classList.add('active');
+            updateProgress();
+        });
+
+        // ===== INIT =====
+        updateProgress();
+    </script>
+</body>
+</html>
