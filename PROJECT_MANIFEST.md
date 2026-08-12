@@ -175,6 +175,16 @@
 ||||||| src/assets/logo.png | Replaced with JPEG variant (11KB) | ✅ DONE
 ||||||| src/assets/thumbnails/video_000–014.jpg | All re-encoded at quality 30 | ✅ DONE
 
+## ✅ Completed Milestones (continued)
+||||||- [x] 2026-08-12 Bug fixes: zero-waste-kitchen.html (4 fixes), sitemap.xml (changefreq tags), blog.json (duplicate removal), sustainability.html (score display layout).
+
+## 📋 Pending Changes
+||||||||---|------|--------|--------|
+|||||||| 10 | Add email capture / lead magnet ("Download the beginner composting guide") | Copilot #18 | Medium |
+|||||||| 11 | Expand gear.html into comparison guides with tables (capacity, material, ventilation, price, pros/cons) | Copilot #10 | Large |
+|||||||| 13 | Embed relevant YouTube videos on pillar pages + add transcripts/key takeaways | Copilot #17 | Medium |
+|||||||| 16 | Launch blog with consistent posting cadence (2–4 posts/month) | Copilot #19 | Ongoing |
+
 ## 🔄 Development Workflow
 - **Project Manager (this chat):** Plans scope, reviews results, makes design/content decisions.
 - **OpenCode (coding agent):** Executes file changes, creates pages, implements features via `opencode run`.

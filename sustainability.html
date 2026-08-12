@@ -109,7 +109,7 @@
             transition: background 0.2s ease;
             gap: 0.75rem;
         }
-        .phase-header:hover { background: rgba(45, 90, 3rium, 0.04); }
+        .phase-header:hover { background: rgba(45, 90, 39, 0.04); }
         .phase-header:focus-visible {
             outline: 2px solid var(--ocean-blue);
             outline-offset: -2px;
@@ -211,6 +211,12 @@
         }
         .checklist-item.completed .check-desc { color: #aaa; }
         .checklist-item.completed .check-emoji { opacity: 0.5; }
+        .check-score {
+            display: block;
+            font-size: 0.78rem;
+            color: var(--ocean-blue);
+            margin-top: 1px;
+        }
 
         /* Footer */
         footer {
@@ -311,7 +317,7 @@
         </div>
 
         <!-- Checklist Phases -->
-        <div id	id="phases">
+        <div id="phases">
             <!-- Phase 1 -->
             <div class="phase active">
                 <button class="phase-header" onclick="togglePhase(this)">
@@ -439,7 +445,15 @@
             ]
         };
 
-        function renderChecklist() {
+                function saveCheckbox(id, checked) {
+            if (checked) {
+                localStorage.setItem('sustainability_progress_' + id, '1');
+            } else {
+                localStorage.removeItem('sustainability_progress_' + id);
+            }
+        }
+
+function renderChecklist() {
             const phases = ['phase1', 'phase2', 'phase3'];
             let totalItems = 0;
 
@@ -448,16 +462,20 @@
                 const items = checklistData[phaseId];
                 totalItems += items.length;
                 
-                container.innerHTML = items.map((item, idx) => `
+                                container.innerHTML = items.map((item, idx) => {
+                    const saved = localStorage.getItem('sustainability_progress_' + phaseId + '_' + idx);
+                    const checkedAttr = saved === '1' ? ' checked' : '';
+                    return `
                     <label class="checklist-item" for="${phaseId}_${idx}">
-                        <input type="checkbox" id="${phaseId}_${idx}" data-id="${phaseId}_${idx}" onchange="updateProgress()">
+                        <input type="checkbox" id="${phaseId}_${idx}" data-id="${phaseId}_${idx}" onchange="saveCheckbox(this.dataset.id, this.checked); updateProgress()">
                         <span class="check-emoji">${item.emoji}</span>
                         <span class="check-content">
-                            <span class="check-title">${item.title} (Score: ${item.score})</span>
+                            <span class="check-title">${item.title}</span>
+                            <span class="check-score">Score: ${item.score}</span>
                             <span class="check-desc">${item.desc}</span>
                         </span>
-                    </label>
-                `).join('');
+                    </label>`;
+                }).join('');
             });
 
             // Store total items in a way we can access for progress calculation
