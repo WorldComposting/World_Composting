@@ -64,6 +64,26 @@
             "Bury all food scraps under bedding to prevent fruit fly access",
             "Freeze kitchen scraps for 48 hours before feeding to kill eggs",
             "A damp newspaper cover blocks light and deters adult flies from laying"
+        ],
+        "tDSA6k6rwwY": [
+            "Thermophilic bacteria thrive at 130-160°F, breaking down waste in days not months",
+            "Steam rising from the pile on a cold morning signals strong microbial activity",
+            "Sustained heat above 131°F kills weed seeds and plant pathogens"
+        ],
+        "Eji3HGz97EY": [
+            "Build your pile at least 3x3x3 feet to retain enough heat for thermophilic bacteria",
+            "Layer three parts browns to one part greens by volume for optimal C:N ratio",
+            "Start with a coarse brown base for drainage, then alternate layers"
+        ],
+        "LMO-FwynYeY": [
+            "Turn the pile every 2-3 days when temperature drops 10-15 degrees from peak",
+            "Maintain moisture at wrung-out sponge level — too wet kills aerobic bacteria",
+            "A three-bin system lets you manage active, curing, and storage batches simultaneously"
+        ],
+        "shlsmMy_gjc": [
+            "Too wet: add dry browns and turn thoroughly to restore airflow",
+            "Too dry: water the pile evenly and cover to retain moisture",
+            "No heat: check pile size (must be 3x3x3 ft minimum) and C:N balance"
         ]
     };
 
@@ -71,7 +91,7 @@
     var methodVideos = {
         worm: ["k-gSL-abaWA", "sqUvd9Be6Q0", "gtjzfm--bKo", "J6FGa8a4lHo", "0QvS2l6zWYk", "ej9gRwssrgk", "iufCvxCwy1w", "tDSA6k6rwwY"],
         bokashi: ["zAqkAqmA458", "HJLxpc3UFFg", "-_ELuS7Lgwg"],
-        hot: [],
+        hot: ["4RAWlDsxdzE", "tDSA6k6rwwY", "Eji3HGz97EY", "LMO-FwynYeY"],
         tumbler: [],
         tea: [],
         lasagna: []

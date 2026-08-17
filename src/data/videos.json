@@ -103,5 +103,40 @@
         "url": "https://www.youtube.com/watch?v=-_ELuS7Lgwg",
         "thumbnail": "https://img.youtube.com/vi/-_ELuS7Lgwg/maxresdefault.jpg",
         "method": "bokashi"
+    },
+    {
+        "id": "4RAWlDsxdzE",
+        "title": "How to Make Hot Pre-Compost for Faster Worm Castings",
+        "url": "https://www.youtube.com/watch?v=4RAWlDsxdzE",
+        "thumbnail": "https://img.youtube.com/vi/4RAWlDsxdzE/maxresdefault.jpg",
+        "method": "hot"
+    },
+    {
+        "id": "tDSA6k6rwwY",
+        "title": "Hot Composting: The Science of Thermophilic Decomposition",
+        "url": "https://www.youtube.com/watch?v=tDSA6k6rwwY",
+        "thumbnail": "https://img.youtube.com/vi/tDSA6k6rwwY/maxresdefault.jpg",
+        "method": "hot"
+    },
+    {
+        "id": "Eji3HGz97EY",
+        "title": "Hot Composting 101: Build a Pile That Heats Up Fast",
+        "url": "https://www.youtube.com/watch?v=Eji3HGz97EY",
+        "thumbnail": "https://img.youtube.com/vi/Eji3HGz97EY/maxresdefault.jpg",
+        "method": "hot"
+    },
+    {
+        "id": "LMO-FwynYeY",
+        "title": "Hot Composting: Temperature Management and Turning Strategy",
+        "url": "https://www.youtube.com/watch?v=LMO-FwynYeY",
+        "thumbnail": "https://img.youtube.com/vi/LMO-FwynYeY/maxresdefault.jpg",
+        "method": "hot"
+    },
+    {
+        "id": "shlsmMy_gjc",
+        "title": "Hot Composting Troubleshooting: Too Wet, Too Dry, No Heat",
+        "url": "https://www.youtube.com/watch?v=shlsmMy_gjc",
+        "thumbnail": "https://img.youtube.com/vi/shlsmMy_gjc/maxresdefault.jpg",
+        "method": "hot"
     }
 ]
