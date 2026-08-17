@@ -10,6 +10,7 @@
     <!-- Google Search Console Verification -->
     <meta name="google-site-verification" content="google8a4b2c3d1e5f6789">
     <link rel="stylesheet" href="src/styles/theme.css">
+    <link rel="stylesheet" href="src/styles/video-section.css">
     <style>
         #app {
             max-width: 780px;
@@ -321,6 +322,9 @@
                 <li><a href="#advanced-techniques">Advanced Vermicomposting Techniques</a></li>
             </ol>
         </nav>
+
+        <!-- Video Section -->
+        <div id="video-container-worm"></div>
 
         <!-- Section 1 -->
         <div class="article-section" id="what-is-vermicomposting">
@@ -696,5 +700,19 @@
             <p class="footer-copy">&copy; 2026 World Composting. All rights reserved.</p>
         </footer>
     </div>
+    <!-- Video Section Loader -->
+    <script>
+        (async function() {
+            await new Promise(function(resolve) {
+                var s = document.createElement('script');
+                s.src = 'src/js/video-renderer.js?v=2';
+                s.onload = resolve;
+                document.head.appendChild(s);
+            });
+            if (window.renderVideoSection) {
+                window.renderVideoSection('video-container-worm', 'worm');
+            }
+        })();
+    </script>
 </body>
 </html>

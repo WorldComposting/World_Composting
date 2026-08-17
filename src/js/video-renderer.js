@@ -44,6 +44,26 @@
             "Worms escaping usually means conditions are wrong (too wet, too hot, or no food)",
             "Check moisture levels and adjust bedding if needed",
             "Ensure proper ventilation without creating drafts"
+        ],
+        "Eji3HGz97EY": [
+            "Start with a breathable worm bag for superior airflow and easy harvesting",
+            "Layer shredded cardboard bedding, add grit like crushed eggshells",
+            "Introduce red wigglers on top of bedding and let them burrow naturally"
+        ],
+        "LMO-FwynYeY": [
+            "Pre-heated biochar inoculates the bin with beneficial microbes immediately",
+            "Soak biochar before adding to prevent it from absorbing moisture",
+            "Biochar improves aeration, water retention, and worm habitat structure"
+        ],
+        "4RAWlDsxdzE": [
+            "Pre-composting accelerates decomposition by weeks compared to direct feeding",
+            "Layer greens and browns in a separate bin before introducing worms",
+            "Once pre-composted material cools, add it to your worm habitat"
+        ],
+        "shlsmMy_gjc": [
+            "Bury all food scraps under bedding to prevent fruit fly access",
+            "Freeze kitchen scraps for 48 hours before feeding to kill eggs",
+            "A damp newspaper cover blocks light and deters adult flies from laying"
         ]
     };
 
