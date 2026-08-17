@@ -42,38 +42,10 @@
         "method": "worm"
     },
     {
-        "id": "iufCvxCwy1w",
-        "title": "How to Harvest VermiBag Max: Perfect Castings Every Time | April 3, 2026",
-        "url": "https://www.youtube.com/watch?v=iufCvxCwy1w",
-        "thumbnail": "https://img.youtube.com/vi/iufCvxCwy1w/maxresdefault.jpg",
-        "method": "worm"
-    },
-    {
         "id": "tDSA6k6rwwY",
         "title": "Worms Escaping! #compostbin #wormbin #diy April 2, 2026",
         "url": "https://www.youtube.com/shorts/tDSA6k6rwwY",
         "thumbnail": "https://img.youtube.com/vi/tDSA6k6rwwY/maxresdefault.jpg",
-        "method": "worm"
-    },
-    {
-        "id": "Eji3HGz97EY",
-        "title": "How to Start an Urban Worm Bag: The Ultimate Beginner's Guide!",
-        "url": "https://www.youtube.com/watch?v=Eji3HGz97EY",
-        "thumbnail": "https://img.youtube.com/vi/Eji3HGz97EY/maxresdefault.jpg",
-        "method": "worm"
-    },
-    {
-        "id": "LMO-FwynYeY",
-        "title": "Worm Bin Prep: Biochar Pre-Heating Success!",
-        "url": "https://www.youtube.com/watch?v=LMO-FwynYeY",
-        "thumbnail": "https://img.youtube.com/vi/LMO-FwynYeY/maxresdefault.jpg",
-        "method": "worm"
-    },
-    {
-        "id": "4RAWlDsxdzE",
-        "title": "How to Make Hot Pre-Compost for Faster Worm Castings",
-        "url": "https://www.youtube.com/watch?v=4RAWlDsxdzE",
-        "thumbnail": "https://img.youtube.com/vi/4RAWlDsxdzE/maxresdefault.jpg",
         "method": "worm"
     },
     {
@@ -82,6 +54,27 @@
         "url": "https://www.youtube.com/watch?v=shlsmMy_gjc",
         "thumbnail": "https://img.youtube.com/vi/shlsmMy_gjc/maxresdefault.jpg",
         "method": "worm"
+    },
+    {
+        "id": "Eji3HGz97EY",
+        "title": "Hot Composting 101: Build a Pile That Heats Up Fast",
+        "url": "https://www.youtube.com/watch?v=Eji3HGz97EY",
+        "thumbnail": "https://img.youtube.com/vi/Eji3HGz97EY/maxresdefault.jpg",
+        "method": "hot"
+    },
+    {
+        "id": "4RAWlDsxdzE",
+        "title": "How to Make Hot Pre-Compost for Faster Worm Castings",
+        "url": "https://www.youtube.com/watch?v=4RAWlDsxdzE",
+        "thumbnail": "https://img.youtube.com/vi/4RAWlDsxdzE/maxresdefault.jpg",
+        "method": "hot"
+    },
+    {
+        "id": "LMO-FwynYeY",
+        "title": "Hot Composting: Temperature Management and Turning Strategy",
+        "url": "https://www.youtube.com/watch?v=LMO-FwynYeY",
+        "thumbnail": "https://img.youtube.com/vi/LMO-FwynYeY/maxresdefault.jpg",
+        "method": "hot"
     },
     {
         "id": "zAqkAqmA458",
@@ -103,5 +96,75 @@
         "url": "https://www.youtube.com/watch?v=-_ELuS7Lgwg",
         "thumbnail": "https://img.youtube.com/vi/-_ELuS7Lgwg/maxresdefault.jpg",
         "method": "bokashi"
+    },
+    {
+        "id": "3sF6tGkwba0",
+        "title": "Can Worms consume Citrus?? Lets test with Lemons!!",
+        "url": "https://www.youtube.com/watch?v=3sF6tGkwba0",
+        "thumbnail": "https://img.youtube.com/vi/3sF6tGkwba0/maxresdefault.jpg",
+        "method": "forbidden-foods"
+    },
+    {
+        "id": "OhF3QEog4Rw",
+        "title": "Urban Worm Bag V2 with ENCs - More Lemons!",
+        "url": "https://www.youtube.com/watch?v=OhF3QEog4Rw",
+        "thumbnail": "https://img.youtube.com/vi/OhF3QEog4Rw/maxresdefault.jpg",
+        "method": "forbidden-foods"
+    },
+    {
+        "id": "ZO1dyKaNqAQ",
+        "title": "Hemp Bedding in a Worm Bin - Initial Setup!",
+        "url": "https://www.youtube.com/watch?v=ZO1dyKaNqAQ",
+        "thumbnail": "https://img.youtube.com/vi/ZO1dyKaNqAQ/maxresdefault.jpg",
+        "method": "bedding"
+    },
+    {
+        "id": "3-L2fvXb2bc",
+        "title": "Hemp Bedding in a Worm Bin - Breaking Down Already??",
+        "url": "https://www.youtube.com/watch?v=3-L2fvXb2bc",
+        "thumbnail": "https://img.youtube.com/vi/3-L2fvXb2bc/maxresdefault.jpg",
+        "method": "bedding"
+    },
+    {
+        "id": "vYTQAENFjR0",
+        "title": "Simple DIY Fruit Fly Trap! Eliminate these flying pests!",
+        "url": "https://www.youtube.com/watch?v=vYTQAENFjR0",
+        "thumbnail": "https://img.youtube.com/vi/vYTQAENFjR0/maxresdefault.jpg",
+        "method": "fruit-flies"
+    },
+    {
+        "id": "iufCvxCwy1w",
+        "title": "How to Harvest VermiBag Max: Perfect Castings Every Time | April 3, 2026",
+        "url": "https://www.youtube.com/watch?v=iufCvxCwy1w",
+        "thumbnail": "https://img.youtube.com/vi/iufCvxCwy1w/maxresdefault.jpg",
+        "method": "harvesting"
+    },
+    {
+        "id": "_OXAhxbu_HQ",
+        "title": "Epic Worm Castings: Harvesting Red Wigglers for a New System | Feb 26, 2026",
+        "url": "https://www.youtube.com/watch?v=_OXAhxbu_HQ",
+        "thumbnail": "https://img.youtube.com/vi/_OXAhxbu_HQ/maxresdefault.jpg",
+        "method": "harvesting"
+    },
+    {
+        "id": "CufHXbuVAo0",
+        "title": "It's Getting HOT! 3-Day Pre-Compost Update #wormcomposting #vermicompost #compost #shorts",
+        "url": "https://www.youtube.com/watch?v=CufHXbuVAo0",
+        "thumbnail": "https://img.youtube.com/vi/CufHXbuVAo0/maxresdefault.jpg",
+        "method": "hot"
+    },
+    {
+        "id": "AE8A2kCJYkY",
+        "title": "Ultimate Biochar Grinding & Preparation for Worm Bins and Soil — DIY Methods, Tools, & Tips (2025)",
+        "url": "https://www.youtube.com/watch?v=AE8A2kCJYkY",
+        "thumbnail": "https://img.youtube.com/vi/AE8A2kCJYkY/maxresdefault.jpg",
+        "method": "biochar"
+    },
+    {
+        "id": "iLrkTxMZWMA",
+        "title": "Small Batch Biochar for Composters",
+        "url": "https://www.youtube.com/watch?v=iLrkTxMZWMA",
+        "thumbnail": "https://img.youtube.com/vi/iLrkTxMZWMA/maxresdefault.jpg",
+        "method": "biochar"
     }
 ]

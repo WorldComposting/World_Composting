@@ -7,6 +7,7 @@
   <meta name="description" content="Learn the best bedding materials for worm bins including shredded newspaper, coconut coir, and leaf litter. Compare pros and cons to choose the right setup for your vermicomposting system.">
   <link rel="stylesheet" href="src/styles/theme.css">
   <link rel="stylesheet" href="src/styles/article.css">
+  <link rel="stylesheet" href="src/styles/video-section.css">
 </head>
 <body>
   <header class="site-header">
@@ -72,8 +73,24 @@
     </article>
   </main>
 
+  <div id="video-container-worm-bedding"></div>
+
+  <!-- Footer -->
   <footer class="site-footer">
     <p>&copy; 2026 World Composting. All rights reserved.</p>
   </footer>
+
+  <!-- Video Section Loader -->
+  <script>
+    (async function() {
+      await new Promise(function(resolve) {
+        var s = document.createElement('script');
+        s.src = 'src/js/video-renderer.js?v=5';
+        s.onload = resolve;
+        document.head.appendChild(s);
+      });
+      window.renderVideoSection('video-container-worm-bedding', 'bedding');
+    })();
+  </script>
 </body>
 </html>

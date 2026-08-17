@@ -7,6 +7,7 @@
   <meta name="description" content="Speed up your hot composting results with proven techniques including proper turning schedules, particle size reduction, moisture management, and bacterial accelerators.">
   <link rel="stylesheet" href="src/styles/theme.css">
   <link rel="stylesheet" href="src/styles/article.css">
+  <link rel="stylesheet" href="src/styles/video-section.css">
 </head>
 <body>
   <header class="site-header">
@@ -79,8 +80,24 @@
     </article>
   </main>
 
+  <div id="video-container-hot-speed-tips"></div>
+
+  <!-- Footer -->
   <footer class="site-footer">
     <p>&copy; 2026 World Composting. All rights reserved.</p>
   </footer>
+
+  <!-- Video Section Loader -->
+  <script>
+    (async function() {
+      await new Promise(function(resolve) {
+        var s = document.createElement('script');
+        s.src = 'src/js/video-renderer.js?v=10';
+        s.onload = resolve;
+        document.head.appendChild(s);
+      });
+      window.renderVideoSection('video-container-hot-speed-tips', 'speed-tips');
+    })();
+  </script>
 </body>
 </html>
