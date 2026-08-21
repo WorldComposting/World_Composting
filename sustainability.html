@@ -84,7 +84,7 @@
         .phase {
             background: white;
             border-radius: 16px;
-            box_shadow: var(--card-shadow);
+            box-shadow: var(--card-shadow);
             margin-bottom: 1.25rem;
             overflow: hidden;
             border: 1px solid rgba(0,0,0,0.04);
@@ -471,7 +471,7 @@ function renderChecklist() {
                     const checkedAttr = saved === '1' ? ' checked' : '';
                     return `
                     <label class="checklist-item" for="${phaseId}_${idx}">
-                        <input type="checkbox" id="${phaseId}_${idx}" data-id="${phaseId}_${idx}" onchange="saveCheckbox(this.dataset.id, this.checked); updateProgress()">
+                        <input type="checkbox" id="${phaseId}_${idx}" data-id="${phaseId}_${idx}"${checkedAttr} onchange="saveCheckbox(this.dataset.id, this.checked); updateProgress()">
                         <span class="check-emoji">${item.emoji}</span>
                         <span class="check-content">
                             <span class="check-title">${item.title}</span>
