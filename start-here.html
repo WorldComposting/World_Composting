@@ -1,387 +1,633 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Where to Start Composting — Decision Guide | World Composting</title>
+    <title>Where to Start Composting: Decision Guide | World Composting</title>
     <meta name="description" content="Not sure which composting method is right for you? Answer 4 quick questions about your space, time, and goals to get a personalized recommendation.">
     <link rel="stylesheet" href="src/styles/theme.css">
     <link rel="stylesheet" href="src/styles/video-section.css">
     <style>
-        /* ===== START HERE WIZARD ===== */
-        .wizard-header {
-            text-align: center;
-            padding: 2rem 1.5rem 1rem;
+        /* ===== WIDE LAYOUT OVERRIDES (supersedes theme.css #app) ===== */
+
+        .page-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 3rem;
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 2.5rem;
+            align-items: start;
         }
-        .wizard-logo {
-            width: 80px;
-            height: 80px;
+
+        /* ===== SIDEBAR NAVIGATION ===== */
+        .sidebar {
+            position: sticky;
+            top: 2rem;
+            background: white;
+            border-radius: 16px;
+            box-shadow: var(--card-shadow);
+            padding: 1.5rem;
+            max-height: calc(100vh - 4rem);
+            overflow-y: auto;
+        }
+
+        .sidebar-logo {
+            text-align: center;
+            margin-bottom: 1.25rem;
+        }
+
+        .sidebar-logo img {
+            width: 64px;
+            height: 64px;
             border-radius: 50%;
             object-fit: cover;
-            margin-bottom: 1rem;
-            box-shadow: 0 4px 20px rgba(45,90,39,0.15);
+            border: 3px solid var(--sage-green);
         }
-        .wizard-header h1 {
+
+        .sidebar-logo h2 {
             font-family: 'Lora', serif;
             color: var(--forest-green);
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+            margin-top: 0.5rem;
         }
-        .wizard-header p {
+
+        .sidebar-nav {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar-nav li {
+            margin-bottom: 0.25rem;
+        }
+
+        .sidebar-nav a {
+            display: block;
+            padding: 0.6rem 0.85rem;
+            border-radius: 8px;
+            text-decoration: none;
             color: var(--text-dark);
-            opacity: 0.75;
-            font-size: 1rem;
-            max-width: 500px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: background 0.15s, color 0.15s;
+        }
+
+        .sidebar-nav a:hover {
+            background: var(--off-white);
+            color: var(--forest-green);
+        }
+
+        .sidebar-nav a.active {
+            background: var(--forest-green);
+            color: white;
+            font-weight: 600;
+        }
+
+        .sidebar-divider {
+            height: 1px;
+            background: rgba(45,90,39,0.12);
+            margin: 1rem 0;
+        }
+
+        .sidebar-section-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-dark);
+            opacity: 0.5;
+            padding: 0.25rem 0.85rem;
+            margin-bottom: 0.25rem;
+        }
+
+        /* ===== MAIN CONTENT AREA ===== */
+        .main-content {
+            min-width: 0;
+        }
+
+        /* Wizard header: wider, more breathing room */
+        .wizard-header-wide {
+            text-align: center;
+            padding: 3rem 2rem 2.5rem;
+            background: white;
+            border-radius: 16px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 2rem;
+        }
+
+        .wizard-header-wide img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 4px 20px rgba(45,90,39,0.15);
+        }
+
+        .wizard-header-wide h1 {
+            font-family: 'Lora', serif;
+            color: var(--forest-green);
+            font-size: 2.75rem;
+            margin: 1rem 0 0.5rem;
+            letter-spacing: -0.5px;
+        }
+
+        .wizard-header-wide p {
+            color: var(--text-dark);
+            opacity: 0.85;
+            font-size: 1.1rem;
+            max-width: 640px;
             margin: 0 auto;
         }
 
-        /* Progress bar */
-        .progress-bar {
+        /* Progress bar: wider */
+        .progress-bar-wide {
             display: flex;
             justify-content: center;
-            gap: 0.75rem;
-            padding: 1rem 1.5rem;
+            gap: 1rem;
+            padding: 1.5rem 2rem;
             max-width: 400px;
-            margin: 0 auto;
+            margin: 0 auto 2rem;
         }
-        .progress-dot {
-            width: 12px;
-            height: 12px;
+
+        .progress-dot-wide {
+            width: 14px;
+            height: 14px;
             border-radius: 50%;
             background: var(--sage-green);
             transition: background 0.3s, transform 0.3s;
         }
-        .progress-dot.active {
+
+        .progress-dot-wide.active {
             background: var(--forest-green);
-            transform: scale(1.3);
+            transform: scale(1.4);
         }
-        .progress-dot.completed {
+
+        .progress-dot-wide.completed {
             background: var(--ocean-blue);
         }
 
-        /* Question container */
-        #wizard-container {
-            max-width: 600px;
+        /* Wizard container: wider */
+        #wizard-container-wide {
+            max-width: 800px;
             margin: 0 auto;
-            padding: 0 1.5rem 2rem;
+            padding: 0 2rem 2rem;
         }
-        .question-step {
+
+        .question-step-wide {
             display: none;
-            animation: fadeInStep 0.4s ease-out;
+            animation: fadeInStepWide 0.4s ease-out;
         }
-        .question-step.active {
+
+        .question-step-wide.active {
             display: block;
         }
-        @keyframes fadeInStep {
+
+        @keyframes fadeInStepWide {
             from { opacity: 0; transform: translateY(15px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        .question-step h2 {
-            font-family: 'Lora', serif;
-            color: var(--forest-green);
-            font-size: 1.4rem;
-            text-align: center;
-            margin-bottom: 0.5rem;
-        }
-        .question-step .step-label {
-            display: block;
-            text-align: center;
-            font-size: 0.85rem;
-            color: var(--text-dark);
-            opacity: 0.6;
-            margin-bottom: 1.5rem;
-        }
 
-        /* Option cards */
-        .options-grid {
-            display: grid;
-            gap: 0.75rem;
-        }
-        .option-card {
-            background: white;
-            border: 2px solid var(--sage-green);
-            border-radius: 12px;
-            padding: 1rem 1.25rem;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            text-align: left;
-            font-size: 1rem;
-            color: var(--text-dark);
-        }
-        .option-card:hover {
-            border-color: var(--forest-green);
-            box-shadow: 0 4px 16px rgba(45,90,39,0.12);
-        }
-        .option-card.selected {
-            background: var(--forest-green);
-            color: white;
-            border-color: var(--forest-green);
-        }
-
-        /* Navigation buttons */
-        .wizard-nav {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 2rem;
-            padding: 0 1.5rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .btn-wizard {
-            display: inline-block;
-            padding: 0.75rem 2rem;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 1rem;
-            text-decoration: none;
-            cursor: pointer;
-            transition: background 0.2s, transform 0.15s;
-        }
-        .btn-wizard:hover {
-            transform: translateY(-1px);
-        }
-        .btn-next {
-            background: var(--forest-green);
-            color: white;
-            border: none;
-        }
-        .btn-next:hover {
-            background: var(--ocean-blue);
-        }
-        .btn-back {
-            background: transparent;
-            color: var(--text-dark);
-            opacity: 0.6;
-            border: none;
-        }
-        .btn-back:hover {
-            opacity: 1;
-        }
-
-        /* Results section */
-        #results-container {
-            display: none;
-            max-width: 700px;
-            margin: 0 auto;
-            padding: 0 1.5rem 2rem;
-            animation: fadeInStep 0.5s ease-out;
-        }
-        #results-container.active {
-            display: block;
-        }
-        .results-header h2 {
+        .question-step-wide h2 {
             font-family: 'Lora', serif;
             color: var(--forest-green);
             font-size: 1.75rem;
             text-align: center;
             margin-bottom: 0.5rem;
         }
-        .results-header p {
+
+        .question-step-wide .step-label {
+            display: block;
             text-align: center;
+            font-size: 0.9rem;
             color: var(--text-dark);
-            opacity: 0.75;
-            font-size: 1rem;
+            opacity: 0.6;
             margin-bottom: 2rem;
         }
 
-        /* Recommendation cards */
-        .rec-card {
+        /* Option cards: wider */
+        .options-grid-wide {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .option-card-wide {
+            background: white;
+            border: 2px solid var(--sage-green);
+            border-radius: 12px;
+            padding: 1.25rem 1.5rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: left;
+            font-size: 1.05rem;
+            color: var(--text-dark);
+        }
+
+        .option-card-wide:hover {
+            border-color: var(--forest-green);
+            box-shadow: 0 4px 16px rgba(45,90,39,0.12);
+        }
+
+        .option-card-wide.selected {
+            background: var(--forest-green);
+            color: white;
+            border-color: var(--forest-green);
+        }
+
+        /* Navigation buttons: wider */
+        .wizard-nav-wide {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+            padding: 0 1.5rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-wizard-wide {
+            display: inline-block;
+            padding: 0.85rem 2.25rem;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 1.05rem;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.15s;
+        }
+
+        .btn-wizard-wide:hover {
+            transform: translateY(-1px);
+        }
+
+        .btn-next-wide {
+            background: var(--forest-green);
+            color: white;
+            border: none;
+        }
+
+        .btn-next-wide:hover {
+            background: var(--ocean-blue);
+        }
+
+        .btn-back-wide {
+            background: transparent;
+            color: var(--text-dark);
+            opacity: 0.6;
+            border: none;
+        }
+
+        .btn-back-wide:hover {
+            opacity: 1;
+        }
+
+        /* Results section: wider */
+        #results-container-wide {
+            display: none;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem 2rem;
+            animation: fadeInStepWide 0.5s ease-out;
+        }
+
+        #results-container-wide.active {
+            display: block;
+        }
+
+        .results-header-wide h2 {
+            font-family: 'Lora', serif;
+            color: var(--forest-green);
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .results-header-wide p {
+            text-align: center;
+            color: var(--text-dark);
+            opacity: 0.75;
+            font-size: 1.05rem;
+            margin-bottom: 2.5rem;
+        }
+
+        /* Recommendation cards: wider */
+        .rec-card-wide {
             background: white;
             border-radius: 16px;
             box-shadow: var(--card-shadow);
-            padding: 1.5rem;
-            margin-bottom: 1.25rem;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
             text-decoration: none;
             transition: transform 0.2s, box-shadow 0.2s;
         }
-        .rec-card:hover {
+
+        .rec-card-wide:hover {
             transform: translateY(-3px);
             box-shadow: 0 12px 30px rgba(75,54,33,0.15);
         }
-        .rec-icon {
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
+
+        .rec-icon-wide {
+            font-size: 2.5rem;
+            margin-bottom: 0.75rem;
         }
-        .rec-card h3 {
+
+        .rec-card-wide h3 {
             font-family: 'Lora', serif;
             color: var(--forest-green);
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             margin-bottom: 0.5rem;
         }
-        .rec-card p {
+
+        .rec-card-wide p {
             color: var(--text-dark);
             opacity: 0.85;
             line-height: 1.6;
-            font-size: 0.95rem;
-            margin-bottom: 1rem;
+            font-size: 1rem;
+            margin-bottom: 1.25rem;
         }
-        .rec-link {
+
+        .rec-link-wide {
             display: inline-block;
             color: var(--ocean-blue);
             font-weight: 600;
             text-decoration: none;
             transition: color 0.2s;
         }
-        .rec-link:hover {
+
+        .rec-link-wide:hover {
             color: var(--forest-green);
         }
 
-        /* Fallback link */
-        .fallback-section {
+        /* Fallback link: wider */
+        .fallback-section-wide {
             text-align: center;
-            margin-top: 2rem;
-            padding: 1.5rem;
+            margin-top: 2.5rem;
+            padding: 2rem;
             background: white;
-            border-radius: 12px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+            border-radius: 16px;
+            box-shadow: var(--card-shadow);
         }
-        .fallback-section p {
+
+        .fallback-section-wide p {
             color: var(--text-dark);
             opacity: 0.75;
-            font-size: 0.95rem;
-            margin-bottom: 0.75rem;
+            font-size: 1rem;
+            margin-bottom: 1rem;
         }
-        .btn-fallback {
+
+        .btn-fallback-wide {
             display: inline-block;
-            padding: 0.6rem 1.25rem;
+            padding: 0.75rem 1.5rem;
             background: var(--ocean-blue);
             color: white;
-            border-radius: 8px;
+            border-radius: 10px;
             text-decoration: none;
             font-weight: 600;
             transition: background 0.2s;
         }
-        .btn-fallback:hover {
+
+        .btn-fallback-wide:hover {
             background: var(--forest-green);
         }
 
-        /* Back to home link */
-        .back-home {
+        /* Back to home link: wider */
+        .back-home-wide {
             display: block;
             text-align: center;
-            margin-top: 1.5rem;
+            margin-top: 2rem;
             color: var(--ocean-blue);
             font-weight: 600;
             text-decoration: none;
-            font-size: 0.95rem;
+            font-size: 1.05rem;
         }
-        .back-home:hover {
+
+        .back-home-wide:hover {
             color: var(--forest-green);
         }
 
-        /* ===== RESPONSIVE ===== */
-        @media (max-width: 480px) {
-            .wizard-header h1 { font-size: 1.5rem; }
-            .question-step h2 { font-size: 1.2rem; }
-            .option-card { padding: 0.85rem 1rem; font-size: 0.95rem; }
-            #wizard-container, #results-container { padding: 0 1rem 2rem; }
+        /* ===== RESPONSIVE BREAKPOINTS ===== */
+        @media (max-width: 1024px) {
+            .page-wrapper {
+                grid-template-columns: 1fr;
+                padding: 1.5rem 2rem;
+            }
+
+            .sidebar {
+                position: static;
+                max-height: none;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 1rem;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .sidebar-nav {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.25rem;
+            }
+
+            .sidebar-section-label {
+                width: 100%;
+                text-align: left;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .page-wrapper {
+                padding: 1rem;
+            }
+
+            .wizard-header-wide h1 {
+                font-size: 2rem;
+            }
+
+            #wizard-container-wide,
+            #results-container-wide {
+                padding: 0 1rem 2rem;
+            }
+        }
+
+        /* ===== FOOTER OVERRIDES: fix body flex centering from theme.css ===== */
+        footer.footer-wide {
+            display: block !important;
+            text-align: center;
+            padding: 2rem 3rem;
+            opacity: 0.7;
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(45,90,39,0.15);
+            margin-top: 2rem;
+        }
+
+        /* Override body flex centering for desktop layout */
+        body {
+            display: block !important;
+            justify-content: normal !important;
+            align-items: normal !important;
         }
     </style>
 </head>
 <body>
-    <div id="app">
+    <div class="page-wrapper">
 
-        <!-- ===== WIZARD HEADER ===== -->
-        <header class="wizard-header">
-            <img src="src/assets/logo.png" alt="World Composting Logo" class="wizard-logo" width="80" height="80" loading="lazy" onerror="this.src='https://via.placeholder.com/80?text=WC'">
-            <h1>Where to Start Composting</h1>
-            <p>Answer 4 quick questions and we will recommend the best composting method for your situation.</p>
-        </header>
+        <!-- ===== SIDEBAR NAVIGATION ===== -->
+        <aside class="sidebar">
+            <div class="sidebar-logo">
+                <img src="src/assets/logo.png" alt="World Composting Logo" width="64" height="64" loading="lazy" onerror="this.src='https://via.placeholder.com/64?text=WC'">
+                <h2>World Composting</h2>
+            </div>
 
-        <!-- ===== PROGRESS DOTS ===== -->
-        <div class="progress-bar" id="progress-bar">
-            <div class="progress-dot active"></div>
-            <div class="progress-dot"></div>
-            <div class="progress-dot"></div>
-            <div class="progress-dot"></div>
-        </div>
+            <ul class="sidebar-nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="start-here.html" class="active">Start Here</a></li>
+                <li><a href="about.html">About</a></li>
 
-        <!-- ===== QUESTIONS ===== -->
-        <div id="wizard-container">
-            <!-- Step 1: Space -->
-            <div class="question-step active" data-step="1">
-                <h2>How much space do you have?</h2>
-                <span class="step-label">Step 1 of 4</span>
-                <div class="options-grid">
-                    <div class="option-card" data-value="apartment">Apartment or Indoor Only</div>
-                    <div class="option-card" data-value="balcony">Balcony or Patio</div>
-                    <div class="option-card" data-value="backyard">Backyard</div>
-                    <div class="option-card" data-value="large">Large Yard or Farm</div>
+                <div class="sidebar-divider"></div>
+                <li class="sidebar-section-label">Guides</li>
+
+                <li><a href="worm-composting.html">Worm Composting</a></li>
+                <li><a href="hot-composting.html">Hot Composting</a></li>
+
+                <div class="sidebar-divider"></div>
+                <li class="sidebar-section-label">Checklists</li>
+
+                <li><a href="beginner.html">Beginner's Checklist</a></li>
+                <li><a href="bokashi.html">Bokashi Composting</a></li>
+                <li><a href="biochar.html">BioChar Composting</a></li>
+                <li><a href="tumbler.html">Tumbler Composting</a></li>
+                <li><a href="tea.html">Compost Tea</a></li>
+                <li><a href="lasagna.html">Lasagna Composting</a></li>
+                <li><a href="sustainability.html">Sustainability Journey</a></li>
+                <li><a href="zero-waste-kitchen.html">Zero Waste Kitchen</a></li>
+
+                <div class="sidebar-divider"></div>
+                <li class="sidebar-section-label">Resources</li>
+
+                <li><a href="glossary.html">Glossary</a></li>
+                <li><a href="troubleshoot.html">Troubleshooting</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="sitemap.html">Sitemap</a></li>
+
+                <div class="sidebar-divider"></div>
+                <li class="sidebar-section-label">Gear</li>
+
+                <li><a href="gear.html">View All Gear →</a></li>
+            </ul>
+        </aside>
+
+        <!-- ===== MAIN CONTENT AREA ===== -->
+        <main class="main-content">
+
+            <!-- WIZARD HEADER -->
+            <header class="wizard-header-wide">
+                <img src="src/assets/logo.png" alt="World Composting Logo" width="100" height="100" loading="lazy" onerror="this.src='https://via.placeholder.com/100?text=WC'">
+                <h1>Where to Start Composting</h1>
+                <p>Answer 4 quick questions and we will recommend the best composting method for your situation.</p>
+            </header>
+
+            <!-- PROGRESS DOTS -->
+            <div class="progress-bar-wide" id="progress-bar">
+                <div class="progress-dot-wide active"></div>
+                <div class="progress-dot-wide"></div>
+                <div class="progress-dot-wide"></div>
+                <div class="progress-dot-wide"></div>
+            </div>
+
+            <!-- QUESTIONS -->
+            <div id="wizard-container-wide">
+                <!-- Step 1: Space -->
+                <div class="question-step-wide active" data-step="1">
+                    <h2>How much space do you have?</h2>
+                    <span class="step-label">Step 1 of 4</span>
+                    <div class="options-grid-wide">
+                        <div class="option-card-wide" data-value="apartment">Apartment or Indoor Only</div>
+                        <div class="option-card-wide" data-value="balcony">Balcony or Patio</div>
+                        <div class="option-card-wide" data-value="backyard">Backyard</div>
+                        <div class="option-card-wide" data-value="large">Large Yard or Farm</div>
+                    </div>
+                    <div class="wizard-nav-wide">
+                        <button class="btn-wizard-wide btn-next-wide" id="next-btn-1">Next →</button>
+                    </div>
                 </div>
-                <div class="wizard-nav">
-                    <button class="btn-wizard btn-next" id="next-btn-1">Next &rarr;</button>
+
+                <!-- Step 2: What -->
+                <div class="question-step-wide" data-step="2">
+                    <h2>What are you composting?</h2>
+                    <span class="step-label">Step 2 of 4</span>
+                    <div class="options-grid-wide">
+                        <div class="option-card-wide" data-value="kitchen">Kitchen Scraps Only</div>
+                        <div class="option-card-wide" data-value="garden">Garden Waste Too</div>
+                        <div class="option-card-wide" data-value="both">Both Kitchen and Garden</div>
+                    </div>
+                    <div class="wizard-nav-wide">
+                        <button class="btn-wizard-wide btn-back-wide" id="back-btn-2">← Back</button>
+                        <button class="btn-wizard-wide btn-next-wide" id="next-btn-2">Next →</button>
+                    </div>
+                </div>
+
+                <!-- Step 3: Effort -->
+                <div class="question-step-wide" data-step="3">
+                    <h2>How hands-on do you want to be?</h2>
+                    <span class="step-label">Step 3 of 4</span>
+                    <div class="options-grid-wide">
+                        <div class="option-card-wide" data-value="minimal">Minimal Effort (Set and Forget)</div>
+                        <div class="option-card-wide" data-value="moderate">Moderate (Weekly Check-ins)</div>
+                        <div class="option-card-wide" data-value="hands-on">Hands-On (Active Management)</div>
+                    </div>
+                    <div class="wizard-nav-wide">
+                        <button class="btn-wizard-wide btn-back-wide" id="back-btn-3">← Back</button>
+                        <button class="btn-wizard-wide btn-next-wide" id="next-btn-3">Next →</button>
+                    </div>
+                </div>
+
+                <!-- Step 4: Goal -->
+                <div class="question-step-wide" data-step="4">
+                    <h2>What is your main goal?</h2>
+                    <span class="step-label">Step 4 of 4</span>
+                    <div class="options-grid-wide">
+                        <div class="option-card-wide" data-value="waste">Reduce Household Waste</div>
+                        <div class="option-card-wide" data-value="garden-goal">Grow Plants or Garden</div>
+                        <div class="option-card-wide" data-value="save">Save Money on Soil and Fertilizer</div>
+                        <div class="option-card-wide" data-value="educate">Educate Kids or Family</div>
+                    </div>
+                    <div class="wizard-nav-wide">
+                        <button class="btn-wizard-wide btn-back-wide" id="back-btn-4">← Back</button>
+                        <button class="btn-wizard-wide btn-next-wide" id="next-btn-4">See My Recommendations</button>
+                    </div>
                 </div>
             </div>
 
-            <!-- Step 2: What -->
-            <div class="question-step" data-step="2">
-                <h2>What are you composting?</h2>
-                <span class="step-label">Step 2 of 4</span>
-                <div class="options-grid">
-                    <div class="option-card" data-value="kitchen">Kitchen Scraps Only</div>
-                    <div class="option-card" data-value="garden">Garden Waste Too</div>
-                    <div class="option-card" data-value="both">Both Kitchen and Garden</div>
+            <!-- RESULTS -->
+            <div id="results-container-wide">
+                <div class="results-header-wide">
+                    <h2>Your Personalized Recommendations</h2>
+                    <p>Based on your answers, here are the composting methods that fit you best.</p>
                 </div>
-                <div class="wizard-nav">
-                    <button class="btn-wizard btn-back" id="back-btn-2">&larr; Back</button>
-                    <button class="btn-wizard btn-next" id="next-btn-2">Next &rarr;</button>
+                <div id="recommendations"></div>
+
+                <!-- Fallback -->
+                <div class="fallback-section-wide">
+                    <p>Not sure which method to pick?</p>
+                    <a href="beginner.html" class="btn-fallback-wide">Start with Our Beginner's Checklist →</a>
                 </div>
+
+                <a href="index.html" class="back-home-wide">← Back to Home</a>
             </div>
 
-            <!-- Step 3: Effort -->
-            <div class="question-step" data-step="3">
-                <h2>How hands-on do you want to be?</h2>
-                <span class="step-label">Step 3 of 4</span>
-                <div class="options-grid">
-                    <div class="option-card" data-value="minimal">Minimal Effort (Set and Forget)</div>
-                    <div class="option-card" data-value="moderate">Moderate (Weekly Check-ins)</div>
-                    <div class="option-card" data-value="hands-on">Hands-On (Active Management)</div>
-                </div>
-                <div class="wizard-nav">
-                    <button class="btn-wizard btn-back" id="back-btn-3">&larr; Back</button>
-                    <button class="btn-wizard btn-next" id="next-btn-3">Next &rarr;</button>
-                </div>
-            </div>
+            <!-- Video Section -->
+            <div id="video-container-start-here"></div>
 
-            <!-- Step 4: Goal -->
-            <div class="question-step" data-step="4">
-                <h2>What is your main goal?</h2>
-                <span class="step-label">Step 4 of 4</span>
-                <div class="options-grid">
-                    <div class="option-card" data-value="waste">Reduce Household Waste</div>
-                    <div class="option-card" data-value="garden-goal">Grow Plants or Garden</div>
-                    <div class="option-card" data-value="save">Save Money on Soil and Fertilizer</div>
-                    <div class="option-card" data-value="educate">Educate Kids or Family</div>
-                </div>
-                <div class="wizard-nav">
-                    <button class="btn-wizard btn-back" id="back-btn-4">&larr; Back</button>
-                    <button class="btn-wizard btn-next" id="next-btn-4">See My Recommendations</button>
-                </div>
-            </div>
-        </div>
+        </main>
 
-        <!-- ===== RESULTS ===== -->
-        <div id="results-container">
-            <div class="results-header">
-                <h2>Your Personalized Recommendations</h2>
-                <p>Based on your answers, here are the composting methods that fit you best.</p>
-            </div>
-            <div id="recommendations"></div>
+    </div><!-- .page-wrapper -->
 
-            <!-- Fallback -->
-            <div class="fallback-section">
-                <p>Not sure which method to pick?</p>
-                <a href="beginner.html" class="btn-fallback">Start with Our Beginner's Checklist &rarr;</a>
-            </div>
-
-            <a href="/" class="back-home">&larr; Back to Home</a>
-        </div>
-
-        <!-- Video Section -->
-        <div id="video-container-start-here"></div>
-
-    </div>
+    <!-- FOOTER: outside grid, spans full width -->
+    <footer class="footer-wide">
+        &copy; 2026 World Composting<br>
+        As an Amazon Associate, I earn from qualifying purchases.
+    </footer>
 
     <script>
         // ===== WIZARD STATE =====
@@ -389,15 +635,15 @@
         const answers = {};
 
         // ===== DOM ELEMENTS =====
-        const steps = document.querySelectorAll('.question-step');
-        const wizardContainer = document.getElementById('wizard-container');
-        const resultsContainer = document.getElementById('results-container');
+        const steps = document.querySelectorAll('.question-step-wide');
+        const wizardContainer = document.getElementById('wizard-container-wide');
+        const resultsContainer = document.getElementById('results-container-wide');
         const progressBar = document.getElementById('progress-bar');
         const recContainer = document.getElementById('recommendations');
 
         // ===== OPTION CARD SELECTION =====
         steps.forEach(step => {
-            const cards = step.querySelectorAll('.option-card');
+            const cards = step.querySelectorAll('.option-card-wide');
             cards.forEach(card => {
                 card.addEventListener('click', () => {
                     // Deselect all in this step
@@ -413,7 +659,7 @@
 
         // ===== NAVIGATION =====
         function updateProgress() {
-            const dots = progressBar.querySelectorAll('.progress-dot');
+            const dots = progressBar.querySelectorAll('.progress-dot-wide');
             dots.forEach((dot, i) => {
                 dot.classList.remove('active', 'completed');
                 if (i + 1 === currentStep) {
@@ -525,12 +771,12 @@
             recs.forEach(rec => {
                 const card = document.createElement('a');
                 card.href = rec.href;
-                card.className = 'rec-card';
+                card.className = 'rec-card-wide';
                 card.innerHTML = `
-                    <div class="rec-icon">${rec.icon}</div>
+                    <div class="rec-icon-wide">${rec.icon}</div>
                     <h3>${rec.title}</h3>
                     <p>${rec.desc}</p>
-                    <span class="rec-link">Read the guide &rarr;</span>`;
+                    <span class="rec-link-wide">Read the guide →</span>`;
                 recContainer.appendChild(card);
             });
         }
