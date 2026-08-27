@@ -6,7 +6,7 @@
 
 ---
 
-## What's Done (12 content pages migrated & committed on desktop-layout branch)
+## What's Done (14 content pages migrated & committed on desktop-layout branch)
 
 | Page | Commit | Notes |
 |------|--------|-------|
@@ -23,6 +23,7 @@
 | `tea.html` | `7bf0963` | 30-item checklist in 5 phases, progress tracker, gear loader (4 items: Water Gear + Bokashi Items), video container (empty by design: `tea: []`); sidebar active on "Compost Tea" nav item; verified clean console + styled hero |
 | `lasagna.html` | `a13e9a7` | 30-item checklist in 5 phases, progress tracker, gear loader (8 items: Water Gear + Worm Bin Equipment), video container (empty by design: no `lasagna` entry); sidebar active on "Lasagna Composting" nav item; verified clean console + styled hero |
 | `sustainability.html` | `964d273` | 31-item checklist in 3 phases, progress tracker (localStorage), troubleshooting accordions, video section (real videos from `sustainability` key); sidebar active on "Sustainability Journey" nav item; verified clean console + working checkbox/progress logic |
+| `zero-waste-kitchen.html` | `4c49470` | 18-item checklist in 2 phases, progress tracker (localStorage), video section (2 real videos from `zero-waste-kitchen` key); sidebar active on "Zero Waste Kitchen" nav item; CSS byte-identical to tea.html style block |
 
 ## 🎯 Current Focus (8/27)
 
@@ -39,7 +40,7 @@
 
 ---
 
-## Remaining Pages to Migrate (15 content pages)
+## Remaining Pages to Migrate (14 content pages)
 
 ### Deep-Dive Pages (medium priority)
 - `science-of-compost.html` — Science article (221 lines; was missing from this guide)
@@ -57,7 +58,6 @@
 - `gear.html` — Gear comparison with category filtering
 - `glossary.html` — 30 alphabetized terms
 - `troubleshoot.html` — Diagnostic guide
-- `zero-waste-kitchen.html` — Kitchen guide
 - `quick_links.html` — Official links page (228 lines, small)
 
 **Not migration targets:** `sitemap.html`, `google8a4b2c3d1e5f6789.html` (verification file), `sample.html` (template stub)

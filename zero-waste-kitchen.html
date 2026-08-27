@@ -569,7 +569,7 @@
         <!-- Checklist Phases -->
         <div id="phases">
             <!-- Phase 1: Easy Swaps -->
-            <div class="phase active">
+            <div class="phase phase-wide active">
                 <button class="phase-header" onclick="togglePhase(this)">
                     <span>Phase 1: Quick & Easy Swaps 🍃</span>
                     <span class="phase-arrow">▼</span>
@@ -611,7 +611,7 @@
             </div>
 
             <!-- Phase 2: Upgrading Your Gear -->
-            <div class="phase">
+            <div class="phase phase-wide">
                 <button class="phase-header" onclick="togglePhase(this)">
                     <span>Phase 2: Kitchen Gear Upgrades 🛠️</span>
                     <span class="phase-arrow">▼</span>
@@ -716,27 +716,28 @@
                 const res = await fetch('src/data/products.json');
                 if (!res.ok) throw new Error('Could not load product data.');
                 const products = await res.json();
-                // We'll try to find categories relevant to the current page or just show all if none found
+
+                const categories = ['Paper'];
+                const filtered = products.filter(p => categories.includes(p['Category']));
+
                 const list = document.getElementById('gear-list');
-                if(!list) return;
-                
-                list.innerHTML = ''; // Clear existing
-                products.forEach(p => {
-                    // For simplicity in this mass fix, we'll just show products that match common patterns 
-                    // or all of them if it's a general gear page.
+                if (filtered.length === 0) {
+                    list.innerHTML = '<p style="opacity:0.6;font-size:0.9rem;">Gear recommendations coming soon.</p>';
+                    return;
+                }
+                filtered.forEach(p => {
                     const href = (p['Amazon Link'] !== 'NaN' && p['Amazon Link']) ||
                                  (p['Other Link'] !== 'NaN' && p['Other Link']) || '#';
                     const link = document.createElement('a');
                     link.href = href;
                     link.className = 'product-link';
                     link.target = '_blank';
-                    link.innerHTML = '<span class="product-name">' + p['Item'] + ' (Affiliate Link)</span>';
+                    link.innerHTML = '<span class="product-name">' + p['Item'] + '</span>';
                     list.appendChild(link);
                 });
             } catch (e) {
                 console.error('Error loading gear:', e);
-                const list = document.getElementById('gear-list');
-                if(list) list.innerHTML = '<p style="opacity:0.6;font-size:0.9rem;">Gear recommendations coming soon.</p>';
+                document.getElementById('gear-list').innerHTML = '<p style="opacity:0.6;font-size:0.9rem;">Gear recommendations coming soon.</p>';
             }
         }
 
