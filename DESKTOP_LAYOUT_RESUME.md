@@ -23,7 +23,7 @@
 | `tea.html` | `7bf0963` | 30-item checklist in 5 phases, progress tracker, gear loader (4 items: Water Gear + Bokashi Items), video container (empty by design: `tea: []`); sidebar active on "Compost Tea" nav item; verified clean console + styled hero |
 | `lasagna.html` | `a13e9a7` | 30-item checklist in 5 phases, progress tracker, gear loader (8 items: Water Gear + Worm Bin Equipment), video container (empty by design: no `lasagna` entry); sidebar active on "Lasagna Composting" nav item; verified clean console + styled hero |
 | `sustainability.html` | `964d273` | 31-item checklist in 3 phases, progress tracker (localStorage), troubleshooting accordions, video section (real videos from `sustainability` key); sidebar active on "Sustainability Journey" nav item; verified clean console + working checkbox/progress logic |
-| `zero-waste-kitchen.html` | `4c49470` | 18-item checklist in 2 phases, progress tracker (localStorage), video section (2 real videos from `zero-waste-kitchen` key); sidebar active on "Zero Waste Kitchen" nav item; CSS byte-identical to tea.html style block |
+| `zero-waste-kitchen.html` | `4c49470` + `6f2a910` | 7-item checklist in 2 phases, progress tracker (localStorage), gear loader (Paper category: 3 items), video section (2 real videos from `zero-waste-kitchen` key); sidebar active on "Zero Waste Kitchen" nav item; CSS byte-identical to tea.html style block; phase-wide card styling added in follow-up |
 | `gear.html` | `8f58774` | JS product listing (no checklist): 29 products in 8 categories, priority sort fixed (Worm Bin Items → Worm Bag → Fly Control → Bokashi Items → rest alphabetical), Tailwind CDN removed, site CSS classes; sidebar active on "View All Gear" nav item; verified clean console + all links real |
 
 ## 🎯 Current Focus (8/27)
@@ -175,8 +175,16 @@ git commit -m "Migrate <page>.html to desktop layout"
 **Fix:** Sidebar must be byte-identical to index.html except the `class="active"` marker. Verify with a diff that strips active classes.
 
 ### Bug 12: Terminal heredocs / python one-liners time out on /mnt/h
-**Cause:** WSL + Windows drive (H:) filesystem is slow; inline `python3 -c` and heredoc scripts can hang or exit -1
+**Cause:** WSL + Windows drive (H:) filesystem is slow; inline `python3 -c` and heredoc scripts can hang or exit -1  
 **Fix:** Write helper scripts to `/tmp/*.py` (Linux fs) and run with `python3 /tmp/script.py`; use search_files/ripgrep instead of grep pipelines for searches
+
+### Bug 13: JS listing page sort order silently wrong
+**Cause:** gear.html's category comparator had a broken rule (`if (aIndex !== -1 && b.includes("Worm")) return -1;`) that ran before the index comparison, so Fly Control rendered first instead of Worm Bin Items  
+**Fix:** Comparator must be: both in priority list → `aIndex - bIndex`; only one in list → that one first; else alphabetical. Always verify rendered order in browser against the user's stated priority (Worm Bin Items → Worm Bag → Fly Control → Bokashi Items → rest)
+
+### Bug 14: Extracted JS block loses IIFE closing
+**Cause:** When a migration script extracts an inline `<script>` body with a non-greedy regex, it can stop before the final `})();`, producing a syntax error that silently kills the whole script (no console message; functions just undefined)  
+**Fix:** After extraction, assert the block ends with `})();` and append it if missing. Verify in browser: check a known function is defined (`typeof togglePhase`)
 
 ---
 
@@ -188,9 +196,14 @@ git commit -m "Migrate <page>.html to desktop layout"
 
 ## How to Resume
 1. Switch branch: `cd /mnt/h/Hermes/landing-page-fixed && git checkout desktop-layout`
-2. Next up: see "Current Focus" section; all pillar pages are done, so pick from "Remaining Pages" (suggested: `science-of-compost.html`)
+2. Status as of 8/27: **15 done / 13 remaining**. All pillar pages + gear are migrated; pick from "Remaining Pages" (suggested next: `science-of-compost.html`)
 3. Follow migration process (Steps 1-7)
 4. Reference this file for common bugs and fixes
+
+**Page-type notes:**
+- **Checklist pages** (tea/lasagna/sustainability/zero-waste-kitchen pattern): phases + progress tracker + gear loader + video section; use `phase phase-wide` on every phase div
+- **Article/deep-dive pages** (worm-composting/hot-composting pattern): multi-section article grid, no checklist
+- **JS listing pages** (gear.html pattern): keep the page's own rendering logic, wrap in sidebar + wide grid, restyle with site CSS classes; verify sort order and link targets in browser after migration
 
 ---
 
