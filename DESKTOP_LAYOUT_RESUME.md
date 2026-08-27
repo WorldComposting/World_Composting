@@ -6,7 +6,7 @@
 
 ---
 
-## What's Done (10 pages migrated & committed on desktop-layout branch)
+## What's Done (12 pages migrated & committed on desktop-layout branch)
 
 | Page | Commit | Notes |
 |------|--------|-------|
@@ -20,6 +20,7 @@
 | `biochar.html` | `de051b6` | 4 checklist phases, troubleshooting, progress tracker; header fixed to pillar-hero-wide pattern |
 | `hot.html` | `5a1903b` (latest) | 30-item checklist in 5 phases, progress tracker, gear section; sidebar active class removed (mobile has none); verified clean console + styled hero |
 | `tumbler.html` | `ece948b` | 30-item checklist in 5 phases, progress tracker, gear loader (18 items), video container (empty by design: `tumbler: []` in video-renderer.js); sidebar active on "Tumbler Composting" nav item; verified clean console + styled hero |
+| `tea.html` | `7bf0963` | 30-item checklist in 5 phases, progress tracker, gear loader (4 items: Water Gear + Bokashi Items), video container (empty by design: `tea: []`); sidebar active on "Compost Tea" nav item; verified clean console + styled hero |
 
 ## ⚠️ Deferred / Known Issues
 
