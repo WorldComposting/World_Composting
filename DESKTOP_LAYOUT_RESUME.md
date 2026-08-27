@@ -6,7 +6,7 @@
 
 ---
 
-## What's Done (14 content pages migrated & committed on desktop-layout branch)
+## What's Done (15 content pages migrated & committed on desktop-layout branch)
 
 | Page | Commit | Notes |
 |------|--------|-------|
@@ -24,10 +24,11 @@
 | `lasagna.html` | `a13e9a7` | 30-item checklist in 5 phases, progress tracker, gear loader (8 items: Water Gear + Worm Bin Equipment), video container (empty by design: no `lasagna` entry); sidebar active on "Lasagna Composting" nav item; verified clean console + styled hero |
 | `sustainability.html` | `964d273` | 31-item checklist in 3 phases, progress tracker (localStorage), troubleshooting accordions, video section (real videos from `sustainability` key); sidebar active on "Sustainability Journey" nav item; verified clean console + working checkbox/progress logic |
 | `zero-waste-kitchen.html` | `4c49470` | 18-item checklist in 2 phases, progress tracker (localStorage), video section (2 real videos from `zero-waste-kitchen` key); sidebar active on "Zero Waste Kitchen" nav item; CSS byte-identical to tea.html style block |
+| `gear.html` | `8f58774` | JS product listing (no checklist): 29 products in 8 categories, priority sort fixed (Worm Bin Items → Worm Bag → Fly Control → Bokashi Items → rest alphabetical), Tailwind CDN removed, site CSS classes; sidebar active on "View All Gear" nav item; verified clean console + all links real |
 
 ## 🎯 Current Focus (8/27)
 
-**Next page: pick from "Remaining Pages"** — all pillar pages are now migrated.
+**Next page: pick from "Remaining Pages"** — all pillar pages + gear are now migrated.
 - Suggested order: `science-of-compost.html` first (deep-dive article, closest to worm/hot-composting template), then the other deep-dives, then utility pages.
 
 **Uncommitted changes to keep OUT of the next commit:**
@@ -40,7 +41,7 @@
 
 ---
 
-## Remaining Pages to Migrate (14 content pages)
+## Remaining Pages to Migrate (13 content pages)
 
 ### Deep-Dive Pages (medium priority)
 - `science-of-compost.html` — Science article (221 lines; was missing from this guide)
@@ -55,7 +56,6 @@
 
 ### Utility Pages (lower priority)
 - `blog.html` — Blog listing with JSON data loader
-- `gear.html` — Gear comparison with category filtering
 - `glossary.html` — 30 alphabetized terms
 - `troubleshoot.html` — Diagnostic guide
 - `quick_links.html` — Official links page (228 lines, small)
