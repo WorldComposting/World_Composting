@@ -1,12 +1,12 @@
 # Desktop Layout Migration — Resume Guide
 
-**Last updated:** 2026-08-26  
+**Last updated:** 2026-08-27  
 **Branch:** `desktop-layout` (protects live `main`)  
 **Template:** `sample.html` (source of truth for desktop layout)
 
 ---
 
-## What's Done (8 pages migrated & committed on desktop-layout branch)
+## What's Done (10 pages migrated & committed on desktop-layout branch)
 
 | Page | Commit | Notes |
 |------|--------|-------|
@@ -19,16 +19,21 @@
 | `bokashi.html` | `1156a49` + `f4e20c4` | 5 checklist phases, gear loader, video section; pillar hero header (back-link-wide + H1 "Bokashi Checklist") + gear section added 8/27 — user-approved reference for the shared header pattern |
 | `biochar.html` | `de051b6` | 4 checklist phases, troubleshooting, progress tracker; header fixed to pillar-hero-wide pattern |
 | `hot.html` | `5a1903b` (latest) | 30-item checklist in 5 phases, progress tracker, gear section; sidebar active class removed (mobile has none); verified clean console + styled hero |
+| `tumbler.html` | `ece948b` | 30-item checklist in 5 phases, progress tracker, gear loader (18 items), video container (empty by design: `tumbler: []` in video-renderer.js); sidebar active on "Tumbler Composting" nav item; verified clean console + styled hero |
+
+## ⚠️ Deferred / Known Issues
+
+- **hot.html is NOT linked in the left sidebar** — no nav item points to it. Needs a sidebar link added (decide placement: likely under "Hot Composting" guide or as its own checklist entry). Fix when revisiting hot.html or the sidebar nav.
 
 ---
 
-## Remaining Pages to Migrate (17 pages)
+## Remaining Pages to Migrate (16 pages)
 
 ### Pillar/Deep-Dive Pages (high priority)
+
 - `lasagna.html` — Lasagna/Sheet Mulching
 - `sustainability.html` — Sustainability Journey Checklist
 - `tea.html` — Compost Tea Checklist
-- `tumbler.html` — Tumbler Composting Checklist
 
 ### Deep-Dive Pages (medium priority)
 - `hot-best-materials.html`
@@ -162,9 +167,8 @@ git commit -m "Migrate <page>.html to desktop layout"
 ---
 
 ## Em-Dash Constraint
-- **Preserve em-dashes in visible text** (article body, checklist descriptions)
-- **Replace em-dashes with colons in CSS/HTML comments** only
-- Zero remaining em-dashes across committed files
+- **Preserve em-dashes in visible text** (article body, checklist descriptions) — they are intentional on this site
+- **Replace em-dashes with colons in CSS/HTML comments only**
 
 ---
 
