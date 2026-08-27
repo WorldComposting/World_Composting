@@ -102,10 +102,10 @@
 || 11 | Expand gear.html into comparison guides with tables (capacity, material, ventilation, price, pros/cons) | Copilot #10 | Large
 
 ### Phase 4 — UX & Technical
-|| # | Task | Source | Effort |
-||---|------|--------|--------|
-|| 12 | Create a "Start Here" hub page with decision tree (space → time → method recommendation) | Copilot #12 | Medium |
-|| 13 | Embed relevant YouTube videos on pillar pages + add transcripts/key takeaways | Copilot #17 | Medium |
+||| # | Task | Source | Effort | Status |
+|||---|------|--------|--------|--------|
+||| 12 | Create a "Start Here" hub page with decision tree (space → time → method recommendation) | Copilot #12 | Medium ||
+||| 13 | Embed relevant YouTube videos on pillar pages + add transcripts/key takeaways | Copilot #17 | Medium | ✅ DONE (2026-08-17)
 || 14 | Optimize site speed — compress images, lazy-load media, audit Core Web Vitals | Copilot #13 | Small-Medium
 
 ### Phase 5 — Ongoing
@@ -179,11 +179,13 @@
 ||||||- [x] 2026-08-12 Bug fixes: zero-waste-kitchen.html (4 fixes), sitemap.xml (changefreq tags), blog.json (duplicate removal), sustainability.html (score display layout).
 
 ## 📋 Pending Changes
-||||||||---|------|--------|--------|
-|||||||| 10 | Add email capture / lead magnet ("Download the beginner composting guide") | Copilot #18 | Medium |
-|||||||| 11 | Expand gear.html into comparison guides with tables (capacity, material, ventilation, price, pros/cons) | Copilot #10 | Large |
-|||||||| 13 | Embed relevant YouTube videos on pillar pages + add transcripts/key takeaways | Copilot #17 | Medium |
-|||||||| 16 | Launch blog with consistent posting cadence (2–4 posts/month) | Copilot #19 | Ongoing |
+|||||||||---|------|--------|--------|
+||||||||| 10 | Add email capture / lead magnet ("Download the beginner composting guide") | Copilot #18 | Medium |
+||||||||| 11 | Expand gear.html into comparison guides with tables (capacity, material, ventilation, price, pros/cons) | Copilot #10 | Large |
+||||||||| 13 | Embed relevant YouTube videos on pillar pages + add transcripts/key takeaways | Copilot #17 | Medium |
+||||||||| 15 | Audit and fix all non-www URLs across HTML files (og:url, twitter:url, JSON-LD @id, robots.txt) — ensure `www.worldcomposting.com` everywhere | Manual | Small |
+||||||||| 16 | Apply sample.html desktop-friendly layout to all existing HTML pages | Manual | Medium |
+||||||||| 17 | Launch blog with consistent posting cadence (2–4 posts/month) | Copilot #19 | Ongoing |
 
 ## 🎬 Task #13 — YouTube Video Embedding Inventory
 
@@ -350,6 +352,41 @@
 
 ### Phase 3: Implementation (pending approval of Phase 2)
 - Build component, apply to priority 1.0 pages first, then cascade to remaining pages
+
+---
+
+## 🖥 Desktop Layout Migration (2026-08-26)
+
+### Branch: `desktop-layout`
+The current live site on GitHub Pages (`main`) uses a mobile-first, single-column Linktree layout. A desktop-friendly redesign has been prototyped in `sample.html`. This migration converts pages to the new layout **without breaking the live deployment**.
+
+**⚠️ MIGRATION IN PROGRESS — 8 of 26 pages migrated.** See `DESKTOP_LAYOUT_RESUME.md` for full resume guide, remaining pages list, and step-by-step process.
+
+### Design Overview (from `sample.html`)
+- **Sticky sidebar navigation** (240px left column) with grouped links: Guides, Checklists, Resources, Gear
+- **Main content area** (right column), max-width 1200px, CSS grid layout (`240px 1fr`)
+- **Responsive breakpoints**: 1024px (sidebar collapses to horizontal bar), 640px (single column)
+- **Wider grids**: pillar cards (2-col), checklists/articles (3-col), videos (larger thumbnails at 168×94px)
+- **Same data-driven JS**: checklists, articles, videos (`videos.json`), products (`products.json`)
+
+### Migration Plan
+| Step | Action | Status |
+|------|--------|--------|
+| 1 | Create `desktop-layout` branch from main (preserves live site on `main`) | ✅ DONE |
+| 2 | Migrate pages using `sample.html` as template | 🔄 IN PROGRESS — 8/26 done |
+| 3 | Test locally, get user approval per page | 🔄 IN PROGRESS |
+| 4 | Merge to `main`, push to GitHub Pages | ⏳ PENDING |
+| 5 | Cascade migration to remaining pages (pillar → checklist → deep-dive → utility) | ⏳ PENDING |
+
+### Migration Rules
+- **Never modify `main` branch** — all work happens on `desktop-layout`
+- Migrate page-by-page, starting with highest impact first
+- Preserve all existing functionality: localStorage checklists, progress trackers, JSON data loading, SEO schemas, GA4 tracking
+- Keep em-dash constraint: replace any em dashes with commas, colons, or hyphens in comments only; preserve in visible text
+- Fix the footer hack (`body { display: block !important }`) during migration — clean up in `theme.css` instead
+
+### How to Resume
+Read `/mnt/h/Hermes/landing-page-fixed/DESKTOP_LAYOUT_RESUME.md` for complete resume guide including remaining pages list, step-by-step process, common bugs & fixes, and git commands.
 
 ---
 
