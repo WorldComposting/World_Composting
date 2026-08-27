@@ -6,7 +6,7 @@
 
 ---
 
-## What's Done (11 content pages migrated & committed on desktop-layout branch)
+## What's Done (12 content pages migrated & committed on desktop-layout branch)
 
 | Page | Commit | Notes |
 |------|--------|-------|
@@ -22,12 +22,12 @@
 | `tumbler.html` | `ece948b` | 30-item checklist in 5 phases, progress tracker, gear loader (18 items), video container (empty by design: `tumbler: []` in video-renderer.js); sidebar active on "Tumbler Composting" nav item; verified clean console + styled hero |
 | `tea.html` | `7bf0963` | 30-item checklist in 5 phases, progress tracker, gear loader (4 items: Water Gear + Bokashi Items), video container (empty by design: `tea: []`); sidebar active on "Compost Tea" nav item; verified clean console + styled hero |
 | `lasagna.html` | `a13e9a7` | 30-item checklist in 5 phases, progress tracker, gear loader (8 items: Water Gear + Worm Bin Equipment), video container (empty by design: no `lasagna` entry); sidebar active on "Lasagna Composting" nav item; verified clean console + styled hero |
+| `sustainability.html` | `964d273` | 31-item checklist in 3 phases, progress tracker (localStorage), troubleshooting accordions, video section (real videos from `sustainability` key); sidebar active on "Sustainability Journey" nav item; verified clean console + working checkbox/progress logic |
 
 ## 🎯 Current Focus (8/27)
 
-**Next page: `sustainability.html`** — Sustainability Journey Checklist. Last unmigrated pillar page.
-- Unique structure: 12 sections with progress bars + gear section. Needs custom approach (not the standard phase/checklist template).
-- Reference templates: `tea.html` (`7bf0963`) / `lasagna.html` for sidebar/hero/footer scaffolding; inspect sustainability's own section markup before migrating.
+**Next page: pick from "Remaining Pages"** — all pillar pages are now migrated.
+- Suggested order: `science-of-compost.html` first (deep-dive article, closest to worm/hot-composting template), then the other deep-dives, then utility pages.
 
 **Uncommitted changes to keep OUT of the next commit:**
 - `M bokashi.html` (duplicate empty `<script type="ld+json">` tag ~line 470)
@@ -39,11 +39,7 @@
 
 ---
 
-## Remaining Pages to Migrate (16 content pages)
-
-### Pillar/Deep-Dive Pages (high priority)
-
-- `sustainability.html` — Sustainability Journey Checklist
+## Remaining Pages to Migrate (15 content pages)
 
 ### Deep-Dive Pages (medium priority)
 - `science-of-compost.html` — Science article (221 lines; was missing from this guide)
@@ -192,7 +188,7 @@ git commit -m "Migrate <page>.html to desktop layout"
 
 ## How to Resume
 1. Switch branch: `cd /mnt/h/Hermes/landing-page-fixed && git checkout desktop-layout`
-2. Next up: `sustainability.html` (see Current Focus section); after that, pick from "Remaining Pages"
+2. Next up: see "Current Focus" section; all pillar pages are done, so pick from "Remaining Pages" (suggested: `science-of-compost.html`)
 3. Follow migration process (Steps 1-7)
 4. Reference this file for common bugs and fixes
 
