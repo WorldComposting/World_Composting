@@ -21,17 +21,15 @@
 | `hot.html` | `5a1903b` (latest) | 30-item checklist in 5 phases, progress tracker, gear section; sidebar active class removed (mobile has none); verified clean console + styled hero |
 | `tumbler.html` | `ece948b` | 30-item checklist in 5 phases, progress tracker, gear loader (18 items), video container (empty by design: `tumbler: []` in video-renderer.js); sidebar active on "Tumbler Composting" nav item; verified clean console + styled hero |
 | `tea.html` | `7bf0963` | 30-item checklist in 5 phases, progress tracker, gear loader (4 items: Water Gear + Bokashi Items), video container (empty by design: `tea: []`); sidebar active on "Compost Tea" nav item; verified clean console + styled hero |
+| `lasagna.html` | (this session) | 30-item checklist in 5 phases, progress tracker, gear loader (8 items: Water Gear + Worm Bin Equipment), video container (empty by design: no `lasagna` entry); sidebar active on "Lasagna Composting" nav item; verified clean console + styled hero |
 
 ## 🎯 Current Focus (8/27)
 
-**Next page: `lasagna.html`** — Lasagna/Sheet Mulching checklist. Last unmigrated pillar page. Inspection complete (full file mapped); migration script not yet written.
-- 772 lines, mobile layout (`id="app"` wrapper, no sidebar); 5 phases / 30 items + troubleshooting section; footer currently inside `#app` (move outside `<main>` like tea)
-- Video container `video-container-lasagna` — empty by design (no `lasagna` entry in videos.json)
-- Gear categories: Water Gear + Worm Bin Equipment
-- Dedicated nav item at index.html line 553 → gets `class="active"` on migration
-- Reference template: `tea.html` (`7bf0963`) — freshly migrated, browser-verified
+**Next page: `sustainability.html`** — Sustainability Journey Checklist. Last unmigrated pillar page.
+- Unique structure: 12 sections with progress bars + gear section. Needs custom approach (not the standard phase/checklist template).
+- Reference templates: `tea.html` (`7bf0963`) / `lasagna.html` for sidebar/hero/footer scaffolding; inspect sustainability's own section markup before migrating.
 
-**Uncommitted changes to keep OUT of the lasagna commit:**
+**Uncommitted changes to keep OUT of the next commit:**
 - `M bokashi.html` (duplicate empty `<script type="ld+json">` tag ~line 470)
 - `M src/data/blog.json`, `?? BLOG_POSTS_DRAFT.md`, `?? sample.html`
 
@@ -41,11 +39,10 @@
 
 ---
 
-## Remaining Pages to Migrate (17 content pages)
+## Remaining Pages to Migrate (16 content pages)
 
 ### Pillar/Deep-Dive Pages (high priority)
 
-- `lasagna.html` — Lasagna/Sheet Mulching
 - `sustainability.html` — Sustainability Journey Checklist
 
 ### Deep-Dive Pages (medium priority)
@@ -195,7 +192,7 @@ git commit -m "Migrate <page>.html to desktop layout"
 
 ## How to Resume
 1. Switch branch: `cd /mnt/h/Hermes/landing-page-fixed && git checkout desktop-layout`
-2. Next up: `lasagna.html` (see Current Focus section); after that, pick from "Remaining Pages"
+2. Next up: `sustainability.html` (see Current Focus section); after that, pick from "Remaining Pages"
 3. Follow migration process (Steps 1-7)
 4. Reference this file for common bugs and fixes
 
