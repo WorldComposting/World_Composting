@@ -15,8 +15,8 @@
 | `about.html` | `6f580c4` | Content sections + video loader |
 | `worm-composting.html` | `e1f1c98` | 11-section article grid, video loader preserved |
 | `hot-composting.html` | `5ba3ae3` | 11-section article grid, video loader preserved |
-| `beginner.html` | `ce74438` + fixes | Checklist phases, progress tracker, localStorage |
-| `bokashi.html` | `1156a49` + fixes | 5 checklist phases, gear loader, video section |
+| `beginner.html` | `ce74438` + `f4e20c4` | Checklist phases, progress tracker, localStorage; pillar hero header (back-link-wide + H1 "Beginner's Checklist") + gear section added 8/27 |
+| `bokashi.html` | `1156a49` + `f4e20c4` | 5 checklist phases, gear loader, video section; pillar hero header (back-link-wide + H1 "Bokashi Checklist") + gear section added 8/27 — user-approved reference for the shared header pattern |
 | `biochar.html` | `de051b6` (latest) | 4 checklist phases, troubleshooting, progress tracker; header fixed to pillar-hero-wide pattern |
 
 ---
