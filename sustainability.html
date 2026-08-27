@@ -10,11 +10,105 @@
     <link rel="stylesheet" href="src/styles/theme.css">
     <link rel="stylesheet" href="src/styles/video-section.css">
     <style>
-        #app {
-            max-width: 720px;
-            text-align: left;
+        /* ===== WIDE LAYOUT OVERRIDES (supersedes theme.css #app) ===== */
+
+        .page-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 3rem;
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 2.5rem;
+            align-items: start;
         }
-        .back-link {
+
+        /* ===== SIDEBAR NAVIGATION ===== */
+        .sidebar {
+            position: sticky;
+            top: 2rem;
+            background: white;
+            border-radius: 16px;
+            box-shadow: var(--card-shadow);
+            padding: 1.5rem;
+            max-height: calc(100vh - 4rem);
+            overflow-y: auto;
+        }
+
+        .sidebar-logo {
+            text-align: center;
+            margin-bottom: 1.25rem;
+        }
+
+        .sidebar-logo img {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--sage-green);
+        }
+
+        .sidebar-logo h2 {
+            font-family: 'Lora', serif;
+            color: var(--forest-green);
+            font-size: 1.1rem;
+            margin-top: 0.5rem;
+        }
+
+        .sidebar-nav {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar-nav li {
+            margin-bottom: 0.25rem;
+        }
+
+        .sidebar-nav a {
+            display: block;
+            padding: 0.6rem 0.85rem;
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--text-dark);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: background 0.15s, color 0.15s;
+        }
+
+        .sidebar-nav a:hover {
+            background: var(--off-white);
+            color: var(--forest-green);
+        }
+
+        .sidebar-nav a.active {
+            background: var(--forest-green);
+            color: white;
+            font-weight: 600;
+        }
+
+        .sidebar-divider {
+            height: 1px;
+            background: rgba(45,90,39,0.12);
+            margin: 1rem 0;
+        }
+
+        .sidebar-section-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-dark);
+            opacity: 0.5;
+            padding: 0.25rem 0.85rem;
+            margin-bottom: 0.25rem;
+        }
+
+        /* ===== MAIN CONTENT AREA ===== */
+        .main-content {
+            min-width: 0;
+        }
+
+        /* Back link: wider */
+        .back-link-wide {
             display: inline-block;
             font-size: 0.85rem;
             color: var(--ocean-blue);
@@ -23,35 +117,82 @@
             margin-bottom: 1rem;
             transition: opacity 0.2s;
         }
-        .back-link:hover { opacity: 0.7; }
-        .back-link:focus-visible {
+
+        .back-link-wide:hover { opacity: 0.7; }
+        .back-link-wide:focus-visible {
             outline: 2px solid var(--ocean-blue);
             outline-offset: 2px;
             border-radius: 2px;
         }
-        header {
-            text-align: center;
-        }
-        .hero-intro {
+
+        /* Pillar hero: wider */
+        .pillar-hero-wide {
             background: white;
             border-radius: 16px;
-            padding: 1.5rem;
+            padding: 2.5rem 3rem;
             box-shadow: var(--card-shadow);
-            margin: 2rem 0;
+            margin-bottom: 2rem;
+        }
+
+        .pillar-hero-wide h1 {
+            font-family: 'Lora', serif;
+            color: var(--forest-green);
+            font-size: 2.4rem;
+            line-height: 1.3;
+            margin-top: 0;
+            text-align: center;
+        }
+
+        .pillar-hero-wide p.subtitle {
+            text-align: center;
+            font-style: italic;
+            color: var(--ocean-blue);
+            font-size: 1.1rem;
+            margin-bottom: 0;
+        }
+
+        /* Hero intro: wider */
+        .hero-intro-wide {
+            background: white;
+            border-radius: 16px;
+            padding: 2.5rem 3rem;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 2rem;
             font-size: 1rem;
             line-height: 1.7;
             color: var(--text-dark);
         }
-        .hero-intro strong { color: var(--forest-green); }
+
+        .hero-intro-wide strong { color: var(--forest-green); }
+        .hero-intro-wide h2 {
+            font-family: 'Lora', serif;
+            color: var(--forest-green);
+            font-size: 1.6rem;
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        .hero-intro-wide h3 {
+            font-family: 'Lora', serif;
+            color: var(--ocean-blue);
+            font-size: 1.25rem;
+            margin-top: 1.8rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .hero-intro-wide p { margin-bottom: 1.2rem; }
+        .hero-intro-wide ul { padding-left: 1.5rem; margin-bottom: 1.2rem; }
+        .hero-intro-wide li { margin-bottom: 0.6rem; line-height: 1.7; }
 
         /* Progress Tracker */
-        #progress-wrapper {
+        #progress-wrapper-wide {
             background: white;
             border-radius: 16px;
             padding: 1.25rem 1.5rem;
             box-shadow: var(--card-shadow);
             margin-bottom: 2rem;
         }
+
         #progress-text {
             font-weight: 700;
             font-size: 0.95rem;
@@ -61,17 +202,20 @@
             justify-content: space-between;
             align-items: center;
         }
+
         #progress-percent {
             font-weight: 600;
             font-size: 0.85rem;
             color: var(--ocean-blue);
         }
+
         #progress-bar {
             height: 10px;
             background: var(--sage-green);
             border-radius: 99px;
             overflow: hidden;
         }
+
         #progress-fill {
             height: 100%;
             width: 0%;
@@ -81,7 +225,7 @@
         }
 
         /* Phase (Collapsible Section) */
-        .phase {
+        .phase-wide {
             background: white;
             border-radius: 16px;
             box-shadow: var(--card-shadow);
@@ -90,9 +234,11 @@
             border: 1px solid rgba(0,0,0,0.04);
             transition: box-shadow 0.3s ease;
         }
-        .phase:hover {
+
+        .phase-wide:hover {
             box-shadow: 0 12px 25px -5px rgba(75, 54, 33, 0.12);
         }
+
         .phase-header {
             display: flex;
             align-items: center;
@@ -110,26 +256,31 @@
             transition: background 0.2s ease;
             gap: 0.75rem;
         }
+
         .phase-header:hover { background: rgba(45, 90, 39, 0.04); }
         .phase-header:focus-visible {
             outline: 2px solid var(--ocean-blue);
             outline-offset: -2px;
             border-radius: 16px 16px 0 0;
         }
+
         .phase-header .phase-arrow {
             font-size: 0.8rem;
             transition: transform 0.3s ease;
             color: var(--ocean-blue);
             flex-shrink: 0;
         }
-        .phase.active .phase-arrow { transform: rotate(180deg); }
+
+        .phase-wide.active .phase-arrow { transform: rotate(180deg); }
+
         .phase-body {
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.4s ease, padding 0.3s ease;
             padding: 0 1.5rem;
         }
-        .phase.active .phase-body {
+
+        .phase-wide.active .phase-body {
             max-height: 5000px;
             padding: 0 1.5rem 1.25rem;
         }
@@ -143,8 +294,11 @@
             border-bottom: 1px solid rgba(0,0,0,0.05);
             cursor: pointer;
             transition: opacity 0.2s ease;
+            -webkit-tap-highlight-color: transparent;
         }
+
         .checklist-item:last-of-type { border-bottom: none; }
+
         .checklist-item input[type="checkbox"] {
             appearance: none;
             -webkit-appearance: none;
@@ -160,10 +314,12 @@
             position: relative;
             transition: background 0.2s, border-color 0.2s;
         }
+
         .checklist-item input[type="checkbox"]:checked {
             background: var(--forest-green);
             border-color: var(--forest-green);
         }
+
         .checklist-item input[type="checkbox"]:checked::after {
             content: '';
             position: absolute;
@@ -175,16 +331,20 @@
             border-width: 0 2px 2px 0;
             transform: rotate(45deg);
         }
+
         .checklist-item input[type="checkbox"]:focus-visible {
             outline: 2px solid var(--ocean-blue);
             outline-offset: 2px;
         }
+
         .check-emoji {
             font-size: 1.3rem;
             flex-shrink: 0;
             margin-top: 1px;
         }
+
         .check-content { flex: 1; min-width: 0; }
+
         .check-title {
             display: block;
             font-weight: 600;
@@ -192,6 +352,7 @@
             color: var(--text-dark);
             transition: color 0.2s;
         }
+
         .check-desc {
             display: block;
             font-size: 0.82rem;
@@ -200,16 +361,20 @@
             line-height: 1.5;
             transition: color 0.2s;
         }
+
         .check-desc a {
             color: var(--ocean-blue);
             text-decoration: underline;
             font-weight: 500;
         }
+
         .check-desc a:hover { color: var(--forest-green); }
+
         .checklist-item.completed .check-title {
             color: #999;
             text-decoration: line-through;
         }
+
         .checklist-item.completed .check-desc { color: #aaa; }
         .checklist-item.completed .check-emoji { opacity: 0.5; }
         .check-score {
@@ -219,28 +384,96 @@
             margin-top: 1px;
         }
 
-        /* Footer */
-        footer {
-            margin-top: 4rem;
-            text-align: center;
+        /* Section Title */
+        .section-title-wide {
+            font-family: 'Lora', serif;
+            color: var(--forest-green);
+            font-size: 1.4rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
         }
-        .footer-copy {
+
+        /* Gear Section */
+        #gear-section-wide {
+            margin-top: 3rem;
+        }
+
+        .product-link {
+            display: block;
+            padding: 0.75rem 1rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: var(--card-shadow);
+            text-decoration: none;
+            color: var(--forest-green);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .product-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px -4px rgba(75, 54, 33, 0.15);
+        }
+
+        /* Footer */
+        footer.footer-wide {
+            display: block !important;
+            text-align: center;
+            padding: 2rem 3rem;
             opacity: 0.7;
             font-size: 0.85rem;
+            border-top: 1px solid rgba(45,90,39,0.15);
+            margin-top: 2rem;
+        }
+
+        .footer-copy {
             color: var(--forest-green);
         }
 
-        /* Responsive */
-        @media (max-width: 480px) {
-            .phase-header { padding: 1rem 1.2rem; font-size: 0.95rem; }
-            .phase.active .phase-body { padding: 0 1.2rem 1rem; }
-            .checklist-item { gap: 0.6rem; padding: 0.6rem 0; }
-            .check-emoji { font-size: 1.1rem; }
-            .check-title { font-size: 0.9rem; }
-            .check-desc { font-size: 0.78rem; }
-            .hero-intro { padding: 1.2rem; font-size: 0.92rem; }
-            #progress-wrapper { padding: 1rem 1.2rem; }
+        /* Override body flex centering for desktop layout */
+        body {
+            display: block !important;
+            justify-content: normal !important;
+            align-items: normal !important;
         }
+
+        /* ===== RESPONSIVE BREAKPOINTS ===== */
+        @media (max-width: 1024px) {
+            .page-wrapper {
+                grid-template-columns: 1fr;
+                padding: 1.5rem 2rem;
+            }
+
+            .sidebar {
+                position: static;
+                max-height: none;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 1rem;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .sidebar-nav {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.25rem;
+            }
+
+            .sidebar-section-label {
+                width: 100%;
+                text-align: left;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .page-wrapper { padding: 1rem; }
+            .hero-intro-wide { padding: 1.25rem; }
+            .hero-intro-wide h2 { font-size: 1.35rem; }
+            #progress-wrapper-wide { padding: 1rem 1.2rem; }
+        }
+        
     </style>
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-KRHYVJXZLE"></script>
@@ -286,16 +519,64 @@
     </script>
 </head>
 <body>
-    <div id="app">
-        <header>
-            <a href="/" class="back-link">← Back to Home</a>
-            <img src="src/assets/logo.png" alt="Logo" width="110" height="110" loading="lazy" onerror="this.src='https://via.placeholder.com/110?text=WC'">
-            <h1 id="page-title">Sustainability Journey Checklist</h1>
-            <p class="subtitle">Small steps toward a much larger impact.</p>
-        </header>
+    <div class="page-wrapper">
 
-        <!-- Progress Tracker -->
-        <div id="progress-wrapper">
+        <aside class="sidebar">
+            <div class="sidebar-logo">
+                <img src="src/assets/logo.png" alt="World Composting Logo" width="64" height="64" loading="lazy" onerror="this.src='https://via.placeholder.com/64?text=WC'">
+                <h2>World Composting</h2>
+            </div>
+
+            <ul class="sidebar-nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="start-here.html">Start Here</a></li>
+                <li><a href="about.html">About</a></li>
+
+                <div class="sidebar-divider"></div>
+                <li class="sidebar-section-label">Guides</li>
+
+                <li><a href="worm-composting.html">Worm Composting</a></li>
+                <li><a href="hot-composting.html">Hot Composting</a></li>
+
+                <div class="sidebar-divider"></div>
+                <li class="sidebar-section-label">Checklists</li>
+
+                <li><a href="beginner.html">Beginner's Checklist</a></li>
+                <li><a href="bokashi.html">Bokashi Composting</a></li>
+                <li><a href="biochar.html">BioChar Composting</a></li>
+                <li><a href="tumbler.html">Tumbler Composting</a></li>
+                <li><a href="tea.html">Compost Tea</a></li>
+                <li><a href="lasagna.html">Lasagna Composting</a></li>
+                <li><a href="sustainability.html" class="active">Sustainability Journey</a></li>
+                <li><a href="zero-waste-kitchen.html">Zero Waste Kitchen</a></li>
+
+                <div class="sidebar-divider"></div>
+                <li class="sidebar-section-label">Resources</li>
+
+                <li><a href="glossary.html">Glossary</a></li>
+                <li><a href="troubleshoot.html">Troubleshooting</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="sitemap.html">Sitemap</a></li>
+
+                <div class="sidebar-divider"></div>
+                <li class="sidebar-section-label">Gear</li>
+
+                <li><a href="gear.html">View All Gear →</a></li>
+            </ul>
+        </aside>
+
+        <!-- ===== MAIN CONTENT AREA ===== -->
+        <main class="main-content">
+
+            <a href="/" class="back-link-wide">&#8592; Back to Home</a>
+
+            <!-- Hero Section -->
+            <div class="pillar-hero-wide">
+                <h1>Sustainability Journey Checklist</h1>
+                <p class="subtitle">Small steps toward a much larger impact.</p>
+            </div>
+
+        <div id="progress-wrapper-wide">
             <div id="progress-text">
                 <span id="progress-label">0 of 0 items completed</span>
                 <span id="progress-percent">0%</span>
@@ -303,8 +584,7 @@
             <div id="progress-bar"><div id="progress-fill"></div></div>
         </div>
 
-        <!-- Hero Intro -->
-        <div class="hero-intro" id="hero-desc">
+        <div class="hero-intro-wide" id="hero-desc">
             <h2>What is a Sustainability Journey?</h2>
             <p>A sustainability journey is not about achieving perfection overnight; it is about embracing continuous, mindful progress toward a lifestyle that respects the planet and its finite resources. Every small decision, from choosing a reusable water bottle to reducing food waste, contributes to a larger collective impact. By understanding the environmental footprint of our daily habits, we can begin making changes that ripple outward, benefiting not only our immediate surroundings but ecosystems across the globe. The choices we make today determine the quality of life for future generations, making this journey one of the most important commitments we can undertake. Whether you are just starting or looking to deepen your existing practices, this path is deeply personal, endlessly rewarding, and urgently needed.</p>
             <p>At its core, sustainability is about taking small, actionable steps that accumulate into meaningful change over time. Simple yet powerful shifts like switching to LED lighting, reducing meat consumption, composting organic kitchen waste, and conserving water through mindful usage can dramatically lower your household's carbon footprint — often by 20 to 30 percent or more. But the benefits of sustainable living extend far beyond carbon accounting. These habits help preserve local biodiversity by reducing habitat destruction, protect natural ecosystems from overexploitation, and minimize the amount of toxic waste seeping into our soil, rivers, and oceans. Every kilowatt-hour of electricity saved and every piece of single-use plastic avoided translates directly into cleaner air, safer drinking water, and healthier communities for decades to come.</p>
@@ -320,7 +600,7 @@
         <!-- Checklist Phases -->
         <div id="phases">
             <!-- Phase 1 -->
-            <div class="phase active">
+            <div class="phase phase-wide active">
                 <button class="phase-header" onclick="togglePhase(this)">
                     <span>🌱 Phase 1: Easy Changes</span>
                     <span class="phase-arrow">▼</span>
@@ -331,7 +611,7 @@
             </div>
 
             <!-- Phase 2 -->
-            <div class="phase">
+            <div class="phase phase-wide">
                 <button class="phase-header" onclick="togglePhase(this)">
                     <span>🌿 Phase 2: Moderate Changes</span>
                     <span class="phase-arrow">▼</span>
@@ -342,7 +622,7 @@
             </div>
 
             <!-- Phase 3 -->
-            <div class="phase">
+            <div class="phase phase-wide">
                 <button class="phase-header" onclick="togglePhase(this)">
                     <span>🌳 Phase 3: Difficult or Expensive Changes</span>
                     <span class="phase-arrow">▼</span>
@@ -356,7 +636,7 @@
         <!-- Troubleshooting -->
         <div id="troubleshoot-section">
             <div class="section-title">Troubleshooting</div>
-            <div class="phase active" style="margin-bottom: 1rem;">
+            <div class="phase phase-wide active" style="margin-bottom: 1rem;">
                 <button class="phase-header" onclick="togglePhase(this)">
                     <span>🗑️ Too much waste going to landfill</span>
                     <span class="phase-arrow">▼</span>
@@ -370,7 +650,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="phase" style="margin-bottom: 1rem;">
+            <div class="phase phase-wide" style="margin-bottom: 1rem;">
                 <button class="phase-header" onclick="togglePhase(this)">
                     <span>💸 Sustainability changes feel too expensive</span>
                     <span class="phase-arrow">▼</span>
@@ -384,7 +664,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="phase" style="margin-bottom: 1rem;">
+            <div class="phase phase-wide" style="margin-bottom: 1rem;">
                 <button class="phase-header" onclick="togglePhase(this)">
                     <span>😤 Motivation is fading</span>
                     <span class="phase-arrow">▼</span>
@@ -400,15 +680,20 @@
             </div>
         </div>
 
-        <footer>
-            <!-- Video Section -->
-            <div id="video-container-sustainability"></div>
-            
-            <p class="footer-copy">&copy; 2026 World Composting. All rights reserved.</p>
-        </footer>
-    </div>
+        <!-- Video Section -->
+        <div id="video-container-sustainability"></div>
 
-    <script>
+        </main>
+
+    </div><!-- .page-wrapper -->
+
+    <!-- FOOTER: outside grid, spans full width -->
+    <footer class="footer-wide">
+        <p class="footer-copy">&copy; 2026 World Composting</p>
+        <p class="footer-copy" style="margin-top: 0.5rem;">As an Amazon Associate, I earn from qualifying purchases.</p>
+    </footer>
+
+<script>
         const checklistData = {
             phase1: [
                 { title: "Switch to reusable water bottles", desc: "Reduces plastic waste.", score: 4, emoji: "💧" },
