@@ -1,34 +1,589 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>World Composting | My Gear</title>
+<title>World Composting | My Gear</title>
+<meta name="description" content="The complete list of composting gear I use: worm bin items, fly control, bokashi buckets, water gear and more. As an Amazon Associate I earn from qualifying purchases.">
+<!-- Google Search Console Verification -->
+    <meta name="google-site-verification" content="google8a4b2c3d1e5f6789">
     <link rel="stylesheet" href="src/styles/theme.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        /* Override for Gear Page specifically to keep the card look */
-        .card-gradient {
-            background: linear-gradient(135deg, rgba(27, 67, 50, 0.8) 0%, rgba(10, 31, 61, 0.8) 100%);
+<style>
+        /* ===== WIDE LAYOUT OVERRIDES (supersedes theme.css #app) ===== */
+
+        .page-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 3rem;
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 2.5rem;
+            align-items: start;
+        }
+
+        /* ===== SIDEBAR NAVIGATION ===== */
+        .sidebar {
+            position: sticky;
+            top: 2rem;
+            background: white;
+            border-radius: 16px;
+            box-shadow: var(--card-shadow);
+            padding: 1.5rem;
+            max-height: calc(100vh - 4rem);
+            overflow-y: auto;
+        }
+
+        .sidebar-logo {
+            text-align: center;
+            margin-bottom: 1.25rem;
+        }
+
+        .sidebar-logo img {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--sage-green);
+        }
+
+        .sidebar-logo h2 {
+            font-family: 'Lora', serif;
+            color: var(--forest-green);
+            font-size: 1.1rem;
+            margin-top: 0.5rem;
+        }
+
+        .sidebar-nav {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar-nav li {
+            margin-bottom: 0.25rem;
+        }
+
+        .sidebar-nav a {
+            display: block;
+            padding: 0.6rem 0.85rem;
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--text-dark);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: background 0.15s, color 0.15s;
+        }
+
+        .sidebar-nav a:hover {
+            background: var(--off-white);
+            color: var(--forest-green);
+        }
+
+        .sidebar-nav a.active {
+            background: var(--forest-green);
+            color: white;
+            font-weight: 600;
+        }
+
+        .sidebar-divider {
+            height: 1px;
+            background: rgba(45,90,39,0.12);
+            margin: 1rem 0;
+        }
+
+        .sidebar-section-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-dark);
+            opacity: 0.5;
+            padding: 0.25rem 0.85rem;
+            margin-bottom: 0.25rem;
+        }
+
+        /* ===== MAIN CONTENT AREA ===== */
+        .main-content {
+            min-width: 0;
+        }
+
+        /* Back link: wider */
+        .back-link-wide {
+            display: inline-block;
+            font-size: 0.85rem;
+            color: var(--ocean-blue);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            transition: opacity 0.2s;
+        }
+
+        .back-link-wide:hover { opacity: 0.7; }
+        .back-link-wide:focus-visible {
+            outline: 2px solid var(--ocean-blue);
+            outline-offset: 2px;
+            border-radius: 2px;
+        }
+
+        /* Pillar hero: wider */
+        .pillar-hero-wide {
+            background: white;
+            border-radius: 16px;
+            padding: 2.5rem 3rem;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 2rem;
+        }
+
+        .pillar-hero-wide h1 {
+            font-family: 'Lora', serif;
+            color: var(--forest-green);
+            font-size: 2.4rem;
+            line-height: 1.3;
+            margin-top: 0;
+            text-align: center;
+        }
+
+        .pillar-hero-wide p.subtitle {
+            text-align: center;
+            font-style: italic;
+            color: var(--ocean-blue);
+            font-size: 1.1rem;
+            margin-bottom: 0;
+        }
+
+        /* Hero intro: wider */
+        .hero-intro-wide {
+            background: white;
+            border-radius: 16px;
+            padding: 2.5rem 3rem;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 2rem;
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--text-dark);
+        }
+
+        .hero-intro-wide strong { color: var(--forest-green); }
+        .hero-intro-wide h2 {
+            font-family: 'Lora', serif;
+            color: var(--forest-green);
+            font-size: 1.6rem;
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        .hero-intro-wide h3 {
+            font-family: 'Lora', serif;
+            color: var(--ocean-blue);
+            font-size: 1.25rem;
+            margin-top: 1.8rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .hero-intro-wide p { margin-bottom: 1.2rem; }
+        .hero-intro-wide ul { padding-left: 1.5rem; margin-bottom: 1.2rem; }
+        .hero-intro-wide li { margin-bottom: 0.6rem; line-height: 1.7; }
+
+        /* Progress Tracker */
+        #progress-wrapper-wide {
+            background: white;
+            border-radius: 16px;
+            padding: 1.25rem 1.5rem;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 2rem;
+        }
+
+        #progress-text {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--forest-green);
+            margin-bottom: 0.6rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #progress-percent {
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: var(--ocean-blue);
+        }
+
+        #progress-bar {
+            height: 10px;
+            background: var(--sage-green);
+            border-radius: 99px;
+            overflow: hidden;
+        }
+
+        #progress-fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, var(--leaf-lime), var(--forest-green));
+            border-radius: 99px;
+            transition: width 0.4s ease;
+        }
+
+        /* Phase (Collapsible Section) */
+        .phase-wide {
+            background: white;
+            border-radius: 16px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 1.25rem;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.04);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .phase-wide:hover {
+            box-shadow: 0 12px 25px -5px rgba(75, 54, 33, 0.12);
+        }
+
+        .phase-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 1.25rem 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: var(--forest-green);
+            text-align: left;
+            transition: background 0.2s ease;
+            gap: 0.75rem;
+        }
+
+        .phase-header:hover { background: rgba(45, 90, 39, 0.04); }
+        .phase-header:focus-visible {
+            outline: 2px solid var(--ocean-blue);
+            outline-offset: -2px;
+            border-radius: 16px 16px 0 0;
+        }
+
+        .phase-header .phase-arrow {
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+            color: var(--ocean-blue);
+            flex-shrink: 0;
+        }
+
+        .phase-wide.active .phase-arrow { transform: rotate(180deg); }
+
+        .phase-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.3s ease;
+            padding: 0 1.5rem;
+        }
+
+        .phase-wide.active .phase-body {
+            max-height: 5000px;
+            padding: 0 1.5rem 1.25rem;
+        }
+
+        /* Checklist Items */
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            cursor: pointer;
+            transition: opacity 0.2s ease;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .checklist-item:last-of-type { border-bottom: none; }
+
+        .checklist-item input[type="checkbox"] {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 24px;
+            height: 24px;
+            min-width: 24px;
+            min-height: 24px;
+            border: 2px solid var(--forest-green);
+            border-radius: 5px;
+            flex-shrink: 0;
+            margin-top: 3px;
+            cursor: pointer;
+            position: relative;
+            transition: background 0.2s, border-color 0.2s;
+        }
+
+        .checklist-item input[type="checkbox"]:checked {
+            background: var(--forest-green);
+            border-color: var(--forest-green);
+        }
+
+        .checklist-item input[type="checkbox"]:checked::after {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 1px;
+            width: 6px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+
+        .checklist-item input[type="checkbox"]:focus-visible {
+            outline: 2px solid var(--ocean-blue);
+            outline-offset: 2px;
+        }
+
+        .check-emoji {
+            font-size: 1.3rem;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .check-content { flex: 1; min-width: 0; }
+
+        .check-title {
+            display: block;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            transition: color 0.2s;
+        }
+
+        .check-desc {
+            display: block;
+            font-size: 0.82rem;
+            color: #666;
+            margin-top: 2px;
+            line-height: 1.5;
+            transition: color 0.2s;
+        }
+
+        .check-desc a {
+            color: var(--ocean-blue);
+            text-decoration: underline;
+            font-weight: 500;
+        }
+
+        .check-desc a:hover { color: var(--forest-green); }
+
+        .checklist-item.completed .check-title {
+            color: #999;
+            text-decoration: line-through;
+        }
+
+        .checklist-item.completed .check-desc { color: #aaa; }
+        .checklist-item.completed .check-emoji { opacity: 0.5; }
+        .check-score {
+            display: block;
+            font-size: 0.78rem;
+            color: var(--ocean-blue);
+            margin-top: 1px;
+        }
+
+        /* Section Title */
+        .section-title-wide {
+            font-family: 'Lora', serif;
+            color: var(--forest-green);
+            font-size: 1.4rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Gear Section */
+        #gear-section-wide {
+            margin-top: 3rem;
+        }
+
+        .product-link {
+            display: block;
+            padding: 0.75rem 1rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: var(--card-shadow);
+            text-decoration: none;
+            color: var(--forest-green);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .product-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px -4px rgba(75, 54, 33, 0.15);
+        }
+
+        /* Footer */
+        footer.footer-wide {
+            display: block !important;
+            text-align: center;
+            padding: 2rem 3rem;
+            opacity: 0.7;
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(45,90,39,0.15);
+            margin-top: 2rem;
+        }
+
+        .footer-copy {
+            color: var(--forest-green);
+        }
+
+        /* Override body flex centering for desktop layout */
+        body {
+            display: block !important;
+            justify-content: normal !important;
+            align-items: normal !important;
+        }
+
+        /* ===== RESPONSIVE BREAKPOINTS ===== */
+        @media (max-width: 1024px) {
+            .page-wrapper {
+                grid-template-columns: 1fr;
+                padding: 1.5rem 2rem;
+            }
+
+            .sidebar {
+                position: static;
+                max-height: none;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 1rem;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .sidebar-nav {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.25rem;
+            }
+
+            .sidebar-section-label {
+                width: 100%;
+                text-align: left;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .page-wrapper { padding: 1rem; }
+            .hero-intro-wide { padding: 1.25rem; }
+            .hero-intro-wide h2 { font-size: 1.35rem; }
+            #progress-wrapper-wide { padding: 1rem 1.2rem; }
+        }
+        
+    
+        /* Gear page: category groups */
+        .gear-category {
+            margin-bottom: 2rem;
+        }
+        .gear-category-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--forest-green);
+            border-bottom: 2px solid rgba(45, 90, 39, 0.2);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        .gear-items {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
         }
     </style>
+
+<!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KRHYVJXZLE"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-KRHYVJXZLE');
+    </script>
+<!-- ItemList Schema: Composting Gear -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "My Composting Gear",
+      "description": "The tools and equipment I use for composting: worm bin items, fly control, bokashi buckets, water gear and more.",
+      "itemListElement": []
+    }
+    </script>
 </head>
-<body class="min-h-screen flex flex-col items-center p-4">
+<body>
+    <div class="page-wrapper">
 
-    <header class="mt-8 mb-12 text-center">
-        <a href="index.html" class="text-sm text-[var(--ocean-blue)] hover:underline">← Back to Home</a>
-        <h1 class="text-3xl font-bold mt-4 text-[var(--forest-green)]">My Composting Gear</h1>
-        <p class="text-[var(--ocean-blue)] italic">The tools I use for a sustainable life</p>
-    </header>
+        <aside class="sidebar">
+            <div class="sidebar-logo">
+                <img src="src/assets/logo.png" alt="World Composting Logo" width="64" height="64" loading="lazy" onerror="this.src='https://via.placeholder.com/64?text=WC'">
+                <h2>World Composting</h2>
+            </div>
 
-    <main id="gear-container" class="w-full max-w-md space-y-8">
-        <!-- Categories and items will be injected here -->
-    </main>
+            <ul class="sidebar-nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="start-here.html">Start Here</a></li>
+                <li><a href="about.html">About</a></li>
 
-    <footer class="mt-16 mb-8 text-xs text-[var(--forest-green)] opacity-70 text-center">
-        &copy; 2026 World Composting<br>
-        As an Amazon Associate, I earn from qualifying purchases.
+                <div class="sidebar-divider"></div>
+                <li class="sidebar-section-label">Guides</li>
+
+                <li><a href="worm-composting.html">Worm Composting</a></li>
+                <li><a href="hot-composting.html">Hot Composting</a></li>
+
+                <div class="sidebar-divider"></div>
+                <li class="sidebar-section-label">Checklists</li>
+
+                <li><a href="beginner.html">Beginner's Checklist</a></li>
+                <li><a href="bokashi.html">Bokashi Composting</a></li>
+                <li><a href="biochar.html">BioChar Composting</a></li>
+                <li><a href="tumbler.html">Tumbler Composting</a></li>
+                <li><a href="tea.html">Compost Tea</a></li>
+                <li><a href="lasagna.html">Lasagna Composting</a></li>
+                <li><a href="sustainability.html">Sustainability Journey</a></li>
+                <li><a href="zero-waste-kitchen.html">Zero Waste Kitchen</a></li>
+
+                <div class="sidebar-divider"></div>
+                <li class="sidebar-section-label">Resources</li>
+
+                <li><a href="glossary.html">Glossary</a></li>
+                <li><a href="troubleshoot.html">Troubleshooting</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="sitemap.html">Sitemap</a></li>
+
+                <div class="sidebar-divider"></div>
+                <li class="sidebar-section-label">Gear</li>
+
+                <li><a href="gear.html" class="active">View All Gear →</a></li>
+            </ul>
+        </aside>
+
+        <!-- ===== MAIN CONTENT AREA ===== -->
+        <main class="main-content">
+
+            <a href="/" class="back-link-wide">&#8592; Back to Home</a>
+
+            <!-- Hero Section -->
+            <div class="pillar-hero-wide">
+                <h1>My Composting Gear</h1>
+                <p>The tools I use for a sustainable life. As an Amazon Associate, I earn from qualifying purchases.</p>
+            </div>
+
+            <!-- All Gear (grouped by category) -->
+            <div id="gear-section-wide">
+                <div class="section-title">All Gear</div>
+                <div id="gear-container"></div>
+            </div>
+
+        </main>
+
+    </div><!-- .page-wrapper -->
+
+    <!-- FOOTER: outside grid, spans full width -->
+    <footer class="footer-wide">
+        <p class="footer-copy">&copy; 2026 World Composting</p>
+        <p class="footer-copy" style="margin-top: 0.5rem;">As an Amazon Associate, I earn from qualifying purchases.</p>
     </footer>
 
     <script>
@@ -40,7 +595,7 @@
                 renderGear(products);
             } catch (err) {
                 console.error("Error loading gear:", err);
-                document.body.innerHTML += '<div class="mt-4 p-4 bg-red-900/50 text-xs rounded">Error loading gear items.</div>';
+                document.getElementById('gear-container').innerHTML = '<div class="card" style="color: #c0392b;">Error loading gear items.</div>';
             }
         }
 
@@ -59,25 +614,24 @@
             const sortedCategories = Object.keys(categories).sort((a, b) => {
                 const aIndex = priorityOrder.indexOf(a);
                 const bIndex = priorityOrder.indexOf(b);
-                if (aIndex !== -1 && b.includes("Worm")) return -1; // Extra weight for worm keywords
-                if (aIndex !== -1 && bIndex !== -1) return aIndex - bIndex;
-                if (aIndex !== -1) return -1;
+                if (aIndex !== -1 && bIndex !== -1) return aIndex - bIndex; // Priority categories first, in order
+                if (aIndex !== -1) return -1;                              // Priority before everything else
                 if (bIndex !== -1) return 1;
-                return a.localeCompare(b);
+                return a.localeCompare(b);                                 // Rest alphabetical
             });
 
             for (const category of sortedCategories) {
                 const items = categories[category];
                 html += `
-                    <div class="space-y-3">
-                        <h2 class="text-lg font-bold text-[var(--forest-green)] border-b border-[var(--forest-green)]/20 pb-1">${category}</h2>
-                        <div class="flex flex-col gap-3">
+                    <div class="gear-category">
+                        <h3 class="gear-category-title">${category}</h3>
+                        <div class="gear-items">
                             ${items.map(item => {
-                                const href = (item['Amazon Link'] !== 'NaN' && item['Amazon Link']) || 
+                                const href = (item['Amazon Link'] !== 'NaN' && item['Amazon Link']) ||
                                              (item['Other Link'] !== 'NaN' && item['Other Link']) || '#';
                                 return `
-                                    <a href="${href}" target="_blank" class="product-link group">
-                                        <span class="product-name">${item['Item']}</span>
+                                    <a href="${href}" target="_blank" class="product-link">
+                                        ${item['Item']}
                                     </a>`;
                             }).join('')}
                         </div>
