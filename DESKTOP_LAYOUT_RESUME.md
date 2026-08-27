@@ -17,7 +17,7 @@
 | `hot-composting.html` | `5ba3ae3` | 11-section article grid, video loader preserved |
 | `beginner.html` | `ce74438` + fixes | Checklist phases, progress tracker, localStorage |
 | `bokashi.html` | `1156a49` + fixes | 5 checklist phases, gear loader, video section |
-| `biochar.html` | `f422568` (latest) | 4 checklist phases, troubleshooting, progress tracker |
+| `biochar.html` | `de051b6` (latest) | 4 checklist phases, troubleshooting, progress tracker; header fixed to pillar-hero-wide pattern |
 
 ---
 
@@ -134,6 +134,30 @@ git commit -m "Migrate <page>.html to desktop layout"
 ### Bug 5: "Back to Home" link styling wrong
 **Cause:** `class="back-link"` instead of `class="back-link-wide"`  
 **Fix:** Update class name (Step 5)
+
+### Bug 6: Unstyled mobile header block left in main column
+**Cause:** Migration kept the mobile `<header>` markup (back link + 110px logo + H1 + subtitle) but dropped its CSS, so it renders as floating unstyled elements  
+**Fix:** Replace with the pillar pattern used by worm-composting/hot-composting: `back-link-wide` anchor, then `<div class="pillar-hero-wide">` containing centered H1 + italic `.subtitle`. Add the `.pillar-hero-wide` CSS block (copy from worm-composting.html). Checklist pages without a hero (bokashi/beginner) start straight at the progress tracker.
+
+### Bug 7: Video section inside `<footer>`
+**Cause:** Mobile structure had `#video-container-*` inside the footer element  
+**Fix:** Move it to be the last element of `<main>`, then close main, close `.page-wrapper`, and put a clean full-width `<footer class="footer-wide">` after (matches bokashi/beginner)
+
+### Bug 8: Malformed google-site-verification meta tags
+**Cause:** Migration duplicated/corrupted the verification metas (one with content = meta description, one truncated)  
+**Fix:** Single tag: `<meta name="google-site-verification" content="google8a4b2c3d1e5f6789">`
+
+### Bug 9: Analytics half-broken
+**Cause:** gtag.js script loaded but the dataLayer/config block was dropped, so GA never fires  
+**Fix:** Add the standard config script right after the gtag.js tag (copy from bokashi.html)
+
+### Bug 10: JSON-LD schema lost in migration
+**Cause:** Mobile page had HowTo/other structured data that the migration script skipped  
+**Fix:** Restore from `git show main:<page>.html` and validate with `python3 -c "import json,re; json.loads(re.search(r'ld\+json\">(.*?)</script>', open('PAGE').read(), re.S).group(1))"`
+
+### Bug 11: Sidebar nav section mismatch
+**Cause:** Bokashi listed under Guides instead of Checklists (or vice versa)  
+**Fix:** Sidebar must be byte-identical to index.html except the `class="active"` marker. Verify with a diff that strips active classes.
 
 ---
 
