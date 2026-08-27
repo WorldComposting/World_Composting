@@ -6,7 +6,7 @@
 
 ---
 
-## What's Done (12 pages migrated & committed on desktop-layout branch)
+## What's Done (11 content pages migrated & committed on desktop-layout branch)
 
 | Page | Commit | Notes |
 |------|--------|-------|
@@ -22,21 +22,34 @@
 | `tumbler.html` | `ece948b` | 30-item checklist in 5 phases, progress tracker, gear loader (18 items), video container (empty by design: `tumbler: []` in video-renderer.js); sidebar active on "Tumbler Composting" nav item; verified clean console + styled hero |
 | `tea.html` | `7bf0963` | 30-item checklist in 5 phases, progress tracker, gear loader (4 items: Water Gear + Bokashi Items), video container (empty by design: `tea: []`); sidebar active on "Compost Tea" nav item; verified clean console + styled hero |
 
+## 🎯 Current Focus (8/27)
+
+**Next page: `lasagna.html`** — Lasagna/Sheet Mulching checklist. Last unmigrated pillar page. Inspection complete (full file mapped); migration script not yet written.
+- 772 lines, mobile layout (`id="app"` wrapper, no sidebar); 5 phases / 30 items + troubleshooting section; footer currently inside `#app` (move outside `<main>` like tea)
+- Video container `video-container-lasagna` — empty by design (no `lasagna` entry in videos.json)
+- Gear categories: Water Gear + Worm Bin Equipment
+- Dedicated nav item at index.html line 553 → gets `class="active"` on migration
+- Reference template: `tea.html` (`7bf0963`) — freshly migrated, browser-verified
+
+**Uncommitted changes to keep OUT of the lasagna commit:**
+- `M bokashi.html` (duplicate empty `<script type="ld+json">` tag ~line 470)
+- `M src/data/blog.json`, `?? BLOG_POSTS_DRAFT.md`, `?? sample.html`
+
 ## ⚠️ Deferred / Known Issues
 
 - **hot.html is NOT linked in the left sidebar** — no nav item points to it. Needs a sidebar link added (decide placement: likely under "Hot Composting" guide or as its own checklist entry). Fix when revisiting hot.html or the sidebar nav.
 
 ---
 
-## Remaining Pages to Migrate (16 pages)
+## Remaining Pages to Migrate (17 content pages)
 
 ### Pillar/Deep-Dive Pages (high priority)
 
 - `lasagna.html` — Lasagna/Sheet Mulching
 - `sustainability.html` — Sustainability Journey Checklist
-- `tea.html` — Compost Tea Checklist
 
 ### Deep-Dive Pages (medium priority)
+- `science-of-compost.html` — Science article (221 lines; was missing from this guide)
 - `hot-best-materials.html`
 - `hot-cn-ratio.html`
 - `hot-not-heating.html`
@@ -52,6 +65,9 @@
 - `glossary.html` — 30 alphabetized terms
 - `troubleshoot.html` — Diagnostic guide
 - `zero-waste-kitchen.html` — Kitchen guide
+- `quick_links.html` — Official links page (228 lines, small)
+
+**Not migration targets:** `sitemap.html`, `google8a4b2c3d1e5f6789.html` (verification file), `sample.html` (template stub)
 
 ---
 
@@ -165,6 +181,10 @@ git commit -m "Migrate <page>.html to desktop layout"
 **Cause:** Bokashi listed under Guides instead of Checklists (or vice versa)  
 **Fix:** Sidebar must be byte-identical to index.html except the `class="active"` marker. Verify with a diff that strips active classes.
 
+### Bug 12: Terminal heredocs / python one-liners time out on /mnt/h
+**Cause:** WSL + Windows drive (H:) filesystem is slow; inline `python3 -c` and heredoc scripts can hang or exit -1
+**Fix:** Write helper scripts to `/tmp/*.py` (Linux fs) and run with `python3 /tmp/script.py`; use search_files/ripgrep instead of grep pipelines for searches
+
 ---
 
 ## Em-Dash Constraint
@@ -175,7 +195,7 @@ git commit -m "Migrate <page>.html to desktop layout"
 
 ## How to Resume
 1. Switch branch: `cd /mnt/h/Hermes/landing-page-fixed && git checkout desktop-layout`
-2. Pick next page from "Remaining Pages" list above
+2. Next up: `lasagna.html` (see Current Focus section); after that, pick from "Remaining Pages"
 3. Follow migration process (Steps 1-7)
 4. Reference this file for common bugs and fixes
 
