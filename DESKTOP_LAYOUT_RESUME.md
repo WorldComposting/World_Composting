@@ -21,7 +21,7 @@
 | `hot.html` | `5a1903b` (latest) | 30-item checklist in 5 phases, progress tracker, gear section; sidebar active class removed (mobile has none); verified clean console + styled hero |
 | `tumbler.html` | `ece948b` | 30-item checklist in 5 phases, progress tracker, gear loader (18 items), video container (empty by design: `tumbler: []` in video-renderer.js); sidebar active on "Tumbler Composting" nav item; verified clean console + styled hero |
 | `tea.html` | `7bf0963` | 30-item checklist in 5 phases, progress tracker, gear loader (4 items: Water Gear + Bokashi Items), video container (empty by design: `tea: []`); sidebar active on "Compost Tea" nav item; verified clean console + styled hero |
-| `lasagna.html` | (this session) | 30-item checklist in 5 phases, progress tracker, gear loader (8 items: Water Gear + Worm Bin Equipment), video container (empty by design: no `lasagna` entry); sidebar active on "Lasagna Composting" nav item; verified clean console + styled hero |
+| `lasagna.html` | `a13e9a7` | 30-item checklist in 5 phases, progress tracker, gear loader (8 items: Water Gear + Worm Bin Equipment), video container (empty by design: no `lasagna` entry); sidebar active on "Lasagna Composting" nav item; verified clean console + styled hero |
 
 ## 🎯 Current Focus (8/27)
 
