@@ -125,6 +125,32 @@
             border-radius: 2px;
         }
 
+        /* Pillar hero: wider */
+        .pillar-hero-wide {
+            background: white;
+            border-radius: 16px;
+            padding: 2.5rem 3rem;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 2rem;
+        }
+
+        .pillar-hero-wide h1 {
+            font-family: 'Lora', serif;
+            color: var(--forest-green);
+            font-size: 2.4rem;
+            line-height: 1.3;
+            margin-top: 0;
+            text-align: center;
+        }
+
+        .pillar-hero-wide p.subtitle {
+            text-align: center;
+            font-style: italic;
+            color: var(--ocean-blue);
+            font-size: 1.1rem;
+            margin-bottom: 0;
+        }
+
         /* Hero intro: wider */
         .hero-intro-wide {
             background: white;
@@ -537,6 +563,14 @@
         <!-- ===== MAIN CONTENT AREA ===== -->
         <main class="main-content">
 
+            <a href="/" class="back-link-wide">&#8592; Back to Home</a>
+
+            <!-- Hero Section -->
+            <div class="pillar-hero-wide">
+                <h1>Beginner's Checklist</h1>
+                <p class="subtitle">Your step-by-step guide to worm composting.</p>
+            </div>
+
         <!-- Progress Tracker -->
         <div id="progress-wrapper-wide">
             <div id="progress-text">
@@ -919,6 +953,12 @@
 
         <!-- Video Section -->
         <div id="video-container-worm"></div>
+
+        <!-- My Recommended Gear -->
+        <div id="gear-section-wide">
+            <div class="section-title">My Recommended Gear</div>
+            <div id="gear-list"></div>
+        </div>
 
         </main>
 
