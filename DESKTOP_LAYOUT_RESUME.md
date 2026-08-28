@@ -25,11 +25,11 @@
 | `sustainability.html` | `964d273` | 31-item checklist in 3 phases, progress tracker (localStorage), troubleshooting accordions, video section (real videos from `sustainability` key); sidebar active on "Sustainability Journey" nav item; verified clean console + working checkbox/progress logic |
 | `zero-waste-kitchen.html` | `4c49470` + `6f2a910` | 7-item checklist in 2 phases, progress tracker (localStorage), gear loader (Paper category: 3 items), video section (2 real videos from `zero-waste-kitchen` key); sidebar active on "Zero Waste Kitchen" nav item; CSS byte-identical to tea.html style block; phase-wide card styling added in follow-up |
 | `gear.html` | `8f58774` | JS product listing (no checklist): 29 products in 8 categories, priority sort fixed (Worm Bin Items → Worm Bag → Fly Control → Bokashi Items → rest alphabetical), Tailwind CDN removed, site CSS classes; sidebar active on "View All Gear" nav item; verified clean console + all links real |
+| `glossary.html` | this session | 23 alphabetized terms in A–Z accordion (letter buttons toggle bodies). Custom `.glossary-*` CSS copied verbatim from mobile file into the grid page's style block. Sidebar active on "Glossary" nav item; verified: clean console, accordion works (A→B toggle tested), footer styled, back-link present |
 
-## 🎯 Current Focus (8/27)
+## 🎯 Current Focus (8/28)
 
-**Next page: pick from "Remaining Pages"** — all pillar pages + gear are now migrated.
-- Suggested order: `science-of-compost.html` first (deep-dive article, closest to worm/hot-composting template), then the other deep-dives, then utility pages.
+**Next page: `science-of-compost.html`** — deep-dive article (221 lines), closest to the worm/hot-composting template, so it's the natural next one. After that: remaining hot-* and worm-* deep-dives, then utility pages (`blog.html`, `troubleshoot.html`, `quick_links.html`).
 
 **Uncommitted changes to keep OUT of the next commit:**
 - `M bokashi.html` (duplicate empty `<script type="ld+json">` tag ~line 470)
@@ -41,7 +41,7 @@
 
 ---
 
-## Remaining Pages to Migrate (13 content pages)
+## Remaining Pages to Migrate (12 content pages)
 
 ### Deep-Dive Pages (medium priority)
 - `science-of-compost.html` — Science article (221 lines; was missing from this guide)
@@ -56,9 +56,10 @@
 
 ### Utility Pages (lower priority)
 - `blog.html` — Blog listing with JSON data loader
-- `glossary.html` — 30 alphabetized terms
 - `troubleshoot.html` — Diagnostic guide
 - `quick_links.html` — Official links page (228 lines, small)
+
+**Done this session:** `glossary.html` ✓ (moved to Completed table above)
 
 **Not migration targets:** `sitemap.html`, `google8a4b2c3d1e5f6789.html` (verification file), `sample.html` (template stub)
 
@@ -196,7 +197,7 @@ git commit -m "Migrate <page>.html to desktop layout"
 
 ## How to Resume
 1. Switch branch: `cd /mnt/h/Hermes/landing-page-fixed && git checkout desktop-layout`
-2. Status as of 8/27: **15 done / 13 remaining**. All pillar pages + gear are migrated; pick from "Remaining Pages" (suggested next: `science-of-compost.html`)
+2. Status as of 8/28: **16 done / 12 remaining** (glossary.html completed this session). All pillar pages + gear migrated; next up `science-of-compost.html` then the other deep-dives, then utility pages (`blog`, `troubleshoot`, `quick_links`)
 3. Follow migration process (Steps 1-7)
 4. Reference this file for common bugs and fixes
 
