@@ -5,8 +5,370 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Science of Compost: How Microbes Turn Waste Into Garden Gold | World Composting</title>
     <meta name="description" content="Discover the hidden microbial world inside your compost pile. Learn how bacteria, fungi, and archaea work together to transform kitchen scraps into nutrient-rich soil amendment through thermophilic decomposition.">
+    <!-- Google Search Console Verification -->
+    <meta name="google-site-verification" content="google8a4b2c3d1e5f6789">
     <link rel="stylesheet" href="src/styles/theme.css">
-    <link rel="stylesheet" href="src/styles/article.css">
+    <link rel="stylesheet" href="src/styles/video-section.css">
+<style>
+        /* ===== WIDE LAYOUT OVERRIDES (supersedes theme.css #app) ===== */
+
+        .page-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 3rem;
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 2.5rem;
+            align-items: start;
+        }
+
+        /* ===== SIDEBAR NAVIGATION ===== */
+        .sidebar {
+            position: sticky;
+            top: 2rem;
+            background: white;
+            border-radius: 16px;
+            box-shadow: var(--card-shadow);
+            padding: 1.5rem;
+            max-height: calc(100vh - 4rem);
+            overflow-y: auto;
+        }
+
+        .sidebar-logo {
+            text-align: center;
+            margin-bottom: 1.25rem;
+        }
+
+        .sidebar-logo img {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--sage-green);
+        }
+
+        .sidebar-logo h2 {
+            font-family: 'Lora', serif;
+            color: var(--forest-green);
+            font-size: 1.1rem;
+            margin-top: 0.5rem;
+        }
+
+        .sidebar-nav {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar-nav li {
+            margin-bottom: 0.25rem;
+        }
+
+        .sidebar-nav a {
+            display: block;
+            padding: 0.6rem 0.85rem;
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--text-dark);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: background 0.15s, color 0.15s;
+        }
+
+        .sidebar-nav a:hover {
+            background: var(--off-white);
+            color: var(--forest-green);
+        }
+
+        .sidebar-nav a.active {
+            background: var(--forest-green);
+            color: white;
+            font-weight: 600;
+        }
+
+        .sidebar-divider {
+            height: 1px;
+            background: rgba(45,90,39,0.12);
+            margin: 1rem 0;
+        }
+
+        .sidebar-section-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-dark);
+            opacity: 0.5;
+            padding: 0.25rem 0.85rem;
+            margin-bottom: 0.25rem;
+        }
+
+        /* ===== MAIN CONTENT AREA ===== */
+        .main-content {
+            min-width: 0;
+        }
+
+        /* Back link: wider */
+        .back-link-wide {
+            display: inline-block;
+            font-size: 0.85rem;
+            color: var(--ocean-blue);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            transition: opacity 0.2s;
+        }
+
+        .back-link-wide:hover { opacity: 0.7; }
+        .back-link-wide:focus-visible {
+            outline: 2px solid var(--ocean-blue);
+            outline-offset: 2px;
+            border-radius: 2px;
+        }
+
+        /* Pillar hero: wider */
+        .pillar-hero-wide {
+            background: white;
+            border-radius: 16px;
+            padding: 2.5rem 3rem;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 2rem;
+        }
+
+        .pillar-hero-wide h1 {
+            font-family: 'Lora', serif;
+            color: var(--forest-green);
+            font-size: 2.4rem;
+            line-height: 1.3;
+            margin-top: 0;
+            text-align: center;
+        }
+
+        .pillar-hero-wide p.subtitle {
+            text-align: center;
+            font-style: italic;
+            color: var(--ocean-blue);
+            font-size: 1.1rem;
+            margin-bottom: 0;
+        }
+
+        /* Table of Contents: wider */
+        #toc-wide {
+            background: white;
+            border-radius: 16px;
+            padding: 1.5rem 2rem;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 2rem;
+        }
+
+        #toc-wide h2 {
+            font-size: 1.1rem;
+            color: var(--forest-green);
+            margin-top: 0;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        #toc-wide ol {
+            padding-left: 1.2rem;
+            margin: 0;
+        }
+
+        #toc-wide li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+
+        #toc-wide a {
+            color: var(--ocean-blue);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        #toc-wide a:hover { color: var(--forest-green); text-decoration: underline; }
+
+        /* Article Sections: wider */
+        .article-section-wide {
+            background: white;
+            border-radius: 16px;
+            padding: 2.5rem 3rem;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .article-section-wide h2 {
+            font-family: 'Lora', serif;
+            color: var(--forest-green);
+            font-size: 1.6rem;
+            margin-top: 0;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--sage-green);
+        }
+
+        .article-section-wide h3 {
+            font-family: 'Lora', serif;
+            color: var(--ocean-blue);
+            font-size: 1.25rem;
+            margin-top: 1.8rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .article-section-wide p {
+            color: var(--text-dark);
+            font-size: 1rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .article-section-wide ul, .article-section-wide ol {
+            padding-left: 1.5rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .article-section-wide li {
+            margin-bottom: 0.6rem;
+            line-height: 1.7;
+        }
+
+        .article-section-wide strong { color: var(--forest-green); }
+
+        /* Callout Boxes: wider */
+        .callout-wide {
+            background: var(--sage-green);
+            border-left: 4px solid var(--forest-green);
+            padding: 1rem 1.25rem;
+            border-radius: 0 8px 8px 0;
+            margin: 1.5rem 0;
+        }
+
+        .callout-wide.warning {
+            background: #fff3cd;
+            border-left-color: #856404;
+        }
+
+        .callout-wide.tip {
+            background: #d1ecf1;
+            border-left-color: var(--ocean-blue);
+        }
+
+        .callout-wide p { margin-bottom: 0; }
+
+        /* Info Tables: wider */
+        .info-table-wide {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.92rem;
+        }
+
+        .info-table-wide th, .info-table-wide td {
+            padding: 0.75rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--sage-green);
+        }
+
+        .info-table-wide th {
+            background: var(--forest-green);
+            color: white;
+            font-weight: 600;
+        }
+
+        .info-table-wide tr:nth-child(even) td { background: #f8f9fa; }
+
+        /* Related Pages: wider */
+        .related-pages-wide {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .related-card-wide {
+            background: white;
+            border-radius: 16px;
+            padding: 1.25rem;
+            box-shadow: var(--card-shadow);
+            text-align: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .related-card-wide:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 32px -8px rgba(75, 54, 33, 0.15);
+        }
+
+        .related-card-wide a {
+            text-decoration: none;
+            color: var(--forest-green);
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .related-card-wide p {
+            margin-top: 0.5rem;
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        /* ===== RESPONSIVE BREAKPOINTS ===== */
+        @media (max-width: 1024px) {
+            .page-wrapper {
+                grid-template-columns: 1fr;
+                padding: 1.5rem 2rem;
+            }
+
+            .sidebar {
+                position: static;
+                max-height: none;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 1rem;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .sidebar-nav {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.25rem;
+            }
+
+            .sidebar-section-label {
+                width: 100%;
+                text-align: left;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .page-wrapper {
+                padding: 1rem;
+            }
+
+            .pillar-hero-wide h1 { font-size: 1.8rem; }
+            .article-section-wide { padding: 1.25rem; }
+            .article-section-wide h2 { font-size: 1.35rem; }
+            #toc-wide { padding: 1.25rem; }
+        }
+
+        /* ===== FOOTER OVERRIDES: fix body flex centering from theme.css ===== */
+        footer.footer-wide {
+            display: block !important;
+            text-align: center;
+            padding: 2rem 3rem;
+            opacity: 0.7;
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(45,90,39,0.15);
+            margin-top: 2rem;
+        }
+
+        /* Override body flex centering for desktop layout */
+        body {
+            display: block !important;
+            justify-content: normal !important;
+            align-items: normal !important;
+        }
+    </style>
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-KRHYVJXZLE"></script>
     <script>
@@ -37,25 +399,86 @@
     </script>
 </head>
 <body>
-    <div class="container">
+    <div class="page-wrapper">
 
-        <!-- Site Header -->
-        <header class="site-header">
-            <a href="/" class="home-link"><img src="src/assets/logo.png" alt="World Composting Home" width="80" height="80" loading="lazy"></a>
-            <h1>World Composting</h1>
-            <p class="subtitle">Turning waste into wonder.</p>
-        </header>
+        <!-- ===== SIDEBAR NAVIGATION ===== -->
+        <aside class="sidebar">
+            <div class="sidebar-logo">
+                <img src="src/assets/logo.png" alt="World Composting Logo" width="64" height="64" loading="lazy" onerror="this.src='https://via.placeholder.com/64?text=WC'">
+                <h2>World Composting</h2>
+            </div>
 
-        <!-- Breadcrumb -->
-        <nav class="breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/blog.html">Blog</a> &rsaquo; The Science of Compost</nav>
+            <ul class="sidebar-nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="start-here.html">Start Here</a></li>
+                <li><a href="about.html">About</a></li>
 
-        <!-- Article Content -->
-        <article class="content-card">
-            <h1>The Science of Compost: How Microbes Turn Waste Into Garden Gold</h1>
+                <div class="sidebar-divider"></div>
+                <li class="sidebar-section-label">Guides</li>
 
-            <p class="lead">Every compost pile is a living ecosystem. Beneath the surface, trillions of invisible organisms are working around the clock to transform your kitchen scraps and yard waste into one of nature's most powerful soil amendments. Understanding what happens inside that pile &mdash; or bin &mdash; gives you the knowledge to speed up decomposition, eliminate odors, and produce compost that will revolutionize your garden.</p>
+                <li><a href="worm-composting.html">Worm Composting</a></li>
+                <li><a href="hot-composting.html">Hot Composting</a></li>
 
-            <h2>The Microbial Workforce: Who Lives in Your Compost?</h2>
+                <div class="sidebar-divider"></div>
+                <li class="sidebar-section-label">Checklists</li>
+
+                <li><a href="beginner.html">Beginner's Checklist</a></li>
+                <li><a href="bokashi.html">Bokashi Composting</a></li>
+                <li><a href="biochar.html">BioChar Composting</a></li>
+                <li><a href="tumbler.html">Tumbler Composting</a></li>
+                <li><a href="tea.html">Compost Tea</a></li>
+                <li><a href="lasagna.html">Lasagna Composting</a></li>
+                <li><a href="sustainability.html">Sustainability Journey</a></li>
+                <li><a href="zero-waste-kitchen.html">Zero Waste Kitchen</a></li>
+
+                <div class="sidebar-divider"></div>
+                <li class="sidebar-section-label">Resources</li>
+
+                <li><a href="glossary.html">Glossary</a></li>
+                <li><a href="troubleshoot.html">Troubleshooting</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="sitemap.html">Sitemap</a></li>
+
+                <div class="sidebar-divider"></div>
+                <li class="sidebar-section-label">Gear</li>
+
+                <li><a href="gear.html">View All Gear →</a></li>
+            </ul>
+        </aside>
+
+        <!-- ===== MAIN CONTENT AREA ===== -->
+        <main class="main-content">
+
+            <a href="/" class="back-link-wide">&#8592; Back to Home</a>
+
+            <!-- Hero Section -->
+            <div class="pillar-hero-wide">
+                <h1>The Science of Compost: How Microbes Turn Waste Into Garden Gold</h1>
+                <p class="subtitle">The hidden microbial world inside your compost pile: bacteria, fungi, and archaea at work.</p>
+            </div>
+
+            <!-- Table of Contents -->
+            <nav id="toc-wide" aria-label="Table of contents">
+                <h2>In This Article</h2>
+                <ol>
+                    <li><a href="#microbial-workforce">The Microbial Workforce: Who Lives in Your Compost?</a></li>
+                    <li><a href="#four-phases">The Four Phases of Composting: A Biological Timeline</a></li>
+                    <li><a href="#carbon-nitrogen-balance">The Carbon-Nitrogen Balance: Fuel for Microbial Engines</a></li>
+                    <li><a href="#oxygen">Oxygen: The Invisible Ingredient</a></li>
+                    <li><a href="#moisture">Moisture: The Medium of Life</a></li>
+                    <li><a href="#from-waste-to-soil">From Waste to Soil: What Compost Actually Is</a></li>
+                    <li><a href="#managing-your-pile">Putting It All Together: Managing Your Pile for Maximum Microbial Activity</a></li>
+                </ol>
+            </nav>
+
+            <!-- Intro -->
+            <div class="article-section-wide">
+                <p>Every compost pile is a living ecosystem. Beneath the surface, trillions of invisible organisms are working around the clock to transform your kitchen scraps and yard waste into one of nature's most powerful soil amendments. Understanding what happens inside that pile &mdash; or bin &mdash; gives you the knowledge to speed up decomposition, eliminate odors, and produce compost that will revolutionize your garden.</p>
+            </div>
+
+            <!-- Section 1 -->
+            <div class="article-section-wide" id="microbial-workforce">
+                <h2>The Microbial Workforce: Who Lives in Your Compost?</h2>
 
             <p>A single gram of finished compost contains more living organisms than there are people on Earth. This microbial community is organized into distinct groups, each with a specific role in the decomposition process. Think of it as a biological factory where every worker has a job description.</p>
 
@@ -83,8 +506,10 @@
             <h3>Archaea: The Deep Process Workers</h3>
 
             <p>Less famous but equally important are archaea, single-celled organisms distinct from bacteria. In composting, methanogenic archaea produce methane in anaerobic (oxygen-free) pockets within the pile. While methane is a greenhouse gas and represents inefficient decomposition, its presence tells you that your pile needs more aeration.</p>
-
-            <h2>The Four Phases of Composting: A Biological Timeline</h2>
+            </div>
+            <!-- Section 2 -->
+            <div class="article-section-wide" id="four-phases">
+                <h2>The Four Phases of Composting: A Biological Timeline</h2>
 
             <p>Composting is not a single event but a succession of biological phases. Each phase creates conditions that favor different organisms while eliminating others. Understanding this timeline helps you manage your pile for optimal results.</p>
 
@@ -130,14 +555,16 @@
             </ul>
 
             <p>Cured compost has a dark brown color, crumbly texture, and earthy smell. It should not feel warm to the touch and should not show signs of active decomposition.</p>
-
-            <h2>The Carbon-Nitrogen Balance: Fuel for Microbial Engines</h2>
+            </div>
+            <!-- Section 3 -->
+            <div class="article-section-wide" id="carbon-nitrogen-balance">
+                <h2>The Carbon-Nitrogen Balance: Fuel for Microbial Engines</h2>
 
             <p>Every microbe in your compost pile needs two things to survive: carbon for energy and structure, and nitrogen for protein synthesis. The ratio of these elements determines how fast or slow decomposition proceeds.</p>
 
             <p>The ideal Carbon-to-Nitrogen (C:N) ratio for composting is approximately 25:1 to 30:1 by weight. This means for every one part nitrogen, there should be 25 to 30 parts carbon in the pile.</p>
 
-            <table class="comparison-table">
+            <table class="info-table-wide">
                 <thead>
                     <tr>
                         <th>Material Type</th>
@@ -153,8 +580,10 @@
             </table>
 
             <p>If the C:N ratio is too low (too much nitrogen), excess ammonia gas escapes, creating a strong urine-like odor. If it is too high (too much carbon), decomposition slows dramatically because microbes lack sufficient nitrogen to build proteins and reproduce.</p>
-
-            <h2>Oxygen: The Invisible Ingredient</h2>
+            </div>
+            <!-- Section 4 -->
+            <div class="article-section-wide" id="oxygen">
+                <h2>Oxygen: The Invisible Ingredient</h2>
 
             <p>Aerobic decomposition (with oxygen) produces carbon dioxide, water, heat, and stable organic matter. Anaerobic decomposition (without oxygen) produces methane, hydrogen sulfide, organic acids, and ammonia &mdash; compounds that smell bad and represent a loss of valuable nutrients.</p>
 
@@ -165,16 +594,20 @@
                 <li><strong>Regular turning</strong>: Turning the pile introduces fresh oxygen and redistributes moisture and microbes throughout the mass.</li>
                 <li><strong>Proper volume</strong>: A pile smaller than 3 feet cubed loses heat too quickly. Larger piles retain heat better but require more frequent turning to prevent anaerobic zones from forming in the center.</li>
             </ul>
-
-            <h2>Moisture: The Medium of Life</h2>
+            </div>
+            <!-- Section 5 -->
+            <div class="article-section-wide" id="moisture">
+                <h2>Moisture: The Medium of Life</h2>
 
             <p>Microbes cannot function without water. All biochemical reactions occur in aqueous solution, and microbial cells must maintain a hydrated environment to survive. The ideal moisture content for composting is 40% to 60% by weight &mdash; roughly the consistency of a wrung-out sponge.</p>
 
             <p>Too dry: Microbial activity slows or stops entirely. Bacteria become dormant, and decomposition halts until moisture is restored.</p>
 
             <p>Too wet: Water fills pore spaces that should contain air, creating anaerobic conditions. The pile produces foul odors and may generate leachate (nutrient-rich liquid runoff) that carries away valuable nitrogen.</p>
-
-            <h2>From Waste to Soil: What Compost Actually Is</h2>
+            </div>
+            <!-- Section 6 -->
+            <div class="article-section-wide" id="from-waste-to-soil">
+                <h2>From Waste to Soil: What Compost Actually Is</h2>
 
             <p>Finished compost is not simply "decomposed waste." It is a complex, stable organic material called humus. Humus is formed through the polymerization of simple organic molecules into large, complex structures that resist further decomposition.</p>
 
@@ -187,8 +620,10 @@
                 <li><strong>pH buffering</strong>: Compost has a natural buffering capacity that helps stabilize soil pH, reducing the need for lime or sulfur amendments.</li>
                 <li><strong>Carbon sequestration</strong>: By converting atmospheric carbon (via plant growth) into stable soil organic matter, composting is one of the few agricultural practices that actively removes CO2 from the atmosphere and stores it in the ground.</li>
             </ul>
-
-            <h2>Putting It All Together: Managing Your Pile for Maximum Microbial Activity</h2>
+            </div>
+            <!-- Section 7 -->
+            <div class="article-section-wide" id="managing-your-pile">
+                <h2>Putting It All Together: Managing Your Pile for Maximum Microbial Activity</h2>
 
             <p>The science above translates directly into practical management decisions. Here is how to apply each principle:</p>
 
@@ -201,21 +636,20 @@
             </ol>
 
             <p>The next time you add kitchen scraps to a bin or toss leaves into a pile, remember that you are feeding an entire ecosystem. Every handful of compost contains more life than you can possibly imagine &mdash; and understanding that life is what separates successful composting from frustrated failure.</p>
-
-            <!-- CTA -->
-            <div class="cta">
-                Ready to put this science into practice? Explore our step-by-step checklists for every composting method, or browse our recommended gear to get started today.
-                <br><a href="/beginner.html">Start with the Beginner's Checklist &rarr;</a>
             </div>
 
-        </article>
+            <!-- CTA -->
+            <div class="callout-wide tip">
+                <p><strong>Next Steps:</strong> Ready to put this science into practice? Explore our step-by-step checklists for every composting method, or browse our recommended gear to get started today. <a href="beginner.html">Start with the Beginner's Checklist &rarr;</a></p>
+            </div>
 
-        <!-- Footer -->
-        <footer class="site-footer">
-            &copy; 2026 World Composting<br>
-            As an Amazon Associate, I earn from qualifying purchases.
-        </footer>
+        </main>
 
-    </div>
+    </div><!-- .page-wrapper -->
+
+    <!-- FOOTER: outside grid, spans full width -->
+    <footer class="footer-wide">
+        &copy; 2026 World Composting. All rights reserved.
+    </footer>
 </body>
 </html>

@@ -4,9 +4,11 @@
 **Branch:** `desktop-layout` (protects live `main`)  
 **Template:** `sample.html` (source of truth for desktop layout)
 
+> **STOP - do not act from this file.** This document is a reference only. Reading it is NOT an instruction to continue work. Wait until the user explicitly names which page or task to handle before running any commands, migrating pages, verifying, or committing.
+
 ---
 
-## What's Done (15 content pages migrated & committed on desktop-layout branch)
+## What's Done (17 content pages migrated & committed on desktop-layout branch)
 
 | Page | Commit | Notes |
 |------|--------|-------|
@@ -26,10 +28,11 @@
 | `zero-waste-kitchen.html` | `4c49470` + `6f2a910` | 7-item checklist in 2 phases, progress tracker (localStorage), gear loader (Paper category: 3 items), video section (2 real videos from `zero-waste-kitchen` key); sidebar active on "Zero Waste Kitchen" nav item; CSS byte-identical to tea.html style block; phase-wide card styling added in follow-up |
 | `gear.html` | `8f58774` | JS product listing (no checklist): 29 products in 8 categories, priority sort fixed (Worm Bin Items → Worm Bag → Fly Control → Bokashi Items → rest alphabetical), Tailwind CDN removed, site CSS classes; sidebar active on "View All Gear" nav item; verified clean console + all links real |
 | `glossary.html` | this session | 23 alphabetized terms in A–Z accordion (letter buttons toggle bodies). Custom `.glossary-*` CSS copied verbatim from mobile file into the grid page's style block. Sidebar active on "Glossary" nav item; verified: clean console, accordion works (A→B toggle tested), footer styled, back-link present |
+| `science-of-compost.html` | 8/28 | Pure article page (no JS/video): worm-composting pattern — sidebar + TOC + lead intro block + 7 `article-section-wide` sections; no active sidebar marker (page not in nav, hot.html precedent); verified: verify_page.py all PASS/SKIP, tag balance OK, JSON-LD Article parses, 7/7 TOC anchors resolve |
 
 ## 🎯 Current Focus (8/28)
 
-**Next page: `science-of-compost.html`** — deep-dive article (221 lines), closest to the worm/hot-composting template, so it's the natural next one. After that: remaining hot-* and worm-* deep-dives, then utility pages (`blog.html`, `troubleshoot.html`, `quick_links.html`).
+**Suggested next page (only if user asks): `hot-best-materials.html`** — first of the remaining hot-* deep-dives. After that: other hot-*/worm-* deep-dives, then utility pages (`blog.html`, `troubleshoot.html`, `quick_links.html`). Do not start any of these without an explicit user prompt naming the page.
 
 **Uncommitted changes to keep OUT of the next commit:**
 - `M bokashi.html` (duplicate empty `<script type="ld+json">` tag ~line 470)
@@ -41,10 +44,9 @@
 
 ---
 
-## Remaining Pages to Migrate (12 content pages)
+## Remaining Pages to Migrate (11 content pages)
 
 ### Deep-Dive Pages (medium priority)
-- `science-of-compost.html` — Science article (221 lines; was missing from this guide)
 - `hot-best-materials.html`
 - `hot-cn-ratio.html`
 - `hot-not-heating.html`
@@ -66,6 +68,8 @@
 ---
 
 ## Migration Process (Step-by-Step)
+
+Follow these steps only after the user has explicitly asked you to migrate a specific page.
 
 ### Step 1: Run migration script
 ```bash
@@ -120,7 +124,8 @@ grep -n '</main>\|</div><!-- .page-wrapper -->\|</html>' biochar.html
 # Should show exactly one of each, in order: </main>, </div>, </html>
 ```
 
-### Step 7: Commit
+### Step 7: Commit (ONLY after explicit user approval)
+Do not commit on your own initiative. Show the result, wait for the user to approve, then run:
 ```bash
 cd /mnt/h/Hermes/landing-page-fixed
 git add <filename>.html
@@ -195,11 +200,12 @@ git commit -m "Migrate <page>.html to desktop layout"
 
 ---
 
-## How to Resume
-1. Switch branch: `cd /mnt/h/Hermes/landing-page-fixed && git checkout desktop-layout`
-2. Status as of 8/28: **16 done / 12 remaining** (glossary.html completed this session). All pillar pages + gear migrated; next up `science-of-compost.html` then the other deep-dives, then utility pages (`blog`, `troubleshoot`, `quick_links`)
-3. Follow migration process (Steps 1-7)
-4. Reference this file for common bugs and fixes
+## Resume Context (reference only - do not act until prompted)
+This section describes the state of things so a new session can get oriented. It is NOT an instruction to start work. Wait for the user to say which page or task to handle first.
+
+- Working branch: `desktop-layout` in `/mnt/h/Hermes/landing-page-fixed` (switch only when the user asks)
+- Status as of 8/28: **17 done / 11 remaining** (glossary.html + science-of-compost.html completed). All pillar pages + gear migrated; suggested order was the hot-*/worm-* deep-dives, then utility pages (`blog`, `troubleshoot`, `quick_links`)
+- When the user does prompt work: follow migration process (Steps 1-7) and reference this file for common bugs and fixes
 
 **Page-type notes:**
 - **Checklist pages** (tea/lasagna/sustainability/zero-waste-kitchen pattern): phases + progress tracker + gear loader + video section; use `phase phase-wide` on every phase div
