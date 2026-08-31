@@ -8,7 +8,7 @@
 
 ---
 
-## What's Done (19 content pages migrated; hot-best-materials.html + hot-cn-ratio.html pending commit approval)
+## What's Done (20 content pages migrated)
 
 | Page | Commit | Notes |
 |------|--------|-------|
@@ -31,10 +31,11 @@
 | `science-of-compost.html` | 8/28 | Pure article page (no JS/video): worm-composting pattern — sidebar + TOC + lead intro block + 7 `article-section-wide` sections; no active sidebar marker (page not in nav, hot.html precedent); verified: verify_page.py all PASS/SKIP, tag balance OK, JSON-LD Article parses, 7/7 TOC anchors resolve |
 | `hot-best-materials.html` | this session | Short article page (4 sections): worm-composting pattern — back-link-wide + pillar-hero-wide (H1 + subtitle) + TOC (4 anchors, all verified resolving) + 4 `article-section-wide` sections; C:N table restyled to `info-table-wide`; "Materials to Avoid" checklist converted to plain `<ul>` (no JS on page); CTA wrapped in `callout-wide tip`; video container kept inside main (`best-materials` key renders 1 real video: Hot Composting 101, takeaways present); no active sidebar marker (page not in nav); verified: clean console, sidebar byte-identical to index.html (whitespace-normalized), tag balance OK |
 | `hot-cn-ratio.html` | this session | Article page (intro + 7 sections): worm-composting pattern — back-link-wide + pillar-hero-wide + TOC (7 anchors, all verified resolving) + intro block + 7 `article-section-wide` sections; 3 tables restyled to `info-table-wide`; "How to Calculate" dead-checkbox checklist converted to plain `<ol>`; CTA wrapped in `callout-wide tip` linking hot-composting.html; video container kept inside main (`cn-ratio` key renders 1 real video: It's Getting HOT! 3-Day Pre-Compost Update, takeaways present); no active sidebar marker (page not in nav); verified: clean console, tag balance OK, all TOC anchors resolve |
+| `troubleshoot.html` | this session | Checklist page (tea.html pattern): 5 phases x 6 items = 30 checkboxes (localStorage prefix `trouble_`), progress tracker, hero-intro-wide intro block; gear loader (13 items: Worm Bin Items + Fly Control + Water Gear); no video section (no `troubleshoot` key in videos.json and mobile original had none — faithful to source); HowTo JSON-LD schema preserved (7 steps, parses clean); sidebar active on "Troubleshooting" nav item; verified: verify_page.py all PASS/SKIP, clean console (0 errors), checkbox click updates progress + localStorage round-trip works, accordion toggles work, gear renders 13 items |
 
 ## 🎯 Current Focus (8/31)
 
-**Suggested next page (only if user asks): `hot-not-heating.html`** — third of the hot-* deep-dives. After that: remaining worm-* deep-dives, then utility pages (`blog.html`, `troubleshoot.html`, `quick_links.html`). Do not start any of these without an explicit user prompt naming the page.
+**Suggested next page (only if user asks): `hot-not-heating.html`** — third of the hot-* deep-dives. After that: remaining worm-* deep-dives, then utility pages (`blog.html`, `quick_links.html`). Do not start any of these without an explicit user prompt naming the page.
 
 **Uncommitted changes to keep OUT of the next commit:**
 - `M bokashi.html` (duplicate empty `<script type="ld+json">` tag ~line 470)
@@ -46,7 +47,7 @@
 
 ---
 
-## Remaining Pages to Migrate (9 content pages)
+## Remaining Pages to Migrate (8 content pages)
 
 ### Deep-Dive Pages (medium priority)
 - `hot-not-heating.html`
@@ -58,10 +59,9 @@
 
 ### Utility Pages (lower priority)
 - `blog.html` — Blog listing with JSON data loader
-- `troubleshoot.html` — Diagnostic guide
 - `quick_links.html` — Official links page (228 lines, small)
 
-**Done 8/31:** `hot-best-materials.html` + `hot-cn-ratio.html` ✓ (moved to Completed table above)
+**Done 8/31:** `hot-best-materials.html`, `hot-cn-ratio.html`, `troubleshoot.html` ✓ (moved to Completed table above)
 
 **Not migration targets:** `sitemap.html`, `google8a4b2c3d1e5f6789.html` (verification file), `sample.html` (template stub)
 
@@ -204,7 +204,7 @@ git commit -m "Migrate <page>.html to desktop layout"
 This section describes the state of things so a new session can get oriented. It is NOT an instruction to start work. Wait for the user to say which page or task to handle first.
 
 - Working branch: `desktop-layout` in `/mnt/h/Hermes/landing-page-fixed` (switch only when the user asks)
-- Status as of 8/31: **19 done / 9 remaining** (hot-best-materials.html + hot-cn-ratio.html completed). All pillar pages + gear migrated; suggested order was the hot-*/worm-* deep-dives, then utility pages (`blog`, `troubleshoot`, `quick_links`)
+- Status as of 8/31: **20 done / 8 remaining** (troubleshoot.html completed). All pillar pages + gear migrated; suggested order was the hot-*/worm-* deep-dives, then utility pages (`blog`, `quick_links`)
 - When the user does prompt work: follow migration process (Steps 1-7) and reference this file for common bugs and fixes
 
 **Page-type notes:**
