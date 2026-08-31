@@ -1,92 +1,544 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>How to Harvest Worm Castings: Step-by-Step Guide | World Composting</title>
-  <meta name="description" content="Learn how to harvest worm castings from your vermicomposting bin using the migration method, screen method, or tray method. Get nutrient-rich black gold for your garden.">
-  <link rel="stylesheet" href="src/styles/theme.css">
-  <link rel="stylesheet" href="src/styles/article.css">
-  <link rel="stylesheet" href="src/styles/video-section.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Harvest Worm Castings: Step-by-Step Guide | World Composting</title>
+    <meta name="description" content="Learn how to harvest worm castings from your vermicomposting bin using the migration method, screen method, or tray method. Get nutrient-rich black gold for your garden.">
+    <!-- Google Search Console Verification -->
+    <meta name="google-site-verification" content="google8a4b2c3d1e5f6789">
+    <link rel="stylesheet" href="src/styles/theme.css">
+    <link rel="stylesheet" href="src/styles/video-section.css">
+<style>
+        /* ===== WIDE LAYOUT OVERRIDES (supersedes theme.css #app) ===== */
+
+        .page-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 3rem;
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 2.5rem;
+            align-items: start;
+        }
+
+        /* ===== SIDEBAR NAVIGATION ===== */
+        .sidebar {
+            position: sticky;
+            top: 2rem;
+            background: white;
+            border-radius: 16px;
+            box-shadow: var(--card-shadow);
+            padding: 1.5rem;
+            max-height: calc(100vh - 4rem);
+            overflow-y: auto;
+        }
+
+        .sidebar-logo {
+            text-align: center;
+            margin-bottom: 1.25rem;
+        }
+
+        .sidebar-logo img {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--sage-green);
+        }
+
+        .sidebar-logo h2 {
+            font-family: 'Lora', serif;
+            color: var(--forest-green);
+            font-size: 1.1rem;
+            margin-top: 0.5rem;
+        }
+
+        .sidebar-nav {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar-nav li {
+            margin-bottom: 0.25rem;
+        }
+
+        .sidebar-nav a {
+            display: block;
+            padding: 0.6rem 0.85rem;
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--text-dark);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: background 0.15s, color 0.15s;
+        }
+
+        .sidebar-nav a:hover {
+            background: var(--off-white);
+            color: var(--forest-green);
+        }
+
+        .sidebar-nav a.active {
+            background: var(--forest-green);
+            color: white;
+            font-weight: 600;
+        }
+
+        .sidebar-divider {
+            height: 1px;
+            background: rgba(45,90,39,0.12);
+            margin: 1rem 0;
+        }
+
+        .sidebar-section-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-dark);
+            opacity: 0.5;
+            padding: 0.25rem 0.85rem;
+            margin-bottom: 0.25rem;
+        }
+
+        /* ===== MAIN CONTENT AREA ===== */
+        .main-content {
+            min-width: 0;
+        }
+
+        /* Back link: wider */
+        .back-link-wide {
+            display: inline-block;
+            font-size: 0.85rem;
+            color: var(--ocean-blue);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            transition: opacity 0.2s;
+        }
+
+        .back-link-wide:hover { opacity: 0.7; }
+        .back-link-wide:focus-visible {
+            outline: 2px solid var(--ocean-blue);
+            outline-offset: 2px;
+            border-radius: 2px;
+        }
+
+        /* Pillar hero: wider */
+        .pillar-hero-wide {
+            background: white;
+            border-radius: 16px;
+            padding: 2.5rem 3rem;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 2rem;
+        }
+
+        .pillar-hero-wide h1 {
+            font-family: 'Lora', serif;
+            color: var(--forest-green);
+            font-size: 2.4rem;
+            line-height: 1.3;
+            margin-top: 0;
+            text-align: center;
+        }
+
+        .pillar-hero-wide p.subtitle {
+            text-align: center;
+            font-style: italic;
+            color: var(--ocean-blue);
+            font-size: 1.1rem;
+            margin-bottom: 0;
+        }
+
+        /* Table of Contents: wider */
+        #toc-wide {
+            background: white;
+            border-radius: 16px;
+            padding: 1.5rem 2rem;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 2rem;
+        }
+
+        #toc-wide h2 {
+            font-size: 1.1rem;
+            color: var(--forest-green);
+            margin-top: 0;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        #toc-wide ol {
+            padding-left: 1.2rem;
+            margin: 0;
+        }
+
+        #toc-wide li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+
+        #toc-wide a {
+            color: var(--ocean-blue);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        #toc-wide a:hover { color: var(--forest-green); text-decoration: underline; }
+
+        /* Article Sections: wider */
+        .article-section-wide {
+            background: white;
+            border-radius: 16px;
+            padding: 2.5rem 3rem;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .article-section-wide h2 {
+            font-family: 'Lora', serif;
+            color: var(--forest-green);
+            font-size: 1.6rem;
+            margin-top: 0;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--sage-green);
+        }
+
+        .article-section-wide h3 {
+            font-family: 'Lora', serif;
+            color: var(--ocean-blue);
+            font-size: 1.25rem;
+            margin-top: 1.8rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .article-section-wide p {
+            color: var(--text-dark);
+            font-size: 1rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .article-section-wide ul, .article-section-wide ol {
+            padding-left: 1.5rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .article-section-wide li {
+            margin-bottom: 0.6rem;
+            line-height: 1.7;
+        }
+
+        .article-section-wide strong { color: var(--forest-green); }
+
+        /* Callout Boxes: wider */
+        .callout-wide {
+            background: var(--sage-green);
+            border-left: 4px solid var(--forest-green);
+            padding: 1rem 1.25rem;
+            border-radius: 0 8px 8px 0;
+            margin: 1.5rem 0;
+        }
+
+        .callout-wide.warning {
+            background: #fff3cd;
+            border-left-color: #856404;
+        }
+
+        .callout-wide.tip {
+            background: #d1ecf1;
+            border-left-color: var(--ocean-blue);
+        }
+
+        .callout-wide p { margin-bottom: 0; }
+
+        /* Info Tables: wider */
+        .info-table-wide {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.92rem;
+        }
+
+        .info-table-wide th, .info-table-wide td {
+            padding: 0.75rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--sage-green);
+        }
+
+        .info-table-wide th {
+            background: var(--forest-green);
+            color: white;
+            font-weight: 600;
+        }
+
+        .info-table-wide tr:nth-child(even) td { background: #f8f9fa; }
+
+        /* Related Pages: wider */
+        .related-pages-wide {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .related-card-wide {
+            background: white;
+            border-radius: 16px;
+            padding: 1.25rem;
+            box-shadow: var(--card-shadow);
+            text-align: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .related-card-wide:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 32px -8px rgba(75, 54, 33, 0.15);
+        }
+
+        .related-card-wide a {
+            text-decoration: none;
+            color: var(--forest-green);
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .related-card-wide p {
+            margin-top: 0.5rem;
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        /* ===== RESPONSIVE BREAKPOINTS ===== */
+        @media (max-width: 1024px) {
+            .page-wrapper {
+                grid-template-columns: 1fr;
+                padding: 1.5rem 2rem;
+            }
+
+            .sidebar {
+                position: static;
+                max-height: none;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 1rem;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .sidebar-nav {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.25rem;
+            }
+
+            .sidebar-section-label {
+                width: 100%;
+                text-align: left;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .page-wrapper {
+                padding: 1rem;
+            }
+
+            .pillar-hero-wide h1 { font-size: 1.8rem; }
+            .article-section-wide { padding: 1.25rem; }
+            .article-section-wide h2 { font-size: 1.35rem; }
+            #toc-wide { padding: 1.25rem; }
+        }
+
+        /* ===== FOOTER OVERRIDES: fix body flex centering from theme.css ===== */
+        footer.footer-wide {
+            display: block !important;
+            text-align: center;
+            padding: 2rem 3rem;
+            opacity: 0.7;
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(45,90,39,0.15);
+            margin-top: 2rem;
+        }
+
+        /* Override body flex centering for desktop layout */
+        body {
+            display: block !important;
+            justify-content: normal !important;
+            align-items: normal !important;
+        }
+    </style>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KRHYVJXZLE"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-KRHYVJXZLE');
+    </script>
 </head>
 <body>
-  <header class="site-header">
-    <a href="/" class="home-link"><img src="src/assets/logo.png" alt="World Composting Home" width="110" height="110" loading="lazy"></a>
-    <h1>How to Harvest Worm Castings: Step-by-Step Guide</h1>
-  </header>
+    <div class="page-wrapper">
 
-  <main class="container">
-    <nav class="breadcrumb"><a href="/">Home</a> &rsaquo; <a href="worm-composting.html">Worm Composting Guide</a> &rsaquo; Harvesting Castings</nav>
+        <!-- ===== SIDEBAR NAVIGATION ===== -->
+        <aside class="sidebar">
+            <div class="sidebar-logo">
+                            <img src="src/assets/logo.png" alt="World Composting Logo" width="64" height="64" loading="lazy" onerror="this.src='https://via.placeholder.com/64?text=WC'">
+                            <h2>World Composting</h2>
+                        </div>
 
-    <article class="content-card">
-      <p class="lead">Harvesting worm castings is the rewarding payoff of your vermicomposting efforts. These dark, crumbly castings are one of the most nutrient-rich organic amendments available for gardens and houseplants. Learning to harvest them efficiently without harming your worms ensures a continuous supply of this gardening superfood.</p>
+            <ul class="sidebar-nav">
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="start-here.html">Start Here</a></li>
+                                <li><a href="about.html">About</a></li>
+                
+                                <div class="sidebar-divider"></div>
+                                <li class="sidebar-section-label">Guides</li>
+                
+                                <li><a href="worm-composting.html">Worm Composting</a></li>
+                                <li><a href="hot-composting.html">Hot Composting</a></li>
+                
+                                <div class="sidebar-divider"></div>
+                                <li class="sidebar-section-label">Checklists</li>
+                
+                                <li><a href="beginner.html">Beginner's Checklist</a></li>
+                                <li><a href="bokashi.html">Bokashi Composting</a></li>
+                                <li><a href="biochar.html">BioChar Composting</a></li>
+                                <li><a href="tumbler.html">Tumbler Composting</a></li>
+                                <li><a href="tea.html">Compost Tea</a></li>
+                                <li><a href="lasagna.html">Lasagna Composting</a></li>
+                                <li><a href="sustainability.html">Sustainability Journey</a></li>
+                                <li><a href="zero-waste-kitchen.html">Zero Waste Kitchen</a></li>
+                
+                                <div class="sidebar-divider"></div>
+                                <li class="sidebar-section-label">Resources</li>
+                
+                                <li><a href="glossary.html">Glossary</a></li>
+                                <li><a href="troubleshoot.html">Troubleshooting</a></li>
+                                <li><a href="blog.html">Blog</a></li>
+                                <li><a href="sitemap.html">Sitemap</a></li>
+                
+                                <div class="sidebar-divider"></div>
+                                <li class="sidebar-section-label">Gear</li>
+                
+                                <li><a href="gear.html">View All Gear →</a></li>
+                            </ul>
+        </aside>
 
-      <h2>When to Harvest</h2>
-      <p>You should harvest worm castings every three to six months, depending on how actively your colony is working. Signs that it is time to harvest include: the bedding has turned dark and crumbly, very few worms remain in the upper layers of the bin, and new food scraps are no longer being consumed within a day or two.</p>
+        <!-- ===== MAIN CONTENT AREA ===== -->
+                <!-- ===== MAIN CONTENT ===== -->
+        <main class="main-content">
 
-      <h2>Method 1: The Migration Method (Recommended)</h2>
-      <p>The migration method uses worms' natural tendency to move away from light and toward fresh food. It is gentle on your colony and requires minimal equipment:</p>
-      <ol class="checklist">
-        <li data-phase="1"><input type="checkbox" id="mig-1"><label for="mig-1">Stop feeding the bin for one week to encourage worms to move deeper</label></li>
-        <li data-phase="2"><input type="checkbox" id="mig-2"><label for="mig-2">Push all existing bedding and castings to one side of the bin</label></li>
-        <li data-phase="3"><input type="checkbox" id="mig-3"><label for="mig-3">Add fresh, clean bedding to the empty half of the bin</label></li>
-        <li data-phase="4"><input type="checkbox" id="mig-4"><label for="mig-4">Place new food scraps on top of the fresh bedding in the empty side</label></li>
-        <li data-phase="5"><input type="checkbox" id="mig-5"><label for="mig-5">Cover the bin and place a bright light above it (worms avoid light)</label></li>
-        <li data-phase="6"><input type="checkbox" id="mig-6"><label for="mig-6">After one to two weeks, most worms will have migrated to the new side</label></li>
-        <li data-phase="7"><input type="checkbox" id="mig-7"><label for="mig-7">Remove and sift the castings from the original side</label></li>
-      </ol>
+            <a href="/" class="back-link-wide">&#8592; Back to Home</a>
 
-      <h2>Method 2: The Screen or Sieve Method</h2>
-      <p>If you prefer a quicker harvest, using a mesh screen works well. Place a coarse hardware cloth or worm screen over a bucket and dump your bin contents on top. Gently sift through the material with your hands. Castings fall through while larger undigested pieces and worms remain on top.</p>
-      <p>Return any worms found to the bin, and use the undigested scraps as fresh bedding or in an outdoor compost pile. The fine castings collected below are ready for immediate garden use.</p>
+            <!-- Hero Section -->
+            <div class="pillar-hero-wide">
+                <h1>How to Harvest Worm Castings: Step-by-Step Guide</h1>
+                <p class="subtitle">Learn how to harvest worm castings from your vermicomposting bin using the migration method, screen method, or tray method. Get nutrient-rich black gold for your garden.</p>
+            </div>
 
-      <h2>Method 3: The Tray Method</h2>
-      <p>This method is ideal for multi-tier worm bins with removable trays. Simply place a new tray on top of the active bin and add fresh bedding and food scraps. Over several weeks, worms will naturally migrate upward into the new tray. Once most worms have moved up, remove the bottom tray filled with finished castings.</p>
+            <!-- Table of Contents -->
+            <nav id="toc-wide" aria-label="Table of contents">
+                <h2>In This Guide</h2>
+                <ol>
+                    <li><a href="#when-to-harvest">When to Harvest</a></li>
+                    <li><a href="#method-1-the-migration-method-recommended">Method 1: The Migration Method (Recommended)</a></li>
+                    <li><a href="#method-2-the-screen-or-sieve-method">Method 2: The Screen or Sieve Method</a></li>
+                    <li><a href="#method-3-the-tray-method">Method 3: The Tray Method</a></li>
+                    <li><a href="#using-your-worm-castings">Using Your Worm Castings</a></li>
+                    <li><a href="#storing-excess-castings">Storing Excess Castings</a></li>
+                    <li><a href="#quick-reference-harvesting-timeline">Quick Reference: Harvesting Timeline</a></li>
+                </ol>
+            </nav>
 
-      <h2>Using Your Worm Castings</h2>
-      <table class="comparison-table">
-        <thead><tr><th>Application</th><th>Ratio</th><th>Notes</th></tr></thead>
-        <tbody>
-          <tr><td>Garden soil amendment</td><td>10-25% by volume</td><td>Mix into topsoil before planting</td></tr>
-          <tr><td>Potting mix additive</td><td>10-20% by volume</td><td>Blend with existing potting soil</td></tr>
-          <tr><td>Casting tea fertilizer</td><td>1 cup per gallon water</td><td>Steep 24 hours, strain, and water plants</td></tr>
-          <tr><td>Top dressing for houseplants</td><td>1-2 inch layer on soil surface</td><td>Water normally after application</td></tr>
-        </tbody>
-      </table>
+            <!-- Intro -->
+            <div class="article-section-wide">
+                <p>Harvesting worm castings is the rewarding payoff of your vermicomposting efforts. These dark, crumbly castings are one of the most nutrient-rich organic amendments available for gardens and houseplants. Learning to harvest them efficiently without harming your worms ensures a continuous supply of this gardening superfood.</p>
+            </div>
 
-      <h2>Storing Excess Castings</h2>
-      <p>If you harvest more castings than you can use immediately, store them in a sealed container or bucket with a lid. Keep the stored castings slightly moist (not wet) and in a cool, dark place. Properly stored worm castings remain viable for up to six months.</p>
+            <div class="article-section-wide" id="when-to-harvest">
+                <h2>When to Harvest</h2>
+                <p>You should harvest worm castings every three to six months, depending on how actively your colony is working. Signs that it is time to harvest include: the bedding has turned dark and crumbly, very few worms remain in the upper layers of the bin, and new food scraps are no longer being consumed within a day or two.</p>
+            </div>
+            <div class="article-section-wide" id="method-1-the-migration-method-recommended">
+                <h2>Method 1: The Migration Method (Recommended)</h2>
+                <p>The migration method uses worms' natural tendency to move away from light and toward fresh food. It is gentle on your colony and requires minimal equipment:</p>
 
-      <h2>Quick Reference: Harvesting Timeline</h2>
-      <ol class="checklist">
-        <li data-phase="1"><input type="checkbox" id="harv-1"><label for="harv-1">Week 1: Stop feeding, push old material to one side</label></li>
-        <li data-phase="2"><input type="checkbox" id="harv-2"><label for="harv-2">Week 2: Add fresh bedding and food to empty side</label></li>
-        <li data-phase="3"><input type="checkbox" id="harv-3"><label for="harv-3">Week 3: Check migration progress, apply light if needed</label></li>
-        <li data-phase="4"><input type="checkbox" id="harv-4"><label for="harv-4">Week 4: Harvest castings from migrated side</label></li>
-      </ol>
+                <ol>
+                    <li>Stop feeding the bin for one week to encourage worms to move deeper</li>
+                    <li>Push all existing bedding and castings to one side of the bin</li>
+                    <li>Add fresh, clean bedding to the empty half of the bin</li>
+                    <li>Place new food scraps on top of the fresh bedding in the empty side</li>
+                    <li>Cover the bin and place a bright light above it (worms avoid light)</li>
+                    <li>After one to two weeks, most worms will have migrated to the new side</li>
+                    <li>Remove and sift the castings from the original side</li>
+                </ol>
+            </div>
+            <div class="article-section-wide" id="method-2-the-screen-or-sieve-method">
+                <h2>Method 2: The Screen or Sieve Method</h2>
+                <p>If you prefer a quicker harvest, using a mesh screen works well. Place a coarse hardware cloth or worm screen over a bucket and dump your bin contents on top. Gently sift through the material with your hands. Castings fall through while larger undigested pieces and worms remain on top.</p>
 
-      <p class="cta">For more advanced worm bin techniques, read our full <a href="worm-composting.html">Worm Composting Guide</a>.</p>
-    </article>
-  </main>
+                <p>Return any worms found to the bin, and use the undigested scraps as fresh bedding or in an outdoor compost pile. The fine castings collected below are ready for immediate garden use.</p>
+            </div>
+            <div class="article-section-wide" id="method-3-the-tray-method">
+                <h2>Method 3: The Tray Method</h2>
+                <p>This method is ideal for multi-tier worm bins with removable trays. Simply place a new tray on top of the active bin and add fresh bedding and food scraps. Over several weeks, worms will naturally migrate upward into the new tray. Once most worms have moved up, remove the bottom tray filled with finished castings.</p>
+            </div>
+            <div class="article-section-wide" id="using-your-worm-castings">
+                <h2>Using Your Worm Castings</h2>
+                <table class="info-table-wide">
+                    <thead><tr><th>Application</th><th>Ratio</th><th>Notes</th></tr></thead>
+                    <tbody>
+                        <tr><td>Garden soil amendment</td><td>10-25% by volume</td><td>Mix into topsoil before planting</td></tr>
+                        <tr><td>Potting mix additive</td><td>10-20% by volume</td><td>Blend with existing potting soil</td></tr>
+                        <tr><td>Casting tea fertilizer</td><td>1 cup per gallon water</td><td>Steep 24 hours, strain, and water plants</td></tr>
+                        <tr><td>Top dressing for houseplants</td><td>1-2 inch layer on soil surface</td><td>Water normally after application</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="article-section-wide" id="storing-excess-castings">
+                <h2>Storing Excess Castings</h2>
+                <p>If you harvest more castings than you can use immediately, store them in a sealed container or bucket with a lid. Keep the stored castings slightly moist (not wet) and in a cool, dark place. Properly stored worm castings remain viable for up to six months.</p>
+            </div>
+            <div class="article-section-wide" id="quick-reference-harvesting-timeline">
+                <h2>Quick Reference: Harvesting Timeline</h2>
+                <ol>
+                    <li>Week 1: Stop feeding, push old material to one side</li>
+                    <li>Week 2: Add fresh bedding and food to empty side</li>
+                    <li>Week 3: Check migration progress, apply light if needed</li>
+                    <li>Week 4: Harvest castings from migrated side</li>
+                </ol>
 
-  <div id="video-container-worm-harvesting"></div>
+                <div class="callout-wide tip">
+                    <p><strong>More Help:</strong> For more advanced worm bin techniques, read our full <a href="worm-composting.html">Worm Composting Guide</a>.</p>
+                </div>
+            </div>
 
-  <!-- Footer -->
-  <footer class="site-footer">
-    <p>&copy; 2026 World Composting. All rights reserved.</p>
-  </footer>
+            <!-- Video Section -->
+            <div id="video-container-worm-harvesting"></div>
 
-  <!-- Video Section Loader -->
-  <script>
-    (async function() {
-      await new Promise(function(resolve) {
-        var s = document.createElement('script');
-        s.src = 'src/js/video-renderer.js?v=8';
-        s.onload = resolve;
-        document.head.appendChild(s);
-      });
-      window.renderVideoSection('video-container-worm-harvesting', 'harvesting');
-    })();
-  </script>
+        </main>
+    </div><!-- .page-wrapper -->
+
+    <!-- FOOTER: outside grid, spans full width -->
+    <footer class="footer-wide">
+        &copy; 2026 World Composting. All rights reserved.
+    </footer>
+
+    <!-- Video Section Loader -->
+    <script>
+        (async function() {
+            await new Promise(function(resolve) {
+                var s = document.createElement('script');
+                s.src = 'src/js/video-renderer.js?v=10';
+                s.onload = resolve;
+                document.head.appendChild(s);
+            });
+            if (window.renderVideoSection) {
+                window.renderVideoSection('video-container-worm-harvesting', 'harvesting');
+            }
+        })();
+    </script>
 </body>
 </html>
