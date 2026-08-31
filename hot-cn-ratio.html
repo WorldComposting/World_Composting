@@ -1,104 +1,567 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>C:N Ratio Guide for Hot Composting | World Composting</title>
-  <meta name="description" content="Master the carbon to nitrogen ratio for hot composting. Learn how to balance greens and browns using this comprehensive C:N reference table and practical mixing guide.">
-  <link rel="stylesheet" href="src/styles/theme.css">
-  <link rel="stylesheet" href="src/styles/article.css">
-  <link rel="stylesheet" href="src/styles/video-section.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C:N Ratio Guide for Hot Composting | World Composting</title>
+    <meta name="description" content="Master the carbon to nitrogen ratio for hot composting. Learn how to balance greens and browns using this comprehensive C:N reference table and practical mixing guide.">
+    <!-- Google Search Console Verification -->
+    <meta name="google-site-verification" content="google8a4b2c3d1e5f6789">
+    <link rel="stylesheet" href="src/styles/theme.css">
+    <link rel="stylesheet" href="src/styles/video-section.css">
+<style>
+        /* ===== WIDE LAYOUT OVERRIDES (supersedes theme.css #app) ===== */
+
+        .page-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 3rem;
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 2.5rem;
+            align-items: start;
+        }
+
+        /* ===== SIDEBAR NAVIGATION ===== */
+        .sidebar {
+            position: sticky;
+            top: 2rem;
+            background: white;
+            border-radius: 16px;
+            box-shadow: var(--card-shadow);
+            padding: 1.5rem;
+            max-height: calc(100vh - 4rem);
+            overflow-y: auto;
+        }
+
+        .sidebar-logo {
+            text-align: center;
+            margin-bottom: 1.25rem;
+        }
+
+        .sidebar-logo img {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--sage-green);
+        }
+
+        .sidebar-logo h2 {
+            font-family: 'Lora', serif;
+            color: var(--forest-green);
+            font-size: 1.1rem;
+            margin-top: 0.5rem;
+        }
+
+        .sidebar-nav {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar-nav li {
+            margin-bottom: 0.25rem;
+        }
+
+        .sidebar-nav a {
+            display: block;
+            padding: 0.6rem 0.85rem;
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--text-dark);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: background 0.15s, color 0.15s;
+        }
+
+        .sidebar-nav a:hover {
+            background: var(--off-white);
+            color: var(--forest-green);
+        }
+
+        .sidebar-nav a.active {
+            background: var(--forest-green);
+            color: white;
+            font-weight: 600;
+        }
+
+        .sidebar-divider {
+            height: 1px;
+            background: rgba(45,90,39,0.12);
+            margin: 1rem 0;
+        }
+
+        .sidebar-section-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-dark);
+            opacity: 0.5;
+            padding: 0.25rem 0.85rem;
+            margin-bottom: 0.25rem;
+        }
+
+        /* ===== MAIN CONTENT AREA ===== */
+        .main-content {
+            min-width: 0;
+        }
+
+        /* Back link: wider */
+        .back-link-wide {
+            display: inline-block;
+            font-size: 0.85rem;
+            color: var(--ocean-blue);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            transition: opacity 0.2s;
+        }
+
+        .back-link-wide:hover { opacity: 0.7; }
+        .back-link-wide:focus-visible {
+            outline: 2px solid var(--ocean-blue);
+            outline-offset: 2px;
+            border-radius: 2px;
+        }
+
+        /* Pillar hero: wider */
+        .pillar-hero-wide {
+            background: white;
+            border-radius: 16px;
+            padding: 2.5rem 3rem;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 2rem;
+        }
+
+        .pillar-hero-wide h1 {
+            font-family: 'Lora', serif;
+            color: var(--forest-green);
+            font-size: 2.4rem;
+            line-height: 1.3;
+            margin-top: 0;
+            text-align: center;
+        }
+
+        .pillar-hero-wide p.subtitle {
+            text-align: center;
+            font-style: italic;
+            color: var(--ocean-blue);
+            font-size: 1.1rem;
+            margin-bottom: 0;
+        }
+
+        /* Table of Contents: wider */
+        #toc-wide {
+            background: white;
+            border-radius: 16px;
+            padding: 1.5rem 2rem;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 2rem;
+        }
+
+        #toc-wide h2 {
+            font-size: 1.1rem;
+            color: var(--forest-green);
+            margin-top: 0;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        #toc-wide ol {
+            padding-left: 1.2rem;
+            margin: 0;
+        }
+
+        #toc-wide li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+
+        #toc-wide a {
+            color: var(--ocean-blue);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        #toc-wide a:hover { color: var(--forest-green); text-decoration: underline; }
+
+        /* Article Sections: wider */
+        .article-section-wide {
+            background: white;
+            border-radius: 16px;
+            padding: 2.5rem 3rem;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .article-section-wide h2 {
+            font-family: 'Lora', serif;
+            color: var(--forest-green);
+            font-size: 1.6rem;
+            margin-top: 0;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--sage-green);
+        }
+
+        .article-section-wide h3 {
+            font-family: 'Lora', serif;
+            color: var(--ocean-blue);
+            font-size: 1.25rem;
+            margin-top: 1.8rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .article-section-wide p {
+            color: var(--text-dark);
+            font-size: 1rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .article-section-wide ul, .article-section-wide ol {
+            padding-left: 1.5rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .article-section-wide li {
+            margin-bottom: 0.6rem;
+            line-height: 1.7;
+        }
+
+        .article-section-wide strong { color: var(--forest-green); }
+
+        /* Callout Boxes: wider */
+        .callout-wide {
+            background: var(--sage-green);
+            border-left: 4px solid var(--forest-green);
+            padding: 1rem 1.25rem;
+            border-radius: 0 8px 8px 0;
+            margin: 1.5rem 0;
+        }
+
+        .callout-wide.warning {
+            background: #fff3cd;
+            border-left-color: #856404;
+        }
+
+        .callout-wide.tip {
+            background: #d1ecf1;
+            border-left-color: var(--ocean-blue);
+        }
+
+        .callout-wide p { margin-bottom: 0; }
+
+        /* Info Tables: wider */
+        .info-table-wide {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.92rem;
+        }
+
+        .info-table-wide th, .info-table-wide td {
+            padding: 0.75rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--sage-green);
+        }
+
+        .info-table-wide th {
+            background: var(--forest-green);
+            color: white;
+            font-weight: 600;
+        }
+
+        .info-table-wide tr:nth-child(even) td { background: #f8f9fa; }
+
+        /* Related Pages: wider */
+        .related-pages-wide {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .related-card-wide {
+            background: white;
+            border-radius: 16px;
+            padding: 1.25rem;
+            box-shadow: var(--card-shadow);
+            text-align: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .related-card-wide:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 32px -8px rgba(75, 54, 33, 0.15);
+        }
+
+        .related-card-wide a {
+            text-decoration: none;
+            color: var(--forest-green);
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .related-card-wide p {
+            margin-top: 0.5rem;
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        /* ===== RESPONSIVE BREAKPOINTS ===== */
+        @media (max-width: 1024px) {
+            .page-wrapper {
+                grid-template-columns: 1fr;
+                padding: 1.5rem 2rem;
+            }
+
+            .sidebar {
+                position: static;
+                max-height: none;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 1rem;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .sidebar-nav {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.25rem;
+            }
+
+            .sidebar-section-label {
+                width: 100%;
+                text-align: left;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .page-wrapper {
+                padding: 1rem;
+            }
+
+            .pillar-hero-wide h1 { font-size: 1.8rem; }
+            .article-section-wide { padding: 1.25rem; }
+            .article-section-wide h2 { font-size: 1.35rem; }
+            #toc-wide { padding: 1.25rem; }
+        }
+
+        /* ===== FOOTER OVERRIDES: fix body flex centering from theme.css ===== */
+        footer.footer-wide {
+            display: block !important;
+            text-align: center;
+            padding: 2rem 3rem;
+            opacity: 0.7;
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(45,90,39,0.15);
+            margin-top: 2rem;
+        }
+
+        /* Override body flex centering for desktop layout */
+        body {
+            display: block !important;
+            justify-content: normal !important;
+            align-items: normal !important;
+        }
+    </style>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KRHYVJXZLE"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-KRHYVJXZLE');
+    </script>
 </head>
 <body>
-  <header class="site-header">
-    <a href="/" class="home-link"><img src="src/assets/logo.png" alt="World Composting Home" width="110" height="110" loading="lazy"></a>
-    <h1>C:N Ratio Guide for Hot Composting</h1>
-  </header>
+    <div class="page-wrapper">
 
-  <main class="container">
-    <nav class="breadcrumb"><a href="/">Home</a> &rsaquo; <a href="hot-composting.html">Hot Composting Guide</a> &rsaquo; C:N Ratio Guide</nav>
+        <!-- ===== SIDEBAR NAVIGATION ===== -->
+        <aside class="sidebar">
+            <div class="sidebar-logo">
+                            <img src="src/assets/logo.png" alt="World Composting Logo" width="64" height="64" loading="lazy" onerror="this.src='https://via.placeholder.com/64?text=WC'">
+                            <h2>World Composting</h2>
+                        </div>
 
-    <article class="content-card">
-      <p class="lead">The carbon to nitrogen ratio, or C:N ratio, is the single most important factor in successful hot composting. It determines how fast your pile heats up, whether it produces odors, and how quickly it finishes decomposing. Understanding this ratio gives you control over the entire composting process.</p>
+            <ul class="sidebar-nav">
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="start-here.html">Start Here</a></li>
+                                <li><a href="about.html">About</a></li>
+                
+                                <div class="sidebar-divider"></div>
+                                <li class="sidebar-section-label">Guides</li>
+                
+                                <li><a href="worm-composting.html">Worm Composting</a></li>
+                                <li><a href="hot-composting.html">Hot Composting</a></li>
+                
+                                <div class="sidebar-divider"></div>
+                                <li class="sidebar-section-label">Checklists</li>
+                
+                                <li><a href="beginner.html">Beginner's Checklist</a></li>
+                                <li><a href="bokashi.html">Bokashi Composting</a></li>
+                                <li><a href="biochar.html">BioChar Composting</a></li>
+                                <li><a href="tumbler.html">Tumbler Composting</a></li>
+                                <li><a href="tea.html">Compost Tea</a></li>
+                                <li><a href="lasagna.html">Lasagna Composting</a></li>
+                                <li><a href="sustainability.html">Sustainability Journey</a></li>
+                                <li><a href="zero-waste-kitchen.html">Zero Waste Kitchen</a></li>
+                
+                                <div class="sidebar-divider"></div>
+                                <li class="sidebar-section-label">Resources</li>
+                
+                                <li><a href="glossary.html">Glossary</a></li>
+                                <li><a href="troubleshoot.html">Troubleshooting</a></li>
+                                <li><a href="blog.html">Blog</a></li>
+                                <li><a href="sitemap.html">Sitemap</a></li>
+                
+                                <div class="sidebar-divider"></div>
+                                <li class="sidebar-section-label">Gear</li>
+                
+                                <li><a href="gear.html">View All Gear →</a></li>
+                            </ul>
+        </aside>
 
-      <h2>What Is a C:N Ratio?</h2>
-      <p>The C:N ratio expresses the proportion of carbon atoms to nitrogen atoms in organic material. Carbon provides energy for bacteria, while nitrogen provides protein for bacterial growth and reproduction. The balance between these two elements determines how efficiently microbes break down your compost materials.</p>
+        <!-- ===== MAIN CONTENT AREA ===== -->
+        <main class="main-content">
 
-      <h2>The Ideal Ratio for Hot Composting</h2>
-      <p>A C:N ratio of 25 to 30 parts carbon to one part nitrogen is the sweet spot for hot composting. At this ratio, bacteria multiply rapidly enough to generate heat while having sufficient energy to sustain decomposition over several weeks.</p>
+            <a href="/" class="back-link-wide">&#8592; Back to Home</a>
 
-      <h2>C:N Ratios of Common Materials</h2>
-      <table class="comparison-table">
-        <thead><tr><th>Material</th><th>Type</th><th>C:N Ratio</th></tr></thead>
-        <tbody>
-          <tr><td>Fresh grass clippings</td><td>Green (nitrogen)</td><td>15:1</td></tr>
-          <tr><td>Kitchen scraps</td><td>Green (nitrogen)</td><td>20:1</td></tr>
-          <tr><td>Coffee grounds</td><td>Green (nitrogen)</td><td>20:1</td></tr>
-          <tr><td>Fresh manure (cow, horse)</td><td>Green (nitrogen)</td><td>20:1</td></tr>
-          <tr><td>Dried leaves</td><td>Brown (carbon)</td><td>60:1</td></tr>
-          <tr><td>Sawdust</td><td>Brown (carbon)</td><td>325:1</td></tr>
-          <tr><td>Straw</td><td>Brown (carbon)</td><td>80:1</td></tr>
-          <tr><td>Cardboard</td><td>Brown (carbon)</td><td>350:1</td></tr>
-          <tr><td>Newspaper</td><td>Brown (carbon)</td><td>175:1</td></tr>
-        </tbody>
-      </table>
+            <!-- Hero Section -->
+            <div class="pillar-hero-wide">
+                <h1>C:N Ratio Guide for Hot Composting</h1>
+                <p class="subtitle">Balance greens and browns with the carbon to nitrogen ratio: reference tables, mixing rules, and troubleshooting.</p>
+            </div>
 
-      <h2>How to Calculate Your Pile Ratio</h2>
-      <p>You do not need a laboratory to balance your compost pile. Use this practical method:</p>
-      <ol class="checklist">
-        <li data-phase="1"><input type="checkbox" id="calc-1"><label for="calc-1">Measure your greens and browns by volume (cubic feet or buckets)</label></li>
-        <li data-phase="2"><input type="checkbox" id="calc-2"><label for="calc-2">Use the rule of thumb: mix two parts brown material with one part green</label></li>
-        <li data-phase="3"><input type="checkbox" id="calc-3"><label for="calc-3">Adjust based on your materials: if using sawdust (very high carbon), use three parts brown to one part green</label></li>
-        <li data-phase="4"><input type="checkbox" id="calc-4"><label for="calc-4">If using mostly grass clippings (low carbon), reduce browns to one and a half parts per one part green</label></li>
-      </ol>
+            <!-- Table of Contents -->
+            <nav id="toc-wide" aria-label="Table of contents">
+                <h2>In This Guide</h2>
+                <ol>
+                    <li><a href="#what-is-cn-ratio">What Is a C:N Ratio?</a></li>
+                    <li><a href="#ideal-ratio">The Ideal Ratio for Hot Composting</a></li>
+                    <li><a href="#common-materials">C:N Ratios of Common Materials</a></li>
+                    <li><a href="#calculating-your-pile">How to Calculate Your Pile Ratio</a></li>
+                    <li><a href="#when-ratio-is-off">When the Ratio Is Off Balance</a></li>
+                    <li><a href="#seasonal-adjustments">Seasonal Adjustments</a></li>
+                    <li><a href="#mixing-guide">Quick Reference Mixing Guide</a></li>
+                </ol>
+            </nav>
 
-      <h2>When the Ratio Is Off Balance</h2>
-      <table class="comparison-table">
-        <thead><tr><th>Symptom</th><th>Ratio Problem</th><th>Fix</th></tr></thead>
-        <tbody>
-          <tr><td>Pile is not heating up</td><td>Too much carbon (ratio too high)</td><td>Add more greens: grass clippings, manure, or kitchen scraps</td></tr>
-          <tr><td>Pile smells like ammonia</td><td>Too much nitrogen (ratio too low)</td><td>Add more browns: leaves, straw, or shredded cardboard</td></tr>
-          <tr><td>Pile is slimy and wet</td><td>Excess nitrogen with poor aeration</td><td>Add dry browns and turn the pile thoroughly</td></tr>
-          <tr><td>Pile is dry and dusty</td><td>High carbon with insufficient moisture</td><td>Add water and mix in some greens to boost nitrogen</td></tr>
-        </tbody>
-      </table>
+            <!-- Intro -->
+            <div class="article-section-wide">
+                <p>The carbon to nitrogen ratio, or C:N ratio, is the single most important factor in successful hot composting. It determines how fast your pile heats up, whether it produces odors, and how quickly it finishes decomposing. Understanding this ratio gives you control over the entire composting process.</p>
+            </div>
 
-      <h2>Seasonal Adjustments</h2>
-      <p>Your C:N ratio needs change with the seasons. In spring and summer, higher temperatures accelerate decomposition so a slightly lower carbon ratio (closer to 20:1) works well. In fall and winter, slower bacterial activity means you need more carbon material (closer to 35:1) to sustain heat generation.</p>
+            <!-- Section 1 -->
+            <div class="article-section-wide" id="what-is-cn-ratio">
+                <h2>What Is a C:N Ratio?</h2>
+                <p>The C:N ratio expresses the proportion of carbon atoms to nitrogen atoms in organic material. Carbon provides energy for bacteria, while nitrogen provides protein for bacterial growth and reproduction. The balance between these two elements determines how efficiently microbes break down your compost materials.</p>
+            </div>
 
-      <h2>Quick Reference Mixing Guide</h2>
-      <table class="comparison-table">
-        <thead><tr><th>Your Greens Source</th><th>Browns to Mix In</th><th>Ratio by Volume</th></tr></thead>
-        <tbody>
-          <tr><td>Fresh grass clippings</td><td>Dried leaves or straw</td><td>1 part green : 2 parts brown</td></tr>
-          <tr><td>Kitchen scraps only</td><td>Shredded cardboard and newspaper</td><td>1 part green : 3 parts brown</td></tr>
-          <tr><td>Cow or horse manure</td><td>Sawdust or straw</td><td>1 part green : 2 parts brown</td></tr>
-          <tr><td>Mixed greens (grass + kitchen)</td><td>Dried leaves and cardboard</td><td>1 part green : 2.5 parts brown</td></tr>
-        </tbody>
-      </table>
+            <!-- Section 2 -->
+            <div class="article-section-wide" id="ideal-ratio">
+                <h2>The Ideal Ratio for Hot Composting</h2>
+                <p>A C:N ratio of 25 to 30 parts carbon to one part nitrogen is the sweet spot for hot composting. At this ratio, bacteria multiply rapidly enough to generate heat while having sufficient energy to sustain decomposition over several weeks.</p>
+            </div>
 
-      <p class="cta">For a complete guide to building hot compost piles, read our <a href="hot-composting.html">Hot Composting Guide</a>.</p>
-    </article>
-  </main>
+            <!-- Section 3 -->
+            <div class="article-section-wide" id="common-materials">
+                <h2>C:N Ratios of Common Materials</h2>
+                <table class="info-table-wide">
+                    <thead><tr><th>Material</th><th>Type</th><th>C:N Ratio</th></tr></thead>
+                    <tbody>
+                        <tr><td>Fresh grass clippings</td><td>Green (nitrogen)</td><td>15:1</td></tr>
+                        <tr><td>Kitchen scraps</td><td>Green (nitrogen)</td><td>20:1</td></tr>
+                        <tr><td>Coffee grounds</td><td>Green (nitrogen)</td><td>20:1</td></tr>
+                        <tr><td>Fresh manure (cow, horse)</td><td>Green (nitrogen)</td><td>20:1</td></tr>
+                        <tr><td>Dried leaves</td><td>Brown (carbon)</td><td>60:1</td></tr>
+                        <tr><td>Sawdust</td><td>Brown (carbon)</td><td>325:1</td></tr>
+                        <tr><td>Straw</td><td>Brown (carbon)</td><td>80:1</td></tr>
+                        <tr><td>Cardboard</td><td>Brown (carbon)</td><td>350:1</td></tr>
+                        <tr><td>Newspaper</td><td>Brown (carbon)</td><td>175:1</td></tr>
+                    </tbody>
+                </table>
+            </div>
 
-  <div id="video-container-hot-cn-ratio"></div>
+            <!-- Section 4 -->
+            <div class="article-section-wide" id="calculating-your-pile">
+                <h2>How to Calculate Your Pile Ratio</h2>
+                <p>You do not need a laboratory to balance your compost pile. Use this practical method:</p>
+                <ol>
+                    <li>Measure your greens and browns by volume (cubic feet or buckets)</li>
+                    <li>Use the rule of thumb: mix two parts brown material with one part green</li>
+                    <li>Adjust based on your materials: if using sawdust (very high carbon), use three parts brown to one part green</li>
+                    <li>If using mostly grass clippings (low carbon), reduce browns to one and a half parts per one part green</li>
+                </ol>
+            </div>
 
-  <!-- Footer -->
-  <footer class="site-footer">
-    <p>&copy; 2026 World Composting. All rights reserved.</p>
-  </footer>
+            <!-- Section 5 -->
+            <div class="article-section-wide" id="when-ratio-is-off">
+                <h2>When the Ratio Is Off Balance</h2>
+                <table class="info-table-wide">
+                    <thead><tr><th>Symptom</th><th>Ratio Problem</th><th>Fix</th></tr></thead>
+                    <tbody>
+                        <tr><td>Pile is not heating up</td><td>Too much carbon (ratio too high)</td><td>Add more greens: grass clippings, manure, or kitchen scraps</td></tr>
+                        <tr><td>Pile smells like ammonia</td><td>Too much nitrogen (ratio too low)</td><td>Add more browns: leaves, straw, or shredded cardboard</td></tr>
+                        <tr><td>Pile is slimy and wet</td><td>Excess nitrogen with poor aeration</td><td>Add dry browns and turn the pile thoroughly</td></tr>
+                        <tr><td>Pile is dry and dusty</td><td>High carbon with insufficient moisture</td><td>Add water and mix in some greens to boost nitrogen</td></tr>
+                    </tbody>
+                </table>
+            </div>
 
-  <!-- Video Section Loader -->
-  <script>
-    (async function() {
-      await new Promise(function(resolve) {
-        var s = document.createElement('script');
-        s.src = 'src/js/video-renderer.js?v=10';
-        s.onload = resolve;
-        document.head.appendChild(s);
-      });
-      window.renderVideoSection('video-container-hot-cn-ratio', 'cn-ratio');
-    })();
-  </script>
+            <!-- Section 6 -->
+            <div class="article-section-wide" id="seasonal-adjustments">
+                <h2>Seasonal Adjustments</h2>
+                <p>Your C:N ratio needs change with the seasons. In spring and summer, higher temperatures accelerate decomposition so a slightly lower carbon ratio (closer to 20:1) works well. In fall and winter, slower bacterial activity means you need more carbon material (closer to 35:1) to sustain heat generation.</p>
+            </div>
+
+            <!-- Section 7 -->
+            <div class="article-section-wide" id="mixing-guide">
+                <h2>Quick Reference Mixing Guide</h2>
+                <table class="info-table-wide">
+                    <thead><tr><th>Your Greens Source</th><th>Browns to Mix In</th><th>Ratio by Volume</th></tr></thead>
+                    <tbody>
+                        <tr><td>Fresh grass clippings</td><td>Dried leaves or straw</td><td>1 part green : 2 parts brown</td></tr>
+                        <tr><td>Kitchen scraps only</td><td>Shredded cardboard and newspaper</td><td>1 part green : 3 parts brown</td></tr>
+                        <tr><td>Cow or horse manure</td><td>Sawdust or straw</td><td>1 part green : 2 parts brown</td></tr>
+                        <tr><td>Mixed greens (grass + kitchen)</td><td>Dried leaves and cardboard</td><td>1 part green : 2.5 parts brown</td></tr>
+                    </tbody>
+                </table>
+
+                <div class="callout-wide tip">
+                    <p><strong>Next Steps:</strong> For a complete guide to building hot compost piles, read our <a href="hot-composting.html">Hot Composting Guide</a>.</p>
+                </div>
+            </div>
+
+            <!-- Video Section -->
+            <div id="video-container-hot-cn-ratio"></div>
+
+        </main>
+
+    </div><!-- .page-wrapper -->
+
+    <!-- FOOTER: outside grid, spans full width -->
+    <footer class="footer-wide">
+        &copy; 2026 World Composting. All rights reserved.
+    </footer>
+
+    <!-- Video Section Loader -->
+    <script>
+        (async function() {
+            await new Promise(function(resolve) {
+                var s = document.createElement('script');
+                s.src = 'src/js/video-renderer.js?v=10';
+                s.onload = resolve;
+                document.head.appendChild(s);
+            });
+            if (window.renderVideoSection) {
+                window.renderVideoSection('video-container-hot-cn-ratio', 'cn-ratio');
+            }
+        })();
+    </script>
 </body>
 </html>

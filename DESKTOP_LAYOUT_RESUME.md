@@ -1,6 +1,6 @@
 # Desktop Layout Migration — Resume Guide
 
-**Last updated:** 2026-08-27  
+**Last updated:** 2026-08-31  
 **Branch:** `desktop-layout` (protects live `main`)  
 **Template:** `sample.html` (source of truth for desktop layout)
 
@@ -8,7 +8,7 @@
 
 ---
 
-## What's Done (17 content pages migrated & committed on desktop-layout branch)
+## What's Done (19 content pages migrated; hot-best-materials.html + hot-cn-ratio.html pending commit approval)
 
 | Page | Commit | Notes |
 |------|--------|-------|
@@ -29,10 +29,12 @@
 | `gear.html` | `8f58774` | JS product listing (no checklist): 29 products in 8 categories, priority sort fixed (Worm Bin Items → Worm Bag → Fly Control → Bokashi Items → rest alphabetical), Tailwind CDN removed, site CSS classes; sidebar active on "View All Gear" nav item; verified clean console + all links real |
 | `glossary.html` | this session | 23 alphabetized terms in A–Z accordion (letter buttons toggle bodies). Custom `.glossary-*` CSS copied verbatim from mobile file into the grid page's style block. Sidebar active on "Glossary" nav item; verified: clean console, accordion works (A→B toggle tested), footer styled, back-link present |
 | `science-of-compost.html` | 8/28 | Pure article page (no JS/video): worm-composting pattern — sidebar + TOC + lead intro block + 7 `article-section-wide` sections; no active sidebar marker (page not in nav, hot.html precedent); verified: verify_page.py all PASS/SKIP, tag balance OK, JSON-LD Article parses, 7/7 TOC anchors resolve |
+| `hot-best-materials.html` | this session | Short article page (4 sections): worm-composting pattern — back-link-wide + pillar-hero-wide (H1 + subtitle) + TOC (4 anchors, all verified resolving) + 4 `article-section-wide` sections; C:N table restyled to `info-table-wide`; "Materials to Avoid" checklist converted to plain `<ul>` (no JS on page); CTA wrapped in `callout-wide tip`; video container kept inside main (`best-materials` key renders 1 real video: Hot Composting 101, takeaways present); no active sidebar marker (page not in nav); verified: clean console, sidebar byte-identical to index.html (whitespace-normalized), tag balance OK |
+| `hot-cn-ratio.html` | this session | Article page (intro + 7 sections): worm-composting pattern — back-link-wide + pillar-hero-wide + TOC (7 anchors, all verified resolving) + intro block + 7 `article-section-wide` sections; 3 tables restyled to `info-table-wide`; "How to Calculate" dead-checkbox checklist converted to plain `<ol>`; CTA wrapped in `callout-wide tip` linking hot-composting.html; video container kept inside main (`cn-ratio` key renders 1 real video: It's Getting HOT! 3-Day Pre-Compost Update, takeaways present); no active sidebar marker (page not in nav); verified: clean console, tag balance OK, all TOC anchors resolve |
 
-## 🎯 Current Focus (8/28)
+## 🎯 Current Focus (8/31)
 
-**Suggested next page (only if user asks): `hot-best-materials.html`** — first of the remaining hot-* deep-dives. After that: other hot-*/worm-* deep-dives, then utility pages (`blog.html`, `troubleshoot.html`, `quick_links.html`). Do not start any of these without an explicit user prompt naming the page.
+**Suggested next page (only if user asks): `hot-not-heating.html`** — third of the hot-* deep-dives. After that: remaining worm-* deep-dives, then utility pages (`blog.html`, `troubleshoot.html`, `quick_links.html`). Do not start any of these without an explicit user prompt naming the page.
 
 **Uncommitted changes to keep OUT of the next commit:**
 - `M bokashi.html` (duplicate empty `<script type="ld+json">` tag ~line 470)
@@ -44,11 +46,9 @@
 
 ---
 
-## Remaining Pages to Migrate (11 content pages)
+## Remaining Pages to Migrate (9 content pages)
 
 ### Deep-Dive Pages (medium priority)
-- `hot-best-materials.html`
-- `hot-cn-ratio.html`
 - `hot-not-heating.html`
 - `hot-speed-tips.html`
 - `worm-bedding.html`
@@ -61,7 +61,7 @@
 - `troubleshoot.html` — Diagnostic guide
 - `quick_links.html` — Official links page (228 lines, small)
 
-**Done this session:** `glossary.html` ✓ (moved to Completed table above)
+**Done 8/31:** `hot-best-materials.html` + `hot-cn-ratio.html` ✓ (moved to Completed table above)
 
 **Not migration targets:** `sitemap.html`, `google8a4b2c3d1e5f6789.html` (verification file), `sample.html` (template stub)
 
@@ -204,7 +204,7 @@ git commit -m "Migrate <page>.html to desktop layout"
 This section describes the state of things so a new session can get oriented. It is NOT an instruction to start work. Wait for the user to say which page or task to handle first.
 
 - Working branch: `desktop-layout` in `/mnt/h/Hermes/landing-page-fixed` (switch only when the user asks)
-- Status as of 8/28: **17 done / 11 remaining** (glossary.html + science-of-compost.html completed). All pillar pages + gear migrated; suggested order was the hot-*/worm-* deep-dives, then utility pages (`blog`, `troubleshoot`, `quick_links`)
+- Status as of 8/31: **19 done / 9 remaining** (hot-best-materials.html + hot-cn-ratio.html completed). All pillar pages + gear migrated; suggested order was the hot-*/worm-* deep-dives, then utility pages (`blog`, `troubleshoot`, `quick_links`)
 - When the user does prompt work: follow migration process (Steps 1-7) and reference this file for common bugs and fixes
 
 **Page-type notes:**
