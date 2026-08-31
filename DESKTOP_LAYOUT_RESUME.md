@@ -8,7 +8,7 @@
 
 ---
 
-## What's Done (23 content pages migrated)
+## What's Done (24 content pages migrated)
 
 | Page | Commit | Notes |
 |------|--------|-------|
@@ -35,10 +35,11 @@
 | `hot-not-heating.html` | this session | Article page (intro + 7 sections): hot-best-materials pattern — back-link-wide + pillar-hero-wide (H1 + subtitle) + TOC (7 anchors, all verified resolving) + intro block + 5 problem sections with bold Solution lines; diagnostic table restyled to `info-table-wide` (5 rows); CTA wrapped in `callout-wide tip` linking troubleshoot.html; video container kept inside main (`not-heating` key renders 1 real video: Worms Escaping short, takeaways present — source mobile page HAD the video section, so preserved); no active sidebar marker (page not in nav); verified: verify_page.py all PASS/SKIP except pre-existing sidebar-whitespace FAIL shared with reference pages, clean console (0 errors), 7/7 TOC anchors resolve, table renders 5 rows |
 | `hot-speed-tips.html` | this session | Article page (intro + 7 sections): hot-best-materials pattern — back-link-wide + pillar-hero-wide (H1 + subtitle) + TOC (7 anchors, all verified resolving) + intro block + 7 `article-section-wide` sections; dead-checkbox lists (turning schedule ol, particle size ul, insulation ul) converted to plain `<ol>`/`<ul>` per hot-cn-ratio precedent (no JS on page); 2 comparison tables restyled to `info-table-wide` (4 rows each); CTA wrapped in `callout-wide tip` linking hot-composting.html; video container kept inside main (`speed-tips` key renders 1 real video: Worm Bag vs Tote, takeaways present — source mobile page HAD the video section, so preserved); no active sidebar marker (page not in nav, only a data-listing entry in index.html); verified: verify_page.py all PASS/SKIP except pre-existing sidebar-whitespace FAIL shared with reference pages, clean console (0 errors), 7/7 TOC anchors resolve, both tables fit cards without overflow |
 | `worm-bedding.html` | this session | Article page (intro + 5 sections): hot-best-materials pattern — back-link-wide + pillar-hero-wide (H1 + subtitle) + TOC (5 anchors, all verified resolving) + intro block + 5 `article-section-wide` sections; "Top Bedding Materials Compared" section keeps its 4 H3 subsections with Pros/Cons paragraphs intact; dead-checkbox prep list converted to plain `<ol>` per hot-cn-ratio precedent (no JS on page); comparison table restyled to `info-table-wide` (4 rows, 4 columns — verified fits card without overflow); CTA wrapped in `callout-wide tip` linking beginner.html; video container kept inside main (`bedding` key renders 2 real videos: Hemp Bedding pair, takeaways present — source mobile page HAD the video section, so preserved); no active sidebar marker (page not in nav, only a data-listing entry in index.html); verified: verify_page.py all PASS/SKIP except pre-existing sidebar-whitespace FAIL shared with reference pages, clean console (0 errors), 5/5 TOC anchors resolve |
+| `worm-forbidden-foods.html` | this session | Article page (intro + 5 sections): hot-best-materials pattern — back-link-wide + pillar-hero-wide (H1 + subtitle) + TOC (5 anchors, all verified resolving) + intro block + 5 `article-section-wide` sections; "Foods to Never Add" section keeps its 6 H3 subsections intact; dead-checkbox lists (safe foods ul, overfeeding signs ol) converted to plain `<ul>`/`<ol>` per hot-cn-ratio precedent (no JS on page); comparison table restyled to `info-table-wide` (5 rows, 3 columns — verified fits card without overflow); CTA wrapped in `callout-wide tip` linking worm-composting.html; video container kept inside main (`forbidden-foods` key renders 2 real videos: citrus/lemon test pair, takeaways present — source mobile page HAD the video section, so preserved); no active sidebar marker (page not in nav, only a data-listing entry in index.html); verified: verify_page.py all PASS/SKIP except pre-existing sidebar-whitespace FAIL shared with reference pages, clean console (0 errors), 5/5 TOC anchors resolve |
 
 ## 🎯 Current Focus (8/31)
 
-**Suggested next page (only if user asks): `worm-forbidden-foods.html`** — second of the worm-* deep-dives. After that: remaining worm-* deep-dives, then utility pages (`blog.html`, `quick_links.html`). Do not start any of these without an explicit user prompt naming the page.
+**Suggested next page (only if user asks): `worm-fruit-flies.html`** — third of the worm-* deep-dives. After that: remaining worm-* deep-dive, then utility pages (`blog.html`, `quick_links.html`). Do not start any of these without an explicit user prompt naming the page.
 
 **Uncommitted changes to keep OUT of the next commit:**
 - `M bokashi.html` (duplicate empty `<script type="ld+json">` tag ~line 470)
@@ -50,10 +51,9 @@
 
 ---
 
-## Remaining Pages to Migrate (5 content pages)
+## Remaining Pages to Migrate (4 content pages)
 
 ### Deep-Dive Pages (medium priority)
-- `worm-forbidden-foods.html`
 - `worm-fruit-flies.html`
 - `worm-harvesting.html`
 
@@ -61,7 +61,7 @@
 - `blog.html` — Blog listing with JSON data loader
 - `quick_links.html` — Official links page (228 lines, small)
 
-**Done 8/31:** `hot-best-materials.html`, `hot-cn-ratio.html`, `troubleshoot.html`, `hot-not-heating.html`, `hot-speed-tips.html`, `worm-bedding.html` ✓ (moved to Completed table above)
+**Done 8/31:** `hot-best-materials.html`, `hot-cn-ratio.html`, `troubleshoot.html`, `hot-not-heating.html`, `hot-speed-tips.html`, `worm-bedding.html`, `worm-forbidden-foods.html` ✓ (moved to Completed table above)
 
 **Not migration targets:** `sitemap.html`, `google8a4b2c3d1e5f6789.html` (verification file), `sample.html` (template stub)
 
@@ -204,7 +204,7 @@ git commit -m "Migrate <page>.html to desktop layout"
 This section describes the state of things so a new session can get oriented. It is NOT an instruction to start work. Wait for the user to say which page or task to handle first.
 
 - Working branch: `desktop-layout` in `/mnt/h/Hermes/landing-page-fixed` (switch only when the user asks)
-- Status as of 8/31: **23 done / 5 remaining** (worm-bedding.html completed; all hot-* deep-dives + first worm-* deep-dive migrated). Remaining: worm-forbidden-foods, worm-fruit-flies, worm-harvesting, then utility pages (`blog`, `quick_links`)
+- Status as of 8/31: **24 done / 4 remaining** (worm-forbidden-foods.html completed; all hot-* deep-dives + two worm-* deep-dives migrated). Remaining: worm-fruit-flies, worm-harvesting, then utility pages (`blog`, `quick_links`)
 - When the user does prompt work: follow migration process (Steps 1-7) and reference this file for common bugs and fixes
 
 **Page-type notes:**
