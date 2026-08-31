@@ -1,98 +1,546 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>How to Control Fruit Flies in Indoor Worm Bins | World Composting</title>
-  <meta name="description" content="Fruit flies invading your worm bin? Learn proven methods to eliminate and prevent fruit fly infestations including proper food burial, traps, and bin hygiene practices.">
-  <link rel="stylesheet" href="src/styles/theme.css">
-  <link rel="stylesheet" href="src/styles/article.css">
-  <link rel="stylesheet" href="src/styles/video-section.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Control Fruit Flies in Indoor Worm Bins | World Composting</title>
+    <meta name="description" content="Fruit flies invading your worm bin? Learn proven methods to eliminate and prevent fruit fly infestations including proper food burial, traps, and bin hygiene practices.">
+    <!-- Google Search Console Verification -->
+    <meta name="google-site-verification" content="google8a4b2c3d1e5f6789">
+    <link rel="stylesheet" href="src/styles/theme.css">
+    <link rel="stylesheet" href="src/styles/video-section.css">
+<style>
+        /* ===== WIDE LAYOUT OVERRIDES (supersedes theme.css #app) ===== */
+
+        .page-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 3rem;
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 2.5rem;
+            align-items: start;
+        }
+
+        /* ===== SIDEBAR NAVIGATION ===== */
+        .sidebar {
+            position: sticky;
+            top: 2rem;
+            background: white;
+            border-radius: 16px;
+            box-shadow: var(--card-shadow);
+            padding: 1.5rem;
+            max-height: calc(100vh - 4rem);
+            overflow-y: auto;
+        }
+
+        .sidebar-logo {
+            text-align: center;
+            margin-bottom: 1.25rem;
+        }
+
+        .sidebar-logo img {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--sage-green);
+        }
+
+        .sidebar-logo h2 {
+            font-family: 'Lora', serif;
+            color: var(--forest-green);
+            font-size: 1.1rem;
+            margin-top: 0.5rem;
+        }
+
+        .sidebar-nav {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar-nav li {
+            margin-bottom: 0.25rem;
+        }
+
+        .sidebar-nav a {
+            display: block;
+            padding: 0.6rem 0.85rem;
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--text-dark);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: background 0.15s, color 0.15s;
+        }
+
+        .sidebar-nav a:hover {
+            background: var(--off-white);
+            color: var(--forest-green);
+        }
+
+        .sidebar-nav a.active {
+            background: var(--forest-green);
+            color: white;
+            font-weight: 600;
+        }
+
+        .sidebar-divider {
+            height: 1px;
+            background: rgba(45,90,39,0.12);
+            margin: 1rem 0;
+        }
+
+        .sidebar-section-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-dark);
+            opacity: 0.5;
+            padding: 0.25rem 0.85rem;
+            margin-bottom: 0.25rem;
+        }
+
+        /* ===== MAIN CONTENT AREA ===== */
+        .main-content {
+            min-width: 0;
+        }
+
+        /* Back link: wider */
+        .back-link-wide {
+            display: inline-block;
+            font-size: 0.85rem;
+            color: var(--ocean-blue);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            transition: opacity 0.2s;
+        }
+
+        .back-link-wide:hover { opacity: 0.7; }
+        .back-link-wide:focus-visible {
+            outline: 2px solid var(--ocean-blue);
+            outline-offset: 2px;
+            border-radius: 2px;
+        }
+
+        /* Pillar hero: wider */
+        .pillar-hero-wide {
+            background: white;
+            border-radius: 16px;
+            padding: 2.5rem 3rem;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 2rem;
+        }
+
+        .pillar-hero-wide h1 {
+            font-family: 'Lora', serif;
+            color: var(--forest-green);
+            font-size: 2.4rem;
+            line-height: 1.3;
+            margin-top: 0;
+            text-align: center;
+        }
+
+        .pillar-hero-wide p.subtitle {
+            text-align: center;
+            font-style: italic;
+            color: var(--ocean-blue);
+            font-size: 1.1rem;
+            margin-bottom: 0;
+        }
+
+        /* Table of Contents: wider */
+        #toc-wide {
+            background: white;
+            border-radius: 16px;
+            padding: 1.5rem 2rem;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 2rem;
+        }
+
+        #toc-wide h2 {
+            font-size: 1.1rem;
+            color: var(--forest-green);
+            margin-top: 0;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        #toc-wide ol {
+            padding-left: 1.2rem;
+            margin: 0;
+        }
+
+        #toc-wide li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+
+        #toc-wide a {
+            color: var(--ocean-blue);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        #toc-wide a:hover { color: var(--forest-green); text-decoration: underline; }
+
+        /* Article Sections: wider */
+        .article-section-wide {
+            background: white;
+            border-radius: 16px;
+            padding: 2.5rem 3rem;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .article-section-wide h2 {
+            font-family: 'Lora', serif;
+            color: var(--forest-green);
+            font-size: 1.6rem;
+            margin-top: 0;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--sage-green);
+        }
+
+        .article-section-wide h3 {
+            font-family: 'Lora', serif;
+            color: var(--ocean-blue);
+            font-size: 1.25rem;
+            margin-top: 1.8rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .article-section-wide p {
+            color: var(--text-dark);
+            font-size: 1rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .article-section-wide ul, .article-section-wide ol {
+            padding-left: 1.5rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .article-section-wide li {
+            margin-bottom: 0.6rem;
+            line-height: 1.7;
+        }
+
+        .article-section-wide strong { color: var(--forest-green); }
+
+        /* Callout Boxes: wider */
+        .callout-wide {
+            background: var(--sage-green);
+            border-left: 4px solid var(--forest-green);
+            padding: 1rem 1.25rem;
+            border-radius: 0 8px 8px 0;
+            margin: 1.5rem 0;
+        }
+
+        .callout-wide.warning {
+            background: #fff3cd;
+            border-left-color: #856404;
+        }
+
+        .callout-wide.tip {
+            background: #d1ecf1;
+            border-left-color: var(--ocean-blue);
+        }
+
+        .callout-wide p { margin-bottom: 0; }
+
+        /* Info Tables: wider */
+        .info-table-wide {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.92rem;
+        }
+
+        .info-table-wide th, .info-table-wide td {
+            padding: 0.75rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--sage-green);
+        }
+
+        .info-table-wide th {
+            background: var(--forest-green);
+            color: white;
+            font-weight: 600;
+        }
+
+        .info-table-wide tr:nth-child(even) td { background: #f8f9fa; }
+
+        /* Related Pages: wider */
+        .related-pages-wide {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .related-card-wide {
+            background: white;
+            border-radius: 16px;
+            padding: 1.25rem;
+            box-shadow: var(--card-shadow);
+            text-align: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .related-card-wide:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 32px -8px rgba(75, 54, 33, 0.15);
+        }
+
+        .related-card-wide a {
+            text-decoration: none;
+            color: var(--forest-green);
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .related-card-wide p {
+            margin-top: 0.5rem;
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        /* ===== RESPONSIVE BREAKPOINTS ===== */
+        @media (max-width: 1024px) {
+            .page-wrapper {
+                grid-template-columns: 1fr;
+                padding: 1.5rem 2rem;
+            }
+
+            .sidebar {
+                position: static;
+                max-height: none;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 1rem;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .sidebar-nav {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.25rem;
+            }
+
+            .sidebar-section-label {
+                width: 100%;
+                text-align: left;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .page-wrapper {
+                padding: 1rem;
+            }
+
+            .pillar-hero-wide h1 { font-size: 1.8rem; }
+            .article-section-wide { padding: 1.25rem; }
+            .article-section-wide h2 { font-size: 1.35rem; }
+            #toc-wide { padding: 1.25rem; }
+        }
+
+        /* ===== FOOTER OVERRIDES: fix body flex centering from theme.css ===== */
+        footer.footer-wide {
+            display: block !important;
+            text-align: center;
+            padding: 2rem 3rem;
+            opacity: 0.7;
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(45,90,39,0.15);
+            margin-top: 2rem;
+        }
+
+        /* Override body flex centering for desktop layout */
+        body {
+            display: block !important;
+            justify-content: normal !important;
+            align-items: normal !important;
+        }
+    </style>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KRHYVJXZLE"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-KRHYVJXZLE');
+    </script>
 </head>
 <body>
-  <header class="site-header">
-    <a href="/" class="home-link"><img src="src/assets/logo.png" alt="World Composting Home" width="110" height="110" loading="lazy"></a>
-    <h1>How to Control Fruit Flies in Indoor Worm Bins</h1>
-  </header>
+    <div class="page-wrapper">
 
-  <main class="container">
-    <nav class="breadcrumb"><a href="/">Home</a> &rsaquo; <a href="worm-composting.html">Worm Composting Guide</a> &rsaquo; Fruit Fly Control</nav>
+        <!-- ===== SIDEBAR NAVIGATION ===== -->
+        <aside class="sidebar">
+            <div class="sidebar-logo">
+                            <img src="src/assets/logo.png" alt="World Composting Logo" width="64" height="64" loading="lazy" onerror="this.src='https://via.placeholder.com/64?text=WC'">
+                            <h2>World Composting</h2>
+                        </div>
 
-    <article class="content-card">
-      <p class="lead">Fruit flies are one of the most common frustrations for indoor worm composters. These tiny insects can multiply quickly and become a nuisance in your home. The good news is that fruit fly problems are almost always preventable with proper bin management techniques.</p>
+            <ul class="sidebar-nav">
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="start-here.html">Start Here</a></li>
+                                <li><a href="about.html">About</a></li>
+                
+                                <div class="sidebar-divider"></div>
+                                <li class="sidebar-section-label">Guides</li>
+                
+                                <li><a href="worm-composting.html">Worm Composting</a></li>
+                                <li><a href="hot-composting.html">Hot Composting</a></li>
+                
+                                <div class="sidebar-divider"></div>
+                                <li class="sidebar-section-label">Checklists</li>
+                
+                                <li><a href="beginner.html">Beginner's Checklist</a></li>
+                                <li><a href="bokashi.html">Bokashi Composting</a></li>
+                                <li><a href="biochar.html">BioChar Composting</a></li>
+                                <li><a href="tumbler.html">Tumbler Composting</a></li>
+                                <li><a href="tea.html">Compost Tea</a></li>
+                                <li><a href="lasagna.html">Lasagna Composting</a></li>
+                                <li><a href="sustainability.html">Sustainability Journey</a></li>
+                                <li><a href="zero-waste-kitchen.html">Zero Waste Kitchen</a></li>
+                
+                                <div class="sidebar-divider"></div>
+                                <li class="sidebar-section-label">Resources</li>
+                
+                                <li><a href="glossary.html">Glossary</a></li>
+                                <li><a href="troubleshoot.html">Troubleshooting</a></li>
+                                <li><a href="blog.html">Blog</a></li>
+                                <li><a href="sitemap.html">Sitemap</a></li>
+                
+                                <div class="sidebar-divider"></div>
+                                <li class="sidebar-section-label">Gear</li>
+                
+                                <li><a href="gear.html">View All Gear →</a></li>
+                            </ul>
+        </aside>
 
-      <h2>Why Fruit Flies Invade Worm Bins</h2>
-      <p>Fruit flies are attracted to exposed food scraps, especially overripe fruits and vegetables. They lay eggs on the surface of uncovered waste, and those eggs hatch into larvae within 48 hours. The problem compounds quickly because a single female can lay hundreds of eggs in her lifetime.</p>
+        <!-- ===== MAIN CONTENT AREA ===== -->
+                <!-- ===== MAIN CONTENT ===== -->
+        <main class="main-content">
 
-      <h2>Prevention: The First Line of Defense</h2>
-      <p>The most effective way to deal with fruit flies is to prevent them from establishing themselves in the first place:</p>
+            <a href="/" class="back-link-wide">&#8592; Back to Home</a>
 
-      <h3>Bury Food Scraps Deeply</h3>
-      <p>Never leave food scraps sitting on top of your bedding. Dig a small trench in one section of the bin, drop in your kitchen waste, and cover it completely with at least two inches of clean bedding. This simple practice removes the visual and olfactory cues that attract fruit flies.</p>
+            <!-- Hero Section -->
+            <div class="pillar-hero-wide">
+                <h1>How to Control Fruit Flies in Indoor Worm Bins</h1>
+                <p class="subtitle">Fruit flies invading your worm bin? Learn proven methods to eliminate and prevent fruit fly infestations including proper food burial, traps, and bin hygiene practices.</p>
+            </div>
 
-      <h3>Maintain Proper Moisture Levels</h3>
-      <p>Damp conditions encourage fruit fly breeding. Your bedding should feel like a wrung-out sponge, not soaking wet. If you notice excess moisture, add dry shredded newspaper or cardboard to absorb it and create an unfavorable environment for flies.</p>
+            <!-- Table of Contents -->
+            <nav id="toc-wide" aria-label="Table of contents">
+                <h2>In This Guide</h2>
+                <ol>
+                    <li><a href="#why-fruit-flies-invade-worm-bins">Why Fruit Flies Invade Worm Bins</a></li>
+                    <li><a href="#prevention-the-first-line-of-defense">Prevention: The First Line of Defense</a></li>
+                    <li><a href="#eliminating-existing-fruit-fly-populations">Eliminating Existing Fruit Fly Populations</a></li>
+                    <li><a href="#what-attracts-fruit-flies-most">What Attracts Fruit Flies Most</a></li>
+                    <li><a href="#when-to-worry-about-fruit-flies">When to Worry About Fruit Flies</a></li>
+                    <li><a href="#quick-reference-fruit-fly-prevention-checklist">Quick Reference: Fruit Fly Prevention Checklist</a></li>
+                </ol>
+            </nav>
 
-      <h3>Clean the Bin Edges Regularly</h3>
-      <p>Fruit fly eggs often stick to the sides of your bin above the bedding line. Wipe down the interior walls with a damp cloth every time you add food scraps. This removes any eggs or residue that could hatch into new flies.</p>
+            <!-- Intro -->
+            <div class="article-section-wide">
+                <p>Fruit flies are one of the most common frustrations for indoor worm composters. These tiny insects can multiply quickly and become a nuisance in your home. The good news is that fruit fly problems are almost always preventable with proper bin management techniques.</p>
+            </div>
 
-      <h2>Eliminating Existing Fruit Fly Populations</h2>
-      <p>If you already have fruit flies in your bin, these methods will help eliminate them:</p>
+            <div class="article-section-wide" id="why-fruit-flies-invade-worm-bins">
+                <h2>Why Fruit Flies Invade Worm Bins</h2>
+                <p>Fruit flies are attracted to exposed food scraps, especially overripe fruits and vegetables. They lay eggs on the surface of uncovered waste, and those eggs hatch into larvae within 48 hours. The problem compounds quickly because a single female can lay hundreds of eggs in her lifetime.</p>
+            </div>
+            <div class="article-section-wide" id="prevention-the-first-line-of-defense">
+                <h2>Prevention: The First Line of Defense</h2>
+                <p>The most effective way to deal with fruit flies is to prevent them from establishing themselves in the first place:</p>
 
-      <h3>Fruit Fly Traps</h3>
-      <p>Set up small apple cider vinegar traps near (not inside) your worm bin. Place a shallow dish of vinegar with a drop of dish soap on the surface. The flies are attracted to the vinegar, break the surface tension when they land, and drown. This reduces the adult population while you address the root cause.</p>
+                <h3>Bury Food Scraps Deeply</h3>
+                <p>Never leave food scraps sitting on top of your bedding. Dig a small trench in one section of the bin, drop in your kitchen waste, and cover it completely with at least two inches of clean bedding. This simple practice removes the visual and olfactory cues that attract fruit flies.</p>
 
-      <h3>Cold Treatment</h3>
-      <p>Fruit fly larvae cannot survive cold temperatures. Place your entire bin in a refrigerator or cool area for 24 hours. The cold will kill any exposed larvae and eggs without harming your worms, which are hardy enough to withstand brief temperature drops.</p>
+                <h3>Maintain Proper Moisture Levels</h3>
+                <p>Damp conditions encourage fruit fly breeding. Your bedding should feel like a wrung-out sponge, not soaking wet. If you notice excess moisture, add dry shredded newspaper or cardboard to absorb it and create an unfavorable environment for flies.</p>
 
-      <h3>Biocontrol with Nematodes</h3>
-      <p>Nematode application is an organic method that targets fruit fly larvae in the soil. These microscopic worms are harmless to your red wigglers but lethal to fruit fly larvae. Apply according to package directions for best results.</p>
+                <h3>Clean the Bin Edges Regularly</h3>
+                <p>Fruit fly eggs often stick to the sides of your bin above the bedding line. Wipe down the interior walls with a damp cloth every time you add food scraps. This removes any eggs or residue that could hatch into new flies.</p>
+            </div>
+            <div class="article-section-wide" id="eliminating-existing-fruit-fly-populations">
+                <h2>Eliminating Existing Fruit Fly Populations</h2>
+                <p>If you already have fruit flies in your bin, these methods will help eliminate them:</p>
 
-      <h2>What Attracts Fruit Flies Most</h2>
-      <table class="comparison-table">
-        <thead><tr><th>Foods to Avoid</th><th>Safer Alternatives</th></tr></thead>
-        <tbody>
-          <tr><td>Banana peels (left exposed)</td><td>Banana pieces buried deep in bedding</td></tr>
-          <tr><td>Citrus rinds</td><td>Limited amounts, well covered</td></tr>
-          <tr><td>Overripe melon</td><td>Firm, slightly under-ripe fruit</td></tr>
-          <tr><td>Dairy products</td><td>Avoid entirely in worm bins</td></tr>
-        </tbody>
-      </table>
+                <h3>Fruit Fly Traps</h3>
+                <p>Set up small apple cider vinegar traps near (not inside) your worm bin. Place a shallow dish of vinegar with a drop of dish soap on the surface. The flies are attracted to the vinegar, break the surface tension when they land, and drown. This reduces the adult population while you address the root cause.</p>
 
-      <h2>When to Worry About Fruit Flies</h2>
-      <p>A few occasional fruit flies around your bin is normal and not a cause for alarm. Problems arise when you see dozens of flies flying around the bin, larvae crawling on the surface, or a strong odor coming from the bin. These signs indicate that food scraps are exposed or that the bin has become too wet.</p>
+                <h3>Cold Treatment</h3>
+                <p>Fruit fly larvae cannot survive cold temperatures. Place your entire bin in a refrigerator or cool area for 24 hours. The cold will kill any exposed larvae and eggs without harming your worms, which are hardy enough to withstand brief temperature drops.</p>
 
-      <h2>Quick Reference: Fruit Fly Prevention Checklist</h2>
-      <ol class="checklist">
-        <li data-phase="1"><input type="checkbox" id="ff-1"><label for="ff-1">Bury all food scraps at least two inches deep in bedding</label></li>
-        <li data-phase="2"><input type="checkbox" id="ff-2"><label for="ff-2">Wipe bin edges clean after every feeding</label></li>
-        <li data-phase="3"><input type="checkbox" id="ff-3"><label for="ff-3">Maintain bedding moisture at sponge level, not dripping</label></li>
-        <li data-phase="4"><input type="checkbox" id="ff-4"><label for="ff-4">Avoid adding dairy, meat, or oily foods to the bin</label></li>
-        <li data-phase="5"><input type="checkbox" id="ff-5"><label for="ff-5">Set up vinegar traps near the bin as a monitoring tool</label></li>
-      </ol>
+                <h3>Biocontrol with Nematodes</h3>
+                <p>Nematode application is an organic method that targets fruit fly larvae in the soil. These microscopic worms are harmless to your red wigglers but lethal to fruit fly larvae. Apply according to package directions for best results.</p>
+            </div>
+            <div class="article-section-wide" id="what-attracts-fruit-flies-most">
+                <h2>What Attracts Fruit Flies Most</h2>
+                <table class="info-table-wide">
+                    <thead><tr><th>Foods to Avoid</th><th>Safer Alternatives</th></tr></thead>
+                    <tbody>
+                        <tr><td>Banana peels (left exposed)</td><td>Banana pieces buried deep in bedding</td></tr>
+                        <tr><td>Citrus rinds</td><td>Limited amounts, well covered</td></tr>
+                        <tr><td>Overripe melon</td><td>Firm, slightly under-ripe fruit</td></tr>
+                        <tr><td>Dairy products</td><td>Avoid entirely in worm bins</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="article-section-wide" id="when-to-worry-about-fruit-flies">
+                <h2>When to Worry About Fruit Flies</h2>
+                <p>A few occasional fruit flies around your bin is normal and not a cause for alarm. Problems arise when you see dozens of flies flying around the bin, larvae crawling on the surface, or a strong odor coming from the bin. These signs indicate that food scraps are exposed or that the bin has become too wet.</p>
+            </div>
+            <div class="article-section-wide" id="quick-reference-fruit-fly-prevention-checklist">
+                <h2>Quick Reference: Fruit Fly Prevention Checklist</h2>
+                <ol>
+                    <li>Bury all food scraps at least two inches deep in bedding</li>
+                    <li>Wipe bin edges clean after every feeding</li>
+                    <li>Maintain bedding moisture at sponge level, not dripping</li>
+                    <li>Avoid adding dairy, meat, or oily foods to the bin</li>
+                    <li>Set up vinegar traps near the bin as a monitoring tool</li>
+                </ol>
 
-      <p class="cta">For more worm bin management tips, explore our <a href="troubleshoot.html">Troubleshooting Guide</a>.</p>
-    </article>
-  </main>
+                <div class="callout-wide tip">
+                    <p><strong>More Help:</strong> For more worm bin management tips, explore our <a href="troubleshoot.html">Troubleshooting Guide</a>.</p>
+                </div>
+            </div>
 
-  <div id="video-container-worm-fruit-flies"></div>
+            <!-- Video Section -->
+            <div id="video-container-worm-fruit-flies"></div>
 
-  <!-- Footer -->
-  <footer class="site-footer">
-    <p>&copy; 2026 World Composting. All rights reserved.</p>
-  </footer>
+        </main>
+    </div><!-- .page-wrapper -->
 
-  <!-- Video Section Loader -->
-  <script>
-    (async function() {
-      await new Promise(function(resolve) {
-        var s = document.createElement('script');
-        s.src = 'src/js/video-renderer.js?v=7';
-        s.onload = resolve;
-        document.head.appendChild(s);
-      });
-      window.renderVideoSection('video-container-worm-fruit-flies', 'fruit-flies');
-    })();
-  </script>
+    <!-- FOOTER: outside grid, spans full width -->
+    <footer class="footer-wide">
+        &copy; 2026 World Composting. All rights reserved.
+    </footer>
+
+    <!-- Video Section Loader -->
+    <script>
+        (async function() {
+            await new Promise(function(resolve) {
+                var s = document.createElement('script');
+                s.src = 'src/js/video-renderer.js?v=10';
+                s.onload = resolve;
+                document.head.appendChild(s);
+            });
+            if (window.renderVideoSection) {
+                window.renderVideoSection('video-container-worm-fruit-flies', 'fruit-flies');
+            }
+        })();
+    </script>
 </body>
 </html>
