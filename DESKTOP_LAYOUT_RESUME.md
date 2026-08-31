@@ -8,7 +8,7 @@
 
 ---
 
-## What's Done (21 content pages migrated)
+## What's Done (22 content pages migrated)
 
 | Page | Commit | Notes |
 |------|--------|-------|
@@ -33,10 +33,11 @@
 | `hot-cn-ratio.html` | this session | Article page (intro + 7 sections): worm-composting pattern — back-link-wide + pillar-hero-wide + TOC (7 anchors, all verified resolving) + intro block + 7 `article-section-wide` sections; 3 tables restyled to `info-table-wide`; "How to Calculate" dead-checkbox checklist converted to plain `<ol>`; CTA wrapped in `callout-wide tip` linking hot-composting.html; video container kept inside main (`cn-ratio` key renders 1 real video: It's Getting HOT! 3-Day Pre-Compost Update, takeaways present); no active sidebar marker (page not in nav); verified: clean console, tag balance OK, all TOC anchors resolve |
 | `troubleshoot.html` | this session | Checklist page (tea.html pattern): 5 phases x 6 items = 30 checkboxes (localStorage prefix `trouble_`), progress tracker, hero-intro-wide intro block; gear loader (13 items: Worm Bin Items + Fly Control + Water Gear); no video section (no `troubleshoot` key in videos.json and mobile original had none — faithful to source); HowTo JSON-LD schema preserved (7 steps, parses clean); sidebar active on "Troubleshooting" nav item; verified: verify_page.py all PASS/SKIP, clean console (0 errors), checkbox click updates progress + localStorage round-trip works, accordion toggles work, gear renders 13 items |
 | `hot-not-heating.html` | this session | Article page (intro + 7 sections): hot-best-materials pattern — back-link-wide + pillar-hero-wide (H1 + subtitle) + TOC (7 anchors, all verified resolving) + intro block + 5 problem sections with bold Solution lines; diagnostic table restyled to `info-table-wide` (5 rows); CTA wrapped in `callout-wide tip` linking troubleshoot.html; video container kept inside main (`not-heating` key renders 1 real video: Worms Escaping short, takeaways present — source mobile page HAD the video section, so preserved); no active sidebar marker (page not in nav); verified: verify_page.py all PASS/SKIP except pre-existing sidebar-whitespace FAIL shared with reference pages, clean console (0 errors), 7/7 TOC anchors resolve, table renders 5 rows |
+| `hot-speed-tips.html` | this session | Article page (intro + 7 sections): hot-best-materials pattern — back-link-wide + pillar-hero-wide (H1 + subtitle) + TOC (7 anchors, all verified resolving) + intro block + 7 `article-section-wide` sections; dead-checkbox lists (turning schedule ol, particle size ul, insulation ul) converted to plain `<ol>`/`<ul>` per hot-cn-ratio precedent (no JS on page); 2 comparison tables restyled to `info-table-wide` (4 rows each); CTA wrapped in `callout-wide tip` linking hot-composting.html; video container kept inside main (`speed-tips` key renders 1 real video: Worm Bag vs Tote, takeaways present — source mobile page HAD the video section, so preserved); no active sidebar marker (page not in nav, only a data-listing entry in index.html); verified: verify_page.py all PASS/SKIP except pre-existing sidebar-whitespace FAIL shared with reference pages, clean console (0 errors), 7/7 TOC anchors resolve, both tables fit cards without overflow |
 
 ## 🎯 Current Focus (8/31)
 
-**Suggested next page (only if user asks): `hot-speed-tips.html`** — fourth of the hot-* deep-dives. After that: remaining worm-* deep-dives, then utility pages (`blog.html`, `quick_links.html`). Do not start any of these without an explicit user prompt naming the page.
+**Suggested next page (only if user asks): `worm-bedding.html`** — first of the worm-* deep-dives (all hot-* pages now done). After that: remaining worm-* deep-dives, then utility pages (`blog.html`, `quick_links.html`). Do not start any of these without an explicit user prompt naming the page.
 
 **Uncommitted changes to keep OUT of the next commit:**
 - `M bokashi.html` (duplicate empty `<script type="ld+json">` tag ~line 470)
@@ -48,10 +49,9 @@
 
 ---
 
-## Remaining Pages to Migrate (7 content pages)
+## Remaining Pages to Migrate (6 content pages)
 
 ### Deep-Dive Pages (medium priority)
-- `hot-speed-tips.html`
 - `worm-bedding.html`
 - `worm-forbidden-foods.html`
 - `worm-fruit-flies.html`
@@ -61,7 +61,7 @@
 - `blog.html` — Blog listing with JSON data loader
 - `quick_links.html` — Official links page (228 lines, small)
 
-**Done 8/31:** `hot-best-materials.html`, `hot-cn-ratio.html`, `troubleshoot.html`, `hot-not-heating.html` ✓ (moved to Completed table above)
+**Done 8/31:** `hot-best-materials.html`, `hot-cn-ratio.html`, `troubleshoot.html`, `hot-not-heating.html`, `hot-speed-tips.html` ✓ (moved to Completed table above)
 
 **Not migration targets:** `sitemap.html`, `google8a4b2c3d1e5f6789.html` (verification file), `sample.html` (template stub)
 
@@ -204,7 +204,7 @@ git commit -m "Migrate <page>.html to desktop layout"
 This section describes the state of things so a new session can get oriented. It is NOT an instruction to start work. Wait for the user to say which page or task to handle first.
 
 - Working branch: `desktop-layout` in `/mnt/h/Hermes/landing-page-fixed` (switch only when the user asks)
-- Status as of 8/31: **21 done / 7 remaining** (hot-not-heating.html completed). All pillar pages + gear migrated; suggested order was the hot-*/worm-* deep-dives, then utility pages (`blog`, `quick_links`)
+- Status as of 8/31: **22 done / 6 remaining** (hot-speed-tips.html completed; all hot-* deep-dives now migrated). Remaining: worm-* deep-dives, then utility pages (`blog`, `quick_links`)
 - When the user does prompt work: follow migration process (Steps 1-7) and reference this file for common bugs and fixes
 
 **Page-type notes:**
