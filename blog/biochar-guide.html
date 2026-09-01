@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biochar for Composters: How to Make, Grind & Use It in Your Worm Bin | World Composting</title>
+    <meta name="description" content="A complete guide to making biochar at home, grinding it properly, and using it as a soil amendment in your worm bin or compost pile.">
+    <!-- Google Search Console Verification -->
+    <meta name="google-site-verification" content="google8a4b2c3d1e5f6789">
+    <link rel="stylesheet" href="../src/styles/theme.css">
+<style>
+        /* ===== WIDE LAYOUT OVERRIDES (supersedes theme.css #app) ===== */
+
+        .page-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 3rem;
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 2.5rem;
+            align-items: start;
+        }
+
+        /* ===== SIDEBAR NAVIGATION ===== */
+        .sidebar {
+            position: sticky;
+            top: 2rem;
+            background: white;
+            border-radius: 16px;
+            box-shadow: var(--card-shadow);
+            padding: 1.5rem;
+            max-height: calc(100vh - 4rem);
+            overflow-y: auto;
+        }
+
+        .sidebar-logo {
+            text-align: center;
+            margin-bottom: 1.25rem;
+        }
+
+        .sidebar-logo img {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--sage-green);
+        }
+
+        .sidebar-logo h2 {
+            font-family: 'Lora', serif;
+            color: var(--forest-green);
+            font-size: 1.1rem;
+            margin-top: 0.5rem;
+        }
+
+        .sidebar-nav {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar-nav li {
+            margin-bottom: 0.25rem;
+        }
+
+        .sidebar-nav a {
+            display: block;
+            padding: 0.6rem 0.85rem;
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--text-dark);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: background 0.15s, color 0.15s;
+        }
+
+        .sidebar-nav a:hover {
+            background: var(--off-white);
+            color: var(--forest-green);
+        }
+
+        .sidebar-nav a.active {
+            background: var(--forest-green);
+            color: white;
+            font-weight: 600;
+        }
+
+        .sidebar-divider {
+            height: 1px;
+            background: rgba(45,90,39,0.12);
+            margin: 1rem 0;
+        }
+
+        .sidebar-section-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-dark);
+            opacity: 0.5;
+            padding: 0.25rem 0.85rem;
+            margin-bottom: 0.25rem;
+        }
+
+        /* ===== MAIN CONTENT AREA ===== */
+        .main-content {
+            min-width: 0;
+        }
+
+        /* Back link: wider */
+        .back-link-wide {
+            display: inline-block;
+            font-size: 0.85rem;
+            color: var(--ocean-blue);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            transition: opacity 0.2s;
+        }
+
+        .back-link-wide:hover { opacity: 0.7; }
+        .back-link-wide:focus-visible {
+            outline: 2px solid var(--ocean-blue);
+            outline-offset: 2px;
+            border-radius: 2px;
+        }
+
+        /* Pillar hero: wider */
+        .pillar-hero-wide {
+            background: white;
+            border-radius: 16px;
+            padding: 2.5rem 3rem;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 2rem;
+        }
+
+        .pillar-hero-wide h1 {
+            font-family: 'Lora', serif;
+            color: var(--forest-green);
+            font-size: 2.4rem;
+            line-height: 1.3;
+            margin-top: 0;
+            text-align: center;
+        }
+
+        .pillar-hero-wide p.subtitle {
+            text-align: center;
+            font-style: italic;
+            color: var(--ocean-blue);
+            font-size: 1.1rem;
+            margin-bottom: 0;
+        }
+
+        /* Table of Contents: wider */
+        #toc-wide {
+            background: white;
+            border-radius: 16px;
+            padding: 1.5rem 2rem;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 2rem;
+        }
+
+        #toc-wide h2 {
+            font-size: 1.1rem;
+            color: var(--forest-green);
+            margin-top: 0;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        #toc-wide ol {
+            padding-left: 1.2rem;
+            margin: 0;
+        }
+
+        #toc-wide li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+
+        #toc-wide a {
+            color: var(--ocean-blue);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        #toc-wide a:hover { color: var(--forest-green); text-decoration: underline; }
+
+        /* Article Sections: wider */
+        .article-section-wide {
+            background: white;
+            border-radius: 16px;
+            padding: 2.5rem 3rem;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .article-section-wide h2 {
+            font-family: 'Lora', serif;
+            color: var(--forest-green);
+            font-size: 1.6rem;
+            margin-top: 0;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--sage-green);
+        }
+
+        .article-section-wide h3 {
+            font-family: 'Lora', serif;
+            color: var(--ocean-blue);
+            font-size: 1.25rem;
+            margin-top: 1.8rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .article-section-wide p {
+            color: var(--text-dark);
+            font-size: 1rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .article-section-wide ul, .article-section-wide ol {
+            padding-left: 1.5rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .article-section-wide li {
+            margin-bottom: 0.6rem;
+            line-height: 1.7;
+        }
+
+        .article-section-wide strong { color: var(--forest-green); }
+
+        /* Callout Boxes: wider */
+        .callout-wide {
+            background: var(--sage-green);
+            border-left: 4px solid var(--forest-green);
+            padding: 1rem 1.25rem;
+            border-radius: 0 8px 8px 0;
+            margin: 1.5rem 0;
+        }
+
+        .callout-wide.warning {
+            background: #fff3cd;
+            border-left-color: #856404;
+        }
+
+        .callout-wide.tip {
+            background: #d1ecf1;
+            border-left-color: var(--ocean-blue);
+        }
+
+        .callout-wide p { margin-bottom: 0; }
+
+        /* Info Tables: wider */
+        .info-table-wide {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.92rem;
+        }
+
+        .info-table-wide th, .info-table-wide td {
+            padding: 0.75rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--sage-green);
+        }
+
+        .info-table-wide th {
+            background: var(--forest-green);
+            color: white;
+            font-weight: 600;
+        }
+
+        .info-table-wide tr:nth-child(even) td { background: #f8f9fa; }
+
+        /* Related Pages: wider */
+        .related-pages-wide {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .related-card-wide {
+            background: white;
+            border-radius: 16px;
+            padding: 1.25rem;
+            box-shadow: var(--card-shadow);
+            text-align: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .related-card-wide:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 32px -8px rgba(75, 54, 33, 0.15);
+        }
+
+        .related-card-wide a {
+            text-decoration: none;
+            color: var(--forest-green);
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .related-card-wide p {
+            margin-top: 0.5rem;
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        /* ===== RESPONSIVE BREAKPOINTS ===== */
+        @media (max-width: 1024px) {
+            .page-wrapper {
+                grid-template-columns: 1fr;
+                padding: 1.5rem 2rem;
+            }
+
+            .sidebar {
+                position: static;
+                max-height: none;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 1rem;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .sidebar-nav {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.25rem;
+            }
+
+            .sidebar-section-label {
+                width: 100%;
+                text-align: left;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .page-wrapper {
+                padding: 1rem;
+            }
+
+            .pillar-hero-wide h1 { font-size: 1.8rem; }
+            .article-section-wide { padding: 1.25rem; }
+            .article-section-wide h2 { font-size: 1.35rem; }
+            #toc-wide { padding: 1.25rem; }
+        }
+
+        /* ===== FOOTER OVERRIDES: fix body flex centering from theme.css ===== */
+        footer.footer-wide {
+            display: block !important;
+            text-align: center;
+            padding: 2rem 3rem;
+            opacity: 0.7;
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(45,90,39,0.15);
+            margin-top: 2rem;
+        }
+
+        /* Override body flex centering for desktop layout */
+        body {
+            display: block !important;
+            justify-content: normal !important;
+            align-items: normal !important;
+        }
+    
+        /* ===== BLOG POST CONTENT OVERRIDES ===== */
+        .post-meta {
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-dark);
+            opacity: 0.7;
+            margin-top: -1.25rem;
+            margin-bottom: 2rem;
+        }
+
+        .article-section-wide .video-embed { margin: 1.5rem 0; }
+        .article-section-wide .video-embed iframe {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border: none;
+            border-radius: 8px;
+            display: block;
+        }
+        .article-section-wide .video-caption {
+            font-size: 0.85rem;
+            color: #666;
+            margin-top: 0.5rem;
+            line-height: 1.5;
+        }
+
+        /* Inline links inside article body */
+        .article-section-wide a {
+            color: var(--ocean-blue);
+            font-weight: 500;
+            text-decoration: none;
+        }
+        .article-section-wide a:hover { text-decoration: underline; }
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Biochar for Composters: How to Make, Grind & Use It in Your Worm Bin",
+  "description": "A complete guide to making biochar at home, grinding it properly, and using it as a soil amendment in your worm bin or compost pile.",
+  "datePublished": "2026-08-24",
+  "author": {
+    "@type": "Organization",
+    "name": "World Composting"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "World Composting"
+  }
+}
+    </script>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KRHYVJXZLE"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-KRHYVJXZLE');
+    </script>
+</head>
+<body>
+    <div class="page-wrapper">
+
+        <!-- ===== SIDEBAR NAVIGATION (from reference, paths rewritten for blog/) ===== -->
+<aside class="sidebar">
+            <div class="sidebar-logo">
+                            <img src="../src/assets/logo.png" alt="World Composting Logo" width="64" height="64" loading="lazy" onerror="this.src='https://via.placeholder.com/64?text=WC'">
+                            <h2>World Composting</h2>
+                        </div>
+
+            <ul class="sidebar-nav">
+                                <li><a href="../index.html">Home</a></li>
+                                <li><a href="../start-here.html">Start Here</a></li>
+                                <li><a href="../about.html">About</a></li>
+                
+                                <div class="sidebar-divider"></div>
+                                <li class="sidebar-section-label">Guides</li>
+                
+                                <li><a href="../worm-composting.html">Worm Composting</a></li>
+                                <li><a href="../hot-composting.html">Hot Composting</a></li>
+                
+                                <div class="sidebar-divider"></div>
+                                <li class="sidebar-section-label">Checklists</li>
+                
+                                <li><a href="../beginner.html">Beginner's Checklist</a></li>
+                                <li><a href="../bokashi.html">Bokashi Composting</a></li>
+                                <li><a href="../biochar.html">BioChar Composting</a></li>
+                                <li><a href="../tumbler.html">Tumbler Composting</a></li>
+                                <li><a href="../tea.html">Compost Tea</a></li>
+                                <li><a href="../lasagna.html">Lasagna Composting</a></li>
+                                <li><a href="../sustainability.html">Sustainability Journey</a></li>
+                                <li><a href="../zero-waste-kitchen.html">Zero Waste Kitchen</a></li>
+                
+                                <div class="sidebar-divider"></div>
+                                <li class="sidebar-section-label">Resources</li>
+                
+                                <li><a href="../glossary.html">Glossary</a></li>
+                                <li><a href="../troubleshoot.html">Troubleshooting</a></li>
+                                <li><a href="../blog.html">Blog</a></li>
+                                <li><a href="../sitemap.html">Sitemap</a></li>
+                
+                                <div class="sidebar-divider"></div>
+                                <li class="sidebar-section-label">Gear</li>
+                
+                                <li><a href="../gear.html">View All Gear →</a></li>
+                            </ul>
+        </aside>
+
+        <!-- ===== MAIN CONTENT AREA ===== -->
+        <main class="main-content">
+
+            <a href="../blog.html" class="back-link-wide">&#8592; Back to Blog</a>
+
+            <!-- Hero Section -->
+            <div class="pillar-hero-wide">
+                <h1>Biochar for Composters: How to Make, Grind & Use It in Your Worm Bin</h1>
+                <p class="subtitle">A complete guide to making biochar at home, grinding it properly, and using it as a soil amendment in your worm bin or compost pile.</p>
+            </div>
+
+            <p class="post-meta">Published August 24, 2026</p>
+
+            <nav id="toc-wide" aria-label="Table of contents">
+                <h2>In This Article</h2>
+                <ol>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#what-is-biochar-and-why-does-it-matter">What Is Biochar and Why Does It Matter?</a></li>
+<li><a href="#how-to-make-biochar-at-home">How to Make Biochar at Home</a></li>
+<li><a href="#preparing-charging-your-biochar">Preparing (Charging) Your Biochar</a></li>
+<li><a href="#using-biochar-in-your-worm-bin">Using Biochar in Your Worm Bin</a></li>
+<li><a href="#grinding-biochar-to-the-right-size">Grinding Biochar to the Right Size</a></li>
+<li><a href="#biochar-in-hot-composting">Biochar in Hot Composting</a></li>
+<li><a href="#what-materials-can-become-biochar">What Materials Can Become Biochar?</a></li>
+<li><a href="#next-steps-resources">Next Steps & Resources</a></li>
+                </ol>
+            </nav>
+
+<div class="article-section-wide" id="introduction">
+<h2>Introduction</h2>
+<p>Biochar is one of the most powerful amendments you can add to your compost or worm bin — but only if you prepare it correctly. Fresh biochar will absorb nutrients from your soil instead of holding them, so understanding how to make, charge, and grind it properly is essential.</p>
+</div>
+
+<div class="article-section-wide" id="what-is-biochar-and-why-does-it-matter">
+<h2>What Is Biochar and Why Does It Matter?</h2>
+<p>Biochar is essentially stable carbon — charcoal produced by heating biomass in a low-oxygen environment (pyrolysis). When added to soil or compost, it acts like a microscopic apartment building:</p>
+<ul>
+<li><strong>Habitat:</strong> Its porous structure provides shelter for beneficial bacteria and fungi.</li>
+<li><strong>Water retention:</strong> Holds moisture like a sponge, reducing watering needs by up to 30%.</li>
+<li><strong>Nutrient retention:</strong> Negatively charged surface attracts and holds positively charged nutrients (calcium, magnesium, potassium).</li>
+<li><strong>pH buffering:</strong> Raises soil pH gradually — ideal for acidic soils.</li>
+</ul>
+
+<h3>Biochar vs. Regular Charcoal Briquettes</h3>
+<table class="info-table-wide">
+<thead><tr><th>Feature</th><th>Biochar</th><th>BBQ Charcoal Briquettes</th></tr></thead>
+<tbody>
+<tr><td>Source</td><td>Natural wood, no additives</td><td>Treated with chemicals</td></tr>
+<tr><td>Porosity</td><td>High (ideal for microbes)</td><td>Low to moderate</td></tr>
+<tr><td>Additives</td><td>None</td><td>Binders, accelerants</td></tr>
+<tr><td>Safe for compost?</td><td>Yes</td><td>No — contains chemicals</td></tr>
+</tbody>
+</table>
+
+<p><strong>Critical rule:</strong> Never use BBQ charcoal briquettes. They contain chemical additives that will harm your worms and soil biology. Only use 100% natural wood biochar.</p>
+</div>
+
+<div class="article-section-wide" id="how-to-make-biochar-at-home">
+<h2>How to Make Biochar at Home</h2>
+<h3>Method 1: Campfire Kiln (Simplest)</h3>
+<p><strong>What you need:</strong> A metal drum with a lid, or a simple pit dug in the ground.</p>
+<ol class="checklist">
+<li><strong>Gather dry wood:</strong> Hardwoods like oak, maple, or hickory work best. Avoid treated or painted wood.</li>
+<li><strong>Burn down to coals:</strong> Build a fire and let it burn for 30-45 minutes until you have hot coals.</li>
+<li><strong>Add wood pieces one at a time:</strong> Let each char before adding more.</li>
+<li><strong>Remove when smoking stops:</strong> When the wood turns black (not gray), remove from heat.</li>
+<li><strong>Extinguish immediately:</strong> Use water or bury in soil to prevent ashing.</li>
+</ol>
+<p><strong>Yield:</strong> About 20-30% of original wood volume becomes biochar.</p>
+
+<div class="video-embed">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/IBKm4LehBvA" title="DIY Biochar Kiln for your Campfire!" frameborder="0" allowfullscreen></iframe>
+<p class="video-caption"><strong>Video:</strong> DIY Biochar Kiln for your Campfire!</p>
+</div>
+
+<h3>Method 2: Small Batch for Composters</h3>
+<p>If you don't want to make your own, small-batch biochar from compost suppliers is widely available. Look for products labeled "activated" or "charged" biochar — these have been pre-treated and are ready to use immediately.</p>
+
+<div class="video-embed">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/iLrkTxMZWMA" title="Small Batch Biochar for Composters" frameborder="0" allowfullscreen></iframe>
+<p class="video-caption"><strong>Video:</strong> Small Batch Biochar for Composters</p>
+</div>
+</div>
+
+<div class="article-section-wide" id="preparing-charging-your-biochar">
+<h2>Preparing (Charging) Your Biochar</h2>
+<p>Fresh biochar is like a dry sponge — it will absorb nutrients from your soil or compost instead of holding them. Charging (or inoculating) biochar means pre-loading it with nutrients and beneficial microbes so it's ready to contribute immediately.</p>
+
+<h3>Three Charging Methods</h3>
+<ol>
+<li><strong>Compost tea soak:</strong> Submerge biochar in compost tea for 24-48 hours before adding to your bin or garden.</li>
+<li><strong>Manure burial:</strong> Mix biochar with aged manure (horse, cow, chicken) and let it sit for 2-4 weeks. The manure charges the pores.</li>
+<li><strong>Worm bin pre-heating:</strong> Add biochar directly to an active worm bin and let worms charge it naturally over time.</li>
+</ol>
+
+<div class="video-embed">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/LMO-FwynYeY" title="Worm Bin Prep: Biochar Pre-Heating Success!" frameborder="0" allowfullscreen></iframe>
+<p class="video-caption"><strong>Video:</strong> Worm Bin Prep: Biochar Pre-Heating Success!</p>
+</div>
+
+<h3>How Much Biochar to Use</h3>
+<table class="info-table-wide">
+<thead><tr><th>Application</th><th>Recommended Ratio</th><th>Frequency</th></tr></thead>
+<tbody>
+<tr><td>Worm bin</td><td>5-10% of total volume</td><td>Once per season</td></tr>
+<tr><td>Compost pile</td><td>2-5% by volume</td><td>Add at each turn</td></tr>
+<tr><td>Garden soil</td><td>5-10% mixed into top 6 inches</td><td>Annual application</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="article-section-wide" id="using-biochar-in-your-worm-bin">
+<h2>Using Biochar in Your Worm Bin</h2>
+<h3>Benefits of Biochar in Vermicomposting</h3>
+<ul>
+<li><strong>Odor control:</strong> Absorbs excess moisture and neutralizes ammonia smells.</li>
+<li><strong>Worm habitat:</strong> Provides additional surface area for microbial colonization, which worms feed on.</li>
+<li><strong>pH balance:</strong> Helps stabilize pH levels, reducing the need for eggshell additions.</li>
+<li><strong>Castings quality:</strong> Worm castings produced in biochar-amended bins have been shown to contain higher populations of beneficial microbes.</li>
+</ul>
+
+<h3>Step-by-Step: Adding Biochar to Your Worm Bin</h3>
+<ol class="checklist">
+<li><strong>Prepare the biochar:</strong> Charge it using one of the methods above (compost tea soak is fastest).</li>
+<li><strong>Measure:</strong> For a 10-gallon bin, use about 1/2 cup of charged biochar.</li>
+<li><strong>Mix into bedding:</strong> Spread evenly through your existing bedding material.</li>
+<li><strong>Add food as usual:</strong> Worms will adapt within a few days.</li>
+</ol>
+
+<div class="video-embed">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/AWk74CEqhcQ" title="Stop the Stink: 10 Gallon Worm Bag Feeding & Biochar Lesson | Feb, 19, 2026" frameborder="0" allowfullscreen></iframe>
+<p class="video-caption"><strong>Video:</strong> Stop the Stink: 10 Gallon Worm Bag Feeding & Biochar Lesson</p>
+</div>
+
+<h3>Troubleshooting with Biochar</h3>
+<ul>
+<li><strong>Bin too wet?</strong> Add charged biochar — it absorbs excess moisture without harming worms.</li>
+<li><strong>Fruit flies returning?</strong> Layer biochar under food scraps as a physical barrier.</li>
+<li><strong>Worms avoiding new material?</strong> Make sure biochar is fully charged before adding.</li>
+</ul>
+</div>
+
+<div class="article-section-wide" id="grinding-biochar-to-the-right-size">
+<h2>Grinding Biochar to the Right Size</h2>
+<p>Large chunks of biochar won't mix well with bedding and may create air pockets that dry out sections of your bin. Properly ground biochar integrates evenly and provides maximum surface area for microbial colonization.</p>
+
+<h3>Methods for Grinding Biochar</h3>
+<ol>
+<li><strong>Paint mixer attachment:</strong> Attach a paint mixing paddle to a drill and grind biochar in a bucket. This is the fastest method for large batches.</li>
+<li><strong>Mortar and pestle:</strong> Best for small quantities — gives you precise control over particle size.</li>
+<li><strong>Rolling pin or hammer:</strong> Place biochar between two layers of heavy fabric and crush manually.</li>
+</ol>
+
+<div class="video-embed">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/AE8A2kCJYkY" title="Ultimate Biochar Grinding & Preparation for Worm Bins and Soil — DIY Methods, Tools, & Tips (2025)" frameborder="0" allowfullscreen></iframe>
+<p class="video-caption"><strong>Video:</strong> Ultimate Biochar Grinding & Preparation for Worm Bins and Soil</p>
+</div>
+
+<div class="video-embed">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/6_KH7kaGOKc" title="Crush Charcoal with Paint Mixer?" frameborder="0" allowfullscreen></iframe>
+<p class="video-caption"><strong>Video:</strong> Crush Charcoal with Paint Mixer?</p>
+</div>
+
+<h3>Target Particle Size</h3>
+<ul>
+<li><strong>Ideal:</strong> 1/4 inch or smaller (roughly the size of rice grains to small pebbles).</li>
+<li><strong>Too fine (<1mm):</strong> Dusty, may blow away during mixing.</li>
+<li><strong>Too coarse (>1/2 inch):</strong> Won't integrate well with bedding material.</li>
+</ul>
+</div>
+
+<div class="article-section-wide" id="biochar-in-hot-composting">
+<h2>Biochar in Hot Composting</h2>
+<p>Biochar works equally well in hot composting systems:</p>
+<ul>
+<li>Add charged biochar at each turn of the pile (every 7-14 days).</li>
+<li>Use a higher ratio than worm bins: 5-10% by volume.</li>
+<li>The heat of active decomposition helps charge the biochar naturally.</li>
+</ul>
+
+<div class="video-embed">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/CHOBulWCiVk" title="Worm Bedding Update: We Have Ignition! #compostbin #shorts #biochar" frameborder="0" allowfullscreen></iframe>
+<p class="video-caption"><strong>Video:</strong> Worm Bedding Update: We Have Ignition!</p>
+</div>
+</div>
+
+<div class="article-section-wide" id="what-materials-can-become-biochar">
+<h2>What Materials Can Become Biochar?</h2>
+<table class="info-table-wide">
+<thead><tr><th>Material</th><th>Quality</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td>Hardwood (oak, maple)</td><td>Excellent</td><td>Dense, long-lasting biochar</td></tr>
+<tr><td>Softwood (pine, cedar)</td><td>Good</td><td>Burns faster, lighter biochar</td></tr>
+<tr><td>Agricultural waste (corn stalks, rice husks)</td><td>Very good</td><td>Fast pyrolysis, high yield</td></tr>
+<tr><td>Nut shells (walnut, almond)</td><td>Excellent</td><td>Dense, slow-burning</td></tr>
+<tr><td>Treated/painted wood</td><td>AVOID</td><td>Contains toxic chemicals</td></tr>
+</tbody>
+</table>
+
+<div class="video-embed">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/EbG1jIeSUkA" title="Can THIS Become Biochar? #gardening #biochar #kiln #composting" frameborder="0" allowfullscreen></iframe>
+<p class="video-caption"><strong>Video:</strong> Can THIS Become Biochar?</p>
+</div>
+</div>
+
+<div class="article-section-wide" id="next-steps-resources">
+<h2>Next Steps & Resources</h2>
+<ul>
+<li><a href="../worm-composting.html">Worm Composting Complete Guide</a> — How biochar fits into your overall vermicomposting system.</li>
+<li><a href="../biochar.html">BioChar Checklist</a> — Step-by-step biochar preparation checklist.</li>
+<li><a href="../gear.html">Recommended Gear</a> — Tools for making and grinding biochar.</li>
+<li><a href="../hot-composting.html">Hot Composting Complete Guide</a> — Using biochar in hot composting systems.</li>
+</ul>
+</div>
+
+        </main>
+
+    </div><!-- .page-wrapper -->
+
+    <!-- FOOTER: outside grid, spans full width -->
+    <footer class="footer-wide">
+        &copy; 2026 World Composting. All rights reserved.
+    </footer>
+</body>
+</html>

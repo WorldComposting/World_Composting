@@ -579,9 +579,10 @@
                 listContainer.innerHTML = '';
 
                 posts.forEach(post => {
-                    const card = document.createElement('div');
+                    const card = document.createElement('a');
                     card.className = 'video-card'; // Use existing video-card styling for consistency!
-                    card.style.cursor = 'default';
+                    card.href = `blog/${post.slug}.html`;
+                    card.style.cursor = 'pointer';
                     card.innerHTML = `
                         <div class="video-info">
                             <span style="font-size: 0.8rem; color: var(--forest-green); font-weight: bold;">${post.date}</span>

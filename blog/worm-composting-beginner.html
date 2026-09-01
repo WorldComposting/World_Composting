@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Start a Worm Bin Indoors: Complete Beginner's Guide | World Composting</title>
+    <meta name="description" content="Everything you need to know about setting up your first indoor worm composting system, from choosing the right bin to feeding and maintaining healthy worms.">
+    <!-- Google Search Console Verification -->
+    <meta name="google-site-verification" content="google8a4b2c3d1e5f6789">
+    <link rel="stylesheet" href="../src/styles/theme.css">
+<style>
+        /* ===== WIDE LAYOUT OVERRIDES (supersedes theme.css #app) ===== */
+
+        .page-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 3rem;
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 2.5rem;
+            align-items: start;
+        }
+
+        /* ===== SIDEBAR NAVIGATION ===== */
+        .sidebar {
+            position: sticky;
+            top: 2rem;
+            background: white;
+            border-radius: 16px;
+            box-shadow: var(--card-shadow);
+            padding: 1.5rem;
+            max-height: calc(100vh - 4rem);
+            overflow-y: auto;
+        }
+
+        .sidebar-logo {
+            text-align: center;
+            margin-bottom: 1.25rem;
+        }
+
+        .sidebar-logo img {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--sage-green);
+        }
+
+        .sidebar-logo h2 {
+            font-family: 'Lora', serif;
+            color: var(--forest-green);
+            font-size: 1.1rem;
+            margin-top: 0.5rem;
+        }
+
+        .sidebar-nav {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar-nav li {
+            margin-bottom: 0.25rem;
+        }
+
+        .sidebar-nav a {
+            display: block;
+            padding: 0.6rem 0.85rem;
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--text-dark);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: background 0.15s, color 0.15s;
+        }
+
+        .sidebar-nav a:hover {
+            background: var(--off-white);
+            color: var(--forest-green);
+        }
+
+        .sidebar-nav a.active {
+            background: var(--forest-green);
+            color: white;
+            font-weight: 600;
+        }
+
+        .sidebar-divider {
+            height: 1px;
+            background: rgba(45,90,39,0.12);
+            margin: 1rem 0;
+        }
+
+        .sidebar-section-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-dark);
+            opacity: 0.5;
+            padding: 0.25rem 0.85rem;
+            margin-bottom: 0.25rem;
+        }
+
+        /* ===== MAIN CONTENT AREA ===== */
+        .main-content {
+            min-width: 0;
+        }
+
+        /* Back link: wider */
+        .back-link-wide {
+            display: inline-block;
+            font-size: 0.85rem;
+            color: var(--ocean-blue);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            transition: opacity 0.2s;
+        }
+
+        .back-link-wide:hover { opacity: 0.7; }
+        .back-link-wide:focus-visible {
+            outline: 2px solid var(--ocean-blue);
+            outline-offset: 2px;
+            border-radius: 2px;
+        }
+
+        /* Pillar hero: wider */
+        .pillar-hero-wide {
+            background: white;
+            border-radius: 16px;
+            padding: 2.5rem 3rem;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 2rem;
+        }
+
+        .pillar-hero-wide h1 {
+            font-family: 'Lora', serif;
+            color: var(--forest-green);
+            font-size: 2.4rem;
+            line-height: 1.3;
+            margin-top: 0;
+            text-align: center;
+        }
+
+        .pillar-hero-wide p.subtitle {
+            text-align: center;
+            font-style: italic;
+            color: var(--ocean-blue);
+            font-size: 1.1rem;
+            margin-bottom: 0;
+        }
+
+        /* Table of Contents: wider */
+        #toc-wide {
+            background: white;
+            border-radius: 16px;
+            padding: 1.5rem 2rem;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 2rem;
+        }
+
+        #toc-wide h2 {
+            font-size: 1.1rem;
+            color: var(--forest-green);
+            margin-top: 0;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        #toc-wide ol {
+            padding-left: 1.2rem;
+            margin: 0;
+        }
+
+        #toc-wide li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+
+        #toc-wide a {
+            color: var(--ocean-blue);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        #toc-wide a:hover { color: var(--forest-green); text-decoration: underline; }
+
+        /* Article Sections: wider */
+        .article-section-wide {
+            background: white;
+            border-radius: 16px;
+            padding: 2.5rem 3rem;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .article-section-wide h2 {
+            font-family: 'Lora', serif;
+            color: var(--forest-green);
+            font-size: 1.6rem;
+            margin-top: 0;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--sage-green);
+        }
+
+        .article-section-wide h3 {
+            font-family: 'Lora', serif;
+            color: var(--ocean-blue);
+            font-size: 1.25rem;
+            margin-top: 1.8rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .article-section-wide p {
+            color: var(--text-dark);
+            font-size: 1rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .article-section-wide ul, .article-section-wide ol {
+            padding-left: 1.5rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .article-section-wide li {
+            margin-bottom: 0.6rem;
+            line-height: 1.7;
+        }
+
+        .article-section-wide strong { color: var(--forest-green); }
+
+        /* Callout Boxes: wider */
+        .callout-wide {
+            background: var(--sage-green);
+            border-left: 4px solid var(--forest-green);
+            padding: 1rem 1.25rem;
+            border-radius: 0 8px 8px 0;
+            margin: 1.5rem 0;
+        }
+
+        .callout-wide.warning {
+            background: #fff3cd;
+            border-left-color: #856404;
+        }
+
+        .callout-wide.tip {
+            background: #d1ecf1;
+            border-left-color: var(--ocean-blue);
+        }
+
+        .callout-wide p { margin-bottom: 0; }
+
+        /* Info Tables: wider */
+        .info-table-wide {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.92rem;
+        }
+
+        .info-table-wide th, .info-table-wide td {
+            padding: 0.75rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--sage-green);
+        }
+
+        .info-table-wide th {
+            background: var(--forest-green);
+            color: white;
+            font-weight: 600;
+        }
+
+        .info-table-wide tr:nth-child(even) td { background: #f8f9fa; }
+
+        /* Related Pages: wider */
+        .related-pages-wide {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .related-card-wide {
+            background: white;
+            border-radius: 16px;
+            padding: 1.25rem;
+            box-shadow: var(--card-shadow);
+            text-align: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .related-card-wide:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 32px -8px rgba(75, 54, 33, 0.15);
+        }
+
+        .related-card-wide a {
+            text-decoration: none;
+            color: var(--forest-green);
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .related-card-wide p {
+            margin-top: 0.5rem;
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        /* ===== RESPONSIVE BREAKPOINTS ===== */
+        @media (max-width: 1024px) {
+            .page-wrapper {
+                grid-template-columns: 1fr;
+                padding: 1.5rem 2rem;
+            }
+
+            .sidebar {
+                position: static;
+                max-height: none;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 1rem;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .sidebar-nav {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.25rem;
+            }
+
+            .sidebar-section-label {
+                width: 100%;
+                text-align: left;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .page-wrapper {
+                padding: 1rem;
+            }
+
+            .pillar-hero-wide h1 { font-size: 1.8rem; }
+            .article-section-wide { padding: 1.25rem; }
+            .article-section-wide h2 { font-size: 1.35rem; }
+            #toc-wide { padding: 1.25rem; }
+        }
+
+        /* ===== FOOTER OVERRIDES: fix body flex centering from theme.css ===== */
+        footer.footer-wide {
+            display: block !important;
+            text-align: center;
+            padding: 2rem 3rem;
+            opacity: 0.7;
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(45,90,39,0.15);
+            margin-top: 2rem;
+        }
+
+        /* Override body flex centering for desktop layout */
+        body {
+            display: block !important;
+            justify-content: normal !important;
+            align-items: normal !important;
+        }
+    
+        /* ===== BLOG POST CONTENT OVERRIDES ===== */
+        .post-meta {
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-dark);
+            opacity: 0.7;
+            margin-top: -1.25rem;
+            margin-bottom: 2rem;
+        }
+
+        .article-section-wide .video-embed { margin: 1.5rem 0; }
+        .article-section-wide .video-embed iframe {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border: none;
+            border-radius: 8px;
+            display: block;
+        }
+        .article-section-wide .video-caption {
+            font-size: 0.85rem;
+            color: #666;
+            margin-top: 0.5rem;
+            line-height: 1.5;
+        }
+
+        /* Inline links inside article body */
+        .article-section-wide a {
+            color: var(--ocean-blue);
+            font-weight: 500;
+            text-decoration: none;
+        }
+        .article-section-wide a:hover { text-decoration: underline; }
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "How to Start a Worm Bin Indoors: Complete Beginner's Guide",
+  "description": "Everything you need to know about setting up your first indoor worm composting system, from choosing the right bin to feeding and maintaining healthy worms.",
+  "datePublished": "2026-08-24",
+  "author": {
+    "@type": "Organization",
+    "name": "World Composting"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "World Composting"
+  }
+}
+    </script>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KRHYVJXZLE"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-KRHYVJXZLE');
+    </script>
+</head>
+<body>
+    <div class="page-wrapper">
+
+        <!-- ===== SIDEBAR NAVIGATION (from reference, paths rewritten for blog/) ===== -->
+<aside class="sidebar">
+            <div class="sidebar-logo">
+                            <img src="../src/assets/logo.png" alt="World Composting Logo" width="64" height="64" loading="lazy" onerror="this.src='https://via.placeholder.com/64?text=WC'">
+                            <h2>World Composting</h2>
+                        </div>
+
+            <ul class="sidebar-nav">
+                                <li><a href="../index.html">Home</a></li>
+                                <li><a href="../start-here.html">Start Here</a></li>
+                                <li><a href="../about.html">About</a></li>
+                
+                                <div class="sidebar-divider"></div>
+                                <li class="sidebar-section-label">Guides</li>
+                
+                                <li><a href="../worm-composting.html">Worm Composting</a></li>
+                                <li><a href="../hot-composting.html">Hot Composting</a></li>
+                
+                                <div class="sidebar-divider"></div>
+                                <li class="sidebar-section-label">Checklists</li>
+                
+                                <li><a href="../beginner.html">Beginner's Checklist</a></li>
+                                <li><a href="../bokashi.html">Bokashi Composting</a></li>
+                                <li><a href="../biochar.html">BioChar Composting</a></li>
+                                <li><a href="../tumbler.html">Tumbler Composting</a></li>
+                                <li><a href="../tea.html">Compost Tea</a></li>
+                                <li><a href="../lasagna.html">Lasagna Composting</a></li>
+                                <li><a href="../sustainability.html">Sustainability Journey</a></li>
+                                <li><a href="../zero-waste-kitchen.html">Zero Waste Kitchen</a></li>
+                
+                                <div class="sidebar-divider"></div>
+                                <li class="sidebar-section-label">Resources</li>
+                
+                                <li><a href="../glossary.html">Glossary</a></li>
+                                <li><a href="../troubleshoot.html">Troubleshooting</a></li>
+                                <li><a href="../blog.html">Blog</a></li>
+                                <li><a href="../sitemap.html">Sitemap</a></li>
+                
+                                <div class="sidebar-divider"></div>
+                                <li class="sidebar-section-label">Gear</li>
+                
+                                <li><a href="../gear.html">View All Gear →</a></li>
+                            </ul>
+        </aside>
+
+        <!-- ===== MAIN CONTENT AREA ===== -->
+        <main class="main-content">
+
+            <a href="../blog.html" class="back-link-wide">&#8592; Back to Blog</a>
+
+            <!-- Hero Section -->
+            <div class="pillar-hero-wide">
+                <h1>How to Start a Worm Bin Indoors: Complete Beginner's Guide</h1>
+                <p class="subtitle">Everything you need to know about setting up your first indoor worm composting system, from choosing the right bin to feeding and maintaining healthy worms.</p>
+            </div>
+
+            <p class="post-meta">Published August 24, 2026</p>
+
+            <nav id="toc-wide" aria-label="Table of contents">
+                <h2>In This Article</h2>
+                <ol>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#why-worm-composting-works-indoors">Why Worm Composting Works Indoors</a></li>
+<li><a href="#choosing-your-worm-bin-system">Choosing Your Worm Bin System</a></li>
+<li><a href="#getting-your-worms">Getting Your Worms</a></li>
+<li><a href="#setting-up-your-bin">Setting Up Your Bin</a></li>
+<li><a href="#feeding-your-worms">Feeding Your Worms</a></li>
+<li><a href="#troubleshooting-common-problems">Troubleshooting Common Problems</a></li>
+<li><a href="#harvesting-your-castings">Harvesting Your Castings</a></li>
+<li><a href="#next-steps-resources">Next Steps & Resources</a></li>
+                </ol>
+            </nav>
+
+<div class="article-section-wide" id="introduction">
+<h2>Introduction</h2>
+<p>You don't need a yard or a garden to turn food scraps into black gold. Vermicomposting (worm composting) is one of the most popular indoor composting methods because it works well under the kitchen sink, in a basement, or closet — no smell and no pests when done right.</p>
+<p>This guide covers everything: choosing your bin, getting worms, setup, feeding, troubleshooting, and harvesting nutrient-rich castings that are 5x more valuable than regular compost.</p>
+</div>
+
+<div class="article-section-wide" id="why-worm-composting-works-indoors">
+<h2>Why Worm Composting Works Indoors</h2>
+<p>Vermicomposting uses red wigglers (<em>Eisenia fetida</em>) that thrive in contained environments. Unlike hot composting, worm bins operate at ambient temperatures — perfect for basements, under sinks, or closets.</p>
+<p>The end product: nutrient-rich castings packed with beneficial microbes, plant-available nutrients, and humic acids that improve soil structure and water retention.</p>
+</div>
+
+<div class="article-section-wide" id="choosing-your-worm-bin-system">
+<h2>Choosing Your Worm Bin System</h2>
+<h3>Urban Worm Bag vs. Fabric Tote vs. Commercial Bins</h3>
+<table class="info-table-wide">
+<thead><tr><th>Feature</th><th>Urban Worm Bag</th><th>10-Gallon Grow Bag</th><th>Vermibag Max</th><th>Commercial Stack</th></tr></thead>
+<tbody>
+<tr><td>Cost</td><td>~$25</td><td>~$15</td><td>~$40</td><td>$60+</td></tr>
+<tr><td>Capacity</td><td>7-10 gal</td><td>10 gal</td><td>10 gal</td><td>Variable</td></tr>
+<tr><td>Best For</td><td>Beginners, small spaces</td><td>Budget setups</td><td>Multi-layer harvesting</td><td>Advanced users</td></tr>
+</tbody>
+</table>
+
+<h3>What to Look For in Any Bin</h3>
+<ul class="checklist">
+<li><strong>Drainage:</strong> Must have a spigot or easy drainage for leachate.</li>
+<li><strong>Aeration:</strong> Holes drilled in lid and sides for airflow.</li>
+<li><strong>Size:</strong> Start with 10 gallons — enough capacity without being overwhelming.</li>
+<li><strong>Material:</strong> Opaque fabric or plastic (worms avoid light).</li>
+</ul>
+
+<p><a href="../gear.html">View Recommended Gear &rarr;</a></p>
+</div>
+
+<div class="article-section-wide" id="getting-your-worms">
+<h2>Getting Your Worms</h2>
+<h3>Red Wigglers vs. African Nightcrawlers vs. European Nightcrawlers</h3>
+<table class="info-table-wide">
+<thead><tr><th>Species</th><th>Temperature Range</th><th>Best Use</th></tr></thead>
+<tbody>
+<tr><td>Red Wiggler (<em>Eisenia fetida</em>)</td><td>55-77°F (13-25°C)</td><td>Indoor bins, beginners</td></tr>
+<tr><td>African Nightcrawler</td><td>60-85°F (15-29°C)</td><td>Warmer climates, outdoor</td></tr>
+<tr><td>European Nightcrawler</td><td>45-75°F (7-24°C)</td><td>Cooler basements, garages</td></tr>
+</tbody>
+</table>
+
+<p><strong>Recommendation for beginners:</strong> Red wigglers are the gold standard. They're hardy, reproduce quickly, and handle a wide range of conditions.</p>
+
+<h3>How Many Worms to Start With</h3>
+<p>1 pound of worms (roughly 1,000 red wigglers) is the ideal starting amount. This gives you enough population to process about half a pound of food scraps per week.</p>
+
+<div class="video-embed">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ZfgO2DUSzvY" title="Best Worm Bin for Beginners? Comparing 7, 10, 14, 27, & 40 Gallon Totes" frameborder="0" allowfullscreen></iframe>
+<p class="video-caption"><strong>Video:</strong> Best Worm Bin for Beginners? Comparing 7, 10, 14, 27, & 40 Gallon Totes</p>
+</div>
+</div>
+
+<div class="article-section-wide" id="setting-up-your-bin">
+<h2>Setting Up Your Bin</h2>
+<ol class="checklist">
+<li><strong>Choose your location:</strong> Under the sink, in a basement, closet, or garage. Keep it out of direct sunlight and away from extreme temperatures.</li>
+<li><strong>Prepare bedding:</strong> Shred 4-5 sheets of newspaper into confetti-sized pieces. Soak in water until wrung-out damp (like a sponge). Add to your bin — this should fill about half the volume.</li>
+<li><strong>Add worms:</strong> Place worms on top of the bedding and let them burrow down naturally. Don't mix them in.</li>
+<li><strong>Initial feeding:</strong> Cover the bedding with a thin layer of kitchen scraps (no more than 1/4 cup for a new bin).</li>
+<li><strong>Wait one week:</strong> Let the system establish before adding more food.</li>
+</ol>
+
+<h3>Bedding Materials Compared</h3>
+<table class="info-table-wide">
+<thead><tr><th>Material</th><th>Pros</th><th>Cons</th></tr></thead>
+<tbody>
+<tr><td>Shredded newspaper</td><td>Cheap, readily available</td><td>Breaks down quickly</td></tr>
+<tr><td>Coconut coir</td><td>Retains moisture well</td><td>Can be compacted</td></tr>
+<tr><td>Aged leaves</td><td>Adds carbon, free</td><td>Seasonal availability</td></tr>
+<tr><td>Hemp bedding</td><td>Excellent aeration</td><td>More expensive</td></tr>
+</tbody>
+</table>
+
+<div class="video-embed">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Eji3HGz97EY" title="How to Start an Urban Worm Bag: The Ultimate Beginner's Guide!" frameborder="0" allowfullscreen></iframe>
+<p class="video-caption"><strong>Video:</strong> How to Start an Urban Worm Bag: The Ultimate Beginner's Guide!</p>
+</div>
+</div>
+
+<div class="article-section-wide" id="feeding-your-worms">
+<h2>Feeding Your Worms</h2>
+<h3>What to Feed (The Greens)</h3>
+<ul>
+<li>Fruit and vegetable scraps (banana peels, apple cores, carrot tops)</li>
+<li>Coffee grounds and tea bags (remove staples)</li>
+<li>Crushed eggshells (adds calcium, balances pH)</li>
+<li>Leftover grains in small amounts</li>
+</ul>
+
+<h3>What NOT to Feed (Avoid These)</h3>
+<ul>
+<li>Meat, fish, dairy — causes odors and pests</li>
+<li>Oily or greasy foods — attracts flies</li>
+<li>Citrus in large quantities — too acidic</li>
+<li>Spicy foods, onions, garlic — can harm worms</li>
+<li>Glossy or colored paper — contains chemicals</li>
+</ul>
+
+<h3>Feeding Schedule</h3>
+<ul>
+<li><strong>Week 1:</strong> No food (system establishment)</li>
+<li><strong>Weeks 2-4:</strong> Start with 1/4 cup every 3 days</li>
+<li><strong>Month 2+:</strong> Gradually increase to 1/2 lb per week</li>
+<li><strong>Rule of thumb:</strong> Feed less than what they can eat in a week</li>
+</ul>
+
+<div class="video-embed">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/sqUvd9Be6Q0" title="Urban Worm Bag Update: Population Boom? & System Health" frameborder="0" allowfullscreen></iframe>
+<p class="video-caption"><strong>Video:</strong> Urban Worm Bag Update: Population Boom? & System Health</p>
+</div>
+</div>
+
+<div class="article-section-wide" id="troubleshooting-common-problems">
+<h2>Troubleshooting Common Problems</h2>
+<h3>Fruit Flies</h3>
+<ul><li><strong>Cause:</strong> Food exposed on the surface.</li><li><strong>Fix:</strong> Bury food 2 inches deep under bedding. Add a layer of damp newspaper or cardboard.</li></ul>
+
+<div class="video-embed">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/shlsmMy_gjc" title="Get Rid of Fruit Flies in Worm Bins" frameborder="0" allowfullscreen></iframe>
+<p class="video-caption"><strong>Video:</strong> Get Rid of Fruit Flies in Worm Bins</p>
+</div>
+
+<h3>Worms Trying to Escape</h3>
+<ul><li><strong>Cause:</strong> Usually too wet, too acidic, or no food.</li><li><strong>Fix:</strong> Add dry bedding (shredded paper), sprinkle crushed eggshells for pH balance, and ensure adequate food supply.</li></ul>
+
+<div class="video-embed">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/tDSA6k6rwwY" title="Worms Escaping! #compostbin #wormbin #diy April 2, 2026" frameborder="0" allowfullscreen></iframe>
+<p class="video-caption"><strong>Video:</strong> Worms Escaping!</p>
+</div>
+
+<h3>Bin Smells Bad</h3>
+<ul><li><strong>Cause:</strong> Overfeeding or too much nitrogen (greens).</li><li><strong>Fix:</strong> Stop feeding for a few days, add dry browns (shredded paper, cardboard), and mix the bin. Add biochar to absorb excess moisture.</li></ul>
+
+<h3>Worms Are Lethargic or Dying</h3>
+<ul><li><strong>Cause:</strong> Temperature extremes, chemical exposure, or overfeeding.</li><li><strong>Fix:</strong> Check temperature (ideal: 55-77°F), remove any spoiled food, add fresh bedding.</li></ul>
+
+<div class="video-embed">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/pH-n-EzNJ_g" title="Urban Worm Bag - African Nightcrawlers Lethargic! 04/17/2025" frameborder="0" allowfullscreen></iframe>
+<p class="video-caption"><strong>Video:</strong> Urban Worm Bag - African Nightcrawlers Lethargic!</p>
+</div>
+</div>
+
+<div class="article-section-wide" id="harvesting-your-castings">
+<h2>Harvesting Your Castings</h2>
+<h3>When to Harvest</h3>
+<ul><li>After 3-6 months, when the bedding has turned dark and crumbly.</li><li>You'll notice fewer worms in the food layer — they've moved down.</li></ul>
+
+<h3>The Light Method (Easiest for Beginners)</h3>
+<ol>
+<li>Push all contents to one side of the bin.</li>
+<li>Add fresh bedding and food to the empty side.</li>
+<li>After 1-2 weeks, worms will have migrated to the new side.</li>
+<li>Remove the castings from the original side — it should be mostly worm-free.</li>
+</ol>
+
+<div class="video-embed">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/iufCvxCwy1w" title="How to Harvest VermiBag Max: Perfect Castings Every Time" frameborder="0" allowfullscreen></iframe>
+<p class="video-caption"><strong>Video:</strong> How to Harvest VermiBag Max: Perfect Castings Every Time</p>
+</div>
+</div>
+
+<div class="article-section-wide" id="next-steps-resources">
+<h2>Next Steps & Resources</h2>
+<ul>
+<li><a href="../worm-composting.html">Worm Composting Complete Guide</a> — Deep dive into advanced techniques.</li>
+<li><a href="../beginner.html">Beginner's Checklist</a> — Interactive setup checklist.</li>
+<li><a href="../gear.html">Recommended Gear</a> — Tools and supplies we recommend.</li>
+<li><a href="../biochar.html">Biochar for Worm Bins</a> — How to use biochar in your worm bin.</li>
+</ul>
+</div>
+
+        </main>
+
+    </div><!-- .page-wrapper -->
+
+    <!-- FOOTER: outside grid, spans full width -->
+    <footer class="footer-wide">
+        &copy; 2026 World Composting. All rights reserved.
+    </footer>
+</body>
+</html>
