@@ -8,7 +8,7 @@
 
 ---
 
-## What's Done (26 content pages migrated)
+## What's Done (27 content pages migrated)
 
 | Page | Commit | Notes |
 |------|--------|-------|
@@ -38,10 +38,11 @@
 | `worm-forbidden-foods.html` | this session | Article page (intro + 5 sections): hot-best-materials pattern — back-link-wide + pillar-hero-wide (H1 + subtitle) + TOC (5 anchors, all verified resolving) + intro block + 5 `article-section-wide` sections; "Foods to Never Add" section keeps its 6 H3 subsections intact; dead-checkbox lists (safe foods ul, overfeeding signs ol) converted to plain `<ul>`/`<ol>` per hot-cn-ratio precedent (no JS on page); comparison table restyled to `info-table-wide` (5 rows, 3 columns — verified fits card without overflow); CTA wrapped in `callout-wide tip` linking worm-composting.html; video container kept inside main (`forbidden-foods` key renders 2 real videos: citrus/lemon test pair, takeaways present — source mobile page HAD the video section, so preserved); no active sidebar marker (page not in nav, only a data-listing entry in index.html); verified: verify_page.py all PASS/SKIP except pre-existing sidebar-whitespace FAIL shared with reference pages, clean console (0 errors), 5/5 TOC anchors resolve |
 | `worm-fruit-flies.html` | this session | Article page (intro + 6 sections): hot-best-materials pattern — back-link-wide + pillar-hero-wide (H1 + subtitle) + TOC (6 anchors, all verified resolving) + intro block + 6 `article-section-wide` sections; "Prevention" and "Eliminating Existing Populations" sections keep their H3 subsections intact (3 each); dead-checkbox prevention checklist converted to plain `<ol>` per hot-cn-ratio precedent (no JS on page — renders decimal markers, verified via computed style); comparison table restyled to `info-table-wide` (4 rows, 2 columns — measured: table width exactly equals card inner width, no overflow, no page h-scroll); CTA wrapped in `callout-wide tip` linking troubleshoot.html; video container kept inside main (`fruit-flies` key renders 1 real video: DIY Fruit Fly Trap, takeaways present — source mobile page HAD the video section, so preserved); no active sidebar marker (page not in nav, only a data-listing entry in index.html); verified: verify_page.py all PASS/SKIP except pre-existing sidebar-whitespace FAIL shared with reference pages, clean console (0 errors), 6/6 TOC anchors resolve |
 | `worm-harvesting.html` | this session | Article page (intro + 7 sections): hot-best-materials pattern — back-link-wide + pillar-hero-wide (H1 + subtitle from meta description) + TOC (7 anchors, all verified resolving) + intro block (lead paragraph preserved as its own section after TOC, matching worm-bedding/worm-forbidden-foods structure) + 7 `article-section-wide` sections; dead-checkbox lists (migration steps x7, harvesting timeline x4) converted to plain `<ol>` per hot-cn-ratio precedent (no JS on page — both render decimal markers, verified via computed style); comparison table restyled to `info-table-wide` (4 rows, 3 columns — measured: table width exactly equals card inner width at 728px, no overflow, no page h-scroll); CTA wrapped in `callout-wide tip` linking worm-composting.html; video container kept inside main (`harvesting` key renders 2 real videos: VermiBag Max + Red Wigglers pair — source mobile page HAD the video section, so preserved); no active sidebar marker (page not in nav, only a data-listing entry in index.html); verified: verify_page.py all PASS/SKIP except pre-existing sidebar-whitespace FAIL shared with reference pages, clean console (0 errors), 7/7 TOC anchors resolve |
+| `blog.html` | this session | Utility page (JS-driven blog listing): worm-harvesting pattern — back-link-wide + pillar-hero-wide (H1 "World Composting Blog" + subtitle) + `#blog-list-container` with section-title heading; JS loader preserved verbatim (fetch src/data/blog.json, video-card rendering, error handling); mobile `<style>` block kept for the JS-rendered cards; **active sidebar marker on Blog link** (page IS a nav item in index.html line 562 — unlike deep-dives); FAQPage JSON-LD preserved as-is from source (NOTE: schema content is generic composting-basics FAQs, not blog-specific — flagged to user, kept per preserve-schema rule); **fixed copy-paste title bug**: mobile `<title>` said "World Composting | Official Links" (leftover from quick_links) — corrected to "World Composting | Blog"; added google-site-verification meta per established pattern; gtag already in source; verified: verify_page.py all PASS/SKIP except sidebar FAIL which is ONLY the intentional active class + pre-existing whitespace (diffed against index.html), clean console (0 errors), 3/3 blog posts render from JSON, no page h-scroll |
 
 ## 🎯 Current Focus (8/31)
 
-**Suggested next page (only if user asks): `blog.html`** — first of the two remaining utility pages (all deep-dives now done). After that: `quick_links.html`. Do not start any of these without an explicit user prompt naming the page.
+**Suggested next page (only if user asks): `quick_links.html`** — last remaining utility page (all deep-dives + blog done). Do not start without an explicit user prompt naming the page.
 
 **Uncommitted changes to keep OUT of the next commit:**
 - `M bokashi.html` (duplicate empty `<script type="ld+json">` tag ~line 470)
@@ -53,13 +54,12 @@
 
 ---
 
-## Remaining Pages to Migrate (2 content pages)
+## Remaining Pages to Migrate (1 content page)
 
 ### Utility Pages (lower priority)
-- `blog.html` — Blog listing with JSON data loader
 - `quick_links.html` — Official links page (228 lines, small)
 
-**Done 8/31:** `hot-best-materials.html`, `hot-cn-ratio.html`, `troubleshoot.html`, `hot-not-heating.html`, `hot-speed-tips.html`, `worm-bedding.html`, `worm-forbidden-foods.html`, `worm-fruit-flies.html`, `worm-harvesting.html` ✓ (moved to Completed table above)
+**Done 8/31:** `hot-best-materials.html`, `hot-cn-ratio.html`, `troubleshoot.html`, `hot-not-heating.html`, `hot-speed-tips.html`, `worm-bedding.html`, `worm-forbidden-foods.html`, `worm-fruit-flies.html`, `worm-harvesting.html`, `blog.html` ✓ (moved to Completed table above)
 
 **Not migration targets:** `sitemap.html`, `google8a4b2c3d1e5f6789.html` (verification file), `sample.html` (template stub)
 
@@ -202,7 +202,7 @@ git commit -m "Migrate <page>.html to desktop layout"
 This section describes the state of things so a new session can get oriented. It is NOT an instruction to start work. Wait for the user to say which page or task to handle first.
 
 - Working branch: `desktop-layout` in `/mnt/h/Hermes/landing-page-fixed` (switch only when the user asks)
-- Status as of 8/31: **26 done / 2 remaining** (worm-harvesting.html completed; ALL deep-dives now migrated). Remaining: utility pages (`blog`, `quick_links`) only
+- Status as of 8/31: **27 done / 1 remaining** (blog.html completed; ALL deep-dives + blog migrated). Remaining: `quick_links.html` only
 - When the user does prompt work: follow migration process (Steps 1-7) and reference this file for common bugs and fixes
 
 **Page-type notes:**
