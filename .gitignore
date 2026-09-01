@@ -3,3 +3,11 @@ TASKS.md
 PROJECT_MANIFEST.md
 *.todo
 *.work-in-progress
+
+# Blog work-in-progress (drafts + data backups) - not for public repo
+.blog-wip/
+BLOG_POSTS_DRAFT.md
+BLOG_WORKFLOW.md
+
+# Local template backup (committed once to branch, kept out of future tracking)
+sample.html

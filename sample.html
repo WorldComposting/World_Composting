@@ -1,0 +1,777 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Composting | Sample Desktop-Friendly Layout</title>
+    <meta name="description" content="Sample page demonstrating the new desktop-friendly layout for World Composting.">
+    <!-- Google Search Console Verification -->
+    <meta name="google-site-verification" content="google8a4b2c3d1e5f6789">
+    <link rel="stylesheet" href="src/styles/theme.css">
+    <style>
+        /* ===== WIDE LAYOUT OVERRIDES (supersedes theme.css #app) ===== */
+
+        /* Main content wrapper — wide on desktop, constrained on mobile */
+        .page-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 3rem;
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 2.5rem;
+            align-items: start;
+        }
+
+        /* ===== SIDEBAR NAVIGATION ===== */
+        .sidebar {
+            position: sticky;
+            top: 2rem;
+            background: white;
+            border-radius: 16px;
+            box-shadow: var(--card-shadow);
+            padding: 1.5rem;
+            max-height: calc(100vh - 4rem);
+            overflow-y: auto;
+        }
+
+        .sidebar-logo {
+            text-align: center;
+            margin-bottom: 1.25rem;
+        }
+
+        .sidebar-logo img {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--sage-green);
+        }
+
+        .sidebar-logo h2 {
+            font-family: 'Lora', serif;
+            color: var(--forest-green);
+            font-size: 1.1rem;
+            margin-top: 0.5rem;
+        }
+
+        .sidebar-nav {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar-nav li {
+            margin-bottom: 0.25rem;
+        }
+
+        .sidebar-nav a {
+            display: block;
+            padding: 0.6rem 0.85rem;
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--text-dark);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: background 0.15s, color 0.15s;
+        }
+
+        .sidebar-nav a:hover {
+            background: var(--off-white);
+            color: var(--forest-green);
+        }
+
+        .sidebar-nav a.active {
+            background: var(--forest-green);
+            color: white;
+            font-weight: 600;
+        }
+
+        .sidebar-divider {
+            height: 1px;
+            background: rgba(45,90,39,0.12);
+            margin: 1rem 0;
+        }
+
+        .sidebar-section-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-dark);
+            opacity: 0.5;
+            padding: 0.25rem 0.85rem;
+            margin-bottom: 0.25rem;
+        }
+
+        /* ===== MAIN CONTENT AREA ===== */
+        .main-content {
+            min-width: 0;
+        }
+
+        /* Hero section — wider, more breathing room */
+        .hero-wide {
+            text-align: center;
+            padding: 3rem 2rem 2.5rem;
+            background: white;
+            border-radius: 16px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 2rem;
+        }
+
+        .hero-wide img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 4px 20px rgba(45,90,39,0.15);
+        }
+
+        .hero-wide h1 {
+            font-family: 'Lora', serif;
+            color: var(--forest-green);
+            font-size: 2.75rem;
+            margin: 1rem 0 0.5rem;
+            letter-spacing: -0.5px;
+        }
+
+        .hero-wide .subtitle {
+            font-family: 'Lora', serif;
+            color: var(--ocean-blue);
+            font-style: italic;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-wide p.intro-text {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: var(--text-dark);
+            opacity: 0.85;
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        /* Section headers — wider */
+        .section-header-wide {
+            text-align: center;
+            padding: 2rem 1rem 1rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .section-header-wide h2 {
+            font-size: 1.75rem;
+            color: var(--forest-green);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header-wide p {
+            color: var(--text-dark);
+            opacity: 0.75;
+            font-size: 1rem;
+        }
+
+        /* Pillar cards — wider grid, 2 columns */
+        .pillar-grid-wide {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 1rem 2rem;
+        }
+
+        .pillar-card-wide {
+            background: white;
+            border-radius: 16px;
+            box-shadow: var(--card-shadow);
+            padding: 2.5rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pillar-card-wide:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+        }
+
+        .pillar-card-wide .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .pillar-card-wide h3 {
+            font-size: 1.4rem;
+            color: var(--forest-green);
+            margin-bottom: 0.75rem;
+        }
+
+        .pillar-card-wide p {
+            flex: 1;
+            line-height: 1.6;
+            color: var(--text-dark);
+            opacity: 0.85;
+            font-size: 0.95rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .pillar-card-wide .card-meta {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.8rem;
+            color: var(--text-dark);
+            opacity: 0.6;
+            margin-bottom: 1rem;
+        }
+
+        /* Checklist grid — wider, 3 columns */
+        .checklist-grid-wide {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 1rem 2rem;
+        }
+
+        .checklist-card-wide {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.07);
+            padding: 1.5rem;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .checklist-card-wide:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 24px rgba(0,0,0,0.12);
+        }
+
+        .checklist-icon-wide {
+            font-size: 1.75rem;
+            flex-shrink: 0;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--off-white);
+            border-radius: 10px;
+        }
+
+        .checklist-info-wide h3 {
+            font-size: 0.95rem;
+            color: var(--forest-green);
+            margin-bottom: 0.25rem;
+        }
+
+        .checklist-info-wide small {
+            color: var(--text-dark);
+            opacity: 0.6;
+            font-size: 0.8rem;
+        }
+
+        /* Articles grid — wider, 3 columns */
+        .articles-grid-wide {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.25rem;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 1rem 2rem;
+        }
+
+        .article-card-wide {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.07);
+            padding: 1.5rem;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .article-card-wide:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 24px rgba(0,0,0,0.12);
+        }
+
+        .article-card-wide h3 {
+            font-size: 1.05rem;
+            color: var(--forest-green);
+            margin-bottom: 0.5rem;
+            line-height: 1.3;
+        }
+
+        .article-card-wide p {
+            flex: 1;
+            font-size: 0.9rem;
+            color: var(--text-dark);
+            opacity: 0.8;
+            margin-bottom: 0.75rem;
+            line-height: 1.5;
+        }
+
+        .article-card-wide .card-tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            padding: 0.25rem 0.6rem;
+            border-radius: 4px;
+            background: var(--off-white);
+            color: var(--ocean-blue);
+            font-weight: 600;
+        }
+
+        /* Video section — wider */
+        .video-section-wide {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 1rem 2rem;
+        }
+
+        .video-card-wide {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            padding: 1rem;
+            margin-bottom: 0.75rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.07);
+            transition: transform 0.15s, box-shadow 0.15s;
+        }
+
+        .video-card-wide:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(0,0,0,0.12);
+        }
+
+        .video-card-wide a {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            width: 100%;
+            text-decoration: none;
+        }
+
+        .video-thumbnail-wide {
+            width: 168px;
+            height: 94px;
+            object-fit: cover;
+            border-radius: 8px;
+            flex-shrink: 0;
+        }
+
+        /* Product links — wider */
+        .product-section-wide {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 1rem 2rem;
+        }
+
+        .product-link-wide {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: white;
+            padding: 1.25rem 1.5rem;
+            margin-bottom: 0.75rem;
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--forest-green);
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.07);
+        }
+
+        .product-link-wide:hover {
+            transform: translateX(4px);
+            box-shadow: 0 6px 24px rgba(0,0,0,0.12);
+        }
+
+        /* Footer — wider */
+        .footer-wide {
+            text-align: center;
+            padding: 2rem 3rem;
+            opacity: 0.7;
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(45,90,39,0.15);
+            margin-top: 2rem;
+        }
+
+        /* ===== BUTTONS ===== */
+        .btn-primary-wide {
+            display: inline-block;
+            padding: 0.85rem 1.75rem;
+            background: var(--forest-green);
+            color: white;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            text-align: center;
+            transition: background 0.2s;
+        }
+
+        .btn-primary-wide:hover {
+            background: var(--ocean-blue);
+        }
+
+        /* ===== RESPONSIVE BREAKPOINTS ===== */
+        @media (max-width: 1024px) {
+            .page-wrapper {
+                grid-template-columns: 1fr;
+                padding: 1.5rem 2rem;
+            }
+
+            .sidebar {
+                position: static;
+                max-height: none;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 1rem;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .sidebar-nav {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.25rem;
+            }
+
+            .sidebar-section-label {
+                width: 100%;
+                text-align: left;
+            }
+
+            .pillar-grid-wide,
+            .checklist-grid-wide,
+            .articles-grid-wide {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .page-wrapper {
+                padding: 1rem;
+            }
+
+            .hero-wide h1 {
+                font-size: 2rem;
+            }
+
+            .pillar-grid-wide,
+            .checklist-grid-wide,
+            .articles-grid-wide {
+                grid-template-columns: 1fr;
+            }
+
+            .video-thumbnail-wide {
+                width: 140px;
+                height: 79px;
+            }
+        }
+
+        /* ===== FOOTER OVERRIDES — fix body flex centering from theme.css ===== */
+        footer.footer-wide {
+            display: block !important;
+            text-align: center;
+            padding: 2rem 3rem;
+            opacity: 0.7;
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(45,90,39,0.15);
+            margin-top: 2rem;
+        }
+
+        /* Override body flex centering for sample.html */
+        body {
+            display: block !important;
+            justify-content: normal !important;
+            align-items: normal !important;
+        }
+    </style>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KRHYVJXZLE"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-KRHYVJXZLE');
+    </script>
+</head>
+<body>
+    <div class="page-wrapper">
+
+        <!-- ===== SIDEBAR NAVIGATION ===== -->
+        <aside class="sidebar">
+            <div class="sidebar-logo">
+                <img src="src/assets/logo.png" alt="World Composting Logo" width="64" height="64" loading="lazy" onerror="this.src='https://via.placeholder.com/64?text=WC'">
+                <h2>World Composting</h2>
+            </div>
+
+            <ul class="sidebar-nav">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="start-here.html">Start Here</a></li>
+                <li><a href="about.html">About</a></li>
+
+                <div class="sidebar-divider"></div>
+                <li class="sidebar-section-label">Guides</li>
+
+                <li><a href="worm-composting.html">Worm Composting</a></li>
+                <li><a href="hot-composting.html">Hot Composting</a></li>
+
+                <div class="sidebar-divider"></div>
+                <li class="sidebar-section-label">Checklists</li>
+
+                <li><a href="beginner.html">Beginner's Checklist</a></li>
+                <li><a href="bokashi.html">Bokashi Composting</a></li>
+                <li><a href="biochar.html">BioChar Composting</a></li>
+                <li><a href="tumbler.html">Tumbler Composting</a></li>
+                <li><a href="tea.html">Compost Tea</a></li>
+                <li><a href="lasagna.html">Lasagna Composting</a></li>
+                <li><a href="sustainability.html">Sustainability Journey</a></li>
+                <li><a href="zero-waste-kitchen.html">Zero Waste Kitchen</a></li>
+
+                <div class="sidebar-divider"></div>
+                <li class="sidebar-section-label">Resources</li>
+
+                <li><a href="glossary.html">Glossary</a></li>
+                <li><a href="troubleshoot.html">Troubleshooting</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="sitemap.html">Sitemap</a></li>
+
+                <div class="sidebar-divider"></div>
+                <li class="sidebar-section-label">Gear</li>
+
+                <li><a href="gear.html">View All Gear →</a></li>
+            </ul>
+        </aside>
+
+        <!-- ===== MAIN CONTENT AREA ===== -->
+        <main class="main-content">
+
+            <!-- HERO SECTION -->
+            <header class="hero-wide">
+                <img src="src/assets/logo.png" alt="World Composting Logo" width="100" height="100" loading="lazy" onerror="this.src='https://via.placeholder.com/100?text=WC'">
+                <h1>World Composting</h1>
+                <p class="subtitle">Turning waste into wonder.</p>
+                <p class="intro-text">
+                    Whether you're a beginner looking to reduce household waste or an experienced gardener chasing the perfect compost, World Composting is your complete resource. Explore in-depth guides, step-by-step checklists, curated video playlists, and trusted gear recommendations, all designed to help you master composting at any level.
+                </p>
+            </header>
+
+            <!-- FEATURED PILLAR GUIDES -->
+            <div class="section-header-wide">
+                <h2>In-Depth Guides</h2>
+                <p>Our comprehensive, SEO-optimized guides cover everything you need to know.</p>
+            </div>
+            <div class="pillar-grid-wide">
+                <!-- Worm Composting Pillar -->
+                <div class="pillar-card-wide">
+                    <div class="card-icon">🪱</div>
+                    <h3>The Complete Guide to Worm Composting</h3>
+                    <p>Everything you need to know about vermicomposting, from choosing the right bin method and understanding red wiggler biology, to feeding science, harvesting nutrient-rich castings, and troubleshooting common problems. Perfect for apartment dwellers and small-space gardeners.</p>
+                    <div class="card-meta">
+                        <span>~3,000 words</span>
+                        <span>11 sections</span>
+                        <span>5 FAQs</span>
+                    </div>
+                    <a href="worm-composting.html" class="btn-primary-wide">Read the Guide →</a>
+                </div>
+                <!-- Hot Composting Pillar -->
+                <div class="pillar-card-wide">
+                    <div class="card-icon">🔥</div>
+                    <h3>The Complete Guide to Hot Composting</h3>
+                    <p>Master thermophilic decomposition and produce nutrient-rich compost in as little as 18–21 days. Learn the science of heat-loving microbes, master carbon-to-nitrogen ratios, build the perfect pile, manage temperatures, cure finished compost, and scale up from backyard to farm.</p>
+                    <div class="card-meta">
+                        <span>~3,000 words</span>
+                        <span>11 sections</span>
+                        <span>5 FAQs</span>
+                    </div>
+                    <a href="hot-composting.html" class="btn-primary-wide">Read the Guide →</a>
+                </div>
+            </div>
+
+            <!-- GET STARTED - CHECKLISTS -->
+            <div class="section-header-wide">
+                <h2>Get Started with Checklists</h2>
+                <p>Step-by-step interactive checklists to guide you through every composting method.</p>
+            </div>
+            <div class="checklist-grid-wide" id="checklist-container"></div>
+
+            <!-- DEEP DIVE ARTICLES -->
+            <div class="section-header-wide">
+                <h2>Deep Dive Articles</h2>
+                <p>Expert-level guides covering specific topics in detail.</p>
+            </div>
+            <div class="articles-grid-wide" id="articles-container"></div>
+
+            <!-- VIDEO PLAYLISTS -->
+            <div class="section-header-wide">
+                <h2>Watch & Learn</h2>
+                <p>Curated YouTube playlists covering every composting technique and tool.</p>
+            </div>
+            <div class="video-section-wide" id="video-container"></div>
+
+            <!-- RECOMMENDED GEAR -->
+            <div class="section-header-wide">
+                <h2>Recommended Gear</h2>
+                <p>Trusted tools and products we use and recommend for composting success.</p>
+            </div>
+            <div class="product-section-wide" id="product-container"></div>
+
+        </main>
+
+    </div><!-- .page-wrapper -->
+
+    <!-- FOOTER — outside grid, spans full width -->
+    <footer class="footer-wide">
+        &copy; 2026 World Composting<br>
+        As an Amazon Associate, I earn from qualifying purchases.
+    </footer>
+
+    <script>
+        // CHECKLIST DATA
+        const checklists = [
+            { href: "start-here.html", icon: "🧭", name: "Start Here", label: "Decision Guide" },
+            { href: "sustainability.html", icon: "🌱", name: "Sustainability", label: "Journey Checklist" },
+            { href: "worm-composting.html", icon: "🪱", name: "Worm Composting", label: "Complete Guide" },
+            { href: "hot-composting.html", icon: "🔥", name: "Hot Composting", label: "Complete Guide" },
+            { href: "beginner.html", icon: "🌿", name: "Beginner's Checklist", label: "First Steps" },
+            { href: "bokashi.html", icon: "🍚", name: "Bokashi Composting", label: "Checklist" },
+            { href: "biochar.html", icon: "🌑", name: "BioChar Composting", label: "Checklist" },
+            { href: "tumbler.html", icon: "🔄", name: "Tumbler Composting", label: "Checklist" },
+            { href: "tea.html", icon: "🍵", name: "Compost Tea", label: "Checklist" },
+            { href: "lasagna.html", icon: "🥘", name: "Lasagna Composting", label: "Checklist" },
+            { href: "zero-waste-kitchen.html", icon: "♻️", name: "Zero Waste Kitchen", label: "Checklist" },
+            { href: "glossary.html", icon: "📖", name: "Glossary", label: "Composting Terms" },
+            { href: "about.html", icon: "👤", name: "About", label: "World Composting & Newell Davis" }
+        ];
+
+        const checklistContainer = document.getElementById('checklist-container');
+        checklists.forEach(c => {
+            const card = document.createElement('a');
+            card.href = c.href;
+            card.className = 'checklist-card-wide';
+            card.innerHTML = `
+                <div class="checklist-icon-wide">${c.icon}</div>
+                <div class="checklist-info-wide">
+                    <h3>${c.name}</h3>
+                    <small>${c.label}</small>
+                </div>`;
+            checklistContainer.appendChild(card);
+        });
+
+        // DEEP DIVE ARTICLES DATA & RENDERING
+        const articles = [
+            { href: "worm-bedding.html", title: "Best Bedding Materials for Worm Bins", desc: "Compare shredded paper, coconut coir, aged leaves and more to find the ideal bedding for your worm bin.", tag: "Worm Composting" },
+            { href: "worm-fruit-flies.html", title: "How to Control Fruit Flies in Indoor Worm Bins", desc: "Practical strategies to keep fruit flies out of your indoor vermicomposting system without chemicals.", tag: "Worm Composting" },
+            { href: "worm-forbidden-foods.html", title: "What Not to Feed Worms: Complete List of Forbidden Foods", desc: "Avoid these common mistakes. A comprehensive list of foods that harm or kill your red wigglers.", tag: "Worm Composting" },
+            { href: "worm-harvesting.html", title: "How to Harvest Worm Castings: Step-by-Step Guide", desc: "Learn the light method, migration method and more to safely collect nutrient-rich worm castings.", tag: "Worm Composting" },
+            { href: "hot-best-materials.html", title: "Best Materials for Hot Composting Piles", desc: "Green and brown materials ranked by effectiveness. Build a pile that heats up fast and stays hot.", tag: "Hot Composting" },
+            { href: "hot-not-heating.html", title: "Why Is My Hot Compost Not Heating Up? Troubleshooting Guide", desc: "Diagnose common causes of cold compost piles including size, moisture, aeration and C:N ratio issues.", tag: "Hot Composting" },
+            { href: "hot-speed-tips.html", title: "How to Turn Compost Faster: Speed Tips and Techniques", desc: "Proven methods to accelerate decomposition from months down to weeks without sacrificing quality.", tag: "Hot Composting" },
+            { href: "hot-cn-ratio.html", title: "C:N Ratio Guide for Hot Composting", desc: "Master the carbon to nitrogen balance with a reference table of common materials and their ratios.", tag: "Hot Composting" }
+        ];
+
+        const articlesContainer = document.getElementById('articles-container');
+        articles.forEach(a => {
+            const card = document.createElement('a');
+            card.href = a.href;
+            card.className = 'article-card-wide';
+            card.innerHTML = `
+                <h3>${a.title}</h3>
+                <p>${a.desc}</p>
+                <span class="card-tag">${a.tag}</span>`;
+            articlesContainer.appendChild(card);
+        });
+
+        // VIDEO PLAYLISTS
+        async function loadVideos() {
+            try {
+                const vRes = await fetch('src/data/videos.json');
+                if (!vRes.ok) throw new Error("Videos not found");
+                const videos = await vRes.json();
+
+                if (videos.length > 0) {
+                    const featuredCard = document.createElement('div');
+                    featuredCard.className = 'video-card-wide';
+                    const featured = videos[0];
+                    featuredCard.innerHTML = `
+                        <a href="${featured.url}" target="_blank" style="text-decoration:none;">
+                            <img src="${featured.thumbnail}" class="video-thumbnail-wide" alt="${featured.title}" loading="lazy" width="168" height="94">
+                            <div>
+                                <span class="product-name">${featured.title}</span>
+                                <small style="display:block;font-size:0.8rem;color:var(--text-dark);opacity:0.6;margin-top:0.25rem;">Latest Video</small>
+                            </div>`;
+                    document.getElementById('video-container').appendChild(featuredCard);
+                }
+
+                const playlists = [
+                    {title: "Urban Worm Bag", url: "https://www.youtube.com/watch?v=0QvS2l6zWYk&list=PLLEZ5krxcR7bezWFtUcb56uAuRdSKyMPt", id: "0QvS2l6zWYk"},
+                    {title: "DIY Tote Systems", url: "https://www.youtube.com/watch?v=ej9gRwssrgk&list=PLLEZ5krxcR7bWov7DVUCX7W9_nmttf-XV", id: "ej9gRwssrgk"},
+                    {title: "Pre-Compost", url: "https://www.youtube.com/watch?v=LMO-FwynYeY&list=PLLEZ5krxcR7YaEocIy3Cd0hYG_T0_OZKN", id: "LMO-FwynYeY"},
+                    {title: "BN-LINK Grow Bag Worm System", url: "https://www.youtube.com/watch?v=kLiHqQ-kWm8&list=PLLEZ5krxcR7ZzsodUDnvRrUCPENQayutk", id: "kLiHqQ-kWm8"},
+                    {title: "FoodCycler Eco 5", url: "https://www.youtube.com/watch?v=3vsWZyp2KVw&list=PLLEZ5krxcR7btHNJN-GkRklKCTsJr9Y99", id: "3vsWZyp2KVw"}
+                ];
+
+                playlists.forEach(p => {
+                    const card = document.createElement('div');
+                    card.className = 'video-card-wide';
+                    card.innerHTML = `
+                        <a href="${p.url}" target="_blank" style="text-decoration:none;">
+                            <img src="https://img.youtube.com/vi/${p.id}/mqdefault.jpg" class="video-thumbnail-wide" alt="${p.title}" loading="lazy" width="168" height="94">
+                            <div>
+                                <span class="product-name">${p.title}</span>
+                                <small style="display:block;font-size:0.8rem;color:var(--text-dark);opacity:0.6;margin-top:0.25rem;">Playlist</small>
+                            </div>`;
+                    document.getElementById('video-container').appendChild(card);
+                });
+            } catch (e) {
+                console.error("Error loading videos:", e);
+            }
+        }
+
+        // PRODUCTS
+        async function loadProducts() {
+            try {
+                const pRes = await fetch('src/data/products.json');
+                if (!pRes.ok) throw new Error("Products not found");
+                const products = await pRes.json();
+                const prodList = document.getElementById('product-container');
+
+                const featuredItems = products.filter(p =>
+                    p['Item'].includes("Meme's Worms") ||
+                    p['Item'].includes("Urban Worm Bag") ||
+                    p['Item'].includes("Vermibag")
+                );
+
+                featuredItems.forEach(p => {
+                    const link = document.createElement('a');
+                    const href = (p['Amazon Link'] !== 'NaN' && p['Amazon Link']) ||
+                                 (p['Other Link'] !== 'NaN' && p['Other Link']) || '#';
+                    const isAmazon = p['Amazon Link'] && p['Amazon Link'].includes('amzn.to');
+                    link.href = href;
+                    link.target = '_blank';
+                    link.className = 'product-link-wide';
+                    const affiliateText = isAmazon ? ' (Affiliate Link)' : '';
+                    link.innerHTML = `<span class="product-name" style="color:var(--forest-green);">${p['Item']}</span><small style="color:var(--text-dark);opacity:0.6;font-size:0.8rem;">${affiliateText}</small>`;
+                    prodList.appendChild(link);
+                });
+            } catch (e) {
+                console.error("Error loading products:", e);
+            }
+        }
+
+        loadVideos();
+        loadProducts();
+    </script>
+</body>
+</html>
