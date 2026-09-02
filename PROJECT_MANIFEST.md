@@ -55,7 +55,7 @@ High-legibility, ADA-compliant site for the [World Composting](http://worldcompo
 ## 📋 Pending Work (growth roadmap)
 **Website expansion:** email capture / lead magnet ("Download the beginner composting guide"); expand `gear.html` into comparison guides with tables (capacity, material, ventilation, price, pros/cons); additional checklist pages (Water Conservation 101, Plastic-Free Living, Energy Efficiency at Home) with Recommended Gear sections; FAQ section for common questions.
 
-**SEO / technical:** audit and fix all non-www URLs across HTML files (og:url, twitter:url, JSON-LD @id, robots.txt) so `www.worldcomposting.com` is everywhere; monthly low-CTR iteration on GSC data.
+**SEO / technical:** ~~Audit and fix all non-www URLs~~ DONE 9/2: fixed og:url + twitter:url (zero-waste-kitchen.html), JSON-LD @id (worm-composting, hot-composting), robots.txt sitemap line; also normalized extensionless paths to .html to match live URLs. No canonical tags exist on any page (noted, left as-is). Remaining: monthly low-CTR iteration on GSC data.
 
 **Content & YouTube:** timelapse series (worms consuming items); bin vs bag comparison video; Shorts for SEO keywords (smelly bin fixes, fruit fly prevention); consistent upload cadence; optimize titles/descriptions, end screens/cards to site, branded thumbnails, playlists linked on site.
 
