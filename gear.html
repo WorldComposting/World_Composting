@@ -486,10 +486,107 @@
             padding-bottom: 0.5rem;
             margin-bottom: 1rem;
         }
-        .gear-items {
+        .gear-category-count {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--ocean-blue);
+            margin-left: 0.4rem;
+        }
+
+        /* Gear cards */
+        .gear-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .gear-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: var(--card-shadow);
+            overflow: hidden;
             display: flex;
             flex-direction: column;
-            gap: 0.75rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .gear-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px -6px rgba(75, 54, 33, 0.18);
+        }
+
+        .gear-card-img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            display: block;
+            background: var(--off-white);
+        }
+
+        .gear-card-body {
+            padding: 1rem 1.1rem 1.2rem;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .gear-card-name {
+            font-family: 'Lora', serif;
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--forest-green);
+            margin: 0 0 0.4rem;
+            line-height: 1.3;
+        }
+
+        .gear-card-blurb {
+            font-size: 0.85rem;
+            line-height: 1.55;
+            color: var(--text-dark);
+            margin: 0 0 0.6rem;
+            flex: 1;
+        }
+
+        .gear-card-specs {
+            display: inline-block;
+            font-size: 0.72rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--ocean-blue);
+            background: rgba(41, 98, 255, 0.08);
+            border-radius: 99px;
+            padding: 0.2rem 0.65rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .gear-card-link {
+            display: inline-block;
+            text-align: center;
+            background: var(--forest-green);
+            color: white !important;
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-decoration: none;
+            border-radius: 8px;
+            padding: 0.55rem 1rem;
+            transition: background 0.2s, transform 0.15s;
+        }
+
+        .gear-card-link:hover {
+            background: #2c5a27;
+            transform: translateY(-1px);
+        }
+
+        .gear-card-link:focus-visible {
+            outline: 2px solid var(--ocean-blue);
+            outline-offset: 2px;
+        }
+
+        @media (max-width: 640px) {
+            .gear-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 
@@ -508,7 +605,37 @@
       "@type": "ItemList",
       "name": "My Composting Gear",
       "description": "The tools and equipment I use for composting: worm bin items, fly control, bokashi buckets, water gear and more.",
-      "itemListElement": []
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "10 Gallon Tote", "url": "https://amzn.to/3m3BlJq"},
+        {"@type": "ListItem", "position": 2, "name": "Blue Tarp", "url": "https://amzn.to/3rXmPGY"},
+        {"@type": "ListItem", "position": 3, "name": "Bus Boy Tubs", "url": "https://amzn.to/4hSL3MU"},
+        {"@type": "ListItem", "position": 4, "name": "KN95 Masks", "url": "https://amzn.to/4zUcONo"},
+        {"@type": "ListItem", "position": 5, "name": "Pine Shavings", "url": "https://amzn.to/3pP7vKv"},
+        {"@type": "ListItem", "position": 6, "name": "Waterproof gloves", "url": "https://amzn.to/3m21vfp"},
+        {"@type": "ListItem", "position": 7, "name": "Urban Worm Bag", "url": "https://amzn.to/3R3qYtQ"},
+        {"@type": "ListItem", "position": 8, "name": "Vermibag", "url": "https://bit.ly/3sLhq5W"},
+        {"@type": "ListItem", "position": 9, "name": "Bug Zapper", "url": "https://amzn.to/4x7VFxl"},
+        {"@type": "ListItem", "position": 10, "name": "Diatomaceous Earth Food Grade", "url": "https://amzn.to/4u1AYCn"},
+        {"@type": "ListItem", "position": 11, "name": "Mosquito Bits Bti", "url": "https://amzn.to/3pZSWng"},
+        {"@type": "ListItem", "position": 12, "name": "Mosquito Dunks", "url": "https://amzn.to/31z7fFf"},
+        {"@type": "ListItem", "position": 13, "name": "Sticky Fly Trap", "url": "https://amzn.to/39eLIFA"},
+        {"@type": "ListItem", "position": 14, "name": "5 Gallon Bucket and Gamma Seal Lid", "url": "https://amzn.to/2Z0oa2v"},
+        {"@type": "ListItem", "position": 15, "name": "Bokashi Bran", "url": "https://amzn.to/3UtLHsA"},
+        {"@type": "ListItem", "position": 16, "name": "100 Pack Utility Knife Blades", "url": "https://amzn.to/39169FP"},
+        {"@type": "ListItem", "position": 17, "name": "Bonsaii 12 Sheet Micr-cut Paper Shredder", "url": "https://amzn.to/4aVcRhy"},
+        {"@type": "ListItem", "position": 18, "name": "Folding Utility Knife", "url": "https://amzn.to/3baqVW4"},
+        {"@type": "ListItem", "position": 19, "name": "Canon EF-S 24mm f/2.8 STM Lens", "url": "https://amzn.to/37ntuBx"},
+        {"@type": "ListItem", "position": 20, "name": "Canon EOS 90D", "url": "https://amzn.to/3bmTmP9"},
+        {"@type": "ListItem", "position": 21, "name": "Davinci Resolve", "url": "https://amzn.to/3s89jiM"},
+        {"@type": "ListItem", "position": 22, "name": "Fujifilm X-T5", "url": "https://amzn.to/4tBUUMB"},
+        {"@type": "ListItem", "position": 23, "name": "GEEKOTO Tripd", "url": "https://amzn.to/3bltu66"},
+        {"@type": "ListItem", "position": 24, "name": "GoPro Hero 8 Black", "url": "https://amzn.to/3py8caz"},
+        {"@type": "ListItem", "position": 25, "name": "Neewer Advanced 660 LED Studio Lighting", "url": "https://amzn.to/37JP5Ez"},
+        {"@type": "ListItem", "position": 26, "name": "Panasonic 4k Camcorder", "url": "https://amzn.to/3bjTZsD"},
+        {"@type": "ListItem", "position": 27, "name": "Chapin Sprayer", "url": "https://amzn.to/2KWLpHk"},
+        {"@type": "ListItem", "position": 28, "name": "Ego 4 Gallon Sprayer", "url": "https://amzn.to/4wGyP0X"},
+        {"@type": "ListItem", "position": 29, "name": "Meme's Worms", "url": "http://bit.ly/2XXy18v"}
+      ]
     }
     </script>
 </head>
@@ -594,14 +721,22 @@
                 const res = await fetch('src/data/products.json');
                 if (!res.ok) throw new Error("Could not load product data.");
                 const products = await res.json();
-                renderGear(products);
+
+                // Optional details layer (blurbs, specs, images). Missing file is fine.
+                let details = {};
+                try {
+                    const dRes = await fetch('src/data/gear-details.json');
+                    if (dRes.ok) details = await dRes.json();
+                } catch (e) { /* details are optional */ }
+
+                renderGear(products, details);
             } catch (err) {
                 console.error("Error loading gear:", err);
                 document.getElementById('gear-container').innerHTML = '<div class="card" style="color: #c0392b;">Error loading gear items.</div>';
             }
         }
 
-        function renderGear(products) {
+        function renderGear(products, details) {
             const container = document.getElementById('gear-container');
             let html = '';
 
@@ -626,15 +761,25 @@
                 const items = categories[category];
                 html += `
                     <div class="gear-category">
-                        <h3 class="gear-category-title">${category}</h3>
-                        <div class="gear-items">
+                        <h3 class="gear-category-title">${category}<span class="gear-category-count">${items.length} item${items.length === 1 ? '' : 's'}</span></h3>
+                        <div class="gear-grid">
                             ${items.map(item => {
                                 const href = (item['Amazon Link'] !== 'NaN' && item['Amazon Link']) ||
                                              (item['Other Link'] !== 'NaN' && item['Other Link']) || '#';
+                                const d = details[item['Item']] || {};
+                                const img = d.image ? `<img class="gear-card-img" src="${d.image}" alt="${item['Item']}" loading="lazy">` : '';
+                                const blurb = d.blurb ? `<p class="gear-card-blurb">${d.blurb}</p>` : '';
+                                const specs = d.specs ? `<span class="gear-card-specs">${d.specs}</span>` : '';
                                 return `
-                                    <a href="${href}" target="_blank" class="product-link">
-                                        ${item['Item']}
-                                    </a>`;
+                                    <div class="gear-card">
+                                        ${img}
+                                        <div class="gear-card-body">
+                                            <h4 class="gear-card-name">${item['Item']}</h4>
+                                            ${blurb}
+                                            ${specs}
+                                            <a href="${href}" target="_blank" rel="noopener sponsored" class="gear-card-link">View on Amazon</a>
+                                        </div>
+                                    </div>`;
                             }).join('')}
                         </div>
                     </div>

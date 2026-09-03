@@ -1,0 +1,147 @@
+{
+    "10 Gallon Tote": {
+        "blurb": "The workhorse of my worm setup. A simple, stackable tote with a lid keeps worms contained and makes moving or splitting bins easy.",
+        "specs": "10 gallon capacity, stackable",
+        "image": "src/assets/gear/amz-10-gallon-tote.jpg"
+    },
+    "Blue Tarp": {
+        "blurb": "Heavy-duty ground cover for outdoor piles. Keeps rain out of the active zone while still letting air move through the sides.",
+        "specs": "Heavy-duty polyethylene",
+        "image": "src/assets/gear/amz-blue-tarp.jpg"
+    },
+    "Bus Boy Tubs": {
+        "blurb": "Food-service tubs are my go-to worm bin containers: cheap, durable, and easy to drill ventilation holes into. I keep a stack of them for splitting bins.",
+        "specs": "Stackable food-service grade",
+        "image": "src/assets/gear/amz-bus-boy-tubs.jpg"
+    },
+    "KN95 Masks": {
+        "blurb": "Dry bedding and turning hot piles kick up dust. A KN95 keeps it out of my lungs when I'm working with carbon materials.",
+        "specs": "95% particulate filtration",
+        "image": "src/assets/gear/amz-kn95-masks.jpg"
+    },
+    "Pine Shavings": {
+        "blurb": "My primary carbon-rich bedding for worm bins. Unscented shavings absorb moisture well and give the worms a loose, aerated bed to live in.",
+        "specs": "Unscented, high-carbon bedding",
+        "image": "src/assets/gear/amz-pine-shavings.jpg"
+    },
+    "Waterproof gloves": {
+        "blurb": "Worm bins are wet work. These keep my hands dry and clean when I'm digging through castings or mixing bedding.",
+        "specs": "Waterproof, flexible fit",
+        "image": "src/assets/gear/amz-waterproof-gloves.jpg"
+    },
+    "Urban Worm Bag": {
+        "blurb": "A self-contained worm bin for apartments and small spaces. No drilling, no mess: feed it from the top and harvest castings when ready.",
+        "specs": "Compact, drill-free design",
+        "image": "src/assets/gear/amz-urban-worm-bag.jpg"
+    },
+    "Vermibag": {
+        "blurb": "Another bag-style worm bin I've used for smaller setups. Great option if you want vermicomposting without a dedicated tub or stand.",
+        "specs": "Bag-style, space-saving",
+        "image": "src/assets/gear/amz-vermibag.jpg"
+    },
+    "Bug Zapper": {
+        "blurb": "A 2800V electric zapper for the kitchen. Fruit flies and gnats are attracted to the light and knocked out before they reach the food.",
+        "specs": "2800V grid, indoor use",
+        "image": "src/assets/gear/amz-bug-zapper.jpg"
+    },
+    "Diatomaceous Earth Food Grade": {
+        "blurb": "A fine powder that dehydrates crawling insects. I dust it around bin lids and entry points as a physical fly barrier. Food grade is the only kind to use around food.",
+        "specs": "Food grade, non-chemical",
+        "image": "src/assets/gear/amz-diatomaceous-earth-food-grade.jpg"
+    },
+    "Mosquito Bits Bti": {
+        "blurb": "Granules of Bt (Bacillus thuringiensis israelensis) for standing water. Drops into any puddle or container to stop mosquito larvae without harming beneficial insects.",
+        "specs": "Organic Bt bacteria, granule form",
+        "image": "src/assets/gear/amz-mosquito-bits-bti.jpg"
+    },
+    "Mosquito Dunks": {
+        "blurb": "The disc version of the same Bt treatment. One dunk in a bucket or rain barrel keeps mosquito larvae from hatching all season.",
+        "specs": "Organic Bt bacteria, disc form",
+        "image": "src/assets/gear/amz-mosquito-dunks.jpg"
+    },
+    "Sticky Fly Trap": {
+        "blurb": "A simple glue-board trap for the kitchen. I hang one near the bin whenever fruit flies show up and it takes them out fast.",
+        "specs": "Glue board, no chemicals",
+        "image": "src/assets/gear/amz-sticky-fly-trap.jpg"
+    },
+    "5 Gallon Bucket and Gamma Seal Lid": {
+        "blurb": "My bokashi vessel. The gamma seal lid is the key: it makes the bucket truly airtight so fermentation stays anaerobic and odor-free.",
+        "specs": "5 gallon, airtight gamma seal",
+        "image": "src/assets/gear/amz-5-gallon-bucket-and-gamma-seal-lid.jpg"
+    },
+    "Bokashi Bran": {
+        "blurb": "Inoculated grain for bokashi. A handful on every layer feeds the beneficial microbes that break down food scraps in the bucket.",
+        "specs": "2 lb (1 gallon) bag, EM-1 inoculated",
+        "image": "src/assets/gear/amz-bokashi-bran.jpg"
+    },
+    "100 Pack Utility Knife Blades": {
+        "blurb": "Spare blades for my paper prep. I cut cardboard and paper into small pieces before they go in the bin so they break down faster.",
+        "specs": "100 count, standard snap-off",
+        "image": "src/assets/gear/amz-100-pack-utility-knife-blades.jpg"
+    },
+    "Bonsaii 12 Sheet Micr-cut Paper Shredder": {
+        "blurb": "Shreds up to 12 sheets at a time into micro-cuts. The fine pieces decompose quickly in both worm bins and hot piles.",
+        "specs": "12-sheet capacity, micro-cut",
+        "image": "src/assets/gear/amz-bonsaii-12-sheet-micr-cut-paper-shredder.jpg"
+    },
+    "Folding Utility Knife": {
+        "blurb": "My everyday cutting tool for cardboard, paper, and trimming. The folding body keeps it safe to carry around the yard.",
+        "specs": "Snap-off blade, folding handle",
+        "image": "src/assets/gear/amz-folding-utility-knife.jpg"
+    },
+    "Canon EF-S 24mm f/2.8 STM Lens": {
+        "blurb": "My pancake lens for B-roll and tight shots of bins and close-ups. Light enough to carry on every shoot.",
+        "specs": "24mm prime, f/2.8",
+        "image": "src/assets/gear/amz-canon-ef-s-24mm-f-2-8-stm-lens.jpg"
+    },
+    "Canon EOS 90D": {
+        "blurb": "My main camera for the channel. 32MP stills and solid 4K video make it a do-everything workhorse.",
+        "specs": "32MP APS-C, 4K video",
+        "image": "src/assets/gear/amz-canon-eos-90d.jpg"
+    },
+    "Davinci Resolve": {
+        "blurb": "My editing and color-grading suite. The free version has everything I need to cut, grade, and export the channel's videos.",
+        "specs": "Professional NLE + color suite",
+        "image": "src/assets/gear/amz-davinci-resolve.jpg"
+    },
+    "Fujifilm X-T5": {
+        "blurb": "My mirrorless backup camera. 40MP and the film simulations give footage a distinct look without heavy grading.",
+        "specs": "40MP APS-C, film simulations",
+        "image": "src/assets/gear/amz-fujifilm-x-t5.jpg"
+    },
+    "GEEKOTO Tripd": {
+        "blurb": "A flexible tripod that bends into awkward positions. Perfect for low angles inside bins or mounting in tight spots where a normal tripod won't fit.",
+        "specs": "Flexible bendable legs",
+        "image": "src/assets/gear/amz-geekoto-tripd.jpg"
+    },
+    "GoPro Hero 8 Black": {
+        "blurb": "My action cam for in-bin footage and timelapses. The stabilization makes handheld pile-turning shots usable, and it's small enough to mount anywhere.",
+        "specs": "4K60 video, HyperSmooth",
+        "image": "src/assets/gear/amz-gopro-hero-8-black.jpg"
+    },
+    "Neewer Advanced 660 LED Studio Lighting": {
+        "blurb": "My studio lighting kit for talking-head segments. Softboxes keep the light even and flattering without expensive pro gear.",
+        "specs": "LED kit with softboxes",
+        "image": "src/assets/gear/amz-neewer-advanced-660-led-studio-lighting.jpg"
+    },
+    "Panasonic 4k Camcorder": {
+        "blurb": "A dedicated camcorder for long-form recording sessions. The built-in zoom covers wide yard shots without swapping lenses.",
+        "specs": "4K, built-in optical zoom",
+        "image": "src/assets/gear/amz-panasonic-4k-camcorder.jpg"
+    },
+    "Chapin Sprayer": {
+        "blurb": "My garden sprayer for watering piles and applying compost tea. A reliable hand-pump design that's easy to clean between uses.",
+        "specs": "Hand pump, garden grade",
+        "image": "src/assets/gear/amz-chapin-sprayer.jpg"
+    },
+    "Ego 4 Gallon Sprayer": {
+        "blurb": "Cordless sprayer for bigger jobs. The battery power means no pumping when I'm treating a whole bed or watering multiple piles.",
+        "specs": "4 gallon, cordless",
+        "image": "src/assets/gear/amz-ego-4-gallon-sprayer.jpg"
+    },
+    "Meme's Worms": {
+        "blurb": "My go-to supplier for red wiggler worms. Healthy, active worms that arrive fast and establish in new bins quickly.",
+        "specs": "Live red wigglers",
+        "image": "src/assets/gear/amz-meme-s-worms.jpg"
+    }
+}
