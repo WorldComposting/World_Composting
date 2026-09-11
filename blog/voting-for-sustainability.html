@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why Voting Is a Sustainability Skill (and How to Get More People to the Polls) | World Composting</title>
+    <meta name="description" content="Why voting is a sustainability skill: what environmental votes actually decide, how to research candidates, and practical ways to get more people to the polls.">
+    <!-- Google Search Console Verification -->
+    <meta name="google-site-verification" content="google8a4b2c3d1e5f6789">
+    <link rel="stylesheet" href="../src/styles/theme.css">
+<style>
+        /* ===== WIDE LAYOUT OVERRIDES (supersedes theme.css #app) ===== */
+
+        .page-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 3rem;
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 2.5rem;
+            align-items: start;
+        }
+
+        /* ===== SIDEBAR NAVIGATION ===== */
+        .sidebar {
+            position: sticky;
+            top: 2rem;
+            background: white;
+            border-radius: 16px;
+            box-shadow: var(--card-shadow);
+            padding: 1.5rem;
+            max-height: calc(100vh - 4rem);
+            overflow-y: auto;
+        }
+
+        .sidebar-logo {
+            text-align: center;
+            margin-bottom: 1.25rem;
+        }
+
+        .sidebar-logo img {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--sage-green);
+        }
+
+        .sidebar-logo h2 {
+            font-family: 'Lora', serif;
+            color: var(--forest-green);
+            font-size: 1.1rem;
+            margin-top: 0.5rem;
+        }
+
+        .sidebar-nav {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar-nav li {
+            margin-bottom: 0.25rem;
+        }
+
+        .sidebar-nav a {
+            display: block;
+            padding: 0.6rem 0.85rem;
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--text-dark);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: background 0.15s, color 0.15s;
+        }
+
+        .sidebar-nav a:hover {
+            background: var(--off-white);
+            color: var(--forest-green);
+        }
+
+        .sidebar-nav a.active {
+            background: var(--forest-green);
+            color: white;
+            font-weight: 600;
+        }
+
+        .sidebar-divider {
+            height: 1px;
+            background: rgba(45,90,39,0.12);
+            margin: 1rem 0;
+        }
+
+        .sidebar-section-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-dark);
+            opacity: 0.5;
+            padding: 0.25rem 0.85rem;
+            margin-bottom: 0.25rem;
+        }
+
+        /* ===== MAIN CONTENT AREA ===== */
+        .main-content {
+            min-width: 0;
+        }
+
+        /* Back link: wider */
+        .back-link-wide {
+            display: inline-block;
+            font-size: 0.85rem;
+            color: var(--ocean-blue);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            transition: opacity 0.2s;
+        }
+
+        .back-link-wide:hover { opacity: 0.7; }
+        .back-link-wide:focus-visible {
+            outline: 2px solid var(--ocean-blue);
+            outline-offset: 2px;
+            border-radius: 2px;
+        }
+
+        /* Pillar hero: wider */
+        .pillar-hero-wide {
+            background: white;
+            border-radius: 16px;
+            padding: 2.5rem 3rem;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 2rem;
+        }
+
+        .pillar-hero-wide h1 {
+            font-family: 'Lora', serif;
+            color: var(--forest-green);
+            font-size: 2.4rem;
+            line-height: 1.3;
+            margin-top: 0;
+            text-align: center;
+        }
+
+        .pillar-hero-wide p.subtitle {
+            text-align: center;
+            font-style: italic;
+            color: var(--ocean-blue);
+            font-size: 1.1rem;
+            margin-bottom: 0;
+        }
+
+        /* Table of Contents: wider */
+        #toc-wide {
+            background: white;
+            border-radius: 16px;
+            padding: 1.5rem 2rem;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 2rem;
+        }
+
+        #toc-wide h2 {
+            font-size: 1.1rem;
+            color: var(--forest-green);
+            margin-top: 0;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        #toc-wide ol {
+            padding-left: 1.2rem;
+            margin: 0;
+        }
+
+        #toc-wide li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+
+        #toc-wide a {
+            color: var(--ocean-blue);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        #toc-wide a:hover { color: var(--forest-green); text-decoration: underline; }
+
+        /* Article Sections: wider */
+        .article-section-wide {
+            background: white;
+            border-radius: 16px;
+            padding: 2.5rem 3rem;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .article-section-wide h2 {
+            font-family: 'Lora', serif;
+            color: var(--forest-green);
+            font-size: 1.6rem;
+            margin-top: 0;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--sage-green);
+        }
+
+        .article-section-wide h3 {
+            font-family: 'Lora', serif;
+            color: var(--ocean-blue);
+            font-size: 1.25rem;
+            margin-top: 1.8rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .article-section-wide p {
+            color: var(--text-dark);
+            font-size: 1rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .article-section-wide ul, .article-section-wide ol {
+            padding-left: 1.5rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .article-section-wide li {
+            margin-bottom: 0.6rem;
+            line-height: 1.7;
+        }
+
+        .article-section-wide strong { color: var(--forest-green); }
+
+        /* Callout Boxes: wider */
+        .callout-wide {
+            background: var(--sage-green);
+            border-left: 4px solid var(--forest-green);
+            padding: 1rem 1.25rem;
+            border-radius: 0 8px 8px 0;
+            margin: 1.5rem 0;
+        }
+
+        .callout-wide.warning {
+            background: #fff3cd;
+            border-left-color: #856404;
+        }
+
+        .callout-wide.tip {
+            background: #d1ecf1;
+            border-left-color: var(--ocean-blue);
+        }
+
+        .callout-wide p { margin-bottom: 0; }
+
+        /* Info Tables: wider */
+        .info-table-wide {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.92rem;
+        }
+
+        .info-table-wide th, .info-table-wide td {
+            padding: 0.75rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--sage-green);
+        }
+
+        .info-table-wide th {
+            background: var(--forest-green);
+            color: white;
+            font-weight: 600;
+        }
+
+        .info-table-wide tr:nth-child(even) td { background: #f8f9fa; }
+
+        /* Related Pages: wider */
+        .related-pages-wide {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .related-card-wide {
+            background: white;
+            border-radius: 16px;
+            padding: 1.25rem;
+            box-shadow: var(--card-shadow);
+            text-align: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .related-card-wide:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 32px -8px rgba(75, 54, 33, 0.15);
+        }
+
+        .related-card-wide a {
+            text-decoration: none;
+            color: var(--forest-green);
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .related-card-wide p {
+            margin-top: 0.5rem;
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        /* ===== RESPONSIVE BREAKPOINTS ===== */
+        @media (max-width: 1024px) {
+            .page-wrapper {
+                grid-template-columns: 1fr;
+                padding: 1.5rem 2rem;
+            }
+
+            .sidebar {
+                position: static;
+                max-height: none;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 1rem;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .sidebar-nav {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.25rem;
+            }
+
+            .sidebar-section-label {
+                width: 100%;
+                text-align: left;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .page-wrapper {
+                padding: 1rem;
+            }
+
+            .pillar-hero-wide h1 { font-size: 1.8rem; }
+            .article-section-wide { padding: 1.25rem; }
+            .article-section-wide h2 { font-size: 1.35rem; }
+            #toc-wide { padding: 1.25rem; }
+        }
+
+        /* ===== FOOTER OVERRIDES: fix body flex centering from theme.css ===== */
+        footer.footer-wide {
+            display: block !important;
+            text-align: center;
+            padding: 2rem 3rem;
+            opacity: 0.7;
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(45,90,39,0.15);
+            margin-top: 2rem;
+        }
+
+        /* Override body flex centering for desktop layout */
+        body {
+            display: block !important;
+            justify-content: normal !important;
+            align-items: normal !important;
+        }
+    
+        /* ===== BLOG POST CONTENT OVERRIDES ===== */
+        .post-meta {
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-dark);
+            opacity: 0.7;
+            margin-top: -1.25rem;
+            margin-bottom: 2rem;
+        }
+
+        .article-section-wide .video-embed { margin: 1.5rem 0; }
+        .article-section-wide .video-embed iframe {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border: none;
+            border-radius: 8px;
+            display: block;
+        }
+        .article-section-wide .video-caption {
+            font-size: 0.85rem;
+            color: #666;
+            margin-top: 0.5rem;
+            line-height: 1.5;
+        }
+
+        /* Inline links inside article body */
+        .article-section-wide a {
+            color: var(--ocean-blue);
+            font-weight: 500;
+            text-decoration: none;
+        }
+        .article-section-wide a:hover { text-decoration: underline; }
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Why Voting Is a Sustainability Skill (and How to Get More People to the Polls)",
+  "description": "Why voting is a sustainability skill: what environmental votes actually decide, how to research candidates, and practical ways to get more people to the polls.",
+  "datePublished": "2026-09-10",
+  "author": {
+    "@type": "Organization",
+    "name": "World Composting"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "World Composting"
+  }
+}
+    </script>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KRHYVJXZLE"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-KRHYVJXZLE');
+    </script>
+</head>
+<body>
+    <div class="page-wrapper">
+
+        <!-- ===== SIDEBAR NAVIGATION (from reference, paths rewritten for blog/) ===== -->
+<aside class="sidebar">
+            <div class="sidebar-logo">
+                            <img src="../src/assets/logo.png" alt="World Composting Logo" width="64" height="64" loading="lazy" onerror="this.src='https://via.placeholder.com/64?text=WC'">
+                            <h2>World Composting</h2>
+                        </div>
+
+            <ul class="sidebar-nav">
+                                <li><a href="../index.html">Home</a></li>
+                                <li><a href="../start-here.html">Start Here</a></li>
+                                <li><a href="../science-of-compost.html">The Science of Compost</a></li>
+                                <li><a href="../about.html">About</a></li>
+                
+                                <div class="sidebar-divider"></div>
+                                <li class="sidebar-section-label">Guides</li>
+                
+                                <li><a href="../worm-composting.html">Worm Composting</a></li>
+                                <li><a href="../hot-composting.html">Hot Composting</a></li>
+                
+                                <div class="sidebar-divider"></div>
+                                <li class="sidebar-section-label">Checklists</li>
+                
+                                <li><a href="../beginner.html">Beginner's Checklist</a></li>
+                                <li><a href="../hot.html">Hot Composting Checklist</a></li>
+                                <li><a href="../bokashi.html">Bokashi Composting</a></li>
+                                <li><a href="../biochar.html">BioChar Composting</a></li>
+                                <li><a href="../tumbler.html">Tumbler Composting</a></li>
+                                <li><a href="../tea.html">Compost Tea</a></li>
+                                <li><a href="../lasagna.html">Lasagna Composting</a></li>
+                                <li><a href="../sustainability.html">Sustainability Journey</a></li>
+                                <li><a href="../zero-waste-kitchen.html">Zero Waste Kitchen</a></li>
+                
+                                <div class="sidebar-divider"></div>
+                                <li class="sidebar-section-label">Resources</li>
+                
+                                <li><a href="../glossary.html">Glossary</a></li>
+                                <li><a href="../troubleshoot.html">Troubleshooting</a></li>
+                                <li><a href="../blog.html">Blog</a></li>
+                                <li><a href="../sitemap.html">Sitemap</a></li>
+                
+                                <div class="sidebar-divider"></div>
+                                <li class="sidebar-section-label">Gear</li>
+                
+                                <li><a href="../gear.html">View All Gear →</a></li>
+                            </ul>
+        </aside>
+
+        <!-- ===== MAIN CONTENT AREA ===== -->
+        <main class="main-content">
+
+            <a href="../blog.html" class="back-link-wide">&#8592; Back to Blog</a>
+
+            <!-- Hero Section -->
+            <div class="pillar-hero-wide">
+                <h1>Why Voting Is a Sustainability Skill (and How to Get More People to the Polls)</h1>
+                <p class="subtitle">Why voting is a sustainability skill: what environmental votes actually decide, how to research candidates, and practical ways to get more people to the polls.</p>
+            </div>
+
+            <p class="post-meta">Published September 10, 2026</p>
+
+            <nav id="toc-wide" aria-label="Table of contents">
+                <h2>In This Article</h2>
+                <ol>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#why-individual-action-alone-isn-t-enough">Why Individual Action Alone Isn't Enough</a></li>
+<li><a href="#what-environmental-votes-actually-decide">What Environmental Votes Actually Decide</a></li>
+<li><a href="#how-to-research-candidates-on-environmental-issues">How to Research Candidates on Environmental Issues</a></li>
+<li><a href="#getting-more-people-to-the-polls-practical-steps">Getting More People to the Polls: Practical Steps</a></li>
+<li><a href="#from-kitchen-counter-to-ballot-box">From Kitchen Counter to Ballot Box</a></li>
+                </ol>
+            </nav>
+
+<div class="article-section-wide" id="introduction">
+<h2>Introduction</h2>
+<p>If you read this site, you already make sustainability choices every single day. You separate food scraps instead of tossing them in the trash. You pick a worm bin over nothing at all. You compost because it works and because it matters.</p>
+<p>Here's the uncomfortable truth: your kitchen counter is not where most environmental decisions get made. They get made in city halls, statehouses, and Congress. The people who decide how much waste ends up in landfills, whether organics collection becomes mandatory, and what gets funded for clean energy are elected officials. And they only show up when voters show up.</p>
+<p>This post is about closing that gap: why voting is a sustainability skill, how to research candidates on environmental issues, and concrete ways to get more like-minded people to the polls this election season.</p>
+</div>
+
+<div class="article-section-wide" id="why-individual-action-alone-isn-t-enough">
+<h2>Why Individual Action Alone Isn't Enough</h2>
+<p>Composting is real. A single household worm bin can divert 100+ pounds of food waste from the landfill every year, and that waste would otherwise generate methane, one of the most potent greenhouse gases we produce. Multiply that by a neighborhood, a city, a state, and it adds up fast.</p>
+<p>But individual action has a ceiling. A few thousand households composting in a city with no organics collection program still leave 95% of food waste going to landfill. The programs that change the math are policy decisions:</p>
+<ul class="checklist">
+<li><strong>Organics ordinances</strong> — cities like San Francisco and Seattle mandate source separation, which is exactly why composting took off there.</li>
+<li><strong>Landfill fees and tipping rates</strong> — when dumping waste costs more, recycling and composting become economically viable.</li>
+<li><strong>Funding for collection infrastructure</strong> — green carts need budget lines, and budget lines are written by elected officials.</li>
+<li><strong>Clean energy and climate policy</strong> — the biggest emissions reductions in history have come from policy, not individual habits.</li>
+</ul>
+<p>The people who compost are disproportionately likely to care about these issues. That makes you one of the most motivated voter blocs out there. The question is whether that motivation shows up at the polls and gets shared with neighbors who haven't thought about it yet.</p>
+</div>
+
+<div class="article-section-wide" id="what-environmental-votes-actually-decide">
+<h2>What Environmental Votes Actually Decide</h2>
+<p>A lot of people skip voting because they assume their vote won't matter or that all candidates sound the same on the environment. Both assumptions are wrong, especially locally.</p>
+<table class="info-table-wide">
+<thead><tr><th>Election Level</th><th>What's at Stake for Sustainability</th></tr></thead>
+<tbody>
+<tr><td><strong>Local (city council, mayor, school board)</strong></td><td>Zoning for composting facilities, organics collection programs, landfill siting, stormwater and green infrastructure budgets.</td></tr>
+<tr><td><strong>State</strong></td><td>Waste management law, recycling mandates, clean energy standards, agricultural policy (which drives a huge share of food waste).</td></tr>
+<tr><td><strong>Federal</strong></td><td>EPA regulations on methane and landfill gas, climate rules, funding for renewable energy and conservation programs.</td></tr>
+</tbody>
+</table>
+<p>Local elections get the least attention but often decide the most about your daily waste stream. If you've never voted in a municipal election, this is the one where your vote has the highest leverage per person.</p>
+</div>
+
+<div class="article-section-wide" id="how-to-research-candidates-on-environmental-issues">
+<h2>How to Research Candidates on Environmental Issues</h2>
+<p>You don't need to become a policy expert. You need a repeatable 15-minute process for each candidate you're considering:</p>
+<ol class="checklist">
+<li><strong>Check their voting record.</strong> For state and federal offices, sites like Vote.org and your state legislature's site show how they actually voted on waste, climate, and energy bills. Votes beat campaign ads every time.</li>
+<li><strong>Look at endorsements carefully.</strong> Environmental group endorsements are a useful signal, but check which groups they come from and read the reasoning, not just the logo.</li>
+<li><strong>Ask them directly.</strong> Local candidates hold town halls and answer email. One specific question ("Will you support an organics collection program in this city?") gets more honest answers than ten general ones.</li>
+</ol>
+<p>The goal isn't to find a perfect candidate. It's to pick the person most likely to act on the issues your daily habits already care about, and then make sure they win.</p>
+</div>
+
+<div class="article-section-wide" id="getting-more-people-to-the-polls-practical-steps">
+<h2>Getting More People to the Polls: Practical Steps</h2>
+<p>This is where it gets fun. You don't need a campaign office; you need people who already trust you. Here's a simple playbook:</p>
+<h3>1. Start with your existing circle</h3>
+<p>The easiest voters to reach are the ones you already know: family, friends, coworkers, neighbors. A short personal message beats any flyer. Something like: "I'm getting involved with voter outreach for environmental issues this cycle. If you want a 2-minute explainer on what's actually at stake in your district, I've got one."</p>
+<h3>2. Make it easy to act</h3>
+<p>Most people who don't vote aren't apathetic; they're confused or busy. Remove the friction:</p>
+<ul class="checklist">
+<li><strong>Registration status</strong> — check with them and link your state's registration page.</li>
+<li><strong>Voting date and location</strong> — send it to them, don't make them look for it.</li>
+<li><strong>Early voting options</strong> — many people can only vote early; tell them where and when.</li>
+<li><strong>One clear ask</strong> — "Vote in this election" beats a paragraph of policy. Save the details for follow-up.</li>
+</ul>
+<h3>3. Join an organized effort</h3>
+<p>Individual outreach works, but organized efforts work better because they cover ground you can't reach alone. The <a href="https://www.environmentalvoter.org/get-involved" target="_blank" rel="noopener">Environmental Voter Project's Get Involved page</a> is a good starting point: it lists ways to register voters, make calls, and organize in your area. You don't have to be a political person to do this; you just have to care about the environment and be willing to talk to one more person than you planned to.</p>
+<h3>4. Talk about issues, not parties</h3>
+<p>The fastest way to shut down a conversation is to make it partisan. The fastest way to open one is to start from shared ground: "You compost, right? Did you know the next city council vote decides whether this city gets green carts?" People who already act on sustainability are usually open to hearing that their action has a policy side. Lead with the issue they care about; let them draw their own conclusions.</p>
+</div>
+
+<div class="article-section-wide" id="from-kitchen-counter-to-ballot-box">
+<h2>From Kitchen Counter to Ballot Box</h2>
+<p>You've already done the hard part: you changed your daily habits because you believe in something. Voting is just the same belief, pointed at a different target.</p>
+<p>If you're ready to get involved, start here:</p>
+<ul class="checklist">
+<li><strong>Research your candidates</strong> using an environmental voter guide and their actual voting records.</li>
+<li><strong>Pick one person</strong> in your life who hasn't voted recently and send them a short, personal message this week.</li>
+<li><strong>Sign up for organized outreach</strong> at the <a href="https://www.environmentalvoter.org/get-involved" target="_blank" rel="noopener">Environmental Voter Project Get Involved page</a>.</li>
+</ul>
+<p>The compost in your bin is a small act with real impact. Your vote, and the votes of the people you bring along, are how that impact scales from one kitchen to an entire community.</p>
+<div class="callout-wide tip">
+<strong>Keep going:</strong> if you're new to home composting, start with our <a href="../worm-composting.html">Worm Composting Guide</a>, browse the full <a href="../start-here.html">Start Here decision tree</a>, or check out the <a href="../gear.html">recommended gear</a>. And if you're ready to go further, see <a href="../zero-waste-kitchen.html">Zero Waste Kitchen</a> for the next step beyond composting.
+</div>
+</div>
+
+        </main>
+
+    </div><!-- .page-wrapper -->
+
+    <!-- FOOTER: outside grid, spans full width -->
+    <footer class="footer-wide">
+        &copy; 2026 World Composting. All rights reserved.
+    </footer>
+</body>
+</html>
