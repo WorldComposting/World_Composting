@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frequently Asked Questions About Composting | World Composting</title>
+    <meta name="description" content="Answers to the most common composting questions: worm bins, hot composting, bokashi, biochar, tumblers, compost tea, lasagna beds, zero waste kitchens, troubleshooting smells and pests, and starter gear.">
+    <!-- Google Search Console Verification -->
+    <meta name="google-site-verification" content="google8a4b2c3d1e5f6789">
+    <link rel="stylesheet" href="src/styles/theme.css">
+<style>
+        /* ===== WIDE LAYOUT OVERRIDES (supersedes theme.css #app) ===== */
+
+        .page-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 3rem;
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 2.5rem;
+            align-items: start;
+        }
+
+        /* ===== SIDEBAR NAVIGATION ===== */
+        .sidebar {
+            position: sticky;
+            top: 2rem;
+            background: white;
+            border-radius: 16px;
+            box-shadow: var(--card-shadow);
+            padding: 1.5rem;
+            max-height: calc(100vh - 4rem);
+            overflow-y: auto;
+        }
+
+        .sidebar-logo {
+            text-align: center;
+            margin-bottom: 1.25rem;
+        }
+
+        .sidebar-logo img {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--sage-green);
+        }
+
+        .sidebar-logo h2 {
+            font-family: 'Lora', serif;
+            color: var(--forest-green);
+            font-size: 1.1rem;
+            margin-top: 0.5rem;
+        }
+
+        .sidebar-nav {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar-nav li {
+            margin-bottom: 0.25rem;
+        }
+
+        .sidebar-nav a {
+            display: block;
+            padding: 0.6rem 0.85rem;
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--text-dark);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: background 0.15s, color 0.15s;
+        }
+
+        .sidebar-nav a:hover {
+            background: var(--off-white);
+            color: var(--forest-green);
+        }
+
+        .sidebar-nav a.active {
+            background: var(--forest-green);
+            color: white;
+            font-weight: 600;
+        }
+
+        .sidebar-divider {
+            height: 1px;
+            background: rgba(45,90,39,0.12);
+            margin: 1rem 0;
+        }
+
+        .sidebar-section-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-dark);
+            opacity: 0.5;
+            padding: 0.25rem 0.85rem;
+            margin-bottom: 0.25rem;
+        }
+
+        /* ===== MAIN CONTENT AREA ===== */
+        .main-content {
+            min-width: 0;
+        }
+
+        /* Back link: wider */
+        .back-link-wide {
+            display: inline-block;
+            font-size: 0.85rem;
+            color: var(--ocean-blue);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            transition: opacity 0.2s;
+        }
+
+        .back-link-wide:hover { opacity: 0.7; }
+        .back-link-wide:focus-visible {
+            outline: 2px solid var(--ocean-blue);
+            outline-offset: 2px;
+            border-radius: 2px;
+        }
+
+        /* Pillar hero: wider */
+        .pillar-hero-wide {
+            background: white;
+            border-radius: 16px;
+            padding: 2.5rem 3rem;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 2rem;
+        }
+
+        .pillar-hero-wide h1 {
+            font-family: 'Lora', serif;
+            color: var(--forest-green);
+            font-size: 2.4rem;
+            line-height: 1.3;
+            margin-top: 0;
+            text-align: center;
+        }
+
+        .pillar-hero-wide p.subtitle {
+            text-align: center;
+            font-style: italic;
+            color: var(--ocean-blue);
+            font-size: 1.1rem;
+            margin-bottom: 0;
+        }
+
+        /* Table of Contents: wider */
+        #toc-wide {
+            background: white;
+            border-radius: 16px;
+            padding: 1.5rem 2rem;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 2rem;
+        }
+
+        #toc-wide h2 {
+            font-size: 1.1rem;
+            color: var(--forest-green);
+            margin-top: 0;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        #toc-wide ol {
+            padding-left: 1.2rem;
+            margin: 0;
+        }
+
+        #toc-wide li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+
+        #toc-wide a {
+            color: var(--ocean-blue);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        #toc-wide a:hover { color: var(--forest-green); text-decoration: underline; }
+
+        /* Article Sections: wider */
+        .article-section-wide {
+            background: white;
+            border-radius: 16px;
+            padding: 2.5rem 3rem;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .article-section-wide h2 {
+            font-family: 'Lora', serif;
+            color: var(--forest-green);
+            font-size: 1.6rem;
+            margin-top: 0;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--sage-green);
+        }
+
+        .article-section-wide p {
+            color: var(--text-dark);
+            font-size: 1rem;
+            margin-bottom: 1.2rem;
+        }
+
+        /* FAQ accordions */
+        details.faq-item {
+            border: 1px solid rgba(45,90,39,0.18);
+            border-radius: 10px;
+            padding: 0.9rem 1.25rem;
+            margin-bottom: 0.75rem;
+            background: #fbfcfa;
+        }
+
+        details.faq-item summary {
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--forest-green);
+            font-size: 1.02rem;
+            line-height: 1.5;
+            list-style-position: inside;
+        }
+
+        details.faq-item summary:hover { color: var(--ocean-blue); }
+
+        details.faq-item summary:focus-visible {
+            outline: 2px solid var(--ocean-blue);
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+
+        details.faq-item[open] summary {
+            margin-bottom: 0.6rem;
+        }
+
+        details.faq-item p {
+            margin: 0;
+            color: var(--text-dark);
+            font-size: 0.98rem;
+        }
+
+        /* Callout Boxes: wider */
+        .callout-wide {
+            background: var(--sage-green);
+            border-left: 4px solid var(--forest-green);
+            padding: 1rem 1.25rem;
+            border-radius: 0 8px 8px 0;
+            margin: 1.5rem 0;
+        }
+
+        .callout-wide.tip {
+            background: #d1ecf1;
+            border-left-color: var(--ocean-blue);
+        }
+
+        .callout-wide p { margin-bottom: 0; }
+
+        /* ===== RESPONSIVE BREAKPOINTS ===== */
+        @media (max-width: 1024px) {
+            .page-wrapper {
+                grid-template-columns: 1fr;
+                padding: 1.5rem 2rem;
+            }
+
+            .sidebar {
+                position: static;
+                max-height: none;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 1rem;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .sidebar-nav {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.25rem;
+            }
+
+            .sidebar-section-label {
+                width: 100%;
+                text-align: left;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .page-wrapper {
+                padding: 1rem;
+            }
+
+            .pillar-hero-wide h1 { font-size: 1.8rem; }
+            .article-section-wide { padding: 1.25rem; }
+            .article-section-wide h2 { font-size: 1.35rem; }
+            #toc-wide { padding: 1.25rem; }
+        }
+
+        /* ===== FOOTER OVERRIDES: fix body flex centering from theme.css ===== */
+        footer.footer-wide {
+            display: block !important;
+            text-align: center;
+            padding: 2rem 3rem;
+            opacity: 0.7;
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(45,90,39,0.15);
+            margin-top: 2rem;
+        }
+
+        /* Override body flex centering for desktop layout */
+        body {
+            display: block !important;
+            justify-content: normal !important;
+            align-items: normal !important;
+        }
+    </style>
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type":"Question","name":"What is composting and why should I bother?","acceptedAnswer":{"@type":"Answer","text":"Composting is the natural decomposition of organic waste into a nutrient-rich soil amendment. It diverts food scraps from landfills, where they generate methane, and turns them into free fertilizer that improves soil structure, water retention, and plant health."}},
+        {"@type":"Question","name":"Which composting method fits my space and lifestyle?","acceptedAnswer":{"@type":"Answer","text":"Apartments and small spaces: worm bins or bokashi buckets. Small yards: a tumbler or two-bin system. Larger yards with lots of yard waste: hot composting in a three-bin pallet setup. No outdoor space at all: bokashi, then bury the fermented scraps in houseplants or take them to a community drop-off."}},
+        {"@type":"Question","name":"Do I need a yard to compost?","acceptedAnswer":{"@type":"Answer","text":"No. Worm bins and bokashi buckets work entirely indoors in under two square feet of counter or closet space. The only step that needs soil is the final one: burying finished castings or fermented bokashi pre-compost, which you can do in houseplants, a balcony planter, or at a community compost site."}},
+        {"@type":"Question","name":"How much household waste can I actually divert?","acceptedAnswer":{"@type":"Answer","text":"Food scraps are the largest single component of most household trash. A family that composts consistently typically diverts 30 to 50 percent of its weekly garbage by weight, and many households find their regular trash bag lasts twice as long."}},
+        {"@type":"Question","name":"What kind of worms do I need for worm composting?","acceptedAnswer":{"@type":"Answer","text":"You need red wiggler worms (Eisenia fetida), not common earthworms. Red wigglers thrive in the top few inches of soil where organic matter decomposes, tolerate a wide temperature range, and consume roughly half their body weight in food scraps each day."}},
+        {"@type":"Question","name":"Can I keep a worm bin indoors without it smelling?","acceptedAnswer":{"@type":"Answer","text":"Yes. Worm bins are ideal for indoor use because they produce no odor, take up minimal space, and operate quietly. Place your bin in a location that stays between 55 and 77 degrees Fahrenheit, such as under the kitchen sink, in a closet, or on an interior basement shelf."}},
+        {"@type":"Question","name":"How much does it cost to start worm composting?","acceptedAnswer":{"@type":"Answer","text":"You can start a basic worm bin for under $30. A 10-gallon plastic tote costs about $8, shredded cardboard or newspaper is free, and one pound of red wiggler worms from a reputable breeder runs approximately $15 to $20."}},
+        {"@type":"Question","name":"What foods should I never feed my worms?","acceptedAnswer":{"@type":"Answer","text":"Avoid citrus peels, onions, garlic, meat, dairy, bones, oily or greasy foods, and heavily salted or spicy items. These create odors, attract pests, or shift the bin's pH. Stick to fruit and vegetable scraps, coffee grounds, tea bags, and crushed eggshells."}},
+        {"@type":"Question","name":"When can I harvest worm castings, and how?","acceptedAnswer":{"@type":"Answer","text":"Under normal conditions you can expect your first batch of castings after three to six months. The worms gradually convert bedding and food scraps into dark, crumbly, earthy-smelling compost, which you separate using the light migration method or by feeding fresh scraps to one end and letting the worms move toward them."}},
+        {"@type":"Question","name":"How long does hot composting take?","acceptedAnswer":{"@type":"Answer","text":"A properly managed hot compost pile can produce finished compost in as little as 18 to 21 days during the active thermophilic phase, with an additional four to eight weeks for curing. The entire process from start to harvest typically takes two to three months."}},
+        {"@type":"Question","name":"What is the ideal carbon-to-nitrogen ratio for hot composting?","acceptedAnswer":{"@type":"Answer","text":"The ideal C:N ratio is 25 to 30 parts carbon to one part nitrogen by weight. By volume, this translates to roughly three parts browns (carbon-rich materials like dried leaves and straw) to one part greens (nitrogen-rich materials like food scraps and grass clippings)."}},
+        {"@type":"Question","name":"How hot should a compost pile get?","acceptedAnswer":{"@type":"Answer","text":"A healthy hot compost pile should reach and maintain temperatures between 130 and 150 degrees Fahrenheit (54 to 66 degrees Celsius). This range is hot enough to kill weed seeds, pathogens, and plant diseases while keeping beneficial thermophilic bacteria active."}},
+        {"@type":"Question","name":"Why isn't my compost pile heating up?","acceptedAnswer":{"@type":"Answer","text":"The four usual suspects are size (the pile needs at least three by three by three feet), too much carbon relative to nitrogen, dryness, and poor aeration. Add greens, moisten the material, turn more often, and make sure you have enough volume before expecting heat."}},
+        {"@type":"Question","name":"How often should I turn a hot compost pile?","acceptedAnswer":{"@type":"Answer","text":"During the active thermophilic phase (typically weeks one through three), turn your pile every two to three days when the core temperature drops by ten to fifteen degrees from its peak. As the pile cools into the curing phase, reduce turning frequency."}},
+        {"@type":"Question","name":"How does bokashi composting work?","acceptedAnswer":{"@type":"Answer","text":"Bokashi is an anaerobic fermentation method that pickles food scraps in a sealed, oxygen-free bucket using EM-1 effective microorganisms: lactic acid bacteria and yeasts that outcompete putrefactive bacteria. The process takes two to four weeks, requires no turning or moisture management, and produces a pre-compost rich in nutrients and beneficial microbes."}},
+        {"@type":"Question","name":"Can bokashi really handle meat and dairy?","acceptedAnswer":{"@type":"Answer","text":"Yes. Meat, dairy, cooked foods, bones, citrus, onions, and garlic are all welcome in a bokashi bucket because fermentation preserves nutrients rather than releasing them as heat. It is the one method that processes everything traditional piles and worm bins reject."}},
+        {"@type":"Question","name":"What do I do with fermented bokashi scraps after two weeks?","acceptedAnswer":{"@type":"Answer","text":"Bury the pre-compost in garden soil or add it to an active compost pile, where it breaks down into nutrient-dense humus within a few weeks. If you live indoors without a yard, work small amounts into houseplant soil or take the scraps to a community composting site."}},
+        {"@type":"Question","name":"Is the smell from my bokashi bucket normal?","acceptedAnswer":{"@type":"Answer","text":"A mild sweet-sour aroma, like pickles or fermented grains, is exactly what you want. If you notice black fuzzy mold with a rotten odor, air has leaked into the bucket: press the scraps down firmly, add another layer of EM-1 bran, and make sure the lid seal is tight."}},
+        {"@type":"Question","name":"What's the difference between biochar and regular charcoal?","acceptedAnswer":{"@type":"Answer","text":"Biochar is produced by pyrolysis: heating biomass at 400 to 700 degrees Celsius in a low-oxygen environment specifically as a soil amendment. Fuel charcoal is burned hotter with oxygen for heat. Biochar's porous structure (often over 300 square meters of surface area per gram) traps moisture and nutrients, hosts beneficial microbes, and persists in soil for centuries."}},
+        {"@type":"Question","name":"How do I make biochar at home?","acceptedAnswer":{"@type":"Answer","text":"The cleanest small-batch method is an electric kiln or a sealed drum: load wood chips or agricultural residues, heat in low oxygen until no more smoke is produced, then quench the char in water. The result is a stable, carbon-rich amendment rather than ash."}},
+        {"@type":"Question","name":"Why do I need to charge biochar before using it?","acceptedAnswer":{"@type":"Answer","text":"Fresh biochar is like a dry sponge: its pores will absorb moisture and nutrients from your soil instead of giving them to plants. Charge it for several days in compost tea, worm castings leachate, or diluted urine so the pores are already populated with microbes and nutrients before you mix it into beds."}},
+        {"@type":"Question","name":"How much biochar should I apply?","acceptedAnswer":{"@type":"Answer","text":"A common starting rate is one to two cups per square foot of garden bed, mixed into the top few inches. Because biochar does not degrade, you apply it once and it keeps working for years or centuries."}},
+        {"@type":"Question","name":"Is a tumbler better than a static pile?","acceptedAnswer":{"@type":"Answer","text":"Tumblers win on convenience: the sealed drum keeps rodents, raccoons, and flies out completely, no pitchfork is needed (spin the handle 5 to 10 times every few days), and most users see finished compost in three to eight weeks versus two to six months for passive cold piles. The trade-off is drum size: very large volumes of yard waste are easier in a static three-bin system."}},
+        {"@type":"Question","name":"How do I maintain moisture in a tumbler?","acceptedAnswer":{"@type":"Answer","text":"Use the hand test: grab a handful and squeeze. It should feel like a wrung-out sponge, with maybe one or two drops of water. Too dry means misting with a spray bottle; too wet means adding browns like shredded cardboard or dried leaves and spinning more often."}},
+        {"@type":"Question","name":"What size tumbler do I need for a family of four?","acceptedAnswer":{"@type":"Answer","text":"A single drum in the two to three cubic foot range handles typical kitchen scraps plus moderate yard waste, with finished compost every three to eight weeks. Households that generate heavy garden waste are happier running two drums: one active while the other cures."}},
+        {"@type":"Question","name":"What does compost tea actually do?","acceptedAnswer":{"@type":"Answer","text":"Aerated compost tea (ACT) is a liquid extract made by steeping finished compost in oxygenated water for 12 to 36 hours, often with molasses or kelp as microbial food. The brew multiplies billions of beneficial bacteria and fungi that improve soil structure, make nutrients available to plants, and can suppress some plant diseases."}},
+        {"@type":"Question","name":"How is aerated compost tea different from just steeping compost?","acceptedAnswer":{"@type":"Answer","text":"Without aeration you are making leachate: passive steeping lets oxygen-loving microbes die off within hours. Continuous aeration keeps the microbial population alive and growing, which is what makes ACT a living inoculant rather than a thin compost liquid."}},
+        {"@type":"Question","name":"How long do I brew tea, and how fast must I use it?","acceptedAnswer":{"@type":"Answer","text":"Brew for 12 to 36 hours with an air stone running continuously, using roughly one part finished compost to twenty parts water by weight. Apply within four hours of finishing the brew: without oxygen, the beneficial microbes start dying off quickly."}},
+        {"@type":"Question","name":"What is lasagna composting?","acceptedAnswer":{"@type":"Answer","text":"Lasagna composting (sheet mulching) is a no-dig technique that builds fertile soil directly on top of existing grass or bare ground. You lay cardboard or newspaper to smother weeds, then stack alternating carbon-rich browns (straw, leaves, wood chips) and nitrogen-rich greens (grass clippings, kitchen scraps, finished compost). No tilling, digging, or hauling away sod."}},
+        {"@type":"Question","name":"Can I build a lasagna bed on top of existing grass?","acceptedAnswer":{"@type":"Answer","text":"Yes, that is the point. The cardboard base blocks sunlight from reaching weed seeds and suppresses growth without herbicides, while the no-dig approach preserves the fungal networks, root channels, and soil pores beneath."}},
+        {"@type":"Question","name":"When is the best time to start a lasagna bed?","acceptedAnswer":{"@type":"Answer","text":"Early spring or fall are ideal: the soil is workable and moisture is available for decomposition. Summer works if you water heavily during setup, since the layers need consistent moisture to break down."}},
+        {"@type":"Question","name":"Where should I start my sustainability journey?","acceptedAnswer":{"@type":"Answer","text":"Start with food waste: it is the largest single component of most household trash and has immediate impact on both your budget and carbon footprint. Simple shifts like LED lighting, reducing meat consumption, composting kitchen scraps, and conserving water accumulate into meaningful change over time."}},
+        {"@type":"Question","name":"How do I cut food waste at the source?","acceptedAnswer":{"@type":"Answer","text":"Plan meals around what you already have, store produce properly to extend freshness, learn what date labels actually mean (most are not safety deadlines), and use scraps for stock or compost. Reducing waste upstream beats managing it downstream."}},
+        {"@type":"Question","name":"Is zero waste realistic?","acceptedAnswer":{"@type":"Answer","text":"Zero waste is an aspirational goal that is hard to reach completely in modern life. Low waste is the practical target: reduce as much as possible, reuse what you can, and compost or recycle the rest. Progress matters more than perfection."}},
+        {"@type":"Question","name":"Why does my compost smell?","acceptedAnswer":{"@type":"Answer","text":"A sour, ammonia-like odor usually means too much nitrogen (too many greens) or a pile that is compacted and oxygen-starved. Add dry carbon materials like shredded cardboard or dried leaves, turn the pile to reintroduce air, and check moisture: it should feel like a wrung-out sponge."}},
+        {"@type":"Question","name":"How do I stop fruit flies in an indoor bin?","acceptedAnswer":{"@type":"Answer","text":"Bury food scraps under at least two inches of dry bedding so they are never exposed, keep the surface layer dry, and top off with fresh shredded paper weekly. Flies need exposed, moist food to lay eggs; remove that and the population collapses within a week or two."}},
+        {"@type":"Question","name":"Rodents are digging into my outdoor pile. What now?","acceptedAnswer":{"@type":"Answer","text":"Keep fresh food buried deep inside rather than on top, avoid meat and dairy in open piles entirely, and add a mesh base to the bin or use an enclosed tumbler drum as a physical barrier. Raccoons and rodents are driven by accessible protein."}},
+        {"@type":"Question","name":"My compost is too wet (or too dry). What do I do?","acceptedAnswer":{"@type":"Answer","text":"Too wet: add dry browns, turn the pile, and improve drainage at the base. Too dry: mist with a spray bottle until it reaches wrung-out-sponge moisture. The hand test works for every method: squeeze a handful, and one or two drops of water is the target."}},
+        {"@type":"Question","name":"What gear do I actually need on day one?","acceptedAnswer":{"@type":"Answer","text":"Keep it minimal: a container (a $8 plastic tote with drainage holes works as well as a $100 system), carbon bedding material, and either a pound of red wigglers or EM-1 bran depending on your method. Everything else can be added later once you know what limits you."}},
+        {"@type":"Question","name":"Do I need expensive composting equipment?","acceptedAnswer":{"@type":"Answer","text":"No. A drilled plastic tote, shredded cardboard, and free yard materials produce excellent compost. Upgrade only when you hit a real limitation: pests call for an enclosed drum, volume calls for a bigger system, and convenience calls for a tumbler."}},
+        {"@type":"Question","name":"Where do I buy healthy worms?","acceptedAnswer":{"@type":"Answer","text":"Buy red wigglers specifically from reputable breeders or local vermicompost suppliers. Avoid bait shop earthworms: they are the wrong species, dig deep to escape the bin environment, and rarely thrive in composting conditions."}}
+      ]
+    }
+    </script>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KRHYVJXZLE"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-KRHYVJXZLE');
+    </script>
+</head>
+<body>
+    <div class="page-wrapper">
+
+        <!-- ===== SIDEBAR NAVIGATION ===== -->
+        <aside class="sidebar">
+            <div class="sidebar-logo">
+                <img src="src/assets/logo.png" alt="World Composting Logo" width="64" height="64" loading="lazy" onerror="this.src='https://via.placeholder.com/64?text=WC'">
+                <h2>World Composting</h2>
+            </div>
+
+            <ul class="sidebar-nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="start-here.html">Start Here</a></li>
+                <li><a href="science-of-compost.html">The Science of Compost</a></li>
+                <li><a href="about.html">About</a></li>
+
+                <div class="sidebar-divider"></div>
+                <li class="sidebar-section-label">Guides</li>
+
+                <li><a href="worm-composting.html">Worm Composting</a></li>
+                <li><a href="hot-composting.html">Hot Composting</a></li>
+
+                <div class="sidebar-divider"></div>
+                <li class="sidebar-section-label">Checklists</li>
+
+                <li><a href="beginner.html">Beginner's Checklist</a></li>
+                <li><a href="hot.html">Hot Composting Checklist</a></li>
+                <li><a href="bokashi.html">Bokashi Composting</a></li>
+                <li><a href="biochar.html">BioChar Composting</a></li>
+                <li><a href="tumbler.html">Tumbler Composting</a></li>
+                <li><a href="tea.html">Compost Tea</a></li>
+                <li><a href="lasagna.html">Lasagna Composting</a></li>
+                <li><a href="sustainability.html">Sustainability Journey</a></li>
+                <li><a href="zero-waste-kitchen.html">Zero Waste Kitchen</a></li>
+
+                <div class="sidebar-divider"></div>
+                <li class="sidebar-section-label">Resources</li>
+
+                <li><a href="glossary.html">Glossary</a></li>
+                <li><a href="troubleshoot.html">Troubleshooting</a></li>
+                <li><a href="faq.html" class="active">Frequently Asked Questions</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="sitemap.html">Sitemap</a></li>
+
+                <div class="sidebar-divider"></div>
+                <li class="sidebar-section-label">Gear</li>
+
+                <li><a href="gear.html">View All Gear →</a></li>
+            </ul>
+        </aside>
+
+        <!-- ===== MAIN CONTENT AREA ===== -->
+        <main class="main-content">
+
+            <a href="/" class="back-link-wide">&#8592; Back to Home</a>
+
+            <!-- Hero Section -->
+            <div class="pillar-hero-wide">
+                <h1>Frequently Asked Questions</h1>
+                <p class="subtitle">Straight answers to the questions we hear most, organized by composting method.</p>
+            </div>
+
+            <!-- Table of Contents -->
+            <nav id="toc-wide" aria-label="Table of contents">
+                <h2>In This Guide</h2>
+                <ol>
+                    <li><a href="#getting-started">Getting Started</a></li>
+                    <li><a href="#worm-composting-faq">Worm Composting</a></li>
+                    <li><a href="#hot-composting-faq">Hot Composting</a></li>
+                    <li><a href="#bokashi-faq">Bokashi Composting</a></li>
+                    <li><a href="#biochar-faq">Biochar</a></li>
+                    <li><a href="#tumbler-faq">Tumbler Composting</a></li>
+                    <li><a href="#compost-tea-faq">Compost Tea</a></li>
+                    <li><a href="#lasagna-faq">Lasagna Composting</a></li>
+                    <li><a href="#sustainability-faq">Sustainability &amp; Zero Waste Kitchen</a></li>
+                    <li><a href="#troubleshooting-faq">Troubleshooting: Smells, Flies &amp; Pests</a></li>
+                    <li><a href="#gear-faq">Gear &amp; Shopping</a></li>
+                </ol>
+            </nav>
+
+            <!-- Getting Started -->
+            <div class="article-section-wide" id="getting-started">
+                <h2>Getting Started</h2>
+                <details class="faq-item">
+                    <summary>What is composting and why should I bother?</summary>
+                    <p>Composting is the natural decomposition of organic waste into a nutrient-rich soil amendment. It diverts food scraps from landfills, where they generate methane, and turns them into free fertilizer that improves soil structure, water retention, and plant health.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Which composting method fits my space and lifestyle?</summary>
+                    <p>Apartments and small spaces: worm bins or bokashi buckets. Small yards: a tumbler or two-bin system. Larger yards with lots of yard waste: hot composting in a three-bin pallet setup. No outdoor space at all: bokashi, then bury the fermented scraps in houseplants or take them to a community drop-off.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Do I need a yard to compost?</summary>
+                    <p>No. Worm bins and bokashi buckets work entirely indoors in under two square feet of counter or closet space. The only step that needs soil is the final one: burying finished castings or fermented bokashi pre-compost, which you can do in houseplants, a balcony planter, or at a community compost site.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>How much household waste can I actually divert?</summary>
+                    <p>Food scraps are the largest single component of most household trash. A family that composts consistently typically diverts 30 to 50 percent of its weekly garbage by weight, and many households find their regular trash bag lasts twice as long.</p>
+                </details>
+            </div>
+
+            <!-- Worm Composting -->
+            <div class="article-section-wide" id="worm-composting-faq">
+                <h2>Worm Composting</h2>
+                <details class="faq-item">
+                    <summary>What kind of worms do I need for worm composting?</summary>
+                    <p>You need red wiggler worms (Eisenia fetida), not common earthworms. Red wigglers thrive in the top few inches of soil where organic matter decomposes, tolerate a wide temperature range, and consume roughly half their body weight in food scraps each day.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Can I keep a worm bin indoors without it smelling?</summary>
+                    <p>Yes. Worm bins are ideal for indoor use because they produce no odor, take up minimal space, and operate quietly. Place your bin in a location that stays between 55 and 77 degrees Fahrenheit, such as under the kitchen sink, in a closet, or on an interior basement shelf.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>How much does it cost to start worm composting?</summary>
+                    <p>You can start a basic worm bin for under $30. A 10-gallon plastic tote costs about $8, shredded cardboard or newspaper is free, and one pound of red wiggler worms from a reputable breeder runs approximately $15 to $20.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>What foods should I never feed my worms?</summary>
+                    <p>Avoid citrus peels, onions, garlic, meat, dairy, bones, oily or greasy foods, and heavily salted or spicy items. These create odors, attract pests, or shift the bin's pH. Stick to fruit and vegetable scraps, coffee grounds, tea bags, and crushed eggshells.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>When can I harvest worm castings, and how?</summary>
+                    <p>Under normal conditions you can expect your first batch of castings after three to six months. The worms gradually convert bedding and food scraps into dark, crumbly, earthy-smelling compost, which you separate using the light migration method or by feeding fresh scraps to one end and letting the worms move toward them.</p>
+                </details>
+            </div>
+
+            <!-- Hot Composting -->
+            <div class="article-section-wide" id="hot-composting-faq">
+                <h2>Hot Composting</h2>
+                <details class="faq-item">
+                    <summary>How long does hot composting take?</summary>
+                    <p>A properly managed hot compost pile can produce finished compost in as little as 18 to 21 days during the active thermophilic phase, with an additional four to eight weeks for curing. The entire process from start to harvest typically takes two to three months.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>What is the ideal carbon-to-nitrogen ratio for hot composting?</summary>
+                    <p>The ideal C:N ratio is 25 to 30 parts carbon to one part nitrogen by weight. By volume, this translates to roughly three parts browns (carbon-rich materials like dried leaves and straw) to one part greens (nitrogen-rich materials like food scraps and grass clippings).</p>
+                </details>
+                <details class="faq-item">
+                    <summary>How hot should a compost pile get?</summary>
+                    <p>A healthy hot compost pile should reach and maintain temperatures between 130 and 150 degrees Fahrenheit (54 to 66 degrees Celsius). This range is hot enough to kill weed seeds, pathogens, and plant diseases while keeping beneficial thermophilic bacteria active.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Why isn't my compost pile heating up?</summary>
+                    <p>The four usual suspects are size (the pile needs at least three by three by three feet), too much carbon relative to nitrogen, dryness, and poor aeration. Add greens, moisten the material, turn more often, and make sure you have enough volume before expecting heat.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>How often should I turn a hot compost pile?</summary>
+                    <p>During the active thermophilic phase (typically weeks one through three), turn your pile every two to three days when the core temperature drops by ten to fifteen degrees from its peak. As the pile cools into the curing phase, reduce turning frequency.</p>
+                </details>
+            </div>
+
+            <!-- Bokashi -->
+            <div class="article-section-wide" id="bokashi-faq">
+                <h2>Bokashi Composting</h2>
+                <details class="faq-item">
+                    <summary>How does bokashi composting work?</summary>
+                    <p>Bokashi is an anaerobic fermentation method that pickles food scraps in a sealed, oxygen-free bucket using EM-1 effective microorganisms: lactic acid bacteria and yeasts that outcompete putrefactive bacteria. The process takes two to four weeks, requires no turning or moisture management, and produces a pre-compost rich in nutrients and beneficial microbes.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Can bokashi really handle meat and dairy?</summary>
+                    <p>Yes. Meat, dairy, cooked foods, bones, citrus, onions, and garlic are all welcome in a bokashi bucket because fermentation preserves nutrients rather than releasing them as heat. It is the one method that processes everything traditional piles and worm bins reject.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>What do I do with fermented bokashi scraps after two weeks?</summary>
+                    <p>Bury the pre-compost in garden soil or add it to an active compost pile, where it breaks down into nutrient-dense humus within a few weeks. If you live indoors without a yard, work small amounts into houseplant soil or take the scraps to a community composting site.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Is the smell from my bokashi bucket normal?</summary>
+                    <p>A mild sweet-sour aroma, like pickles or fermented grains, is exactly what you want. If you notice black fuzzy mold with a rotten odor, air has leaked into the bucket: press the scraps down firmly, add another layer of EM-1 bran, and make sure the lid seal is tight.</p>
+                </details>
+            </div>
+
+            <!-- Biochar -->
+            <div class="article-section-wide" id="biochar-faq">
+                <h2>Biochar</h2>
+                <details class="faq-item">
+                    <summary>What's the difference between biochar and regular charcoal?</summary>
+                    <p>Biochar is produced by pyrolysis: heating biomass at 400 to 700 degrees Celsius in a low-oxygen environment specifically as a soil amendment. Fuel charcoal is burned hotter with oxygen for heat. Biochar's porous structure (often over 300 square meters of surface area per gram) traps moisture and nutrients, hosts beneficial microbes, and persists in soil for centuries.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>How do I make biochar at home?</summary>
+                    <p>The cleanest small-batch method is an electric kiln or a sealed drum: load wood chips or agricultural residues, heat in low oxygen until no more smoke is produced, then quench the char in water. The result is a stable, carbon-rich amendment rather than ash.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Why do I need to charge biochar before using it?</summary>
+                    <p>Fresh biochar is like a dry sponge: its pores will absorb moisture and nutrients from your soil instead of giving them to plants. Charge it for several days in compost tea, worm castings leachate, or diluted urine so the pores are already populated with microbes and nutrients before you mix it into beds.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>How much biochar should I apply?</summary>
+                    <p>A common starting rate is one to two cups per square foot of garden bed, mixed into the top few inches. Because biochar does not degrade, you apply it once and it keeps working for years or centuries.</p>
+                </details>
+            </div>
+
+            <!-- Tumbler -->
+            <div class="article-section-wide" id="tumbler-faq">
+                <h2>Tumbler Composting</h2>
+                <details class="faq-item">
+                    <summary>Is a tumbler better than a static pile?</summary>
+                    <p>Tumblers win on convenience: the sealed drum keeps rodents, raccoons, and flies out completely, no pitchfork is needed (spin the handle 5 to 10 times every few days), and most users see finished compost in three to eight weeks versus two to six months for passive cold piles. The trade-off is drum size: very large volumes of yard waste are easier in a static three-bin system.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>How do I maintain moisture in a tumbler?</summary>
+                    <p>Use the hand test: grab a handful and squeeze. It should feel like a wrung-out sponge, with maybe one or two drops of water. Too dry means misting with a spray bottle; too wet means adding browns like shredded cardboard or dried leaves and spinning more often.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>What size tumbler do I need for a family of four?</summary>
+                    <p>A single drum in the two to three cubic foot range handles typical kitchen scraps plus moderate yard waste, with finished compost every three to eight weeks. Households that generate heavy garden waste are happier running two drums: one active while the other cures.</p>
+                </details>
+            </div>
+
+            <!-- Compost Tea -->
+            <div class="article-section-wide" id="compost-tea-faq">
+                <h2>Compost Tea</h2>
+                <details class="faq-item">
+                    <summary>What does compost tea actually do?</summary>
+                    <p>Aerated compost tea (ACT) is a liquid extract made by steeping finished compost in oxygenated water for 12 to 36 hours, often with molasses or kelp as microbial food. The brew multiplies billions of beneficial bacteria and fungi that improve soil structure, make nutrients available to plants, and can suppress some plant diseases.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>How is aerated compost tea different from just steeping compost?</summary>
+                    <p>Without aeration you are making leachate: passive steeping lets oxygen-loving microbes die off within hours. Continuous aeration keeps the microbial population alive and growing, which is what makes ACT a living inoculant rather than a thin compost liquid.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>How long do I brew tea, and how fast must I use it?</summary>
+                    <p>Brew for 12 to 36 hours with an air stone running continuously, using roughly one part finished compost to twenty parts water by weight. Apply within four hours of finishing the brew: without oxygen, the beneficial microbes start dying off quickly.</p>
+                </details>
+            </div>
+
+            <!-- Lasagna -->
+            <div class="article-section-wide" id="lasagna-faq">
+                <h2>Lasagna Composting</h2>
+                <details class="faq-item">
+                    <summary>What is lasagna composting?</summary>
+                    <p>Lasagna composting (sheet mulching) is a no-dig technique that builds fertile soil directly on top of existing grass or bare ground. You lay cardboard or newspaper to smother weeds, then stack alternating carbon-rich browns (straw, leaves, wood chips) and nitrogen-rich greens (grass clippings, kitchen scraps, finished compost). No tilling, digging, or hauling away sod.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Can I build a lasagna bed on top of existing grass?</summary>
+                    <p>Yes, that is the point. The cardboard base blocks sunlight from reaching weed seeds and suppresses growth without herbicides, while the no-dig approach preserves the fungal networks, root channels, and soil pores beneath.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>When is the best time to start a lasagna bed?</summary>
+                    <p>Early spring or fall are ideal: the soil is workable and moisture is available for decomposition. Summer works if you water heavily during setup, since the layers need consistent moisture to break down.</p>
+                </details>
+            </div>
+
+            <!-- Sustainability & Zero Waste -->
+            <div class="article-section-wide" id="sustainability-faq">
+                <h2>Sustainability &amp; Zero Waste Kitchen</h2>
+                <details class="faq-item">
+                    <summary>Where should I start my sustainability journey?</summary>
+                    <p>Start with food waste: it is the largest single component of most household trash and has immediate impact on both your budget and carbon footprint. Simple shifts like LED lighting, reducing meat consumption, composting kitchen scraps, and conserving water accumulate into meaningful change over time.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>How do I cut food waste at the source?</summary>
+                    <p>Plan meals around what you already have, store produce properly to extend freshness, learn what date labels actually mean (most are not safety deadlines), and use scraps for stock or compost. Reducing waste upstream beats managing it downstream.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Is zero waste realistic?</summary>
+                    <p>Zero waste is an aspirational goal that is hard to reach completely in modern life. Low waste is the practical target: reduce as much as possible, reuse what you can, and compost or recycle the rest. Progress matters more than perfection.</p>
+                </details>
+            </div>
+
+            <!-- Troubleshooting -->
+            <div class="article-section-wide" id="troubleshooting-faq">
+                <h2>Troubleshooting: Smells, Flies &amp; Pests</h2>
+                <details class="faq-item">
+                    <summary>Why does my compost smell?</summary>
+                    <p>A sour, ammonia-like odor usually means too much nitrogen (too many greens) or a pile that is compacted and oxygen-starved. Add dry carbon materials like shredded cardboard or dried leaves, turn the pile to reintroduce air, and check moisture: it should feel like a wrung-out sponge.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>How do I stop fruit flies in an indoor bin?</summary>
+                    <p>Bury food scraps under at least two inches of dry bedding so they are never exposed, keep the surface layer dry, and top off with fresh shredded paper weekly. Flies need exposed, moist food to lay eggs; remove that and the population collapses within a week or two.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Rodents are digging into my outdoor pile. What now?</summary>
+                    <p>Keep fresh food buried deep inside rather than on top, avoid meat and dairy in open piles entirely, and add a mesh base to the bin or use an enclosed tumbler drum as a physical barrier. Raccoons and rodents are driven by accessible protein.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>My compost is too wet (or too dry). What do I do?</summary>
+                    <p>Too wet: add dry browns, turn the pile, and improve drainage at the base. Too dry: mist with a spray bottle until it reaches wrung-out-sponge moisture. The hand test works for every method: squeeze a handful, and one or two drops of water is the target.</p>
+                </details>
+            </div>
+
+            <!-- Gear & Shopping -->
+            <div class="article-section-wide" id="gear-faq">
+                <h2>Gear &amp; Shopping</h2>
+                <details class="faq-item">
+                    <summary>What gear do I actually need on day one?</summary>
+                    <p>Keep it minimal: a container (a $8 plastic tote with drainage holes works as well as a $100 system), carbon bedding material, and either a pound of red wigglers or EM-1 bran depending on your method. Everything else can be added later once you know what limits you.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Do I need expensive composting equipment?</summary>
+                    <p>No. A drilled plastic tote, shredded cardboard, and free yard materials produce excellent compost. Upgrade only when you hit a real limitation: pests call for an enclosed drum, volume calls for a bigger system, and convenience calls for a tumbler.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Where do I buy healthy worms?</summary>
+                    <p>Buy red wigglers specifically from reputable breeders or local vermicompost suppliers. Avoid bait shop earthworms: they are the wrong species, dig deep to escape the bin environment, and rarely thrive in composting conditions.</p>
+                </details>
+
+                <div class="callout-wide tip">
+                    <p><strong>Still stuck?</strong> The interactive <a href="troubleshoot.html">Troubleshooting Checklist</a> walks you through diagnosing any problem step by step, and the <a href="start-here.html">Start Here guide</a> helps you pick the right method for your situation.</p>
+                </div>
+            </div>
+
+        </main>
+    </div><!-- .page-wrapper -->
+
+    <!-- FOOTER: outside grid, spans full width -->
+    <footer class="footer-wide">
+        &copy; 2026 World Composting. All rights reserved.
+    </footer>
+</body>
+</html>
