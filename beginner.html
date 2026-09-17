@@ -545,6 +545,8 @@
                 <li><a href="tea.html">Compost Tea</a></li>
                 <li><a href="lasagna.html">Lasagna Composting</a></li>
                 <li><a href="sustainability.html">Sustainability Journey</a></li>
+                <li><a href="energy-efficiency.html">Energy Efficiency at Home</a></li>
+                <li><a href="black_soldier_fly.html">Black Soldier Fly Bin Setup</a></li>
                 <li><a href="zero-waste-kitchen.html">Zero Waste Kitchen</a></li>
 
                 <div class="sidebar-divider"></div>
@@ -1037,6 +1039,10 @@
                     link.href = href;
                     link.className = 'product-link';
                     link.target = '_blank';
+                    const isAmazon = p['Amazon Link'] && p['Amazon Link'].includes('amzn.to');
+                    if (isAmazon) {
+                        link.setAttribute('data-affiliate', 'true');
+                    }
                     link.innerHTML = '<span class="product-name">' + p['Item'] + '</span>';
                     list.appendChild(link);
                 });

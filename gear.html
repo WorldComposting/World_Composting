@@ -671,6 +671,7 @@
                 <li><a href="tea.html">Compost Tea</a></li>
                 <li><a href="lasagna.html">Lasagna Composting</a></li>
                 <li><a href="sustainability.html">Sustainability Journey</a></li>
+                <li><a href="energy-efficiency.html">Energy Efficiency at Home</a></li>
                 <li><a href="zero-waste-kitchen.html">Zero Waste Kitchen</a></li>
 
                 <div class="sidebar-divider"></div>
@@ -771,11 +772,13 @@
                                 const img = d.image ? `<img class="gear-card-img" src="${d.image}" alt="${item['Item']}" loading="lazy">` : '';
                                 const blurb = d.blurb ? `<p class="gear-card-blurb">${d.blurb}</p>` : '';
                                 const specs = d.specs ? `<span class="gear-card-specs">${d.specs}</span>` : '';
+                                const isAmazon = item['Amazon Link'] && item['Amazon Link'].includes('amzn.to');
+                                const affiliateBadge = isAmazon ? ' <small style="color:var(--text-dark);opacity:0.6;font-size:0.75rem;">(Affiliate Link)</small>' : '';
                                 return `
                                     <div class="gear-card">
                                         ${img}
                                         <div class="gear-card-body">
-                                            <h4 class="gear-card-name">${item['Item']}</h4>
+                                            <h4 class="gear-card-name">${item['Item']}${affiliateBadge}</h4>
                                             ${blurb}
                                             ${specs}
                                             <a href="${href}" target="_blank" rel="noopener sponsored" class="gear-card-link">View on Amazon</a>

@@ -36,6 +36,36 @@
         "Other Link": null
     },
     {
+        "Item": "10 Gallon Tote",
+        "Category": "BSF Items",
+        "Amazon Link": "https://amzn.to/3m3BlJq",
+        "Other Link": null
+    },
+    {
+        "Item": "Blue Tarp",
+        "Category": "BSF Items",
+        "Amazon Link": "https://amzn.to/3rXmPGY",
+        "Other Link": null
+    },
+    {
+        "Item": "Waterproof gloves",
+        "Category": "BSF Items",
+        "Amazon Link": "https://amzn.to/3m21vfp",
+        "Other Link": null
+    },
+    {
+        "Item": "Chapin Sprayer",
+        "Category": "BSF Items",
+        "Amazon Link": "https://amzn.to/2KWLpHk",
+        "Other Link": null
+    },
+    {
+        "Item": "Ego 4 Gallon Sprayer",
+        "Category": "BSF Items",
+        "Amazon Link": "https://amzn.to/4wGyP0X",
+        "Other Link": null
+    },
+    {
         "Item": "Urban Worm Bag",
         "Category": "Worm Bag",
         "Amazon Link": "https://amzn.to/3R3qYtQ",
@@ -171,6 +201,54 @@
         "Item": "Meme's Worms",
         "Category": "Worms",
         "Amazon Link": "http://bit.ly/2XXy18v",
+        "Other Link": null
+    },
+    {
+        "Item": "ecobee Smart Thermostat",
+        "Category": "Home Efficiency",
+        "Amazon Link": "https://amzn.to/4hgKjBi",
+        "Other Link": null
+    },
+    {
+        "Item": "Smart Plug Wi-Fi, Energy Monitoring",
+        "Category": "Home Efficiency",
+        "Amazon Link": "https://amzn.to/4rmfqA6",
+        "Other Link": null
+    },
+    {
+        "Item": "Cree LED A19 Bulb, 60W, Soft White",
+        "Category": "Home Efficiency",
+        "Amazon Link": "https://amzn.to/4rjOlxo",
+        "Other Link": null
+    },
+    {
+        "Item": "Window Insulation Shrink Kit",
+        "Category": "Home Efficiency",
+        "Amazon Link": "https://amzn.to/4xvc0wc",
+        "Other Link": null
+    },
+    {
+        "Item": "Foam Weather Stripping",
+        "Category": "Home Efficiency",
+        "Amazon Link": "https://amzn.to/4AfQNcl",
+        "Other Link": null
+    },
+    {
+        "Item": "Outlet Gaskets, Foam insulation",
+        "Category": "Home Efficiency",
+        "Amazon Link": "https://amzn.to/4xweI4I",
+        "Other Link": null
+    },
+    {
+        "Item": "Smart Power Strip Wi-Fi, Energy Monitoring",
+        "Category": "Home Efficiency",
+        "Amazon Link": "https://amzn.to/4AirMNr",
+        "Other Link": null
+    },
+    {
+        "Item": "Low-Flow Showerhead",
+        "Category": "Home Efficiency",
+        "Amazon Link": "https://amzn.to/475kQ94",
         "Other Link": null
     }
 ]

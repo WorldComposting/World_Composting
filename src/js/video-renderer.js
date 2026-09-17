@@ -128,6 +128,7 @@
         "zero-waste-kitchen": ["-_ELuS7Lgwg", "HJLxpc3UFFg"],
         sustainability: ["ej9gRwssrgk", "0QvS2l6zWYk"],
         biochar: ["AE8A2kCJYkY", "iLrkTxMZWMA"],
+        "energy-efficiency": [],
         "start-here": [],
         about: [],
         gear: [],

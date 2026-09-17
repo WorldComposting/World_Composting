@@ -178,6 +178,14 @@ p.subtitle {
   background-color: var(--sky-blue);
 }
 .product-link:hover::after { transform: translateX(5px); }
+
+/* Affiliate badge on product links */
+.product-link[data-affiliate="true"]::after {
+  content: '→ (Affiliate Link)';
+  font-size: 0.8rem;
+  color: var(--text-dark);
+  opacity: 0.6;
+}
 .video-card:focus-visible {
   outline: 2px solid #005a4f;
   outline-offset: 2px;
