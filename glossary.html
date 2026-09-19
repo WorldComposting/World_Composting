@@ -8,105 +8,8 @@
     <!-- Google Search Console Verification -->
     <meta name="google-site-verification" content="google8a4b2c3d1e5f6789">
     <link rel="stylesheet" href="src/styles/theme.css">
-    <style>
-        /* ===== WIDE LAYOUT OVERRIDES (supersedes theme.css #app) ===== */
-
-        .page-wrapper {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem 3rem;
-            display: grid;
-            grid-template-columns: 240px 1fr;
-            gap: 2.5rem;
-            align-items: start;
-        }
-
-        /* ===== SIDEBAR NAVIGATION ===== */
-        .sidebar {
-            position: sticky;
-            top: 2rem;
-            background: white;
-            border-radius: 16px;
-            box-shadow: var(--card-shadow);
-            padding: 1.5rem;
-            max-height: calc(100vh - 4rem);
-            overflow-y: auto;
-        }
-
-        .sidebar-logo {
-            text-align: center;
-            margin-bottom: 1.25rem;
-        }
-
-        .sidebar-logo img {
-            width: 64px;
-            height: 64px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid var(--sage-green);
-        }
-
-        .sidebar-logo h2 {
-            font-family: 'Lora', serif;
-            color: var(--forest-green);
-            font-size: 1.1rem;
-            margin-top: 0.5rem;
-        }
-
-        .sidebar-nav {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .sidebar-nav li {
-            margin-bottom: 0.25rem;
-        }
-
-        .sidebar-nav a {
-            display: block;
-            padding: 0.6rem 0.85rem;
-            border-radius: 8px;
-            text-decoration: none;
-            color: var(--text-dark);
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: background 0.15s, color 0.15s;
-        }
-
-        .sidebar-nav a:hover {
-            background: var(--off-white);
-            color: var(--forest-green);
-        }
-
-        .sidebar-nav a.active {
-            background: var(--forest-green);
-            color: white;
-            font-weight: 600;
-        }
-
-        .sidebar-divider {
-            height: 1px;
-            background: rgba(45,90,39,0.12);
-            margin: 1rem 0;
-        }
-
-        .sidebar-section-label {
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--text-dark);
-            opacity: 0.5;
-            padding: 0.25rem 0.85rem;
-            margin-bottom: 0.25rem;
-        }
-
-        /* ===== MAIN CONTENT AREA ===== */
-        .main-content {
-            min-width: 0;
-        }
-
-        /* Back link: wider */
+    <link rel="stylesheet" href="src/styles/layout.css">
+    <style>/* Back link: wider */
         .back-link-wide {
             display: inline-block;
             font-size: 0.85rem;
@@ -117,14 +20,15 @@
             transition: opacity 0.2s;
         }
 
-        .back-link-wide:hover { opacity: 0.7; }
-        .back-link-wide:focus-visible {
+.back-link-wide:hover { opacity: 0.7; }
+
+.back-link-wide:focus-visible {
             outline: 2px solid var(--ocean-blue);
             outline-offset: 2px;
             border-radius: 2px;
         }
 
-        /* Pillar hero: wider */
+/* Pillar hero: wider */
         .pillar-hero-wide {
             background: white;
             border-radius: 16px;
@@ -133,7 +37,7 @@
             margin-bottom: 2rem;
         }
 
-        .pillar-hero-wide h1 {
+.pillar-hero-wide h1 {
             font-family: 'Lora', serif;
             color: var(--forest-green);
             font-size: 2.4rem;
@@ -142,7 +46,7 @@
             text-align: center;
         }
 
-        .pillar-hero-wide p.subtitle {
+.pillar-hero-wide p.subtitle {
             text-align: center;
             font-style: italic;
             color: var(--ocean-blue);
@@ -150,7 +54,7 @@
             margin-bottom: 0;
         }
 
-        /* Intro box: wider */
+/* Intro box: wider */
         .hero-intro-wide {
             background: white;
             border-radius: 16px;
@@ -162,8 +66,9 @@
             color: var(--text-dark);
         }
 
-        .hero-intro-wide strong { color: var(--forest-green); }
-        .hero-intro-wide h2 {
+.hero-intro-wide strong { color: var(--forest-green); }
+
+.hero-intro-wide h2 {
             font-family: 'Lora', serif;
             color: var(--forest-green);
             font-size: 1.6rem;
@@ -171,7 +76,7 @@
             margin-bottom: 1rem;
         }
 
-        .hero-intro-wide h3 {
+.hero-intro-wide h3 {
             font-family: 'Lora', serif;
             color: var(--ocean-blue);
             font-size: 1.25rem;
@@ -179,11 +84,13 @@
             margin-bottom: 0.75rem;
         }
 
-        .hero-intro-wide p { margin-bottom: 1.2rem; }
-        .hero-intro-wide ul { padding-left: 1.5rem; margin-bottom: 1.2rem; }
-        .hero-intro-wide li { margin-bottom: 0.6rem; line-height: 1.7; }
+.hero-intro-wide p { margin-bottom: 1.2rem; }
 
-        /* Glossary */
+.hero-intro-wide ul { padding-left: 1.5rem; margin-bottom: 1.2rem; }
+
+.hero-intro-wide li { margin-bottom: 0.6rem; line-height: 1.7; }
+
+/* Glossary */
         #glossary-wrapper {
             background: white;
             border-radius: 16px;
@@ -191,7 +98,8 @@
             margin-bottom: 2rem;
             overflow: hidden;
         }
-        .glossary-letter {
+
+.glossary-letter {
             display: flex;
             align-items: center;
             width: 100%;
@@ -207,116 +115,54 @@
             transition: background 0.2s ease;
             gap: 0.75rem;
         }
-        .glossary-letter:hover { background: rgba(45, 90, 39, 0.04); }
-        .glossary-letter:focus-visible {
+
+.glossary-letter:hover { background: rgba(45, 90, 39, 0.04); }
+
+.glossary-letter:focus-visible {
             outline: 2px solid var(--ocean-blue);
             outline-offset: -2px;
             border-radius: 16px 16px 0 0;
         }
-        .glossary-letter .letter-arrow {
+
+.glossary-letter .letter-arrow {
             font-size: 0.8rem;
             transition: transform 0.3s ease;
             color: var(--ocean-blue);
             flex-shrink: 0;
         }
-        .glossary-letter.active .letter-arrow { transform: rotate(180deg); }
-        .glossary-body {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s ease, padding 0.3s ease;
-            padding: 0 1.5rem;
-        }
-        .glossary-letter.active + .glossary-body {
-            max-height: 8000px;
-            padding: 0 1.5rem 1.25rem;
-        }
-        .glossary-entry {
+
+.glossary-letter.active .letter-arrow { transform: rotate(180deg); }
+
+.glossary-entry {
             display: block;
             padding: 0.75rem 0;
             border-bottom: 1px solid rgba(0,0,0,0.05);
         }
-        .glossary-entry:last-of-type { border-bottom: none; }
-        .glossary-term {
+
+.glossary-entry:last-of-type { border-bottom: none; }
+
+.glossary-term {
             display: block;
             font-weight: 700;
             font-size: 0.95rem;
             color: var(--text-dark);
         }
-        .glossary-def {
+
+.glossary-def {
             display: block;
             font-size: 0.82rem;
             color: #666;
             margin-top: 2px;
             line-height: 1.5;
         }
-        .glossary-def a {
+
+.glossary-def a {
             color: var(--ocean-blue);
             text-decoration: underline;
             font-weight: 500;
         }
 
-        
-
-                /* ===== FOOTER OVERRIDES: fix body flex centering from theme.css ===== */
-        footer.footer-wide {
-            display: block !important;
-            text-align: center;
-            padding: 2rem 3rem;
-            opacity: 0.7;
-            font-size: 0.85rem;
-            border-top: 1px solid rgba(45,90,39,0.15);
-            margin-top: 2rem;
-        }
-
-        /* Override body flex centering for desktop layout */
-        body {
-            display: block !important;
-            justify-content: normal !important;
-            align-items: normal !important;
-        }
-
-        /* ===== RESPONSIVE BREAKPOINTS ===== */
-        @media (max-width: 1024px) {
-            .page-wrapper {
-                grid-template-columns: 1fr;
-                padding: 1.5rem 2rem;
-            }
-
-            .sidebar {
-                position: static;
-                max-height: none;
-                display: flex;
-                flex-wrap: wrap;
-                gap: 1rem;
-                align-items: center;
-                justify-content: center;
-            }
-
-            .sidebar-nav {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 0.25rem;
-            }
-
-            .sidebar-section-label {
-                width: 100%;
-                text-align: left;
-            }
-        }
-
-        @media (max-width: 640px) {
-            .page-wrapper { padding: 1rem; }
-            .pillar-hero-wide h1 { font-size: 1.8rem; }
-            .hero-intro-wide { padding: 1.25rem; }
-            .hero-intro-wide h2 { font-size: 1.35rem; }
-
-            /* Small-screen glossary tweaks (carried over from mobile) */
-            .glossary-letter { padding: 1rem 1.2rem; font-size: 0.95rem; }
-            .glossary-letter.active + .glossary-body { padding: 0 1.2rem 1rem; }
-            .glossary-term { font-size: 0.9rem; }
-            .glossary-def { font-size: 0.78rem; }
-        }
-    </style>
+/* ===== RESPONSIVE BREAKPOINTS ===== */</style>
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-KRHYVJXZLE"></script>
     <script>
@@ -364,6 +210,7 @@
                 <li><a href="lasagna.html">Lasagna Composting</a></li>
                 <li><a href="sustainability.html">Sustainability Journey</a></li>
                 <li><a href="energy-efficiency.html">Energy Efficiency at Home</a></li>
+                <li><a href="black_soldier_fly.html">Black Soldier Fly Bin Setup</a></li>
                 <li><a href="zero-waste-kitchen.html">Zero Waste Kitchen</a></li>
 
                 <div class="sidebar-divider"></div>

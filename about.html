@@ -21,106 +21,9 @@
     }
     </script>
     <link rel="stylesheet" href="src/styles/theme.css">
+    <link rel="stylesheet" href="src/styles/layout.css">
     <link rel="stylesheet" href="src/styles/video-section.css">
-    <style>
-        /* ===== WIDE LAYOUT OVERRIDES (supersedes theme.css #app) ===== */
-
-        .page-wrapper {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem 3rem;
-            display: grid;
-            grid-template-columns: 240px 1fr;
-            gap: 2.5rem;
-            align-items: start;
-        }
-
-        /* ===== SIDEBAR NAVIGATION ===== */
-        .sidebar {
-            position: sticky;
-            top: 2rem;
-            background: white;
-            border-radius: 16px;
-            box-shadow: var(--card-shadow);
-            padding: 1.5rem;
-            max-height: calc(100vh - 4rem);
-            overflow-y: auto;
-        }
-
-        .sidebar-logo {
-            text-align: center;
-            margin-bottom: 1.25rem;
-        }
-
-        .sidebar-logo img {
-            width: 64px;
-            height: 64px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid var(--sage-green);
-        }
-
-        .sidebar-logo h2 {
-            font-family: 'Lora', serif;
-            color: var(--forest-green);
-            font-size: 1.1rem;
-            margin-top: 0.5rem;
-        }
-
-        .sidebar-nav {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .sidebar-nav li {
-            margin-bottom: 0.25rem;
-        }
-
-        .sidebar-nav a {
-            display: block;
-            padding: 0.6rem 0.85rem;
-            border-radius: 8px;
-            text-decoration: none;
-            color: var(--text-dark);
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: background 0.15s, color 0.15s;
-        }
-
-        .sidebar-nav a:hover {
-            background: var(--off-white);
-            color: var(--forest-green);
-        }
-
-        .sidebar-nav a.active {
-            background: var(--forest-green);
-            color: white;
-            font-weight: 600;
-        }
-
-        .sidebar-divider {
-            height: 1px;
-            background: rgba(45,90,39,0.12);
-            margin: 1rem 0;
-        }
-
-        .sidebar-section-label {
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--text-dark);
-            opacity: 0.5;
-            padding: 0.25rem 0.85rem;
-            margin-bottom: 0.25rem;
-        }
-
-        /* ===== MAIN CONTENT AREA ===== */
-        .main-content {
-            min-width: 0;
-        }
-
-        /* About header — wider, more breathing room */
+    <style>/* About header — wider, more breathing room */
         .about-header-wide {
             text-align: center;
             padding: 3rem 2rem 2.5rem;
@@ -130,7 +33,7 @@
             margin-bottom: 2rem;
         }
 
-        .about-header-wide img {
+.about-header-wide img {
             width: 100px;
             height: 100px;
             border-radius: 50%;
@@ -138,7 +41,7 @@
             box-shadow: 0 4px 20px rgba(45,90,39,0.15);
         }
 
-        .about-header-wide h1 {
+.about-header-wide h1 {
             font-family: 'Lora', serif;
             color: var(--forest-green);
             font-size: 2.75rem;
@@ -146,7 +49,7 @@
             letter-spacing: -0.5px;
         }
 
-        .about-header-wide p {
+.about-header-wide p {
             font-family: 'Lora', serif;
             color: var(--ocean-blue);
             font-style: italic;
@@ -154,7 +57,7 @@
             margin-bottom: 0;
         }
 
-        /* About hero — wider */
+/* About hero — wider */
         .about-hero-wide {
             background: white;
             border-radius: 16px;
@@ -163,14 +66,14 @@
             margin-bottom: 2rem;
         }
 
-        .about-hero-wide p {
+.about-hero-wide p {
             font-size: 1.05rem;
             line-height: 1.7;
             color: var(--text-dark);
             opacity: 0.85;
         }
 
-        /* About sections — wider */
+/* About sections — wider */
         .about-section-wide {
             background: white;
             border-radius: 16px;
@@ -179,14 +82,14 @@
             margin-bottom: 2rem;
         }
 
-        .about-section-wide h2 {
+.about-section-wide h2 {
             font-family: 'Lora', serif;
             color: var(--forest-green);
             font-size: 1.75rem;
             margin-bottom: 1rem;
         }
 
-        .about-section-wide p {
+.about-section-wide p {
             font-size: 1rem;
             line-height: 1.7;
             color: var(--text-dark);
@@ -194,19 +97,19 @@
             margin-bottom: 1rem;
         }
 
-        .about-section-wide ul {
+.about-section-wide ul {
             padding-left: 1.5rem;
             line-height: 1.9;
         }
 
-        .about-section-wide li {
+.about-section-wide li {
             font-size: 1rem;
             color: var(--text-dark);
             opacity: 0.85;
             margin-bottom: 0.75rem;
         }
 
-        /* About CTA — wider */
+/* About CTA — wider */
         .about-cta-wide {
             background: white;
             border-radius: 16px;
@@ -216,14 +119,14 @@
             text-align: center;
         }
 
-        .about-cta-wide h2 {
+.about-cta-wide h2 {
             font-family: 'Lora', serif;
             color: var(--forest-green);
             font-size: 1.75rem;
             margin-bottom: 1rem;
         }
 
-        .about-cta-wide p {
+.about-cta-wide p {
             font-size: 1rem;
             line-height: 1.7;
             color: var(--text-dark);
@@ -232,7 +135,7 @@
             margin: 0 auto 1.5rem;
         }
 
-        /* Button — wider */
+/* Button — wider */
         .btn-primary-wide {
             display: inline-block;
             padding: 0.85rem 2rem;
@@ -244,73 +147,11 @@
             transition: background 0.2s;
         }
 
-        .btn-primary-wide:hover {
+.btn-primary-wide:hover {
             background: var(--ocean-blue);
         }
 
-        /* ===== RESPONSIVE BREAKPOINTS ===== */
-        @media (max-width: 1024px) {
-            .page-wrapper {
-                grid-template-columns: 1fr;
-                padding: 1.5rem 2rem;
-            }
-
-            .sidebar {
-                position: static;
-                max-height: none;
-                display: flex;
-                flex-wrap: wrap;
-                gap: 1rem;
-                align-items: center;
-                justify-content: center;
-            }
-
-            .sidebar-nav {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 0.25rem;
-            }
-
-            .sidebar-section-label {
-                width: 100%;
-                text-align: left;
-            }
-        }
-
-        @media (max-width: 640px) {
-            .page-wrapper {
-                padding: 1rem;
-            }
-
-            .about-header-wide h1 {
-                font-size: 2rem;
-            }
-
-            .about-hero-wide,
-            .about-section-wide,
-            .about-cta-wide {
-                padding: 1.5rem;
-            }
-        }
-
-        /* ===== FOOTER OVERRIDES — fix body flex centering from theme.css ===== */
-        footer.footer-wide {
-            display: block !important;
-            text-align: center;
-            padding: 2rem 3rem;
-            opacity: 0.7;
-            font-size: 0.85rem;
-            border-top: 1px solid rgba(45,90,39,0.15);
-            margin-top: 2rem;
-        }
-
-        /* Override body flex centering for desktop layout */
-        body {
-            display: block !important;
-            justify-content: normal !important;
-            align-items: normal !important;
-        }
-    </style>
+/* ===== RESPONSIVE BREAKPOINTS ===== */</style>
 
     <!-- Google Analytics 4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-KRHYVJXZLE"></script>

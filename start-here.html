@@ -8,106 +8,9 @@
     <title>Where to Start Composting: Decision Guide | World Composting</title>
     <meta name="description" content="Not sure which composting method is right for you? Answer 4 quick questions about your space, time, and goals to get a personalized recommendation.">
     <link rel="stylesheet" href="src/styles/theme.css">
+    <link rel="stylesheet" href="src/styles/layout.css">
     <link rel="stylesheet" href="src/styles/video-section.css">
-    <style>
-        /* ===== WIDE LAYOUT OVERRIDES (supersedes theme.css #app) ===== */
-
-        .page-wrapper {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem 3rem;
-            display: grid;
-            grid-template-columns: 240px 1fr;
-            gap: 2.5rem;
-            align-items: start;
-        }
-
-        /* ===== SIDEBAR NAVIGATION ===== */
-        .sidebar {
-            position: sticky;
-            top: 2rem;
-            background: white;
-            border-radius: 16px;
-            box-shadow: var(--card-shadow);
-            padding: 1.5rem;
-            max-height: calc(100vh - 4rem);
-            overflow-y: auto;
-        }
-
-        .sidebar-logo {
-            text-align: center;
-            margin-bottom: 1.25rem;
-        }
-
-        .sidebar-logo img {
-            width: 64px;
-            height: 64px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid var(--sage-green);
-        }
-
-        .sidebar-logo h2 {
-            font-family: 'Lora', serif;
-            color: var(--forest-green);
-            font-size: 1.1rem;
-            margin-top: 0.5rem;
-        }
-
-        .sidebar-nav {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .sidebar-nav li {
-            margin-bottom: 0.25rem;
-        }
-
-        .sidebar-nav a {
-            display: block;
-            padding: 0.6rem 0.85rem;
-            border-radius: 8px;
-            text-decoration: none;
-            color: var(--text-dark);
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: background 0.15s, color 0.15s;
-        }
-
-        .sidebar-nav a:hover {
-            background: var(--off-white);
-            color: var(--forest-green);
-        }
-
-        .sidebar-nav a.active {
-            background: var(--forest-green);
-            color: white;
-            font-weight: 600;
-        }
-
-        .sidebar-divider {
-            height: 1px;
-            background: rgba(45,90,39,0.12);
-            margin: 1rem 0;
-        }
-
-        .sidebar-section-label {
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--text-dark);
-            opacity: 0.5;
-            padding: 0.25rem 0.85rem;
-            margin-bottom: 0.25rem;
-        }
-
-        /* ===== MAIN CONTENT AREA ===== */
-        .main-content {
-            min-width: 0;
-        }
-
-        /* Wizard header: wider, more breathing room */
+    <style>/* Wizard header: wider, more breathing room */
         .wizard-header-wide {
             text-align: center;
             padding: 3rem 2rem 2.5rem;
@@ -117,7 +20,7 @@
             margin-bottom: 2rem;
         }
 
-        .wizard-header-wide img {
+.wizard-header-wide img {
             width: 100px;
             height: 100px;
             border-radius: 50%;
@@ -125,7 +28,7 @@
             box-shadow: 0 4px 20px rgba(45,90,39,0.15);
         }
 
-        .wizard-header-wide h1 {
+.wizard-header-wide h1 {
             font-family: 'Lora', serif;
             color: var(--forest-green);
             font-size: 2.75rem;
@@ -133,7 +36,7 @@
             letter-spacing: -0.5px;
         }
 
-        .wizard-header-wide p {
+.wizard-header-wide p {
             color: var(--text-dark);
             opacity: 0.85;
             font-size: 1.1rem;
@@ -141,7 +44,7 @@
             margin: 0 auto;
         }
 
-        /* Progress bar: wider */
+/* Progress bar: wider */
         .progress-bar-wide {
             display: flex;
             justify-content: center;
@@ -151,7 +54,7 @@
             margin: 0 auto 2rem;
         }
 
-        .progress-dot-wide {
+.progress-dot-wide {
             width: 14px;
             height: 14px;
             border-radius: 50%;
@@ -159,23 +62,23 @@
             transition: background 0.3s, transform 0.3s;
         }
 
-        .progress-dot-wide.active {
-            background: var(--forest-green);
-            transform: scale(1.4);
-        }
-
-        .progress-dot-wide.completed {
+.progress-dot-wide.completed {
             background: var(--ocean-blue);
         }
 
-        /* Wizard container: wider */
+        .progress-dot-wide.active {
+            background: var(--forest-green);
+            transform: scale(1.2);
+        }
+
+/* Wizard container: wider */
         #wizard-container-wide {
             max-width: 800px;
             margin: 0 auto;
             padding: 0 2rem 2rem;
         }
 
-        .question-step-wide {
+.question-step-wide {
             display: none;
             animation: fadeInStepWide 0.4s ease-out;
         }
@@ -184,12 +87,12 @@
             display: block;
         }
 
-        @keyframes fadeInStepWide {
+@keyframes fadeInStepWide {
             from { opacity: 0; transform: translateY(15px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        .question-step-wide h2 {
+.question-step-wide h2 {
             font-family: 'Lora', serif;
             color: var(--forest-green);
             font-size: 1.75rem;
@@ -197,7 +100,7 @@
             margin-bottom: 0.5rem;
         }
 
-        .question-step-wide .step-label {
+.question-step-wide .step-label {
             display: block;
             text-align: center;
             font-size: 0.9rem;
@@ -206,13 +109,13 @@
             margin-bottom: 2rem;
         }
 
-        /* Option cards: wider */
+/* Option cards: wider */
         .options-grid-wide {
             display: grid;
             gap: 1rem;
         }
 
-        .option-card-wide {
+.option-card-wide {
             background: white;
             border: 2px solid var(--sage-green);
             border-radius: 12px;
@@ -224,18 +127,18 @@
             color: var(--text-dark);
         }
 
-        .option-card-wide:hover {
+.option-card-wide:hover {
             border-color: var(--forest-green);
             box-shadow: 0 4px 16px rgba(45,90,39,0.12);
         }
 
-        .option-card-wide.selected {
+.option-card-wide.selected {
             background: var(--forest-green);
             color: white;
             border-color: var(--forest-green);
         }
 
-        /* Navigation buttons: wider */
+/* Navigation buttons: wider */
         .wizard-nav-wide {
             display: flex;
             justify-content: space-between;
@@ -246,7 +149,7 @@
             margin-right: auto;
         }
 
-        .btn-wizard-wide {
+.btn-wizard-wide {
             display: inline-block;
             padding: 0.85rem 2.25rem;
             border-radius: 10px;
@@ -257,32 +160,32 @@
             transition: background 0.2s, transform 0.15s;
         }
 
-        .btn-wizard-wide:hover {
+.btn-wizard-wide:hover {
             transform: translateY(-1px);
         }
 
-        .btn-next-wide {
+.btn-next-wide {
             background: var(--forest-green);
             color: white;
             border: none;
         }
 
-        .btn-next-wide:hover {
+.btn-next-wide:hover {
             background: var(--ocean-blue);
         }
 
-        .btn-back-wide {
+.btn-back-wide {
             background: transparent;
             color: var(--text-dark);
             opacity: 0.6;
             border: none;
         }
 
-        .btn-back-wide:hover {
+.btn-back-wide:hover {
             opacity: 1;
         }
 
-        /* Results section: wider */
+/* Results section: wider */
         #results-container-wide {
             display: none;
             max-width: 800px;
@@ -295,7 +198,7 @@
             display: block;
         }
 
-        .results-header-wide h2 {
+.results-header-wide h2 {
             font-family: 'Lora', serif;
             color: var(--forest-green);
             font-size: 2rem;
@@ -303,7 +206,7 @@
             margin-bottom: 0.5rem;
         }
 
-        .results-header-wide p {
+.results-header-wide p {
             text-align: center;
             color: var(--text-dark);
             opacity: 0.75;
@@ -311,7 +214,7 @@
             margin-bottom: 2.5rem;
         }
 
-        /* Recommendation cards: wider */
+/* Recommendation cards: wider */
         .rec-card-wide {
             background: white;
             border-radius: 16px;
@@ -322,24 +225,24 @@
             transition: transform 0.2s, box-shadow 0.2s;
         }
 
-        .rec-card-wide:hover {
+.rec-card-wide:hover {
             transform: translateY(-3px);
             box-shadow: 0 12px 30px rgba(75,54,33,0.15);
         }
 
-        .rec-icon-wide {
+.rec-icon-wide {
             font-size: 2.5rem;
             margin-bottom: 0.75rem;
         }
 
-        .rec-card-wide h3 {
+.rec-card-wide h3 {
             font-family: 'Lora', serif;
             color: var(--forest-green);
             font-size: 1.4rem;
             margin-bottom: 0.5rem;
         }
 
-        .rec-card-wide p {
+.rec-card-wide p {
             color: var(--text-dark);
             opacity: 0.85;
             line-height: 1.6;
@@ -347,7 +250,7 @@
             margin-bottom: 1.25rem;
         }
 
-        .rec-link-wide {
+.rec-link-wide {
             display: inline-block;
             color: var(--ocean-blue);
             font-weight: 600;
@@ -355,11 +258,11 @@
             transition: color 0.2s;
         }
 
-        .rec-link-wide:hover {
+.rec-link-wide:hover {
             color: var(--forest-green);
         }
 
-        /* Fallback link: wider */
+/* Fallback link: wider */
         .fallback-section-wide {
             text-align: center;
             margin-top: 2.5rem;
@@ -369,14 +272,14 @@
             box-shadow: var(--card-shadow);
         }
 
-        .fallback-section-wide p {
+.fallback-section-wide p {
             color: var(--text-dark);
             opacity: 0.75;
             font-size: 1rem;
             margin-bottom: 1rem;
         }
 
-        .btn-fallback-wide {
+.btn-fallback-wide {
             display: inline-block;
             padding: 0.75rem 1.5rem;
             background: var(--ocean-blue);
@@ -387,11 +290,11 @@
             transition: background 0.2s;
         }
 
-        .btn-fallback-wide:hover {
+.btn-fallback-wide:hover {
             background: var(--forest-green);
         }
 
-        /* Back to home link: wider */
+/* Back to home link: wider */
         .back-home-wide {
             display: block;
             text-align: center;
@@ -402,72 +305,11 @@
             font-size: 1.05rem;
         }
 
-        .back-home-wide:hover {
+.back-home-wide:hover {
             color: var(--forest-green);
         }
 
-        /* ===== RESPONSIVE BREAKPOINTS ===== */
-        @media (max-width: 1024px) {
-            .page-wrapper {
-                grid-template-columns: 1fr;
-                padding: 1.5rem 2rem;
-            }
-
-            .sidebar {
-                position: static;
-                max-height: none;
-                display: flex;
-                flex-wrap: wrap;
-                gap: 1rem;
-                align-items: center;
-                justify-content: center;
-            }
-
-            .sidebar-nav {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 0.25rem;
-            }
-
-            .sidebar-section-label {
-                width: 100%;
-                text-align: left;
-            }
-        }
-
-        @media (max-width: 640px) {
-            .page-wrapper {
-                padding: 1rem;
-            }
-
-            .wizard-header-wide h1 {
-                font-size: 2rem;
-            }
-
-            #wizard-container-wide,
-            #results-container-wide {
-                padding: 0 1rem 2rem;
-            }
-        }
-
-        /* ===== FOOTER OVERRIDES: fix body flex centering from theme.css ===== */
-        footer.footer-wide {
-            display: block !important;
-            text-align: center;
-            padding: 2rem 3rem;
-            opacity: 0.7;
-            font-size: 0.85rem;
-            border-top: 1px solid rgba(45,90,39,0.15);
-            margin-top: 2rem;
-        }
-
-        /* Override body flex centering for desktop layout */
-        body {
-            display: block !important;
-            justify-content: normal !important;
-            align-items: normal !important;
-        }
-    </style>
+/* ===== RESPONSIVE BREAKPOINTS ===== */</style>
 
     <!-- Google Analytics 4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-KRHYVJXZLE"></script>

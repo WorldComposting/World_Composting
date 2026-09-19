@@ -10,106 +10,9 @@
     <!-- Google Search Console Verification -->
     <meta name="google-site-verification" content="google8a4b2c3d1e5f6789">
     <link rel="stylesheet" href="src/styles/theme.css">
+    <link rel="stylesheet" href="src/styles/layout.css">
     <link rel="stylesheet" href="src/styles/video-section.css">
-    <style>
-        /* ===== WIDE LAYOUT OVERRIDES (supersedes theme.css #app) ===== */
-
-        .page-wrapper {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem 3rem;
-            display: grid;
-            grid-template-columns: 240px 1fr;
-            gap: 2.5rem;
-            align-items: start;
-        }
-
-        /* ===== SIDEBAR NAVIGATION ===== */
-        .sidebar {
-            position: sticky;
-            top: 2rem;
-            background: white;
-            border-radius: 16px;
-            box-shadow: var(--card-shadow);
-            padding: 1.5rem;
-            max-height: calc(100vh - 4rem);
-            overflow-y: auto;
-        }
-
-        .sidebar-logo {
-            text-align: center;
-            margin-bottom: 1.25rem;
-        }
-
-        .sidebar-logo img {
-            width: 64px;
-            height: 64px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid var(--sage-green);
-        }
-
-        .sidebar-logo h2 {
-            font-family: 'Lora', serif;
-            color: var(--forest-green);
-            font-size: 1.1rem;
-            margin-top: 0.5rem;
-        }
-
-        .sidebar-nav {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .sidebar-nav li {
-            margin-bottom: 0.25rem;
-        }
-
-        .sidebar-nav a {
-            display: block;
-            padding: 0.6rem 0.85rem;
-            border-radius: 8px;
-            text-decoration: none;
-            color: var(--text-dark);
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: background 0.15s, color 0.15s;
-        }
-
-        .sidebar-nav a:hover {
-            background: var(--off-white);
-            color: var(--forest-green);
-        }
-
-        .sidebar-nav a.active {
-            background: var(--forest-green);
-            color: white;
-            font-weight: 600;
-        }
-
-        .sidebar-divider {
-            height: 1px;
-            background: rgba(45,90,39,0.12);
-            margin: 1rem 0;
-        }
-
-        .sidebar-section-label {
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--text-dark);
-            opacity: 0.5;
-            padding: 0.25rem 0.85rem;
-            margin-bottom: 0.25rem;
-        }
-
-        /* ===== MAIN CONTENT AREA ===== */
-        .main-content {
-            min-width: 0;
-        }
-
-        /* Back link: wider */
+    <style>/* Back link: wider */
         .back-link-wide {
             display: inline-block;
             font-size: 0.85rem;
@@ -120,14 +23,15 @@
             transition: opacity 0.2s;
         }
 
-        .back-link-wide:hover { opacity: 0.7; }
-        .back-link-wide:focus-visible {
+.back-link-wide:hover { opacity: 0.7; }
+
+.back-link-wide:focus-visible {
             outline: 2px solid var(--ocean-blue);
             outline-offset: 2px;
             border-radius: 2px;
         }
 
-        /* Pillar hero: wider */
+/* Pillar hero: wider */
         .pillar-hero-wide {
             background: white;
             border-radius: 16px;
@@ -136,7 +40,7 @@
             margin-bottom: 2rem;
         }
 
-        .pillar-hero-wide h1 {
+.pillar-hero-wide h1 {
             font-family: 'Lora', serif;
             color: var(--forest-green);
             font-size: 2.4rem;
@@ -145,7 +49,7 @@
             text-align: center;
         }
 
-        .pillar-hero-wide p.subtitle {
+.pillar-hero-wide p.subtitle {
             text-align: center;
             font-style: italic;
             color: var(--ocean-blue);
@@ -153,7 +57,7 @@
             margin-bottom: 0;
         }
 
-        /* Table of Contents: wider */
+/* Table of Contents: wider */
         #toc-wide {
             background: white;
             border-radius: 16px;
@@ -162,7 +66,7 @@
             margin-bottom: 2rem;
         }
 
-        #toc-wide h2 {
+#toc-wide h2 {
             font-size: 1.1rem;
             color: var(--forest-green);
             margin-top: 0;
@@ -171,25 +75,25 @@
             letter-spacing: 1px;
         }
 
-        #toc-wide ol {
+#toc-wide ol {
             padding-left: 1.2rem;
             margin: 0;
         }
 
-        #toc-wide li {
+#toc-wide li {
             margin-bottom: 0.5rem;
             line-height: 1.6;
         }
 
-        #toc-wide a {
+#toc-wide a {
             color: var(--ocean-blue);
             text-decoration: none;
             font-weight: 500;
         }
 
-        #toc-wide a:hover { color: var(--forest-green); text-decoration: underline; }
+#toc-wide a:hover { color: var(--forest-green); text-decoration: underline; }
 
-        /* Article Sections: wider */
+/* Article Sections: wider */
         .article-section-wide {
             background: white;
             border-radius: 16px;
@@ -199,7 +103,7 @@
             line-height: 1.8;
         }
 
-        .article-section-wide h2 {
+.article-section-wide h2 {
             font-family: 'Lora', serif;
             color: var(--forest-green);
             font-size: 1.6rem;
@@ -209,7 +113,7 @@
             border-bottom: 2px solid var(--sage-green);
         }
 
-        .article-section-wide h3 {
+.article-section-wide h3 {
             font-family: 'Lora', serif;
             color: var(--ocean-blue);
             font-size: 1.25rem;
@@ -217,25 +121,25 @@
             margin-bottom: 0.75rem;
         }
 
-        .article-section-wide p {
+.article-section-wide p {
             color: var(--text-dark);
             font-size: 1rem;
             margin-bottom: 1.2rem;
         }
 
-        .article-section-wide ul, .article-section-wide ol {
+.article-section-wide ul, .article-section-wide ol {
             padding-left: 1.5rem;
             margin-bottom: 1.2rem;
         }
 
-        .article-section-wide li {
+.article-section-wide li {
             margin-bottom: 0.6rem;
             line-height: 1.7;
         }
 
-        .article-section-wide strong { color: var(--forest-green); }
+.article-section-wide strong { color: var(--forest-green); }
 
-        /* Callout Boxes: wider */
+/* Callout Boxes: wider */
         .callout-wide {
             background: var(--sage-green);
             border-left: 4px solid var(--forest-green);
@@ -244,19 +148,19 @@
             margin: 1.5rem 0;
         }
 
-        .callout-wide.warning {
+.callout-wide.warning {
             background: #fff3cd;
             border-left-color: #856404;
         }
 
-        .callout-wide.tip {
+.callout-wide.tip {
             background: #d1ecf1;
             border-left-color: var(--ocean-blue);
         }
 
-        .callout-wide p { margin-bottom: 0; }
+.callout-wide p { margin-bottom: 0; }
 
-        /* Info Tables: wider */
+/* Info Tables: wider */
         .info-table-wide {
             width: 100%;
             border-collapse: collapse;
@@ -264,21 +168,21 @@
             font-size: 0.92rem;
         }
 
-        .info-table-wide th, .info-table-wide td {
+.info-table-wide th, .info-table-wide td {
             padding: 0.75rem 1rem;
             text-align: left;
             border-bottom: 1px solid var(--sage-green);
         }
 
-        .info-table-wide th {
+.info-table-wide th {
             background: var(--forest-green);
             color: white;
             font-weight: 600;
         }
 
-        .info-table-wide tr:nth-child(even) td { background: #f8f9fa; }
+.info-table-wide tr:nth-child(even) td { background: #f8f9fa; }
 
-        /* Related Pages: wider */
+/* Related Pages: wider */
         .related-pages-wide {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -286,7 +190,7 @@
             margin-top: 1.5rem;
         }
 
-        .related-card-wide {
+.related-card-wide {
             background: white;
             border-radius: 16px;
             padding: 1.25rem;
@@ -295,82 +199,25 @@
             transition: transform 0.2s, box-shadow 0.2s;
         }
 
-        .related-card-wide:hover {
+.related-card-wide:hover {
             transform: translateY(-4px);
             box-shadow: 0 16px 32px -8px rgba(75, 54, 33, 0.15);
         }
 
-        .related-card-wide a {
+.related-card-wide a {
             text-decoration: none;
             color: var(--forest-green);
             font-weight: 600;
             font-size: 1rem;
         }
 
-        .related-card-wide p {
+.related-card-wide p {
             margin-top: 0.5rem;
             font-size: 0.85rem;
             color: #666;
         }
 
-        /* ===== RESPONSIVE BREAKPOINTS ===== */
-        @media (max-width: 1024px) {
-            .page-wrapper {
-                grid-template-columns: 1fr;
-                padding: 1.5rem 2rem;
-            }
-
-            .sidebar {
-                position: static;
-                max-height: none;
-                display: flex;
-                flex-wrap: wrap;
-                gap: 1rem;
-                align-items: center;
-                justify-content: center;
-            }
-
-            .sidebar-nav {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 0.25rem;
-            }
-
-            .sidebar-section-label {
-                width: 100%;
-                text-align: left;
-            }
-        }
-
-        @media (max-width: 640px) {
-            .page-wrapper {
-                padding: 1rem;
-            }
-
-            .pillar-hero-wide h1 { font-size: 1.8rem; }
-            .article-section-wide { padding: 1.25rem; }
-            .article-section-wide h2 { font-size: 1.35rem; }
-            #toc-wide { padding: 1.25rem; }
-        }
-
-        /* ===== FOOTER OVERRIDES: fix body flex centering from theme.css ===== */
-        footer.footer-wide {
-            display: block !important;
-            text-align: center;
-            padding: 2rem 3rem;
-            opacity: 0.7;
-            font-size: 0.85rem;
-            border-top: 1px solid rgba(45,90,39,0.15);
-            margin-top: 2rem;
-        }
-
-        /* Override body flex centering for desktop layout */
-        body {
-            display: block !important;
-            justify-content: normal !important;
-            align-items: normal !important;
-        }
-    </style>
+/* ===== RESPONSIVE BREAKPOINTS ===== */</style>
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-KRHYVJXZLE"></script>
     <script>

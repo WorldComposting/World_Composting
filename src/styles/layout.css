@@ -1,0 +1,150 @@
+/* ===== WIDE LAYOUT OVERRIDES (supersedes theme.css #app) ===== */
+
+/* Main content wrapper: wide on desktop, constrained on mobile */
+.page-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 3rem;
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 2.5rem;
+    align-items: start;
+}
+
+/* ===== SIDEBAR NAVIGATION ===== */
+.sidebar {
+    position: sticky;
+    top: 2rem;
+    background: white;
+    border-radius: 16px;
+    box-shadow: var(--card-shadow);
+    padding: 1.5rem;
+    max-height: calc(100vh - 4rem);
+    overflow-y: auto;
+}
+
+.sidebar-logo {
+    text-align: center;
+    margin-bottom: 1.25rem;
+}
+
+.sidebar-logo img {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--sage-green);
+}
+
+.sidebar-logo h2 {
+    font-family: 'Lora', serif;
+    color: var(--forest-green);
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+}
+
+.sidebar-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-nav li {
+    margin-bottom: 0.25rem;
+}
+
+.sidebar-nav a {
+    display: block;
+    padding: 0.6rem 0.85rem;
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--text-dark);
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: background 0.15s, color 0.15s;
+}
+
+.sidebar-nav a:hover {
+    background: var(--off-white);
+    color: var(--forest-green);
+}
+
+.sidebar-nav a.active {
+    background: var(--forest-green);
+    color: white;
+    font-weight: 600;
+}
+
+.sidebar-divider {
+    height: 1px;
+    background: rgba(45,90,39,0.12);
+    margin: 1rem 0;
+}
+
+.sidebar-section-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-dark);
+    opacity: 0.5;
+    padding: 0.25rem 0.85rem;
+    margin-bottom: 0.25rem;
+}
+
+/* ===== MAIN CONTENT AREA ===== */
+.main-content {
+    min-width: 0;
+}
+
+/* ===== FOOTER OVERRIDES: fix body flex centering from theme.css ===== */
+footer.footer-wide {
+    display: block !important;
+    text-align: center;
+    padding: 2rem 3rem;
+    opacity: 0.7;
+    font-size: 0.85rem;
+    border-top: 1px solid rgba(45,90,39,0.15);
+    margin-top: 2rem;
+}
+
+/* Override body flex centering for desktop layout */
+body {
+    display: block !important;
+    justify-content: normal !important;
+    align-items: normal !important;
+}
+
+/* ===== RESPONSIVE BREAKPOINTS ===== */
+@media (max-width: 1024px) {
+    .page-wrapper {
+        grid-template-columns: 1fr;
+        padding: 1.5rem 2rem;
+    }
+
+    .sidebar {
+        position: static;
+        max-height: none;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .sidebar-nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.25rem;
+    }
+
+    .sidebar-section-label {
+        width: 100%;
+        text-align: left;
+    }
+}
+
+@media (max-width: 640px) {
+    .page-wrapper {
+        padding: 1rem;
+    }
+}
