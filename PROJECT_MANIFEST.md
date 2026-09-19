@@ -60,7 +60,7 @@ High-legibility, ADA-compliant site for the [World Composting](http://worldcompo
 
 **Content & YouTube:** timelapse series (worms consuming items); bin vs bag comparison video; Shorts for SEO keywords (smelly bin fixes, fruit fly prevention); consistent upload cadence; optimize titles/descriptions, end screens/cards to site, branded thumbnails, playlists linked on site.
 
-**Marketing / traffic:** Pinterest Business account + boards per method, 10–20 pins, 3–5 pins/day; Reddit presence IN PROGRESS since ~9/9 (user posting links to specific pages in r/composting, r/Vermiculture, r/sustainability); Instagram behind-the-scenes; YouTube Community posts.
+**Marketing / traffic:** Pinterest Business account + boards per method, 10–20 pins, 3–5 pins/day; Reddit presence IN PROGRESS since ~9/9 (user posting links to specific pages in r/composting, r/Vermiculture, r/sustainability); Instagram behind-the-scenes; YouTube Community posts. **Pinterest infographic pins DONE 9/18:** 5 pins created and posted (see `/mnt/h/Hermes/pinterest-assets/` for assets + `pin_posting_tracker.csv`). Pin creation guide: `PIN_CREATION_GUIDE.md`. Pinterest Base Code tag installed on all 32 pages for conversion tracking.
 
 **Business ops:** review affiliate link performance quarterly + refresh `products.json`; ensure disclosures on all pages; explore more affiliate programs, digital products (printable checklists), sponsorships, Buy Me a Coffee / Patreon (BMC page LIVE as of 9/9, zero donations so far); GA4 traffic-source tracking with monthly content reviews.
 
