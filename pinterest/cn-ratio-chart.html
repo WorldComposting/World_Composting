@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pinterest Pin - C:N Ratio Quick Reference</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Lora:ital,wght@0,700;1,500&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #d4e0d4;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+        .pin {
+            width: 800px;
+            height: 1200px;
+            background: #ffffff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+        }
+        .pin-header {
+            background: linear-gradient(135deg, #2d5a27 0%, #005a4f 100%);
+            color: white;
+            padding: 2rem 2.5rem 1.8rem;
+            text-align: center;
+        }
+        .pin-header h1 {
+            font-family: 'Lora', serif;
+            font-size: 2.4rem;
+            line-height: 1.2;
+            margin-bottom: 0.3rem;
+        }
+        .pin-header p {
+            font-size: 0.95rem;
+            opacity: 0.85;
+            font-style: italic;
+        }
+        .pin-body { padding: 1.8rem 2.5rem; }
+
+        /* Ratio hero */
+        .ratio-hero {
+            text-align: center;
+            background: linear-gradient(135deg, #f8f7f2 0%, #d4e0d4 100%);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-bottom: 1.8rem;
+        }
+        .ratio-hero .big-ratio {
+            font-family: 'Lora', serif;
+            font-size: 3.2rem;
+            font-weight: 700;
+            color: #2d5a27;
+            line-height: 1;
+        }
+        .ratio-hero .big-ratio span { color: #4b3a3c; }
+        .ratio-hero p {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+
+        /* Visual bar */
+        .visual-bar-container {
+            margin: 1.2rem 0;
+        }
+        .visual-bar-label {
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #666;
+            margin-bottom: 0.4rem;
+        }
+        .visual-bar {
+            height: 32px;
+            border-radius: 99px;
+            overflow: hidden;
+            display: flex;
+            background: #eee;
+        }
+        .bar-brown {
+            width: 75%;
+            background: linear-gradient(90deg, #4b3a3c, #6b5a5c);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+        .bar-green {
+            width: 25%;
+            background: linear-gradient(90deg, #a4c639, #2d5a27);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        /* Table */
+        .ratio-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1.5rem;
+        }
+        .ratio-table th {
+            background: #2d5a27;
+            color: white;
+            padding: 0.6rem 0.8rem;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .ratio-table th:first-child { border-radius: 8px 0 0 0; }
+        .ratio-table th:last-child { border-radius: 0 8px 0 0; }
+        .ratio-table td {
+            padding: 0.5rem 0.8rem;
+            font-size: 0.9rem;
+            border-bottom: 1px solid #eee;
+        }
+        .ratio-table tr:last-child td:first-child { border-radius: 0 0 0 8px; }
+        .ratio-table tr:last-child td:last-child { border-radius: 0 0 8px 0; }
+        .ratio-table .high-c { color: #4b3a3c; font-weight: 700; }
+        .ratio-table .low-c { color: #2d5a27; font-weight: 700; }
+
+        /* Tips */
+        .tip-box {
+            background: #f8f7f2;
+            border-left: 4px solid #a4c639;
+            padding: 1rem 1.2rem;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 1.5rem;
+        }
+        .tip-box h3 {
+            font-size: 0.95rem;
+            color: #2d5a27;
+            margin-bottom: 0.4rem;
+        }
+        .tip-box p, .tip-box li {
+            font-size: 0.85rem;
+            color: #666;
+            line-height: 1.5;
+        }
+        .tip-box ul { padding-left: 1.2rem; margin-top: 0.3rem; }
+
+        /* Color legend */
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        .legend-item {
+            text-align: center;
+        }
+        .legend-dot {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-bottom: 0.3rem;
+        }
+        .legend-dot.brown { background: #4b3a3c; }
+        .legend-dot.green { background: #2d5a27; }
+        .legend-item span { font-size: 0.8rem; color: #666; display: block; }
+
+        .pin-footer {
+            text-align: center;
+            padding: 1.2rem 2.5rem;
+            background: #f8f7f2;
+            border-top: 2px solid #d4e0d4;
+        }
+        .pin-footer a {
+            font-family: 'Lora', serif;
+            color: #2d5a27;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+        .pin-footer p {
+            font-size: 0.8rem;
+            color: #999;
+            margin-top: 0.3rem;
+        }
+
+        /* Quick reference cards */
+        .quick-ref {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.8rem;
+            margin-bottom: 1.5rem;
+        }
+        .ref-card {
+            border-radius: 12px;
+            padding: 1rem;
+            text-align: center;
+        }
+        .ref-card.brown-bg { background: #4b3a3c; color: white; }
+        .ref-card.green-bg { background: #2d5a27; color: white; }
+        .ref-card h4 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem; opacity: 0.8; }
+        .ref-card .ratio-num { font-family: 'Lora', serif; font-size: 2rem; font-weight: 700; line-height: 1; }
+        .ref-card p { font-size: 0.75rem; margin-top: 0.4rem; opacity: 0.8; }
+    </style>
+</head>
+<body>
+    <div class="pin">
+        <div class="pin-header">
+            <h1>The C:N Ratio<br>Cheat Sheet</h1>
+            <p>Get the balance right for fast, odor-free composting</p>
+        </div>
+
+        <div class="pin-body">
+            <div class="ratio-hero">
+                <div class="big-ratio">30<span>:</span>1</div>
+                <p>The ideal Carbon to Nitrogen ratio for hot composting</p>
+                <div class="visual-bar-container">
+                    <div class="visual-bar-label">By Volume in Your Pile</div>
+                    <div class="visual-bar">
+                        <div class="bar-brown">75% Browns</div>
+                        <div class="bar-green">25% Greens</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="legend">
+                <div class="legend-item"><span class="legend-dot brown"></span><span>Browns (Carbon)</span></div>
+                <div class="legend-item"><span class="legend-dot green"></span><span>Greens (Nitrogen)</span></div>
+            </div>
+
+            <table class="ratio-table">
+                <thead>
+                    <tr><th>Material</th><th>C:N Ratio</th><th>Type</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Dried leaves</td><td class="high-c">80:1</td><td>Brown</td></tr>
+                    <tr><td>Cardboard</td><td class="high-c">350:1</td><td>Brown</td></tr>
+                    <tr><td>Sawdust</td><td class="high-c">325:1</td><td>Brown</td></tr>
+                    <tr><td>Fresh grass</td><td class="low-c">20:1</td><td>Green</td></tr>
+                    <tr><td>Veggie scraps</td><td class="low-c">25:1</td><td>Green</td></tr>
+                    <tr><td>Coffee grounds</td><td class="low-c">20:1</td><td>Green</td></tr>
+                </tbody>
+            </table>
+
+            <div class="quick-ref">
+                <div class="ref-card brown-bg">
+                    <h4>Pile too slow?</h4>
+                    <div class="ratio-num">+C</div>
+                    <p>Add more browns (leaves, cardboard)</p>
+                </div>
+                <div class="ref-card green-bg">
+                    <h4>Smells bad?</h4>
+                    <div class="ratio-num">+N</div>
+                    <p>Add more greens (grass, scraps)</p>
+                </div>
+            </div>
+
+            <div class="tip-box">
+                <h3>&#x26A1; Quick Rule of Thumb</h3>
+                <ul>
+                    <li>If you can't tell it's food waste by smell, your ratio is good.</li>
+                    <li>When in doubt, add more browns. It's easier to fix than a smelly pile.</li>
+                    <li>Shred or chop materials smaller for faster breakdown.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="pin-footer">
+            <a href="https://worldcomposting.com/hot-cn-ratio.html">&#x267B; WorldComposting.com</a>
+            <p>Pin this for quick reference!</p>
+        </div>
+    </div>
+</body>
+</html>

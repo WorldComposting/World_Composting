@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pinterest Pin - What Goes in a Worm Bin</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Lora:ital,wght@0,700;1,500&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #d4e0d4;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+        .pin {
+            width: 800px;
+            height: 1200px;
+            background: #ffffff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+        }
+        .pin-header {
+            background: linear-gradient(135deg, #2d5a27 0%, #005a4f 100%);
+            color: white;
+            padding: 2rem 2.5rem 1.8rem;
+            text-align: center;
+        }
+        .pin-header h1 {
+            font-family: 'Lora', serif;
+            font-size: 2.4rem;
+            line-height: 1.2;
+            margin-bottom: 0.3rem;
+        }
+        .pin-header p {
+            font-size: 0.95rem;
+            opacity: 0.85;
+            font-style: italic;
+        }
+        .pin-body {
+            padding: 2rem 2.5rem;
+        }
+        .section-label {
+            text-align: center;
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+            padding-top: 0.5rem;
+        }
+        .section-label.greens { color: #2d5a27; border-top: 3px solid #2d5a27; }
+        .section-label.browns { color: #4b3a3c; border-top: 3px solid #4b3a3c; }
+        .section-label.avoid { color: #8b0000; border-top: 3px solid #8b0000; }
+
+        .item-list { margin-bottom: 1.5rem; }
+        .item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.7rem 0;
+            border-bottom: 1px solid #eee;
+        }
+        .item:last-child { border-bottom: none; }
+        .item-icon { font-size: 1.6rem; flex-shrink: 0; width: 36px; text-align: center; }
+        .item-text { font-size: 1.05rem; color: #2c2c2c; line-height: 1.4; }
+        .item-text strong { display: block; font-weight: 700; }
+        .item-text span { font-size: 0.85rem; color: #666; }
+
+        .avoid-box {
+            background: #fff5f5;
+            border-left: 4px solid #8b0000;
+            padding: 1rem 1.2rem;
+            margin-top: 1.5rem;
+            border-radius: 0 8px 8px 0;
+        }
+        .avoid-box h3 {
+            font-size: 0.95rem;
+            color: #8b0000;
+            margin-bottom: 0.5rem;
+        }
+        .avoid-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem 1rem;
+        }
+        .avoid-item {
+            font-size: 0.9rem;
+            color: #666;
+            position: relative;
+            padding-left: 1.2rem;
+        }
+        .avoid-item::before {
+            content: '✕';
+            position: absolute;
+            left: 0;
+            color: #8b0000;
+            font-weight: 700;
+        }
+
+        .pin-footer {
+            text-align: center;
+            padding: 1.2rem 2.5rem;
+            background: #f8f7f2;
+            border-top: 2px solid #d4e0d4;
+        }
+        .pin-footer a {
+            font-family: 'Lora', serif;
+            color: #2d5a27;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+        .pin-footer p {
+            font-size: 0.8rem;
+            color: #999;
+            margin-top: 0.3rem;
+        }
+
+        .tip-callout {
+            background: linear-gradient(135deg, #a4c639 0%, #2d5a27 100%);
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            margin-top: 1.5rem;
+            text-align: center;
+        }
+        .tip-callout p {
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+        .tip-callout strong { font-size: 1rem; }
+    </style>
+</head>
+<body>
+    <div class="pin">
+        <div class="pin-header">
+            <h1>What Goes in a<br>Worm Bin?</h1>
+            <p>The complete green &amp; brown guide</p>
+        </div>
+
+        <div class="pin-body">
+            <div class="section-label greens">&#x1F331; Greens (Nitrogen-Rich)</div>
+            <div class="item-list">
+                <div class="item"><span class="item-icon">&#x1F480;</span><div class="item-text"><strong>Kitchen Scraps</strong><span>Fruit &amp; veggie peels, coffee grounds, tea bags</span></div></div>
+                <div class="item"><span class="item-icon">&#x1F332;</span><div class="item-text"><strong>Fresh Grass Clippings</strong><span>In thin layers (avoid matting)</span></div></div>
+                <div class="item"><span class="item-icon">&#x1F340;</span><div class="item-text"><strong>Fresh Leaves</strong><span>Young, tender leaves from garden</span></div></div>
+                <div class="item"><span class="item-icon">&#x1F33B;</span><div class="item-text"><strong>Plant Trimmings</strong><span>Non-diseased, non-seeded plants</span></div></div>
+            </div>
+
+            <div class="section-label browns">&#x1F342; Browns (Carbon-Rich)</div>
+            <div class="item-list">
+                <div class="item"><span class="item-icon">&#x1F4D0;</span><div class="item-text"><strong>Shredded Cardboard</strong><span>Natural brown cardboard, no glossy print</span></div></div>
+                <div class="item"><span class="item-icon">&#x1F343;</span><div class="item-text"><strong>Dried Leaves</strong><span>Crisp autumn leaves, crumbled</span></div></div>
+                <div class="item"><span class="item-icon">&#x1F4DD;</span><div class="item-text"><strong>Newspaper / Paper</strong><span>Black ink only, shredded into strips</span></div></div>
+                <div class="item"><span class="item-icon">&#x1F330;</span><div class="item-text"><strong>Sawdust</strong><span>From untreated wood (small amounts)</span></div></div>
+            </div>
+
+            <div class="avoid-box">
+                <h3>&#x26D4; Avoid These</h3>
+                <div class="avoid-list">
+                    <span class="avoid-item">Meat &amp; fish</span>
+                    <span class="avoid-item">Dairy products</span>
+                    <span class="avoid-item">Oily foods</span>
+                    <span class="avoid-item">Pet waste</span>
+                    <span class="avoid-item">Glossy paper</span>
+                    <span class="avoid-item">Spicy foods</span>
+                </div>
+            </div>
+
+            <div class="tip-callout">
+                <p><strong>&#x26A1; Golden Rule:</strong> Aim for 3 parts brown to every 1 part green by volume.</p>
+            </div>
+        </div>
+
+        <div class="pin-footer">
+            <a href="https://worldcomposting.com/worm-composting.html">&#x267B; WorldComposting.com</a>
+            <p>Pin this for quick reference!</p>
+        </div>
+    </div>
+</body>
+</html>
