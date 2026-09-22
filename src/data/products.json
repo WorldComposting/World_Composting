@@ -250,5 +250,29 @@
         "Category": "Home Efficiency",
         "Amazon Link": "https://amzn.to/475kQ94",
         "Other Link": null
+    },
+    {
+        "Item": "FoodCycler Eco 3",
+        "Category": "Electric Food Cyclers",
+        "Amazon Link": "https://amzn.to/4iHzZVi",
+        "Other Link": null
+    },
+    {
+        "Item": "FoodCycler Eco 5",
+        "Category": "Electric Food Cyclers",
+        "Amazon Link": "https://amzn.to/3Zbcxnp",
+        "Other Link": null
+    },
+    {
+        "Item": "Reencle Gravity",
+        "Category": "Electric Food Cyclers",
+        "Amazon Link": "https://amzn.to/4ys3wHH",
+        "Other Link": null
+    },
+    {
+        "Item": "Reencle Prime",
+        "Category": "Electric Food Cyclers",
+        "Amazon Link": "https://amzn.to/4iIlIru",
+        "Other Link": null
     }
 ]
