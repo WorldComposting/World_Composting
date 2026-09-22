@@ -147,21 +147,61 @@
     "FoodCycler Eco 3": {
         "blurb": "Entry-level electric composter with a 3-liter bucket. Ideal for singles or couples generating minimal kitchen waste.",
         "specs": "3L capacity, ~5-6 hr cycle",
-        "image": "https://m.media-amazon.com/images/I/61PEoGFRWGL._AC_SY879_.jpg"
+        "image": "src/assets/gear/amz-foodcycler-eco-3.jpg"
     },
     "FoodCycler Eco 5": {
         "blurb": "The most popular model with a 5-liter bucket. Designed for households of two to four people, offering fewer loading cycles per week.",
         "specs": "5L capacity, ~5 hr cycle",
-        "image": "https://m.media-amazon.com/images/I/617NsWqgYSL._AC_SY879_.jpg"
+        "image": "src/assets/gear/amz-foodcycler-eco-5.jpg"
     },
     "Reencle Gravity": {
         "blurb": "The more affordable Reencle option with 5-liter capacity. Retains core drying and grinding functionality without the smart odor sensor.",
         "specs": "5L capacity, ~5 hr cycle",
-        "image": "https://m.media-amazon.com/images/I/41IUFOlXOML._AC_SY300_SX300_QL70_FMwebp_.jpg"
+        "image": "src/assets/gear/amz-reencle-gravity.webp"
     },
     "Reencle Prime": {
         "blurb": "Premium Reencle model with 6-liter capacity, odor sensor for automatic cycle adjustment, and integrated carbon filter system.",
         "specs": "6L capacity, ~5 hr cycle",
-        "image": "https://m.media-amazon.com/images/I/613RPQlCfDL._AC_SX569_.jpg"
+        "image": "src/assets/gear/amz-reencle-prime.jpg"
+    },
+    "ecobee Smart Thermostat": {
+        "blurb": "Smart thermostat with room sensors. I use it to monitor and optimize home energy usage — the energy reports show exactly where power is going.",
+        "specs": "Wi-Fi, room sensor included",
+        "image": "src/assets/gear/amz-ecobee-smart-thermostat.jpg"
+    },
+    "Smart Plug Wi-Fi, Energy Monitoring": {
+        "blurb": "A smart plug with real-time energy monitoring. I track the wattage of individual devices to find hidden power drains.",
+        "specs": "Wi-Fi, energy monitoring",
+        "image": "src/assets/gear/amz-smart-plug-wifi-energy-monitoring.jpg"
+    },
+    "Cree LED A19 Bulb, 60W, Soft White": {
+        "blurb": "LED bulbs that use a fraction of the power of incandescents. I've replaced every bulb in the house with these.",
+        "specs": "60W equivalent, soft white",
+        "image": "src/assets/gear/amz-cree-led-a19-bulb.jpg"
+    },
+    "Window Insulation Shrink Kit": {
+        "blurb": "A cheap way to seal drafty windows in winter. The shrink film creates an insulating air gap that cuts heat loss.",
+        "specs": "Adhesive tape + shrink film",
+        "image": "src/assets/gear/amz-window-insulation-kit.jpg"
+    },
+    "Foam Weather Stripping": {
+        "blurb": "Self-adhesive foam strips for sealing gaps around doors and windows. Simple install, noticeable draft reduction.",
+        "specs": "Adhesive foam, self-sealing",
+        "image": "src/assets/gear/amz-foam-weather-stripping.jpg"
+    },
+    "Outlet Gaskets, Foam insulation": {
+        "blurb": "Foam gaskets that slip behind outlet and switch plates. Unsealed electrical boxes are a hidden source of drafts in exterior walls.",
+        "specs": "Foam, pre-cut for standard outlets",
+        "image": "src/assets/gear/amz-outlet-gaskets.jpg"
+    },
+    "Smart Power Strip Wi-Fi, Energy Monitoring": {
+        "blurb": "A smart power strip with individual outlet control and energy monitoring. I use it to kill phantom loads on entertainment centers and desk setups.",
+        "specs": "Wi-Fi, 6 outlets, energy monitor",
+        "image": "src/assets/gear/amz-smart-power-strip.jpg"
+    },
+    "Low-Flow Showerhead": {
+        "blurb": "A low-flow showerhead that saves water without sacrificing pressure. One of the easiest upgrades for reducing household utility bills.",
+        "specs": "2.0 GPM, 3-spray",
+        "image": "src/assets/gear/amz-low-flow-showerhead.jpg"
     }
 }
