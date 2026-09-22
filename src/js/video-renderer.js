@@ -128,6 +128,7 @@
         "zero-waste-kitchen": ["-_ELuS7Lgwg", "HJLxpc3UFFg"],
         sustainability: ["ej9gRwssrgk", "0QvS2l6zWYk"],
         biochar: ["AE8A2kCJYkY", "iLrkTxMZWMA"],
+        foodcycler: ["3vsWZyp2KVw", "xvaxlPwio8A", "c9hzFydQPxM", "DkTty1Url7I", "4_aIShakNlg"],
         "energy-efficiency": [],
         "start-here": [],
         about: [],
