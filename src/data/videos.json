@@ -50,7 +50,7 @@
     },
     {
         "id": "shlsmMy_gjc",
-        "title": "Get Rid of Fruit Flies in Worm Bins 🪰",
+        "title": "Get Rid of Fruit Flies in Worm Bins \ud83e\udeb0",
         "url": "https://www.youtube.com/watch?v=shlsmMy_gjc",
         "thumbnail": "https://img.youtube.com/vi/shlsmMy_gjc/maxresdefault.jpg",
         "method": "worm"
@@ -155,7 +155,7 @@
     },
     {
         "id": "AE8A2kCJYkY",
-        "title": "Ultimate Biochar Grinding & Preparation for Worm Bins and Soil — DIY Methods, Tools, & Tips (2025)",
+        "title": "Ultimate Biochar Grinding & Preparation for Worm Bins and Soil \u2014 DIY Methods, Tools, & Tips (2025)",
         "url": "https://www.youtube.com/watch?v=AE8A2kCJYkY",
         "thumbnail": "https://img.youtube.com/vi/AE8A2kCJYkY/maxresdefault.jpg",
         "method": "biochar"
@@ -166,5 +166,40 @@
         "url": "https://www.youtube.com/watch?v=iLrkTxMZWMA",
         "thumbnail": "https://img.youtube.com/vi/iLrkTxMZWMA/maxresdefault.jpg",
         "method": "biochar"
+    },
+    {
+        "id": "3vsWZyp2KVw",
+        "title": "FoodCycler Eco 5 Review",
+        "url": "https://youtu.be/3vsWZyp2KVw",
+        "thumbnail": "https://img.youtube.com/vi/3vsWZyp2KVw/maxresdefault.jpg",
+        "method": "foodcycler"
+    },
+    {
+        "id": "xvaxlPwio8A",
+        "title": "FoodCycler Eco 5 Unboxing and Setup",
+        "url": "https://youtu.be/xvaxlPwio8A",
+        "thumbnail": "https://img.youtube.com/vi/xvaxlPwio8A/maxresdefault.jpg",
+        "method": "foodcycler"
+    },
+    {
+        "id": "c9hzFydQPxM",
+        "title": "FoodCycler Eco 5 First Use Demo",
+        "url": "https://youtu.be/c9hzFydQPxM",
+        "thumbnail": "https://img.youtube.com/vi/c9hzFydQPxM/maxresdefault.jpg",
+        "method": "foodcycler"
+    },
+    {
+        "id": "DkTty1Url7I",
+        "title": "FoodCycler Eco 5 Processing Kitchen Waste",
+        "url": "https://youtu.be/DkTty1Url7I",
+        "thumbnail": "https://img.youtube.com/vi/DkTty1Url7I/maxresdefault.jpg",
+        "method": "foodcycler"
+    },
+    {
+        "id": "4_aIShakNlg",
+        "title": "FoodCycler Eco 5 Output and Results",
+        "url": "https://youtu.be/4_aIShakNlg",
+        "thumbnail": "https://img.youtube.com/vi/4_aIShakNlg/maxresdefault.jpg",
+        "method": "foodcycler"
     }
 ]
