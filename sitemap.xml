@@ -192,12 +192,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-  <url>
-    <loc>https://www.worldcomposting.com/sample.html</loc>
-    <lastmod>2026-08-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
+
   <url>
     <loc>https://www.worldcomposting.com/blog/worm-composting-beginner.html</loc>
     <lastmod>2026-08-24</lastmod>
@@ -219,12 +214,6 @@
   <url>
     <loc>https://www.worldcomposting.com/blog/voting-for-sustainability.html</loc>
     <lastmod>2026-09-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.worldcomposting.com/about.html</loc>
-    <lastmod>2026-08-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
