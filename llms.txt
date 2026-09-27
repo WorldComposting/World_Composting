@@ -1,0 +1,52 @@
+# World Composting
+
+## Overview
+World Composting is a comprehensive resource for composting education, featuring guides, checklists, video playlists, gear recommendations, and blog posts covering worm composting, hot composting, bokashi, biochar, and sustainable living.
+
+## Site Structure
+
+### Pillar Guides
+- [Worm Composting](https://www.worldcomposting.com/worm-composting.html) — Complete vermicomposting guide
+- [Hot Composting](https://www.worldcomposting.com/hot-composting.html) — Thermophilic decomposition guide
+- [The Science of Compost](https://www.worldcomposting.com/science-of-compost.html) — Microbiology and chemistry
+
+### Checklists (Interactive)
+- [Beginner's Checklist](https://www.worldcomposting.com/beginner.html) — Worm composting step-by-step
+- [Hot Composting Checklist](https://www.worldcomposting.com/hot.html)
+- [Bokashi Composting](https://www.worldcomposting.com/bokashi.html)
+- [BioChar Composting](https://www.worldcomposting.com/biochar.html)
+- [Tumbler Composting](https://www.worldcomposting.com/tumbler.html)
+- [Compost Tea](https://www.worldcomposting.com/tea.html)
+- [Lasagna Composting](https://www.worldcomposting.com/lasagna.html)
+- [Sustainability Journey](https://www.worldcomposting.com/sustainability.html)
+- [Energy Efficiency at Home](https://www.worldcomposting.com/energy-efficiency.html)
+- [Black Soldier Fly](https://www.worldcomposting.com/black_soldier_fly.html)
+- [Zero Waste Kitchen](https://www.worldcomposting.com/zero-waste-kitchen.html)
+
+### Deep-Dive Articles
+- [Best Bedding Materials for Worm Bins](https://www.worldcomposting.com/worm-bedding.html)
+- [How to Control Fruit Flies in Indoor Worm Bins](https://www.worldcomposting.com/worm-fruit-flies.html)
+- [What Not to Feed Worms](https://www.worldcomposting.com/worm-forbidden-foods.html)
+- [How to Harvest Worm Castings](https://www.worldcomposting.com/worm-harvesting.html)
+- [Best Materials for Hot Composting Piles](https://www.worldcomposting.com/hot-best-materials.html)
+- [Why Is My Hot Compost Not Heating Up?](https://www.worldcomposting.com/hot-not-heating.html)
+- [How to Turn Compost Faster](https://www.worldcomposting.com/hot-speed-tips.html)
+- [C:N Ratio Guide for Hot Composting](https://www.worldcomposting.com/hot-cn-ratio.html)
+
+### Resources
+- [Start Here — Decision Guide](https://www.worldcomposting.com/start-here.html)
+- [Gear Recommendations](https://www.worldcomposting.com/gear.html)
+- [Composting Glossary](https://www.worldcomposting.com/glossary.html)
+- [Troubleshooting](https://www.worldcomposting.com/troubleshoot.html)
+- [Electric Composters](https://www.worldcomposting.com/electric_composter.html)
+- [FAQ](https://www.worldcomposting.com/faq.html)
+- [Blog](https://www.worldcomposting.com/blog.html)
+
+### Blog Posts
+- [Biochar Guide](https://www.worldcomposting.com/blog/biochar-guide.html)
+- [Bokashi in Apartments](https://www.worldcomposting.com/blog/bokashi-apartment.html)
+- [Voting for Sustainability](https://www.worldcomposting.com/blog/voting-for-sustainability.html)
+- [Worm Composting for Beginners](https://www.worldcomposting.com/blog/worm-composting-beginner.html)
+
+### About
+- [About World Composting](https://www.worldcomposting.com/about.html)

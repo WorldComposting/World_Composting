@@ -480,13 +480,14 @@
       ]
     }
     </script>
+    <link rel="alternate" href="/llms.txt" title="World Composting AI Index">
 </head>
 <body>
     <div class="page-wrapper">
 
         <aside class="sidebar">
             <div class="sidebar-logo">
-                <img src="src/assets/logo.png" alt="World Composting Logo" width="64" height="64" loading="lazy" onerror="this.src='https://via.placeholder.com/64?text=WC'">
+                <img src="src/assets/logo.png" alt="World Composting Logo" width="64" height="64" loading="eager" onerror="this.src='https://via.placeholder.com/64?text=WC'">
                 <h2>World Composting</h2>
             </div>
 
@@ -613,7 +614,7 @@
                                 const href = (item['Amazon Link'] !== 'NaN' && item['Amazon Link']) ||
                                              (item['Other Link'] !== 'NaN' && item['Other Link']) || '#';
                                 const d = details[item['Item']] || {};
-                                const img = d.image ? `<img class="gear-card-img" src="${d.image}" alt="${item['Item']}" loading="lazy">` : '';
+                                const img = d.image ? <img class="gear-card-img" src="${d.image}" alt="${item['Item']}" loading="eager">>` : '';
                                 const blurb = d.blurb ? `<p class="gear-card-blurb">${d.blurb}</p>` : '';
                                 const specs = d.specs ? `<span class="gear-card-specs">${d.specs}</span>` : '';
                                 const isAmazon = item['Amazon Link'] && item['Amazon Link'].includes('amzn.to');
