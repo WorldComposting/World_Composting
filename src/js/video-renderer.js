@@ -109,6 +109,16 @@
             "Small batch production is ideal for home gardeners with limited feedstock",
             "A simple drum kiln can produce enough biochar for a typical composting setup",
             "Batch size should match your charging capacity — don't make more than you can prepare"
+        ],
+        "a1mq4ZhQqJY": [
+            "Pre-composting food scraps before adding them to the worm bin accelerates castings production significantly",
+            "Blend or process scraps with a carbon-rich bedding mix at roughly 1:4 ratio for best results",
+            "Adding microbe-rich liquid like fish tank water jumpstarts microbial colonization"
+        ],
+        "9k5CjbNZ37U": [
+            "A seven-day pre-compost cycle shows visible breakdown and temperature spike past 110 degrees",
+            "The catch is timing — you must wait for the downswing before adding to worms or risk cooking them",
+            "Properly colonized material smells earthy, not sour, when ready for the bin"
         ]
     };
 
@@ -128,7 +138,8 @@
         "zero-waste-kitchen": ["-_ELuS7Lgwg", "HJLxpc3UFFg"],
         sustainability: ["ej9gRwssrgk", "0QvS2l6zWYk"],
         biochar: ["AE8A2kCJYkY", "iLrkTxMZWMA"],
-        foodcycler: ["3vsWZyp2KVw", "xvaxlPwio8A", "c9hzFydQPxM", "DkTty1Url7I", "4_aIShakNlg"],
+        "foodcycler": ["3vsWZyp2KVw", "xvaxlPwio8A", "c9hzFydQPxM", "DkTty1Url7I", "4_aIShakNlg"],
+        "pre-compost": ["a1mq4ZhQqJY", "9k5CjbNZ37U", "4RAWlDsxdzE"],
         "energy-efficiency": [],
         "start-here": [],
         about: [],

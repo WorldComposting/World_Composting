@@ -97,6 +97,11 @@
     min-width: 0;
 }
 
+/* Phase body: breathing room for checklist items inside collapsible sections */
+.phase-body {
+    padding: 0.5rem 1.25rem 1rem;
+}
+
 /* ===== FOOTER OVERRIDES: fix body flex centering from theme.css ===== */
 footer.footer-wide {
     display: block !important;

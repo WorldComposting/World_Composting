@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="https://www.worldcomposting.com/water-conservation.html">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <title>World Composting | Water Conservation Checklist</title>
+    <meta name="description" content="Save water with this step-by-step checklist. From easy swaps to systems and retrofits, learn how composting and smart habits cut your water use in half.">
+    <!-- Google Search Console Verification -->
+    <meta name="google-site-verification" content="google8a4b2c3d1e5f6789">
+    <link rel="stylesheet" href="src/styles/theme.css">
+    <link rel="stylesheet" href="src/styles/layout.css">
+    <link rel="stylesheet" href="src/styles/video-section.css">
+    <style>/* Back link: wider */
+        .back-link-wide {
+            display: inline-block;
+            font-size: 0.85rem;
+            color: var(--ocean-blue);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            transition: opacity 0.2s;
+        }
+
+.back-link-wide:hover { opacity: 0.7; }
+
+.back-link-wide:focus-visible {
+            outline: 2px solid var(--ocean-blue);
+            outline-offset: 2px;
+            border-radius: 2px;
+        }
+
+/* Pillar hero: wider */
+        .pillar-hero-wide {
+            background: white;
+            border-radius: 16px;
+            padding: 2.5rem 3rem;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 2rem;
+        }
+
+.pillar-hero-wide h1 {
+            font-family: 'Lora', serif;
+            color: var(--forest-green);
+            font-size: 2.4rem;
+            line-height: 1.3;
+            margin-top: 0;
+            text-align: center;
+        }
+
+.pillar-hero-wide p.subtitle {
+            text-align: center;
+            font-style: italic;
+            color: var(--ocean-blue);
+            font-size: 1.1rem;
+            margin-bottom: 0;
+        }
+
+/* Hero intro: wider */
+        .hero-intro-wide {
+            background: white;
+            border-radius: 16px;
+            padding: 2.5rem 3rem;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 2rem;
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--text-dark);
+        }
+
+.hero-intro-wide strong { color: var(--forest-green); }
+
+.hero-intro-wide h2 {
+            font-family: 'Lora', serif;
+            color: var(--forest-green);
+            font-size: 1.6rem;
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+.hero-intro-wide h3 {
+            font-family: 'Lora', serif;
+            color: var(--ocean-blue);
+            font-size: 1.25rem;
+            margin-top: 1.8rem;
+            margin-bottom: 0.75rem;
+        }
+
+.hero-intro-wide p { margin-bottom: 1.2rem; }
+
+.hero-intro-wide ul { padding-left: 1.5rem; margin-bottom: 1.2rem; }
+
+.hero-intro-wide li { margin-bottom: 0.6rem; line-height: 1.7; }
+
+/* Progress Tracker */
+        #progress-wrapper-wide {
+            background: white;
+            border-radius: 16px;
+            padding: 1.25rem 1.5rem;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 2rem;
+        }
+
+#progress-text {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--forest-green);
+            margin-bottom: 0.6rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+#progress-percent {
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: var(--ocean-blue);
+        }
+
+#progress-bar {
+            height: 10px;
+            background: var(--sage-green);
+            border-radius: 99px;
+            overflow: hidden;
+        }
+
+#progress-fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, var(--leaf-lime), var(--forest-green));
+            border-radius: 99px;
+            transition: width 0.4s ease;
+        }
+
+/* Phase (Collapsible Section) */
+        .phase-wide {
+            background: white;
+            border-radius: 16px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 1.25rem;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.04);
+            transition: box-shadow 0.3s ease;
+        }
+
+.phase-wide:hover {
+            box-shadow: 0 12px 25px -5px rgba(75, 54, 33, 0.12);
+        }
+
+.phase-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 1.25rem 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: var(--forest-green);
+            text-align: left;
+            transition: background 0.2s ease;
+            gap: 0.75rem;
+        }
+
+.phase-header:hover { background: rgba(45, 90, 39, 0.04); }
+
+.phase-header:focus-visible {
+            outline: 2px solid var(--ocean-blue);
+            outline-offset: -2px;
+            border-radius: 16px 16px 0 0;
+        }
+
+.phase-header .phase-arrow {
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+            color: var(--ocean-blue);
+            flex-shrink: 0;
+        }
+
+.phase-wide.active .phase-arrow { transform: rotate(180deg); }
+
+/* Checklist Items */
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            cursor: pointer;
+            transition: opacity 0.2s ease;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+.checklist-item:last-of-type { border-bottom: none; }
+
+.checklist-item input[type="checkbox"] {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 24px;
+            height: 24px;
+            min-width: 24px;
+            min-height: 24px;
+            border: 2px solid var(--forest-green);
+            border-radius: 5px;
+            flex-shrink: 0;
+            margin-top: 3px;
+            cursor: pointer;
+            position: relative;
+            transition: background 0.2s, border-color 0.2s;
+        }
+
+.checklist-item input[type="checkbox"]:checked {
+            background: var(--forest-green);
+            border-color: var(--forest-green);
+        }
+
+.checklist-item input[type="checkbox"]:checked::after {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 1px;
+            width: 6px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+
+.checklist-item input[type="checkbox"]:focus-visible {
+            outline: 2px solid var(--ocean-blue);
+            outline-offset: 2px;
+        }
+
+.check-emoji {
+            font-size: 1.3rem;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+.check-content { flex: 1; min-width: 0; }
+
+.check-title {
+            display: block;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            transition: color 0.2s;
+        }
+
+.check-desc {
+            display: block;
+            font-size: 0.82rem;
+            color: #666;
+            margin-top: 2px;
+            line-height: 1.5;
+            transition: color 0.2s;
+        }
+
+.check-desc a {
+            color: var(--ocean-blue);
+            text-decoration: underline;
+            font-weight: 500;
+        }
+
+.check-desc a:hover { color: var(--forest-green); }
+
+.checklist-item.completed .check-title {
+            color: #999;
+            text-decoration: line-through;
+        }
+
+.checklist-item.completed .check-desc { color: #aaa; }
+
+.checklist-item.completed .check-emoji { opacity: 0.5; }
+
+/* Section Title */
+        .section-title-wide {
+            font-family: 'Lora', serif;
+            color: var(--forest-green);
+            font-size: 1.4rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+/* Gear Section */
+        #gear-section-wide {
+            margin-top: 3rem;
+        }
+
+.product-link {
+            display: block;
+            padding: 0.75rem 1rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: var(--card-shadow);
+            text-decoration: none;
+            color: var(--forest-green);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+.product-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px -4px rgba(75, 54, 33, 0.15);
+        }
+
+/* ===== RESPONSIVE BREAKPOINTS ===== */</style>
+    <!-- Google Analytics (skipped on localhost) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KRHYVJXZLE"></script>
+    <script>
+      if (!window.location.hostname.includes('localhost') && !window.location.hostname.includes('127.0.0.1')) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-KRHYVJXZLE');
+      }
+    </script>
+    <!-- Pinterest Tag -->
+    <script type="text/javascript">
+      _pt = "2612544072053";
+      (function(e,t,n){var r,i=document.createElement(n);i.async=1,i.src="https://cdn.pinterest.com/tags.min.js#" + encodeURIComponent(_pt);if(t){r=document.createElement(n);r.type="text/javascript";r.defer=!0;r.src="//pixel-assets.pinterest.com/tags/pid-req-utils.js",document.getElementsByTagName("head")[0].appendChild(r)}i.onload=i.onerror=function(){var e=window.pinall;window.pinall=null;var t=1;e&&e.length>0&&(t=e[0]);for(var n;n=e.length;)n.shift(),(n=n[0])&&"function"==typeof n.n&&n.n(t);window.pinall=e};document.getElementsByTagName("head")[0].appendChild(i)})(window,document,"script");
+    </script>
+    <!-- FAQPage Schema: Water Conservation -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How does composting help conserve water?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Healthy compost-rich soil acts like a sponge, holding up to 20 times its weight in water. Adding compost to garden beds and lawns reduces irrigation needs by 30-50% because organic matter improves both water retention in sandy soils and drainage in clay soils."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the easiest way to start conserving water at home?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Fix leaks first, install low-flow showerheads and faucet aerators, collect cold shower water in a bucket for plants, and water your garden early morning or late evening to minimize evaporation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use compost tea to reduce watering?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Compost tea improves soil structure and microbial activity, which increases the soil's water-holding capacity. Apply it as a soil drench once per month during the growing season."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much water can a rain barrel save?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A 65-gallon rain barrel collects roughly 600 gallons of stormwater per inch of rainfall from a typical roof. This can reduce outdoor water use by up to 50% during dry periods."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are native plants and why do they save water?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Native plants evolved in your local climate and typically need little to no supplemental watering once established. Replacing thirsty lawn areas with natives can cut outdoor water use by 50-75%."
+          }
+        }
+      ]
+    }
+    </script>
+    <link rel="alternate" href="/llms.txt" title="World Composting AI Index">
+</head>
+<body>
+    <div class="page-wrapper">
+
+        <!-- ===== SIDEBAR NAVIGATION ===== -->
+        <aside class="sidebar">
+            <div class="sidebar-logo">
+                <img src="src/assets/logo.png" alt="World Composting Logo" width="64" height="64" loading="eager" onerror="this.src='https://via.placeholder.com/64?text=WC'">
+                <h2>World Composting</h2>
+            </div>
+
+            <ul class="sidebar-nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="start-here.html">Start Here</a></li>
+                <li><a href="science-of-compost.html">The Science of Compost</a></li>
+                <li><a href="about.html">About</a></li>
+
+                <li><div class="sidebar-divider"></div></li>
+                <li class="sidebar-section-label">Guides</li>
+
+                <li><a href="worm-composting.html">Worm Composting</a></li>
+                <li><a href="hot-composting.html">Hot Composting</a></li></li><li><div class="sidebar-divider"></div></li>
+                <li class="sidebar-section-label">Checklists</li>
+
+                <li><a href="beginner.html">Beginner's Checklist</a></li>
+                <li><a href="pre-compost.html">Pre-Compost for Worm Bins</a></li>
+                <li><a href="hot.html">Hot Composting Checklist</a></li>
+                <li><a href="bokashi.html">Bokashi Composting</a></li>
+                <li><a href="biochar.html">BioChar Composting</a></li>
+                <li><a href="tumbler.html">Tumbler Composting</a></li>
+                <li><a href="tea.html">Compost Tea</a></li>
+                <li><a href="lasagna.html">Lasagna Composting</a></li>
+                <li><a href="sustainability.html">Sustainability Journey</a></li>
+                <li><a href="energy-efficiency.html">Energy Efficiency at Home</a></li>
+                <li><a href="black_soldier_fly.html">Black Soldier Fly</a></li>
+                <li><a href="zero-waste-kitchen.html">Zero Waste Kitchen</a></li></li><li><div class="sidebar-divider"></div></li>
+                <li class="sidebar-section-label">Resources</li>
+
+                <li><a href="glossary.html">Glossary</a></li>
+                <li><a href="troubleshoot.html">Troubleshooting</a></li>
+                <li><a href="electric_composter.html">Electric Composters</a></li>
+                <li><a href="faq.html">Frequently Asked Questions</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="sitemap.html">Sitemap</a></li></li><li><div class="sidebar-divider"></div></li>
+                <li class="sidebar-section-label">Gear</li>
+
+                <li><a href="gear.html">View All Gear →</a></li>
+            
+            </ul>
+        </aside>
+
+        <!-- ===== MAIN CONTENT AREA ===== -->
+        <main class="main-content">
+
+            <a href="/" class="back-link-wide">&#8592; Back to Home</a>
+
+            <!-- Hero Section -->
+            <div class="pillar-hero-wide">
+                <h1>Water Conservation 101</h1>
+                <p class="subtitle">Save water, protect resources, and build healthier soil through composting.</p>
+            </div>
+
+        <!-- Progress Tracker -->
+        <div id="progress-wrapper-wide">
+            <div id="progress-text">
+                <span id="progress-label">0 of 30 items completed</span>
+                <span id="progress-percent">0%</span>
+            </div>
+            <div id="progress-bar"><div id="progress-fill"></div></div>
+        </div>
+
+        <!-- Hero Intro -->
+        <div class="hero-intro-wide">
+            <h2>Why Water Conservation Matters</h2>
+            <p>The average American uses 80-100 gallons of water per day indoors. Outdoors, lawns and gardens can consume up to 60% of household water in dry climates. This checklist walks you through actionable steps from simple daily swaps to bigger system changes.</p>
+            <h3>The Composting Connection</h3>
+            <p>Adding compost to soil increases its water-holding capacity dramatically. Organic matter acts like a sponge, reducing the need for frequent irrigation while also improving drainage and preventing runoff. Every step here ties back to building healthier soil.</p>
+        </div>
+
+        <!-- Checklist Phases -->
+        <div id="phases">
+
+            <!-- Phase 1: Easy Swaps -->
+            <div class="phase phase-wide active">
+                <button class="phase-header" onclick="togglePhase(this)">
+                    <span>Phase 1: Easy / Everyday Swaps 💧</span>
+                    <span class="phase-arrow">▼</span>
+                </button>
+                <div class="phase-body">
+                    <label class="checklist-item" for="wc_0">
+                        <input type="checkbox" id="wc_0" data-id="wc_0">
+                        <span class="check-emoji">🚿</span>
+                        <span class="check-content">
+                            <span class="check-title">Turn off the tap while brushing teeth, shaving, or washing your face</span>
+                            <span class="check-desc">Saves up to 8 gallons per day. Just turn it on to rinse — no need to let it run.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="wc_1">
+                        <input type="checkbox" id="wc_1" data-id="wc_1">
+                        <span class="check-emoji">🔧</span>
+                        <span class="check-content">
+                            <span class="check-title">Fix leaky faucets immediately</span>
+                            <span class="check-desc">A dripping faucet wastes 3,000 gallons per year. Check under sinks and around toilets.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="wc_2">
+                        <input type="checkbox" id="wc_2" data-id="wc_2">
+                        <span class="check-emoji">🚿</span>
+                        <span class="check-content">
+                            <span class="check-title">Install a low-flow showerhead (1.5-2.0 GPM)</span>
+                            <span class="check-desc">Cuts shower water use by 40% without sacrificing pressure. Look for WaterSense labeled models.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="wc_3">
+                        <input type="checkbox" id="wc_3" data-id="wc_3">
+                        <span class="check-emoji">🚰</span>
+                        <span class="check-content">
+                            <span class="check-title">Add faucet aerators to kitchen and bathroom sinks</span>
+                            <span class="check-desc">Costs under $5 each, saves 2-3 gallons per minute. Multi-packs are available for the whole house.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="wc_4">
+                        <input type="checkbox" id="wc_4" data-id="wc_4">
+                        <span class="check-emoji">🪣</span>
+                        <span class="check-content">
+                            <span class="check-title">Collect cold shower water in a bucket until it warms up</span>
+                            <span class="check-desc">Use for houseplants or outdoor watering. A 5-gallon bucket under the shower catches plenty.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="wc_5">
+                        <input type="checkbox" id="wc_5" data-id="wc_5">
+                        <span class="check-emoji">🧱</span>
+                        <span class="check-content">
+                            <span class="check-title">Place a brick or bottle in the toilet tank to displace water per flush</span>
+                            <span class="check-desc">Saves 0.5-1 gallon per flush. Old toilets use 3.5-7 GPF — even small savings add up.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="wc_6">
+                        <input type="checkbox" id="wc_6" data-id="wc_6">
+                        <span class="check-emoji">🍽️</span>
+                        <span class="check-content">
+                            <span class="check-title">Run the dishwasher only when full</span>
+                            <span class="check-desc">Modern dishwashers use less water than hand-washing a full load. Use eco mode if available.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="wc_7">
+                        <input type="checkbox" id="wc_7" data-id="wc_7">
+                        <span class="check-emoji">🥗</span>
+                        <span class="check-content">
+                            <span class="check-title">Wash vegetables in a bowl instead of under running water</span>
+                            <span class="check-desc">Reuse that water for houseplants. One wash can save 2-3 gallons.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="wc_8">
+                        <input type="checkbox" id="wc_8" data-id="wc_8">
+                        <span class="check-emoji">🧊</span>
+                        <span class="check-content">
+                            <span class="check-title">Thaw frozen food in the fridge overnight instead of running warm water over it</span>
+                            <span class="check-desc">Plan ahead and move meals from freezer to fridge. No wasted water, safer thawing.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="wc_9">
+                        <input type="checkbox" id="wc_9" data-id="wc_9">
+                        <span class="check-emoji">🥛</span>
+                        <span class="check-content">
+                            <span class="check-title">Keep a glass pitcher of drinking water in the fridge instead of running tap water until cold</span>
+                            <span class="check-desc">Saves gallons you'd otherwise pour down the drain waiting for it to chill.</span>
+                        </span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Phase 2: Yard & Garden -->
+            <div class="phase phase-wide">
+                <button class="phase-header" onclick="togglePhase(this)">
+                    <span>Phase 2: Yard &amp; Garden Efficiency 🌿</span>
+                    <span class="phase-arrow">▼</span>
+                </button>
+                <div class="phase-body">
+                    <label class="checklist-item" for="wc_10">
+                        <input type="checkbox" id="wc_10" data-id="wc_10">
+                        <span class="check-emoji">🌅</span>
+                        <span class="check-content">
+                            <span class="check-title">Water early morning or late evening</span>
+                            <span class="check-desc">Midday watering loses up to 50% to evaporation. Dawn is the sweet spot.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="wc_11">
+                        <input type="checkbox" id="wc_11" data-id="wc_11">
+                        <span class="check-emoji">🌱</span>
+                        <span class="check-content">
+                            <span class="check-title">Switch from sprinklers to soaker hoses</span>
+                            <span class="check-desc">Drip and soaker systems deliver 90%+ of water directly to roots vs. 50-70% for sprinklers.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="wc_12">
+                        <input type="checkbox" id="wc_12" data-id="wc_12">
+                        <span class="check-emoji">🍂</span>
+                        <span class="check-content">
+                            <span class="check-title">Mulch garden beds with 2-4 inches of wood chips, straw, or compost</span>
+                            <span class="check-desc">Reduces evaporation and keeps soil cool. Compost mulch also feeds the soil.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="wc_13">
+                        <input type="checkbox" id="wc_13" data-id="wc_13">
+                        <span class="check-emoji">💧</span>
+                        <span class="check-content">
+                            <span class="check-title">Install a drip irrigation kit on raised beds and vegetable gardens</span>
+                            <span class="check-desc">Starter kits cost under $30. Targeted watering means less waste and healthier plants.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="wc_14">
+                        <input type="checkbox" id="wc_14" data-id="wc_14">
+                        <span class="check-emoji">🌻</span>
+                        <span class="check-content">
+                            <span class="check-title">Plant native species adapted to your local rainfall</span>
+                            <span class="check-desc">Once established, many need zero supplemental watering. Check with your local extension office.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="wc_15">
+                        <input type="checkbox" id="wc_15" data-id="wc_15">
+                        <span class="check-emoji">🌧️</span>
+                        <span class="check-content">
+                            <span class="check-title">Install a rain gauge to track rainfall and skip watering when nature delivers</span>
+                            <span class="check-desc">Dial-style gauges are easy to read. Know before you water.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="wc_16">
+                        <input type="checkbox" id="wc_16" data-id="wc_16">
+                        <span class="check-emoji">⏱️</span>
+                        <span class="check-content">
+                            <span class="check-title">Add a hose timer to outdoor spigots</span>
+                            <span class="check-desc">Automates watering schedules and prevents overwatering. Mechanical or smart options available.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="wc_17">
+                        <input type="checkbox" id="wc_17" data-id="wc_17">
+                        <span class="check-emoji">🔌</span>
+                        <span class="check-content">
+                            <span class="check-title">Use a watering wand with shut-off when hand-watering</span>
+                            <span class="check-desc">Stops flow instantly so you only water where needed. Great for container gardens.</span>
+                        </span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Phase 3: Systems & Retrofits -->
+            <div class="phase phase-wide">
+                <button class="phase-header" onclick="togglePhase(this)">
+                    <span>Phase 3: Bigger Systems &amp; Retrofits 🔧</span>
+                    <span class="phase-arrow">▼</span>
+                </button>
+                <div class="phase-body">
+                    <label class="checklist-item" for="wc_18">
+                        <input type="checkbox" id="wc_18" data-id="wc_18">
+                        <span class="check-emoji">🛢️</span>
+                        <span class="check-content">
+                            <span class="check-title">Install a rain barrel (65-gallon capacity) under downspouts</span>
+                            <span class="check-desc">Collects 600 gallons per inch of rainfall from an average roof. Look for models with overflow and mosquito screen.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="wc_19">
+                        <input type="checkbox" id="wc_19" data-id="wc_19">
+                        <span class="check-emoji">📡</span>
+                        <span class="check-content">
+                            <span class="check-title">Add a smart irrigation controller (like Rachio or Orbit)</span>
+                            <span class="check-desc">Adjusts watering automatically based on local weather forecasts. Saves 15-30% on outdoor water use.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="wc_20">
+                        <input type="checkbox" id="wc_20" data-id="wc_20">
+                        <span class="check-emoji">🔥</span>
+                        <span class="check-content">
+                            <span class="check-title">Install a hot water recirculation pump under the sink</span>
+                            <span class="check-desc">Delivers instant hot water so you stop wasting gallons waiting for it to warm up.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="wc_21">
+                        <input type="checkbox" id="wc_21" data-id="wc_21">
+                        <span class="check-emoji">🏜️</span>
+                        <span class="check-content">
+                            <span class="check-title">Xeriscape your yard</span>
+                            <span class="check-desc">Replace thirsty lawn areas with drought-tolerant plants, gravel, or hardscaping. Big upfront effort, big long-term savings.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="wc_22">
+                        <input type="checkbox" id="wc_22" data-id="wc_22">
+                        <span class="check-emoji">🚽</span>
+                        <span class="check-content">
+                            <span class="check-title">Upgrade to efficient toilets</span>
+                            <span class="check-desc">Low-flow dual-flush models use 1.28 GPF vs. older 3.5-7 GPF models. Replacing one old toilet saves thousands of gallons per year.</span>
+                        </span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Phase 4: Composting & Soil Water Retention -->
+            <div class="phase phase-wide">
+                <button class="phase-header" onclick="togglePhase(this)">
+                    <span>Phase 4: Composting &amp; Soil Water Retention 🌍</span>
+                    <span class="phase-arrow">▼</span>
+                </button>
+                <div class="phase-body">
+                    <label class="checklist-item" for="wc_23">
+                        <input type="checkbox" id="wc_23" data-id="wc_23">
+                        <span class="check-emoji">🍵</span>
+                        <span class="check-content">
+                            <span class="check-title">Brew and apply compost tea monthly as a soil drench</span>
+                            <span class="check-desc">Improves microbial activity and water-holding capacity. Apply during the growing season for best results.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="wc_24">
+                        <input type="checkbox" id="wc_24" data-id="wc_24">
+                        <span class="check-emoji">🌱</span>
+                        <span class="check-content">
+                            <span class="check-title">Add compost to all garden beds</span>
+                            <span class="check-desc">A 2-3 inch layer of finished compost increases soil water retention by up to 20%. Feed the soil, not just the plants.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="wc_25">
+                        <input type="checkbox" id="wc_25" data-id="wc_25">
+                        <span class="check-emoji">⛰️</span>
+                        <span class="check-content">
+                            <span class="check-title">Build swales or berms on sloped yard areas</span>
+                            <span class="check-desc">Captures rainwater runoff and directs it into the soil instead of the street. Works with gravity, not against it.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="wc_26">
+                        <input type="checkbox" id="wc_26" data-id="wc_26">
+                        <span class="check-emoji">📰</span>
+                        <span class="check-content">
+                            <span class="check-title">Sheet mulch bare areas</span>
+                            <span class="check-desc">Layer cardboard, compost, and mulch to build water-retentive soil in one season. No tilling required.</span>
+                        </span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Phase 5: Household & Kitchen Habits -->
+            <div class="phase phase-wide">
+                <button class="phase-header" onclick="togglePhase(this)">
+                    <span>Phase 5: Household &amp; Kitchen Habits 🏠</span>
+                    <span class="phase-arrow">▼</span>
+                </button>
+                <div class="phase-body">
+                    <label class="checklist-item" for="wc_27">
+                        <input type="checkbox" id="wc_27" data-id="wc_27">
+                        <span class="check-emoji">🥣</span>
+                        <span class="check-content">
+                            <span class="check-title">Use collapsible basins for washing produce</span>
+                            <span class="check-desc">Fill once, rinse, reuse the water for plants. Collapsible ones store flat when not in use.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="wc_28">
+                        <input type="checkbox" id="wc_28" data-id="wc_28">
+                        <span class="check-emoji">🍝</span>
+                        <span class="check-content">
+                            <span class="check-title">Reuse cooking water</span>
+                            <span class="check-desc">After boiling pasta or vegetables, let it cool and use it to water indoor plants — it adds nutrients too.</span>
+                        </span>
+                    </label>
+                    <label class="checklist-item" for="wc_29">
+                        <input type="checkbox" id="wc_29" data-id="wc_29">
+                        <span class="check-emoji">🧊</span>
+                        <span class="check-content">
+                            <span class="check-title">Make ice trays in small batches instead of running tap water to cool a glass</span>
+                            <span class="check-desc">Pre-frozen cubes chill drinks without wasting fresh water. Silicone trays release easily.</span>
+                        </span>
+                    </label>
+                </div>
+            </div>
+
+        </div><!-- /phases -->
+
+        <!-- Gear Section -->
+        <div id="gear-section-wide">
+            <h2 class="section-title-wide">Recommended Gear</h2>
+            <div id="wc-gear-filters" style="margin-bottom:16px;">
+                <button class="gear-filter-btn active" onclick="filterGear('all')">All</button>
+                <button class="gear-filter-btn" onclick="filterGear('Water Conservation')">Water Conservation</button>
+            </div>
+            <div id="wc-gear-grid"></div>
+        </div>
+
+        <!-- Video Section -->
+        <h2 class="section-title-wide">Related Videos</h2>
+        <div id="video-container-wc" class="video-grid"></div>
+
+        </main><!-- /main-content -->
+
+    </div><!-- /page-wrapper -->
+
+    <!-- JavaScript -->
+    <script src="src/js/video-renderer.js"></script>
+    <script>/* Phase toggle */function togglePhase(btn){const phase=btn.closest('.phase');phase.classList.toggle('active')}/* Progress tracker */const TOTAL_ITEMS=30;function updateProgress(){let checked=0;for(let i=0;i<TOTAL_ITEMS;i++){if(localStorage.getItem('wc_'+i))checked++}const pct=Math.round((checked/TOTAL_ITEMS)*100);document.getElementById('progress-label').textContent=checked+' of '+TOTAL_ITEMS+' items completed';document.getElementById('progress-percent').textContent=pct+'%';document.getElementById('progress-fill').style.width=pct+'%'}/* Restore checkboxes */for(let i=0;i<TOTAL_ITEMS;i++){var saved=localStorage.getItem('wc_'+i);if(saved==='true'){const el=document.getElementById('wc_'+i);if(el)el.checked=true}}/* Save checkbox state on change */for(let i=0;i<TOTAL_ITEMS;i++){(function(i){const el=document.getElementById('wc_'+i);if(!el)return;el.addEventListener('change',function(){localStorage.setItem('wc_'+this.id,this.checked);updateProgress();const item=this.closest('.checklist-item');if(item)item.classList.toggle('completed',this.checked)})})(i)}/* Initial progress */updateProgress()/* Gear loader from products.json */const GEAR_PREFIX='wc-gear-';let gearData=[];async function loadGear(){try{const resp=await fetch('src/data/products.json');gearData=await resp.json();renderGear(gearData)}catch(e){document.getElementById('wc-gear-grid').innerHTML='<p style="color:#666;">Could not load gear data.</p>'}}function renderGear(items){const grid=document.getElementById('wc-gear-grid');if(!items||items.length===0){grid.innerHTML='<p style="color:#666;grid-column:1/-1;">No gear found for this filter. Add items with Category "Water Conservation" to products.json.</p>';return}grid.innerHTML=items.map(item=>'<div class="gear-card"><h3>'+escapeHtml(item.Item)+'</h3><p><strong>Category:</strong> '+escapeHtml(item.Category)+'</p>'+(item.OtherLink?'<p><strong>Alternative source:</strong> <a href="'+escapeHtml(item.OtherLink)+'">View</a></p>':'')+'<a class="gear-link" href="'+escapeHtml(item.AmazonLink||'#')+'" target="_blank" rel="noopener noreferrer">View on Amazon →</a></div>').join('')}function filterGear(category){document.querySelectorAll('.gear-filter-btn').forEach(btn=>btn.classList.remove('active'));event.target.classList.add('active');if(category==='all'){renderGear(gearData)}else{const filtered=gearData.filter(item=>item.Category===category);renderGear(filtered)}}function escapeHtml(str){if(!str)return '';return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#039;')}/* Video loader from videos.json */const VIDEO_KEYS=['wc'];async function loadVideos(){try{const resp=await fetch('src/data/videos.json');const videos=await resp.json();const container=document.getElementById('video-container-wc');let html='';VIDEO_KEYS.forEach(function(key){if(videos[key]){videos[key].forEach(function(video){html+='<div class="video-card"><iframe src="'+video.url+'" title="'+escapeHtml(video.title)+'" allowfullscreen loading="lazy"></iframe><p><strong>'+escapeHtml(video.title)+'</strong></p></div>'})}});if(!html){html='<p style="color:#666;grid-column:1/-1;">No videos found for this page. Check src/data/videos.json and add a "wc" key.</p>'}container.innerHTML=html}catch(e){document.getElementById('video-container-wc').innerHTML='<p style="color:#666;">Could not load videos.</p>'}}/* Initialize */loadGear();loadVideos()</script>
+</body>
+</html>

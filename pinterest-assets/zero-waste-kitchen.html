@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zero Waste Kitchen — Pinterest Pin</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Inter:wght@400;500;600&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #f8f7f2; color: #2c2c2c; line-height: 1.6; }
+
+        .pin-container { max-width: 800px; margin: 0 auto; padding: 40px 30px; }
+
+        /* Header */
+        .pin-header {
+            background: linear-gradient(135deg, #2d5a27 0%, #005a4f 100%);
+            border-radius: 16px;
+            padding: 40px 30px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .pin-header h1 { font-family: 'Lora', serif; color: #fff; font-size: 2rem; line-height: 1.3; margin-bottom: 8px; }
+        .pin-header p { color: rgba(255,255,255,0.9); font-size: 1rem; }
+
+        /* Sections */
+        .pin-section { background: #fff; border-radius: 16px; padding: 30px; margin-bottom: 24px; box-shadow: 0 4px 12px rgba(75,58,60,0.08); }
+        .pin-section h2 { font-family: 'Lora', serif; color: #2d5a27; font-size: 1.3rem; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #d4e0d4; }
+        .pin-section h3 { font-family: 'Lora', serif; color: #005a4f; font-size: 1.1rem; margin: 20px 0 10px; }
+
+        /* Cards */
+        .card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 16px; }
+        .pin-card { background: #f8f7f2; border-radius: 12px; padding: 20px; text-align: center; }
+        .pin-card .emoji { font-size: 2rem; display: block; margin-bottom: 8px; }
+        .pin-card h4 { color: #2d5a27; font-size: 1rem; margin-bottom: 6px; }
+        .pin-card p { font-size: 0.9rem; color: #555; line-height: 1.5; }
+
+        /* Tables */
+        .pin-table { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 0.9rem; }
+        .pin-table th { background: #2d5a27; color: #fff; padding: 10px 12px; text-align: left; }
+        .pin-table td { padding: 10px 12px; border-bottom: 1px solid #e8e4df; }
+        .pin-table tr:nth-child(even) { background: #f8f7f2; }
+
+        /* Callout */
+        .pin-callout { background: #d1ecf1; border-left: 4px solid #005a4f; padding: 16px 20px; border-radius: 0 8px 8px 0; margin-top: 16px; }
+        .pin-callout.tip { background: #fff3cd; border-left-color: #856404; }
+
+        /* Footer */
+        .pin-footer { text-align: center; padding: 24px; color: #777; font-size: 0.9rem; }
+        .pin-footer a { color: #2d5a27; text-decoration: none; font-weight: 600; }
+
+        /* Checklist */
+        .checklist-item { display: flex; align-items: center; gap: 12px; padding: 8px 0; border-bottom: 1px solid #eee; }
+        .check-icon { color: #2d5a27; font-size: 1.2rem; }
+    </style>
+</head>
+<body>
+<div class="pin-container">
+
+    <div class="pin-header">
+        <h1>Zero Waste Kitchen Guide</h1>
+        <p>Reduce food waste at home with simple composting swaps</p>
+    </div>
+
+    <!-- The Problem -->
+    <div class="pin-section">
+        <h2>🗑️ The Food Waste Problem</h2>
+        <p>The average household throws away 30% of the food they buy. That's about $1,500/year wasted — and it ends up in landfills producing methane.</p>
+
+        <div class="card-grid">
+            <div class="pin-card">
+                <span class="emoji">🍎</span>
+                <h4>Fruit/Veg Scraps</h4>
+                <p>Potato peels, carrot tops, wilted lettuce — compost these!</p>
+            </div>
+            <div class="pin-card">
+                <span class="emoji">☕</span>
+                <h4>Coffee & Tea</h4>
+                <p>Groinds and tea bags are nitrogen-rich compost gold</p>
+            </div>
+            <div class="pin-card">
+                <span class="emoji">🥚</span>
+                <h4>Eggshells</h4>
+                <p>Crush fine — adds calcium and grit for worms</p>
+            </div>
+        </div>
+
+        <table class="pin-table" style="margin-top:20px;">
+            <thead><tr><th>Kitchen Scrap</th><th>Compost Method</th></tr></thead>
+            <tbody>
+                <tr><td>Coffee grounds</td><td>Worm bin or hot compost pile</td></tr>
+                <tr><td>Fruit peels</td><td>Worm bin (small amounts)</td></tr>
+                <tr><td>Vegetable scraps</td><td>Hot composting (best for large volumes)</td></tr>
+                <tr><td>Bread/grains</td><td>Hot composting only (attracts pests in worm bins)</td></tr>
+                <tr><td>Eggshells</td><td>All methods — crush first!</td></tr>
+            </tbody>
+        </table>
+
+        <div class="pin-callout tip">
+            <p><strong>Savings Tip:</strong> Composting just your kitchen scraps can save a household $50–100/year on fertilizer for gardens.</p>
+        </div>
+    </div>
+
+    <!-- Simple Swaps -->
+    <div class="pin-section">
+        <h2>🔄 Easy Zero-Waste Kitchen Swaps</h2>
+        <div class="checklist-item"><span class="check-icon">✅</span> Replace plastic wrap with beeswax wraps or reusable containers</div>
+        <div class="checklist-item"><span class="check-icon">✅</span> Use a compost bin under the sink for daily scraps</div>
+        <div class="checklist-item"><span class="check-icon">✅</span> Buy loose produce instead of pre-packaged</div>
+        <div class="checklist-item"><span class="check-icon">✅</span> Freeze excess herbs in oil or water cubes</div>
+        <div class="checklist-item"><span class="check-icon">✅</span> Save vegetable scraps in a freezer bag for stock</div>
+
+        <h3 style="margin-top:20px;">📦 What to Compost vs. Trash</h3>
+        <table class="pin-table">
+            <thead><tr><th>Compost ✅</th><th>Trash 🗑️</th></tr></thead>
+            <tbody>
+                <tr><td>Coffee grounds, tea bags</td><td>Styrofoam, plastic bags</td></tr>
+                <tr><td>Fruit & veg scraps</td><td>Glass, metal cans</td></tr>
+                <tr><td>Eggshells (crushed)</td><td>Certified compostable plastics*</td></tr>
+                <tr><td>Dry leaves, cardboard</td><td>Treated wood chips</td></tr>
+            </tbody>
+        </table>
+
+        <p style="font-size:0.8rem; color:#777; margin-top:12px;">*Certified compostable plastics require industrial facilities — not home compost bins.</p>
+    </div>
+
+    <!-- Footer -->
+    <div class="pin-footer">
+        <a href="https://worldcomposting.com/zero-waste-kitchen.html">&#x267B; WorldComposting.com</a>
+        <p style="margin-top:8px;">Pin this for quick reference!</p>
+    </div>
+
+</div>
+</body>
+</html>

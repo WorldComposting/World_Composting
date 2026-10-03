@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hot Composting Guide — Pinterest Pin</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Inter:wght@400;500;600&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #f8f7f2; color: #2c2c2c; line-height: 1.6; }
+
+        .pin-container { max-width: 800px; margin: 0 auto; padding: 40px 30px; }
+
+        /* Header */
+        .pin-header {
+            background: linear-gradient(135deg, #2d5a27 0%, #005a4f 100%);
+            border-radius: 16px;
+            padding: 40px 30px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .pin-header h1 { font-family: 'Lora', serif; color: #fff; font-size: 2rem; line-height: 1.3; margin-bottom: 8px; }
+        .pin-header p { color: rgba(255,255,255,0.9); font-size: 1rem; }
+
+        /* Sections */
+        .pin-section { background: #fff; border-radius: 16px; padding: 30px; margin-bottom: 24px; box-shadow: 0 4px 12px rgba(75,58,60,0.08); }
+        .pin-section h2 { font-family: 'Lora', serif; color: #2d5a27; font-size: 1.3rem; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #d4e0d4; }
+        .pin-section h3 { font-family: 'Lora', serif; color: #005a4f; font-size: 1.1rem; margin: 20px 0 10px; }
+
+        /* Cards */
+        .card-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 16px; }
+        .pin-card { background: #f8f7f2; border-radius: 12px; padding: 20px; text-align: center; }
+        .pin-card .emoji { font-size: 2rem; display: block; margin-bottom: 8px; }
+        .pin-card h4 { color: #2d5a27; font-size: 1rem; margin-bottom: 6px; }
+        .pin-card p { font-size: 0.9rem; color: #555; line-height: 1.5; }
+
+        /* Tables */
+        .pin-table { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 0.9rem; }
+        .pin-table th { background: #2d5a27; color: #fff; padding: 10px 12px; text-align: left; }
+        .pin-table td { padding: 10px 12px; border-bottom: 1px solid #e8e4df; }
+        .pin-table tr:nth-child(even) { background: #f8f7f2; }
+
+        /* Callout */
+        .pin-callout { background: #d1ecf1; border-left: 4px solid #005a4f; padding: 16px 20px; border-radius: 0 8px 8px 0; margin-top: 16px; }
+        .pin-callout.tip { background: #fff3cd; border-left-color: #856404; }
+
+        /* Footer */
+        .pin-footer { text-align: center; padding: 24px; color: #777; font-size: 0.9rem; }
+        .pin-footer a { color: #2d5a27; text-decoration: none; font-weight: 600; }
+
+        /* Temperature gauge */
+        .temp-gauge { display: flex; align-items: center; gap: 12px; margin-top: 16px; }
+        .temp-bar { flex: 1; height: 30px; background: #e8e4df; border-radius: 15px; overflow: hidden; position: relative; }
+        .temp-fill { height: 100%; background: linear-gradient(90deg, #a4c639, #2d5a27); border-radius: 15px; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 600; font-size: 0.8rem; }
+        .temp-label { min-width: 80px; text-align: right; font-size: 0.9rem; font-weight: 500; }
+    </style>
+</head>
+<body>
+<div class="pin-container">
+
+    <div class="pin-header">
+        <h1>Hot Composting in 2 Weeks</h1>
+        <p>The fast method that turns scraps into rich soil — no worms needed!</p>
+    </div>
+
+    <!-- What is Hot Composting -->
+    <div class="pin-section">
+        <h2>🔥 What Is Hot Composting?</h2>
+        <p>A thermophilic process where a large pile of organic matter heats up to 130–160°F (54–71°C), killing weed seeds and pathogens while breaking down materials rapidly.</p>
+
+        <div class="card-grid">
+            <div class="pin-card">
+                <span class="emoji">⏱️</span>
+                <h4>Time</h4>
+                <p>2–6 weeks vs. 3–12 months for cold composting</p>
+            </div>
+            <div class="pin-card">
+                <span class="emoji">🌡️</span>
+                <h4>Temperature</h4>
+                <p>Reaches 130–160°F (54–71°C) naturally through microbial activity</p>
+            </div>
+        </div>
+
+        <table class="pin-table" style="margin-top:20px;">
+            <thead><tr><th>Step</th><th>Action</th></tr></thead>
+            <tbody>
+                <tr><td>1. Build pile</td><td>Layer greens + browns (3:1 ratio), at least 3x3x3 ft</td></tr>
+                <tr><td>2. Add water</td><td>Pile should be moist like a wrung-out sponge</td></tr>
+                <tr><td>3. Monitor heat</td><td>Use a compost thermometer; turn when temp drops below 100°F</td></tr>
+                <tr><td>4. Turn regularly</td><td>Aerate every 5–7 days to maintain oxygen supply</td></tr>
+            </tbody>
+        </table>
+
+        <div class="pin-callout tip">
+            <p><strong>Pro Tip:</strong> The bigger the pile, the faster it heats up. A minimum of 3x3x3 feet is needed to retain enough heat.</p>
+        </div>
+    </div>
+
+    <!-- Temperature Timeline -->
+    <div class="pin-section">
+        <h2>📈 Heat Timeline</h2>
+        <div class="temp-gauge">
+            <span class="temp-label">Day 1–3</span>
+            <div class="temp-bar"><div class="temp-fill" style="width:40%">85°F</div></div>
+        </div>
+        <div class="temp-gauge">
+            <span class="temp-label">Day 4–7</span>
+            <div class="temp-bar"><div class="temp-fill" style="width:70%">130°F</div></div>
+        </div>
+        <div class="temp-gauge">
+            <span class="temp-label">Day 8–14</span>
+            <div class="temp-bar"><div class="temp-fill" style="width:95%">160°F 🔥</div></div>
+        </div>
+        <div class="temp-gauge">
+            <span class="temp-label">Day 15+</span>
+            <div class="temp-bar"><div class="temp-fill" style="width:30%">Cooling → Ready!</div></div>
+        </div>
+
+        <p style="margin-top:16px; font-size:0.9rem;">Turn the pile when temperature drops below 100°F to re-activate microbial activity.</p>
+    </div>
+
+    <!-- Materials -->
+    <div class="pin-section">
+        <h2>🧱 Best Materials for Hot Composting</h2>
+        <ul style="padding-left: 1.5rem; margin-top: 10px;">
+            <li><strong>Greens (Nitrogen):</strong> Grass clippings, vegetable scraps, coffee grounds, manure from herbivores</li>
+            <li><strong>Browns (Carbon):</strong> Dry leaves, straw, sawdust, wood chips, shredded cardboard</li>
+        </ul>
+
+        <div class="pin-callout">
+            <p><strong>Golden Ratio:</strong> 3 parts browns to 1 part greens by volume. Too many greens = smelly pile.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="pin-footer">
+        <a href="https://worldcomposting.com/hot-composting.html">&#x267B; WorldComposting.com</a>
+        <p style="margin-top:8px;">Pin this for quick reference!</p>
+    </div>
+
+</div>
+</body>
+</html>
