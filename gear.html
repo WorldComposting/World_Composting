@@ -615,7 +615,7 @@
                                 const href = (item['Amazon Link'] !== 'NaN' && item['Amazon Link']) ||
                                              (item['Other Link'] !== 'NaN' && item['Other Link']) || '#';
                                 const d = details[item['Item']] || {};
-                                const img = d.image ? <img class="gear-card-img" src="${d.image}" alt="${item['Item']}" loading="eager">>` : '';
+                                const img = d.image ? `<img class="gear-card-img" src="${d.image}" alt="${item['Item']}" loading="eager">` : '';
                                 const blurb = d.blurb ? `<p class="gear-card-blurb">${d.blurb}</p>` : '';
                                 const specs = d.specs ? `<span class="gear-card-specs">${d.specs}</span>` : '';
                                 const isAmazon = item['Amazon Link'] && item['Amazon Link'].includes('amzn.to');
