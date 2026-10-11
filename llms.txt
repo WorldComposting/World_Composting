@@ -48,5 +48,15 @@ World Composting is a comprehensive resource for composting education, featuring
 - [Voting for Sustainability](https://www.worldcomposting.com/blog/voting-for-sustainability.html)
 - [Worm Composting for Beginners](https://www.worldcomposting.com/blog/worm-composting-beginner.html)
 
+### Hubs (Content Collections)
+- [Worm Composting Hub](https://www.worldcomposting.com/hub-worm-composting.html) — Complete vermicomposting collection
+- [Hot Composting Hub](https://www.worldcomposting.com/hub-hot-composting.html) — Thermophilic decomposition collection
+- [Bokashi Hub](https://www.worldcomposting.com/hub-bokashi.html) — Anaerobic fermentation collection
+- [BioChar Hub](https://www.worldcomposting.com/hub-biochar.html) — Pyrolysis and soil amendment collection
+- [Tumbler Composting Hub](https://www.worldcomposting.com/hub-tumbler.html) — Rotating drum composting collection
+- [Lasagna Composting Hub](https://www.worldcomposting.com/hub-lasagna.html) — Sheet mulching / no-dig collection
+- [Black Soldier Fly Hub](https://www.worldcomposting.com/hub-black-soldier-fly.html) — BSF larval processing collection
+- [Energy Efficiency Hub](https://www.worldcomposting.com/hub-energy-efficiency.html) — Home energy and carbon sequestration collection
+
 ### About
 - [About World Composting](https://www.worldcomposting.com/about.html)

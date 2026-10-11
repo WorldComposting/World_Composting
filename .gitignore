@@ -11,3 +11,6 @@ BLOG_WORKFLOW.md
 
 # Local template backup (committed once to branch, kept out of future tracking)
 sample.html
+
+# Sidebar restructure resume guide (internal reference only)
+SIDEBAR_RESTRUCTURE_INSTRUCTIONS.md

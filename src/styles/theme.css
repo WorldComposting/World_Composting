@@ -194,3 +194,210 @@ p.subtitle {
   outline: 2px solid #005a4f;
   outline-offset: 2px;
 }
+
+/* Checklist Page Styles */
+.checklist-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+}
+
+.checklist-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.checklist-header h1 {
+    font-family: 'Lora', serif;
+    color: var(--forest-green);
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.checklist-header p {
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Phase Styles */
+.phase-wide {
+    background: white;
+    border-radius: 16px;
+    box-shadow: var(--card-shadow);
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+.phase-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    background: var(--forest-green);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.phase-header::after {
+    content: '▼';
+    transition: transform 0.3s ease;
+}
+
+.phase-header[aria-expanded="true"]::after {
+    transform: rotate(180deg);
+}
+
+.phase-content {
+    padding: 1.5rem 2rem;
+    display: none;
+}
+
+.phase-content.active {
+    display: block;
+}
+
+/* Progress Tracker */
+#progress-wrapper-wide {
+    background: white;
+    border-radius: 16px;
+    padding: 1.25rem 1.5rem;
+    box-shadow: var(--card-shadow);
+    margin-bottom: 2rem;
+}
+
+#progress-text {
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--forest-green);
+    margin-bottom: 0.6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#progress-percent {
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: var(--ocean-blue);
+}
+
+#progress-bar {
+    height: 10px;
+    background: var(--sage-green);
+    border-radius: 99px;
+    overflow: hidden;
+}
+
+#progress-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, var(--leaf-lime), var(--forest-green));
+    border-radius: 99px;
+    transition: width 0.4s ease;
+}
+
+/* Hero intro: wider */
+.hero-intro-wide {
+    background: white;
+    border-radius: 16px;
+    padding: 2.5rem 3rem;
+    box-shadow: var(--card-shadow);
+    margin-bottom: 2rem;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-dark);
+}
+
+.hero-intro-wide strong { color: var(--forest-green); }
+
+.hero-intro-wide h2 {
+    font-family: 'Lora', serif;
+    color: var(--forest-green);
+    font-size: 1.6rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.hero-intro-wide h3 {
+    font-family: 'Lora', serif;
+    color: var(--ocean-blue);
+    font-size: 1.25rem;
+    margin-top: 1.8rem;
+    margin-bottom: 0.75rem;
+}
+
+.hero-intro-wide p { margin-bottom: 1.2rem; }
+
+.hero-intro-wide ul { padding-left: 1.5rem; margin-bottom: 1.2rem; }
+
+.hero-intro-wide li { margin-bottom: 0.6rem; line-height: 1.7; }
+
+/* Article sections: wider */
+.article-section-wide {
+    background: white;
+    border-radius: 16px;
+    box-shadow: var(--card-shadow);
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.article-section-wide h2 {
+    font-family: 'Lora', serif;
+    color: var(--forest-green);
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.article-section-wide h3 {
+    font-family: 'Lora', serif;
+    color: var(--ocean-blue);
+    font-size: 1.4rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* Info table: wider */
+.info-table-wide {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.info-table-wide th, .info-table-wide td {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.info-table-wide thead {
+    background-color: var(--forest-green);
+    color: white;
+}
+
+/* Callout Boxes: wider */
+.callout-wide {
+    background: var(--sage-green);
+    border-left: 4px solid var(--forest-green);
+    padding: 1rem 1.25rem;
+    border-radius: 0 8px 8px 0;
+    margin: 1.5rem 0;
+}
+
+.callout-wide.tip {
+    background: #d1ecf1;
+    border-left-color: var(--ocean-blue);
+}
+
+.callout-wide.note {
+    background: #fff3cd;
+    border-left-color: var(--warning-yellow, #ffc107);
+}
+
+.callout-wide p { margin-bottom: 0; }

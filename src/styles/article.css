@@ -245,3 +245,10 @@ body {
         font-size: 1.05rem;
     }
 }
+
+
+/* About page sections — stay within main column */
+.about-section-wide,
+.about-cta-wide {
+    width: 100%;
+}

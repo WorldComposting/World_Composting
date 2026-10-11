@@ -16,15 +16,17 @@ High-legibility, ADA-compliant site for the [World Composting](http://worldcompo
 - **Deployment:** GitHub Pages, repo `WorldComposting/World_Composting`, branch `main` = live site.
 - **Analytics:** GA4 `G-KRHYVJXZLE` on all pages; GSC verified (`google8a4b2c3d1e5f6789.html`).
 
-## 🏗 Page Inventory (root, 32 files)
-| Category | Pages |
-|---|---|
-| Hub / nav | `index.html` (SEO hub), `start-here.html` (decision tree), `quick_links.html` (Linktree-style mobile page for Instagram traffic: **never migrate or restyle**) |
-| Pillar guides | `worm-composting.html`, `hot-composting.html`, `science-of-compost.html` |
-| Checklists (localStorage progress) | `beginner.html` (worm), `bokashi.html`, `hot.html`, `tumbler.html`, `tea.html`, `lasagna.html`, `sustainability.html`, `zero-waste-kitchen.html`, `troubleshoot.html`, `black_soldier_fly.html`, `energy-efficiency.html` |
-| Deep-dive articles | worm: `worm-bedding`, `worm-forbidden-foods`, `worm-fruit-flies`, `worm-harvesting`; hot: `hot-best-materials`, `hot-cn-ratio`, `hot-not-heating`, `hot-speed-tips`; plus `biochar.html` (checklist + article) |
-| Utility / JS-driven | `gear.html` (29 products, 8 categories), `glossary.html` (30 terms), `faq.html` (41 Q&A in 11 sections, accordion `<details>`, FAQPage JSON-LD; added 9/14), `blog.html` (archive), `about.html`, `sitemap.html` |
-| Not pages | `sample.html` (desktop layout template reference, gitignored local-only), `google8a4b2c3d1e5f6789.html` (GSC verification) |
+## 🏗 Page Inventory (root, 32 files + 41 new)
+|| Category | Pages |
+||---|---|
+|| Hub / nav | `index.html` (SEO hub), `start-here.html` (decision tree), `quick_links.html` (Linktree-style mobile page for Instagram traffic: **never migrate or restyle**) |
+|| Pillar guides | `worm-composting.html`, `hot-composting.html`, `science-of-compost.html` |
+|| Checklists (localStorage progress) | `beginner.html` (worm), `bokashi.html`, `hot.html`, `tumbler.html`, `tea.html`, `lasagna.html`, `sustainability.html`, `zero-waste-kitchen.html`, `troubleshoot.html`, `black_soldier_fly.html`, `energy-efficiency.html` |
+|| Deep-dive articles | worm: `worm-bedding`, `worm-forbidden-foods`, `worm-fruit-flies`, `worm-harvesting`; hot: `hot-best-materials`, `hot-cn-ratio`, `hot-not-heating`, `hot-speed-tips`; plus `biochar.html` (checklist + article) |
+|| Hub pages (8, local only 10/7) | `hub-worm-composting.html`, `hub-hot-composting.html`, `hub-bokashi.html`, `hub-biochar.html`, `hub-tumbler.html`, `hub-lasagna.html`, `hub-black-soldier-fly.html`, `hub-energy-efficiency.html` — each with hero, Start Here cards, Deep Dive Articles list, Gear & Products grid, Troubleshooting links; headers use `.subtitle-paren` CSS class |
+|| Article pages (34+7 local only 10/7) | hot(4): `hot-best-materials`, `hot-cn-ratio`, `hot-not-heating`, `hot-speed-tips`; bokashi(4): `bokashi-em1-guide`, `bokashi-tea-usage`, `bokashi-not-heating`, `bokashi-best-materials`; biochar(4): `biochar-charging-guide`, `biochar-pyrolysis-science`, `biochar-soil-impact`, `biochar-best-materials`; tumbler(4): `tumbler-turning-schedule`, `tumbler-moisture-control`, `tumbler-not-heating`, `tumbler-best-materials`; lasagna(4): `lasagna-layer-thickness`, `lasagna-soil-building`, `lasagna-weed-suppression`, `lasagna-best-materials`; bsf(3): `bsf-breeding-bin`, `bsf-larvae-harvest`, `bsf-best-materials`; energy-efficiency(4): `energy-efficiency-compost-heating`, `energy-efficiency-water-conservation`, `energy-efficiency-reduce-waste-energy`, `energy-efficiency-soil-carbon-sequestration` — all first-person voice, canonical-tagged to worldcomposting.com |
+|| Utility / JS-driven | `gear.html` (29 products, 8 categories), `glossary.html` (30 terms), `faq.html` (41 Q&A in 11 sections, accordion `<details>`, FAQPage JSON-LD; added 9/14), `blog.html` (archive), `about.html`, `sitemap.html` |
+|| Not pages | `sample.html` (desktop layout template reference, gitignored local-only), `google8a4b2c3d1e5f6789.html` (GSC verification) |
 
 **Blog posts:** `blog/<slug>.html` generated from `src/data/blog.json` by `scripts/generate_blog.py`. Runbook: see **`BLOG_WORKFLOW.md`** (gitignored; the only other doc in this project).
 
@@ -55,16 +57,20 @@ High-legibility, ADA-compliant site for the [World Composting](http://worldcompo
 ## 📋 Pending Work (growth roadmap)
 **Website expansion:** email capture / lead magnet ("Download the beginner composting guide"); additional checklist pages (Plastic-Free Living) with Recommended Gear sections.
 
+**✅ DONE 10/8 — Sidebar Hubs section + structural CSS grid fixes:** Added "Hubs" section to all ~57 content page sidebars; unified all sidebar formats to canonical STANDARD MULTI-LINE; fixed hub pages' active-link highlighting per-page; added missing `</aside>` tags and `<main>` wrappers to article pages (hot, biochar, tumbler, tea, lasagna, troubleshoot, electric_composter, sustainability, energy-efficiency, black_soldier_fly) that were rendering content below nav bar. Sitemap.xml regenerated with 73 entries; llms.txt patched with Hubs links. **PENDING:** CSS grid layout issue still unresolved on some pages — HTML structure correct but content stacks below sidebar (investigation ongoing).
+
 **SEO Improvements (from Copilot audit 10/6):**
 - **✅ DONE — Expand homepage intro to 300–600 words** (`index.html` hero expanded from ~50 to ~460 words; first-person voice, no em-dashes, E-E-A-T trust signals: composting since 2015, YouTube channel, tested gear). Pushed live.
+- **✅ DONE — Create all 8 category hub pages** (10/7): `hub-worm-composting.html`, `hub-hot-composting.html`, `hub-bokashi.html`, `hub-biochar.html`, `hub-tumbler.html`, `hub-lasagna.html`, `hub-black-soldier-fly.html`, `hub-energy-efficiency.html`. Each has hero section, "Start Here" cards, Deep Dive Articles list, Gear & Products grid, Troubleshooting links. All headers use `.subtitle-paren` CSS class for parentheticals on new line in blue. Local only — not yet pushed to GitHub.
+- **✅ DONE — Build all 34 missing article pages** (10/7): hot(4), bokashi(4), biochar(4), tumbler(4), lasagna(4), bsf(3), energy-efficiency(4). All first-person voice, canonical-tagged to worldcomposting.com. Local only — not yet pushed to GitHub.
+- **✅ DONE — Fix gear.html broken JS** (10/7): missing backtick on template literal line 618 crashed entire render script; zero items displayed. Committed `89ff3e5` and pushed live.
 - **HIGH PRIORITY — Add author/expert block** to guide pages (years composting experience, YouTube presence, methodology philosophy). Builds E-E-A-T signals for Google's quality rater guidelines.
-- **MEDIUM PRIORITY — Create dedicated category hub pages** for each method: `worm-composting.html` → `/hub/worm/`, `hot-composting.html` → `/hub/hot/`, etc. Each hub links to all related checklists, articles, and gear for that method. Improves topical authority and internal linking depth.
 - **MEDIUM PRIORITY — Increase contextual internal linking** across all 30+ pages: link guides ↔ gear pages, glossary terms, troubleshooting tips, and related content. Currently minimal cross-linking exists.
-- **MEDIUM PRIORITY — Create troubleshooting hub page** (`troubleshoot.html` is one big page; split into sub-hubs for "compost smells," "fruit flies," "excess moisture," "lack of heat" with dedicated pages linking back to relevant guides).
+- **MEDIUM PRIORITY — Create troubleshooting sub-hubs:** split `troubleshoot.html` into dedicated pages for "compost smells," "fruit flies," "excess moisture," "lack of heat" with links back to relevant guides.
 - **LOW PRIORITY — Add comparison pages:** Bokashi vs Worm Composting, Hot vs Cold Composting, product comparisons (e.g., Urban Worm Bag vs Vermibag). These capture long-tail search queries.
 - **LOW PRIORITY — Low-impact quick wins:** breadcrumbs on all pages, VideoObject schema for embedded YouTube videos, Article schema on long-form guides, estimated reading time display, last-updated date stamps, print-friendly checklist versions.
 
-**Water Conservation 101 ✅ Created 10/2:** `water-conservation.html` built using bokashi.html structural template (pillar hero, collapsible phases, emoji checkmarks, gear loader, video section via renderer). Status: page structure and content complete; needs affiliate links added to products.json under "Water Conservation" category. User is providing direct Amazon product URLs — once received, update `src/data/products.json` with Item/Category/Amazon Link fields and regenerate gear cards on the page.
+**📸 Images / Visual Content (NEW 10/7):** Site is excellent for AI crawlers and search engines but lacks images for human visitors. Need to add relevant photos throughout: composting process shots, gear close-ups, before/after comparisons, infographics. Priority: hub pages first (hero section images), then pillar guides, then checklists. Source: user's own YouTube video stills, Amazon product photos (self-hosted in `src/assets/gear/`), and original photography from composting projects.
 
 **Black Soldier Fly checklist ✅ Completed & deployed 9/17:** `black_soldier_fly.html` created at root in standard checklist format (30 items across 5 phases, HowTo JSON-LD, localStorage prefix `bsf_`, gear section); new "BSF Items" category added to products.json; sidebar navigation wired across all pages; sitemap updated. **Energy Efficiency at Home ✅ Completed & deployed 9/17:** `energy-efficiency.html` created with 30 items across 3 phases (Easy → Moderate → Difficult/Expensive), HowTo JSON-LD, localStorage prefix `ee_`, gear section filtering "Home Efficiency"; sidebar navigation wired; sitemap updated. ~~FAQ section~~ DONE 9/14: `faq.html` shipped (commit 0a80601) — 41 questions in 11 accordion sections covering every method + troubleshooting + gear; FAQPage JSON-LD matches visible Q&A exactly; sidebar link added to all pages (Resources section); listed in sitemap.xml (priority 0.8) and sitemap.html.
 **Gear page upgrade DONE 9/2:** gear.html now renders cards (photo + name + blurb + spec pill + affiliate button) from a new `src/data/gear-details.json` layer merged over products.json at render time (sheet stays untouched). Photos are the REAL product images pulled from each item's own Amazon listing (resolved via the affiliate link, self-hosted in `src/assets/gear/` as amz-*.jpg so nothing hotlinks; ~1.7MB total, 640px wide). KN95 Masks + Bug Zapper had dead amzn.to links (fixed 9/2 with new links from user: amzn.to/4zUcONo / amzn.to/4x7VFxl; item renamed "Bug Zapper Bulb" -> "Bug Zapper"); Bokashi Brother Bran link was also dead (replaced 9/2 with amzn.to/3UtLHsA, renamed to "Bokashi Bran"; bokashi.html checklist link updated too). All three fixes mirrored in scripts/products_source.csv so future sheet syncs don't revert them. Photos pulled from the actual listings. Vermibag/Meme's Worms use vendor-site og:image. ItemList JSON-LD populated with all 29 items. Category order preserved. Swap any photo later = replace file + update image field in gear-details.json. VERIFIED 9/9: full data-layer check passed (29 cards, all images serve HTTP 200, lazy-loaded) and user confirmed rendering on local server.
@@ -117,6 +123,39 @@ Full per-page commit history and bug log preserved in git: `git log --oneline` o
 - Exactly one `class="active"` per page (the current page)
 - New checklist pages go in the **Checklists** section, ordered by creation date or logical grouping
 - Add nav links to ALL existing pages when creating a new page
+
+### Sidebar Navigation Pattern — Updated 10/9 (hub-energy-efficiency.html model)
+> This is now the canonical reference for all hub pages. See `hub-energy-efficiency.html` as the working sample.
+
+**Structure:** `<aside class="sidebar">` → `<ul class="sidebar-nav">` → section-labels + links + dividers → `</ul>` → `</aside>` → `<main>`. The `</aside>` MUST close before `<main>` starts, or content renders inside the nav panel.
+
+**Section order (canonical):** Guides → Hubs → Gear → Checklists → Troubleshooting / Deep Dives → Resources. Each section separated by a divider:
+```html
+<li><div class="sidebar-divider"></div></li>
+<li class="sidebar-section-label">Section Name</li>
+```
+
+**Gear link:** One prominent entry between Hubs and Checklists, styled inline:
+```html
+<li class="sidebar-section-label">Gear</li>
+<li><a href="gear.html" style="color: var(--forest-green); font-weight: 700;">🛒 View All Gear →</a></li>
+```
+
+**Section headers:** `.sidebar-section-label` now has a left accent bar + subtle background (from `layout.css`):
+```css
+.sidebar-section-label {
+    border-left: 3px solid var(--sage-green);
+    background: rgba(45,90,39,0.06);
+}
+```
+
+**Link spacing:** `.sidebar-nav a` padding reduced to `0.3rem 0.85rem`, radius `6px` (from `layout.css`). Tighter vertical rhythm = shorter sidebar without losing readability.
+
+**Self-link rule:** Never link back to the current page's own URL from its nav. Remove `<li><a href="hub-energy-efficiency.html" class="active">...</a></li>` — use `class="active"` only on the *other* pages' navs pointing TO this one.
+
+**Black Soldier Fly placement:** Goes in **Checklists** section (it's a composting-method setup guide), NOT in Troubleshooting/Deep Dives.
+
+**Troubleshooting / Deep Dives section:** For long-form deep-dive articles that aren't checklist pages (Sustainability Journey, Energy Efficiency at Home, Zero Waste Kitchen). Separated from Checklists by a divider.
 
 ### Interactive Wizard Pattern (start-here.html model)
 - Steps use `.question-step-wide` class; JS toggles `.active` for visibility

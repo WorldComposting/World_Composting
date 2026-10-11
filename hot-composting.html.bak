@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="https://www.worldcomposting.com/hot-composting.html">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <title>The Complete Guide to Hot Composting | World Composting</title>
+    <meta name="description" content="The definitive guide to hot composting. Learn thermophilic decomposition science, C:N ratios, pile design, turning strategies, and temperature management.">
+    <!-- Google Search Console Verification -->
+    <meta name="google-site-verification" content="google8a4b2c3d1e5f6789">
+    <link rel="stylesheet" href="src/styles/theme.css">
+    <link rel="stylesheet" href="src/styles/layout.css">
+    <link rel="stylesheet" href="src/styles/video-section.css">
+    <style>/* Back link: wider */
+        .back-link-wide {
+            display: inline-block;
+            font-size: 0.85rem;
+            color: var(--ocean-blue);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            transition: opacity 0.2s;
+        }
+
+.back-link-wide:hover { opacity: 0.7; }
+
+.back-link-wide:focus-visible {
+            outline: 2px solid var(--ocean-blue);
+            outline-offset: 2px;
+            border-radius: 2px;
+        }
+
+/* Pillar hero: wider */
+        .pillar-hero-wide {
+            background: white;
+            border-radius: 16px;
+            padding: 2.5rem 3rem;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 2rem;
+        }
+
+.pillar-hero-wide h1 {
+            font-family: 'Lora', serif;
+            color: var(--forest-green);
+            font-size: 2.4rem;
+            line-height: 1.3;
+            margin-top: 0;
+            text-align: center;
+        }
+
+.pillar-hero-wide p.subtitle {
+            text-align: center;
+            font-style: italic;
+            color: var(--ocean-blue);
+            font-size: 1.1rem;
+            margin-bottom: 0;
+        }
+
+/* Table of Contents: wider */
+        #toc-wide {
+            background: white;
+            border-radius: 16px;
+            padding: 1.5rem 2rem;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 2rem;
+        }
+
+#toc-wide h2 {
+            font-size: 1.1rem;
+            color: var(--forest-green);
+            margin-top: 0;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+#toc-wide ol {
+            padding-left: 1.2rem;
+            margin: 0;
+        }
+
+#toc-wide li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+
+#toc-wide a {
+            color: var(--ocean-blue);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+#toc-wide a:hover { color: var(--forest-green); text-decoration: underline; }
+
+/* Article Sections: wider */
+        .article-section-wide {
+            background: white;
+            border-radius: 16px;
+            padding: 2.5rem 3rem;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+.article-section-wide h2 {
+            font-family: 'Lora', serif;
+            color: var(--forest-green);
+            font-size: 1.6rem;
+            margin-top: 0;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--sage-green);
+        }
+
+.article-section-wide h3 {
+            font-family: 'Lora', serif;
+            color: var(--ocean-blue);
+            font-size: 1.25rem;
+            margin-top: 1.8rem;
+            margin-bottom: 0.75rem;
+        }
+
+.article-section-wide p {
+            color: var(--text-dark);
+            font-size: 1rem;
+            margin-bottom: 1.2rem;
+        }
+
+.article-section-wide ul, .article-section-wide ol {
+            padding-left: 1.5rem;
+            margin-bottom: 1.2rem;
+        }
+
+.article-section-wide li {
+            margin-bottom: 0.6rem;
+            line-height: 1.7;
+        }
+
+.article-section-wide strong { color: var(--forest-green); }
+
+/* Callout Boxes: wider */
+        .callout-wide {
+            background: var(--sage-green);
+            border-left: 4px solid var(--forest-green);
+            padding: 1rem 1.25rem;
+            border-radius: 0 8px 8px 0;
+            margin: 1.5rem 0;
+        }
+
+.callout-wide.warning {
+            background: #fff3cd;
+            border-left-color: #856404;
+        }
+
+.callout-wide.tip {
+            background: #d1ecf1;
+            border-left-color: var(--ocean-blue);
+        }
+
+.callout-wide p { margin-bottom: 0; }
+
+/* Info Tables: wider */
+        .info-table-wide {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.92rem;
+        }
+
+.info-table-wide th, .info-table-wide td {
+            padding: 0.75rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--sage-green);
+        }
+
+.info-table-wide th {
+            background: var(--forest-green);
+            color: white;
+            font-weight: 600;
+        }
+
+.info-table-wide tr:nth-child(even) td { background: #f8f9fa; }
+
+/* Related Pages: wider */
+        .related-pages-wide {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+.related-card-wide {
+            background: white;
+            border-radius: 16px;
+            padding: 1.25rem;
+            box-shadow: var(--card-shadow);
+            text-align: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+.related-card-wide:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 32px -8px rgba(75, 54, 33, 0.15);
+        }
+
+.related-card-wide a {
+            text-decoration: none;
+            color: var(--forest-green);
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+.related-card-wide p {
+            margin-top: 0.5rem;
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+/* ===== RESPONSIVE BREAKPOINTS ===== */</style>
+    <!-- Google Analytics (skipped on localhost) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KRHYVJXZLE"></script>
+    <script>
+      if (!window.location.hostname.includes('localhost') && !window.location.hostname.includes('127.0.0.1')) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-KRHYVJXZLE');
+      }
+    </script>
+    <!-- Pinterest Tag -->
+    <script type="text/javascript">
+      _pt = "2612544072053";
+      (function(e,t,n){var r,i=document.createElement(n);i.async=1,i.src="https://cdn.pinterest.com/tags.min.js#" + encodeURIComponent(_pt);if(t){r=document.createElement(n);r.type="text/javascript";r.defer=!0;r.src="//pixel-assets.pinterest.com/tags/pid-req-utils.js",document.getElementsByTagName("head")[0].appendChild(r)}i.onload=i.onerror=function(){var e=window.pinall;window.pinall=null;var t=1;e&&e.length>0&&(t=e[0]);for(var n;n=e.length;)n.shift(),(n=n[0])&&"function"==typeof n.n&&n.n(t);window.pinall=e};document.getElementsByTagName("head")[0].appendChild(i)})(window,document,"script");
+    </script>
+    <!-- Article Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "The Complete Guide to Hot Composting",
+      "description": "A comprehensive guide covering everything you need to know about hot composting, from thermophilic decomposition science and C:N ratio mastery to pile design, turning strategies, and harvesting finished compost in weeks.",
+      "author": {
+        "@type": "Organization",
+        "name": "World Composting"
+      },
+      "datePublished": "2026-08-07",
+      "dateModified": "2026-08-07",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.worldcomposting.com/hot-composting.html"
+      }
+    }
+    </script>
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How long does hot composting take?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A properly managed hot compost pile can produce finished compost in as little as 18 to 21 days during the active thermophilic phase, with an additional four to eight weeks for curing. The entire process from start to harvest typically takes two to three months."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the ideal carbon-to-nitrogen ratio for hot composting?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The ideal carbon-to-nitrogen (C:N) ratio for hot composting is 25 to 30 parts carbon to one part nitrogen by weight. By volume, this translates to roughly three parts browns (carbon-rich materials like dried leaves and straw) to one part greens (nitrogen-rich materials like food scraps and grass clippings)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How hot should a compost pile get?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A healthy hot compost pile should reach and maintain temperatures between 130 and 150 degrees Fahrenheit (54 to 66 degrees Celsius). This range is hot enough to kill weed seeds, pathogens, and plant diseases while keeping beneficial thermophilic bacteria active. Temperatures above 160 degrees Fahrenheit can sterilize the pile and kill off useful microbes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How often should I turn a hot compost pile?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "During the active thermophilic phase (typically weeks one through three), turn your pile every two to three days when the core temperature drops by ten to fifteen degrees from its peak. As the pile cools into the curing phase, reduce turning frequency to once every seven to fourteen days."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need a bin for hot composting?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "While not strictly required, containment helps maintain the minimum three-by-three-by-three-foot pile size needed for thermophilic temperatures. You can use wooden pallets to build a three-bin system, a wire cylinder, or create a free-standing windrow on level ground with good drainage."
+          }
+        }
+      ]
+    }
+    </script>
+    <link rel="alternate" href="/llms.txt" title="World Composting AI Index">
+</head>
+<body>
+    <div class="page-wrapper">
+
+        <!-- ===== SIDEBAR NAVIGATION ===== -->
+        <aside class="sidebar">
+
+            <ul class="sidebar-nav">
+<li><a href="index.html">Home</a></li>
+                <li><a href="start-here.html">Start Here</a></li>
+                <li><a href="science-of-compost.html">The Science of Compost</a></li>
+                <li><a href="about.html">About</a></li>
+
+                <li><div class="sidebar-divider"></div></li>
+                <li class="sidebar-section-label">Guides</li>
+
+                <li><a href="worm-composting.html">Worm Composting</a></li>
+                <li><a href="hot-composting.html" class="active">Hot Composting</a></li>
+
+                <li><div class="sidebar-divider"></div></li>
+                <li class="sidebar-section-label">Hubs</li>
+
+                <li><a href="hub-worm-composting.html">Worm Composting Hub</a></li>
+                <li><a href="hub-hot-composting.html">Hot Composting Hub</a></li>
+                <li><a href="hub-bokashi.html">Bokashi Hub</a></li>
+                <li><a href="hub-biochar.html">BioChar Hub</a></li>
+                <li><a href="hub-tumbler.html">Tumbler Composting Hub</a></li>
+                <li><a href="hub-lasagna.html">Lasagna Composting Hub</a></li>
+                <li><a href="hub-black-soldier-fly.html">Black Soldier Fly Hub</a></li>
+                <li><a href="hub-energy-efficiency.html">Energy Efficiency Hub</a></li>
+
+                <li class="sidebar-section-label">Checklists</li>
+
+                <li><a href="beginner.html">Beginner's Checklist</a></li>
+                <li><a href="pre-compost.html">Pre-Compost for Worm Bins</a></li>
+                <li><a href="hot.html">Hot Composting Checklist</a></li>
+                <li><a href="bokashi.html">Bokashi Composting</a></li>
+                <li><a href="biochar.html">BioChar Composting</a></li>
+                <li><a href="tumbler.html">Tumbler Composting</a></li>
+                <li><a href="tea.html">Compost Tea</a></li>
+                <li><a href="lasagna.html">Lasagna Composting</a></li>
+                <li><a href="sustainability.html">Sustainability Journey</a></li>
+                <li><a href="energy-efficiency.html">Energy Efficiency at Home</a></li>
+                <li><a href="black_soldier_fly.html">Black Soldier Fly</a></li>
+                <li><a href="zero-waste-kitchen.html">Zero Waste Kitchen</a></li>
+
+                <li><div class="sidebar-divider"></div></li>
+                <li class="sidebar-section-label">Resources</li>
+
+                <li><a href="glossary.html">Glossary</a></li>
+                <li><a href="troubleshoot.html">Troubleshooting</a></li>
+                <li><a href="electric_composter.html">Electric Composters</a></li>
+                <li><a href="faq.html">Frequently Asked Questions</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="sitemap.html">Sitemap</a></li>
+
+                <li><div class="sidebar-divider"></div></li>
+                <li class="sidebar-section-label">Gear</li>
+
+                <li><a href="gear.html">View All Gear →</a></li>
+                </ul>
+
+            <!-- MAIN CONTENT AREA -->
+            <main class="main-content">
+
+        <!-- ===== PAGE CONTENT BEGINS HERE ===== -->
+        <!-- Section 1 -->
+        <div class="article-section-wide" id="what-is-hot-composting">
+            <h2>What Is Hot Composting?</h2>
+            <p>Hot composting, also called thermophilic composting, is the process of accelerating decomposition using heat generated by microbial activity. This method creates temperatures between 130 and 160 degrees Fahrenheit (54 to 71 Celsius), which effectively kills weed seeds, pathogens, and plant diseases while breaking down materials quickly.</p>
+
+            <div class="callout tip">
+                <p><strong>Pro Tip:</strong> The term "hot composting" refers to the temperature of the pile, not its source of heat. It's a natural process that occurs when organic materials decompose with sufficient moisture, oxygen, and carbon-to-nitrogen balance.</p>
+            </div>
+
+            <h3>How Hot Composting Works</h3>
+            <p>The key to successful hot composting lies in creating the right conditions for thermophilic bacteria. These microbes thrive at high temperatures (120-160°F) and break down organic matter rapidly, often within a few weeks.</p>
+
+            <div class="callout note">
+                <p><strong>Important:</strong> Temperatures above 165°F can kill beneficial organisms and halt decomposition. If your pile gets too hot, you'll need to turn it or reduce the nitrogen content.</p>
+            </div>
+
+            <h3>The Science Behind Thermophilic Decomposition</h3>
+            <p>When microbes break down organic materials at high temperatures, they consume oxygen and produce heat. The heat is generated by microbial metabolic processes (cellular respiration), which is why compost piles can reach 140-160°F during active decomposition.</p>
+
+            <h3>Benefits of Hot Composting</h3>
+            <ul>
+                <li><strong>Pathogen elimination:</strong> High temperatures kill harmful bacteria, viruses, and parasites that may be present in raw organic materials.</li>
+                <li><strong>Weed seed destruction:</strong> Most weed seeds are killed at temperatures above 120°F.</li>
+                <li><strong>Fast composting:</strong> Materials decompose much faster than with regular cold composting methods, typically within a few weeks to months.</li>
+                <li><strong>Disease suppression:</strong> Heat and beneficial microbes reduce the risk of plant diseases in the finished compost.</li>
+                <li><strong>Odor control:</strong> Properly managed piles produce little or no odor compared to anaerobic decomposition.</li>
+            </ul>
+
+            <h3>How Hot Composting Differs from Cold Composting</h3>
+            <p>Cold composting, also called static composting, works at ambient temperatures and takes months or years. It relies on the slow activity of mesophilic microbes that work in cooler conditions (70-90°F).</p>
+
+            <div class="callout note">
+                <p><strong>Pro Tip:</strong> Cold composting is more suitable for beginners because it requires less management and attention to temperature, moisture, and turning. However, hot composting produces better quality compost faster.</p>
+            </div>
+        </div>
+
+        <!-- Section 2 -->
+        <div class="article-section-wide" id="setting-up-a-pile">
+            <h2>Setting Up a Hot Composting Pile</h2>
+            <p>The foundation of successful hot composting is proper pile construction. This involves creating the right mix of materials, maintaining adequate moisture and oxygen levels, and ensuring optimal temperature conditions.</p>
+
+            <h3>Pile Size Requirements</h3>
+            <p>For effective thermophilic decomposition, your pile should be at least 3 feet wide by 3 feet deep by 3 feet tall (a cubic yard). Piles smaller than this size struggle to retain heat and may not reach the temperatures needed for pathogen destruction.</p>
+
+            <div class="callout tip">
+                <p><strong>Pro Tip:</strong> If you're starting with a small pile, add more material gradually until it reaches the minimum cubic yard size. The key is to build up volume rather than trying to make a large pile from the start.</p>
+            </div>
+
+            <h3>Material Requirements</h3>
+            <p>Hot composting requires materials rich in carbon and nitrogen, typically using a ratio of 25-30 parts carbon (browns) to one part nitrogen (greens).</p>
+
+            <h4>Carbon-Rich Materials (Browns)</h4>
+            <ul>
+                <li>Dried leaves</li>
+                <li>Shredded cardboard or newspaper</li>
+                <li>Brown grass clippings</li>
+                <li>Straw and hay</li>
+                <li>Wood chips (aged)</li>
+                <li>Paper towels and napkins</li>
+            </ul>
+
+            <h4>Nitrogen-Rich Materials (Greens)</h4>
+            <ul>
+                <li>Fresh grass clippings</li>
+                <li>Food scraps</li>
+                <li>Eggshells and coffee grounds</li>
+                <li>Manure from herbivores (horse, cow, goat)</li>
+                <li>Seaweed or kelp</li>
+                <li>Clean plant trimmings</li>
+            </ul>
+
+            <div class="callout note">
+                <p><strong>Important:</strong> Avoid meat, dairy, oils, and pet waste in hot compost piles. These materials can attract pests and create odors.</p>
+            </div>
+        </div>
+
+        <!-- Section 3 -->
+        <div class="article-section-wide" id="temperature-monitoring">
+            <h2>Temperature Monitoring</h2>
+            <p>Monitoring your pile's temperature is essential for successful hot composting. Thermometers designed specifically for compost piles (or digital probes) allow you to track progress and make adjustments as needed.</p>
+
+            <h3>Initial Heating Phase</h3>
+            <p>In the first few days after construction, temperatures typically rise from ambient levels to 100-120°F as thermophilic microbes begin their work. This is when compost pile builders often get excited about seeing heat!</p>
+
+            <div class="callout tip">
+                <p><strong>Pro Tip:</strong> Check your pile's temperature every few days during the active phase to track its progress.</p>
+            </div>
+
+            <h3>Maintenance Phase</h3>
+            <p>The peak heat phase typically lasts two to four weeks. During this time, temperatures should remain between 130-160°F for effective pathogen and weed seed destruction.</p>
+
+            <h3>Decline Phase</h3>
+            <p>After the active thermophilic period, temperatures gradually decrease as easily decomposable materials are consumed. This is followed by a curing phase where the compost stabilizes at ambient temperature.</p>
+
+            <div class="callout note">
+                <p><strong>Important:</strong> If your pile drops below 120°F for more than two days, consider adding nitrogen-rich materials and turning the pile to restart microbial activity.</p>
+            </div>
+        </div>
+
+        <!-- Section 4 -->
+        <div class="article-section-wide" id="aeration">
+            <h2>Aeration: The Key to Heat Generation</h2>
+            <p>Proper aeration is crucial for maintaining high temperatures in hot compost piles. Oxygen supports the thermophilic microbes that generate heat and break down organic matter.</p>
+
+            <h3>Natural Aeration Methods</h3>
+            <ul>
+                <li>Turning your pile every two to three days during active decomposition</li>
+                <li>Adding coarse materials (straw, wood chips) that create air pockets</li>
+                <li>Maintaining adequate moisture levels for microbial activity without waterlogging</li>
+            </ul>
+
+            <h3>Forced Aeration Systems</h3>
+            <p>Some advanced systems use forced aeration (blowers, pipes) to maintain consistent oxygen flow. These systems can produce finished compost in as little as 10 days under perfect conditions.</p>
+
+            <div class="callout note">
+                <p><strong>Important:</strong> Without adequate aeration, your pile will become anaerobic and start producing foul odors from rotting organic matter rather than generating heat.</p>
+            </div>
+        </div>
+
+        <!-- Section 5 -->
+        <div class="article-section-wide" id="moisture">
+            <h2>Moisture Management</h2>
+            <p>The right moisture level is critical for hot composting success. Materials should be damp but not soggy – like a wrung-out sponge.</p>
+
+            <div class="callout tip">
+                <p><strong>Pro Tip:</strong> If you can squeeze a handful of material and only one or two drops fall out, it's at optimal moisture level. If no drops appear, add water. If multiple drops fall out, add dry materials.</p>
+            </div>
+
+            <h3>Maintenance Techniques</h3>
+            <ul>
+                <li>Check moisture content regularly with a soil moisture meter or hand test</li>
+                <li>Add water when needed and cover the pile to retain moisture</li>
+                <li>Use coarse materials that help with drainage without sacrificing moisture retention</li>
+            </ul>
+
+            <div class="callout note">
+                <p><strong>Important:</strong> Overwatering can lead to anaerobic conditions, while underwatering slows microbial activity. Both cause the pile to cool and stall.</p>
+            </div>
+        </div>
+
+        <!-- Section 6 -->
+        <div class="article-section-wide" id="turning">
+            <h2>Turning Techniques</h2>
+            <p>Turning your pile is essential for aeration, mixing materials, and redistributing heat. The frequency depends on the pile's temperature and activity level.</p>
+
+            <h3>When to Turn</h3>
+            <ul>
+                <li>Once every two to three days during active thermophilic phase</li>
+                <li>If temperatures drop below 120°F for more than a few days</li>
+                <li>Before adding new materials or changing the pile composition</li>
+            </ul>
+
+            <h3>How to Turn</h3>
+            <p>Use a garden fork, shovel, or compost aerator to turn the entire pile. Aim to mix materials thoroughly so that the outer edges reach the center and vice versa.</p>
+
+            <div class="callout note">
+                <p><strong>Important:</strong> Don't turn the pile more than once per day unless it's very small (under 2 cubic feet) or you're actively trying to cool it down. Over-turning can reduce heat production and slow decomposition.</p>
+            </div>
+
+            <h3>Alternative: Windrow Systems</h3>
+            <p>For large-scale operations, windrows (long rows of compost) are turned using specialized equipment that aerates the material as it's moved. This method maintains consistent aeration and heat distribution.</p>
+        </div>
+
+        <!-- Section 7 -->
+        <div class="article-section-wide" id="compost-aging">
+            <h2>Compost Aging</h2>
+            <p>The final stage of hot composting is aging or curing, where the material stabilizes and becomes ready for use. This phase typically lasts four to eight weeks after temperatures have dropped.</p>
+
+            <div class="callout tip">
+                <p><strong>Pro Tip:</strong> Aging allows beneficial microbes to further process the finished compost and reduces phytotoxic compounds that can harm plants if applied too soon.</p>
+            </div>
+
+            <h3>The Cooling Phase (Week 3-4)</h3>
+            <p>As easily accessible food sources diminish and oxygen becomes limiting in the pile core, thermophilic activity slows. Temperatures begin to drop below 120 degrees Fahrenheit, signaling the transition from active decomposition to curing. This phase typically lasts one to two weeks.</p>
+
+            <h3>The Curing Phase (Weeks 4-12)</h3>
+            <p>Mesophilic organisms return to finish processing remaining complex compounds, particularly lignin and partially decomposed cellulose. The compost stabilizes, pH neutralizes, and humic substances form. Proper curing is essential: uncured compost can phytotoxic (harmful to plants) due to organic acids still present in the material.</p>
+
+            <div class="callout tip">
+                <p><strong>Pro Tip:</strong> Steam rising from your pile on a cold morning is a visible sign that thermophilic activity is strong. This is one of the most reliable indicators that your compost system is working correctly.</p>
+            </div>
+        </div>
+
+        <!-- Section 4 -->
+        <div class="article-section-wide" id="c-n-ratio">
+            <h2>Mastering the Carbon-to-Nitrogen Ratio</h2>
+            <p>The carbon-to-nitrogen (C:N) ratio is the single most important factor determining whether your compost pile heats up efficiently or stalls out. Getting this balance right separates successful hot composters from frustrated beginners.</p>
+
+            <h3>Understanding C:N Ratios</h3>
+            <p>Every organic material contains carbon and nitrogen in specific proportions. Carbon provides energy for microbial metabolism; nitrogen provides the protein-building blocks needed for cell reproduction. Microorganisms working in your pile require a C:N ratio of approximately 25 to 30 parts carbon to one part nitrogen by weight for optimal decomposition speed.</p>
+            <p>If the ratio is too high (excess carbon), microbial populations grow slowly because nitrogen is limiting. The pile stays cool and decomposes at a snail's pace. If the ratio is too low (excess nitrogen), microbes reproduce rapidly but cannot process all the available nitrogen, which converts to ammonia gas and escapes as a strong odor.</p>
+
+            <h3>C:N Ratios of Common Materials</h3>
+            <table class="info-table-wide">
+                <thead>
+                    <tr>
+                        <th>Material</th>
+                        <th>C:N Ratio</th>
+                        <th>Category</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Dried leaves (shed)</td>
+                        <td>60:1</td>
+                        <td>Brown material</td>
+                    </tr>
+                    <tr>
+                        <td>Shredded cardboard</td>
+                        <td>400:1</td>
+                        <td>Brown material</td>
+                    </tr>
+                    <tr>
+                        <td>Grass clippings (fresh)</td>
+                        <td>20:1</td>
+                        <td>Green material</td>
+                    </tr>
+                    <tr>
+                        <td>Food scraps</td>
+                        <td>15:1</td>
+                        <td>Green material</td>
+                    </tr>
+                    <tr>
+                        <td>Manure (horse)</td>
+                        <td>20:1</td>
+                        <td>Green material</td>
+                    </tr>
+                    <tr>
+                        <td>Straw</td>
+                        <td>80:1</td>
+                        <td>Brown material</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="callout note">
+                <p><strong>Important:</strong> Remember that materials change their C:N ratios over time. Fresh grass clippings may start at 15:1, but as they dry out, this ratio can shift to 20:1 or higher.</p>
+            </div>
+        </div>
+
+        <!-- Section 8 -->
+        <div class="article-section-wide" id="compost-conditions">
+            <h2>Optimizing Composting Conditions</h2>
+            <p>The success of hot composting depends on creating the right environmental conditions. Proper moisture, temperature, aeration, and material balance are essential for generating heat.</p>
+
+            <h3>Pile Dimensions</h3>
+            <ul>
+                <li>Minimum size: 3 feet wide by 3 feet deep by 3 feet tall (cubic yard)</li>
+                <li>Optimal size: 4-5 feet wide, 4-5 feet deep, and 4-5 feet tall</li>
+            </ul>
+
+            <div class="callout tip">
+                <p><strong>Pro Tip:</strong> If you're starting with a smaller pile, gradually build up volume over time rather than trying to make the entire pile at once.</p>
+            </div>
+
+            <h3>Pile Shape</h3>
+            <p>Aerodynamic shapes such as circles or rectangles work best for heat retention. Avoid narrow, long piles that may not distribute heat evenly.</p>
+
+            <h3>Insulation and Protection</h3>
+            <ul>
+                <li>Wrap the pile in a tarp to maintain moisture and heat during cold weather</li>
+                <li>Position the pile where it receives adequate sun exposure (but not direct afternoon sun)</li>
+                <li>Ensure good drainage beneath the pile to prevent waterlogging</li>
+            </ul>
+        </div>
+
+        <!-- Section 9 -->
+        <div class="article-section-wide" id="using-compost">
+            <h2>Using Your Finished Hot Compost</h2>
+            <p>Freshly made compost is rich in nutrients but needs a curing period before use. It can be applied to various garden areas for soil improvement, plant feeding, and compost tea production.</p>
+
+            <div class="callout tip">
+                <p><strong>Pro Tip:</strong> Use a compost thermometer to verify that your material has cooled sufficiently (below 120°F) before applying it to plants or adding it to other composting systems.</p>
+            </div>
+
+            <h3>Application Methods</h3>
+            <ul>
+                <li><strong>Garden soil amendment:</strong> Mix one part compost with three parts native soil for raised beds, flower beds, and vegetable gardens. Apply at two pounds per ten square feet.</li>
+                <li><strong>Lawn topdressing:</strong> Spread a quarter-inch layer over your lawn in spring or fall to improve soil structure and reduce fertilizer needs.</li>
+                <li><strong>Potting mix component:</strong> Replace twenty to thirty percent of commercial potting soil with hot compost for container gardens and houseplants.</li>
+                <li><strong>Compost tea:</strong> Steep one cup of screened compost in five gallons of non-chlorinated water for twenty-four hours, then apply the liquid fertilizer directly to soil or diluted foliage.</li>
+            </ul>
+        </div>
+
+        <!-- Section 10 -->
+        <div class="article-section-wide" id="troubleshooting-hot">
+            <h2>Troubleshooting Common Problems</h2>
+            <p>Even experienced composters encounter issues. Here are the most common hot composting problems and how to fix them quickly.</p>
+
+            <h3>Pile Won't Heat Up</h3>
+            <p><strong>Cause:</strong> Pile is too small (less than 3x3x3 feet), C:N ratio is too high (too many browns, not enough greens), or moisture is insufficient. <strong>Solution:</strong> Add more nitrogen-rich materials (grass clippings, food scraps, manure). Increase pile size if possible. Water thoroughly and mix to distribute moisture evenly.</p>
+            <p><em>For an in-depth troubleshooting guide covering every reason your compost pile might not be heating up, including moisture, aeration, and inoculant issues, see our <a href="hot-not-heating.html">complete hot compost not heating up troubleshooting guide</a>.</em></p>
+
+            <h3>Pile Smells Like Ammonia</h3>
+            <p><strong>Cause:</strong> Too much nitrogen relative to carbon; excess protein-rich materials without enough carbon to balance them. <strong>Solution:</strong> Immediately add dry browns (shredded leaves, cardboard, straw) and turn thoroughly. Reduce green inputs until the odor resolves.</p>
+
+            <h3>Pile Smells Rotten</h3>
+            <p><strong>Cause:</strong> Anaerobic conditions caused by overwatering, compaction, or infrequent turning. Sulfur-producing bacteria are active instead of aerobic thermophiles. <strong>Solution:</strong> Turn the pile immediately to reintroduce oxygen. Mix in dry browns to absorb excess moisture. Ensure future piles have adequate drainage and aeration.</p>
+
+            <h3>Pile Is Too Hot (Above 160°F)</h3>
+            <p><strong>Cause:</strong> Pile is too large, nitrogen content is excessively high, or turning has been delayed past the optimal window. <strong>Solution:</strong> Turn immediately to release heat and redistribute material. Add dry browns to absorb moisture and dilute nitrogen concentration. Monitor temperature more frequently during subsequent cycles.</p>
+
+            <h3>Pile Dries Out</h3>
+            <p><strong>Cause:</strong> Insufficient initial watering, exposure to wind or sun, or excessive turning that accelerates evaporation. <strong>Solution:</strong> Water thoroughly during the next turn, working moisture deep into the pile core. Cover with a tarp to reduce evaporation. Reduce turning frequency slightly.</p>
+
+            <h3>Pests (Rats, Raccoons, Flies)</h3>
+            <p><strong>Cause:</strong> Exposed food scraps attract scavengers; fruit flies breed in surface material. <strong>Solution:</strong> Bury all food scraps at least six inches deep within the pile core. Cover the pile with hardware cloth or a tight-fitting lid to exclude larger pests. Avoid adding meat, dairy, or oily foods.</p>
+
+            <p><em>For more detailed troubleshooting guidance, visit our <a href="troubleshoot.html">Complete Troubleshooting Guide</a>.</em></p>
+        </div>
+
+        <!-- Section 11 -->
+        <div class="article-section-wide" id="scaling-up">
+            <h2>Scaling Up: From Backyard to Farm</h2>
+            <p>Once you have mastered hot composting at the backyard scale, these strategies help you process larger volumes and integrate composting into broader sustainability practices.</p>
+
+            <h3>Multi-Bin Systems for Continuous Operation</h3>
+            <p>A four-bin or six-bin system allows you to run overlapping batches at different stages simultaneously. With a well-designed system, you can produce finished compost every two to three weeks year-round by staggering pile construction and turning schedules.</p>
+
+            <h3>Community Composting Programs</h3>
+            <p>Schools, neighborhood associations, and community gardens often benefit from shared composting infrastructure. A single large-scale hot composting operation can process food scraps from dozens of households, reducing landfill waste while producing free compost for community garden beds.</p>
+
+            <h3>Farm-Scale Composting</h3>
+            <p>Commercial operations use windrow systems (long rows of compost turned by specialized equipment) or in-vessel systems (enclosed containers with forced aeration). These approaches process tons of organic waste per batch and are used by farms, restaurants, breweries, and municipalities worldwide.</p>
+
+            <h3>Integrating Compost into Crop Production</h3>
+            <p>Farmers apply hot compost at rates ranging from one to five tons per acre depending on crop type and soil conditions. Pre-plant incorporation improves soil structure, water retention, and nutrient availability for the entire growing season. Side-dressing with compost during the growing season provides a slow-release nutrient boost that complements targeted fertilizer applications.</p>
+        </div>
+
+        <!-- Section 12 -->
+        <div class="article-section-wide" id="compost-recipes">
+            <h2>Composting Recipes</h2>
+            <p>These example recipes demonstrate how to create balanced compost piles using different combinations of materials, from beginners' first attempts to advanced systems.</p>
+
+            <h3>The Beginner's Recipe (20:1 C:N Ratio)</h3>
+            <p>This simple recipe is perfect for new composters. Mix 4 parts browns (shredded leaves, newspaper) with 1 part greens (food scraps). Add water to achieve a damp sponge consistency.</p>
+
+            <h3>The Balanced Recipe (25:1 C:N Ratio)</h3>
+            <p>For faster decomposition and better heat generation, use equal parts browns and greens. This ratio works well with most organic materials in typical backyard piles.</p>
+
+            <h3>The High-Nitrogen Recipe (18:1 C:N Ratio)</h3>
+            <p>This recipe uses more nitrogen-rich materials for faster initial heating but requires careful monitoring to avoid ammonia odors. Mix 2 parts browns with 1 part greens and add water.</p>
+
+            <div class="callout note">
+                <p><strong>Important:</strong> Adjust the amount of material based on your pile size, aiming for a minimum cubic yard volume for heat retention.</p>
+            </div>
+        </div>
+
+        <!-- Video Section -->
+        <div id="video-container-hot"></div>
+
+    </main>
+</div><!-- .page-wrapper -->
+
+    <!-- FOOTER: outside grid, spans full width -->
+    <footer class="footer-wide">
+        &copy; 2026 World Composting. All rights reserved.
+    </footer>
+
+    <!-- Video Section Loader -->
+    <script>
+        (async function() {
+            await new Promise(function(resolve) {
+                var s = document.createElement('script');
+                s.src = 'src/js/video-renderer.js?v=4';
+                s.onload = resolve;
+                document.head.appendChild(s);
+            });
+            window.renderVideoSection('video-container-hot', 'hot');
+        })();
+    </script>
+</body>
+</html>
+            <div class="sidebar-logo">
+                <img src="src/assets/logo.png" alt="World Composting Logo" width="64" height="64" loading="eager" onerror="this.src='https://via.placeholder.com/64?text=WC'">
+                <h2>World Composting</h2>
+            </div>
+
+            <ul class="sidebar-nav">
+<li><a href="index.html">Home</a></li>
+                <li><a href="start-here.html">Start Here</a></li>
+                <li><a href="science-of-compost.html">The Science of Compost</a></li>
+                <li><a href="about.html">About</a></li>
+
+                <li><div class="sidebar-divider"></div></li>
+                <li class="sidebar-section-label">Guides</li>
+
+                <li><a href="worm-composting.html">Worm Composting</a></li>
+                <li><a href="hot-composting.html" class="active">Hot Composting</a></li>
+
+                <li><div class="sidebar-divider"></div></li>
+                <li class="sidebar-section-label">Hubs</li>
+
+                <li><a href="hub-worm-composting.html">Worm Composting Hub</a></li>
+                <li><a href="hub-hot-composting.html">Hot Composting Hub</a></li>
+                <li><a href="hub-bokashi.html">Bokashi Hub</a></li>
+                <li><a href="hub-biochar.html">BioChar Hub</a></li>
+                <li><a href="hub-tumbler.html">Tumbler Composting Hub</a></li>
+                <li><a href="hub-lasagna.html">Lasagna Composting Hub</a></li>
+                <li><a href="hub-black-soldier-fly.html">Black Soldier Fly Hub</a></li>
+                <li><a href="hub-energy-efficiency.html">Energy Efficiency Hub</a></li>
+
+                <li class="sidebar-section-label">Checklists</li>
+
+                <li><a href="beginner.html">Beginner's Checklist</a></li>
+                <li><a href="pre-compost.html">Pre-Compost for Worm Bins</a></li>
+                <li><a href="hot.html">Hot Composting Checklist</a></li>
+                <li><a href="bokashi.html">Bokashi Composting</a></li>
+                <li><a href="biochar.html">BioChar Composting</a></li>
+                <li><a href="tumbler.html">Tumbler Composting</a></li>
+                <li><a href="tea.html">Compost Tea</a></li>
+                <li><a href="lasagna.html">Lasagna Composting</a></li>
+                <li><a href="sustainability.html">Sustainability Journey</a></li>
+                <li><a href="energy-efficiency.html">Energy Efficiency at Home</a></li>
+                <li><a href="black_soldier_fly.html">Black Soldier Fly</a></li>
+                <li><a href="zero-waste-kitchen.html">Zero Waste Kitchen</a></li>
+
+                <li><div class="sidebar-divider"></div></li>
+                <li class="sidebar-section-label">Resources</li>
+
+                <li><a href="glossary.html">Glossary</a></li>
+                <li><a href="troubleshoot.html">Troubleshooting</a></li>
+                <li><a href="electric_composter.html">Electric Composters</a></li>
+                <li><a href="faq.html">Frequently Asked Questions</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="sitemap.html">Sitemap</a></li>
+
+                <li><div class="sidebar-divider"></div></li>
+                <li class="sidebar-section-label">Gear</li>
+
+                <li><a href="gear.html">View All Gear →</a></li>
+                </ul>
+
+            <h3>The Cooling Phase (Week 3-4)</h3>
+            <p>As easily accessible food sources diminish and oxygen becomes limiting in the pile core, thermophilic activity slows. Temperatures begin to drop below 120 degrees Fahrenheit, signaling the transition from active decomposition to curing. This phase typically lasts one to two weeks.</p>
+
+            <h3>The Curing Phase (Weeks 4-12)</h3>
+            <p>Mesophilic organisms return to finish processing remaining complex compounds, particularly lignin and partially decomposed cellulose. The compost stabilizes, pH neutralizes, and humic substances form. Proper curing is essential: uncured compost can phytotoxic (harmful to plants) due to organic acids still present in the material.</p>
+
+            <div class="callout tip">
+                <p><strong>Pro Tip:</strong> Steam rising from your pile on a cold morning is a visible sign that thermophilic activity is strong. This is one of the most reliable indicators that your compost system is working correctly.</p>
+            </div>
+        </div>
+
+        <!-- Section 4 -->
+        <div class="article-section-wide" id="c-n-ratio">
+            <h2>Mastering the Carbon-to-Nitrogen Ratio</h2>
+            <p>The carbon-to-nitrogen (C:N) ratio is the single most important factor determining whether your compost pile heats up efficiently or stalls out. Getting this balance right separates successful hot composters from frustrated beginners.</p>
+
+            <h3>Understanding C:N Ratios</h3>
+            <p>Every organic material contains carbon and nitrogen in specific proportions. Carbon provides energy for microbial metabolism; nitrogen provides the protein-building blocks needed for cell reproduction. Microorganisms working in your pile require a C:N ratio of approximately 25 to 30 parts carbon to one part nitrogen by weight for optimal decomposition speed.</p>
+            <p>If the ratio is too high (excess carbon), microbial populations grow slowly because nitrogen is limiting. The pile stays cool and decomposes at a snail's pace. If the ratio is too low (excess nitrogen), microbes reproduce rapidly but cannot process all the available nitrogen, which converts to ammonia gas and escapes as a strong odor.</p>
+
+            <h3>C:N Ratios of Common Materials</h3>
+            <table class="info-table-wide">
+                <thead>
+                    <tr>
+                        <th>Material</th>
+                        <th>C:N Ratio</th>
+                        <th>Category</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Dried leaves</td><td>50-80:1</td><td>Brown (carbon)</td></tr>
+                    <tr><td>Straw</td><td>40-75:1</td><td>Brown (carbon)</td></tr>
+                    <tr><td>Wood chips</td><td>80-200:1</td><td>Brown (carbon)</td></tr>
+                    <tr><td>Shredded paper</td><td>150-200:1</td><td>Brown (carbon)</td></tr>
+                    <tr><td>Fresh grass clippings</td><td>15-25:1</td><td>Green (nitrogen)</td></tr>
+                    <tr><td>Food scraps</td><td>25-40:1</td><td>Green (nitrogen)</td></tr>
+                    <tr><td>Coffee grounds</td><td>20:1</td><td>Green (nitrogen)</td></tr>
+                    <tr><td>Fresh manure (cow/horse)</td><td>15-25:1</td><td>Green (nitrogen)</td></tr>
+                    <tr><td>Finished compost</td><td>10-15:1</td><td>Balanced activator</td></tr>
+                </tbody>
+            </table>
+
+            <h3>The Practical Rule of Thumb</h3>
+            <p>Rather than calculating exact weights and ratios, most experienced composters use a simple volume-based approach: mix roughly three parts browns to one part greens by volume. This approximates the 25-30:1 target ratio for most common material combinations.</p>
+            <p>The easiest way to achieve this balance is to layer your pile with alternating three-to-four-inch layers of browns and two-to-three-inch layers of greens, starting with a coarse brown base for drainage. As you add kitchen scraps throughout the week, always cover them with a layer of browns to maintain the ratio and prevent odors.</p>
+            <p><em>For a complete reference chart with C:N ratios of dozens of common materials and exact mixing calculations, see our <a href="hot-cn-ratio.html">C:N Ratio Guide for Hot Composting</a>.</em></p>
+
+            <div class="callout warning">
+                <p><strong>Warning:</strong> Fresh grass clippings have an exceptionally low C:N ratio (15-25:1) and can mat together, creating anaerobic conditions that stifle decomposition. If using grass clippings, mix them thoroughly with dry leaves or shredded paper rather than piling them alone.</p>
+            </div>
+        </div>
+
+        <!-- Section 5 -->
+        <div class="article-section-wide" id="pile-design">
+            <h2>Pile Design and Sizing</h2>
+            <p>The physical dimensions of your compost pile directly determine whether it can reach and sustain thermophilic temperatures. Heat is generated by microbial activity throughout the pile volume, but heat is lost through the surface area exposed to ambient air. The key is maximizing volume while minimizing surface-area-to-volume ratio.</p>
+
+            <h3>The Minimum Size Rule</h3>
+            <p>A hot compost pile must be at least three feet tall and three feet wide (a 3x3x3 foot cube) to retain sufficient heat for thermophilic bacteria. Piles smaller than this lose heat faster than microbes can generate it, remaining in the mesophilic range and decomposing slowly.</p>
+            <p>The maximum practical size is approximately four to five feet across. Beyond this width, oxygen cannot reach the core effectively, even with regular turning. The ideal shape is a squat trapezoid: wide base tapering slightly toward the top, which maximizes volume while maintaining good internal airflow.</p>
+
+            <h3>Containment Options</h3>
+            <table class="info-table-wide">
+                <thead>
+                    <tr>
+                        <th>System</th>
+                        <th>Cost</th>
+                        <th>Airflow</th>
+                        <th>Scalability</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>3-Bin Wooden System</strong></td><td>$50-100</td><td>Good (slatted sides)</td><td>High (sequential batches)</td></tr>
+                    <tr><td><strong>Wire Cylinder</strong></td><td>$30-60</td><td>Excellent (open mesh)</td><td>Moderate (single pile)</td></tr>
+                    <tr><td><strong>Pallet Frame</strong></td><td>$0-20 (free pallets)</td><td>Good (gaps between slats)</td><td>High (multiple bays)</td></tr>
+                    <tr><td><strong>Free-Standing Windrow</strong></td><td>$0</td><td>Moderate</td><td>Very high (large scale)</td></tr>
+                </tbody>
+            </table>
+
+            <h3>The Three-Bin System (Recommended)</h3>
+            <p>A three-bin wooden system is the gold standard for serious home composters. Build three adjacent bays using wooden pallets or 2x4 frames with slatted sides:</p>
+            <ul>
+                <li><strong>Bin 1 (Active):</strong> Where you build new piles and manage thermophilic decomposition through regular turning.</li>
+                <li><strong>Bin 2 (Curing):</strong> Where material rests after the active phase, stabilizing into finished compost with minimal intervention.</li>
+                <li><strong>Bin 3 (Storage/Harvest):</strong> Where fully cured compost is stored until needed in your garden.</li>
+            </ul>
+            <p>This system allows continuous operation: as you move material from Bin 1 to Bin 2, then to Bin 3, you always have a fresh bin available for new piles. Each batch completes its cycle while the next one begins.</p>
+
+            <h3>Site Selection</h3>
+            <p>Choose a level, well-drained location with easy access to water and your source materials (kitchen scraps, yard waste, leaves). Partial sun helps warm the pile in cooler weather, but avoid full afternoon exposure in hot climates where drying becomes a problem. Place the pile directly on soil rather than concrete or gravel; soil organisms migrate into the pile from below, contributing to decomposition.</p>
+        </div>
+
+        <!-- Section 6 -->
+        <div class="article-section-wide" id="greens-browns">
+            <h2>Greens vs Browns: A Deep Dive</h2>
+            <p>Mastery of greens and browns is the foundation of successful hot composting. Understanding what each category contributes, how they interact, and which materials fall into each group enables you to build balanced piles from whatever organic waste is available.</p>
+
+            <h3>Greens (Nitrogen-Rich Materials)</h3>
+            <p>Greens provide the nitrogen that fuels rapid microbial reproduction. They are typically fresh, moist, and decompose quickly:</p>
+            <ul>
+                <li><strong>Kitchen scraps:</strong> Fruit and vegetable peelings, coffee grounds, tea bags, grain remnants</li>
+                <li><strong>Fresh grass clippings:</strong> Excellent nitrogen source but must be mixed with browns to prevent matting</li>
+                <li><strong>Fresh plant trimmings:</strong> Garden prunings, weed growth (before seeding), spent annual plants</li>
+                <li><strong>Manure:</strong> Cow, horse, chicken, and rabbit manure are nitrogen powerhouses; use aged manure to avoid burning plants</li>
+                <li><strong>Sewage sludge (commercial only):</strong> Not recommended for home systems due to potential contaminant concerns</li>
+            </ul>
+
+            <h3>Browns (Carbon-Rich Materials)</h3>
+            <p>Browns provide the carbon energy source and structural framework that allows oxygen to reach the pile core:</p>
+            <ul>
+                <li><strong>Dried leaves:</strong> The most abundant and accessible brown; shred with a lawnmower for faster decomposition</li>
+                <li><strong>Straw and hay:</strong> Excellent structure and airflow; straw decomposes more slowly than hay (which contains seeds)</li>
+                <li><strong>Wood chips and sawdust:</strong> Slow-decomposing but excellent for long-term pile structure; use sparingly in the active phase</li>
+                <li><strong>Shredded cardboard and paper:</strong> Fast-decomposing carbon source; remove tape and labels, soak before adding</li>
+                <li><strong>Dried grass and pine needles:</strong> Good browns but pine needles decompose very slowly; best in the curing phase</li>
+            </ul>
+
+            <h3>The Balance Strategy</h3>
+            <p>The goal is to mix greens and browns so that every nitrogen-rich layer is covered by a carbon-rich layer. This serves three purposes: it maintains the target C:N ratio, prevents odors from escaping nitrogen-rich materials, and provides structural support for oxygen flow. A practical approach is to add one shovel of browns for every wheelbarrow of greens you incorporate into the pile.</p>
+            <p><em>For a detailed breakdown of which materials work best for hot composting, ranked by decomposition speed and C:N contribution, see our guide on <a href="hot-best-materials.html">the best materials for hot composting piles</a>.</em></p>
+        </div>
+
+        <!-- Section 7 -->
+        <div class="article-section-wide" id="building-your-pile">
+            <h2>Step-by-Step: Building Your Hot Compost Pile</h2>
+            <p>Building a hot compost pile correctly from the start sets up your entire decomposition cycle for success. Follow these steps carefully to create optimal conditions for thermophilic bacteria.</p>
+
+            <h3>Step 1: Prepare the Site</h3>
+            <p>Select your location (see Pile Design above) and clear away any debris. If building on bare soil, loosen the top two inches with a garden fork to encourage drainage and allow soil organisms to migrate upward into the pile.</p>
+
+            <h3>Step 2: Create the Brown Base</h3>
+            <p>Lay down a six-inch layer of coarse browns such as small branches, straw, or wood chips. This base layer serves three critical functions: it provides drainage for excess moisture, creates an oxygen pathway from the soil upward through the pile, and prevents the bottom of your compost from becoming waterlogged anaerobic sludge.</p>
+
+            <h3>Step 3: Layer Greens and Browns</h3>
+            <p>Add alternating layers of greens and browns, each three to four inches thick for browns and two to three inches for greens. Do not worry about creating perfect lasagna-like layers; the goal is volume distribution, not precision. As you build upward, gently mix materials with a pitchfork as you go rather than keeping them perfectly separated.</p>
+
+            <h3>Step 4: Add an Inoculant</h3>
+            <p>Spread a shovelful of finished compost, garden soil, or well-aged manure over the layers. This inoculates your pile with the diverse microbial communities needed to kickstart thermophilic decomposition. Without this biological starter, it takes longer for native bacteria to build up to the populations required for rapid heating.</p>
+
+            <h3>Step 5: Water Each Layer</h3>
+            <p>As you add each layer, water it lightly with a hose or watering can. The goal is uniform moisture throughout the pile, comparable to a wrung-out sponge: damp but yielding only one or two drops when squeezed. Aim for forty to sixty percent moisture content overall.</p>
+
+            <h3>Step 6: Shape and Cover</h3>
+            <p>Shape your pile as a squat trapezoid with a wide base (three feet minimum) tapering slightly toward the top. The pile should be three to four feet tall. Cover with a tarp or thick layer of finished compost to retain heat, prevent rain saturation, and slow moisture evaporation. Leave sides slightly open for airflow; do not seal it completely.</p>
+
+            <div class="callout tip">
+                <p><strong>Pro Tip:</strong> Insert your compost thermometer into the core immediately after building the pile. If temperatures begin rising within twenty-four to forty-eight hours, you have achieved a successful start. If not, check your C:N ratio and moisture levels.</p>
+            </div>
+        </div>
+
+        <!-- Section 8 -->
+        <div class="article-section-wide" id="temperature-management">
+            <h2>Temperature Management and Turning</h2>
+            <p>The thermophilic phase of hot composting requires active management through regular temperature monitoring and pile turning. This is where the difference between a lazy compost heap and a true hot compost system becomes apparent.</p>
+
+            <h3>Essential Equipment</h3>
+            <ul>
+                <li><strong>Compost thermometer:</strong> A long-stem (at least twenty-inch) thermometer capable of reading up to 200 degrees Fahrenheit. Insert it deep into the core at the same location each time for consistent readings.</li>
+                <li><strong>Pitchfork or compost aerator:</strong> Used for turning the pile and reintroducing oxygen. A standard garden fork works; a dedicated compost turner is more efficient for larger piles.</li>
+                <li><strong>Hose with spray nozzle:</strong> For moisture management during turns.</li>
+                <li><strong>Notebook or phone app:</strong> To track daily temperature readings and turning dates.</li>
+            </ul>
+
+            <h3>The Daily Monitoring Routine</h3>
+            <p>Check your pile temperature at the same time each day, ideally in the early morning before solar heating skews readings. Record the core temperature and note any visible steam or odor changes.</p>
+            <p>A healthy heating cycle progresses as follows:</p>
+            <ol>
+                <li><strong>Mesophilic (Days 1-2):</strong> Temperature rises from ambient to approximately 100 degrees Fahrenheit as initial microbial colonization occurs.</li>
+                <li><strong>Thermophilic ramp-up (Day 3):</strong> Temperature climbs rapidly through 110, 120, and into the 130-150 degree range as thermophilic populations explode.</li>
+                <li><strong>Sustained peak (Days 4-14):</strong> Temperature holds steady in the 130-150 degree range with minor fluctuations. This is the active decomposition phase where most breakdown occurs.</li>
+                <li><strong>Natural decline (Day 15+):</strong> As food sources diminish, temperature gradually drops below 120 degrees Fahrenheit, signaling the end of the thermophilic phase and the beginning of curing.</li>
+            </ol>
+
+            <h3>When to Turn</h3>
+            <p>Turn your pile when the core temperature peaks and begins dropping by ten to fifteen degrees from its maximum. This indicates that oxygen in the core has been depleted or food resources have been exhausted. Turning serves four critical functions:</p>
+            <ul>
+                <li><strong>Oxygen replenishment:</strong> Brings fresh air into the pile core, allowing thermophilic bacteria to resume aerobic metabolism.</li>
+                <li><strong>Material redistribution:</strong> Moves undecomposed material from the cooler exterior into the hot center where decomposition is fastest.</li>
+                <li><strong>Moisture equalization:</strong> Mixes dry spots with wet spots, ensuring uniform conditions throughout the pile.</li>
+                <li><strong>Heat regulation:</strong> Prevents temperatures from exceeding 160 degrees Fahrenheit, which would kill beneficial microbes and sterilize the pile.</li>
+            </ul>
+
+            <h3>Turning Schedule</h3>
+            <table class="info-table-wide">
+                <thead>
+                    <tr><th>Phase</th><th>Frequency</th><th>Temperature Target</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Week 1-2 (Peak thermophilic)</td><td>Every 2-3 days</td><td>130-150°F</td></tr>
+                    <tr><td>Week 3-4 (Declining thermophilic)</td><td>Every 4-7 days</td><td>100-130°F</td></tr>
+                    <tr><td>Curing phase</td><td>Once every 2 weeks</td><td>Ambient to 90°F</td></tr>
+                </tbody>
+            </table>
+
+            <h3>Moisture Management During Turns</h3>
+            <p>Each time you turn, check moisture throughout the pile. The center is often drier than the edges due to heat-driven evaporation. Add water with a hose sprayer if material feels dry; mix in dry browns if any sections are soggy. Consistent moisture throughout the entire pile is critical for even decomposition.</p>
+            <p><em>For advanced techniques on accelerating your compost cycle, including hotboxing, inoculant use, and particle size optimization, see our guide on <a href="hot-speed-tips.html">how to turn compost faster</a>.</em></p>
+
+            <div class="callout warning">
+                <p><strong>Warning:</strong> Never let your pile exceed 160 degrees Fahrenheit (71 degrees Celsius). At this temperature, beneficial thermophilic bacteria begin dying off and the pile becomes biologically sterile. If temperatures spike above this threshold, turn immediately to cool it down and add moisture.</p>
+            </div>
+        </div>
+
+        <!-- Section 9 -->
+        <div class="article-section-wide" id="curing-screening">
+            <h2>Curing, Screening, and Storing Finished Compost</h2>
+            <p>The curing phase is often neglected by eager composters who want to use their finished product immediately. However, proper curing is essential for producing stable, plant-safe compost that won't rob nitrogen from your soil or harm delicate root systems.</p>
+
+            <h3>Recognizing Finished Compost</h3>
+            <p>Compost is ready when it meets all of these criteria:</p>
+            <ul>
+                <li><strong>Appearance:</strong> Dark brown to black, crumbly texture with no recognizable original materials (except perhaps small wood fragments).</li>
+                <li><strong>Odor:</strong> Earthy, pleasant smell reminiscent of forest soil or fresh rain. No sour, ammonia, or rotten egg odors.</li>
+                <li><strong>Temperature:</strong> No longer generates heat when turned; remains near ambient temperature.</li>
+                <li><strong>Moisture:</strong> Holds together when squeezed but crumbles easily when poked.</li>
+            </ul>
+
+            <h3>The Curing Process</h3>
+            <p>Once the thermophilic phase ends, move the material to a curing bin or designated area. Turn it once every two weeks during the four-to-eight-week curing period. This slow, cool decomposition allows remaining complex compounds (especially lignin) to break down and humic substances to form. Curing also stabilizes pH and reduces any phytotoxic organic acids.</p>
+
+            <h3>Screening</h3>
+            <p>Before storing or using your compost, screen it through a half-inch mesh sieve to remove large undecomposed fragments (sticks, thick stems, unshredded cardboard). These materials can be returned to the active pile for further decomposition. The screened material is uniform, fine-textured compost ready for garden use.</p>
+
+            <h3>Storage</h3>
+            <p>Store finished compost in a covered bin or under a tarp to protect it from rain and sun exposure. Properly stored compost remains stable indefinitely and can be used whenever your garden needs it. Avoid compacting stored compost; keep it loose and aerated to preserve microbial viability.</p>
+
+            <h3>Using Hot Compost</h3>
+            <ul>
+                <li><strong>Garden soil amendment:</strong> Mix one part compost with three parts native soil for raised beds, flower beds, and vegetable gardens. Apply at two pounds per ten square feet.</li>
+                <li><strong>Lawn topdressing:</strong> Spread a quarter-inch layer over your lawn in spring or fall to improve soil structure and reduce fertilizer needs.</li>
+                <li><strong>Potting mix component:</strong> Replace twenty to thirty percent of commercial potting soil with hot compost for container gardens and houseplants.</li>
+                <li><strong>Compost tea:</strong> Steep one cup of screened compost in five gallons of non-chlorinated water for twenty-four hours, then apply the liquid fertilizer directly to soil or diluted foliage.</li>
+            </ul>
+        </div>
+
+        <!-- Section 10 -->
+        <div class="article-section-wide" id="troubleshooting-hot">
+            <h2>Troubleshooting Common Problems</h2>
+            <p>Even experienced composters encounter issues. Here are the most common hot composting problems and how to fix them quickly.</p>
+
+            <h3>Pile Won't Heat Up</h3>
+            <p><strong>Cause:</strong> Pile is too small (less than 3x3x3 feet), C:N ratio is too high (too many browns, not enough greens), or moisture is insufficient. <strong>Solution:</strong> Add more nitrogen-rich materials (grass clippings, food scraps, manure). Increase pile size if possible. Water thoroughly and mix to distribute moisture evenly.</p>
+            <p><em>For an in-depth troubleshooting guide covering every reason your compost pile might not be heating up, including moisture, aeration, and inoculant issues, see our <a href="hot-not-heating.html">complete hot compost not heating up troubleshooting guide</a>.</em></p>
+
+            <h3>Pile Smells Like Ammonia</h3>
+            <p><strong>Cause:</strong> Too much nitrogen relative to carbon; excess protein-rich materials without enough carbon to balance them. <strong>Solution:</strong> Immediately add dry browns (shredded leaves, cardboard, straw) and turn thoroughly. Reduce green inputs until the odor resolves.</p>
+
+            <h3>Pile Smells Rotten</h3>
+            <p><strong>Cause:</strong> Anaerobic conditions caused by overwatering, compaction, or infrequent turning. Sulfur-producing bacteria are active instead of aerobic thermophiles. <strong>Solution:</strong> Turn the pile immediately to reintroduce oxygen. Mix in dry browns to absorb excess moisture. Ensure future piles have adequate drainage and aeration.</p>
+
+            <h3>Pile Is Too Hot (Above 160°F)</h3>
+            <p><strong>Cause:</strong> Pile is too large, nitrogen content is excessively high, or turning has been delayed past the optimal window. <strong>Solution:</strong> Turn immediately to release heat and redistribute material. Add dry browns to absorb moisture and dilute nitrogen concentration. Monitor temperature more frequently during subsequent cycles.</p>
+
+            <h3>Pile Dries Out</h3>
+            <p><strong>Cause:</strong> Insufficient initial watering, exposure to wind or sun, or excessive turning that accelerates evaporation. <strong>Solution:</strong> Water thoroughly during the next turn, working moisture deep into the pile core. Cover with a tarp to reduce evaporation. Reduce turning frequency slightly.</p>
+
+            <h3>Pests (Rats, Raccoons, Flies)</h3>
+            <p><strong>Cause:</strong> Exposed food scraps attract scavengers; fruit flies breed in surface material. <strong>Solution:</strong> Bury all food scraps at least six inches deep within the pile core. Cover the pile with hardware cloth or a tight-fitting lid to exclude larger pests. Avoid adding meat, dairy, or oily foods.</p>
+
+            <p><em>For more detailed troubleshooting guidance, visit our <a href="troubleshoot.html">Complete Troubleshooting Guide</a>.</em></p>
+        </div>
+
+        <!-- Section 11 -->
+        <div class="article-section-wide" id="scaling-up">
+            <h2>Scaling Up: From Backyard to Farm</h2>
+            <p>Once you have mastered hot composting at the backyard scale, these strategies help you process larger volumes and integrate composting into broader sustainability practices.</p>
+
+            <h3>Multi-Bin Systems for Continuous Operation</h3>
+            <p>A four-bin or six-bin system allows you to run overlapping batches at different stages simultaneously. With a well-designed system, you can produce finished compost every two to three weeks year-round by staggering pile construction and turning schedules.</p>
+
+            <h3>Community Composting Programs</h3>
+            <p>Schools, neighborhood associations, and community gardens often benefit from shared composting infrastructure. A single large-scale hot composting operation can process food scraps from dozens of households, reducing landfill waste while producing free compost for community garden beds.</p>
+
+            <h3>Farm-Scale Composting</h3>
+            <p>Commercial operations use windrow systems (long rows of compost turned by specialized equipment) or in-vessel systems (enclosed containers with forced aeration). These approaches process tons of organic waste per batch and are used by farms, restaurants, breweries, and municipalities worldwide.</p>
+
+            <h3>Integrating Compost into Crop Production</h3>
+            <p>Farmers apply hot compost at rates ranging from one to five tons per acre depending on crop type and soil conditions. Pre-plant incorporation improves soil structure, water retention, and nutrient availability for the entire growing season. Side-dressing with compost during the growing season provides a slow-release nutrient boost that complements targeted fertilizer applications.</p>
+
+            <div class="callout-wide">
+                <p><strong>Next Steps:</strong> Ready to start your hot composting journey? Check out our <a href="hot.html">Beginner's Hot Composting Checklist</a> for a step-by-step interactive guide, or browse our <a href="gear.html">Recommended Gear Page</a> for the best tools and supplies.</p>
+            </div>
+
+            <!-- Related Pages -->
+            <div class="related-pages-wide">
+                <div class="related-card-wide">
+                    <a href="hot.html">&#128218; Beginner's Checklist</a>
+                    <p>Step-by-step setup guide with interactive checklist</p>
+                </div>
+                <div class="related-card-wide">
+                    <a href="gear.html">&#128736; Recommended Gear</a>
+                    <p>Best thermometers, pitchforks, and containment systems</p>
+                </div>
+                <div class="related-card-wide">
+                    <a href="troubleshoot.html">&#9888;&#65039; Troubleshooting Guide</a>
+                    <p>Solve common compost pile problems quickly</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Video Section -->
+        <div id="video-container-hot"></div>
+
+        </main>
+
+    </div><!-- .page-wrapper -->
+
+    <!-- FOOTER: outside grid, spans full width -->
+    <footer class="footer-wide">
+        &copy; 2026 World Composting. All rights reserved.
+    </footer>
+
+    <!-- Video Section Loader -->
+    <script>
+        (async function() {
+            await new Promise(function(resolve) {
+                var s = document.createElement('script');
+                s.src = 'src/js/video-renderer.js?v=4';
+                s.onload = resolve;
+                document.head.appendChild(s);
+            });
+            window.renderVideoSection('video-container-hot', 'hot');
+        })();
+    </script>
+</body>
+</html>
