@@ -1,296 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="canonical" href="https://www.worldcomposting.com/biochar.html">
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-    <title>World Composting | BioChar Checklist</title>
-    <meta name="description" content="Learn how to make and use biochar for your garden. Covers feedstock selection, pyrolysis methods, activation techniques, and soil application rates.">
-    <!-- Google Search Console Verification -->
-    <meta name="google-site-verification" content="google8a4b2c3d1e5f6789">
-    <link rel="stylesheet" href="src/styles/theme.css">
-    <link rel="stylesheet" href="src/styles/layout.css">
-    <link rel="stylesheet" href="src/styles/video-section.css">
-    <style>/* Back link: wider */
-        .back-link-wide {
-            display: inline-block;
-            font-size: 0.85rem;
-            color: var(--ocean-blue);
-            text-decoration: none;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            transition: opacity 0.2s;
-        }
-
-.back-link-wide:hover { opacity: 0.7; }
-
-.back-link-wide:focus-visible {
-            outline: 2px solid var(--ocean-blue);
-            outline-offset: 2px;
-            border-radius: 2px;
-        }
-
-/* Pillar hero: wider */
-        .pillar-hero-wide {
-            background: white;
-            border-radius: 16px;
-            padding: 2.5rem 3rem;
-            box-shadow: var(--card-shadow);
-            margin-bottom: 2rem;
-        }
-
-.pillar-hero-wide h1 {
-            font-family: 'Lora', serif;
-            color: var(--forest-green);
-            font-size: 2.4rem;
-            line-height: 1.3;
-            margin-top: 0;
-            text-align: center;
-        }
-
-.pillar-hero-wide p.subtitle {
-            text-align: center;
-            font-style: italic;
-            color: var(--ocean-blue);
-            font-size: 1.1rem;
-            margin-bottom: 0;
-        }
-
-/* Hero intro: wider */
-        .hero-intro-wide {
-            background: white;
-            border-radius: 16px;
-            padding: 2.5rem 3rem;
-            box-shadow: var(--card-shadow);
-            margin-bottom: 2rem;
-            font-size: 1rem;
-            line-height: 1.7;
-            color: var(--text-dark);
-        }
-
-.hero-intro-wide strong { color: var(--forest-green); }
-
-.hero-intro-wide h2 {
-            font-family: 'Lora', serif;
-            color: var(--forest-green);
-            font-size: 1.6rem;
-            margin-top: 0;
-            margin-bottom: 1rem;
-        }
-
-.hero-intro-wide h3 {
-            font-family: 'Lora', serif;
-            color: var(--ocean-blue);
-            font-size: 1.25rem;
-            margin-top: 1.8rem;
-            margin-bottom: 0.75rem;
-        }
-
-.hero-intro-wide p { margin-bottom: 1.2rem; }
-
-.hero-intro-wide ul { padding-left: 1.5rem; margin-bottom: 1.2rem; }
-
-.hero-intro-wide li { margin-bottom: 0.6rem; line-height: 1.7; }
-
-/* Progress Tracker */
-        #progress-wrapper-wide {
-            background: white;
-            border-radius: 16px;
-            padding: 1.25rem 1.5rem;
-            box-shadow: var(--card-shadow);
-            margin-bottom: 2rem;
-        }
-
-#progress-text {
-            font-weight: 700;
-            font-size: 0.95rem;
-            color: var(--forest-green);
-            margin-bottom: 0.6rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-#progress-percent {
-            font-weight: 600;
-            font-size: 0.85rem;
-            color: var(--ocean-blue);
-        }
-
-#progress-bar {
-            height: 10px;
-            background: var(--sage-green);
-            border-radius: 99px;
-            overflow: hidden;
-        }
-
-#progress-fill {
-            height: 100%;
-            width: 0%;
-            background: linear-gradient(90deg, var(--leaf-lime), var(--forest-green));
-            border-radius: 99px;
-            transition: width 0.4s ease;
-        }
-
-/* Phase (Collapsible Section) */
-        .phase-wide {
-            background: white;
-            border-radius: 16px;
-            box-shadow: var(--card-shadow);
-            margin-bottom: 1.25rem;
-            overflow: hidden;
-            border: 1px solid rgba(0,0,0,0.04);
-            transition: box-shadow 0.3s ease;
-        }
-
-.phase-wide:hover {
-            box-shadow: 0 12px 25px -5px rgba(75, 54, 33, 0.12);
-        }
-
-.phase-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            width: 100%;
-            padding: 1.25rem 1.5rem;
-            background: none;
-            border: none;
-            cursor: pointer;
-            font-family: 'Inter', sans-serif;
-            font-size: 1.05rem;
-            font-weight: 800;
-            color: var(--forest-green);
-            text-align: left;
-            transition: background 0.2s ease;
-            gap: 0.75rem;
-        }
-
-.phase-header:hover { background: rgba(45, 90, 39, 0.04); }
-
-.phase-header:focus-visible {
-            outline: 2px solid var(--ocean-blue);
-            outline-offset: -2px;
-            border-radius: 16px 16px 0 0;
-        }
-
-.phase-header .phase-arrow {
-            font-size: 0.8rem;
-            transition: transform 0.3s ease;
-            color: var(--ocean-blue);
-            flex-shrink: 0;
-        }
-
-.phase-wide.active .phase-arrow { transform: rotate(180deg); }
-
-/* Checklist Items */
-        .checklist-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 0.75rem;
-            padding: 0.75rem 0;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
-            cursor: pointer;
-            transition: opacity 0.2s ease;
-        }
-
-.checklist-item:last-of-type { border-bottom: none; }
-
-.checklist-item input[type="checkbox"] {
-            appearance: none;
-            -webkit-appearance: none;
-            width: 24px;
-            height: 24px;
-            min-width: 24px;
-            min-height: 24px;
-            border: 2px solid var(--forest-green);
-            border-radius: 5px;
-            flex-shrink: 0;
-            margin-top: 3px;
-            cursor: pointer;
-            position: relative;
-            transition: background 0.2s, border-color 0.2s;
-        }
-
-.checklist-item input[type="checkbox"]:checked {
-            background: var(--forest-green);
-            border-color: var(--forest-green);
-        }
-
-.checklist-item input[type="checkbox"]:checked::after {
-            content: '';
-            position: absolute;
-            left: 5px;
-            top: 1px;
-            width: 6px;
-            height: 10px;
-            border: solid white;
-            border-width: 0 2px 2px 0;
-            transform: rotate(45deg);
-        }
-
-.checklist-item input[type="checkbox"]:focus-visible {
-            outline: 2px solid var(--ocean-blue);
-            outline-offset: 2px;
-        }
-
-.check-emoji {
-            font-size: 1.3rem;
-            flex-shrink: 0;
-            margin-top: 1px;
-        }
-
-.check-content { flex: 1; min-width: 0; }
-
-.check-title {
-            display: block;
-            font-weight: 600;
-            font-size: 0.95rem;
-            color: var(--text-dark);
-            transition: color 0.2s;
-        }
-
-.check-desc {
-            display: block;
-            font-size: 0.82rem;
-            color: #666;
-            margin-top: 2px;
-            line-height: 1.5;
-            transition: color 0.2s;
-        }
-
-.check-desc a {
-            color: var(--ocean-blue);
-            text-decoration: underline;
-            font-weight: 500;
-        }
-
-.check-desc a:hover { color: var(--forest-green); }
-
-.checklist-item.completed .check-title {
-            color: #999;
-            text-decoration: line-through;
-        }
-
-.checklist-item.completed .check-desc { color: #aaa; }
-
-.checklist-item.completed .check-emoji { opacity: 0.5; }
-
-/* Section Title */
-        .section-title-wide {
-            font-family: 'Lora', serif;
-            color: var(--forest-green);
-            font-size: 1.4rem;
-            margin-top: 2rem;
-            margin-bottom: 1rem;
-        }
-
-/* ===== RESPONSIVE BREAKPOINTS ===== */</style>
-    <!-- Google Analytics -->
-
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KRHYVJXZLE"></script>
-    <script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://www.worldcomposting.com/biochar.html" rel="canonical"/>
+<link href="/favicon.ico" rel="icon" type="image/x-icon"/>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon"/>
+<title>World Composting | BioChar Checklist</title>
+<meta content="Learn how to make and use biochar for your garden. Covers feedstock selection, pyrolysis methods, activation techniques, and soil application rates." name="description"/>
+<!-- Google Search Console Verification -->
+<meta content="google8a4b2c3d1e5f6789" name="google-site-verification"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="src/styles/theme.css" rel="stylesheet"/>
+<link href="src/styles/layout.css" rel="stylesheet"/>
+<link href="src/styles/components.css" rel="stylesheet"/>
+<link href="src/styles/video-section.css" rel="stylesheet"/>
+<link href="src/styles/article.css" rel="stylesheet"/>
+<!-- Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-KRHYVJXZLE"></script>
+<script>
       if (!window.location.hostname.includes('localhost') && !window.location.hostname.includes('127.0.0.1')) {
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
@@ -298,14 +28,13 @@
         gtag('config', 'G-KRHYVJXZLE');
       }
     </script>
-    <!-- Pinterest Tag -->
-    <script type="text/javascript">
+<!-- Pinterest Tag -->
+<script type="text/javascript">
       _pt = "2612544072053";
       (function(e,t,n){var r,i=document.createElement(n);i.async=1,i.src="https://cdn.pinterest.com/tags.min.js#" + encodeURIComponent(_pt);if(t){r=document.createElement(n);r.type="text/javascript";r.defer=!0;r.src="//pixel-assets.pinterest.com/tags/pid-req-utils.js",document.getElementsByTagName("head")[0].appendChild(r)}i.onload=i.onerror=function(){var e=window.pinall;window.pinall=null;var t=1;e&&e.length>0&&(t=e[0]);for(var n;n=e.length;)n.shift(),(n=n[0])&&"function"==typeof n.n&&n.n(t);window.pinall=e};document.getElementsByTagName("head")[0].appendChild(i)})(window,document,"script");
     </script>
-
-    <!-- HowTo Schema: Biochar Production -->
-    <script type="application/ld+json">
+<!-- HowTo Schema: Biochar Production -->
+<script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "HowTo",
@@ -337,289 +66,239 @@
       ]
     }
     </script>
-    <link rel="alternate" href="/llms.txt" title="World Composting AI Index">
-</head>
-    <div class="page-wrapper">
-
-        <!-- ===== SIDEBAR NAVIGATION ===== -->
-        <aside class="sidebar">
-            <div class="sidebar-logo">
-                <img src="src/assets/logo.png" alt="World Composting Logo" width="64" height="64" loading="eager" onerror="this.src='https://via.placeholder.com/64?text=WC'">
-                <h2>World Composting</h2>
-            </div>
-
-            <ul class="sidebar-nav">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="start-here.html">Start Here</a></li>
-                <li><a href="science-of-compost.html">The Science of Compost</a></li>
-                <li><a href="about.html">About</a></li>
-
-                <li><div class="sidebar-divider"></div></li>
-                <li class="sidebar-section-label">Guides</li>
-
-                <li><a href="worm-composting.html">Worm Composting</a></li>
-                <li><a href="hot-composting.html">Hot Composting</a></li>
-
-                <li><div class="sidebar-divider"></div></li>
-                <li class="sidebar-section-label">Hubs</li>
-
-                <li><a href="hub-worm-composting.html">Worm Composting Hub</a></li>
-                <li><a href="hub-hot-composting.html">Hot Composting Hub</a></li>
-                <li><a href="hub-bokashi.html">Bokashi Hub</a></li>
-                <li><a href="hub-biochar.html">BioChar Hub</a></li>
-                <li><a href="hub-tumbler.html">Tumbler Composting Hub</a></li>
-                <li><a href="hub-lasagna.html">Lasagna Composting Hub</a></li>
-                <li><a href="hub-black-soldier-fly.html">Black Soldier Fly Hub</a></li>
-                <li><a href="hub-energy-efficiency.html">Energy Efficiency Hub</a></li>
-
-                <li class="sidebar-section-label">Gear</li>
-
-                <li><a href="gear.html" style="color: var(--forest-green); font-weight: 700; font-size: 1.05rem;">🛒 View All Gear → <span class="popular-badge">Popular</span></a></li>
-
-                <li><div class="sidebar-divider"></div></li>
-                <li class="sidebar-section-label">Checklists</li>
-
-                <li><a href="beginner.html">Beginner's Checklist</a></li>
-                <li><a href="pre-compost.html">Pre-Compost for Worm Bins</a></li>
-                <li><a href="hot.html">Hot Composting Checklist</a></li>
-                <li><a href="bokashi.html">Bokashi Composting</a></li>
-                <li><a href="biochar.html" class="active">BioChar Composting</a></li>
-                <li><a href="tumbler.html">Tumbler Composting</a></li>
-                <li><a href="tea.html">Compost Tea</a></li>
-                <li><a href="lasagna.html">Lasagna Composting</a></li>
-                <li><a href="black_soldier_fly.html">Black Soldier Fly</a></li>
-
-                <li><div class="sidebar-divider"></div></li>
-                <li class="sidebar-section-label">Troubleshooting / Deep Dives</li>
-
-                <li><a href="sustainability.html">Sustainability Journey</a></li>
-                <li><a href="energy-efficiency.html">Energy Efficiency at Home</a></li>
-                <li><a href="black_soldier_fly.html">Black Soldier Fly</a></li>
-                <li><a href="zero-waste-kitchen.html">Zero Waste Kitchen</a></li>
-
-                <li><div class="sidebar-divider"></div></li>
-                <li class="sidebar-section-label">Resources</li>
-
-                <li><a href="glossary.html">Glossary</a></li>
-                <li><a href="troubleshoot.html">Troubleshooting</a></li>
-                <li><a href="electric_composter.html">Electric Composters</a></li>
-                <li><a href="faq.html">Frequently Asked Questions</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="sitemap.html">Sitemap</a></li>
-            </ul>
-        </aside>
-
-
-        <!-- ===== MAIN CONTENT AREA ===== -->
-        <main class="main-content">
-
-            <a href="/" class="back-link-wide">&#8592; Back to Home</a>
-
-            <!-- Hero Section -->
-            <div class="pillar-hero-wide">
-                <h1>BioChar Checklist</h1>
-                <p class="subtitle">Create black gold for your soil.</p>
-            </div>
-
-        <!-- Progress Tracker -->
-        <div id="progress-wrapper-wide">
-            <div id="progress-text">
-                <span id="progress-label">0 of 9 steps completed</span>
-                <span id="progress-percent">0%</span>
-            </div>
-            <div id="progress-bar"><div id="progress-fill"></div></div>
-        </div>
-
-        <!-- Hero Intro -->
-        <div class="hero-intro-wide">
-            <h2>What is Biochar?</h2>
-            <p>Biochar is a stable, carbon-rich form of charcoal produced through <strong>pyrolysis</strong>, a thermochemical decomposition process that occurs when organic biomass—such as wood chips, agricultural residues, or crop waste—is heated between 400°C and 700°C in a low-oxygen or oxygen-free environment. Unlike traditional charcoal used for fuel, biochar is specifically engineered for use as a <strong>soil amendment</strong> with remarkable longevity. Its highly porous structure, resembling a microscopic honeycomb, creates an ideal habitat for beneficial soil microorganisms while simultaneously improving the physical and chemical properties of soil across diverse climates and soil types.</p>
-            <p>Once incorporated into the soil, biochar acts as a <strong>permanent carbon reservoir</strong>, persisting for hundreds to thousands of years without degrading. This extraordinary stability makes it one of the most effective tools for long-term carbon sequestration. Beyond its climate benefits, biochar functions as a natural soil conditioner: its vast surface area—often exceeding 300 square meters per gram—traps and holds moisture, preventing water loss during dry periods. The porous matrix also serves as a <strong>nutrient reservoir</strong>, capturing dissolved minerals and fertilizers that would otherwise leach away, and releasing them gradually to plant roots on demand. This nutrient buffering capacity reduces the need for frequent fertilization and minimizes nutrient runoff into waterways.</p>
-            <p>Biochar also fosters a thriving <strong>microbial ecosystem</strong> in the root zone. The pore spaces provide protected microhabitats where beneficial bacteria, fungi, and mycorrhizae can colonize and flourish, shielded from predators and environmental stress. This enhanced biological activity leads to improved nutrient cycling, disease suppression, and overall soil resilience. When combined with compost or other organic amendments, biochar becomes a powerful tool for regenerating degraded soils and building long-term fertility in both home gardens and large-scale agricultural operations.</p>
-            <h3>Why Use Biochar in Your Garden?</h3>
-            <ul>
-                <li><strong>Enhanced Water Retention</strong> — Biochar's porous structure acts like a sponge, absorbing and holding up to five times its weight in water, reducing irrigation frequency and protecting plants during drought.</li>
-                <li><strong>Nutrient Buffering</strong> — Cation exchange capacity increases significantly, allowing biochar to capture and store essential plant nutrients like potassium, calcium, and magnesium, then release them as needed.</li>
-                <li><strong>Carbon Sequestration</strong> — Each ton of biochar permanently locks away roughly 2.5 tons of CO₂ equivalent, actively combating climate change while simultaneously improving your soil.</li>
-            </ul>
-        </div>
-
-        <!-- Checklist Phases -->
-        <div id="phases">
-            <!-- Phase 1 -->
-            <div class="phase phase-wide active">
-                <button class="phase-header" onclick="togglePhase(this)">
-                    <span>Phase 1: Preparation 🪵</span>
-                    <span class="phase-arrow">▼</span>
-                </button>
-                <div class="phase-body">
-                    <label class="checklist-item" for="bc_1">
-                        <input type="checkbox" id="bc_1" data-id="bc_1">
-                        <span class="check-emoji">🪵</span>
-                        <span class="check-content">
-                            <span class="check-title">Select your feedstock</span>
-                            <span class="check-desc">Use dry, woody materials like twigs, wood chips, or nut shells. Avoid treated wood or anything containing chemicals/plastics.</span>
-                        </span>
-                    </label>
-                    <label class="checklist-item" for="bc_2">
-                        <input type="checkbox" id="bc_2" data-id="bc_2">
-                        <span class="check-emoji">✂️</span>
-                        <span class="check-content">
-                            <span class="check-title">Chop into small, uniform pieces</span>
-                            <span class="check-desc">Smaller pieces ensure more even heating and faster pyrolysis.</span>
-                        </span>
-                    </label>
-                </div>
-            </div>
-
-            <!-- Phase 2 -->
-            <div class="phase phase-wide">
-                <button class="phase-header" onclick="togglePhase(this)">
-                    <span>Phase 2: Pyrolysis 🔥</span>
-                    <span class="phase-arrow">▼</span>
-                </button>
-                <div class="phase-body">
-                    <label class="checklist-item" for="bc_3">
-                        <input type="checkbox" id="bc_3" data-id="bc_3">
-                        <span class="check-emoji">🔥</span>
-                        <span class="check-content">
-                            <span class="check-title">Prepare your kiln/drum</span>
-                            <span class="check-desc">Ensure the container is well-ventilated but prevents direct oxygen contact with hot coals.</span>
-                        </span>
-                    </label>
-                    <label class="checklist-item" for="bc_4">
-                        <input type="checkbox" id="bc_4" data-id="bc_4">
-                        <span class="check-emoji">⏳</span>
-                        <span class="check-content">
-                            <span class="check-title">Manage the burn</span>
-                            <span class="check-desc">Start the fire and add feedstock in layers, allowing it to char without fully turning to enough ash.</span>
-                        </span>
-                    </label>
-                </div>
-            </div>
-
-            <!-- Phase 3 -->
-            <div class="phase phase-wide">
-                <button class="phase-header" onclick="togglePhase(this)">
-                    <span>Phase 3: Quenching & Crushing 💧</span>
-                    <span class="phase-arrow">▼</span>
-                </button>
-                <div class="phase-body">
-                    <label class="checklist-item" for="bc_5">
-                        <input type="checkbox" id="bc_5" data-id="bc_5">
-                        <span class="check-emoji">💦</span>
-                        <span class="check-content">
-                            <span class="check-title">Quench immediately</span>
-                            <span class="check-desc">Once charred, quench the material immediately with water to stop combustion.</span>
-                        </span>
-                    </label>
-                    <label class="checklist-item" for="bc_6">
-                        <input type="checkbox" id="bc_6" data-id="bc_6">
-                        <span class="check-emoji">🔨</span>
-                        <span class="check-content">
-                            <span class="check-title">Crush the biochar</span>
-                            <span class="check-desc">Crush the biochar into smaller, usable pieces.</span>
-                        </span>
-                    </label>
-                </div>
-            </div>
-
-             <!-- Phase 4 -->
-             <div class="phase phase-wide">
-                <button class="phase-header" onclick="togglePhase(this)">
-                    <span>Phase 4: Activation & Use ✨</span>
-                    <span class="phase-arrow">▼</span>
-                </button>
-                <div class="phase-body">
-                    <label class="checklist-item" for="bc_7">
-                        <input type="checkbox" id="bc_7" data-id="bc_7">
-                        <span class="check-emoji">🧪</span>
-                        <span class="check-content">
-                            <span class="check-title">CRITICAL: Activate the char</span>
-                            <span class="check-desc">'Charge' or activate the biochar by soaking it in liquid compost tea or nutrient-rich leachate for 24-48 hours.</span>
-                        </span>
-                    </label>
-                    <label class="checklist-item" for="bc_8">
-                        <input type="checkbox" id="bc_8" data-id="bc_8">
-                        <span class="check-emoji">🪣</span>
-                        <span class="check-content">
-                            <span class="check-title">Mix into soil/compost</span>
-                            <span class="check-desc">Mix the activated biochar into your active worm bin or hot compost pile.</span>
-                        </span>
-                    </label>
-                    <label class="checklist-item" for="bc_9">
-                        <input type="checkbox" id="bc_9" data-id="bc_9">
-                        <span class="check-emoji">👀</span>
-                        <span class="check-content">
-                            <span class="check-title">Monitor moisture</span>
-                            <span class="check-desc">Monitor soil moisture; biochar helps retain water and beneficial microbes.</span>
-                        </span>
-                    </label>
-                </div>
-            </div>
-        </div>
-
-        <!-- Troubleshooting -->
-        <div id="troubleshoot-section">
-            <div class="section-title">Troubleshooting</div>
-            <div class="phase phase-wide active" style="margin-bottom: 1rem;">
-                <button class="phase-header" onclick="togglePhase(this)">
-                    <span>🌱 Grass is growing through the cardboard</span>
-                    <span class="phase-arrow">▼</span>
-                </button>
-                <div class="phase-body">
-                    <p style="font-size: 0.9rem; color: var(--text-dark); line-height: 1.6;">Cardboard isn't blocking light completely — here is how to fix it:</p>
-                    <ul style="margin-top: 0.5rem; padding-left: 1.2rem; font-size: 0.88rem; color: var(--text-dark); line-height: 1.6;">
-                        <li><strong>Gaps between sheets</strong> — Overlap cardboard edges by at least 6 inches and cover any gaps with extra layers of newspaper or straw.</li>
-                        <li><strong>Cardboard too thin</strong> — Use double-layered corrugated cardboard for perennial weeds like bindweed or quackgrass. Single layer works fine for annual grasses.</li>
-                        <li><strong>Not enough weight on top</strong> — Add a heavier compost layer (3–4 inches) to press the cardboard flat against the soil and block all light penetration.</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="phase phase-wide" style="margin-bottom: 1rem;">
-                <button class="phase-header" onclick="togglePhase(this)">
-                    <span>🤢 Pile smells bad or is slimy</span>
-                    <span class="phase-arrow">▼</span>
-                </button>
-                <div class="phase-body">
-                    <p style="font-size: 0.9rem; color: var(--text-dark); line-height: 1.6;">A healthy lasagna bed should smell earthy, not foul:</p>
-                    <ul style="margin-top: 0.5rem; padding-left: 1.2rem; font-size: 0.88rem; color: var(--text-dark); line-height: 1.6;">
-                        <li><strong>Too much nitrogen (greens)</strong> — Slimy, smelly layers mean too many grass clippings or manure. Add dry browns like straw, leaves, or shredded cardboard and mix them in.</li>
-                        <li><strong>Poor aeration</strong> — Compacted layers suffocate microbes. Fluff the affected area with a garden fork to restore airflow.</li>
-                        <li><strong>Too wet</strong> — Cover the bed with a tarp during heavy rain or add extra mulch on top to shed excess water.</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="phase phase-wide" style="margin-bottom: 1rem;">
-                <button class="phase-header" onclick="togglePhase(this)">
-                    <span>🐌 Slugs or snails are eating your plants</span>
-                    <span class="phase-arrow">▼</span>
-                </button>
-                <div class="phase-body">
-                    <p style="font-size: 0.9rem; color: var(--text-dark); line-height: 1.6;">Lasagna beds are moist and slug-friendly — manage them proactively:</p>
-                    <ul style="margin-top: 0.5rem; padding-left: 1.2rem; font-size: 0.88rem; color: var(--text-dark); line-height: 1.6;">
-                        <li><strong>Mulch with abrasive materials</strong> — Sprinkle crushed eggshells, diatomaceous earth, or coarse sand around plant stems to deter slugs.</li>
-                        <li><strong>Plant slug-resistant varieties</strong> — Herbs like rosemary, lavender, and thyme are naturally avoided by most slugs. Use them as border plants.</li>
-                        <li><strong>Hand-pick at night</strong> — Go out after dark with a flashlight and collect slugs. Place shallow beer traps around the bed perimeter to catch stragglers.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- Video Section -->
-        <div id="video-container-biochar"></div>
-
-        </main>
-
-    </div><!-- .page-wrapper -->
-
-    <!-- FOOTER: outside grid, spans full width -->
-    <footer class="footer-wide">
-        <p class="footer-copy">&copy; 2026 World Composting</p>
-        <p class="footer-copy" style="margin-top: 0.5rem;">As an Amazon Associate, I earn from qualifying purchases.</p>
-    </footer>
-
-    <script>
+<link href="/llms.txt" rel="alternate" title="World Composting AI Index"/>
+</head><body><header class="top-nav" id="top-nav">
+<div class="nav-inner">
+<a aria-label="World Composting — home" class="nav-logo" href="index.html">
+<img alt="World Composting Logo" height="40" loading="eager" onerror="this.src='https://via.placeholder.com/40?text=WC'" src="src/assets/logo.png" width="40"/>
+<span class="nav-logo-text">World Composting<small>Guides · Checklists · Gear</small></span>
+</a>
+<button aria-controls="nav-links" aria-expanded="false" aria-label="Toggle menu" class="nav-burger" id="nav-burger">
+<span></span><span></span><span></span>
+</button>
+<ul class="nav-links" id="nav-links">
+<li><a class="nav-link" href="index.html">Home</a></li>
+<li><a class="nav-link" href="start-here.html">Start Here</a></li>
+<li><a class="nav-link" href="worm-composting.html">Worm</a></li>
+<li><a class="nav-link" href="hot-composting.html">Hot Compost</a></li>
+<li><a class="nav-link" href="beginner.html">Checklists</a></li>
+<li><a class="nav-link" href="faq.html">FAQ</a></li>
+</ul>
+<div class="nav-ctas">
+<a class="btn btn-cta-gear" href="gear.html">🛒 Gear</a>
+<a class="btn btn-cta-yt" href="http://youtube.com/@worldcomposting" rel="noopener" target="_blank">▶ YouTube</a>
+</div>
+</div>
+</header><script>
+        (function () {
+            var burger = document.getElementById('nav-burger');
+            var nav = document.getElementById('top-nav');
+            if (burger && nav) {
+                burger.addEventListener('click', function () {
+                    var open = nav.classList.toggle('nav-open');
+                    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+                });
+            }
+        })();
+    </script>
+<div class="page-wrapper">
+<!-- ===== SIDEBAR NAVIGATION ===== -->
+<!-- ===== MAIN CONTENT AREA ===== -->
+<main class="main-content">
+<a class="back-link-wide" href="/">← Back to Home</a>
+<!-- Hero Section -->
+<div class="pillar-hero-wide"><img alt="A hand holding a finished biochar briquette ready for soil" class="hero-photo" decoding="async" fetchpriority="high" loading="eager" src="src/assets/images/biochar.jpg"/>
+<h1>BioChar Checklist</h1>
+<p class="subtitle">Create black gold for your soil.</p>
+</div>
+<!-- Progress Tracker -->
+<div id="progress-wrapper-wide">
+<div id="progress-text">
+<span id="progress-label">0 of 9 steps completed</span>
+<span id="progress-percent">0%</span>
+</div>
+<div id="progress-bar"><div id="progress-fill"></div></div>
+</div>
+<!-- Hero Intro -->
+<div class="hero-intro-wide">
+<h2>What is Biochar?</h2>
+<p>Biochar is a stable, carbon-rich form of charcoal produced through <strong>pyrolysis</strong>, a thermochemical decomposition process that occurs when organic biomass—such as wood chips, agricultural residues, or crop waste—is heated between 400°C and 700°C in a low-oxygen or oxygen-free environment. Unlike traditional charcoal used for fuel, biochar is specifically engineered for use as a <strong>soil amendment</strong> with remarkable longevity. Its highly porous structure, resembling a microscopic honeycomb, creates an ideal habitat for beneficial soil microorganisms while simultaneously improving the physical and chemical properties of soil across diverse climates and soil types.</p>
+<p>Once incorporated into the soil, biochar acts as a <strong>permanent carbon reservoir</strong>, persisting for hundreds to thousands of years without degrading. This extraordinary stability makes it one of the most effective tools for long-term carbon sequestration. Beyond its climate benefits, biochar functions as a natural soil conditioner: its vast surface area—often exceeding 300 square meters per gram—traps and holds moisture, preventing water loss during dry periods. The porous matrix also serves as a <strong>nutrient reservoir</strong>, capturing dissolved minerals and fertilizers that would otherwise leach away, and releasing them gradually to plant roots on demand. This nutrient buffering capacity reduces the need for frequent fertilization and minimizes nutrient runoff into waterways.</p>
+<p>Biochar also fosters a thriving <strong>microbial ecosystem</strong> in the root zone. The pore spaces provide protected microhabitats where beneficial bacteria, fungi, and mycorrhizae can colonize and flourish, shielded from predators and environmental stress. This enhanced biological activity leads to improved nutrient cycling, disease suppression, and overall soil resilience. When combined with compost or other organic amendments, biochar becomes a powerful tool for regenerating degraded soils and building long-term fertility in both home gardens and large-scale agricultural operations.</p>
+<h3>Why Use Biochar in Your Garden?</h3>
+<ul>
+<li><strong>Enhanced Water Retention</strong> — Biochar's porous structure acts like a sponge, absorbing and holding up to five times its weight in water, reducing irrigation frequency and protecting plants during drought.</li>
+<li><strong>Nutrient Buffering</strong> — Cation exchange capacity increases significantly, allowing biochar to capture and store essential plant nutrients like potassium, calcium, and magnesium, then release them as needed.</li>
+<li><strong>Carbon Sequestration</strong> — Each ton of biochar permanently locks away roughly 2.5 tons of CO₂ equivalent, actively combating climate change while simultaneously improving your soil.</li>
+</ul>
+</div>
+<!-- Checklist Phases -->
+<div id="phases">
+<!-- Phase 1 -->
+<div class="phase phase-wide active">
+<button class="phase-header" onclick="togglePhase(this)">
+<span>Phase 1: Preparation 🪵</span>
+<span class="phase-arrow">▼</span>
+</button>
+<div class="phase-body">
+<label class="checklist-item" for="bc_1">
+<input data-id="bc_1" id="bc_1" type="checkbox"/>
+<span class="check-emoji">🪵</span>
+<span class="check-content">
+<span class="check-title">Select your feedstock</span>
+<span class="check-desc">Use dry, woody materials like twigs, wood chips, or nut shells. Avoid treated wood or anything containing chemicals/plastics.</span>
+</span>
+</label>
+<label class="checklist-item" for="bc_2">
+<input data-id="bc_2" id="bc_2" type="checkbox"/>
+<span class="check-emoji">✂️</span>
+<span class="check-content">
+<span class="check-title">Chop into small, uniform pieces</span>
+<span class="check-desc">Smaller pieces ensure more even heating and faster pyrolysis.</span>
+</span>
+</label>
+</div>
+</div>
+<!-- Phase 2 -->
+<div class="phase phase-wide">
+<button class="phase-header" onclick="togglePhase(this)">
+<span>Phase 2: Pyrolysis 🔥</span>
+<span class="phase-arrow">▼</span>
+</button>
+<div class="phase-body">
+<label class="checklist-item" for="bc_3">
+<input data-id="bc_3" id="bc_3" type="checkbox"/>
+<span class="check-emoji">🔥</span>
+<span class="check-content">
+<span class="check-title">Prepare your kiln/drum</span>
+<span class="check-desc">Ensure the container is well-ventilated but prevents direct oxygen contact with hot coals.</span>
+</span>
+</label>
+<label class="checklist-item" for="bc_4">
+<input data-id="bc_4" id="bc_4" type="checkbox"/>
+<span class="check-emoji">⏳</span>
+<span class="check-content">
+<span class="check-title">Manage the burn</span>
+<span class="check-desc">Start the fire and add feedstock in layers, allowing it to char without fully turning to enough ash.</span>
+</span>
+</label>
+</div>
+</div>
+<!-- Phase 3 -->
+<div class="phase phase-wide">
+<button class="phase-header" onclick="togglePhase(this)">
+<span>Phase 3: Quenching &amp; Crushing 💧</span>
+<span class="phase-arrow">▼</span>
+</button>
+<div class="phase-body">
+<label class="checklist-item" for="bc_5">
+<input data-id="bc_5" id="bc_5" type="checkbox"/>
+<span class="check-emoji">💦</span>
+<span class="check-content">
+<span class="check-title">Quench immediately</span>
+<span class="check-desc">Once charred, quench the material immediately with water to stop combustion.</span>
+</span>
+</label>
+<label class="checklist-item" for="bc_6">
+<input data-id="bc_6" id="bc_6" type="checkbox"/>
+<span class="check-emoji">🔨</span>
+<span class="check-content">
+<span class="check-title">Crush the biochar</span>
+<span class="check-desc">Crush the biochar into smaller, usable pieces.</span>
+</span>
+</label>
+</div>
+</div>
+<!-- Phase 4 -->
+<div class="phase phase-wide">
+<button class="phase-header" onclick="togglePhase(this)">
+<span>Phase 4: Activation &amp; Use ✨</span>
+<span class="phase-arrow">▼</span>
+</button>
+<div class="phase-body">
+<label class="checklist-item" for="bc_7">
+<input data-id="bc_7" id="bc_7" type="checkbox"/>
+<span class="check-emoji">🧪</span>
+<span class="check-content">
+<span class="check-title">CRITICAL: Activate the char</span>
+<span class="check-desc">'Charge' or activate the biochar by soaking it in liquid compost tea or nutrient-rich leachate for 24-48 hours.</span>
+</span>
+</label>
+<label class="checklist-item" for="bc_8">
+<input data-id="bc_8" id="bc_8" type="checkbox"/>
+<span class="check-emoji">🪣</span>
+<span class="check-content">
+<span class="check-title">Mix into soil/compost</span>
+<span class="check-desc">Mix the activated biochar into your active worm bin or hot compost pile.</span>
+</span>
+</label>
+<label class="checklist-item" for="bc_9">
+<input data-id="bc_9" id="bc_9" type="checkbox"/>
+<span class="check-emoji">👀</span>
+<span class="check-content">
+<span class="check-title">Monitor moisture</span>
+<span class="check-desc">Monitor soil moisture; biochar helps retain water and beneficial microbes.</span>
+</span>
+</label>
+</div>
+</div>
+</div>
+<!-- Troubleshooting -->
+<div id="troubleshoot-section">
+<div class="section-title">Troubleshooting</div>
+<div class="phase phase-wide active" style="margin-bottom: 1rem;">
+<button class="phase-header" onclick="togglePhase(this)">
+<span>🌱 Grass is growing through the cardboard</span>
+<span class="phase-arrow">▼</span>
+</button>
+<div class="phase-body">
+<p style="font-size: 0.9rem; color: var(--text-dark); line-height: 1.6;">Cardboard isn't blocking light completely — here is how to fix it:</p>
+<ul style="margin-top: 0.5rem; padding-left: 1.2rem; font-size: 0.88rem; color: var(--text-dark); line-height: 1.6;">
+<li><strong>Gaps between sheets</strong> — Overlap cardboard edges by at least 6 inches and cover any gaps with extra layers of newspaper or straw.</li>
+<li><strong>Cardboard too thin</strong> — Use double-layered corrugated cardboard for perennial weeds like bindweed or quackgrass. Single layer works fine for annual grasses.</li>
+<li><strong>Not enough weight on top</strong> — Add a heavier compost layer (3–4 inches) to press the cardboard flat against the soil and block all light penetration.</li>
+</ul>
+</div>
+</div>
+<div class="phase phase-wide" style="margin-bottom: 1rem;">
+<button class="phase-header" onclick="togglePhase(this)">
+<span>🤢 Pile smells bad or is slimy</span>
+<span class="phase-arrow">▼</span>
+</button>
+<div class="phase-body">
+<p style="font-size: 0.9rem; color: var(--text-dark); line-height: 1.6;">A healthy lasagna bed should smell earthy, not foul:</p>
+<ul style="margin-top: 0.5rem; padding-left: 1.2rem; font-size: 0.88rem; color: var(--text-dark); line-height: 1.6;">
+<li><strong>Too much nitrogen (greens)</strong> — Slimy, smelly layers mean too many grass clippings or manure. Add dry browns like straw, leaves, or shredded cardboard and mix them in.</li>
+<li><strong>Poor aeration</strong> — Compacted layers suffocate microbes. Fluff the affected area with a garden fork to restore airflow.</li>
+<li><strong>Too wet</strong> — Cover the bed with a tarp during heavy rain or add extra mulch on top to shed excess water.</li>
+</ul>
+</div>
+</div>
+<div class="phase phase-wide" style="margin-bottom: 1rem;">
+<button class="phase-header" onclick="togglePhase(this)">
+<span>🐌 Slugs or snails are eating your plants</span>
+<span class="phase-arrow">▼</span>
+</button>
+<div class="phase-body">
+<p style="font-size: 0.9rem; color: var(--text-dark); line-height: 1.6;">Lasagna beds are moist and slug-friendly — manage them proactively:</p>
+<ul style="margin-top: 0.5rem; padding-left: 1.2rem; font-size: 0.88rem; color: var(--text-dark); line-height: 1.6;">
+<li><strong>Mulch with abrasive materials</strong> — Sprinkle crushed eggshells, diatomaceous earth, or coarse sand around plant stems to deter slugs.</li>
+<li><strong>Plant slug-resistant varieties</strong> — Herbs like rosemary, lavender, and thyme are naturally avoided by most slugs. Use them as border plants.</li>
+<li><strong>Hand-pick at night</strong> — Go out after dark with a flashlight and collect slugs. Place shallow beer traps around the bed perimeter to catch stragglers.</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- Video Section -->
+<div id="video-container-biochar"></div>
+</main>
+</div><!-- .page-wrapper -->
+<!-- FOOTER: outside grid, spans full width -->
+<footer class="footer-wide">
+<p class="footer-copy">© 2026 World Composting</p>
+<p class="footer-copy" style="margin-top: 0.5rem;">As an Amazon Associate, I earn from qualifying purchases.</p>
+</footer>
+<script>
         function togglePhase(button) {
             const phase = button.parentElement;
             phase.classList.toggle('active');
@@ -665,5 +344,67 @@
         })();
 
     </script>
-</body>
-</html>
+<section aria-label="Get started" class="cta-band">
+<div class="cta-band-inner">
+<div class="cta-band-text">
+<h2>Ready to turn scraps into soil?</h2>
+<p>Watch the full step-by-step walkthroughs on YouTube, or grab the exact gear I recommend in my builds.</p>
+</div>
+<div class="cta-band-actions">
+<a class="btn btn-youtube btn-lg" href="http://youtube.com/@worldcomposting" rel="noopener" target="_blank">▶ Watch on YouTube</a>
+<a class="btn btn-gear btn-lg" href="gear.html">Shop Compost Gear</a>
+</div>
+</div>
+</section><footer class="site-footer">
+<div class="footer-cols">
+<div class="footer-brand">
+<a href="index.html"><img alt="World Composting Logo" height="52" loading="eager" src="src/assets/logo.png" width="52"/></a>
+<p>Complete composting guides, interactive checklists, and gear recommendations for people who actually want their compost to work.</p>
+<p><a class="btn btn-youtube" href="http://youtube.com/@worldcomposting" rel="noopener" target="_blank">▶ World Composting on YouTube</a></p>
+</div>
+<div class="footer-col">
+<h3>Guides</h3>
+<ul>
+<li><a href="start-here.html">Start Here</a></li>
+<li><a href="worm-composting.html">Worm Composting</a></li>
+<li><a href="hot-composting.html">Hot Composting</a></li>
+<li><a href="bokashi.html">Bokashi</a></li>
+<li><a href="biochar.html">BioChar</a></li>
+<li><a href="lasagna.html">Lasagna Composting</a></li>
+<li><a href="tumbler.html">Tumbler</a></li>
+<li><a href="black_soldier_fly.html">Black Soldier Fly</a></li>
+<li><a href="tea.html">Compost Tea</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h3>Hubs</h3>
+<ul>
+<li><a href="hub-worm-composting.html">Worm Composting Hub</a></li>
+<li><a href="hub-hot-composting.html">Hot Composting Hub</a></li>
+<li><a href="hub-bokashi.html">Bokashi Hub</a></li>
+<li><a href="hub-biochar.html">BioChar Hub</a></li>
+<li><a href="hub-tumbler.html">Tumbler Hub</a></li>
+<li><a href="hub-lasagna.html">Lasagna Hub</a></li>
+<li><a href="hub-black-soldier-fly.html">Black Soldier Fly Hub</a></li>
+<li><a href="hub-energy-efficiency.html">Energy Efficiency Hub</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h3>Resources</h3>
+<ul>
+<li><a href="beginner.html">Beginner's Checklist</a></li>
+<li><a href="troubleshoot.html">Troubleshooting</a></li>
+<li><a href="science-of-compost.html">The Science of Compost</a></li>
+<li><a href="glossary.html">Glossary</a></li>
+<li><a href="faq.html">FAQ</a></li>
+<li><a href="blog.html">Blog</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="sitemap.html">Sitemap</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-legal">
+<p>© 2026 World Composting. All rights reserved.</p>
+<p>As an Amazon Associate, I earn from qualifying purchases. Some product links are affiliate links at no extra cost to you.</p>
+<p cls="footer-credits"><a href="photo-credits.html">Photo credits (Wikimedia Commons, PD/CC licenses)</a></p></div>
+</footer></body></html>

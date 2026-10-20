@@ -1,254 +1,170 @@
-/* Article / Deep Dive Styles for World Composting */
-/* Shared by all pillar and cluster articles */
+/* ============================================================
+   WORLD COMPOSTING — ARTICLE / BLOG
+   Long-form article pages: post meta, body typography,
+   headings, blockquote, lists, images, TOC, related pages.
+   Photos are intentionally NOT injected into article pages —
+   this file only styles their existing markup.
+   ============================================================ */
 
-/* Page Container */
-.container {
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 1.5rem;
-}
-
-/* Breadcrumb Navigation */
-.breadcrumb {
-    font-size: 0.85rem;
-    color: var(--ocean-blue);
-    margin-bottom: 1.5rem;
-    line-height: 1.6;
-}
-.breadcrumb a {
-    color: var(--forest-green);
-    text-decoration: none;
-    font-weight: 600;
-}
-.breadcrumb a:hover {
-    text-decoration: underline;
+/* ---------- Article shell ---------- */
+.article-section-wide {
+  max-width: var(--container-narrow);
+  margin: 0 auto;
 }
 
-/* Article Card */
-.content-card {
-    background: white;
-    border-radius: 16px;
-    padding: 2rem;
-    box-shadow: var(--card-shadow);
-    margin-bottom: 2rem;
+/* ---------- Post meta ---------- */
+.post-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .5rem 1.1rem;
+  margin: -0.4rem 0 2rem;
+  font-size: .85rem;
+  color: var(--ink-3);
+  padding-bottom: 1.4rem;
+  border-bottom: 1px solid var(--line);
 }
+.post-meta .meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+}
+.post-meta time,
+.post-meta .post-meta-date { color: var(--ink-3); }
+.post-meta .post-meta-author { font-weight: 600; color: var(--ink-2); }
+.post-meta .post-meta-time { font-weight: 600; color: var(--ink-2); }
 
-/* Lead / Intro Paragraph */
-.lead {
-    font-size: 1.15rem;
-    line-height: 1.7;
-    color: var(--text-dark);
-    margin-top: 0;
-    margin-bottom: 1.5rem;
+/* ---------- Article body typography ---------- */
+.article-section-wide p {
+  color: var(--ink-2);
+  font-size: 1.03rem;
+  line-height: 1.85;
 }
+.article-section-wide h2 {
+  margin-top: 2.6rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--line);
+  scroll-margin-top: calc(var(--nav-h) + 20px);
+}
+.article-section-wide h2:first-of-type { border-top: 0; padding-top: 0; }
+.article-section-wide h3 {
+  margin-top: 2rem;
+  color: var(--forest-2);
+  scroll-margin-top: calc(var(--nav-h) + 20px);
+}
+.article-section-wide ul,
+.article-section-wide ol { margin: 0 0 1.4rem; }
+.article-section-wide li {
+  margin: .45em 0;
+  color: var(--ink-2);
+  line-height: 1.7;
+}
+.article-section-wide blockquote {
+  margin: 2rem 0;
+  padding: 1.4rem 1.8rem;
+  border-left: 4px solid var(--gold);
+  background: var(--surface-2);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-style: italic;
+  color: var(--forest-2);
+}
+.article-section-wide blockquote p { margin: 0; }
+.article-section-wide figure { margin: 2rem 0; }
+.article-section-wide figcaption {
+  font-size: .84rem;
+  color: var(--ink-3);
+  text-align: center;
+  margin-top: .6rem;
+}
+.article-section-wide code {
+  background: var(--bg-alt);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: .12em .4em;
+  font-size: .88em;
+}
+.article-section-wide pre {
+  background: var(--forest-3);
+  color: #e8e6dd;
+  border-radius: var(--radius);
+  padding: 1.3rem 1.5rem;
+  overflow-x: auto;
+  margin: 1.6rem 0;
+}
+.article-section-wide pre code {
+  background: none;
+  border: 0;
+  padding: 0;
+  color: inherit;
+}
+.article-section-wide strong { color: var(--ink); }
+.article-section-wide em { color: var(--ink-2); }
 
-/* Headings */
-.content-card h2 {
-    font-family: 'Lora', serif;
-    color: var(--forest-green);
-    font-size: 1.5rem;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
+/* ---------- TOC ---------- */
+.toc-wide,
+.toc {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.5rem 1.7rem;
+  margin: 2rem 0;
+  box-shadow: var(--shadow-sm);
 }
-.content-card h3 {
-    font-family: 'Inter', sans-serif;
-    color: var(--ocean-blue);
-    font-size: 1.15rem;
-    margin-top: 1.75rem;
-    margin-bottom: 0.75rem;
+.toc-wide h3,
+.toc h3 {
+  font-size: .8rem;
+  font-family: var(--font-body);
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin-bottom: .9rem;
 }
+.toc-wide ul,
+.toc ul { list-style: none; margin: 0; padding: 0; }
+.toc-wide li,
+.toc li {
+  margin: .4em 0;
+  padding-left: 1.1rem;
+  position: relative;
+}
+.toc-wide li::before,
+.toc li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--clay);
+}
+.toc-wide a,
+.toc a {
+  color: var(--forest-2);
+  font-size: .95rem;
+  font-weight: 500;
+}
+.toc-wide a:hover,
+.toc a:hover { color: var(--clay-2); }
 
-/* Body Paragraphs */
-.content-card p {
-    font-size: 1rem;
-    line-height: 1.7;
-    color: var(--text-dark);
-    margin-top: 0;
-    margin-bottom: 1rem;
+/* ---------- Article page CTA (in-body, before related) ---------- */
+.article-cta-wide {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin: 3rem 0 0;
+  padding: 2rem 2.2rem;
+  background: linear-gradient(120deg, var(--forest-3), var(--forest));
+  border-radius: var(--radius-lg);
+  color: #fff;
 }
+.article-cta-wide h3 { color: #fff; margin: 0 0 .3rem; font-size: 1.35rem; }
+.article-cta-wide p { color: rgba(255,255,255,.78); margin: 0; max-width: 34em; }
+.article-cta-wide .hero-actions { margin-top: 0; }
 
-/* Lists (ordered and unordered) */
-.content-card ul,
-.content-card ol {
-    font-size: 1rem;
-    line-height: 1.7;
-    color: var(--text-dark);
-    margin-top: 0;
-    margin-bottom: 1rem;
-    padding-left: 1.5rem;
-}
-.content-card li {
-    margin-bottom: 0.5rem;
-}
-
-/* Checklist-style lists */
-.checklist {
-    list-style: none;
-    padding-left: 0;
-    margin-top: 1rem;
-    margin-bottom: 1.5rem;
-}
-.checklist li {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.75rem;
-    padding: 0.6rem 0;
-    border-bottom: 1px solid rgba(0,0,0,0.05);
-}
-.checklist li:last-child {
-    border-bottom: none;
-}
-.checklist input[type="checkbox"] {
-    appearance: none;
-    -webkit-appearance: none;
-    width: 24px;
-    height: 24px;
-    min-width: 24px;
-    min-height: 24px;
-    border: 2px solid var(--forest-green);
-    border-radius: 5px;
-    flex-shrink: 0;
-    margin-top: 3px;
-    cursor: pointer;
-    position: relative;
-    transition: background 0.2s, border-color 0.2s;
-}
-.checklist input[type="checkbox"]:checked {
-    background: var(--forest-green);
-    border-color: var(--forest-green);
-}
-.checklist input[type="checkbox"]:checked::after {
-    content: '';
-    position: absolute;
-    left: 5px;
-    top: 1px;
-    width: 6px;
-    height: 10px;
-    border: solid white;
-    border-width: 0 2px 2px 0;
-    transform: rotate(45deg);
-}
-.checklist input[type="checkbox"]:focus-visible {
-    outline: 2px solid var(--ocean-blue);
-    outline-offset: 2px;
-}
-.checklist label {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: var(--text-dark);
-    cursor: pointer;
-}
-
-/* Comparison Tables */
-.comparison-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 1rem;
-    margin-bottom: 1.5rem;
-    font-size: 0.95rem;
-}
-.comparison-table thead th {
-    background: var(--forest-green);
-    color: white;
-    padding: 0.75rem 1rem;
-    text-align: left;
-    font-weight: 600;
-}
-.comparison-table tbody td {
-    padding: 0.65rem 1rem;
-    border-bottom: 1px solid rgba(0,0,0,0.08);
-    color: var(--text-dark);
-}
-.comparison-table tbody tr:nth-child(even) {
-    background: var(--off-white);
-}
-.comparison-table tbody tr:hover {
-    background: var(--sage-green);
-}
-
-/* CTA / Call-to-action paragraph */
-.cta {
-    font-size: 1rem;
-    line-height: 1.7;
-    color: var(--text-dark);
-    margin-top: 2rem;
-    padding: 1.25rem;
-    background: var(--sage-green);
-    border-radius: 12px;
-    text-align: center;
-}
-.cta a {
-    color: var(--forest-green);
-    font-weight: 600;
-    text-decoration: underline;
-}
-
-/* Article page layout — override body flex centering */
-body {
-    display: block;
-    align-items: normal;
-}
-
-/* Site Header */
-.site-header {
-    text-align: center;
-    padding-top: 1.5rem;
-    margin-bottom: 1.5rem;
-}
-.home-link {
-    display: inline-block;
-    margin-bottom: 0.75rem;
-}
-.site-header .home-link img {
-    width: 110px !important;
-    height: 110px !important;
-}
-
-/* Site Footer */
-.site-footer {
-    text-align: center;
-    padding: 2rem 1.5rem;
-    font-size: 0.85rem;
-    color: var(--text-dark);
-    opacity: 0.7;
-    margin-top: 2rem;
-}
-
-/* Mobile Responsive */
-@media (max-width: 480px) {
-    .container {
-        padding: 1rem;
-    }
-    .content-card {
-        padding: 1.25rem;
-    }
-    .lead {
-        font-size: 1.05rem;
-    }
-    .comparison-table {
-        font-size: 0.85rem;
-    }
-    .comparison-table thead th,
-    .comparison-table tbody td {
-        padding: 0.5rem 0.6rem;
-    }
-}
-
-@media (max-width: 375px) {
-    .content-card {
-        padding: 1rem;
-    }
-    .content-card h2 {
-        font-size: 1.3rem;
-    }
-    .content-card h3 {
-        font-size: 1.05rem;
-    }
-}
-
-
-/* About page sections — stay within main column */
-.about-section-wide,
-.about-cta-wide {
-    width: 100%;
+/* ---------- Responsive ---------- */
+@media (max-width: 640px) {
+  .article-section-wide { padding: 0 4px; }
+  .post-meta { gap: .4rem .8rem; }
 }

@@ -1,318 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="canonical" href="https://www.worldcomposting.com/troubleshoot.html">
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-    <title>World Composting | Troubleshooting Checklist</title>
-    <meta name="description" content="Fix any composting problem fast. Our troubleshooting guide diagnoses odors, pests, moisture issues, slow breakdown, and more with step-by-step solutions.">
-    <!-- Google Search Console Verification -->
-    <meta name="google-site-verification" content="google8a4b2c3d1e5f6789">
-    <link rel="stylesheet" href="src/styles/theme.css">
-    <link rel="stylesheet" href="src/styles/layout.css">
-        <style>/* Back link: wider */
-        .back-link-wide {
-            display: inline-block;
-            font-size: 0.85rem;
-            color: var(--ocean-blue);
-            text-decoration: none;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            transition: opacity 0.2s;
-        }
-
-.back-link-wide:hover { opacity: 0.7; }
-
-.back-link-wide:focus-visible {
-            outline: 2px solid var(--ocean-blue);
-            outline-offset: 2px;
-            border-radius: 2px;
-        }
-
-/* Pillar hero: wider */
-        .pillar-hero-wide {
-            background: white;
-            border-radius: 16px;
-            padding: 2.5rem 3rem;
-            box-shadow: var(--card-shadow);
-            margin-bottom: 2rem;
-        }
-
-.pillar-hero-wide h1 {
-            font-family: 'Lora', serif;
-            color: var(--forest-green);
-            font-size: 2.4rem;
-            line-height: 1.3;
-            margin-top: 0;
-            text-align: center;
-        }
-
-.pillar-hero-wide p.subtitle {
-            text-align: center;
-            font-style: italic;
-            color: var(--ocean-blue);
-            font-size: 1.1rem;
-            margin-bottom: 0;
-        }
-
-/* Hero intro: wider */
-        .hero-intro-wide {
-            background: white;
-            border-radius: 16px;
-            padding: 2.5rem 3rem;
-            box-shadow: var(--card-shadow);
-            margin-bottom: 2rem;
-            font-size: 1rem;
-            line-height: 1.7;
-            color: var(--text-dark);
-        }
-
-.hero-intro-wide strong { color: var(--forest-green); }
-
-.hero-intro-wide h2 {
-            font-family: 'Lora', serif;
-            color: var(--forest-green);
-            font-size: 1.6rem;
-            margin-top: 0;
-            margin-bottom: 1rem;
-        }
-
-.hero-intro-wide h3 {
-            font-family: 'Lora', serif;
-            color: var(--ocean-blue);
-            font-size: 1.25rem;
-            margin-top: 1.8rem;
-            margin-bottom: 0.75rem;
-        }
-
-.hero-intro-wide p { margin-bottom: 1.2rem; }
-
-.hero-intro-wide ul { padding-left: 1.5rem; margin-bottom: 1.2rem; }
-
-.hero-intro-wide li { margin-bottom: 0.6rem; line-height: 1.7; }
-
-/* Progress Tracker */
-        #progress-wrapper-wide {
-            background: white;
-            border-radius: 16px;
-            padding: 1.25rem 1.5rem;
-            box-shadow: var(--card-shadow);
-            margin-bottom: 2rem;
-        }
-
-#progress-text {
-            font-weight: 700;
-            font-size: 0.95rem;
-            color: var(--forest-green);
-            margin-bottom: 0.6rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-#progress-percent {
-            font-weight: 600;
-            font-size: 0.85rem;
-            color: var(--ocean-blue);
-        }
-
-#progress-bar {
-            height: 10px;
-            background: var(--sage-green);
-            border-radius: 99px;
-            overflow: hidden;
-        }
-
-#progress-fill {
-            height: 100%;
-            width: 0%;
-            background: linear-gradient(90deg, var(--leaf-lime), var(--forest-green));
-            border-radius: 99px;
-            transition: width 0.4s ease;
-        }
-
-/* Phase (Collapsible Section) */
-        .phase-wide {
-            background: white;
-            border-radius: 16px;
-            box-shadow: var(--card-shadow);
-            margin-bottom: 1.25rem;
-            overflow: hidden;
-            border: 1px solid rgba(0,0,0,0.04);
-            transition: box-shadow 0.3s ease;
-        }
-
-.phase-wide:hover {
-            box-shadow: 0 12px 25px -5px rgba(75, 54, 33, 0.12);
-        }
-
-.phase-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            width: 100%;
-            padding: 1.25rem 1.5rem;
-            background: none;
-            border: none;
-            cursor: pointer;
-            font-family: 'Inter', sans-serif;
-            font-size: 1.05rem;
-            font-weight: 800;
-            color: var(--forest-green);
-            text-align: left;
-            transition: background 0.2s ease;
-            gap: 0.75rem;
-        }
-
-.phase-header:hover { background: rgba(45, 90, 39, 0.04); }
-
-.phase-header:focus-visible {
-            outline: 2px solid var(--ocean-blue);
-            outline-offset: -2px;
-            border-radius: 16px 16px 0 0;
-        }
-
-.phase-header .phase-arrow {
-            font-size: 0.8rem;
-            transition: transform 0.3s ease;
-            color: var(--ocean-blue);
-            flex-shrink: 0;
-        }
-
-.phase-wide.active .phase-arrow { transform: rotate(180deg); }
-
-/* Checklist Items */
-        .checklist-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 0.75rem;
-            padding: 0.75rem 0;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
-            cursor: pointer;
-            transition: opacity 0.2s ease;
-            -webkit-tap-highlight-color: transparent;
-        }
-
-.checklist-item:last-of-type { border-bottom: none; }
-
-.checklist-item input[type="checkbox"] {
-            appearance: none;
-            -webkit-appearance: none;
-            width: 24px;
-            height: 24px;
-            min-width: 24px;
-            min-height: 24px;
-            border: 2px solid var(--forest-green);
-            border-radius: 5px;
-            flex-shrink: 0;
-            margin-top: 3px;
-            cursor: pointer;
-            position: relative;
-            transition: background 0.2s, border-color 0.2s;
-        }
-
-.checklist-item input[type="checkbox"]:checked {
-            background: var(--forest-green);
-            border-color: var(--forest-green);
-        }
-
-.checklist-item input[type="checkbox"]:checked::after {
-            content: '';
-            position: absolute;
-            left: 5px;
-            top: 1px;
-            width: 6px;
-            height: 10px;
-            border: solid white;
-            border-width: 0 2px 2px 0;
-            transform: rotate(45deg);
-        }
-
-.checklist-item input[type="checkbox"]:focus-visible {
-            outline: 2px solid var(--ocean-blue);
-            outline-offset: 2px;
-        }
-
-.check-emoji {
-            font-size: 1.3rem;
-            flex-shrink: 0;
-            margin-top: 1px;
-        }
-
-.check-content { flex: 1; min-width: 0; }
-
-.check-title {
-            display: block;
-            font-weight: 600;
-            font-size: 0.95rem;
-            color: var(--text-dark);
-            transition: color 0.2s;
-        }
-
-.check-desc {
-            display: block;
-            font-size: 0.82rem;
-            color: #666;
-            margin-top: 2px;
-            line-height: 1.5;
-            transition: color 0.2s;
-        }
-
-.check-desc a {
-            color: var(--ocean-blue);
-            text-decoration: underline;
-            font-weight: 500;
-        }
-
-.check-desc a:hover { color: var(--forest-green); }
-
-.checklist-item.completed .check-title {
-            color: #999;
-            text-decoration: line-through;
-        }
-
-.checklist-item.completed .check-desc { color: #aaa; }
-
-.checklist-item.completed .check-emoji { opacity: 0.5; }
-
-/* Section Title */
-        .section-title-wide {
-            font-family: 'Lora', serif;
-            color: var(--forest-green);
-            font-size: 1.4rem;
-            margin-top: 2rem;
-            margin-bottom: 1rem;
-        }
-
-/* Gear Section */
-        #gear-section-wide {
-            margin-top: 3rem;
-        }
-
-.product-link {
-            display: block;
-            padding: 0.75rem 1rem;
-            background: white;
-            border-radius: 8px;
-            box-shadow: var(--card-shadow);
-            text-decoration: none;
-            color: var(--forest-green);
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-.product-link:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 16px -4px rgba(75, 54, 33, 0.15);
-        }
-
-/* ===== RESPONSIVE BREAKPOINTS ===== */</style>
-    <!-- Google Analytics (skipped on localhost) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KRHYVJXZLE"></script>
-    <script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://www.worldcomposting.com/troubleshoot.html" rel="canonical"/>
+<link href="/favicon.ico" rel="icon" type="image/x-icon"/>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon"/>
+<title>World Composting | Troubleshooting Checklist</title>
+<meta content="Fix any composting problem fast. Our troubleshooting guide diagnoses odors, pests, moisture issues, slow breakdown, and more with step-by-step solutions." name="description"/>
+<!-- Google Search Console Verification -->
+<meta content="google8a4b2c3d1e5f6789" name="google-site-verification"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="src/styles/theme.css" rel="stylesheet"/>
+<link href="src/styles/layout.css" rel="stylesheet"/>
+<link href="src/styles/components.css" rel="stylesheet"/>
+<link href="src/styles/video-section.css" rel="stylesheet"/>
+<link href="src/styles/article.css" rel="stylesheet"/>
+<!-- Google Analytics (skipped on localhost) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-KRHYVJXZLE"></script>
+<script>
       if (!window.location.hostname.includes('localhost') && !window.location.hostname.includes('127.0.0.1')) {
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
@@ -320,13 +28,13 @@
         gtag('config', 'G-KRHYVJXZLE');
       }
     </script>
-    <!-- Pinterest Tag -->
-    <script type="text/javascript">
+<!-- Pinterest Tag -->
+<script type="text/javascript">
       _pt = "2612544072053";
       (function(e,t,n){var r,i=document.createElement(n);i.async=1,i.src="https://cdn.pinterest.com/tags.min.js#" + encodeURIComponent(_pt);if(t){r=document.createElement(n);r.type="text/javascript";r.defer=!0;r.src="//pixel-assets.pinterest.com/tags/pid-req-utils.js",document.getElementsByTagName("head")[0].appendChild(r)}i.onload=i.onerror=function(){var e=window.pinall;window.pinall=null;var t=1;e&&e.length>0&&(t=e[0]);for(var n;n=e.length;)n.shift(),(n=n[0])&&"function"==typeof n.n&&n.n(t);window.pinall=e};document.getElementsByTagName("head")[0].appendChild(i)})(window,document,"script");
     </script>
-    <!-- HowTo Schema: Troubleshooting -->
-    <script type="application/ld+json">
+<!-- HowTo Schema: Troubleshooting -->
+<script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "HowTo",
@@ -358,424 +66,428 @@
       ]
     }
     </script>
-    <link rel="alternate" href="/llms.txt" title="World Composting AI Index">
+<link href="/llms.txt" rel="alternate" title="World Composting AI Index"/>
 </head>
-<body>
-    <div class="page-wrapper">
-
-        <!-- ===== SIDEBAR NAVIGATION ===== -->
-        <aside class="sidebar">
-            <div class="sidebar-logo">
-                <img src="src/assets/logo.png" alt="World Composting Logo" width="64" height="64" loading="eager" onerror="this.src='https://via.placeholder.com/64?text=WC'">
-                <h2>World Composting</h2>
-            </div>
-
-            <ul class="sidebar-nav">
-<li><a href="index.html">Home</a></li>
-                <li><a href="start-here.html">Start Here</a></li>
-                <li><a href="science-of-compost.html">The Science of Compost</a></li>
-                <li><a href="about.html">About</a></li>
-
-                <li><div class="sidebar-divider"></div></li>
-                <li class="sidebar-section-label">Guides</li>
-
-                <li><a href="worm-composting.html">Worm Composting</a></li>
-                <li><a href="hot-composting.html">Hot Composting</a></li>
-
-                <li><div class="sidebar-divider"></div></li>
-                <li class="sidebar-section-label">Hubs</li>
-
-                <li><a href="hub-worm-composting.html">Worm Composting Hub</a></li>
-                <li><a href="hub-hot-composting.html">Hot Composting Hub</a></li>
-                <li><a href="hub-bokashi.html">Bokashi Hub</a></li>
-                <li><a href="hub-biochar.html">BioChar Hub</a></li>
-                <li><a href="hub-tumbler.html">Tumbler Composting Hub</a></li>
-                <li><a href="hub-lasagna.html">Lasagna Composting Hub</a></li>
-                <li><a href="hub-black-soldier-fly.html">Black Soldier Fly Hub</a></li>
-                <li><a href="hub-energy-efficiency.html">Energy Efficiency Hub</a></li>
-
-                <li class="sidebar-section-label">Gear</li>
-
-                <li><a href="gear.html" style="color: var(--forest-green); font-weight: 700; font-size: 1.05rem;">🛒 View All Gear → <span class="popular-badge">Popular</span></a></li>
-
-                <li><div class="sidebar-divider"></div></li>
-                <li class="sidebar-section-label">Checklists</li>
-
-                <li><a href="beginner.html">Beginner's Checklist</a></li>
-                <li><a href="pre-compost.html">Pre-Compost for Worm Bins</a></li>
-                <li><a href="hot.html">Hot Composting Checklist</a></li>
-                <li><a href="bokashi.html">Bokashi Composting</a></li>
-                <li><a href="biochar.html">BioChar Composting</a></li>
-                <li><a href="tumbler.html">Tumbler Composting</a></li>
-                <li><a href="tea.html">Compost Tea</a></li>
-                <li><a href="lasagna.html">Lasagna Composting Checklist</a></li>
-                <li><a href="black_soldier_fly.html">Black Soldier Fly</a></li>
-
-                <li><div class="sidebar-divider"></div></li>
-                <li class="sidebar-section-label">Troubleshooting / Deep Dives</li>
-
-                <li><a href="troubleshoot.html" class="active">Troubleshooting Guide</a></li>
-                <li><a href="electric_composter.html">Electric Composters</a></li>
-                <li><a href="sustainability.html">Sustainability Journey</a></li>
-                <li><a href="energy-efficiency.html">Energy Efficiency at Home</a></li>
-                <li><a href="zero-waste-kitchen.html">Zero Waste Kitchen</a></li>
-
-                <li><div class="sidebar-divider"></div></li>
-                <li class="sidebar-section-label">Resources</li>
-
-                <li><a href="glossary.html">Glossary</a></li>
-                <li><a href="faq.html">Frequently Asked Questions</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="sitemap.html">Sitemap</a></li>
-
-            </ul>
-        </aside>
-
-
-        <!-- ===== MAIN CONTENT AREA ===== -->
-        <main class="main-content">
-
-            <a href="/" class="back-link-wide">&#8592; Back to Home</a>
-
-            <!-- Hero Section -->
-            <div class="pillar-hero-wide">
-                <h1>Troubleshooting Checklist</h1>
-                <p class="subtitle">Fix any composting problem in minutes.</p>
-            </div>
-
-        
-        <div id="progress-wrapper-wide">
-            <div id="progress-text">
-                <span id="progress-label">0 of 30 items completed</span>
-                <span id="progress-percent">0%</span>
-            </div>
-            <div id="progress-bar"><div id="progress-fill"></div></div>
-        </div>
-
-        
-        <div class="hero-intro-wide">
-            <h2>What is Compost Troubleshooting?</h2>
-            <p>Every composting system encounters problems — odors, pests, slow decomposition, moisture imbalances. The difference between a struggling pile and a thriving one often comes down to knowing how to diagnose the root cause quickly. This troubleshooting guide walks you through the most common issues across all composting methods (bins, piles, tumblers, worm farms) and gives you actionable fixes for each problem.</p>
-            <h3>How to Use This Guide</h3>
-            <ul>
-                <li><strong>Identify Your Symptom</strong> — Start with the phase that matches what you're seeing: bad smells, flies, wet or dry pile, slow breakdown, heat issues, or pests.</li>
-                <li><strong>Follow the Checklist</strong> — Each item gives you a specific problem and its solution. Work through them in order until your issue is resolved.</li>
-                <li><strong>Prevent Recurrence</strong> — Most problems are preventable with proper balance, moisture management, and regular turning. Use these fixes to adjust your routine going forward.</li>
-            </ul>
-        </div>
-
-        
-        <div id="phases">
-
-            <!-- Phase 1: Odor Problems -->
-            <div class="phase phase-wide active">
-                <button class="phase-header" onclick="togglePhase(this)">
-                    <span>Phase 1: Odor Problems 👃</span>
-                    <span class="phase-arrow">▼</span>
-                </button>
-                <div class="phase-body">
-                    <label class="checklist-item" for="t1_0">
-                        <input type="checkbox" id="t1_0" data-id="t1_0">
-                        <span class="check-emoji">🤢</span>
-                        <span class="check-content">
-                            <span class="check-title">Fix sour or rotten smell</span>
-                            <span class="check-desc">A sour, putrid odor means the bin has too much nitrogen (food scraps) and not enough carbon. Add shredded cardboard, newspaper, or dried leaves immediately. Stop feeding for 3-5 days and mix thoroughly to add airflow. The smell should fade within 48 hours.</span>
-                        </span>
-                    </label>
-                    <label class="checklist-item" for="t1_1">
-                        <input type="checkbox" id="t1_1" data-id="t1_1">
-                        <span class="check-emoji">💨</span>
-                        <span class="check-content">
-                            <span class="check-title">Fix ammonia smell</span>
-                            <span class="check-desc">An ammonia smell is a clear sign of too much nitrogen — often from overloading with grass clippings or fresh greens. The solution is the same as sour smell: add carbon-rich browns (shredded paper, cardboard, straw). Aim for a 3:1 carbon-to-nitrogen ratio. Turn the pile to aerate.</span>
-                        </span>
-                    </label>
-                    <label class="checklist-item" for="t1_2">
-                        <input type="checkbox" id="t1_2" data-id="t1_2">
-                        <span class="check-emoji">😶</span>
-                        <span class="check-content">
-                            <span class="check-title">Fix no smell at all (pile too inactive)</span>
-                            <span class="check-desc">A completely neutral or absent smell in an active bin can mean the microbial activity has stalled. Your pile likely needs more greens (nitrogen) and water. Add fresh grass clippings, vegetable scraps, or coffee grounds and moisten the pile. The bin should have a mild earthy smell when healthy.</span>
-                        </span>
-                    </label>
-                    <label class="checklist-item" for="t1_3">
-                        <input type="checkbox" id="t1_3" data-id="t1_3">
-                        <span class="check-emoji">🪰</span>
-                        <span class="check-content">
-                            <span class="check-title">Stop attracting flies</span>
-                            <span class="check-desc">Flies are drawn to exposed food scraps. Always bury food 2-3 inches deep under bedding or finished compost. Cover the surface with a layer of enough dry browns. For persistent problems, set up a <a href="https://amzn.to/39eLIFA" target="_blank">sticky fly trap</a> (Affiliate Link) nearby.</span >
-                        </span>
-                    </label>
-                    <label class="checklist-item" for="t1_4">
-                        <input type="checkbox" id="t1_4" data-id="t1_4">
-                        <span class="check-emoji">🍎</span>
-                        <span class="check-content">
-                            <span class="check-title">Prevent fruit flies</span>
-                            <span class="check-desc">Fruit flies breed in exposed fruit scraps. Bury all food under at least 2 inches of bedding. Freeze fruit scraps before adding to kill any eggs. Keep a lid or damp newspaper layer on top. For infestations, use a vinegar trap or <a href="https://amzn.to/4u1AYCn" target="_blank">diatomaceous earth</a> (Affiliate Link) on the surface.</span >
-                        </span>
-                    </label>
-                    <label class="checklist-item" for="t1_5">
-                        <input type="checkbox" id="t1_5" data-id="t1_5">
-                        <span class="check-emoji">🔄</span>
-                        <span class="check-content">
-                            <span class="check-title">Handle bad smell after turning</span>
-                            <span class="check-desc">A temporary bad smell right after turning is normal — you've released trapped anaerobic pockets. If the smell persists more than 24 hours, the pile is too wet or too dense. Add dry browns and coarse material (twigs, straw) to improve air flow. Don't turn again for a few days.</span>
-                        </span>
-                    </label>
-                </div>
-            </div>
-
-            <!-- Phase 2: Moisture Issues -->
-            <div class="phase phase-wide">
-                <button class="phase-header" onclick="togglePhase(this)">
-                    <span>Phase 2: Moisture Issues 💧</span>
-                    <span class="phase-arrow">▼</span>
-                </button>
-                <div class="phase-body">
-                    <label class="checklist-item" for="t2_0">
-                        <input type="checkbox" id="t2_0" data-id="t2_0">
-                        <span class="check-emoji">🫠</span>
-                        <span class="check-content">
-                            <span class="check-title">Fix pile too wet and sludgy</span>
-                            <span class="check-desc">If your pile is soggy and slimy, it's waterlogged and likely anaerobic. Immediately add dry, absorbent browns — shredded cardboard, newspaper, sawdust, or dry leaves. Mix thoroughly and leave the lid off for a day. For worm bins, stop adding wet food scraps for a week and add fresh dry bedding.</span>
-                        </span>
-                    </label>
-                    <label class="checklist-item" for="t2_1">
-                        <input type="checkbox" id="t2_1" data-id="t2_1">
-                        <span class="check-emoji">🏜️</span>
-                        <span class="check-content">
-                            <span class="check-title">Fix pile too dry</span>
-                            <span class="check-desc">A dry pile means microbial activity has slowed or stopped. Add water gradually while turning the pile, aiming for the consistency of a wrung-out sponge. For worm bins, mist the bedding with a <a href="https://amzn.to/2KWLpHk" target="_blank">sprayer</a>. Dry piles also attract ants and other pests.</span>
-                        </span>
-                    </label>
-                    <label class="checklist-item" for="t2_2">
-                        <input type="checkbox" id="t2_2" data-id="t2_2">
-                        <span class="check-emoji">💦</span>
-                        <span class="check-content">
-                            <span class="check-title">Fix condensation in lid</span>
-                            <span class="check-desc">Excessive condensation on the lid indicates too much moisture and not enough airflow. Wipe the lid dry, add dry bedding or browns, and drill a few more air holes if possible. For outdoor piles, turn the pile to release steam and let it air out.</span>
-                        </span>
-                    </label>
-                    <label class="checklist-item" for="t2_3">
-                        <input type="checkbox" id="t2_3" data-id="t2_3">
-                        <span class="check-emoji">🚿</span>
-                        <span class="check-content">
-                            <span class="check-title">Learn to add water correctly</span>
-                            <span class="check-desc">Never dump a bucket of water into the pile. Use a <a href="https://amzn.to/2KWLpHk" target="_blank">spray bottle or sprayer</a> to mist evenly while turning. The target moisture is 50-60% — squeeze a handful: it should feel damp with only a drop or two of water. In worm bins, always mist bedding before adding new layers.</span>
-                        </span>
-                    </label>
-                    <label class="checklist-item" for="t2_4">
-                        <input type="checkbox" id="t2_4" data-id="t2_4">
-                        <span class="check-emoji">🤏</span>
-                        <span class="check-content">
-                            <span class="check-title">Check moisture properly</span>
-                            <span class="check-desc">Use the squeeze test: grab a handful of material from the middle of the pile and squeeze firmly. A few drops of water between your fingers is perfect. No droplets = too dry. A stream of water = too wet. Test in multiple spots since moisture varies throughout the pile.</span>
-                        </span>
-                    </label>
-                    <label class="checklist-item" for="t2_5">
-                        <input type="checkbox" id="t2_5" data-id="t2_5">
-                        <span class="check-emoji">🌦️</span>
-                        <span class="check-content">
-                            <span class="check-title">Handle seasonal moisture changes</span>
-                            <span class="check-desc">In rainy seasons, cover outdoor piles with a tarp to prevent waterlogging. In dry seasons, water more frequently and add moisture-retaining materials like coconut coir. Indoor bins are less affected, but monitor more closely during humidity swings in summer and winter.</span>
-                        </span>
-                    </label>
-                </div>
-            </div>
-
-            <!-- Phase 3: Pest Problems -->
-            <div class="phase phase-wide">
-                <button class="phase-header" onclick="togglePhase(this)">
-                    <span>Phase 3: Pest Problems 🐜</span>
-                    <span class="phase-arrow">▼</span>
-                </button>
-                <div class="phase-body">
-                    <label class="checklist-item" for="t3_0">
-                        <input type="checkbox" id="t3_0" data-id="t3_0">
-                        <span class="check-emoji">🐀</span>
-                        <span class="check-content">
-                            <span class="check-title">Prevent rats and mice</span>
-                            <span class="check-desc">Rodents are attracted to meat, dairy, and cooked food. Never add these to an open compost pile. Use a sealed bin with a locking lid and a hardware cloth base (1/4 inch mesh). Elevate the bin off the ground. Stop feeding for a week if you see signs of rodents — the food source will dry up.</span>
-                        </span>
-                    </label>
-                    <label class="checklist-item" for="t3_1">
-                        <input type="checkbox" id="t3_1" data-id="t3_1">
-                        <span class="check-emoji">🐜</span>
-                        <span class="check-content">
-                            <span class="check-title">Deal with ants in bin</span>
-                            <span class="check-desc">Ants in a worm bin mean the bedding is too dry. Moisten the bedding to the wrung-out sponge level. Ants also dislike disturbance — turn the bin regularly. For outdoor piles, ants are usually a sign the pile is too dry and too low in nitrogen. Add water and green materials.</span>
-                        </span>
-                    </label>
-                    <label class="checklist-item" for="t3_2">
-                        <input type="checkbox" id="t3_2" data-id="t3_2">
-                        <span class="check-emoji">🪰</span>
-                        <span class="check-content">
-                            <span class="check-title">Eliminate fruit flies</span>
-                            <span class="check-desc">Fruit flies need exposed food to breed. Bury all food scraps 2-3 inches deep and cover with a layer of dry bedding. Set up a vinegar trap (apple cider vinegar + dish soap) near the bin. For outdoor bins, add a 1-inch layer of finished compost or soil on top as a barrier.</span>
-                        </span>
-                    </label>
-                    <label class="checklist-item" for="t3_3">
-                        <input type="checkbox" id="t3_3" data-id="t3_3">
-                        <span class="check-emoji">🕷️</span>
-                        <span class="check-content">
-                            <span class="check-title">Identify mites and springtails</span>
-                            <span class="check-desc">Mites and springtails are natural decomposers and usually harmless. White mites and springtails indicate a healthy ecosystem. If mite populations explode, let the bin dry out slightly and stop feeding for a week. Brown mites can stress worms — add more dry bedding and reduce moisture.</span>
-                        </span>
-                    </label>
-                    <label class="checklist-item" for="t3_4">
-                        <input type="checkbox" id="t3_4" data-id="t3_4">
-                        <span class="check-emoji">🐝</span>
-                        <span class="check-content">
-                            <span class="check-title">Handle wasps and hornets</span>
-                            <span class="check-desc">Wasps are attracted to protein and sweet fruit scraps. Bury all food deeply, especially fruit peels and melon rinds. Don't add sugary or protein-rich waste to open piles during wasp season. Consider a fine mesh screen over air holes for bin systems.</span>
-                        </span>
-                    </label>
-                    <label class="checklist-item" for="t3_5">
-                        <input type="checkbox" id="t3_5" data-id="t3_5">
-                        <span class="check-emoji">🐌</span>
-                        <span class="check-content">
-                            <span class="check-title">Handle slugs and snails</span>
-                            <span class="check-desc">Slugs and snails are moisture-loving decomposers that can overpopulate. Reduce moisture on the surface by adding dry bedding or straw. Hand-pick them regularly. Create a barrier of crushed eggshells or <a href="https://amzn.to/4u1AYCn" target="_blank">diatomaceous earth</a> (Affiliate Link) around the bin to deter them.</span >
-                        </span>
-                    </label>
-                </div>
-            </div>
-
-            <!-- Phase 4: Breakdown Problems -->
-            <div class="phase phase-wide">
-                <button class="phase-header" onclick="togglePhase(this)">
-                    <span>Phase 4: Breakdown Problems 🔬</span>
-                    <span class="phase-arrow">▼</span>
-                </button>
-                <div class="phase-body">
-                    <label class="checklist-item" for="t4_0">
-                        <input type="checkbox" id="t4_0" data-id="t4_0">
-                        <span class="check-emoji">❄️</span>
-                        <span class="check-content">
-                            <span class="check-title">Fix pile not heating up</span>
-                            <span class="check-desc">An outdoor compost pile should reach 130-150°F (55-65°C) in the center. If it's cold, the pile needs more nitrogen (fresh grass clippings, greens, coffee grounds, manure) and adequate moisture. Make sure the pile is at least 3 feet cubed — small piles don't hold heat well. Turn to add oxygen.</span>
-                        </span>
-                    </label>
-                    <label class="checklist-item" for="t4_1">
-                        <input type="checkbox" id="t4_1" data-id="t4_1">
-                        <span class="check-emoji">🐢</span>
-                        <span class="check-content">
-                            <span class="check-title">Fix composting too slow</span>
-                            <span class="check-desc">Slow breakdown usually means one of these is off: too little nitrogen, too dry, or not enough oxygen. Add fresh greens, water the pile, and turn it more frequently (every 3-5 days). Chop materials into smaller pieces before adding. A balanced C:N ratio of 25-30:1 is ideal for fast composting.</span>
-                        </span>
-                    </label>
-                    <label class="checklist-item" for="t4_2">
-                        <input type="checkbox" id="t4_2" data-id="t4_2">
-                        <span class="check-emoji">🌡️</span>
-                        <span class="check-content">
-                            <span class="check-title">Fix hot spots and cold spots</span>
-                            <span class="check-desc">Uneven temperatures mean the pile isn't mixed well. Hot spots are pockets of concentrated greens; cold spots are dry browns. Turn the entire pile thoroughly, making sure to move material from the edges to the center. Moisten dry areas as you go. Aim for uniform moisture throughout.</span>
-                        </span>
-                    </label>
-                    <label class="checklist-item" for="t4_3">
-                        <input type="checkbox" id="t4_3" data-id="t4_3">
-                        <span class="check-emoji">🍄</span>
-                        <span class="check-content">
-                            <span class="check-title">Handle mold on surface</span>
-                            <span class="check-desc">White or green mold on top of the pile is usually harmless — it's just fungus breaking down organic matter. If it bothers you, bury fresh scraps deeper and cover with browns. Fuzzy gray mold (not the white kind) can indicate too much moisture — add dry bedding and turn the pile.</span>
-                        </span>
-                    </label>
-                    <label class="checklist-item" for="t4_4">
-                        <input type="checkbox" id="t4_4" data-id="t4_4">
-                        <span class="check-emoji">🪱</span>
-                        <span class="check-content">
-                            <span class="check-title">Rescue dying worms</span>
-                            <span class="check-desc">Worms dying or trying to escape usually means one of three things: too wet (add dry bedding), too dry (add moisture), or toxic conditions (remove any citrus, onions, or spicy foods). Check pH — add crushed eggshells to buffer acidity. Remove dead worms promptly to prevent ammonia buildup.</span>
-                        </span>
-                    </label>
-                    <label class="checklist-item" for="t4_5">
-                        <input type="checkbox" id="t4_5" data-id="t4_5">
-                        <span class="check-emoji">📥</span>
-                        <span class="check-content">
-                            <span class="check-title">Fix bin overflowing with uneaten food</span>
-                            <span class="check-desc">If food accumulates faster than it breaks down, you're overfeeding. Stop adding food for 1-2 weeks to let the system catch up. Chop scraps smaller, and bury food in different spots to spread the workload. Consider a second bin or adding more worms to increase processing capacity.</span>
-                        </span>
-                    </label>
-                </div>
-            </div>
-
-            <!-- Phase 5: Advanced Diagnostics -->
-            <div class="phase phase-wide">
-                <button class="phase-header" onclick="togglePhase(this)">
-                    <span>Phase 5: Advanced Diagnostics 🧪</span>
-                    <span class="phase-arrow">▼</span>
-                </button>
-                <div class="phase-body">
-                    <label class="checklist-item" for="t5_0">
-                        <input type="checkbox" id="t5_0" data-id="t5_0">
-                        <span class="check-emoji">🧪</span>
-                        <span class="check-content">
-                            <span class="check-title">Test and balance pH</span>
-                            <span class="check-desc">The ideal pH range for composting is 6.5-8.0. Test with a simple soil pH kit or litmus paper. If too acidic (low pH), add crushed eggshells, lime, or wood ash in small amounts. If too alkaline, add peat moss or pine needles. Worm bins tend to drift acidic — eggshells are the best long-term buffer.</span>
-                        </span>
-                    </label>
-                    <label class="checklist-item" for="t5_1">
-                        <input type="checkbox" id="t5_1" data-id="t5_1">
-                        <span class="check-emoji">🔬</span>
-                        <span class="check-content">
-                            <span class="check-title">Identify actinomycetes vs mold</span>
-                            <span class="check-desc">Actinomycetes look like gray-white cobwebs or dust on compost — they're beneficial bacteria that break down tough materials like lignin. They produce that lovely earthy smell. Mold is fuzzy and patches can be white, green, or black. Both are fine in moderation, but excess mold means too much moisture or not enough turning.</span>
-                        </span>
-                    </label>
-                    <label class="checklist-item" for="t5_2">
-                        <input type="checkbox" id="t5_2" data-id="t5_2">
-                        <span class="check-emoji">🔄</span>
-                        <span class="check-content">
-                            <span class="check-title">Know when to start over</span>
-                            <span class="check-desc">Some piles are beyond saving: if it smells like ammonia after 2 weeks of fixing, if it's infested with maggots of house flies (not soldier fly larvae), or if it's been bone-dry for months. In that case, remove any good material, discard the bad, and rebuild with a 50:50 mix of greens and browns at proper moisture.</span>
-                        </span>
-                    </label>
-                    <label class="checklist-item" for="t5_3">
-                        <input type="checkbox" id="t5_3" data-id="t5_3">
-                        <span class="check-emoji">🚑</span>
-                        <span class="check-content">
-                            <span class="check-title">Emergency salvage techniques</span>
-                            <span class="check-desc">For waterlogged piles: spread out on a tarp to dry, add sawdust or shredded cardboard. For dried-out piles: soak slowly with a hose while turning. For pest-infested bins: freeze the contents for 48 hours to kill eggs and larvae, then restart with fresh bedding. For sour worm bins: remove worms, rinse bedding, add fresh dry bedding.</span>
-                        </span>
-                    </label>
-                    <label class="checklist-item" for="t5_4">
-                        <input type="checkbox" id="t5_4" data-id="t5_4">
-                        <span class="check-emoji">⚖️</span>
-                        <span class="check-content">
-                            <span class="check-title">Maintain balance long-term</span>
-                            <span class="check-desc">A healthy bin runs itself. Keep the C:N ratio around 25-30:1, moisture at wrung-out sponge level, and turn weekly. Follow the 3-3-3 rule: add 3 parts browns to 1 part greens by volume, feeding every 3 days, and turning every 3 weeks. Observe and adjust — your nose and eyes are the best diagnostic tools.</span>
-                        </span>
-                    </label>
-                    <label class="checklist-item" for="t5_5">
-                        <input type="checkbox" id="t5_5" data-id="t5_5">
-                        <span class="check-emoji">📓</span>
-                        <span class="check-content">
-                            <span class="check-title">Build a log of observations</span>
-                            <span class="check-desc">Keep a simple composting journal — note what you added, when you turned it, temperature readings, smells, and pest sightings. Over time you'll spot patterns and know exactly what your pile needs. This is the single best habit for becoming a master composter. Record at least once a week.</span>
-                        </span>
-                    </label>
-                </div>
-            </div>
-
-        </div>
-
-        
-        <div id="gear-section-wide">
-            <div class="section-title">Recommended Troubleshooting Gear</div>
-            <div id="gear-list"></div>
-        </div>
-
-        </main>
-
-    </div><!-- .page-wrapper -->
-
-    <!-- FOOTER: outside grid, spans full width -->
-    <footer class="footer-wide">
-        <p class="footer-copy">&copy; 2026 World Composting</p>
-        <p class="footer-copy" style="margin-top: 0.5rem;">As an Amazon Associate, I earn from qualifying purchases.</p>
-    </footer>
-
-    <script>
+<body><header class="top-nav" id="top-nav">
+<div class="nav-inner">
+<a aria-label="World Composting — home" class="nav-logo" href="index.html">
+<img alt="World Composting Logo" height="40" loading="eager" onerror="this.src='https://via.placeholder.com/40?text=WC'" src="src/assets/logo.png" width="40"/>
+<span class="nav-logo-text">World Composting<small>Guides · Checklists · Gear</small></span>
+</a>
+<button aria-controls="nav-links" aria-expanded="false" aria-label="Toggle menu" class="nav-burger" id="nav-burger">
+<span></span><span></span><span></span>
+</button>
+<ul class="nav-links" id="nav-links">
+<li><a class="nav-link" href="index.html">Home</a></li>
+<li><a class="nav-link" href="start-here.html">Start Here</a></li>
+<li><a class="nav-link" href="worm-composting.html">Worm</a></li>
+<li><a class="nav-link" href="hot-composting.html">Hot Compost</a></li>
+<li><a class="nav-link" href="beginner.html">Checklists</a></li>
+<li><a class="nav-link" href="faq.html">FAQ</a></li>
+</ul>
+<div class="nav-ctas">
+<a class="btn btn-cta-gear" href="gear.html">🛒 Gear</a>
+<a class="btn btn-cta-yt" href="http://youtube.com/@worldcomposting" rel="noopener" target="_blank">▶ YouTube</a>
+</div>
+</div>
+</header><script>
+        (function () {
+            var burger = document.getElementById('nav-burger');
+            var nav = document.getElementById('top-nav');
+            if (burger && nav) {
+                burger.addEventListener('click', function () {
+                    var open = nav.classList.toggle('nav-open');
+                    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+                });
+            }
+        })();
+    </script>
+<div class="page-wrapper">
+<!-- ===== SIDEBAR NAVIGATION ===== -->
+<!-- ===== MAIN CONTENT AREA ===== -->
+<main class="main-content">
+<a class="back-link-wide" href="/">← Back to Home</a>
+<!-- Hero Section -->
+<div class="pillar-hero-wide"><img alt="A close view of shredded compost ready for sifting" class="hero-photo" decoding="async" fetchpriority="high" loading="eager" src="src/assets/images/sift.jpg"/>
+<h1>Troubleshooting Checklist</h1>
+<p class="subtitle">Fix any composting problem in minutes.</p>
+</div>
+<div id="progress-wrapper-wide">
+<div id="progress-text">
+<span id="progress-label">0 of 30 items completed</span>
+<span id="progress-percent">0%</span>
+</div>
+<div id="progress-bar"><div id="progress-fill"></div></div>
+</div>
+<div class="hero-intro-wide">
+<h2>What is Compost Troubleshooting?</h2>
+<p>Every composting system encounters problems — odors, pests, slow decomposition, moisture imbalances. The difference between a struggling pile and a thriving one often comes down to knowing how to diagnose the root cause quickly. This troubleshooting guide walks you through the most common issues across all composting methods (bins, piles, tumblers, worm farms) and gives you actionable fixes for each problem.</p>
+<h3>How to Use This Guide</h3>
+<ul>
+<li><strong>Identify Your Symptom</strong> — Start with the phase that matches what you're seeing: bad smells, flies, wet or dry pile, slow breakdown, heat issues, or pests.</li>
+<li><strong>Follow the Checklist</strong> — Each item gives you a specific problem and its solution. Work through them in order until your issue is resolved.</li>
+<li><strong>Prevent Recurrence</strong> — Most problems are preventable with proper balance, moisture management, and regular turning. Use these fixes to adjust your routine going forward.</li>
+</ul>
+</div>
+<div id="phases">
+<!-- Phase 1: Odor Problems -->
+<div class="phase phase-wide active">
+<button class="phase-header" onclick="togglePhase(this)">
+<span>Phase 1: Odor Problems 👃</span>
+<span class="phase-arrow">▼</span>
+</button>
+<div class="phase-body">
+<label class="checklist-item" for="t1_0">
+<input data-id="t1_0" id="t1_0" type="checkbox"/>
+<span class="check-emoji">🤢</span>
+<span class="check-content">
+<span class="check-title">Fix sour or rotten smell</span>
+<span class="check-desc">A sour, putrid odor means the bin has too much nitrogen (food scraps) and not enough carbon. Add shredded cardboard, newspaper, or dried leaves immediately. Stop feeding for 3-5 days and mix thoroughly to add airflow. The smell should fade within 48 hours.</span>
+</span>
+</label>
+<label class="checklist-item" for="t1_1">
+<input data-id="t1_1" id="t1_1" type="checkbox"/>
+<span class="check-emoji">💨</span>
+<span class="check-content">
+<span class="check-title">Fix ammonia smell</span>
+<span class="check-desc">An ammonia smell is a clear sign of too much nitrogen — often from overloading with grass clippings or fresh greens. The solution is the same as sour smell: add carbon-rich browns (shredded paper, cardboard, straw). Aim for a 3:1 carbon-to-nitrogen ratio. Turn the pile to aerate.</span>
+</span>
+</label>
+<label class="checklist-item" for="t1_2">
+<input data-id="t1_2" id="t1_2" type="checkbox"/>
+<span class="check-emoji">😶</span>
+<span class="check-content">
+<span class="check-title">Fix no smell at all (pile too inactive)</span>
+<span class="check-desc">A completely neutral or absent smell in an active bin can mean the microbial activity has stalled. Your pile likely needs more greens (nitrogen) and water. Add fresh grass clippings, vegetable scraps, or coffee grounds and moisten the pile. The bin should have a mild earthy smell when healthy.</span>
+</span>
+</label>
+<label class="checklist-item" for="t1_3">
+<input data-id="t1_3" id="t1_3" type="checkbox"/>
+<span class="check-emoji">🪰</span>
+<span class="check-content">
+<span class="check-title">Stop attracting flies</span>
+<span class="check-desc">Flies are drawn to exposed food scraps. Always bury food 2-3 inches deep under bedding or finished compost. Cover the surface with a layer of enough dry browns. For persistent problems, set up a <a href="https://amzn.to/39eLIFA" target="_blank">sticky fly trap</a> (Affiliate Link) nearby.</span>
+</span>
+</label>
+<label class="checklist-item" for="t1_4">
+<input data-id="t1_4" id="t1_4" type="checkbox"/>
+<span class="check-emoji">🍎</span>
+<span class="check-content">
+<span class="check-title">Prevent fruit flies</span>
+<span class="check-desc">Fruit flies breed in exposed fruit scraps. Bury all food under at least 2 inches of bedding. Freeze fruit scraps before adding to kill any eggs. Keep a lid or damp newspaper layer on top. For infestations, use a vinegar trap or <a href="https://amzn.to/4u1AYCn" target="_blank">diatomaceous earth</a> (Affiliate Link) on the surface.</span>
+</span>
+</label>
+<label class="checklist-item" for="t1_5">
+<input data-id="t1_5" id="t1_5" type="checkbox"/>
+<span class="check-emoji">🔄</span>
+<span class="check-content">
+<span class="check-title">Handle bad smell after turning</span>
+<span class="check-desc">A temporary bad smell right after turning is normal — you've released trapped anaerobic pockets. If the smell persists more than 24 hours, the pile is too wet or too dense. Add dry browns and coarse material (twigs, straw) to improve air flow. Don't turn again for a few days.</span>
+</span>
+</label>
+</div>
+</div>
+<!-- Phase 2: Moisture Issues -->
+<div class="phase phase-wide">
+<button class="phase-header" onclick="togglePhase(this)">
+<span>Phase 2: Moisture Issues 💧</span>
+<span class="phase-arrow">▼</span>
+</button>
+<div class="phase-body">
+<label class="checklist-item" for="t2_0">
+<input data-id="t2_0" id="t2_0" type="checkbox"/>
+<span class="check-emoji">🫠</span>
+<span class="check-content">
+<span class="check-title">Fix pile too wet and sludgy</span>
+<span class="check-desc">If your pile is soggy and slimy, it's waterlogged and likely anaerobic. Immediately add dry, absorbent browns — shredded cardboard, newspaper, sawdust, or dry leaves. Mix thoroughly and leave the lid off for a day. For worm bins, stop adding wet food scraps for a week and add fresh dry bedding.</span>
+</span>
+</label>
+<label class="checklist-item" for="t2_1">
+<input data-id="t2_1" id="t2_1" type="checkbox"/>
+<span class="check-emoji">🏜️</span>
+<span class="check-content">
+<span class="check-title">Fix pile too dry</span>
+<span class="check-desc">A dry pile means microbial activity has slowed or stopped. Add water gradually while turning the pile, aiming for the consistency of a wrung-out sponge. For worm bins, mist the bedding with a <a href="https://amzn.to/2KWLpHk" target="_blank">sprayer</a>. Dry piles also attract ants and other pests.</span>
+</span>
+</label>
+<label class="checklist-item" for="t2_2">
+<input data-id="t2_2" id="t2_2" type="checkbox"/>
+<span class="check-emoji">💦</span>
+<span class="check-content">
+<span class="check-title">Fix condensation in lid</span>
+<span class="check-desc">Excessive condensation on the lid indicates too much moisture and not enough airflow. Wipe the lid dry, add dry bedding or browns, and drill a few more air holes if possible. For outdoor piles, turn the pile to release steam and let it air out.</span>
+</span>
+</label>
+<label class="checklist-item" for="t2_3">
+<input data-id="t2_3" id="t2_3" type="checkbox"/>
+<span class="check-emoji">🚿</span>
+<span class="check-content">
+<span class="check-title">Learn to add water correctly</span>
+<span class="check-desc">Never dump a bucket of water into the pile. Use a <a href="https://amzn.to/2KWLpHk" target="_blank">spray bottle or sprayer</a> to mist evenly while turning. The target moisture is 50-60% — squeeze a handful: it should feel damp with only a drop or two of water. In worm bins, always mist bedding before adding new layers.</span>
+</span>
+</label>
+<label class="checklist-item" for="t2_4">
+<input data-id="t2_4" id="t2_4" type="checkbox"/>
+<span class="check-emoji">🤏</span>
+<span class="check-content">
+<span class="check-title">Check moisture properly</span>
+<span class="check-desc">Use the squeeze test: grab a handful of material from the middle of the pile and squeeze firmly. A few drops of water between your fingers is perfect. No droplets = too dry. A stream of water = too wet. Test in multiple spots since moisture varies throughout the pile.</span>
+</span>
+</label>
+<label class="checklist-item" for="t2_5">
+<input data-id="t2_5" id="t2_5" type="checkbox"/>
+<span class="check-emoji">🌦️</span>
+<span class="check-content">
+<span class="check-title">Handle seasonal moisture changes</span>
+<span class="check-desc">In rainy seasons, cover outdoor piles with a tarp to prevent waterlogging. In dry seasons, water more frequently and add moisture-retaining materials like coconut coir. Indoor bins are less affected, but monitor more closely during humidity swings in summer and winter.</span>
+</span>
+</label>
+</div>
+</div>
+<!-- Phase 3: Pest Problems -->
+<div class="phase phase-wide">
+<button class="phase-header" onclick="togglePhase(this)">
+<span>Phase 3: Pest Problems 🐜</span>
+<span class="phase-arrow">▼</span>
+</button>
+<div class="phase-body">
+<label class="checklist-item" for="t3_0">
+<input data-id="t3_0" id="t3_0" type="checkbox"/>
+<span class="check-emoji">🐀</span>
+<span class="check-content">
+<span class="check-title">Prevent rats and mice</span>
+<span class="check-desc">Rodents are attracted to meat, dairy, and cooked food. Never add these to an open compost pile. Use a sealed bin with a locking lid and a hardware cloth base (1/4 inch mesh). Elevate the bin off the ground. Stop feeding for a week if you see signs of rodents — the food source will dry up.</span>
+</span>
+</label>
+<label class="checklist-item" for="t3_1">
+<input data-id="t3_1" id="t3_1" type="checkbox"/>
+<span class="check-emoji">🐜</span>
+<span class="check-content">
+<span class="check-title">Deal with ants in bin</span>
+<span class="check-desc">Ants in a worm bin mean the bedding is too dry. Moisten the bedding to the wrung-out sponge level. Ants also dislike disturbance — turn the bin regularly. For outdoor piles, ants are usually a sign the pile is too dry and too low in nitrogen. Add water and green materials.</span>
+</span>
+</label>
+<label class="checklist-item" for="t3_2">
+<input data-id="t3_2" id="t3_2" type="checkbox"/>
+<span class="check-emoji">🪰</span>
+<span class="check-content">
+<span class="check-title">Eliminate fruit flies</span>
+<span class="check-desc">Fruit flies need exposed food to breed. Bury all food scraps 2-3 inches deep and cover with a layer of dry bedding. Set up a vinegar trap (apple cider vinegar + dish soap) near the bin. For outdoor bins, add a 1-inch layer of finished compost or soil on top as a barrier.</span>
+</span>
+</label>
+<label class="checklist-item" for="t3_3">
+<input data-id="t3_3" id="t3_3" type="checkbox"/>
+<span class="check-emoji">🕷️</span>
+<span class="check-content">
+<span class="check-title">Identify mites and springtails</span>
+<span class="check-desc">Mites and springtails are natural decomposers and usually harmless. White mites and springtails indicate a healthy ecosystem. If mite populations explode, let the bin dry out slightly and stop feeding for a week. Brown mites can stress worms — add more dry bedding and reduce moisture.</span>
+</span>
+</label>
+<label class="checklist-item" for="t3_4">
+<input data-id="t3_4" id="t3_4" type="checkbox"/>
+<span class="check-emoji">🐝</span>
+<span class="check-content">
+<span class="check-title">Handle wasps and hornets</span>
+<span class="check-desc">Wasps are attracted to protein and sweet fruit scraps. Bury all food deeply, especially fruit peels and melon rinds. Don't add sugary or protein-rich waste to open piles during wasp season. Consider a fine mesh screen over air holes for bin systems.</span>
+</span>
+</label>
+<label class="checklist-item" for="t3_5">
+<input data-id="t3_5" id="t3_5" type="checkbox"/>
+<span class="check-emoji">🐌</span>
+<span class="check-content">
+<span class="check-title">Handle slugs and snails</span>
+<span class="check-desc">Slugs and snails are moisture-loving decomposers that can overpopulate. Reduce moisture on the surface by adding dry bedding or straw. Hand-pick them regularly. Create a barrier of crushed eggshells or <a href="https://amzn.to/4u1AYCn" target="_blank">diatomaceous earth</a> (Affiliate Link) around the bin to deter them.</span>
+</span>
+</label>
+</div>
+</div>
+<!-- Phase 4: Breakdown Problems -->
+<div class="phase phase-wide">
+<button class="phase-header" onclick="togglePhase(this)">
+<span>Phase 4: Breakdown Problems 🔬</span>
+<span class="phase-arrow">▼</span>
+</button>
+<div class="phase-body">
+<label class="checklist-item" for="t4_0">
+<input data-id="t4_0" id="t4_0" type="checkbox"/>
+<span class="check-emoji">❄️</span>
+<span class="check-content">
+<span class="check-title">Fix pile not heating up</span>
+<span class="check-desc">An outdoor compost pile should reach 130-150°F (55-65°C) in the center. If it's cold, the pile needs more nitrogen (fresh grass clippings, greens, coffee grounds, manure) and adequate moisture. Make sure the pile is at least 3 feet cubed — small piles don't hold heat well. Turn to add oxygen.</span>
+</span>
+</label>
+<label class="checklist-item" for="t4_1">
+<input data-id="t4_1" id="t4_1" type="checkbox"/>
+<span class="check-emoji">🐢</span>
+<span class="check-content">
+<span class="check-title">Fix composting too slow</span>
+<span class="check-desc">Slow breakdown usually means one of these is off: too little nitrogen, too dry, or not enough oxygen. Add fresh greens, water the pile, and turn it more frequently (every 3-5 days). Chop materials into smaller pieces before adding. A balanced C:N ratio of 25-30:1 is ideal for fast composting.</span>
+</span>
+</label>
+<label class="checklist-item" for="t4_2">
+<input data-id="t4_2" id="t4_2" type="checkbox"/>
+<span class="check-emoji">🌡️</span>
+<span class="check-content">
+<span class="check-title">Fix hot spots and cold spots</span>
+<span class="check-desc">Uneven temperatures mean the pile isn't mixed well. Hot spots are pockets of concentrated greens; cold spots are dry browns. Turn the entire pile thoroughly, making sure to move material from the edges to the center. Moisten dry areas as you go. Aim for uniform moisture throughout.</span>
+</span>
+</label>
+<label class="checklist-item" for="t4_3">
+<input data-id="t4_3" id="t4_3" type="checkbox"/>
+<span class="check-emoji">🍄</span>
+<span class="check-content">
+<span class="check-title">Handle mold on surface</span>
+<span class="check-desc">White or green mold on top of the pile is usually harmless — it's just fungus breaking down organic matter. If it bothers you, bury fresh scraps deeper and cover with browns. Fuzzy gray mold (not the white kind) can indicate too much moisture — add dry bedding and turn the pile.</span>
+</span>
+</label>
+<label class="checklist-item" for="t4_4">
+<input data-id="t4_4" id="t4_4" type="checkbox"/>
+<span class="check-emoji">🪱</span>
+<span class="check-content">
+<span class="check-title">Rescue dying worms</span>
+<span class="check-desc">Worms dying or trying to escape usually means one of three things: too wet (add dry bedding), too dry (add moisture), or toxic conditions (remove any citrus, onions, or spicy foods). Check pH — add crushed eggshells to buffer acidity. Remove dead worms promptly to prevent ammonia buildup.</span>
+</span>
+</label>
+<label class="checklist-item" for="t4_5">
+<input data-id="t4_5" id="t4_5" type="checkbox"/>
+<span class="check-emoji">📥</span>
+<span class="check-content">
+<span class="check-title">Fix bin overflowing with uneaten food</span>
+<span class="check-desc">If food accumulates faster than it breaks down, you're overfeeding. Stop adding food for 1-2 weeks to let the system catch up. Chop scraps smaller, and bury food in different spots to spread the workload. Consider a second bin or adding more worms to increase processing capacity.</span>
+</span>
+</label>
+</div>
+</div>
+<!-- Phase 5: Advanced Diagnostics -->
+<div class="phase phase-wide">
+<button class="phase-header" onclick="togglePhase(this)">
+<span>Phase 5: Advanced Diagnostics 🧪</span>
+<span class="phase-arrow">▼</span>
+</button>
+<div class="phase-body">
+<label class="checklist-item" for="t5_0">
+<input data-id="t5_0" id="t5_0" type="checkbox"/>
+<span class="check-emoji">🧪</span>
+<span class="check-content">
+<span class="check-title">Test and balance pH</span>
+<span class="check-desc">The ideal pH range for composting is 6.5-8.0. Test with a simple soil pH kit or litmus paper. If too acidic (low pH), add crushed eggshells, lime, or wood ash in small amounts. If too alkaline, add peat moss or pine needles. Worm bins tend to drift acidic — eggshells are the best long-term buffer.</span>
+</span>
+</label>
+<label class="checklist-item" for="t5_1">
+<input data-id="t5_1" id="t5_1" type="checkbox"/>
+<span class="check-emoji">🔬</span>
+<span class="check-content">
+<span class="check-title">Identify actinomycetes vs mold</span>
+<span class="check-desc">Actinomycetes look like gray-white cobwebs or dust on compost — they're beneficial bacteria that break down tough materials like lignin. They produce that lovely earthy smell. Mold is fuzzy and patches can be white, green, or black. Both are fine in moderation, but excess mold means too much moisture or not enough turning.</span>
+</span>
+</label>
+<label class="checklist-item" for="t5_2">
+<input data-id="t5_2" id="t5_2" type="checkbox"/>
+<span class="check-emoji">🔄</span>
+<span class="check-content">
+<span class="check-title">Know when to start over</span>
+<span class="check-desc">Some piles are beyond saving: if it smells like ammonia after 2 weeks of fixing, if it's infested with maggots of house flies (not soldier fly larvae), or if it's been bone-dry for months. In that case, remove any good material, discard the bad, and rebuild with a 50:50 mix of greens and browns at proper moisture.</span>
+</span>
+</label>
+<label class="checklist-item" for="t5_3">
+<input data-id="t5_3" id="t5_3" type="checkbox"/>
+<span class="check-emoji">🚑</span>
+<span class="check-content">
+<span class="check-title">Emergency salvage techniques</span>
+<span class="check-desc">For waterlogged piles: spread out on a tarp to dry, add sawdust or shredded cardboard. For dried-out piles: soak slowly with a hose while turning. For pest-infested bins: freeze the contents for 48 hours to kill eggs and larvae, then restart with fresh bedding. For sour worm bins: remove worms, rinse bedding, add fresh dry bedding.</span>
+</span>
+</label>
+<label class="checklist-item" for="t5_4">
+<input data-id="t5_4" id="t5_4" type="checkbox"/>
+<span class="check-emoji">⚖️</span>
+<span class="check-content">
+<span class="check-title">Maintain balance long-term</span>
+<span class="check-desc">A healthy bin runs itself. Keep the C:N ratio around 25-30:1, moisture at wrung-out sponge level, and turn weekly. Follow the 3-3-3 rule: add 3 parts browns to 1 part greens by volume, feeding every 3 days, and turning every 3 weeks. Observe and adjust — your nose and eyes are the best diagnostic tools.</span>
+</span>
+</label>
+<label class="checklist-item" for="t5_5">
+<input data-id="t5_5" id="t5_5" type="checkbox"/>
+<span class="check-emoji">📓</span>
+<span class="check-content">
+<span class="check-title">Build a log of observations</span>
+<span class="check-desc">Keep a simple composting journal — note what you added, when you turned it, temperature readings, smells, and pest sightings. Over time you'll spot patterns and know exactly what your pile needs. This is the single best habit for becoming a master composter. Record at least once a week.</span>
+</span>
+</label>
+</div>
+</div>
+</div>
+<div id="gear-section-wide">
+<div class="section-title">Recommended Troubleshooting Gear</div>
+<div id="gear-list"></div>
+</div>
+</main>
+</div><!-- .page-wrapper -->
+<!-- FOOTER: outside grid, spans full width -->
+<section aria-label="Get started" class="cta-band">
+<div class="cta-band-inner">
+<div class="cta-band-text">
+<h2>Ready to turn scraps into soil?</h2>
+<p>Watch the full step-by-step walkthroughs on YouTube, or grab the exact gear I recommend in my builds.</p>
+</div>
+<div class="cta-band-actions">
+<a class="btn btn-youtube btn-lg" href="http://youtube.com/@worldcomposting" rel="noopener" target="_blank">▶ Watch on YouTube</a>
+<a class="btn btn-gear btn-lg" href="gear.html">Shop Compost Gear</a>
+</div>
+</div>
+</section><footer class="site-footer">
+<div class="footer-cols">
+<div class="footer-brand">
+<a href="index.html"><img alt="World Composting Logo" height="52" loading="eager" src="src/assets/logo.png" width="52"/></a>
+<p>Complete composting guides, interactive checklists, and gear recommendations for people who actually want their compost to work.</p>
+<p><a class="btn btn-youtube" href="http://youtube.com/@worldcomposting" rel="noopener" target="_blank">▶ World Composting on YouTube</a></p>
+</div>
+<div class="footer-col">
+<h3>Guides</h3>
+<ul>
+<li><a href="start-here.html">Start Here</a></li>
+<li><a href="worm-composting.html">Worm Composting</a></li>
+<li><a href="hot-composting.html">Hot Composting</a></li>
+<li><a href="bokashi.html">Bokashi</a></li>
+<li><a href="biochar.html">BioChar</a></li>
+<li><a href="lasagna.html">Lasagna Composting</a></li>
+<li><a href="tumbler.html">Tumbler</a></li>
+<li><a href="black_soldier_fly.html">Black Soldier Fly</a></li>
+<li><a href="tea.html">Compost Tea</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h3>Hubs</h3>
+<ul>
+<li><a href="hub-worm-composting.html">Worm Composting Hub</a></li>
+<li><a href="hub-hot-composting.html">Hot Composting Hub</a></li>
+<li><a href="hub-bokashi.html">Bokashi Hub</a></li>
+<li><a href="hub-biochar.html">BioChar Hub</a></li>
+<li><a href="hub-tumbler.html">Tumbler Hub</a></li>
+<li><a href="hub-lasagna.html">Lasagna Hub</a></li>
+<li><a href="hub-black-soldier-fly.html">Black Soldier Fly Hub</a></li>
+<li><a href="hub-energy-efficiency.html">Energy Efficiency Hub</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h3>Resources</h3>
+<ul>
+<li><a href="beginner.html">Beginner's Checklist</a></li>
+<li><a href="troubleshoot.html">Troubleshooting</a></li>
+<li><a href="science-of-compost.html">The Science of Compost</a></li>
+<li><a href="glossary.html">Glossary</a></li>
+<li><a href="faq.html">FAQ</a></li>
+<li><a href="blog.html">Blog</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="sitemap.html">Sitemap</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-legal">
+<p>© 2026 World Composting. All rights reserved.</p>
+<p>As an Amazon Associate, I earn from qualifying purchases. Some product links are affiliate links at no extra cost to you.</p>
+<p cls="footer-credits"><a href="photo-credits.html">Photo credits (Wikimedia Commons, PD/CC licenses)</a></p></div>
+</footer>
+<script>
         // Phase toggle
         function togglePhase(btn) {
             const phase = btn.closest('.phase');
