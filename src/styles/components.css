@@ -849,7 +849,17 @@ a.gear-card-link:hover {
 }
 
 /* ---------- Sitemap ---------- */
-.sitemap-container { margin: 1.5rem 0; }
+.sitemap-container {
+  max-width: var(--container);
+  margin: 1.5rem auto 3rem;
+  padding: 0 24px;
+}
+/* Quick Links legacy layout — constrain the bare #app block like .main-content */
+#app {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 1.5rem 24px 3rem;
+}
 .sitemap-section {
   margin-bottom: 2.2rem;
   background: var(--surface);
