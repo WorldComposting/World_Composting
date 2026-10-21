@@ -17,31 +17,41 @@
 <body>
     <!-- ===== TOP NAVIGATION ===== -->
     <header class="top-nav" id="top-nav">
-        <div class="nav-inner">
-            <a class="nav-logo" href="index.html" aria-label="World Composting — home">
-                <img src="src/assets/logo.png" alt="World Composting Logo" width="40" height="40" loading="eager" onerror="this.src='https://via.placeholder.com/40?text=WC'">
-                <span class="nav-logo-text">World Composting<small>Guides · Checklists · Gear</small></span>
-            </a>
-
-            <button class="nav-burger" id="nav-burger" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
-                <span></span><span></span><span></span>
-            </button>
-
-            <ul class="nav-links" id="nav-links">
-                <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="start-here.html" class="nav-link">Start Here</a></li>
-                <li><a href="worm-composting.html" class="nav-link">Worm</a></li>
-                <li><a href="hot-composting.html" class="nav-link">Hot Compost</a></li>
-                <li><a href="beginner.html" class="nav-link">Checklists</a></li>
-                <li><a href="faq.html" class="nav-link">FAQ</a></li>
-            </ul>
-
-            <div class="nav-ctas">
-                <a class="btn btn-cta-gear" href="gear.html">🛒 Gear</a>
-                <a class="btn btn-cta-yt" href="http://youtube.com/@worldcomposting" target="_blank" rel="noopener">▶ YouTube</a>
-            </div>
-        </div>
-    </header>
+<div class="nav-inner">
+<a aria-label="World Composting — home" class="nav-logo" href="index.html">
+<img alt="World Composting Logo" height="40" loading="eager" onerror="this.src='https://via.placeholder.com/40?text=WC'" src="src/assets/logo.png" width="40"/>
+<span class="nav-logo-text">World Composting<small>Guides · Checklists · Gear</small></span>
+</a>
+<button aria-controls="nav-links" aria-expanded="false" aria-label="Toggle menu" class="nav-burger" id="nav-burger">
+<span></span><span></span><span></span>
+</button>
+<ul class="nav-links" id="nav-links">
+<li><a class="nav-link" href="index.html">Home</a></li>
+<li><a class="nav-link" href="start-here.html">Start Here</a></li>
+<li><a class="nav-link" href="worm-composting.html">Worm</a></li>
+<li><a class="nav-link" href="hot-composting.html">Hot Compost</a></li>
+<li class="nav-dropdown">
+<span class="nav-dd-trigger">Hubs<span class="dd-caret">▾</span></span>
+<ul class="dd-menu">
+<li><a href="hub-worm-composting.html">Worm Composting</a></li>
+<li><a href="hub-hot-composting.html">Hot Composting</a></li>
+<li><a href="hub-bokashi.html">Bokashi</a></li>
+<li><a href="hub-biochar.html">Biochar</a></li>
+<li><a href="hub-lasagna.html">Lasagna Composting</a></li>
+<li><a href="hub-tumbler.html">Tumbler Composting</a></li>
+<li><a href="hub-black-soldier-fly.html">Black Soldier Fly</a></li>
+<li><a href="hub-energy-efficiency.html">Energy Efficiency</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="index.html#checklists">Checklists</a></li>
+<li><a class="nav-link" href="faq.html">FAQ</a></li>
+</ul>
+<div class="nav-ctas">
+<a class="btn btn-cta-gear" href="gear.html"><svg aria-hidden="true" fill="currentColor" height="16" viewBox="0 0 24 24" width="16"><path d="M18 6h-2a4 4 0 0 0-8 0H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2zm-6 2a2 2 0 0 1 2-2 2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2z"/></svg> Gear</a>
+<a class="btn btn-cta-yt" href="http://youtube.com/@worldcomposting" rel="noopener" target="_blank">▶ YouTube</a>
+</div>
+</div>
+</header>
 
     <script>
         (function () {

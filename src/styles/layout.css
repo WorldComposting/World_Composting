@@ -110,6 +110,51 @@
   font-weight: 600;
 }
 
+/* ---------- Nav dropdown (Hubs) ---------- */
+.nav-dropdown { position: relative; }
+.nav-dd-trigger {
+  display: inline-block;
+  padding: .5em .8em;
+  border-radius: var(--radius-full);
+  font-size: .92rem;
+  font-weight: 500;
+  color: var(--ink-2);
+  cursor: default;
+}
+.nav-dd-trigger:hover {
+  color: var(--forest-2);
+  background: var(--leaf-soft);
+}
+.nav-dd-trigger .dd-caret { font-size: .65em; margin-left: .25em; opacity: .65; }
+.dd-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 4px);
+  left: -12px;
+  min-width: 230px;
+  margin: 0;
+  padding: 8px 0;
+  list-style: none;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  z-index: 60;
+}
+.nav-dropdown:hover .dd-menu,
+.nav-dropdown:focus-within .dd-menu { display: block; }
+.dd-menu li a {
+  display: block;
+  padding: .55em 1.2em;
+  font-size: .95rem;
+  font-weight: 500;
+  color: var(--ink-2);
+  white-space: nowrap;
+}
+.dd-menu li a:hover { background: var(--gold-soft); color: var(--forest-2); }
+
+#checklists { scroll-margin-top: calc(var(--nav-h) + 12px); }
+
 .nav-ctas {
   display: flex;
   align-items: center;
@@ -166,6 +211,22 @@
   .top-nav.nav-open .nav-links { display: flex; }
   .nav-links a { padding: .75em 1em; font-size: 1rem; }
   .nav-ctas .btn-cta-gear { display: none; }
+  /* Hubs dropdown renders as a flat group in the mobile panel */
+  .nav-dd-trigger { display: block; padding: .75em 1em; font-size: 1rem; color: var(--ink); }
+  .nav-dd-trigger:hover { background: transparent; }
+  .nav-dd-trigger .dd-caret { display: none; }
+  .dd-menu {
+    position: static;
+    display: block;
+    min-width: 0;
+    margin: 0;
+    padding: 0 0 4px;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+  .dd-menu li a { padding: .5em 1em .5em 1.6em; font-size: .98rem; }
 }
 @media (max-width: 560px) {
   .nav-ctas .btn { padding: .6em 1em; }
@@ -223,6 +284,19 @@
   margin: 0;
 }
 
+/* Standalone slogan line under the hero h1 (index) */
+.hero-tagline {
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(1.5rem, 2.8vw, 2.05rem);
+  letter-spacing: .01em;
+  color: var(--gold);
+  margin: 0 0 1.1rem;
+}
+
 /* Hero action row (CTAs inside hero) */
 .hero-actions {
   display: flex;
@@ -275,6 +349,8 @@
   position: relative;
   z-index: 1;
 }
+.hero-wide .hero-tagline,
+.hero .hero-tagline { color: var(--gold); }
 
 /* Standalone photo banner for pages whose header is light or absent */
 .photo-banner {
