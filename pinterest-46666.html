@@ -21,7 +21,7 @@
 <li><a class="nav-link" href="worm-composting.html">Worm</a></li>
 <li><a class="nav-link" href="hot-composting.html">Hot Compost</a></li>
 <li class="nav-dropdown">
-<span class="nav-dd-trigger">Hubs<span class="dd-caret">▾</span></span>
+<button class="nav-dd-trigger" type="button" aria-haspopup="true" aria-expanded="false">Topics<span class="dd-caret">▾</span></button>
 <ul class="dd-menu">
 <li><a href="hub-worm-composting.html">Worm Composting</a></li>
 <li><a href="hub-hot-composting.html">Hot Composting</a></li>
@@ -49,6 +49,28 @@
                 burger.addEventListener('click', function () {
                     var open = nav.classList.toggle('nav-open');
                     burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+                });
+            }
+            var dd = document.querySelector('.nav-dropdown');
+            if (dd) {
+                var trig = dd.querySelector('.nav-dd-trigger');
+                var setOpen = function (open) {
+                    dd.classList.toggle('open', open);
+                    trig.setAttribute('aria-expanded', open ? 'true' : 'false');
+                };
+                trig.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    setOpen(!dd.classList.contains('open'));
+                });
+                document.addEventListener('click', function (e) {
+                    if (!dd.contains(e.target)) setOpen(false);
+                });
+                document.addEventListener('keydown', function (e) {
+                    if (e.key === 'Escape') {
+                        setOpen(false);
+                        var ae = document.activeElement;
+                        if (ae && dd.contains(ae)) ae.blur();
+                    }
                 });
             }
         })();

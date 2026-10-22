@@ -119,7 +119,11 @@
   font-size: .92rem;
   font-weight: 500;
   color: var(--ink-2);
-  cursor: default;
+  background: none;
+  border: 0;
+  font-family: inherit;
+  line-height: inherit;
+  cursor: pointer;
 }
 .nav-dd-trigger:hover {
   color: var(--forest-2);
@@ -142,7 +146,17 @@
   z-index: 60;
 }
 .nav-dropdown:hover .dd-menu,
-.nav-dropdown:focus-within .dd-menu { display: block; }
+.nav-dropdown:focus-within .dd-menu,
+.nav-dropdown.open .dd-menu { display: block; }
+/* Invisible bridge across the gap above the menu so hover never drops */
+.dd-menu::before {
+  content: "";
+  position: absolute;
+  top: -12px;
+  left: 0;
+  right: 0;
+  height: 12px;
+}
 .dd-menu li a {
   display: block;
   padding: .55em 1.2em;
