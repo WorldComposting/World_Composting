@@ -1,352 +1,26 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="canonical" href="https://www.worldcomposting.com/">
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-    <title>World Composting: Guides, Checklists & Gear for Beginners</title>
-    <meta name="description" content="Your complete composting resource. Explore guides on worm and hot composting, step-by-step checklists, video playlists, and recommended gear.">
-    <!-- Google Search Console Verification -->
-    <meta name="google-site-verification" content="google8a4b2c3d1e5f6789">
-    <link rel="stylesheet" href="src/styles/theme.css">
-    <link rel="stylesheet" href="src/styles/layout.css">
-    <style>/* Hero section: wider, more breathing room */
-        .hero-wide {
-            text-align: center;
-            padding: 3rem 2rem 2.5rem;
-            background: white;
-            border-radius: 16px;
-            box-shadow: var(--card-shadow);
-            margin-bottom: 2rem;
-        }
-
-.hero-wide img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            object-fit: cover;
-            box-shadow: 0 4px 20px rgba(45,90,39,0.15);
-        }
-
-.hero-wide h1 {
-            font-family: 'Lora', serif;
-            color: var(--forest-green);
-            font-size: 2.75rem;
-            margin: 1rem 0 0.5rem;
-            letter-spacing: -0.5px;
-        }
-
-.hero-wide .subtitle {
-            font-family: 'Lora', serif;
-            color: var(--ocean-blue);
-            font-style: italic;
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-        }
-
-.hero-wide p.intro-text {
-            font-size: 1.05rem;
-            line-height: 1.7;
-            color: var(--text-dark);
-            opacity: 0.85;
-            max-width: 720px;
-            margin: 0 auto;
-        }
-
-/* Section headers: wider */
-        .section-header-wide {
-            text-align: center;
-            padding: 2rem 1rem 1rem;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-.section-header-wide h2 {
-            font-size: 1.75rem;
-            color: var(--forest-green);
-            margin-bottom: 0.5rem;
-        }
-
-.section-header-wide p {
-            color: var(--text-dark);
-            opacity: 0.75;
-            font-size: 1rem;
-        }
-
-/* Pillar cards: wider grid, 2 columns */
-        .pillar-grid-wide {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 0 1rem 2rem;
-        }
-
-.pillar-card-wide {
-            background: white;
-            border-radius: 16px;
-            box-shadow: var(--card-shadow);
-            padding: 2.5rem;
-            transition: transform 0.2s, box-shadow 0.2s;
-            display: flex;
-            flex-direction: column;
-        }
-
-.pillar-card-wide:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
-        }
-
-.pillar-card-wide .card-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-.pillar-card-wide h3 {
-            font-size: 1.4rem;
-            color: var(--forest-green);
-            margin-bottom: 0.75rem;
-        }
-
-.pillar-card-wide p {
-            flex: 1;
-            line-height: 1.6;
-            color: var(--text-dark);
-            opacity: 0.85;
-            font-size: 0.95rem;
-            margin-bottom: 1.25rem;
-        }
-
-.pillar-card-wide .card-meta {
-            display: flex;
-            gap: 1rem;
-            font-size: 0.8rem;
-            color: var(--text-dark);
-            opacity: 0.6;
-            margin-bottom: 1rem;
-        }
-
-/* Checklist grid: wider, 3 columns */
-        .checklist-grid-wide {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 0 1rem 2rem;
-        }
-
-.checklist-card-wide {
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 3px 12px rgba(0,0,0,0.07);
-            padding: 1.5rem;
-            text-decoration: none;
-            transition: transform 0.2s, box-shadow 0.2s;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-.checklist-card-wide:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 24px rgba(0,0,0,0.12);
-        }
-
-.checklist-icon-wide {
-            font-size: 1.75rem;
-            flex-shrink: 0;
-            width: 48px;
-            height: 48px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--off-white);
-            border-radius: 10px;
-        }
-
-.checklist-info-wide {
-            flex: 1;
-        }
-
-.checklist-info-wide h3 {
-            font-size: 0.95rem;
-            color: var(--forest-green);
-            margin-bottom: 0.25rem;
-        }
-
-.checklist-info-wide small {
-            color: var(--text-dark);
-            opacity: 0.6;
-            font-size: 0.8rem;
-        }
-
-/* Articles grid: wider, 3 columns */
-        .articles-grid-wide {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.25rem;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 0 1rem 2rem;
-        }
-
-.article-card-wide {
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 3px 12px rgba(0,0,0,0.07);
-            padding: 1.5rem;
-            text-decoration: none;
-            transition: transform 0.2s, box-shadow 0.2s;
-            display: flex;
-            flex-direction: column;
-        }
-
-.article-card-wide:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 24px rgba(0,0,0,0.12);
-        }
-
-.article-card-wide h3 {
-            font-size: 1.05rem;
-            color: var(--forest-green);
-            margin-bottom: 0.5rem;
-            line-height: 1.3;
-        }
-
-.article-card-wide p {
-            flex: 1;
-            font-size: 0.9rem;
-            color: var(--text-dark);
-            opacity: 0.8;
-            margin-bottom: 0.75rem;
-            line-height: 1.5;
-        }
-
-.article-card-wide .card-tag {
-            display: inline-block;
-            font-size: 0.75rem;
-            padding: 0.25rem 0.6rem;
-            border-radius: 4px;
-            background: var(--off-white);
-            color: var(--ocean-blue);
-            font-weight: 600;
-        }
-
-/* Video section: wider */
-        .video-section-wide {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 0 1rem 2rem;
-        }
-
-.video-card-wide {
-            display: flex;
-            align-items: center;
-            gap: 1.25rem;
-            padding: 1rem;
-            margin-bottom: 0.75rem;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 3px 12px rgba(0,0,0,0.07);
-            transition: transform 0.15s, box-shadow 0.15s;
-        }
-
-.video-card-wide:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 24px rgba(0,0,0,0.12);
-        }
-
-.video-card-wide a {
-            display: flex;
-            align-items: center;
-            gap: 1.25rem;
-            width: 100%;
-            text-decoration: none;
-        }
-
-.video-thumbnail-wide {
-            width: 168px;
-            height: 94px;
-            object-fit: cover;
-            border-radius: 8px;
-            flex-shrink: 0;
-        }
-
-/* Product links: wider */
-        .product-section-wide {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 0 1rem 2rem;
-        }
-
-.product-link-wide {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background: white;
-            padding: 1.25rem 1.5rem;
-            margin-bottom: 0.75rem;
-            border-radius: 12px;
-            text-decoration: none;
-            color: var(--forest-green);
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: 0 3px 12px rgba(0,0,0,0.07);
-        }
-
-.product-link-wide:hover {
-            transform: translateX(4px);
-            box-shadow: 0 6px 24px rgba(0,0,0,0.12);
-        }
-
-/* View All Gear link */
-        .view-all-gear {
-            text-align: center;
-            padding: 1rem 0 0;
-        }
-
-.view-all-gear a {
-            display: inline-block;
-            text-decoration: none;
-            color: var(--ocean-blue);
-            font-weight: 600;
-            font-size: 1rem;
-            padding: 0.75rem 1.5rem;
-            border-radius: 8px;
-            transition: background 0.2s, color 0.2s;
-        }
-
-.view-all-gear a:hover {
-            background: var(--off-white);
-        }
-
-/* ===== BUTTONS ===== */
-        .btn-primary-wide {
-            display: inline-block;
-            padding: 0.85rem 1.75rem;
-            background: var(--forest-green);
-            color: white;
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: 600;
-            text-align: center;
-            transition: background 0.2s;
-        }
-
-.btn-primary-wide:hover {
-            background: var(--ocean-blue);
-        }
-
-/* ===== RESPONSIVE BREAKPOINTS ===== */</style>
-    <!-- Google Analytics (skipped on localhost) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KRHYVJXZLE"></script>
-    <script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://www.worldcomposting.com/" rel="canonical"/>
+<link href="/favicon.ico" rel="icon" type="image/x-icon"/>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon"/>
+<title>World Composting: Guides, Checklists &amp; Gear for Beginners</title>
+<meta content="Your complete composting resource. Explore guides on worm and hot composting, step-by-step checklists, video playlists, and recommended gear." name="description"/>
+<!-- Google Search Console Verification -->
+<meta content="google8a4b2c3d1e5f6789" name="google-site-verification"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="src/styles/theme.css" rel="stylesheet"/>
+<link href="src/styles/layout.css" rel="stylesheet"/>
+<link href="src/styles/components.css" rel="stylesheet"/>
+<link href="src/styles/video-section.css" rel="stylesheet"/>
+<link href="src/styles/article.css" rel="stylesheet"/>
+<!-- Google Analytics (skipped on localhost) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-KRHYVJXZLE"></script>
+<script>
       if (!window.location.hostname.includes('localhost') && !window.location.hostname.includes('127.0.0.1')) {
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
@@ -354,13 +28,13 @@
         gtag('config', 'G-KRHYVJXZLE');
       }
     </script>
-    <!-- Pinterest Tag -->
-    <script type="text/javascript">
+<!-- Pinterest Tag -->
+<script type="text/javascript">
       _pt = "2612544072053";
       (function(e,t,n){var r,i=document.createElement(n);i.async=1,i.src="https://cdn.pinterest.com/tags.min.js#" + encodeURIComponent(_pt);if(t){r=document.createElement(n);r.type="text/javascript";r.defer=!0;r.src="//pixel-assets.pinterest.com/tags/pid-req-utils.js",document.getElementsByTagName("head")[0].appendChild(r)}i.onload=i.onerror=function(){var e=window.pinall;window.pinall=null;var t=1;e&&e.length>0&&(t=e[0]);for(var n;n=e.length;)n.shift(),(n=n[0])&&"function"==typeof n.n&&n.n(t);window.pinall=e};document.getElementsByTagName("head")[0].appendChild(i)})(window,document,"script");
     </script>
-    <!-- Website Structured Data -->
-    <script type="application/ld+json">
+<!-- Website Structured Data -->
+<script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "WebSite",
@@ -374,170 +48,218 @@
       }
     }
     </script>
-    <link rel="alternate" href="/llms.txt" title="World Composting AI Index">
+<link href="/llms.txt" rel="alternate" title="World Composting AI Index"/>
 </head>
-<body>
-    <div class="page-wrapper">
-
-        <!-- ===== SIDEBAR NAVIGATION ===== -->
-        <aside class="sidebar">
-            <div class="sidebar-logo">
-                <img src="src/assets/logo.png" alt="World Composting Logo" width="64" height="64" loading="eager" onerror="this.src='https://via.placeholder.com/64?text=WC'">
-                <h2>World Composting</h2>
-            </div>
-
-            <ul class="sidebar-nav">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="start-here.html">Start Here</a></li>
-                <li><a href="science-of-compost.html">The Science of Compost</a></li>
-                <li><a href="about.html">About</a></li>
-
-                <li><div class="sidebar-divider"></div></li>
-                <li class="sidebar-section-label">Guides</li>
-
-                <li><a href="worm-composting.html">Worm Composting</a></li>
-                <li><a href="hot-composting.html">Hot Composting</a></li>
-
-                <li><div class="sidebar-divider"></div></li>
-                <li class="sidebar-section-label">Hubs</li>
-
-                <li><a href="hub-worm-composting.html">Worm Composting Hub</a></li>
-                <li><a href="hub-hot-composting.html">Hot Composting Hub</a></li>
-                <li><a href="hub-bokashi.html">Bokashi Hub</a></li>
-                <li><a href="hub-biochar.html">BioChar Hub</a></li>
-                <li><a href="hub-tumbler.html">Tumbler Composting Hub</a></li>
-                <li><a href="hub-lasagna.html">Lasagna Composting Hub</a></li>
-                <li><a href="hub-black-soldier-fly.html">Black Soldier Fly Hub</a></li>
-                <li><a href="hub-energy-efficiency.html">Energy Efficiency Hub</a></li>
-
-                <li><div class="sidebar-divider"></div></li>
-                <li class="sidebar-section-label">Gear</li>
-
-                <li><a href="gear.html" style="color: var(--forest-green); font-weight: 700; font-size: 1.05rem;">🛒 View All Gear → <span class="popular-badge">Popular</span></a></li>
-
-                <li><div class="sidebar-divider"></div></li>
-                <li class="sidebar-section-label">Checklists</li>
-
-                <li><a href="beginner.html">Beginner's Checklist</a></li>
-                <li><a href="pre-compost.html">Pre-Compost for Worm Bins</a></li>
-                <li><a href="hot.html">Hot Composting Checklist</a></li>
-                <li><a href="bokashi.html">Bokashi Composting</a></li>
-                <li><a href="biochar.html">BioChar Composting</a></li>
-                <li><a href="tumbler.html">Tumbler Composting</a></li>
-                <li><a href="tea.html">Compost Tea</a></li>
-                <li><a href="lasagna.html">Lasagna Composting Checklist</a></li>
-                <li><a href="black_soldier_fly.html">Black Soldier Fly</a></li>
-
-                <li><div class="sidebar-divider"></div></li>
-                <li class="sidebar-section-label">Troubleshooting / Deep Dives</li>
-
-                <li><a href="troubleshoot.html">Troubleshooting Guide</a></li>
-                <li><a href="electric_composter.html">Electric Composters</a></li>
-                <li><a href="sustainability.html">Sustainability Journey</a></li>
-                <li><a href="energy-efficiency.html">Energy Efficiency at Home</a></li>
-                <li><a href="zero-waste-kitchen.html">Zero Waste Kitchen</a></li>
-
-                <li><div class="sidebar-divider"></div></li>
-                <li class="sidebar-section-label">Resources</li>
-
-                <li><a href="glossary.html">Glossary</a></li>
-                <li><a href="faq.html">Frequently Asked Questions</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="sitemap.html">Sitemap</a></li>
-
-            </ul>
-        </aside>
-
-
-        <!-- ===== MAIN CONTENT AREA ===== -->
-        <main class="main-content">
-
-            <!-- HERO SECTION -->
-            <header class="hero-wide">
-               <img src="src/assets/logo.png" alt="World Composting Logo" width="100" height="100" loading="eager" onerror="this.src='https://via.placeholder.com/100?text=WC'">
-                <h1>World Composting</h1>
-                <p class="subtitle">Turning waste into wonder.</p>
-                <p class="intro-text">
-                    Whether you're a beginner looking to reduce household waste or an experienced gardener chasing the perfect compost, World Composting is your complete resource. Explore in-depth guides, step-by-step checklists, curated video playlists, and trusted gear recommendations, all designed to help you master composting at any level.<br><br>
-                    <strong>What I cover:</strong> From worm bins under the kitchen sink to backyard hot-compost piles that reach 160°F, from bokashi fermentation in sealed buckets to biochar-amended soil that holds moisture for weeks. My guides break down every major composting method into clear, actionable steps. I explain <em>why</em> each technique works (the science of thermophilic bacteria, the carbon-to-nitrogen balance, the role of red wigglers) so you can troubleshoot problems before they start.<br><br>
-                    <strong>Who it's for:</strong> Apartment dwellers with no yard space, suburban gardeners building their first pile, urban homesteaders scaling up to farm-size operations, and anyone who wants to turn kitchen scraps into nutrient-rich soil instead of sending them to a landfill. No prior experience required; my checklists start at "Day 1" and walk you through every phase.<br><br>
-                    <strong>My mission:</strong> To make composting accessible, practical, and rewarding for everyone. I believe that turning waste into fertile soil is one of the most impactful things a household can do for the environment, and it doesn't have to be complicated or smelly. Every guide on this site is written from real-world experience: years of hands-on vermicomposting, hot-compost pile management, and testing dozens of gear products so you don't have to.<br><br>
-                    <strong>Why trust me:</strong> I've been composting since 2015, across worm bins, bokashi buckets, tumblers, and open-air piles. My YouTube channel (World Composting) has helped over 50,000 viewers start their own systems. Almost every product recommendation on this site is tested in my own bins first. I only link to gear I've personally used or verified through independent reviews.<br><br>
-                    <strong>What you'll find here:</strong> Long-form guides that actually walk you through a method from start to finish, interactive checklists with progress tracking so you never lose your place, deep-dive articles on the stuff that trips people up (fruit flies, C:N ratios, why your pile won't heat), a glossary of composting terms when a word puzzles you, troubleshooting pages for common problems, YouTube playlists organized by method, and a gear page with links to products I've actually tested. Everything is free, no ads, and updated as new methods come along.
+<body><header class="top-nav" id="top-nav">
+<div class="nav-inner">
+<a aria-label="World Composting — home" class="nav-logo" href="index.html">
+<img alt="World Composting Logo" height="40" loading="eager" onerror="this.src='https://via.placeholder.com/40?text=WC'" src="src/assets/logo.png" width="40"/>
+<span class="nav-logo-text">World Composting<small>Guides · Checklists · Gear</small></span>
+</a>
+<button aria-controls="nav-links" aria-expanded="false" aria-label="Toggle menu" class="nav-burger" id="nav-burger">
+<span></span><span></span><span></span>
+</button>
+<ul class="nav-links" id="nav-links">
+<li><a class="nav-link active" href="index.html">Home</a></li>
+<li><a class="nav-link" href="start-here.html">Start Here</a></li>
+<li><a class="nav-link" href="worm-composting.html">Worm</a></li>
+<li><a class="nav-link" href="hot-composting.html">Hot Compost</a></li>
+<li class="nav-dropdown">
+<button class="nav-dd-trigger" type="button" aria-haspopup="true" aria-expanded="false">Topics<span class="dd-caret">▾</span></button>
+<ul class="dd-menu">
+<li><a href="hub-worm-composting.html">Worm Composting</a></li>
+<li><a href="hub-hot-composting.html">Hot Composting</a></li>
+<li><a href="hub-bokashi.html">Bokashi</a></li>
+<li><a href="hub-biochar.html">Biochar</a></li>
+<li><a href="hub-lasagna.html">Lasagna Composting</a></li>
+<li><a href="hub-tumbler.html">Tumbler Composting</a></li>
+<li><a href="hub-black-soldier-fly.html">Black Soldier Fly</a></li>
+<li><a href="hub-energy-efficiency.html">Energy Efficiency</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="index.html#checklists">Checklists</a></li>
+<li><a class="nav-link" href="faq.html">FAQ</a></li>
+</ul>
+<div class="nav-ctas">
+<a class="btn btn-cta-gear" href="gear.html"><svg aria-hidden="true" fill="currentColor" height="16" viewBox="0 0 24 24" width="16"><path d="M18 6h-2a4 4 0 0 0-8 0H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2zm-6 2a2 2 0 0 1 2-2 2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2z"/></svg> Gear</a>
+<a class="btn btn-cta-yt" href="http://youtube.com/@worldcomposting" rel="noopener" target="_blank">▶ YouTube</a>
+</div>
+</div>
+</header><script>
+        (function () {
+            var burger = document.getElementById('nav-burger');
+            var nav = document.getElementById('top-nav');
+            if (burger && nav) {
+                burger.addEventListener('click', function () {
+                    var open = nav.classList.toggle('nav-open');
+                    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+                });
+            }
+            var dd = document.querySelector('.nav-dropdown');
+            if (dd) {
+                var trig = dd.querySelector('.nav-dd-trigger');
+                var setOpen = function (open) {
+                    dd.classList.toggle('open', open);
+                    trig.setAttribute('aria-expanded', open ? 'true' : 'false');
+                };
+                trig.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    setOpen(!dd.classList.contains('open'));
+                });
+                document.addEventListener('click', function (e) {
+                    if (!dd.contains(e.target)) setOpen(false);
+                });
+                document.addEventListener('keydown', function (e) {
+                    if (e.key === 'Escape') {
+                        setOpen(false);
+                        var ae = document.activeElement;
+                        if (ae && dd.contains(ae)) ae.blur();
+                    }
+                });
+            }
+        })();
+    </script>
+<div class="page-wrapper">
+<!-- ===== SIDEBAR NAVIGATION ===== -->
+<!-- ===== MAIN CONTENT AREA ===== -->
+<main class="main-content">
+<!-- HERO SECTION -->
+<header class="hero-wide"><img alt="A freshly turned compost heap in a farmstead garden" class="hero-photo" decoding="async" fetchpriority="high" loading="eager" src="src/assets/images/home.jpg"/>
+<img alt="World Composting Logo" height="100" loading="eager" onerror="this.src='https://via.placeholder.com/100?text=WC'" src="src/assets/logo.png" width="100"/>
+<h1>World Composting</h1>
+<p class="hero-tagline">Turning waste into wonder.</p>
+<p class="intro-text">
+                    Whether you're a beginner looking to reduce household waste or an experienced gardener chasing the perfect compost, World Composting is your complete resource. Explore in-depth guides, step-by-step checklists, curated video playlists, and trusted gear recommendations, all designed to help you master composting at any level.<br/><br/>
+<strong>What I cover:</strong> From worm bins under the kitchen sink to backyard hot-compost piles that reach 160°F, from bokashi fermentation in sealed buckets to biochar-amended soil that holds moisture for weeks. My guides break down every major composting method into clear, actionable steps. I explain <em>why</em> each technique works (the science of thermophilic bacteria, the carbon-to-nitrogen balance, the role of red wigglers) so you can troubleshoot problems before they start.<br/><br/>
+<strong>Who it's for:</strong> Apartment dwellers with no yard space, suburban gardeners building their first pile, urban homesteaders scaling up to farm-size operations, and anyone who wants to turn kitchen scraps into nutrient-rich soil instead of sending them to a landfill. No prior experience required; my checklists start at "Day 1" and walk you through every phase.<br/><br/>
+<strong>My mission:</strong> To make composting accessible, practical, and rewarding for everyone. I believe that turning waste into fertile soil is one of the most impactful things a household can do for the environment, and it doesn't have to be complicated or smelly. Every guide on this site is written from real-world experience: years of hands-on vermicomposting, hot-compost pile management, and testing dozens of gear products so you don't have to.<br/><br/>
+<strong>Why trust me:</strong> I've been composting since 2015, across worm bins, bokashi buckets, tumblers, and open-air piles. My YouTube channel (World Composting) has helped over 50,000 viewers start their own systems. Almost every product recommendation on this site is tested in my own bins first. I only link to gear I've personally used or verified through independent reviews.<br/><br/>
+<strong>What you'll find here:</strong> Long-form guides that actually walk you through a method from start to finish, interactive checklists with progress tracking so you never lose your place, deep-dive articles on the stuff that trips people up (fruit flies, C:N ratios, why your pile won't heat), a glossary of composting terms when a word puzzles you, troubleshooting pages for common problems, YouTube playlists organized by method, and a gear page with links to products I've actually tested. Everything is free, no ads, and updated as new methods come along.
                 </p>
-            </header>
-
-            <!-- FEATURED PILLAR GUIDES -->
-            <div class="section-header-wide">
-                <h2>In-Depth Guides</h2>
-                <p>Our comprehensive, SEO-optimized guides cover everything you need to know.</p>
-            </div>
-            <div class="pillar-grid-wide">
-                <!-- Worm Composting Pillar -->
-                <div class="pillar-card-wide">
-                    <div class="card-icon">🪱</div>
-                    <h3>The Complete Guide to Worm Composting</h3>
-                    <p>Everything you need to know about vermicomposting, from choosing the right bin method and understanding red wiggler biology, to feeding science, harvesting nutrient-rich castings, and troubleshooting common problems. Perfect for apartment dwellers and small-space gardeners.</p>
-                    <div class="card-meta">
-                        <span>~3,000 words</span>
-                        <span>11 sections</span>
-                        <span>5 FAQs</span>
-                    </div>
-                    <a href="worm-composting.html" class="btn-primary-wide">Read the Guide →</a>
-                </div>
-                <!-- Hot Composting Pillar -->
-                <div class="pillar-card-wide">
-                    <div class="card-icon">🔥</div>
-                    <h3>The Complete Guide to Hot Composting</h3>
-                    <p>Master thermophilic decomposition and produce nutrient-rich compost in as little as 18–21 days. Learn the science of heat-loving microbes, master carbon-to-nitrogen ratios, build the perfect pile, manage temperatures, cure finished compost, and scale up from backyard to farm.</p>
-                    <div class="card-meta">
-                        <span>~3,000 words</span>
-                        <span>11 sections</span>
-                        <span>5 FAQs</span>
-                    </div>
-                    <a href="hot-composting.html" class="btn-primary-wide">Read the Guide →</a>
-                </div>
-            </div>
-
-            <!-- GET STARTED - CHECKLISTS -->
-            <div class="section-header-wide">
-                <h2>Get Started with Checklists</h2>
-                <p>Step-by-step interactive checklists to guide you through every composting method.</p>
-            </div>
-            <div class="checklist-grid-wide" id="checklist-container"></div>
-
-            <!-- DEEP DIVE ARTICLES -->
-            <div class="section-header-wide">
-                <h2>Deep Dive Articles</h2>
-                <p>Expert-level guides covering specific topics in detail.</p>
-            </div>
-            <div class="articles-grid-wide" id="articles-container"></div>
-
-            <!-- VIDEO PLAYLISTS -->
-            <div class="section-header-wide">
-                <h2>Watch & Learn</h2>
-                <p>Curated YouTube playlists covering every composting technique and tool.</p>
-            </div>
-            <div class="video-section-wide" id="video-container"></div>
-
-            <!-- RECOMMENDED GEAR -->
-            <div class="section-header-wide">
-                <h2>Recommended Gear</h2>
-                <p>Trusted tools and products we use and recommend for composting success.</p>
-            </div>
-            <div class="product-section-wide" id="product-container"></div>
-
-        </main>
-
-    </div><!-- .page-wrapper -->
-
-    <!-- FOOTER: outside grid, spans full width -->
-    <footer class="footer-wide">
-        &copy; 2026 World Composting<br>
-        As an Amazon Associate, I earn from qualifying purchases.
-    </footer>
-
-    <script>
+</header>
+<!-- FEATURED PILLAR GUIDES -->
+<div class="section-header-wide">
+<h2>In-Depth Guides</h2>
+<p>Our comprehensive, SEO-optimized guides cover everything you need to know.</p>
+</div>
+<div class="pillar-grid-wide">
+<!-- Worm Composting Pillar -->
+<div class="pillar-card-wide">
+<div class="card-icon">🪱</div>
+<h3>The Complete Guide to Worm Composting</h3>
+<p>Everything you need to know about vermicomposting, from choosing the right bin method and understanding red wiggler biology, to feeding science, harvesting nutrient-rich castings, and troubleshooting common problems. Perfect for apartment dwellers and small-space gardeners.</p>
+<div class="card-meta">
+<span>~3,000 words</span>
+<span>11 sections</span>
+<span>5 FAQs</span>
+</div>
+<a class="btn-primary-wide" href="worm-composting.html">Read the Guide →</a>
+</div>
+<!-- Hot Composting Pillar -->
+<div class="pillar-card-wide">
+<div class="card-icon">🔥</div>
+<h3>The Complete Guide to Hot Composting</h3>
+<p>Master thermophilic decomposition and produce nutrient-rich compost in as little as 18–21 days. Learn the science of heat-loving microbes, master carbon-to-nitrogen ratios, build the perfect pile, manage temperatures, cure finished compost, and scale up from backyard to farm.</p>
+<div class="card-meta">
+<span>~3,000 words</span>
+<span>11 sections</span>
+<span>5 FAQs</span>
+</div>
+<a class="btn-primary-wide" href="hot-composting.html">Read the Guide →</a>
+</div>
+</div>
+<!-- GET STARTED - CHECKLISTS -->
+<div class="section-header-wide" id="checklists">
+<h2>Get Started with Checklists</h2>
+<p>Step-by-step interactive checklists to guide you through every composting method.</p>
+</div>
+<div class="checklist-grid-wide" id="checklist-container"></div>
+<!-- DEEP DIVE ARTICLES -->
+<div class="section-header-wide">
+<h2>Deep Dive Articles</h2>
+<p>Expert-level guides covering specific topics in detail.</p>
+</div>
+<div class="articles-grid-wide" id="articles-container"></div>
+<!-- VIDEO PLAYLISTS -->
+<div class="section-header-wide">
+<h2>Watch &amp; Learn</h2>
+<p>Curated YouTube playlists covering every composting technique and tool.</p>
+</div>
+<div class="video-section-wide" id="video-container"></div>
+<!-- RECOMMENDED GEAR -->
+<div class="section-header-wide">
+<h2>Recommended Gear</h2>
+<p>Trusted tools and products we use and recommend for composting success.</p>
+</div>
+<div class="product-section-wide" id="product-container"></div>
+</main>
+</div><!-- .page-wrapper -->
+<!-- FOOTER: outside grid, spans full width -->
+<section aria-label="Get started" class="cta-band">
+<div class="cta-band-inner">
+<div class="cta-band-text">
+<h2>Ready to turn scraps into soil?</h2>
+<p>Watch the full step-by-step walkthroughs on YouTube, or grab the exact gear I recommend in my builds.</p>
+</div>
+<div class="cta-band-actions">
+<a class="btn btn-youtube btn-lg" href="http://youtube.com/@worldcomposting" rel="noopener" target="_blank">▶ Watch on YouTube</a>
+<a class="btn btn-gear btn-lg" href="gear.html">Shop Compost Gear</a>
+</div>
+</div>
+</section><footer class="site-footer">
+<div class="footer-cols">
+<div class="footer-brand">
+<a href="index.html"><img alt="World Composting Logo" height="52" loading="eager" src="src/assets/logo.png" width="52"/></a>
+<p>Complete composting guides, interactive checklists, and gear recommendations for people who actually want their compost to work.</p>
+<p><a class="btn btn-youtube" href="http://youtube.com/@worldcomposting" rel="noopener" target="_blank">▶ World Composting on YouTube</a></p>
+</div>
+<div class="footer-col">
+<h3>Guides</h3>
+<ul>
+<li><a href="start-here.html">Start Here</a></li>
+<li><a href="worm-composting.html">Worm Composting</a></li>
+<li><a href="hot-composting.html">Hot Composting</a></li>
+<li><a href="bokashi.html">Bokashi</a></li>
+<li><a href="biochar.html">BioChar</a></li>
+<li><a href="lasagna.html">Lasagna Composting</a></li>
+<li><a href="tumbler.html">Tumbler</a></li>
+<li><a href="black_soldier_fly.html">Black Soldier Fly</a></li>
+<li><a href="tea.html">Compost Tea</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h3>Hubs</h3>
+<ul>
+<li><a href="hub-worm-composting.html">Worm Composting Hub</a></li>
+<li><a href="hub-hot-composting.html">Hot Composting Hub</a></li>
+<li><a href="hub-bokashi.html">Bokashi Hub</a></li>
+<li><a href="hub-biochar.html">BioChar Hub</a></li>
+<li><a href="hub-tumbler.html">Tumbler Hub</a></li>
+<li><a href="hub-lasagna.html">Lasagna Hub</a></li>
+<li><a href="hub-black-soldier-fly.html">Black Soldier Fly Hub</a></li>
+<li><a href="hub-energy-efficiency.html">Energy Efficiency Hub</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h3>Resources</h3>
+<ul>
+<li><a href="beginner.html">Beginner's Checklist</a></li>
+<li><a href="troubleshoot.html">Troubleshooting</a></li>
+<li><a href="science-of-compost.html">The Science of Compost</a></li>
+<li><a href="glossary.html">Glossary</a></li>
+<li><a href="faq.html">FAQ</a></li>
+<li><a href="blog.html">Blog</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="sitemap.html">Sitemap</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-legal">
+<p>© 2026 World Composting. All rights reserved.</p>
+<p>As an Amazon Associate, I earn from qualifying purchases. Some product links are affiliate links at no extra cost to you.</p>
+<p cls="footer-credits"><a href="photo-credits.html">Photo credits (Wikimedia Commons, PD/CC licenses)</a></p></div>
+</footer>
+<script>
         // CHECKLIST DATA
         const checklists = [
             { href: "start-here.html", icon: "🧭", name: "Start Here", label: "Decision Guide" },

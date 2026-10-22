@@ -1,146 +1,174 @@
-/* Video Section Styles for Checklist Pages */
+/* ============================================================
+   WORLD COMPOSTING — VIDEO & PRODUCT SECTIONS
+   Video grids (static + JS-rendered via video-renderer.js),
+   featured video cards, embedded videos in blog posts.
+   ============================================================ */
 
-.video-section {
-    background: white;
-    border-radius: 16px;
-    padding: 2rem 1.5rem;
-    box-shadow: var(--card-shadow);
-    margin-bottom: 3rem;
-    border: 1px solid rgba(0,0,0,0.04);
-}
+/* ---------- Section wrapper (JS-rendered) ---------- */
+.video-section-wide { margin: 2.5rem 0; }
 
 .video-section-title {
-    font-family: 'Lora', serif;
-    color: var(--forest-green);
-    font-size: 1.5rem;
-    margin-top: 0;
-    margin-bottom: 0.5rem;
-    text-align: center;
+  display: flex;
+  align-items: center;
+  gap: .65rem;
+  font-size: clamp(1.45rem, 2.6vw, 1.9rem);
+  margin: 0 0 .4rem;
+  color: var(--forest-2);
 }
+.video-section-title .yt-icon { font-size: 1.2em; }
 
 .video-section-subtitle {
-    color: #666;
-    font-size: 0.9rem;
-    text-align: center;
-    margin-bottom: 2rem;
-    line-height: 1.5;
+  color: var(--ink-2);
+  font-size: .98rem;
+  margin: 0 0 1.6rem;
+  max-width: 52em;
 }
 
-/* Video Card */
+/* ---------- Grid ---------- */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.3rem;
+  margin-bottom: 1.6rem;
+}
+
+/* ---------- Card (JS-rendered) ---------- */
 .video-card {
-    background: white;
-    border-radius: 16px;
-    overflow: hidden;
-    margin-bottom: 1.5rem;
-    box-shadow: var(--card-shadow);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    border: 1px solid rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform .22s var(--ease), box-shadow .22s var(--ease),
+              border-color .22s var(--ease);
 }
-
-.video-card:last-child {
-    margin-bottom: 0;
-}
-
 .video-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 16px 30px -8px rgba(75, 54, 33, 0.15);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--yt);
 }
 
-/* Video Wrapper (responsive iframe) */
 .video-wrapper {
-    position: relative;
-    width: 100%;
-    padding-bottom: 56.25%; /* 16:9 aspect ratio */
-    height: 0;
-    overflow: hidden;
-    background: #000;
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: var(--forest-3);
 }
-
 .video-wrapper iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 0;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
 
-/* Video Info */
-.video-info {
-    padding: 1rem 1.25rem;
-}
+.video-info { padding: 1.1rem 1.25rem 1.3rem; }
 
 .video-title {
-    display: block;
-    color: var(--text-dark);
-    font-weight: 600;
-    font-size: 0.95rem;
-    margin-bottom: 0.75rem;
-    line-height: 1.4;
+  font-size: 1.08rem;
+  margin-bottom: .5em;
+  line-height: 1.35;
 }
+.video-title a { color: var(--ink); }
+.video-card:hover .video-title a { color: var(--yt); }
 
-.video-title a {
-    color: var(--forest-green);
-    text-decoration: none;
-    transition: opacity 0.2s;
-}
-
-.video-title a:hover {
-    opacity: 0.8;
-}
-
-/* Key Takeaways */
 .key-takeaways {
-    background: var(--off-white);
-    border-radius: 10px;
-    padding: 0.75rem 1rem;
-    margin-top: 0.5rem;
-    border-left: 3px solid var(--leaf-lime);
+  border-top: 1px dashed var(--line);
+  padding-top: .8rem;
 }
-
 .key-takeaways-title {
-    font-weight: 700;
-    font-size: 0.82rem;
-    color: var(--forest-green);
-    margin-bottom: 0.4rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+  font-size: .74rem !important;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--clay-2);
+  margin: 0 0 .5rem !important;
 }
-
 .key-takeaways ul {
-    margin: 0;
-    padding-left: 1.2rem;
+  margin: 0;
+  padding-left: 1.2em;
 }
-
 .key-takeaways li {
-    font-size: 0.82rem;
-    color: #555;
-    line-height: 1.5;
-    margin-bottom: 0.25rem;
+  font-size: .87rem;
+  color: var(--ink-2);
+  line-height: 1.55;
+  margin: .3em 0;
 }
 
-/* No Videos Message */
-.no-videos-msg {
-    text-align: center;
-    padding: 2rem 1rem;
-    color: #999;
-    font-size: 0.95rem;
-    font-style: italic;
+/* ---------- Wide featured video card (index) ---------- */
+.video-card-wide {
+  display: grid;
+  grid-template-columns: 168px 1fr;
+  gap: 1.1rem;
+  align-items: center;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1rem 1.2rem;
+  margin-bottom: 1rem;
+  box-shadow: var(--shadow-sm);
+  transition: transform .2s var(--ease), box-shadow .2s var(--ease),
+              border-color .2s var(--ease);
+}
+.video-card-wide a { color: inherit; }
+.video-card-wide:hover {
+  transform: translateX(5px);
+  border-color: var(--yt);
+  box-shadow: var(--shadow-md);
+}
+.video-thumbnail-wide {
+  width: 168px;
+  height: 94px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: var(--forest-3);
+}
+.video-card-wide .product-name {
+  display: block;
+  font-size: .98rem;
+  line-height: 1.4;
+  margin-bottom: .25rem;
 }
 
-/* Responsive */
-@media (max-width: 480px) {
-    .video-section {
-        padding: 1.5rem 1rem;
-        margin-bottom: 2rem;
-    }
-    .video-section-title {
-        font-size: 1.3rem;
-    }
-    .video-info {
-        padding: 0.85rem 1rem;
-    }
-    .video-title {
-        font-size: 0.9rem;
-    }
+/* ---------- Inline embeds (blog / guides) ---------- */
+.video-embed {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin: 1.8rem 0 1rem;
+  box-shadow: var(--shadow-md);
+  background: var(--forest-3);
+}
+.video-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.video-embed-wide { max-width: 860px; margin-left: auto; margin-right: auto; }
+
+.video-caption {
+  font-size: .85rem;
+  color: var(--ink-3);
+  text-align: center;
+  margin: 0 0 2rem;
+}
+
+/* ---------- Watch-more row ---------- */
+.watch-more {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.8rem;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 560px) {
+  .video-card-wide { grid-template-columns: 1fr; }
+  .video-thumbnail-wide { width: 100%; height: auto; aspect-ratio: 16 / 9; }
+  .video-grid { grid-template-columns: 1fr; }
 }

@@ -1,12 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Google Search Console Verification</title>
+<head><link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="src/styles/theme.css" rel="stylesheet"/>
+<link href="src/styles/layout.css" rel="stylesheet"/>
+<link href="src/styles/components.css" rel="stylesheet"/>
+<link href="src/styles/video-section.css" rel="stylesheet"/>
+<link href="src/styles/article.css" rel="stylesheet"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Google Search Console Verification</title>
 </head>
-<body>
-    <!-- Google Search Console verification token: google8a4b2c3d1e5f6789 -->
+<body><header class="top-nav" id="top-nav">
+<div class="nav-inner">
+<a aria-label="World Composting — home" class="nav-logo" href="index.html">
+<img alt="World Composting Logo" height="40" loading="eager" onerror="this.src='https://via.placeholder.com/40?text=WC'" src="src/assets/logo.png" width="40"/>
+<span class="nav-logo-text">World Composting<small>Guides · Checklists · Gear</small></span>
+</a>
+<button aria-controls="nav-links" aria-expanded="false" aria-label="Toggle menu" class="nav-burger" id="nav-burger">
+<span></span><span></span><span></span>
+</button>
+<ul class="nav-links" id="nav-links">
+<li><a class="nav-link" href="index.html">Home</a></li>
+<li><a class="nav-link" href="start-here.html">Start Here</a></li>
+<li><a class="nav-link" href="worm-composting.html">Worm</a></li>
+<li><a class="nav-link" href="hot-composting.html">Hot Compost</a></li>
+<li class="nav-dropdown">
+<button class="nav-dd-trigger" type="button" aria-haspopup="true" aria-expanded="false">Topics<span class="dd-caret">▾</span></button>
+<ul class="dd-menu">
+<li><a href="hub-worm-composting.html">Worm Composting</a></li>
+<li><a href="hub-hot-composting.html">Hot Composting</a></li>
+<li><a href="hub-bokashi.html">Bokashi</a></li>
+<li><a href="hub-biochar.html">Biochar</a></li>
+<li><a href="hub-lasagna.html">Lasagna Composting</a></li>
+<li><a href="hub-tumbler.html">Tumbler Composting</a></li>
+<li><a href="hub-black-soldier-fly.html">Black Soldier Fly</a></li>
+<li><a href="hub-energy-efficiency.html">Energy Efficiency</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="index.html#checklists">Checklists</a></li>
+<li><a class="nav-link" href="faq.html">FAQ</a></li>
+</ul>
+<div class="nav-ctas">
+<a class="btn btn-cta-gear" href="gear.html"><svg aria-hidden="true" fill="currentColor" height="16" viewBox="0 0 24 24" width="16"><path d="M18 6h-2a4 4 0 0 0-8 0H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2zm-6 2a2 2 0 0 1 2-2 2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2z"/></svg> Gear</a>
+<a class="btn btn-cta-yt" href="http://youtube.com/@worldcomposting" rel="noopener" target="_blank">▶ YouTube</a>
+</div>
+</div>
+</header><script>
+        (function () {
+            var burger = document.getElementById('nav-burger');
+            var nav = document.getElementById('top-nav');
+            if (burger && nav) {
+                burger.addEventListener('click', function () {
+                    var open = nav.classList.toggle('nav-open');
+                    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+                });
+            }
+            var dd = document.querySelector('.nav-dropdown');
+            if (dd) {
+                var trig = dd.querySelector('.nav-dd-trigger');
+                var setOpen = function (open) {
+                    dd.classList.toggle('open', open);
+                    trig.setAttribute('aria-expanded', open ? 'true' : 'false');
+                };
+                trig.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    setOpen(!dd.classList.contains('open'));
+                });
+                document.addEventListener('click', function (e) {
+                    if (!dd.contains(e.target)) setOpen(false);
+                });
+                document.addEventListener('keydown', function (e) {
+                    if (e.key === 'Escape') {
+                        setOpen(false);
+                        var ae = document.activeElement;
+                        if (ae && dd.contains(ae)) ae.blur();
+                    }
+                });
+            }
+        })();
+    </script>
+<!-- Google Search Console verification token: google8a4b2c3d1e5f6789 -->
     google-site-verification: google8a4b2c3d1e5f6789.html
-</body>
+<section aria-label="Get started" class="cta-band">
+<div class="cta-band-inner">
+<div class="cta-band-text">
+<h2>Ready to turn scraps into soil?</h2>
+<p>Watch the full step-by-step walkthroughs on YouTube, or grab the exact gear I recommend in my builds.</p>
+</div>
+<div class="cta-band-actions">
+<a class="btn btn-youtube btn-lg" href="http://youtube.com/@worldcomposting" rel="noopener" target="_blank">▶ Watch on YouTube</a>
+<a class="btn btn-gear btn-lg" href="gear.html">Shop Compost Gear</a>
+</div>
+</div>
+</section><footer class="site-footer">
+<div class="footer-cols">
+<div class="footer-brand">
+<a href="index.html"><img alt="World Composting Logo" height="52" loading="eager" src="src/assets/logo.png" width="52"/></a>
+<p>Complete composting guides, interactive checklists, and gear recommendations for people who actually want their compost to work.</p>
+<p><a class="btn btn-youtube" href="http://youtube.com/@worldcomposting" rel="noopener" target="_blank">▶ World Composting on YouTube</a></p>
+</div>
+<div class="footer-col">
+<h3>Guides</h3>
+<ul>
+<li><a href="start-here.html">Start Here</a></li>
+<li><a href="worm-composting.html">Worm Composting</a></li>
+<li><a href="hot-composting.html">Hot Composting</a></li>
+<li><a href="bokashi.html">Bokashi</a></li>
+<li><a href="biochar.html">BioChar</a></li>
+<li><a href="lasagna.html">Lasagna Composting</a></li>
+<li><a href="tumbler.html">Tumbler</a></li>
+<li><a href="black_soldier_fly.html">Black Soldier Fly</a></li>
+<li><a href="tea.html">Compost Tea</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h3>Hubs</h3>
+<ul>
+<li><a href="hub-worm-composting.html">Worm Composting Hub</a></li>
+<li><a href="hub-hot-composting.html">Hot Composting Hub</a></li>
+<li><a href="hub-bokashi.html">Bokashi Hub</a></li>
+<li><a href="hub-biochar.html">BioChar Hub</a></li>
+<li><a href="hub-tumbler.html">Tumbler Hub</a></li>
+<li><a href="hub-lasagna.html">Lasagna Hub</a></li>
+<li><a href="hub-black-soldier-fly.html">Black Soldier Fly Hub</a></li>
+<li><a href="hub-energy-efficiency.html">Energy Efficiency Hub</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h3>Resources</h3>
+<ul>
+<li><a href="beginner.html">Beginner's Checklist</a></li>
+<li><a href="troubleshoot.html">Troubleshooting</a></li>
+<li><a href="science-of-compost.html">The Science of Compost</a></li>
+<li><a href="glossary.html">Glossary</a></li>
+<li><a href="faq.html">FAQ</a></li>
+<li><a href="blog.html">Blog</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="sitemap.html">Sitemap</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-legal">
+<p>© 2026 World Composting. All rights reserved.</p>
+<p>As an Amazon Associate, I earn from qualifying purchases. Some product links are affiliate links at no extra cost to you.</p>
+<p cls="footer-credits"><a href="photo-credits.html">Photo credits (Wikimedia Commons, PD/CC licenses)</a></p></div>
+</footer></body>
 </html>

@@ -1,263 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="canonical" href="https://www.worldcomposting.com/hub-tumbler.html">
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-    <title>Tumbler Composting Hub | World Composting</title>
-    <meta name="description" content="Your complete guide to tumbler composting: rotating drum systems for fast, odor-free compost in small spaces. Setup guides, gear reviews, and troubleshooting.">
-    <!-- Google Search Console Verification -->
-    <meta name="google-site-verification" content="google8a4b2c3d1e5f6789">
-    <link rel="stylesheet" href="src/styles/theme.css">
-    <link rel="stylesheet" href="src/styles/layout.css">
-    <link rel="stylesheet" href="src/styles/video-section.css">
-<style>/* Hub page specific styles */
-        .hub-hero {
-            background: white;
-            border-radius: 16px;
-            padding: 2.5rem 3rem;
-            box-shadow: var(--card-shadow);
-            margin-bottom: 2rem;
-            text-align: center;
-        }
-
-        .hub-hero h1 {
-            font-family: 'Lora', serif;
-            color: var(--forest-green);
-            font-size: 2.4rem;
-            line-height: 1.3;
-            margin-top: 0;
-        }
-
-        .hub-hero h1 .subtitle-paren {
-            display: block;
-            font-family: 'Lora', serif;
-            color: var(--ocean-blue);
-            font-size: 1.2rem;
-            line-height: 1.3;
-            margin-top: 0.3rem;
-        }
-
-        .hub-hero p.subtitle {
-            text-align: center;
-            font-style: italic;
-            color: var(--ocean-blue);
-            font-size: 1.1rem;
-            margin-bottom: 0;
-        }
-
-        .hub-section {
-            background: white;
-            border-radius: 16px;
-            padding: 2rem 2.5rem;
-            box-shadow: var(--card-shadow);
-            margin-bottom: 1.5rem;
-        }
-
-        .hub-section h2 {
-            font-family: 'Lora', serif;
-            color: var(--forest-green);
-            font-size: 1.4rem;
-            margin-top: 0;
-            margin-bottom: 1rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--sage-green);
-        }
-
-        .hub-section p {
-            color: var(--text-dark);
-            font-size: 1rem;
-            line-height: 1.7;
-            margin-bottom: 1rem;
-        }
-
-        .hub-card-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .hub-card {
-            background: #f8f9fa;
-            border-radius: 12px;
-            padding: 1.25rem;
-            transition: transform 0.2s, box-shadow 0.2s;
-            text-decoration: none;
-            color: var(--text-dark);
-            display: block;
-        }
-
-        .hub-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 24px -6px rgba(75, 54, 33, 0.12);
-        }
-
-        .hub-card h3 {
-            font-family: 'Lora', serif;
-            color: var(--forest-green);
-            font-size: 1.1rem;
-            margin-top: 0;
-            margin-bottom: 0.5rem;
-        }
-
-        .hub-card p {
-            font-size: 0.9rem;
-            color: #666;
-            line-height: 1.5;
-            margin-bottom: 0;
-        }
-
-        .hub-card .card-tag {
-            display: inline-block;
-            background: var(--sage-green);
-            color: var(--forest-green);
-            font-size: 0.75rem;
-            font-weight: 600;
-            padding: 0.2rem 0.6rem;
-            border-radius: 4px;
-            margin-top: 0.75rem;
-        }
-
-        .hub-link-list {
-            list-style: none;
-            padding-left: 0;
-            margin: 1rem 0;
-        }
-
-        .hub-link-list li {
-            padding: 0.6rem 0;
-            border-bottom: 1px solid #eee;
-        }
-
-        .hub-link-list li:last-child {
-            border-bottom: none;
-        }
-
-        .hub-link-list a {
-            color: var(--ocean-blue);
-            text-decoration: none;
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .hub-link-list a:hover {
-            color: var(--forest-green);
-            text-decoration: underline;
-        }
-
-        .hub-link-list .arrow {
-            font-size: 1.2rem;
-            flex-shrink: 0;
-        }
-
-        /* Quick Reference section */
-        .quick-ref-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 0.75rem;
-            margin-top: 1rem;
-        }
-
-        .quick-ref-card {
-            background: #f8f9fa;
-            border-radius: 10px;
-            padding: 1rem 1.25rem;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
-        .quick-ref-card .ref-icon {
-            font-size: 1.4rem;
-            flex-shrink: 0;
-        }
-
-        .quick-ref-card .ref-text strong {
-            display: block;
-            color: var(--forest-green);
-            font-size: 0.85rem;
-            margin-bottom: 0.2rem;
-        }
-
-        .quick-ref-card .ref-text span {
-            font-size: 0.9rem;
-            color: #555;
-            line-height: 1.4;
-        }
-
-        /* Simple table for quick reference */
-        .quick-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 1rem;
-            font-size: 0.92rem;
-        }
-
-        .quick-table th, .quick-table td {
-            padding: 0.75rem 1rem;
-            text-align: left;
-            border-bottom: 1px solid var(--sage-green);
-        }
-
-        .quick-table th {
-            background: var(--forest-green);
-            color: white;
-            font-weight: 600;
-        }
-
-        .quick-table tr:nth-child(even) td {
-            background: #f8f9fa;
-        }
-
-        /* Bulleted quick reference */
-        .quick-ref-list {
-            list-style: none;
-            padding-left: 0;
-            margin-top: 1rem;
-        }
-
-        .quick-ref-list li {
-            display: flex;
-            align-items: flex-start;
-            gap: 0.75rem;
-            padding: 0.6rem 0;
-            border-bottom: 1px solid #eee;
-        }
-
-        .quick-ref-list li:last-child {
-            border-bottom: none;
-        }
-
-        .quick-ref-list .ref-label {
-            font-weight: 700;
-            color: var(--forest-green);
-            min-width: 120px;
-            flex-shrink: 0;
-        }
-
-        .quick-ref-list .ref-value {
-            color: #555;
-            line-height: 1.5;
-        }
-
-        /* ===== RESPONSIVE BREAKPOINTS ===== */
-        @media (max-width: 768px) {
-            .hub-hero, .hub-section {
-                padding: 1.5rem;
-            }
-            .hub-card-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-</style>
-    <!-- Google Analytics (skipped on localhost) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KRHYVJXZLE"></script>
-    <script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://www.worldcomposting.com/hub-tumbler.html" rel="canonical"/>
+<link href="/favicon.ico" rel="icon" type="image/x-icon"/>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon"/>
+<title>Tumbler Composting Hub | World Composting</title>
+<meta content="Your complete guide to tumbler composting: rotating drum systems for fast, odor-free compost in small spaces. Setup guides, gear reviews, and troubleshooting." name="description"/>
+<!-- Google Search Console Verification -->
+<meta content="google8a4b2c3d1e5f6789" name="google-site-verification"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="src/styles/theme.css" rel="stylesheet"/>
+<link href="src/styles/layout.css" rel="stylesheet"/>
+<link href="src/styles/components.css" rel="stylesheet"/>
+<link href="src/styles/video-section.css" rel="stylesheet"/>
+<link href="src/styles/article.css" rel="stylesheet"/>
+<!-- Google Analytics (skipped on localhost) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-KRHYVJXZLE"></script>
+<script>
       if (!window.location.hostname.includes('localhost') && !window.location.hostname.includes('127.0.0.1')) {
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
@@ -265,13 +28,13 @@
         gtag('config', 'G-KRHYVJXZLE');
       }
     </script>
-    <!-- Pinterest Tag -->
-    <script type="text/javascript">
+<!-- Pinterest Tag -->
+<script type="text/javascript">
       _pt = "2612544072053";
       (function(e,t,n){var r,i=document.createElement(n);i.async=1,i.src="https://cdn.pinterest.com/tags.min.js#" + encodeURIComponent(_pt);if(t){r=document.createElement(n);r.type="text/javascript";r.defer=!0;r.src="//pixel-assets.pinterest.com/tags/pid-req-utils.js",document.getElementsByTagName("head")[0].appendChild(r)}i.onload=i.onerror=function(){var e=window.pinall;window.pinall=null;var t=1;e&&e.length>0&&(t=e[0]);for(var n;n=e.length;)n.shift(),(n=n[0])&&"function"==typeof n.n&&n.n(t);window.pinall=e};document.getElementsByTagName("head")[0].appendChild(i)})(window,document,"script");
     </script>
-    <!-- Hub Page Structured Data -->
-    <script type="application/ld+json">
+<!-- Hub Page Structured Data -->
+<script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "WebPage",
@@ -280,148 +43,201 @@
       "url": "https://www.worldcomposting.com/hub-tumbler.html"
     }
     </script>
-    <link rel="alternate" href="/llms.txt" title="World Composting AI Index">
+<link href="/llms.txt" rel="alternate" title="World Composting AI Index"/>
 </head>
-<body>
-    <div class="page-wrapper">
-
-        <!-- ===== SIDEBAR NAVIGATION ===== -->
-        <aside class="sidebar">
-            <div class="sidebar-logo">
-                            <img src="src/assets/logo.png" alt="World Composting Logo" width="64" height="64" loading="eager" onerror="this.src='https://via.placeholder.com/64?text=WC'">
-                            <h2>World Composting</h2>
-                        </div>
-
-            <ul class="sidebar-nav">
-<li><a href="index.html">Home</a></li>
-                <li><a href="start-here.html">Start Here</a></li>
-                <li><a href="science-of-compost.html">The Science of Compost</a></li>
-                <li><a href="about.html">About</a></li>
-
-                <li><div class="sidebar-divider"></div></li>
-                <li class="sidebar-section-label">Guides</li>
-
-                <li><a href="worm-composting.html">Worm Composting</a></li>
-                <li><a href="hot-composting.html">Hot Composting</a></li>
-
-                <li><div class="sidebar-divider"></div></li>
-                <li class="sidebar-section-label">Hubs</li>
-
-                <li><a href="hub-worm-composting.html">Worm Composting Hub</a></li>
-                <li><a href="hub-hot-composting.html">Hot Composting Hub</a></li>
-                <li><a href="hub-bokashi.html">Bokashi Hub</a></li>
-                <li><a href="hub-biochar.html">BioChar Hub</a></li>
-                <li><a href="hub-tumbler.html" class="active">Tumbler Composting Hub</a></li>
-                <li><a href="hub-lasagna.html">Lasagna Composting Hub</a></li>
-                <li><a href="hub-black-soldier-fly.html">Black Soldier Fly Hub</a></li>
-                <li><a href="hub-energy-efficiency.html">Energy Efficiency Hub</a></li>
-
-                <li class="sidebar-section-label">Checklists</li>
-
-                <li><a href="beginner.html">Beginner's Checklist</a></li>
-                <li><a href="pre-compost.html">Pre-Compost for Worm Bins</a></li>
-                <li><a href="hot.html">Hot Composting Checklist</a></li>
-                <li><a href="bokashi.html">Bokashi Composting</a></li>
-                <li><a href="biochar.html">BioChar Composting</a></li>
-                <li><a href="tumbler.html">Tumbler Composting</a></li>
-                <li><a href="tea.html">Compost Tea</a></li>
-                <li><a href="lasagna.html">Lasagna Composting</a></li>
-                <li><a href="sustainability.html">Sustainability Journey</a></li>
-                <li><a href="energy-efficiency.html">Energy Efficiency at Home</a></li>
-                <li><a href="black_soldier_fly.html">Black Soldier Fly</a></li>
-                <li><a href="zero-waste-kitchen.html">Zero Waste Kitchen</a></li>
-
-                <li><div class="sidebar-divider"></div></li>
-                <li class="sidebar-section-label">Resources</li>
-
-                <li><a href="glossary.html">Glossary</a></li>
-                <li><a href="troubleshoot.html">Troubleshooting</a></li>
-                <li><a href="electric_composter.html">Electric Composters</a></li>
-                <li><a href="faq.html">Frequently Asked Questions</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="sitemap.html">Sitemap</a></li>
-
-                <li><div class="sidebar-divider"></div></li>
-                <li class="sidebar-section-label">Gear</li>
-
-                <li><a href="gear.html">View All Gear →</a></li>
-                </ul>
-                </aside>
-<main>
-
-            <!-- Gear & Products -->
-            <div class="hub-section">
-                <h2>Gear & Products for Tumbler Composting</h2>
-                <p>I've tested dozens of drum systems, turning handles, and base stands. Here are the ones I recommend based on real-world use.</p>
-
-                <div class="hub-card-grid">
-                    <a href="gear.html#drum" class="hub-card">
-                        <h3>🔄 Rotating Drums</h3>
-                        <p>Compare dual-chamber vs single-chamber tumblers — capacity, insulation quality, and bearing durability.</p>
-                        <span class="card-tag">Gear</span>
-                    </a>
-
-                    <a href="gear.html#base" class="hub-card">
-                        <h3>🏗️ Base Stands & Mounts</h3>
-                        <p>Wooden pallet frames, metal stands, and wall-mounted brackets for different yard layouts.</p>
-                        <span class="card-tag">Gear</span>
-                    </a>
-
-                    <a href="gear.html#thermometer" class="hub-card">
-                        <h3>🌡️ Internal Thermometers</h3>
-                        <p>Long-stem probes that fit through drum ports for monitoring core temperature without opening the lid.</p>
-                        <span class="card-tag">Gear</span>
-                    </a>
-
-                    <a href="gear.html#harvesting" class="hub-card">
-                        <h3>🪣 Harvesting Tools</h3>
-                        <p>Sieves, scoops, and collection bins for removing finished compost from the drum bottom.</p>
-                        <span class="card-tag">Gear</span>
-                    </a>
-                </div>
-
-                <p style="margin-top: 1rem;"><a href="gear.html" style="color: var(--ocean-blue); font-weight: 600;">View all tumbler gear →</a></p>
-            </div>
-
-            <!-- Troubleshooting -->
-            <div class="hub-section">
-                <h2>Troubleshooting Common Problems</h2>
-                <p>If your tumbler compost is acting up, these are the most common issues and how to fix them.</p>
-
-                <ul class="hub-link-list">
-                    <li><a href="troubleshoot.html#tumbler-smell"><span class="arrow">→</span> Drum smells anaerobic — overloading or insufficient turning frequency</a></li>
-                    <li><a href="troubleshoot.html#tumbler-not-heating"><span class="arrow">→</span> Pile won't heat up — batch too small, wrong C:N ratio, or poor insulation</a></li>
-                    <li><a href="troubleshoot.html#tumbler-leaking"><span class="arrow">→</span> Leaking from drum seals — bearing wear or gasket failure</a></li>
-                </ul>
-
-                <div class="callout-wide tip" style="margin-top: 1rem;">
-                    <p><strong>Need more help?</strong> Check out the full <a href="troubleshoot.html">Troubleshooting Hub</a> for a complete list of common tumbler problems and solutions.</p>
-                </div>
-            </div>
-
-            <!-- Quick Reference -->
-            <div class="hub-section">
-                <h2>Quick Reference: Tumbler Basics</h2>
-                <ul class="quick-ref-list">
-                    <li><span class="ref-label">Drum capacity:</span><span class="ref-value">3-7 cubic feet per chamber; dual-chamber allows continuous loading while one cures</span></li>
-                    <li><span class="ref-label">Turning frequency:</span><span class="ref-value">Every 2-4 days during active phase; once a week during curing</span></li>
-                    <li><span class="ref-label">Target temperature:</span><span class="ref-value">130-150°F (54-66°C) sustained for weed seed destruction</span></li>
-                    <li><span class="ref-label">Total cycle time:</span><span class="ref-value">2-8 weeks depending on batch size and ambient temperature</span></li>
-                    <li><span class="ref-label">Best feedstock:</span><span class="ref-value">Chopped greens (grass clippings, kitchen scraps) + browns (dry leaves, straw)</span></li>
-                </ul>
-
-                <div class="callout-wide tip" style="margin-top: 1rem;">
-                    <p><strong>Want to go deeper?</strong> Read the full <a href="tumbler.html">Tumbler Composting Guide</a> for a complete walkthrough from drum selection to harvesting finished compost.</p>
-                </div>
-            </div>
-
-        </main>
-            </div><!-- .page-wrapper -->
-
-    <!-- FOOTER: outside grid, spans full width -->
-    <footer class="footer-wide">
-        &copy; 2026 World Composting. All rights reserved.
-    </footer>
-
+<body><header class="top-nav" id="top-nav">
+<div class="nav-inner">
+<a aria-label="World Composting — home" class="nav-logo" href="index.html">
+<img alt="World Composting Logo" height="40" loading="eager" onerror="this.src='https://via.placeholder.com/40?text=WC'" src="src/assets/logo.png" width="40"/>
+<span class="nav-logo-text">World Composting<small>Guides · Checklists · Gear</small></span>
+</a>
+<button aria-controls="nav-links" aria-expanded="false" aria-label="Toggle menu" class="nav-burger" id="nav-burger">
+<span></span><span></span><span></span>
+</button>
+<ul class="nav-links" id="nav-links">
+<li><a class="nav-link" href="index.html">Home</a></li>
+<li><a class="nav-link" href="start-here.html">Start Here</a></li>
+<li><a class="nav-link" href="worm-composting.html">Worm</a></li>
+<li><a class="nav-link" href="hot-composting.html">Hot Compost</a></li>
+<li class="nav-dropdown">
+<button class="nav-dd-trigger" type="button" aria-haspopup="true" aria-expanded="false">Topics<span class="dd-caret">▾</span></button>
+<ul class="dd-menu">
+<li><a href="hub-worm-composting.html">Worm Composting</a></li>
+<li><a href="hub-hot-composting.html">Hot Composting</a></li>
+<li><a href="hub-bokashi.html">Bokashi</a></li>
+<li><a href="hub-biochar.html">Biochar</a></li>
+<li><a href="hub-lasagna.html">Lasagna Composting</a></li>
+<li><a href="hub-tumbler.html">Tumbler Composting</a></li>
+<li><a href="hub-black-soldier-fly.html">Black Soldier Fly</a></li>
+<li><a href="hub-energy-efficiency.html">Energy Efficiency</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="index.html#checklists">Checklists</a></li>
+<li><a class="nav-link" href="faq.html">FAQ</a></li>
+</ul>
+<div class="nav-ctas">
+<a class="btn btn-cta-gear" href="gear.html"><svg aria-hidden="true" fill="currentColor" height="16" viewBox="0 0 24 24" width="16"><path d="M18 6h-2a4 4 0 0 0-8 0H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2zm-6 2a2 2 0 0 1 2-2 2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2z"/></svg> Gear</a>
+<a class="btn btn-cta-yt" href="http://youtube.com/@worldcomposting" rel="noopener" target="_blank">▶ YouTube</a>
+</div>
+</div>
+</header><script>
+        (function () {
+            var burger = document.getElementById('nav-burger');
+            var nav = document.getElementById('top-nav');
+            if (burger && nav) {
+                burger.addEventListener('click', function () {
+                    var open = nav.classList.toggle('nav-open');
+                    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+                });
+            }
+            var dd = document.querySelector('.nav-dropdown');
+            if (dd) {
+                var trig = dd.querySelector('.nav-dd-trigger');
+                var setOpen = function (open) {
+                    dd.classList.toggle('open', open);
+                    trig.setAttribute('aria-expanded', open ? 'true' : 'false');
+                };
+                trig.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    setOpen(!dd.classList.contains('open'));
+                });
+                document.addEventListener('click', function (e) {
+                    if (!dd.contains(e.target)) setOpen(false);
+                });
+                document.addEventListener('keydown', function (e) {
+                    if (e.key === 'Escape') {
+                        setOpen(false);
+                        var ae = document.activeElement;
+                        if (ae && dd.contains(ae)) ae.blur();
+                    }
+                });
+            }
+        })();
+    </script>
+<div class="page-wrapper">
+<!-- ===== SIDEBAR NAVIGATION ===== -->
+<main class="main-content">
+<!-- Gear & Products -->
+<div class="photo-banner"><img alt="A row of clean compost bins in a community garden" decoding="async" loading="eager" src="src/assets/images/bins.jpg"/></div><div class="hub-section">
+<h2>Gear &amp; Products for Tumbler Composting</h2>
+<p>I've tested dozens of drum systems, turning handles, and base stands. Here are the ones I recommend based on real-world use.</p>
+<div class="hub-card-grid">
+<a class="hub-card" href="gear.html#drum">
+<h3>🔄 Rotating Drums</h3>
+<p>Compare dual-chamber vs single-chamber tumblers — capacity, insulation quality, and bearing durability.</p>
+<span class="card-tag">Gear</span>
+</a>
+<a class="hub-card" href="gear.html#base">
+<h3>🏗️ Base Stands &amp; Mounts</h3>
+<p>Wooden pallet frames, metal stands, and wall-mounted brackets for different yard layouts.</p>
+<span class="card-tag">Gear</span>
+</a>
+<a class="hub-card" href="gear.html#thermometer">
+<h3>🌡️ Internal Thermometers</h3>
+<p>Long-stem probes that fit through drum ports for monitoring core temperature without opening the lid.</p>
+<span class="card-tag">Gear</span>
+</a>
+<a class="hub-card" href="gear.html#harvesting">
+<h3>🪣 Harvesting Tools</h3>
+<p>Sieves, scoops, and collection bins for removing finished compost from the drum bottom.</p>
+<span class="card-tag">Gear</span>
+</a>
+</div>
+<p style="margin-top: 1rem;"><a href="gear.html" style="color: var(--ocean-blue); font-weight: 600;">View all tumbler gear →</a></p>
+</div>
+<!-- Troubleshooting -->
+<div class="hub-section">
+<h2>Troubleshooting Common Problems</h2>
+<p>If your tumbler compost is acting up, these are the most common issues and how to fix them.</p>
+<ul class="hub-link-list">
+<li><a href="troubleshoot.html#tumbler-smell"><span class="arrow">→</span> Drum smells anaerobic — overloading or insufficient turning frequency</a></li>
+<li><a href="troubleshoot.html#tumbler-not-heating"><span class="arrow">→</span> Pile won't heat up — batch too small, wrong C:N ratio, or poor insulation</a></li>
+<li><a href="troubleshoot.html#tumbler-leaking"><span class="arrow">→</span> Leaking from drum seals — bearing wear or gasket failure</a></li>
+</ul>
+<div class="callout-wide tip" style="margin-top: 1rem;">
+<p><strong>Need more help?</strong> Check out the full <a href="troubleshoot.html">Troubleshooting Hub</a> for a complete list of common tumbler problems and solutions.</p>
+</div>
+</div>
+<!-- Quick Reference -->
+<div class="hub-section">
+<h2>Quick Reference: Tumbler Basics</h2>
+<ul class="quick-ref-list">
+<li><span class="ref-label">Drum capacity:</span><span class="ref-value">3-7 cubic feet per chamber; dual-chamber allows continuous loading while one cures</span></li>
+<li><span class="ref-label">Turning frequency:</span><span class="ref-value">Every 2-4 days during active phase; once a week during curing</span></li>
+<li><span class="ref-label">Target temperature:</span><span class="ref-value">130-150°F (54-66°C) sustained for weed seed destruction</span></li>
+<li><span class="ref-label">Total cycle time:</span><span class="ref-value">2-8 weeks depending on batch size and ambient temperature</span></li>
+<li><span class="ref-label">Best feedstock:</span><span class="ref-value">Chopped greens (grass clippings, kitchen scraps) + browns (dry leaves, straw)</span></li>
+</ul>
+<div class="callout-wide tip" style="margin-top: 1rem;">
+<p><strong>Want to go deeper?</strong> Read the full <a href="tumbler.html">Tumbler Composting Guide</a> for a complete walkthrough from drum selection to harvesting finished compost.</p>
+</div>
+</div>
+</main>
+</div><!-- .page-wrapper -->
+<!-- FOOTER: outside grid, spans full width -->
+<section aria-label="Get started" class="cta-band">
+<div class="cta-band-inner">
+<div class="cta-band-text">
+<h2>Ready to turn scraps into soil?</h2>
+<p>Watch the full step-by-step walkthroughs on YouTube, or grab the exact gear I recommend in my builds.</p>
+</div>
+<div class="cta-band-actions">
+<a class="btn btn-youtube btn-lg" href="http://youtube.com/@worldcomposting" rel="noopener" target="_blank">▶ Watch on YouTube</a>
+<a class="btn btn-gear btn-lg" href="gear.html">Shop Compost Gear</a>
+</div>
+</div>
+</section><footer class="site-footer">
+<div class="footer-cols">
+<div class="footer-brand">
+<a href="index.html"><img alt="World Composting Logo" height="52" loading="eager" src="src/assets/logo.png" width="52"/></a>
+<p>Complete composting guides, interactive checklists, and gear recommendations for people who actually want their compost to work.</p>
+<p><a class="btn btn-youtube" href="http://youtube.com/@worldcomposting" rel="noopener" target="_blank">▶ World Composting on YouTube</a></p>
+</div>
+<div class="footer-col">
+<h3>Guides</h3>
+<ul>
+<li><a href="start-here.html">Start Here</a></li>
+<li><a href="worm-composting.html">Worm Composting</a></li>
+<li><a href="hot-composting.html">Hot Composting</a></li>
+<li><a href="bokashi.html">Bokashi</a></li>
+<li><a href="biochar.html">BioChar</a></li>
+<li><a href="lasagna.html">Lasagna Composting</a></li>
+<li><a href="tumbler.html">Tumbler</a></li>
+<li><a href="black_soldier_fly.html">Black Soldier Fly</a></li>
+<li><a href="tea.html">Compost Tea</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h3>Hubs</h3>
+<ul>
+<li><a href="hub-worm-composting.html">Worm Composting Hub</a></li>
+<li><a href="hub-hot-composting.html">Hot Composting Hub</a></li>
+<li><a href="hub-bokashi.html">Bokashi Hub</a></li>
+<li><a href="hub-biochar.html">BioChar Hub</a></li>
+<li><a href="hub-tumbler.html">Tumbler Hub</a></li>
+<li><a href="hub-lasagna.html">Lasagna Hub</a></li>
+<li><a href="hub-black-soldier-fly.html">Black Soldier Fly Hub</a></li>
+<li><a href="hub-energy-efficiency.html">Energy Efficiency Hub</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h3>Resources</h3>
+<ul>
+<li><a href="beginner.html">Beginner's Checklist</a></li>
+<li><a href="troubleshoot.html">Troubleshooting</a></li>
+<li><a href="science-of-compost.html">The Science of Compost</a></li>
+<li><a href="glossary.html">Glossary</a></li>
+<li><a href="faq.html">FAQ</a></li>
+<li><a href="blog.html">Blog</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="sitemap.html">Sitemap</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-legal">
+<p>© 2026 World Composting. All rights reserved.</p>
+<p>As an Amazon Associate, I earn from qualifying purchases. Some product links are affiliate links at no extra cost to you.</p>
+<p cls="footer-credits"><a href="photo-credits.html">Photo credits (Wikimedia Commons, PD/CC licenses)</a></p></div>
+</footer>
 </body>
 </html>
