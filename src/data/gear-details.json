@@ -154,15 +154,15 @@
         "specs": "5L capacity, ~5 hr cycle",
         "image": "src/assets/gear/amz-foodcycler-eco-5.jpg"
     },
-    "Reencle Gravity": {
-        "blurb": "The more affordable Reencle option with 5-liter capacity. Retains core drying and grinding functionality without the smart odor sensor.",
-        "specs": "5L capacity, ~5 hr cycle",
-        "image": "src/assets/gear/amz-reencle-gravity.webp"
+    "GEME Terra 2": {
+        "blurb": "GEME's bio-reactor (not a dehydrator) for 1-3 person households. A warm, moist, oxygen-rich chamber with living Kobold\u2122 microbes turns food scraps \u2014 including meat, dairy and small bones \u2014 into a moist, active compost base. Continuous 'add & forget'; permanent ion filter, no refills.",
+        "specs": "14L, ~2kg/day, continuous",
+        "image": "src/assets/gear/geme-terra2.png"
     },
-    "Reencle Prime": {
-        "blurb": "Premium Reencle model with 6-liter capacity, odor sensor for automatic cycle adjustment, and integrated carbon filter system.",
-        "specs": "6L capacity, ~5 hr cycle",
-        "image": "src/assets/gear/amz-reencle-prime.jpg"
+    "GEME Pro": {
+        "blurb": "GEME's heavy-duty 19L bio-reactor for 4+ households and heavy daily waste. Processes up to 5kg/day and can run 6-12 months between cleanings. Handles meat, dairy and small bones; permanent ion filter, no refills.",
+        "specs": "19L, ~5kg/day, continuous",
+        "image": "src/assets/gear/geme-pro.png"
     },
     "ecobee Smart Thermostat": {
         "blurb": "Smart thermostat with room sensors. I use it to monitor and optimize home energy usage — the energy reports show exactly where power is going.",
