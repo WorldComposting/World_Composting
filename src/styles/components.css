@@ -607,8 +607,8 @@ a.gear-card-link:hover {
   box-shadow: var(--shadow-sm);
   transition: border-color .2s var(--ease), box-shadow .2s var(--ease);
 }
-.phase.open,
-.phase-wide.open {
+.phase.active,
+.phase-wide.active {
   border-color: var(--leaf);
   box-shadow: var(--shadow-md);
 }
@@ -643,8 +643,8 @@ a.gear-card-link:hover {
   font-weight: 700;
   font-size: .95rem;
 }
-.phase.open .phase-header .phase-num,
-.phase-wide.open .phase-header .phase-num { background: var(--leaf); }
+.phase.active .phase-header .phase-num,
+.phase-wide.active .phase-header .phase-num { background: var(--leaf); }
 .phase-header .phase-name { flex: 1; }
 .phase-header .phase-meta {
   font-family: var(--font-body);
@@ -666,8 +666,8 @@ a.gear-card-link:hover {
   font-size: .85rem;
   transition: transform .3s var(--ease), background-color .2s var(--ease);
 }
-.phase.open .phase-arrow,
-.phase-wide.open .phase-arrow {
+.phase.active .phase-arrow,
+.phase-wide.active .phase-arrow {
   transform: rotate(180deg);
   background: var(--leaf-soft);
   color: var(--forest);
@@ -678,8 +678,8 @@ a.gear-card-link:hover {
   padding: .4rem 1.5rem 1.5rem;
   border-top: 1px solid var(--line);
 }
-.phase.open .phase-body,
-.phase-wide.open .phase-body {
+.phase.active .phase-body,
+.phase-wide.active .phase-body {
   display: block;
   animation: stepIn .28s var(--ease);
 }
@@ -699,12 +699,12 @@ a.gear-card-link:hover {
               opacity .25s var(--ease);
 }
 .checklist-item:hover { border-color: var(--leaf); }
-.checklist-item.checked {
+.checklist-item.completed {
   background: var(--leaf-soft);
   border-color: #cfe3d5;
   opacity: .72;
 }
-.checklist-item.checked .check-title {
+.checklist-item.completed .check-title {
   text-decoration: line-through;
   text-decoration-color: var(--leaf);
 }
@@ -722,7 +722,7 @@ a.gear-card-link:hover {
   transition: border-color .2s var(--ease), background-color .2s var(--ease),
               transform .2s var(--ease);
 }
-.checklist-item.checked .check-emoji {
+.checklist-item.completed .check-emoji {
   border-color: var(--leaf);
   background: var(--leaf);
 }
