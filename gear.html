@@ -100,6 +100,7 @@
 <li><a href="hub-tumbler.html">Tumbler Composting</a></li>
 <li><a href="hub-black-soldier-fly.html">Black Soldier Fly</a></li>
 <li><a href="hub-energy-efficiency.html">Energy Efficiency</a></li>
+<li><a href="electric_composter.html">Electric Composters</a></li>
 </ul>
 </li>
 <li><a class="nav-link" href="index.html#checklists">Checklists</a></li>
@@ -153,6 +154,10 @@
 <h1>My Composting Gear</h1>
 <p>The tools I use for a sustainable life. As an Amazon Associate, I earn from qualifying purchases.</p>
 </div>
+<!-- ELECTRIC COMPOSTER GUIDE CALLOUT -->
+<div class="callout">
+<p><strong>Buying an electric composter?</strong> These are the biggest-ticket recommendations on this page. Read the full <a href="electric_composter.html">Electric Composters guide</a> first — FoodCycler vs GEME models compared, operating costs, and exactly what each one can (and can't) process.</p>
+</div>
 <!-- All Gear (grouped by category) -->
 <div id="gear-section-wide">
 <div class="section-title">All Gear</div>
@@ -191,6 +196,7 @@
 <li><a href="tumbler.html">Tumbler</a></li>
 <li><a href="black_soldier_fly.html">Black Soldier Fly</a></li>
 <li><a href="tea.html">Compost Tea</a></li>
+<li><a href="electric_composter.html">Electric Composters</a></li>
 </ul>
 </div>
 <div class="footer-col">
@@ -272,6 +278,7 @@
                 html += `
                     <div class="gear-category">
                         <h3 class="gear-category-title">${category}<span class="gear-category-count">${items.length} item${items.length === 1 ? '' : 's'}</span></h3>
+                        ${category === "Electric Composters" ? `<p class="gear-category-guide"><a href="electric_composter.html">Before you buy: my full Electric Composters guide — FoodCycler vs GEME, operating costs &amp; pros/cons →</a></p>` : ''}
                         <div class="gear-grid">
                             ${items.map(item => {
                                 const href = (item['Amazon Link'] !== 'NaN' && item['Amazon Link']) ||
