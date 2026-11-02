@@ -139,10 +139,20 @@
         "specs": "4 gallon, cordless",
         "image": "src/assets/gear/amz-ego-4-gallon-sprayer.jpg"
     },
-    "Meme's Worms": {
-        "blurb": "My go-to supplier for red wiggler worms. Healthy, active worms that arrive fast and establish in new bins quickly.",
-        "specs": "Live red wigglers",
-        "image": "src/assets/gear/amz-meme-s-worms.jpg"
+    "Hungry Worms - Red Wigglers": {
+        "blurb": "My go-to supplier for composting worms. Pure red wigglers — not a red worm mix — with free shipping and a live-delivery guarantee. Healthy, active worms that establish in new bins quickly.",
+        "specs": "$45, 0.5-10 lb, live delivery guaranteed",
+        "image": "src/assets/gear/hungry-worms-red-wigglers.png"
+    },
+    "Hungry Worms - European Nightcrawlers": {
+        "blurb": "Versatile nightcrawlers that compost hard and double as excellent fishing bait. Low-maintenance and they tolerate a wide range of temperatures, so they suit more climates than most worms.",
+        "specs": "$40, 0.5-10 lb, composting + bait",
+        "image": "src/assets/gear/hungry-worms-european-nightcrawlers.jpg"
+    },
+    "Hungry Worms - African Nightcrawlers": {
+        "blurb": "For experienced worm farmers. Pound for pound they eat 1.5-3x faster than red wigglers, so you get more castings in the same time. They need to stay warm — cold is their one weakness.",
+        "specs": "$60, ~300/lb, warm climates only",
+        "image": "src/assets/gear/hungry-worms-african-nightcrawlers.png"
     },
     "FoodCycler Eco 3": {
         "blurb": "Entry-level electric composter with a 3-liter bucket. Ideal for singles or couples generating minimal kitchen waste.",
