@@ -5,6 +5,10 @@ World Composting is a comprehensive resource for composting education, featuring
 
 ## Site Structure
 
+### Home & Site
+- [Home — Latest Videos, Checklists & Gear](https://www.worldcomposting.com/)
+- [Start Here — Decision Guide](https://www.worldcomposting.com/start-here.html)
+
 ### Pillar Guides
 - [Worm Composting](https://www.worldcomposting.com/worm-composting.html) — Complete vermicomposting guide
 - [Hot Composting](https://www.worldcomposting.com/hot-composting.html) — Thermophilic decomposition guide
@@ -12,6 +16,7 @@ World Composting is a comprehensive resource for composting education, featuring
 
 ### Checklists (Interactive)
 - [Beginner's Checklist](https://www.worldcomposting.com/beginner.html) — Worm composting step-by-step
+- [Pre-Compost for Worm Bins](https://www.worldcomposting.com/pre-compost.html)
 - [Hot Composting Checklist](https://www.worldcomposting.com/hot.html)
 - [Bokashi Composting](https://www.worldcomposting.com/bokashi.html)
 - [BioChar Composting](https://www.worldcomposting.com/biochar.html)
@@ -22,6 +27,7 @@ World Composting is a comprehensive resource for composting education, featuring
 - [Energy Efficiency at Home](https://www.worldcomposting.com/energy-efficiency.html)
 - [Black Soldier Fly](https://www.worldcomposting.com/black_soldier_fly.html)
 - [Zero Waste Kitchen](https://www.worldcomposting.com/zero-waste-kitchen.html)
+- [Water Conservation Checklist](https://www.worldcomposting.com/water-conservation.html)
 
 ### Deep-Dive Articles
 - [Best Bedding Materials for Worm Bins](https://www.worldcomposting.com/worm-bedding.html)
@@ -33,14 +39,57 @@ World Composting is a comprehensive resource for composting education, featuring
 - [How to Turn Compost Faster](https://www.worldcomposting.com/hot-speed-tips.html)
 - [C:N Ratio Guide for Hot Composting](https://www.worldcomposting.com/hot-cn-ratio.html)
 
+### Deep-Dive Articles — Bokashi
+- [Best Materials for Bokashi Composting](https://www.worldcomposting.com/bokashi-best-materials.html)
+- [EM-1 for Bokashi: How to Make and Use Fermentation Inoculant](https://www.worldcomposting.com/bokashi-em1-guide.html)
+- [Bokashi Bucket Smells Bad: Troubleshooting Guide](https://www.worldcomposting.com/bokashi-not-heating.html)
+- [Bokashi Tea: How to Use Fermentation Liquid as Plant Fertilizer](https://www.worldcomposting.com/bokashi-tea-usage.html)
+
+### Deep-Dive Articles — BioChar
+- [Best Materials for BioChar Production](https://www.worldcomposting.com/biochar-best-materials.html)
+- [BioChar Charging: How to Activate Charcoal Before Soil Application](https://www.worldcomposting.com/biochar-charging-guide.html)
+- [BioChar Pyrolysis Science: How Heat Creates Soil Carbon](https://www.worldcomposting.com/biochar-pyrolysis-science.html)
+- [BioChar Soil Impact: How It Improves Fertility and Water Retention](https://www.worldcomposting.com/biochar-soil-impact.html)
+
+### Deep-Dive Articles — Black Soldier Fly
+- [Best Materials for Black Soldier Fly Composting](https://www.worldcomposting.com/bsf-best-materials.html)
+- [How to Build a Black Soldier Fly Breeding Bin](https://www.worldcomposting.com/bsf-breeding-bin.html)
+- [BSF Breeding Bin Design: Build Your Own at Home](https://www.worldcomposting.com/bsf-breeding-bin-design.html)
+- [BSF Frass Analysis: Testing Your Compost Output](https://www.worldcomposting.com/bsf-frass-analysis.html)
+- [How to Harvest Black Soldier Fly Larvae for Feed](https://www.worldcomposting.com/bsf-larvae-harvest.html)
+- [BSF Life Cycle: From Egg to Adult Fly](https://www.worldcomposting.com/bsf-life-cycle.html)
+
+### Deep-Dive Articles — Lasagna
+- [Best Materials for Lasagna Composting](https://www.worldcomposting.com/lasagna-best-materials.html)
+- [Lasagna Compost Layer Thickness: How Thick Should Each Layer Be?](https://www.worldcomposting.com/lasagna-layer-thickness.html)
+- [Lasagna Compost for Soil Building: How to Create Rich Garden Bed](https://www.worldcomposting.com/lasagna-soil-building.html)
+- [Lasagna Compost for Weed Suppression: Smother Weeds Naturally](https://www.worldcomposting.com/lasagna-weed-suppression.html)
+
+### Deep-Dive Articles — Tumbler
+- [Best Materials for Tumbler Composting](https://www.worldcomposting.com/tumbler-best-materials.html)
+- [Tumbler Compost Moisture Control: How to Keep the Right Balance](https://www.worldcomposting.com/tumbler-moisture-control.html)
+- [Tumbler Compost Not Heating Up: Troubleshooting Guide](https://www.worldcomposting.com/tumbler-not-heating.html)
+- [Tumbler Turning Schedule: How Often to Rotate for Fast Compost](https://www.worldcomposting.com/tumbler-turning-schedule.html)
+
+### Deep-Dive Articles — Energy & Sustainability
+- [Best Energy-Saving Materials for Your Home Type](https://www.worldcomposting.com/energy-best-materials.html)
+- [DIY Home Energy Audit: Find Your Biggest Leaks for Under $50](https://www.worldcomposting.com/energy-home-audit.html)
+- [Insulation Science: R-Values, Spray Foam vs Batts, Attic Ventilation](https://www.worldcomposting.com/energy-insulation-guide.html)
+- [Solar Panel ROI Calculator: Payback Periods by State](https://www.worldcomposting.com/energy-solar-roi.html)
+- [Compost Heat for Home Heating: Can You Warm Your House?](https://www.worldcomposting.com/energy-efficiency-compost-heating.html)
+- [Reduce Energy Waste with Compost: Lower Your Carbon Footprint](https://www.worldcomposting.com/energy-efficiency-reduce-waste-energy.html)
+- [Compost for Soil Health and Carbon Sequestration](https://www.worldcomposting.com/energy-efficiency-soil-carbon-sequestration.html)
+- [Compost for Water Conservation: Retain Moisture in Your Garden](https://www.worldcomposting.com/energy-efficiency-water-conservation.html)
+
 ### Resources
-- [Start Here — Decision Guide](https://www.worldcomposting.com/start-here.html)
 - [Gear Recommendations](https://www.worldcomposting.com/gear.html)
 - [Composting Glossary](https://www.worldcomposting.com/glossary.html)
 - [Troubleshooting](https://www.worldcomposting.com/troubleshoot.html)
 - [Electric Composters](https://www.worldcomposting.com/electric_composter.html)
 - [FAQ](https://www.worldcomposting.com/faq.html)
 - [Blog](https://www.worldcomposting.com/blog.html)
+- [Photo Credits](https://www.worldcomposting.com/photo-credits.html)
+- [HTML Site Map](https://www.worldcomposting.com/sitemap.html)
 
 ### Blog Posts
 - [Biochar Guide](https://www.worldcomposting.com/blog/biochar-guide.html)
