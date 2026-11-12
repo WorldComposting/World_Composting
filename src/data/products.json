@@ -2,301 +2,607 @@
     {
         "Item": "10 Gallon Tote",
         "Category": "Worm Bin Items",
-        "Amazon Link": "https://amzn.to/3m3BlJq",
-        "Other Link": null
+        "Affiliate Links": [
+            {
+                "Program": "Amazon Associates",
+                "URL": "https://amzn.to/3m3BlJq",
+                "Label": "View on Amazon",
+                "Primary": true
+            }
+        ]
     },
     {
         "Item": "Blue Tarp",
         "Category": "Worm Bin Items",
-        "Amazon Link": "https://amzn.to/3rXmPGY",
-        "Other Link": null
+        "Affiliate Links": [
+            {
+                "Program": "Amazon Associates",
+                "URL": "https://amzn.to/3rXmPGY",
+                "Label": "View on Amazon",
+                "Primary": true
+            }
+        ]
     },
     {
         "Item": "Bus Boy Tubs",
         "Category": "Worm Bin Items",
-        "Amazon Link": "https://amzn.to/4hSL3MU",
-        "Other Link": null
+        "Affiliate Links": [
+            {
+                "Program": "Amazon Associates",
+                "URL": "https://amzn.to/4hSL3MU",
+                "Label": "View on Amazon",
+                "Primary": true
+            }
+        ]
     },
     {
         "Item": "KN95 Masks",
         "Category": "Worm Bin Items",
-        "Amazon Link": "https://amzn.to/4zUcONo",
-        "Other Link": null
+        "Affiliate Links": [
+            {
+                "Program": "Amazon Associates",
+                "URL": "https://amzn.to/4zUcONo",
+                "Label": "View on Amazon",
+                "Primary": true
+            }
+        ]
     },
     {
         "Item": "Pine Shavings",
         "Category": "Worm Bin Items",
-        "Amazon Link": "https://amzn.to/3pP7vKv",
-        "Other Link": null
+        "Affiliate Links": [
+            {
+                "Program": "Amazon Associates",
+                "URL": "https://amzn.to/3pP7vKv",
+                "Label": "View on Amazon",
+                "Primary": true
+            }
+        ]
     },
     {
         "Item": "Waterproof gloves",
         "Category": "Worm Bin Items",
-        "Amazon Link": "https://amzn.to/3m21vfp",
-        "Other Link": null
+        "Affiliate Links": [
+            {
+                "Program": "Amazon Associates",
+                "URL": "https://amzn.to/3m21vfp",
+                "Label": "View on Amazon",
+                "Primary": true
+            }
+        ]
     },
     {
         "Item": "10 Gallon Tote",
         "Category": "BSF Items",
-        "Amazon Link": "https://amzn.to/3m3BlJq",
-        "Other Link": null
+        "Affiliate Links": [
+            {
+                "Program": "Amazon Associates",
+                "URL": "https://amzn.to/3m3BlJq",
+                "Label": "View on Amazon",
+                "Primary": true
+            }
+        ]
     },
     {
         "Item": "Blue Tarp",
         "Category": "BSF Items",
-        "Amazon Link": "https://amzn.to/3rXmPGY",
-        "Other Link": null
+        "Affiliate Links": [
+            {
+                "Program": "Amazon Associates",
+                "URL": "https://amzn.to/3rXmPGY",
+                "Label": "View on Amazon",
+                "Primary": true
+            }
+        ]
     },
     {
         "Item": "Waterproof gloves",
         "Category": "BSF Items",
-        "Amazon Link": "https://amzn.to/3m21vfp",
-        "Other Link": null
+        "Affiliate Links": [
+            {
+                "Program": "Amazon Associates",
+                "URL": "https://amzn.to/3m21vfp",
+                "Label": "View on Amazon",
+                "Primary": true
+            }
+        ]
     },
     {
         "Item": "Chapin Sprayer",
         "Category": "BSF Items",
-        "Amazon Link": "https://amzn.to/2KWLpHk",
-        "Other Link": null
+        "Affiliate Links": [
+            {
+                "Program": "Amazon Associates",
+                "URL": "https://amzn.to/2KWLpHk",
+                "Label": "View on Amazon",
+                "Primary": true
+            }
+        ]
     },
     {
         "Item": "Ego 4 Gallon Sprayer",
         "Category": "BSF Items",
-        "Amazon Link": "https://amzn.to/4wGyP0X",
-        "Other Link": null
+        "Affiliate Links": [
+            {
+                "Program": "Amazon Associates",
+                "URL": "https://amzn.to/4wGyP0X",
+                "Label": "View on Amazon",
+                "Primary": true
+            }
+        ]
     },
     {
         "Item": "Urban Worm Bag",
         "Category": "Worm Bag",
-        "Amazon Link": "https://amzn.to/3R3qYtQ",
-        "Other Link": "https://bit.ly/3sJ7wC8"
+        "Affiliate Links": [
+            {
+                "Program": "Amazon Associates",
+                "URL": "https://amzn.to/3R3qYtQ",
+                "Label": "View on Amazon",
+                "Primary": true
+            },
+            {
+                "Program": "Unclassified short link",
+                "URL": "https://bit.ly/3sJ7wC8",
+                "Label": "Alternate link",
+                "Primary": false
+            }
+        ]
     },
     {
         "Item": "Vermibag",
         "Category": "Worm Bag",
-        "Amazon Link": "https://vermibag.com/?wpam_id=3",
-        "Other Link": null
+        "Affiliate Links": [
+            {
+                "Program": "Vermibag",
+                "URL": "https://vermibag.com/?wpam_id=3",
+                "Label": "Visit Vermibag",
+                "Primary": true
+            }
+        ]
     },
     {
         "Item": "Bug Zapper",
         "Category": "Fly Control",
-        "Amazon Link": "https://amzn.to/4x7VFxl",
-        "Other Link": null
+        "Affiliate Links": [
+            {
+                "Program": "Amazon Associates",
+                "URL": "https://amzn.to/4x7VFxl",
+                "Label": "View on Amazon",
+                "Primary": true
+            }
+        ]
     },
     {
         "Item": "Diatomaceous Earth Food Grade",
         "Category": "Fly Control",
-        "Amazon Link": "https://amzn.to/4u1AYCn",
-        "Other Link": null
+        "Affiliate Links": [
+            {
+                "Program": "Amazon Associates",
+                "URL": "https://amzn.to/4u1AYCn",
+                "Label": "View on Amazon",
+                "Primary": true
+            }
+        ]
     },
     {
         "Item": "Mosquito Bits Bti",
         "Category": "Fly Control",
-        "Amazon Link": "https://amzn.to/3pZSWng",
-        "Other Link": null
+        "Affiliate Links": [
+            {
+                "Program": "Amazon Associates",
+                "URL": "https://amzn.to/3pZSWng",
+                "Label": "View on Amazon",
+                "Primary": true
+            }
+        ]
     },
     {
         "Item": "Mosquito Dunks",
         "Category": "Fly Control",
-        "Amazon Link": "https://amzn.to/31z7fFf",
-        "Other Link": null
+        "Affiliate Links": [
+            {
+                "Program": "Amazon Associates",
+                "URL": "https://amzn.to/31z7fFf",
+                "Label": "View on Amazon",
+                "Primary": true
+            }
+        ]
     },
     {
         "Item": "Sticky Fly Trap",
         "Category": "Fly Control",
-        "Amazon Link": "https://amzn.to/39eLIFA",
-        "Other Link": null
+        "Affiliate Links": [
+            {
+                "Program": "Amazon Associates",
+                "URL": "https://amzn.to/39eLIFA",
+                "Label": "View on Amazon",
+                "Primary": true
+            }
+        ]
     },
     {
         "Item": "5 Gallon Bucket and Gamma Seal Lid",
         "Category": "Bokashi Items",
-        "Amazon Link": "https://amzn.to/2Z0oa2v",
-        "Other Link": null
+        "Affiliate Links": [
+            {
+                "Program": "Amazon Associates",
+                "URL": "https://amzn.to/2Z0oa2v",
+                "Label": "View on Amazon",
+                "Primary": true
+            }
+        ]
     },
     {
         "Item": "Bokashi Bran",
         "Category": "Bokashi Items",
-        "Amazon Link": "https://amzn.to/3UtLHsA",
-        "Other Link": null
+        "Affiliate Links": [
+            {
+                "Program": "Amazon Associates",
+                "URL": "https://amzn.to/3UtLHsA",
+                "Label": "View on Amazon",
+                "Primary": true
+            }
+        ]
     },
     {
         "Item": "100 Pack Utility Knife Blades",
         "Category": "Paper",
-        "Amazon Link": "https://amzn.to/39169FP",
-        "Other Link": null
+        "Affiliate Links": [
+            {
+                "Program": "Amazon Associates",
+                "URL": "https://amzn.to/39169FP",
+                "Label": "View on Amazon",
+                "Primary": true
+            }
+        ]
     },
     {
         "Item": "Bonsaii 12 Sheet Micr-cut Paper Shredder",
         "Category": "Paper",
-        "Amazon Link": "https://amzn.to/4aVcRhy",
-        "Other Link": null
+        "Affiliate Links": [
+            {
+                "Program": "Amazon Associates",
+                "URL": "https://amzn.to/4aVcRhy",
+                "Label": "View on Amazon",
+                "Primary": true
+            }
+        ]
     },
     {
         "Item": "Folding Utility Knife",
         "Category": "Paper",
-        "Amazon Link": "https://amzn.to/3baqVW4",
-        "Other Link": null
+        "Affiliate Links": [
+            {
+                "Program": "Amazon Associates",
+                "URL": "https://amzn.to/3baqVW4",
+                "Label": "View on Amazon",
+                "Primary": true
+            }
+        ]
     },
     {
         "Item": "Canon EF-S 24mm f/2.8 STM Lens",
         "Category": "Video Gear",
-        "Amazon Link": "https://amzn.to/37ntuBx",
-        "Other Link": null
+        "Affiliate Links": [
+            {
+                "Program": "Amazon Associates",
+                "URL": "https://amzn.to/37ntuBx",
+                "Label": "View on Amazon",
+                "Primary": true
+            }
+        ]
     },
     {
         "Item": "Canon EOS 90D",
         "Category": "Video Gear",
-        "Amazon Link": "https://amzn.to/3bmTmP9",
-        "Other Link": null
+        "Affiliate Links": [
+            {
+                "Program": "Amazon Associates",
+                "URL": "https://amzn.to/3bmTmP9",
+                "Label": "View on Amazon",
+                "Primary": true
+            }
+        ]
     },
     {
         "Item": "Davinci Resolve",
         "Category": "Video Gear",
-        "Amazon Link": "https://amzn.to/3s89jiM",
-        "Other Link": null
+        "Affiliate Links": [
+            {
+                "Program": "Amazon Associates",
+                "URL": "https://amzn.to/3s89jiM",
+                "Label": "View on Amazon",
+                "Primary": true
+            }
+        ]
     },
     {
         "Item": "Fujifilm X-T5",
         "Category": "Video Gear",
-        "Amazon Link": "https://amzn.to/4tBUUMB",
-        "Other Link": null
+        "Affiliate Links": [
+            {
+                "Program": "Amazon Associates",
+                "URL": "https://amzn.to/4tBUUMB",
+                "Label": "View on Amazon",
+                "Primary": true
+            }
+        ]
     },
     {
         "Item": "GEEKOTO Tripd",
         "Category": "Video Gear",
-        "Amazon Link": "https://amzn.to/3bltu66",
-        "Other Link": null
+        "Affiliate Links": [
+            {
+                "Program": "Amazon Associates",
+                "URL": "https://amzn.to/3bltu66",
+                "Label": "View on Amazon",
+                "Primary": true
+            }
+        ]
     },
     {
         "Item": "GoPro Hero 8 Black",
         "Category": "Video Gear",
-        "Amazon Link": "https://amzn.to/3py8caz",
-        "Other Link": null
+        "Affiliate Links": [
+            {
+                "Program": "Amazon Associates",
+                "URL": "https://amzn.to/3py8caz",
+                "Label": "View on Amazon",
+                "Primary": true
+            }
+        ]
     },
     {
         "Item": "Neewer Advanced 660 LED Studio Lighting",
         "Category": "Video Gear",
-        "Amazon Link": "https://amzn.to/37JP5Ez",
-        "Other Link": null
+        "Affiliate Links": [
+            {
+                "Program": "Amazon Associates",
+                "URL": "https://amzn.to/37JP5Ez",
+                "Label": "View on Amazon",
+                "Primary": true
+            }
+        ]
     },
     {
         "Item": "Panasonic 4k Camcorder",
         "Category": "Video Gear",
-        "Amazon Link": "https://amzn.to/3bjTZsD",
-        "Other Link": null
+        "Affiliate Links": [
+            {
+                "Program": "Amazon Associates",
+                "URL": "https://amzn.to/3bjTZsD",
+                "Label": "View on Amazon",
+                "Primary": true
+            }
+        ]
     },
     {
         "Item": "Chapin Sprayer",
         "Category": "Water Gear",
-        "Amazon Link": "https://amzn.to/2KWLpHk",
-        "Other Link": null
+        "Affiliate Links": [
+            {
+                "Program": "Amazon Associates",
+                "URL": "https://amzn.to/2KWLpHk",
+                "Label": "View on Amazon",
+                "Primary": true
+            }
+        ]
     },
     {
         "Item": "Ego 4 Gallon Sprayer",
         "Category": "Water Gear",
-        "Amazon Link": "https://amzn.to/4wGyP0X",
-        "Other Link": null
+        "Affiliate Links": [
+            {
+                "Program": "Amazon Associates",
+                "URL": "https://amzn.to/4wGyP0X",
+                "Label": "View on Amazon",
+                "Primary": true
+            }
+        ]
     },
     {
         "Item": "Hungry Worms - Red Wigglers",
         "Category": "Worms",
-        "Amazon Link": "https://hungryworms.com/0mf6sx",
-        "Other Link": null
+        "Affiliate Links": [
+            {
+                "Program": "Hungry Worms",
+                "URL": "https://hungryworms.com/0mf6sx",
+                "Label": "Shop at Hungry Worms",
+                "Primary": true
+            }
+        ]
     },
     {
         "Item": "Hungry Worms - European Nightcrawlers",
         "Category": "Worms",
-        "Amazon Link": "https://hungryworms.com/lwhuus",
-        "Other Link": null
+        "Affiliate Links": [
+            {
+                "Program": "Hungry Worms",
+                "URL": "https://hungryworms.com/lwhuus",
+                "Label": "Shop at Hungry Worms",
+                "Primary": true
+            }
+        ]
     },
     {
         "Item": "Hungry Worms - African Nightcrawlers",
         "Category": "Worms",
-        "Amazon Link": "https://hungryworms.com/0s5f2t",
-        "Other Link": null
+        "Affiliate Links": [
+            {
+                "Program": "Hungry Worms",
+                "URL": "https://hungryworms.com/0s5f2t",
+                "Label": "Shop at Hungry Worms",
+                "Primary": true
+            }
+        ]
     },
     {
         "Item": "ecobee Smart Thermostat",
         "Category": "Home Efficiency",
-        "Amazon Link": "https://amzn.to/4hgKjBi",
-        "Other Link": null
+        "Affiliate Links": [
+            {
+                "Program": "Amazon Associates",
+                "URL": "https://amzn.to/4hgKjBi",
+                "Label": "View on Amazon",
+                "Primary": true
+            }
+        ]
     },
     {
         "Item": "Smart Plug Wi-Fi, Energy Monitoring",
         "Category": "Home Efficiency",
-        "Amazon Link": "https://amzn.to/4rmfqA6",
-        "Other Link": null
+        "Affiliate Links": [
+            {
+                "Program": "Amazon Associates",
+                "URL": "https://amzn.to/4rmfqA6",
+                "Label": "View on Amazon",
+                "Primary": true
+            }
+        ]
     },
     {
         "Item": "Cree LED A19 Bulb, 60W, Soft White",
         "Category": "Home Efficiency",
-        "Amazon Link": "https://amzn.to/4rjOlxo",
-        "Other Link": null
+        "Affiliate Links": [
+            {
+                "Program": "Amazon Associates",
+                "URL": "https://amzn.to/4rjOlxo",
+                "Label": "View on Amazon",
+                "Primary": true
+            }
+        ]
     },
     {
         "Item": "Window Insulation Shrink Kit",
         "Category": "Home Efficiency",
-        "Amazon Link": "https://amzn.to/4xvc0wc",
-        "Other Link": null
+        "Affiliate Links": [
+            {
+                "Program": "Amazon Associates",
+                "URL": "https://amzn.to/4xvc0wc",
+                "Label": "View on Amazon",
+                "Primary": true
+            }
+        ]
     },
     {
         "Item": "Foam Weather Stripping",
         "Category": "Home Efficiency",
-        "Amazon Link": "https://amzn.to/4AfQNcl",
-        "Other Link": null
+        "Affiliate Links": [
+            {
+                "Program": "Amazon Associates",
+                "URL": "https://amzn.to/4AfQNcl",
+                "Label": "View on Amazon",
+                "Primary": true
+            }
+        ]
     },
     {
         "Item": "Outlet Gaskets, Foam insulation",
         "Category": "Home Efficiency",
-        "Amazon Link": "https://amzn.to/4xweI4I",
-        "Other Link": null
+        "Affiliate Links": [
+            {
+                "Program": "Amazon Associates",
+                "URL": "https://amzn.to/4xweI4I",
+                "Label": "View on Amazon",
+                "Primary": true
+            }
+        ]
     },
     {
         "Item": "Smart Power Strip Wi-Fi, Energy Monitoring",
         "Category": "Home Efficiency",
-        "Amazon Link": "https://amzn.to/4AirMNr",
-        "Other Link": null
+        "Affiliate Links": [
+            {
+                "Program": "Amazon Associates",
+                "URL": "https://amzn.to/4AirMNr",
+                "Label": "View on Amazon",
+                "Primary": true
+            }
+        ]
     },
     {
         "Item": "Low-Flow Showerhead",
         "Category": "Home Efficiency",
-        "Amazon Link": "https://amzn.to/475kQ94",
-        "Other Link": null
+        "Affiliate Links": [
+            {
+                "Program": "Amazon Associates",
+                "URL": "https://amzn.to/475kQ94",
+                "Label": "View on Amazon",
+                "Primary": true
+            }
+        ]
     },
     {
         "Item": "FoodCycler Eco 3",
         "Category": "Electric Composters",
-        "Amazon Link": "https://amzn.to/4iHzZVi",
-        "Other Link": null
+        "Affiliate Links": [
+            {
+                "Program": "Amazon Associates",
+                "URL": "https://amzn.to/4iHzZVi",
+                "Label": "View on Amazon",
+                "Primary": true
+            }
+        ]
     },
     {
         "Item": "FoodCycler Eco 5",
         "Category": "Electric Composters",
-        "Amazon Link": "https://amzn.to/3Zbcxnp",
-        "Other Link": null
+        "Affiliate Links": [
+            {
+                "Program": "Amazon Associates",
+                "URL": "https://amzn.to/3Zbcxnp",
+                "Label": "View on Amazon",
+                "Primary": true
+            }
+        ]
     },
     {
         "Item": "GEME Terra 2",
         "Category": "Electric Composters",
-        "Amazon Link": null,
-        "Other Link": "https://gemebio.com/nnhqep"
+        "Affiliate Links": [
+            {
+                "Program": "GEME",
+                "URL": "https://gemebio.com/nnhqep",
+                "Label": "View at GEME",
+                "Primary": true
+            }
+        ]
     },
     {
         "Item": "GEME Pro",
         "Category": "Electric Composters",
-        "Amazon Link": null,
-        "Other Link": "https://gemebio.com/ohjkpl"
+        "Affiliate Links": [
+            {
+                "Program": "GEME",
+                "URL": "https://gemebio.com/ohjkpl",
+                "Label": "View at GEME",
+                "Primary": true
+            }
+        ]
     },
     {
         "Item": "Waterproof gloves",
         "Category": "Pre-Compost Items",
-        "Amazon Link": "https://amzn.to/3m21vfp",
-        "Other Link": null
+        "Affiliate Links": [
+            {
+                "Program": "Amazon Associates",
+                "URL": "https://amzn.to/3m21vfp",
+                "Label": "View on Amazon",
+                "Primary": true
+            }
+        ]
     },
     {
         "Item": "10 Gallon Tote",
         "Category": "Pre-Compost Items",
-        "Amazon Link": "https://amzn.to/3m3BlJq",
-        "Other Link": null
+        "Affiliate Links": [
+            {
+                "Program": "Amazon Associates",
+                "URL": "https://amzn.to/3m3BlJq",
+                "Label": "View on Amazon",
+                "Primary": true
+            }
+        ]
     }
 ]

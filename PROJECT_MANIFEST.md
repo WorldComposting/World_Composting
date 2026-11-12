@@ -12,7 +12,7 @@ High-legibility, ADA-compliant site for the [World Composting](http://worldcompo
 
 ## 🛠 Tech Stack
 - **Frontend:** HTML5 + CSS3 (`src/styles/theme.css` is the design source of truth; `article.css`, `video-section.css`) + vanilla JS.
-- **Data layer:** `src/data/videos.json`, `src/data/products.json`, `src/data/blog.json`.
+- **Data layer:** `src/data/videos.json`, `src/data/products.json` (canonical `Affiliate Links` array with provider/program labels and preserved destination URLs), `src/data/blog.json`.
 - **Deployment:** GitHub Pages, repo `WorldComposting/World_Composting`, branch `main` = live site.
 - **Analytics:** GA4 `G-KRHYVJXZLE` on all pages; GSC verified (`google8a4b2c3d1e5f6789.html`).
 
@@ -25,7 +25,7 @@ High-legibility, ADA-compliant site for the [World Composting](http://worldcompo
 || Deep-dive articles | worm: `worm-bedding`, `worm-forbidden-foods`, `worm-fruit-flies`, `worm-harvesting`; hot: `hot-best-materials`, `hot-cn-ratio`, `hot-not-heating`, `hot-speed-tips`; plus `biochar.html` (checklist + article) |
 || Hub pages (8, local only 10/7) | `hub-worm-composting.html`, `hub-hot-composting.html`, `hub-bokashi.html`, `hub-biochar.html`, `hub-tumbler.html`, `hub-lasagna.html`, `hub-black-soldier-fly.html`, `hub-energy-efficiency.html` — each with hero, Start Here cards, Deep Dive Articles list, Gear & Products grid, Troubleshooting links; headers use `.subtitle-paren` CSS class |
 || Article pages (34+7 local only 10/7) | hot(4): `hot-best-materials`, `hot-cn-ratio`, `hot-not-heating`, `hot-speed-tips`; bokashi(4): `bokashi-em1-guide`, `bokashi-tea-usage`, `bokashi-not-heating`, `bokashi-best-materials`; biochar(4): `biochar-charging-guide`, `biochar-pyrolysis-science`, `biochar-soil-impact`, `biochar-best-materials`; tumbler(4): `tumbler-turning-schedule`, `tumbler-moisture-control`, `tumbler-not-heating`, `tumbler-best-materials`; lasagna(4): `lasagna-layer-thickness`, `lasagna-soil-building`, `lasagna-weed-suppression`, `lasagna-best-materials`; bsf(3): `bsf-breeding-bin`, `bsf-larvae-harvest`, `bsf-best-materials`; energy-efficiency(4): `energy-efficiency-compost-heating`, `energy-efficiency-water-conservation`, `energy-efficiency-reduce-waste-energy`, `energy-efficiency-soil-carbon-sequestration` — all first-person voice, canonical-tagged to worldcomposting.com |
-|| Utility / JS-driven | `gear.html` (29 products, 8 categories), `glossary.html` (30 terms), `faq.html` (41 Q&A in 11 sections, accordion `<details>`, FAQPage JSON-LD; added 9/14), `blog.html` (archive), `about.html`, `sitemap.html` |
+|| Utility / JS-driven | `gear.html` (50 product entries across 12 categories; 43 distinct product names), `glossary.html` (30 terms), `faq.html` (41 Q&A in 11 sections, accordion `<details>`, FAQPage JSON-LD; added 9/14), `blog.html` (archive), `about.html`, `sitemap.html` |
 || Not pages | `sample.html` (desktop layout template reference, gitignored local-only), `google8a4b2c3d1e5f6789.html` (GSC verification) |
 
 **Blog posts:** `blog/<slug>.html` generated from `src/data/blog.json` by `scripts/generate_blog.py`. Runbook: see **`BLOG_WORKFLOW.md`** (gitignored; the only other doc in this project).
