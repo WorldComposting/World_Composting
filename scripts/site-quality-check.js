@@ -46,6 +46,10 @@ for (const file of htmlFiles) {
     warnings.push(`Missing or empty meta description: ${page}`);
   }
   if (!/<h1\b[^>]*>\s*[^<]+/i.test(source)) warnings.push(`Missing H1: ${page}`);
+  if (!/<link\\s+[^>]*rel=["']canonical["']/i.test(source) &&
+      !/<link\\s+[^>]*href=["'][^"']+["'][^>]*rel=["']canonical["']/i.test(source)) {
+    warnings.push(`Missing canonical URL: ${page}`);
+  }
 
   const affiliatePage = /(?:amzn\.to|amazon\.com|hungryworms\.com|vermibag\.com|gemebio\.com|impact\.com|awin\.com|shareasale\.com|linksynergy\.com|cj\.com)/i.test(source);
   if (affiliatePage && !/(affiliate disclosure|affiliate link|qualifying purchases|commission)/i.test(source)) {
