@@ -1,0 +1,24 @@
+name: Site quality checks
+
+on:
+  push:
+    branches: [main, "maintenance/**", "content/**", "ux/**", "improvement/**"]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  site-quality:
+    name: Validate static site
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Check local links, sitemap, metadata, and JSON
+        run: node scripts/site-quality-check.js
