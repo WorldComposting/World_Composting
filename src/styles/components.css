@@ -1161,3 +1161,23 @@ a.related-card-wide:hover {
   .wizard-nav-wide { flex-direction: column-reverse; }
   .wizard-nav-wide .btn { width: 100%; }
 }
+
+
+/* Homepage audience pathways */
+.hero-actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: .85rem; margin: 1.2rem auto 0; }
+.hero-secondary-link { color: var(--forest); font-weight: 700; text-decoration: underline; text-underline-offset: .18em; }
+.home-pathways { margin: 2.5rem 0 3rem; }
+.home-pathway-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.home-pathway-card {
+  display: flex; flex-direction: column; align-items: flex-start; min-height: 190px;
+  padding: 1.25rem; background: var(--surface); border: 1px solid var(--line);
+  border-radius: var(--radius); box-shadow: var(--shadow-sm); color: inherit;
+  text-decoration: none; transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+}
+.home-pathway-card:hover { transform: translateY(-2px); border-color: var(--leaf); box-shadow: var(--shadow-md); color: inherit; }
+.home-pathway-card:focus-visible { outline: 3px solid var(--leaf); outline-offset: 3px; }
+.home-pathway-icon { font-size: 1.6rem; line-height: 1; margin-bottom: .65rem; }
+.home-pathway-card h3 { color: var(--forest-2); font-size: 1.05rem; margin: 0 0 .4rem; }
+.home-pathway-card p { color: var(--ink-2); font-size: .9rem; margin: 0 0 .85rem; }
+.home-pathway-link { margin-top: auto; color: var(--forest); font-size: .88rem; font-weight: 700; }
+@media (max-width: 720px) { .home-pathway-grid { grid-template-columns: 1fr; } .hero-actions { flex-direction: column; align-items: stretch; } .hero-actions a { text-align: center; } }
