@@ -168,3 +168,19 @@
   .article-section-wide { padding: 0 4px; }
   .post-meta { gap: .4rem .8rem; }
 }
+
+
+/* ---------- Author credibility / editorial context ---------- */
+.author-proof-wide {
+  max-width: var(--container-narrow);
+  margin: 1.25rem auto 2rem;
+  padding: 1rem 1.2rem;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--sage-green);
+  border-radius: var(--radius);
+  background: var(--surface-2);
+}
+.author-proof-wide p { margin: 0; color: var(--ink-2); font-size: .92rem; line-height: 1.7; }
+.author-proof-wide strong { color: var(--ink); }
+.author-proof-wide a { font-weight: 600; }
+@media (max-width: 640px) { .author-proof-wide { margin: 1rem 0 1.5rem; padding: .9rem 1rem; } }
