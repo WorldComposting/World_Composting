@@ -387,9 +387,23 @@
 <div class="callout">
 <p><strong>Buying an electric composter?</strong> These are the biggest-ticket recommendations on this page. Read the full <a href="electric_composter.html">Electric Composters guide</a> first — FoodCycler vs GEME models compared, operating costs, and exactly what each one can (and can't) process.</p>
 </div>
-<!-- All Gear (grouped by category) -->
+<!-- All Gear (searchable and filterable by category) -->
 <div id="gear-section-wide">
-<div class="section-title">All Gear</div>
+<div class="section-title">Find the Right Gear</div>
+<p class="gear-finder-intro">Search the products below or narrow the list by composting category. Product descriptions explain the intended use; check the linked guide before buying specialized equipment.</p>
+<div class="gear-finder" role="search">
+  <div class="gear-finder-field">
+    <label for="gear-search">Search products</label>
+    <input id="gear-search" type="search" placeholder="Try “worm bin”, “bedding”, or “sprayer”" autocomplete="off">
+  </div>
+  <div class="gear-finder-field">
+    <label for="gear-category-filter">Composting category</label>
+    <select id="gear-category-filter">
+      <option value="">All categories</option>
+    </select>
+  </div>
+</div>
+<p id="gear-results" class="gear-results" aria-live="polite"></p>
 <div id="gear-container"></div>
 </div>
 </main>
@@ -483,59 +497,88 @@
 
         function renderGear(products, details) {
             const container = document.getElementById('gear-container');
-            let html = '';
+            const searchInput = document.getElementById('gear-search');
+            const categoryFilter = document.getElementById('gear-category-filter');
+            const results = document.getElementById('gear-results');
 
-            const categories = {};
-            products.forEach(item => {
-                const cat = item['Category'] || 'Other';
-                if (!categories[cat]) categories[cat] = [];
-                categories[cat].push(item);
+            const categories = [...new Set(products.map(item => item['Category'] || 'Other'))].sort((a, b) => a.localeCompare(b));
+            categories.forEach(category => {
+                const option = document.createElement('option');
+                option.value = category;
+                option.textContent = category;
+                categoryFilter.appendChild(option);
             });
 
-            const priorityOrder = ["Worm Bin Items", "Worm Bag", "Fly Control", "Bokashi Items"];
-            const sortedCategories = Object.keys(categories).sort((a, b) => {
-                const aIndex = priorityOrder.indexOf(a);
-                const bIndex = priorityOrder.indexOf(b);
-                if (aIndex !== -1 && bIndex !== -1) return aIndex - bIndex; // Priority categories first, in order
-                if (aIndex !== -1) return -1;                              // Priority before everything else
-                if (bIndex !== -1) return 1;
-                return a.localeCompare(b);                                 // Rest alphabetical
-            });
+            function renderFilteredGear() {
+                const query = searchInput.value.trim().toLocaleLowerCase();
+                const selectedCategory = categoryFilter.value;
+                const filtered = products.filter(item => {
+                    const category = item['Category'] || 'Other';
+                    const detail = details[item['Item']] || {};
+                    const searchable = [item['Item'], category, detail.blurb, detail.specs]
+                        .filter(Boolean).join(' ').toLocaleLowerCase();
+                    return (!selectedCategory || category === selectedCategory) && (!query || searchable.includes(query));
+                });
 
-            for (const category of sortedCategories) {
-                const items = categories[category];
-                html += `
-                    <div class="gear-category">
-                        <h3 class="gear-category-title">${category}<span class="gear-category-count">${items.length} item${items.length === 1 ? '' : 's'}</span></h3>
-                        ${category === "Electric Composters" ? `<p class="gear-category-guide"><a href="electric_composter.html">Before you buy: my full Electric Composters guide — FoodCycler vs GEME, operating costs &amp; pros/cons →</a></p>` : ''}
-                        <div class="gear-grid">
-                            ${items.map(item => {
-                                const links = Array.isArray(item['Affiliate Links']) ? item['Affiliate Links'] : [];
-                                const d = details[item['Item']] || {};
-                                const img = d.image ? `<img class="gear-card-img" src="${d.image}" alt="${item['Item']}" loading="eager">` : '';
-                                const blurb = d.blurb ? `<p class="gear-card-blurb">${d.blurb}</p>` : '';
-                                const specs = d.specs ? `<span class="gear-card-specs">${d.specs}</span>` : '';
-                                const hasAffiliateProgram = links.some(link => link.Program && link.Program !== 'Unclassified short link');
-                                const affiliateBadge = hasAffiliateProgram ? ' <small style="color:var(--text-dark);opacity:0.6;font-size:0.75rem;">(Affiliate link)</small>' : '';
-                                const linkButtons = links.map(link =>
-                                    `<a href="${link.URL}" target="_blank" rel="noopener sponsored" class="gear-card-link">${link.Label || 'View Product'}</a>`
-                                ).join('');
-                                return `
-                                    <div class="gear-card">
-                                        ${img}
-                                        <div class="gear-card-body">
-                                            <h4 class="gear-card-name">${item['Item']}${affiliateBadge}</h4>
-                                            ${blurb}
-                                            ${specs}
-                                            ${linkButtons}
-                                        </div>
-                                    </div>`;
-                            }).join('')}
-                        </div>
-                    </div>
-                `;
+                const grouped = {};
+                filtered.forEach(item => {
+                    const category = item['Category'] || 'Other';
+                    if (!grouped[category]) grouped[category] = [];
+                    grouped[category].push(item);
+                });
+
+                const priorityOrder = ["Worm Bin Items", "Worm Bag", "Fly Control", "Bokashi Items"];
+                const sortedCategories = Object.keys(grouped).sort((a, b) => {
+                    const aIndex = priorityOrder.indexOf(a);
+                    const bIndex = priorityOrder.indexOf(b);
+                    if (aIndex !== -1 && bIndex !== -1) return aIndex - bIndex;
+                    if (aIndex !== -1) return -1;
+                    if (bIndex !== -1) return 1;
+                    return a.localeCompare(b);
+                });
+
+                let html = '';
+                for (const category of sortedCategories) {
+                    const items = grouped[category];
+                    html += `
+                        <section class="gear-category" aria-labelledby="gear-category-${category.replace(/[^a-z0-9]+/gi, '-').toLowerCase()}">
+                            <h3 class="gear-category-title" id="gear-category-${category.replace(/[^a-z0-9]+/gi, '-').toLowerCase()}">${category}<span class="gear-category-count">${items.length} item${items.length === 1 ? '' : 's'}</span></h3>
+                            ${category === "Electric Composters" ? `<p class="gear-category-guide"><a href="electric_composter.html">Before you buy: read the Electric Composters guide for model comparisons, operating costs, and limitations →</a></p>` : ''}
+                            <div class="gear-grid">
+                                ${items.map(item => {
+                                    const links = Array.isArray(item['Affiliate Links']) ? item['Affiliate Links'] : [];
+                                    const d = details[item['Item']] || {};
+                                    const img = d.image ? `<img class="gear-card-img" src="${d.image}" alt="${item['Item']}" loading="lazy">` : '';
+                                    const blurb = d.blurb ? `<p class="gear-card-blurb">${d.blurb}</p>` : '';
+                                    const specs = d.specs ? `<span class="gear-card-specs">${d.specs}</span>` : '';
+                                    const hasAffiliateProgram = links.some(link => link.Program && link.Program !== 'Unclassified short link');
+                                    const affiliateBadge = hasAffiliateProgram ? ' <small class="gear-affiliate-note">(Affiliate link)</small>' : '';
+                                    const linkButtons = links.map(link =>
+                                        `<a href="${link.URL}" target="_blank" rel="noopener sponsored" class="gear-card-link">${link.Label || 'View Product'}</a>`
+                                    ).join('');
+                                    return `
+                                        <article class="gear-card">
+                                            ${img}
+                                            <div class="gear-card-body">
+                                                <h4 class="gear-card-name">${item['Item']}${affiliateBadge}</h4>
+                                                ${blurb}
+                                                ${specs}
+                                                <div class="gear-card-actions">${linkButtons}</div>
+                                            </div>
+                                        </article>`;
+                                }).join('')}
+                            </div>
+                        </section>
+                    `;
+                }
+
+                container.innerHTML = html || '<p class="gear-empty">No products match those filters. Try a different search or choose All categories.</p>';
+                results.textContent = `Showing ${filtered.length} of ${products.length} product entries across ${sortedCategories.length} categories.`;
             }
-            container.innerHTML = html;
+
+            searchInput.addEventListener('input', renderFilteredGear);
+            categoryFilter.addEventListener('change', renderFilteredGear);
+            renderFilteredGear();
         }
 
         init();
