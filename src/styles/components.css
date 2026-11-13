@@ -1161,3 +1161,40 @@ a.related-card-wide:hover {
   .wizard-nav-wide { flex-direction: column-reverse; }
   .wizard-nav-wide .btn { width: 100%; }
 }
+
+
+/* Gear finder controls and product-card refinements */
+.gear-finder-intro { max-width: 48rem; color: var(--ink-2); margin: -.3rem 0 1rem; }
+.gear-finder {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(14rem, 1fr);
+  gap: 1rem;
+  padding: 1rem;
+  margin: 1rem 0 .5rem;
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.gear-finder-field { display: grid; gap: .35rem; }
+.gear-finder-field label { color: var(--ink-2); font-size: .85rem; font-weight: 700; }
+.gear-finder-field input, .gear-finder-field select {
+  width: 100%; min-height: 44px; padding: .65rem .8rem;
+  color: var(--ink); background: var(--surface);
+  border: 1px solid var(--line-2); border-radius: var(--radius-sm);
+  font: inherit;
+}
+.gear-finder-field input:focus, .gear-finder-field select:focus {
+  outline: 3px solid color-mix(in srgb, var(--leaf) 28%, transparent);
+  outline-offset: 1px;
+}
+.gear-results { min-height: 1.4em; margin: .35rem 0 1rem; color: var(--ink-3); font-size: .85rem; }
+.gear-empty { padding: 1.25rem; border: 1px dashed var(--line-2); border-radius: var(--radius); color: var(--ink-2); }
+.gear-affiliate-note { color: var(--ink-3); font-size: .75rem; font-weight: 500; }
+.gear-card-actions { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: auto; padding-top: .8rem; }
+.gear-card-body { display: flex; flex-direction: column; align-items: flex-start; }
+.gear-card { overflow: hidden; }
+.gear-card-img { width: 100%; height: 180px; object-fit: contain; background: var(--surface-2); }
+@media (max-width: 720px) {
+  .gear-finder { grid-template-columns: 1fr; }
+  .gear-card-img { height: 160px; }
+}
