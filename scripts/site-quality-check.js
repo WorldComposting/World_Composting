@@ -61,7 +61,7 @@ for (const file of htmlFiles) {
   const attrs = [...source.matchAll(/\b(?:href|src)=["']([^"'<>]+)["']/gi)];
   for (const match of attrs) {
     const raw = match[1].trim();
-    if (!raw || /^(?:https?:|mailto:|tel:|javascript:|data:|blob:|\/\/)/i.test(raw) || raw.startsWith('#')) continue;
+    if (!raw || /^(?:https?:|mailto:|tel:|javascript:|data:|blob:|\/\/)/i.test(raw) || raw.startsWith('#') || raw.startsWith('?')) continue;
     const target = raw.startsWith('/') ? raw : path.posix.join(path.posix.dirname(page), raw);
     if (!existsPublicTarget(target)) errors.push(`Broken local reference in ${page}: ${raw}`);
   }
