@@ -225,6 +225,45 @@
         });
     }
 
+    // Track clicks from embedded video cards to YouTube. Playback events inside
+    // cross-origin iframes require the YouTube IFrame API and are not inferred here.
+    if (!document.documentElement.dataset.youtubeOutboundTracking) {
+        document.documentElement.dataset.youtubeOutboundTracking = 'true';
+        document.addEventListener('click', function(event) {
+            var target = event.target;
+            var link = target && target.closest ? target.closest('a[href]') : null;
+            if (!link || typeof window.gtag !== 'function') return;
+
+            var destination;
+            try { destination = new URL(link.href, window.location.href); }
+            catch (e) { return; }
+            if (!/(^|\\.)youtube\\.com$|(^|\\.)youtu\\.be$/i.test(destination.hostname)) return;
+
+            var card = link.closest('.video-card');
+            var iframe = card ? card.querySelector('iframe[src*="youtube.com/embed/"]') : null;
+            var videoId = '';
+            var videoTitle = '';
+            if (iframe) {
+                var match = iframe.src.match(/youtube\\.com\\/embed\\/([A-Za-z0-9_-]+)/i);
+                if (match) videoId = match[1];
+                var title = card.querySelector('.video-title');
+                if (title) videoTitle = title.textContent.trim();
+            } else {
+                videoId = destination.searchParams.get('v') || destination.pathname.split('/').filter(Boolean).pop() || '';
+                videoTitle = link.textContent.trim();
+            }
+
+            window.gtag('event', 'youtube_outbound_click', {
+                video_id: videoId,
+                video_title: videoTitle,
+                destination_url: destination.href,
+                link_text: link.textContent.trim(),
+                page_path: window.location.pathname,
+                link_placement: card ? 'video_card' : 'other'
+            });
+        });
+    }
+
     // Expose globally for pages to call
     window.renderVideoSection = renderVideoSection;
     window.videoTakeaways = videoTakeaways;
