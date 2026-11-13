@@ -17,11 +17,23 @@
 </script>
 </head>
 <body>
-<header class="top-nav"><div class="nav-inner">
+<header class="top-nav" id="top-nav"><div class="nav-inner">
 <a class="nav-logo" href="index.html"><img src="src/assets/logo.png" width="40" height="40" alt="World Composting"><span class="nav-logo-text">World Composting<small>Guides · Checklists · Gear</small></span></a>
 <nav aria-label="Main navigation"><ul class="nav-links">
 <li><a class="nav-link" href="index.html">Home</a></li><li><a class="nav-link" href="start-here.html">Start Here</a></li><li><a class="nav-link" href="hub-worm-composting.html">Worm Composting</a></li><li><a class="nav-link" href="hub-hot-composting.html">Hot Composting</a></li><li><a class="nav-link" href="troubleshoot.html">Troubleshooting</a></li><li><a class="nav-link" href="gear.html">Gear</a></li>
 </ul></nav></div></header>
+<script>
+(function () {
+  var burger = document.getElementById("nav-burger");
+  var nav = document.getElementById("top-nav");
+  if (burger && nav) {
+    burger.addEventListener("click", function () {
+      var open = nav.classList.toggle("nav-open");
+      burger.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+  }
+})();
+</script>
 <main class="main-content">
 <p class="back-link-wide"><a href="troubleshoot.html">← Back to Troubleshooting</a></p>
 <header class="pillar-hero-wide"><h1>Why Is My Compost Pile Not Heating Up?</h1><p class="subtitle">Troubleshoot a cold compost pile by checking pile size, moisture, carbon-to-nitrogen balance, aeration, and temperature.</p></header>
