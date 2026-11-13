@@ -28,7 +28,9 @@ function existsPublicTarget(target) {
   const clean = decodeURIComponent(target.split(/[?#]/, 1)[0]).replace(/^\/+/, '');
   if (!clean) return fs.existsSync(path.join(root, 'index.html'));
   const candidate = path.join(root, clean);
-  return fs.existsSync(candidate) && fs.statSync(candidate).isFile();
+  if (!fs.existsSync(candidate)) return false;
+  if (fs.statSync(candidate).isDirectory()) return fs.existsSync(path.join(candidate, 'index.html'));
+  return fs.statSync(candidate).isFile();
 }
 
 walk(root);
