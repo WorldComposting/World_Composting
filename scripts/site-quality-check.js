@@ -48,8 +48,8 @@ for (const file of htmlFiles) {
     warnings.push(`Missing or empty meta description: ${page}`);
   }
   if (!/<h1\b[^>]*>\s*[^<]+/i.test(source)) warnings.push(`Missing H1: ${page}`);
-  if (!/<link\\s+[^>]*rel=["']canonical["']/i.test(source) &&
-      !/<link\\s+[^>]*href=["'][^"']+["'][^>]*rel=["']canonical["']/i.test(source)) {
+  if (!/<link\s+[^>]*rel=["']canonical["']/i.test(source) &&
+      !/<link\s+[^>]*href=["'][^"']+["'][^>]*rel=["']canonical["']/i.test(source)) {
     warnings.push(`Missing canonical URL: ${page}`);
   }
 
@@ -61,6 +61,8 @@ for (const file of htmlFiles) {
   const attrs = [...source.matchAll(/\b(?:href|src)=["']([^"'<>]+)["']/gi)];
   for (const match of attrs) {
     const raw = match[1].trim();
+    // These attributes are populated by client-side templates, not literal file paths.
+    if (/\$\{[^}]+\}/.test(raw)) continue;
     if (!raw || /^(?:https?:|mailto:|tel:|javascript:|data:|blob:|\/\/)/i.test(raw) || raw.startsWith('#') || raw.startsWith('?')) continue;
     const target = raw.startsWith('/') ? raw : path.posix.join(path.posix.dirname(page), raw);
     if (!existsPublicTarget(target)) errors.push(`Broken local reference in ${page}: ${raw}`);
