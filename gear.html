@@ -152,7 +152,7 @@
 <main class="main-content">
 <a class="back-link-wide" href="/">← Back to Home</a>
 <!-- Hero Section -->
-<div class="pillar-hero-wide"><img alt="Compost bins with perforated liners in a backyard setup" class="hero-photo" decoding="async" fetchpriority="high" loading="eager" src="src/assets/images/bins2.jpg"/>
+<div class="pillar-hero-wide"><picture><source type="image/avif" srcset="src/assets/images/bins2-480.avif 480w, src/assets/images/bins2-640.avif 640w, src/assets/images/bins2-830.avif 830w, src/assets/images/bins2-1240.avif 1240w, src/assets/images/bins2-1660.avif 1660w" sizes="(min-width: 1160px) 1112px, 100vw"><source type="image/webp" srcset="src/assets/images/bins2-480.webp 480w, src/assets/images/bins2-640.webp 640w, src/assets/images/bins2-830.webp 830w, src/assets/images/bins2-1240.webp 1240w, src/assets/images/bins2-1660.webp 1660w" sizes="(min-width: 1160px) 1112px, 100vw"><img alt="Compost bins with perforated liners in a backyard setup" class="hero-photo" decoding="async" fetchpriority="high" loading="eager" src="src/assets/images/bins2.jpg" width="1920" height="1440"/></picture>
 <h1>My Composting Gear</h1>
 <p>The tools I use for a sustainable life. As an Amazon Associate, I earn from qualifying purchases.</p>
 </div>
@@ -234,6 +234,7 @@
 <p cls="footer-credits"><a href="photo-credits.html">Photo credits (Wikimedia Commons, PD/CC licenses)</a></p></div>
 </footer>
 <script>
+        let imgSizes = {};
         async function init() {
             try {
                 const res = await fetch('src/data/products.json');
@@ -246,12 +247,26 @@
                     const dRes = await fetch('src/data/gear-details.json');
                     if (dRes.ok) details = await dRes.json();
                 } catch (e) { /* details are optional */ }
+                try {
+                    const sRes = await fetch('src/data/image-sizes.json');
+                    if (sRes.ok) imgSizes = await sRes.json();
+                } catch (e) { /* size manifest is optional */ }
 
                 renderGear(products, details);
             } catch (err) {
                 console.error("Error loading gear:", err);
                 document.getElementById('gear-container').innerHTML = '<div class="card" style="color: #c0392b;">Error loading gear items.</div>';
             }
+        }
+
+        function gearPic(image, name) {
+            if (!image) return '';
+            const widths = imgSizes[image];
+            if (!widths || !widths.length) return `<img class="gear-card-img" src="${image}" alt="${name}" loading="lazy">`;
+            const base = image.replace(/\.[A-Za-z]+$/, '');
+            const sizesAttr = '(max-width: 560px) 85vw, 266px';
+            const ss = ext => widths.map(w => `${base}-${w}.${ext} ${w}w`).join(', ');
+            return `<picture><source type="image/avif" srcset="${ss('avif')}" sizes="${sizesAttr}"><source type="image/webp" srcset="${ss('webp')}" sizes="${sizesAttr}"><img class="gear-card-img" src="${image}" alt="${name}" loading="lazy"></picture>`;
         }
 
         function renderGear(products, details) {
@@ -286,7 +301,7 @@
                                 const href = (item['Amazon Link'] !== 'NaN' && item['Amazon Link']) ||
                                              (item['Other Link'] !== 'NaN' && item['Other Link']) || '#';
                                 const d = details[item['Item']] || {};
-                                const img = d.image ? `<img class="gear-card-img" src="${d.image}" alt="${item['Item']}" loading="eager">` : '';
+                                const img = gearPic(d.image, item['Item']);
                                 const blurb = d.blurb ? `<p class="gear-card-blurb">${d.blurb}</p>` : '';
                                 const specs = d.specs ? `<span class="gear-card-specs">${d.specs}</span>` : '';
                                 const isAmazon = item['Amazon Link'] && item['Amazon Link'].includes('amzn.to');
