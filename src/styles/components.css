@@ -606,8 +606,8 @@ a.gear-card-link:hover {
 }
 
 /* Phases (accordion) */
-.phase,
-.phase-wide {
+details.phase,
+details.phase-wide {
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -616,13 +616,13 @@ a.gear-card-link:hover {
   box-shadow: var(--shadow-sm);
   transition: border-color .2s var(--ease), box-shadow .2s var(--ease);
 }
-.phase.active,
-.phase-wide.active {
+details.phase[open],
+details.phase-wide[open] {
   border-color: var(--leaf);
   box-shadow: var(--shadow-md);
 }
 
-.phase-header {
+summary.phase-header {
   display: flex;
   align-items: center;
   gap: .9rem;
@@ -636,9 +636,11 @@ a.gear-card-link:hover {
   font-size: 1.02rem;
   font-weight: 600;
   color: var(--ink);
+  list-style: none;
 }
-.phase-header:hover { background: var(--surface-2); }
-.phase-header .phase-num {
+summary.phase-header::-webkit-details-marker { display: none; }
+summary.phase-header:hover { background: var(--surface-2); }
+summary.phase-header .phase-num {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -652,8 +654,7 @@ a.gear-card-link:hover {
   font-weight: 700;
   font-size: .95rem;
 }
-.phase.active .phase-header .phase-num,
-.phase-wide.active .phase-header .phase-num { background: var(--leaf); }
+details[open] > .phase-header .phase-num { background: var(--leaf); }
 .phase-header .phase-name { flex: 1; }
 .phase-header .phase-meta {
   font-family: var(--font-body);
@@ -675,21 +676,17 @@ a.gear-card-link:hover {
   font-size: .85rem;
   transition: transform .3s var(--ease), background-color .2s var(--ease);
 }
-.phase.active .phase-arrow,
-.phase-wide.active .phase-arrow {
+details[open] > .phase-header .phase-arrow {
   transform: rotate(180deg);
   background: var(--leaf-soft);
   color: var(--forest);
 }
 
 .phase-body {
-  display: none;
   padding: .4rem 1.5rem 1.5rem;
   border-top: 1px solid var(--line);
 }
-.phase.active .phase-body,
-.phase-wide.active .phase-body {
-  display: block;
+details[open] > .phase-body {
   animation: stepIn .28s var(--ease);
 }
 
@@ -754,28 +751,33 @@ a.gear-card-link:hover {
 }
 
 /* ---------- Glossary ---------- */
-.glossary-letter {
+.glossary-details {
+  margin: .5rem 0 1rem;
+  border-radius: var(--radius);
+}
+.glossary-details > .glossary-letter {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
   padding: .95rem 1.3rem;
-  margin: .5rem 0;
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius);
   cursor: pointer;
+  list-style: none;
   font-family: var(--font-display);
   font-size: 1.15rem;
   font-weight: 700;
   color: var(--forest-2);
   transition: border-color .18s var(--ease), background-color .18s var(--ease);
 }
-.glossary-letter:hover { border-color: var(--leaf); }
-.glossary-letter.open {
+.glossary-details > .glossary-letter::-webkit-details-marker { display: none; }
+.glossary-details > .glossary-letter:hover { border-color: var(--leaf); }
+.glossary-details[open] > .glossary-letter {
   background: var(--leaf-soft);
   border-color: #cfe3d5;
-  border-radius-bottom: 0;
+  border-radius: var(--radius) var(--radius) 0 0;
 }
 .letter-arrow {
   font-family: var(--font-body);
@@ -783,18 +785,15 @@ a.gear-card-link:hover {
   color: var(--ink-3);
   transition: transform .3s var(--ease);
 }
-.glossary-letter.open .letter-arrow { transform: rotate(180deg); }
+.glossary-details[open] > .glossary-letter .letter-arrow { transform: rotate(180deg); }
 
-.glossary-body {
-  display: none;
+.glossary-details > .glossary-body {
   padding: .5rem 1.4rem 1.4rem;
   border: 1px solid #cfe3d5;
   border-top: 0;
   border-radius: 0 0 var(--radius) var(--radius);
   background: var(--surface);
-  margin-bottom: 1rem;
 }
-.glossary-body.open { display: block; }
 
 .glossary-entry { padding: .8rem 0; border-bottom: 1px dashed var(--line); }
 .glossary-entry:last-child { border-bottom: 0; }

@@ -84,7 +84,8 @@
     </script>
 <link href="/llms.txt" rel="alternate" title="World Composting AI Index"/>
 </head>
-<body><header class="top-nav" id="top-nav">
+<body>
+<a href="#main-content" class="skip-link">Skip to content</a><header class="top-nav" id="top-nav">
 <div class="nav-inner">
 <a aria-label="World Composting — home" class="nav-logo" href="index.html">
 <img alt="World Composting Logo" height="40" loading="eager" onerror="this.src='https://via.placeholder.com/40?text=WC'" src="src/assets/logo.png" width="40"/>
@@ -157,7 +158,7 @@
 <div class="page-wrapper">
 <!-- ===== SIDEBAR NAVIGATION ===== -->
 <!-- ===== MAIN CONTENT AREA ===== -->
-<main class="main-content">
+<main class="main-content" id="main-content" tabindex="-1">
 <a class="back-link-wide" href="/">← Back to Home</a>
 <!-- Hero Section -->
 <div class="pillar-hero-wide"><picture><source type="image/avif" srcset="src/assets/images/garden-480.avif 480w, src/assets/images/garden-640.avif 640w, src/assets/images/garden-830.avif 830w, src/assets/images/garden-1240.avif 1240w, src/assets/images/garden-1660.avif 1660w" sizes="(min-width: 1160px) 1112px, 100vw"><source type="image/webp" srcset="src/assets/images/garden-480.webp 480w, src/assets/images/garden-640.webp 640w, src/assets/images/garden-830.webp 830w, src/assets/images/garden-1240.webp 1240w, src/assets/images/garden-1660.webp 1660w" sizes="(min-width: 1160px) 1112px, 100vw"><img alt="A lush community garden path with beds and trees" class="hero-photo" decoding="async" fetchpriority="high" loading="eager" src="src/assets/images/garden.jpg" width="1920" height="1280"/></picture>
@@ -182,11 +183,11 @@
 <!-- Checklist Phases -->
 <div id="phases">
 <!-- Phase 1: Easy Swaps -->
-<div class="phase phase-wide active">
-<button class="phase-header" onclick="togglePhase(this)">
+<details class="phase phase-wide" open>
+<summary class="phase-header">
 <span>Phase 1: Easy / Everyday Swaps 💧</span>
 <span class="phase-arrow">▼</span>
-</button>
+</summary>
 <div class="phase-body">
 <label class="checklist-item" for="wc_0">
 <input data-id="wc_0" id="wc_0" type="checkbox"/>
@@ -269,13 +270,13 @@
 </span>
 </label>
 </div>
-</div>
+</details>
 <!-- Phase 2: Yard & Garden -->
-<div class="phase phase-wide">
-<button class="phase-header" onclick="togglePhase(this)">
+<details class="phase phase-wide">
+<summary class="phase-header">
 <span>Phase 2: Yard &amp; Garden Efficiency 🌿</span>
 <span class="phase-arrow">▼</span>
-</button>
+</summary>
 <div class="phase-body">
 <label class="checklist-item" for="wc_10">
 <input data-id="wc_10" id="wc_10" type="checkbox"/>
@@ -342,13 +343,13 @@
 </span>
 </label>
 </div>
-</div>
+</details>
 <!-- Phase 3: Systems & Retrofits -->
-<div class="phase phase-wide">
-<button class="phase-header" onclick="togglePhase(this)">
+<details class="phase phase-wide">
+<summary class="phase-header">
 <span>Phase 3: Bigger Systems &amp; Retrofits 🔧</span>
 <span class="phase-arrow">▼</span>
-</button>
+</summary>
 <div class="phase-body">
 <label class="checklist-item" for="wc_18">
 <input data-id="wc_18" id="wc_18" type="checkbox"/>
@@ -391,13 +392,13 @@
 </span>
 </label>
 </div>
-</div>
+</details>
 <!-- Phase 4: Composting & Soil Water Retention -->
-<div class="phase phase-wide">
-<button class="phase-header" onclick="togglePhase(this)">
+<details class="phase phase-wide">
+<summary class="phase-header">
 <span>Phase 4: Composting &amp; Soil Water Retention 🌍</span>
 <span class="phase-arrow">▼</span>
-</button>
+</summary>
 <div class="phase-body">
 <label class="checklist-item" for="wc_23">
 <input data-id="wc_23" id="wc_23" type="checkbox"/>
@@ -432,13 +433,13 @@
 </span>
 </label>
 </div>
-</div>
+</details>
 <!-- Phase 5: Household & Kitchen Habits -->
-<div class="phase phase-wide">
-<button class="phase-header" onclick="togglePhase(this)">
+<details class="phase phase-wide">
+<summary class="phase-header">
 <span>Phase 5: Household &amp; Kitchen Habits 🏠</span>
 <span class="phase-arrow">▼</span>
-</button>
+</summary>
 <div class="phase-body">
 <label class="checklist-item" for="wc_27">
 <input data-id="wc_27" id="wc_27" type="checkbox"/>
@@ -465,7 +466,7 @@
 </span>
 </label>
 </div>
-</div>
+</details>
 </div><!-- /phases -->
 <!-- Gear Section -->
 <div id="gear-section-wide">
@@ -483,7 +484,7 @@
 </div><!-- /page-wrapper -->
 <!-- JavaScript -->
 <script src="src/js/video-renderer.js"></script>
-<script>/* Phase toggle */function togglePhase(btn){const phase=btn.closest('.phase');phase.classList.toggle('active')}/* Progress tracker */const TOTAL_ITEMS=30;function updateProgress(){let checked=0;for(let i=0;i<TOTAL_ITEMS;i++){if(localStorage.getItem('wc_'+i))checked++}const pct=Math.round((checked/TOTAL_ITEMS)*100);document.getElementById('progress-label').textContent=checked+' of '+TOTAL_ITEMS+' items completed';document.getElementById('progress-percent').textContent=pct+'%';document.getElementById('progress-fill').style.width=pct+'%'}/* Restore checkboxes */for(let i=0;i<TOTAL_ITEMS;i++){var saved=localStorage.getItem('wc_'+i);if(saved==='true'){const el=document.getElementById('wc_'+i);if(el)el.checked=true}}/* Save checkbox state on change */for(let i=0;i<TOTAL_ITEMS;i++){(function(i){const el=document.getElementById('wc_'+i);if(!el)return;el.addEventListener('change',function(){localStorage.setItem('wc_'+this.id,this.checked);updateProgress();const item=this.closest('.checklist-item');if(item)item.classList.toggle('completed',this.checked)})})(i)}/* Initial progress */updateProgress()/* Gear loader from products.json */const GEAR_PREFIX='wc-gear-';let gearData=[];async function loadGear(){try{const resp=await fetch('src/data/products.json');gearData=await resp.json();renderGear(gearData)}catch(e){document.getElementById('wc-gear-grid').innerHTML='<p style="color:#666;">Could not load gear data.</p>'}}function renderGear(items){const grid=document.getElementById('wc-gear-grid');if(!items||items.length===0){grid.innerHTML='<p style="color:#666;grid-column:1/-1;">No gear found for this filter. Add items with Category "Water Conservation" to products.json.</p>';return}grid.innerHTML=items.map(item=>'<div class="gear-card"><h3>'+escapeHtml(item.Item)+'</h3><p><strong>Category:</strong> '+escapeHtml(item.Category)+'</p>'+(item.OtherLink?'<p><strong>Alternative source:</strong> <a href="'+escapeHtml(item.OtherLink)+'">View</a></p>':'')+'<a class="gear-link" href="'+escapeHtml(item.AmazonLink||'#')+'" target="_blank" rel="noopener noreferrer">View on Amazon →</a></div>').join('')}function filterGear(category){document.querySelectorAll('.gear-filter-btn').forEach(btn=>btn.classList.remove('active'));event.target.classList.add('active');if(category==='all'){renderGear(gearData)}else{const filtered=gearData.filter(item=>item.Category===category);renderGear(filtered)}}function escapeHtml(str){if(!str)return '';return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#039;')}/* Video loader from videos.json */const VIDEO_KEYS=['wc'];async function loadVideos(){try{const resp=await fetch('src/data/videos.json');const videos=await resp.json();const container=document.getElementById('video-container-wc');let html='';VIDEO_KEYS.forEach(function(key){if(videos[key]){videos[key].forEach(function(video){html+='<div class="video-card"><iframe src="'+video.url+'" title="'+escapeHtml(video.title)+'" allowfullscreen loading="lazy"></iframe><p><strong>'+escapeHtml(video.title)+'</strong></p></div>'})}});if(!html){html='<p style="color:#666;grid-column:1/-1;">No videos found for this page. Check src/data/videos.json and add a "wc" key.</p>'}container.innerHTML=html}catch(e){document.getElementById('video-container-wc').innerHTML='<p style="color:#666;">Could not load videos.</p>'}}/* Initialize */loadGear();loadVideos()</script>
+<script>/* Progress tracker */const TOTAL_ITEMS=30;function updateProgress(){let checked=0;for(let i=0;i<TOTAL_ITEMS;i++){if(localStorage.getItem('wc_'+i))checked++}const pct=Math.round((checked/TOTAL_ITEMS)*100);document.getElementById('progress-label').textContent=checked+' of '+TOTAL_ITEMS+' items completed';document.getElementById('progress-percent').textContent=pct+'%';document.getElementById('progress-fill').style.width=pct+'%'}/* Restore checkboxes */for(let i=0;i<TOTAL_ITEMS;i++){var saved=localStorage.getItem('wc_'+i);if(saved==='true'){const el=document.getElementById('wc_'+i);if(el)el.checked=true}}/* Save checkbox state on change */for(let i=0;i<TOTAL_ITEMS;i++){(function(i){const el=document.getElementById('wc_'+i);if(!el)return;el.addEventListener('change',function(){localStorage.setItem('wc_'+this.id,this.checked);updateProgress();const item=this.closest('.checklist-item');if(item)item.classList.toggle('completed',this.checked)})})(i)}/* Initial progress */updateProgress()/* Gear loader from products.json */const GEAR_PREFIX='wc-gear-';let gearData=[];async function loadGear(){try{const resp=await fetch('src/data/products.json');gearData=await resp.json();renderGear(gearData)}catch(e){document.getElementById('wc-gear-grid').innerHTML='<p style="color:#666;">Could not load gear data.</p>'}}function renderGear(items){const grid=document.getElementById('wc-gear-grid');if(!items||items.length===0){grid.innerHTML='<p style="color:#666;grid-column:1/-1;">No gear found for this filter. Add items with Category "Water Conservation" to products.json.</p>';return}grid.innerHTML=items.map(item=>'<div class="gear-card"><h3>'+escapeHtml(item.Item)+'</h3><p><strong>Category:</strong> '+escapeHtml(item.Category)+'</p>'+(item.OtherLink?'<p><strong>Alternative source:</strong> <a href="'+escapeHtml(item.OtherLink)+'">View</a></p>':'')+'<a class="gear-link" href="'+escapeHtml(item.AmazonLink||'#')+'" target="_blank" rel="noopener noreferrer">View on Amazon →</a></div>').join('')}function filterGear(category){document.querySelectorAll('.gear-filter-btn').forEach(btn=>btn.classList.remove('active'));event.target.classList.add('active');if(category==='all'){renderGear(gearData)}else{const filtered=gearData.filter(item=>item.Category===category);renderGear(filtered)}}function escapeHtml(str){if(!str)return '';return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#039;')}/* Video loader from videos.json */const VIDEO_KEYS=['wc'];async function loadVideos(){try{const resp=await fetch('src/data/videos.json');const videos=await resp.json();const container=document.getElementById('video-container-wc');let html='';VIDEO_KEYS.forEach(function(key){if(videos[key]){videos[key].forEach(function(video){html+='<div class="video-card"><iframe src="'+video.url+'" title="'+escapeHtml(video.title)+'" allowfullscreen loading="lazy"></iframe><p><strong>'+escapeHtml(video.title)+'</strong></p></div>'})}});if(!html){html='<p style="color:#666;grid-column:1/-1;">No videos found for this page. Check src/data/videos.json and add a "wc" key.</p>'}container.innerHTML=html}catch(e){document.getElementById('video-container-wc').innerHTML='<p style="color:#666;">Could not load videos.</p>'}}/* Initialize */loadGear();loadVideos()</script>
 <section aria-label="Get started" class="cta-band">
 <div class="cta-band-inner">
 <div class="cta-band-text">
@@ -547,6 +548,6 @@
 <div class="footer-legal">
 <p>© 2026 World Composting. All rights reserved.</p>
 <p>As an Amazon Associate, I earn from qualifying purchases. Some product links are affiliate links at no extra cost to you.</p>
-<p cls="footer-credits"><a href="photo-credits.html">Photo credits (Wikimedia Commons, PD/CC licenses)</a></p></div>
+<p class="footer-credits"><a href="photo-credits.html">Photo credits (Wikimedia Commons, PD/CC licenses)</a></p></div>
 </footer></body>
 </html>

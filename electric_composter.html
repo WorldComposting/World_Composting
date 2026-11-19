@@ -54,7 +54,8 @@
     </script>
 <link href="/llms.txt" rel="alternate" title="World Composting AI Index"/>
 </head>
-<body><header class="top-nav" id="top-nav">
+<body>
+<a href="#main-content" class="skip-link">Skip to content</a><header class="top-nav" id="top-nav">
 <div class="nav-inner">
 <a aria-label="World Composting — home" class="nav-logo" href="index.html">
 <img alt="World Composting Logo" height="40" loading="eager" onerror="this.src='https://via.placeholder.com/40?text=WC'" src="src/assets/logo.png" width="40"/>
@@ -127,7 +128,7 @@
 <div class="page-wrapper">
 <!-- ===== SIDEBAR NAVIGATION ===== -->
 <!-- ===== MAIN CONTENT AREA ===== -->
-<main class="main-content">
+<main class="main-content" id="main-content" tabindex="-1">
 <a class="back-link-wide" href="/">← Back to Home</a>
 <!-- Hero Section -->
 <div class="pillar-hero-wide"><picture><source type="image/avif" srcset="src/assets/images/bucket-480.avif 480w, src/assets/images/bucket-640.avif 640w, src/assets/images/bucket-830.avif 830w, src/assets/images/bucket-1240.avif 1240w, src/assets/images/bucket-1660.avif 1660w" sizes="(min-width: 1160px) 1112px, 100vw"><source type="image/webp" srcset="src/assets/images/bucket-480.webp 480w, src/assets/images/bucket-640.webp 640w, src/assets/images/bucket-830.webp 830w, src/assets/images/bucket-1240.webp 1240w, src/assets/images/bucket-1660.webp 1660w" sizes="(min-width: 1160px) 1112px, 100vw"><img alt="Hands placing a vermicompost bucket into a garden planter" class="hero-photo" decoding="async" fetchpriority="high" loading="eager" src="src/assets/images/bucket.jpg" width="1920" height="1280"/></picture>
@@ -184,13 +185,13 @@
 <p>The most popular model with a 5-liter (approximately 1.3 gallon) bucket. Designed for households of two to four people. Cycle time is approximately five hours. The larger capacity means fewer loading cycles per week and better energy efficiency per pound of waste processed.</p>
 <p><a class="affiliate-link" href="https://amzn.to/3Zbcxnp">View on Amazon (Affiliate Link)</a></p>
 </div>
-<table class="info-table-wide">
+<table class="info-table-wide"><caption class="sr-only">FoodCycler Eco 5 specifications</caption>
 <thead>
 <tr>
-<th>Model</th>
-<th>Capacity</th>
-<th>Cycle Time</th>
-<th>Power Use</th>
+<th scope="col">Model</th>
+<th scope="col">Capacity</th>
+<th scope="col">Cycle Time</th>
+<th scope="col">Power Use</th>
 </tr>
 </thead>
 <tbody>
@@ -221,15 +222,15 @@
 <p>The heavy-duty model for larger households of four or more and heavy daily waste. With a 19-liter capacity it can take up to about five kilograms of waste a day — enough for a family's daily scraps, a whole watermelon rind, or garden clippings — and it can run six to twelve months between cleanings depending on usage. It commands more floor space and is heavier than the Terra 2, but it is built for throughput and longer harvest intervals.</p>
 <p><a class="affiliate-link" href="https://gemebio.com/ohjkpl">View GEME Pro (Affiliate Link)</a></p>
 </div>
-<table class="info-table-wide">
+<table class="info-table-wide"><caption class="sr-only">GEME Pro specifications and pricing</caption>
 <thead>
 <tr>
-<th>Model</th>
-<th>Capacity</th>
-<th>Daily Throughput</th>
-<th>Cleaning Interval</th>
-<th>Best For</th>
-<th>Price (USD)</th>
+<th scope="col">Model</th>
+<th scope="col">Capacity</th>
+<th scope="col">Daily Throughput</th>
+<th scope="col">Cleaning Interval</th>
+<th scope="col">Best For</th>
+<th scope="col">Price (USD)</th>
 </tr>
 </thead>
 <tbody>
@@ -257,12 +258,12 @@
 <div class="article-section-wide" id="brand-comparison">
 <h2>FoodCycler vs GEME: Which Should You Choose?</h2>
 <p>FoodCycler and GEME are both legitimate electric composters, but they take opposite approaches — one is a dehydrator, the other a bio-reactor. Here is a side-by-side comparison of the two approaches to help you decide.</p>
-<table class="info-table-wide">
+<table class="info-table-wide"><caption class="sr-only">FoodCycler versus GEME feature comparison</caption>
 <thead>
 <tr>
-<th>Feature</th>
-<th>FoodCycler (dehydrator)</th>
-<th>GEME (bio-reactor)</th>
+<th scope="col">Feature</th>
+<th scope="col">FoodCycler (dehydrator)</th>
+<th scope="col">GEME (bio-reactor)</th>
 </tr>
 </thead>
 <tbody>
@@ -339,12 +340,12 @@
 <div class="article-section-wide" id="operating-costs">
 <h2>Operating Costs Breakdown</h2>
 <p>Understanding the true cost of running an electric composter helps you evaluate whether it fits your budget. The costs break down into three categories: upfront purchase, electricity per cycle, and ongoing consumables.</p>
-<table class="info-table-wide">
+<table class="info-table-wide"><caption class="sr-only">Annual operating costs of electric composters</caption>
 <thead>
 <tr>
-<th>Cost Category</th>
-<th>Annual Estimate (avg household)</th>
-<th>Notes</th>
+<th scope="col">Cost Category</th>
+<th scope="col">Annual Estimate (avg household)</th>
+<th scope="col">Notes</th>
 </tr>
 </thead>
 <tbody>
@@ -538,7 +539,7 @@
 <div class="footer-legal">
 <p>© 2026 World Composting. All rights reserved.</p>
 <p>As an Amazon Associate, I earn from qualifying purchases. Some product links are affiliate links at no extra cost to you.</p>
-<p cls="footer-credits"><a href="photo-credits.html">Photo credits (Wikimedia Commons, PD/CC licenses)</a></p></div>
+<p class="footer-credits"><a href="photo-credits.html">Photo credits (Wikimedia Commons, PD/CC licenses)</a></p></div>
 </footer>
 <!-- Video Section Loader -->
 <script>

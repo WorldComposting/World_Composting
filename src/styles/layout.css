@@ -129,7 +129,7 @@
   color: var(--forest-2);
   background: var(--leaf-soft);
 }
-.nav-dd-trigger .dd-caret { font-size: .65em; margin-left: .25em; opacity: .65; }
+.nav-dd-trigger .dd-caret { font-size: .65em; margin-left: .25em; }
 .dd-menu {
   display: none;
   position: absolute;

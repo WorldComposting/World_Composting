@@ -67,7 +67,8 @@
     }
     </script>
 <link href="/llms.txt" rel="alternate" title="World Composting AI Index"/>
-</head><body><header class="top-nav" id="top-nav">
+</head><body>
+<a href="#main-content" class="skip-link">Skip to content</a><header class="top-nav" id="top-nav">
 <div class="nav-inner">
 <a aria-label="World Composting — home" class="nav-logo" href="index.html">
 <img alt="World Composting Logo" height="40" loading="eager" onerror="this.src='https://via.placeholder.com/40?text=WC'" src="src/assets/logo.png" width="40"/>
@@ -140,7 +141,7 @@
 <div class="page-wrapper">
 <!-- ===== SIDEBAR NAVIGATION ===== -->
 <!-- ===== MAIN CONTENT AREA ===== -->
-<main class="main-content">
+<main class="main-content" id="main-content" tabindex="-1">
 <a class="back-link-wide" href="/">← Back to Home</a>
 <!-- Hero Section -->
 <div class="pillar-hero-wide"><picture><source type="image/avif" srcset="src/assets/images/biochar-480.avif 480w, src/assets/images/biochar-640.avif 640w, src/assets/images/biochar-830.avif 830w, src/assets/images/biochar-1240.avif 1240w, src/assets/images/biochar-1660.avif 1660w" sizes="(min-width: 1160px) 1112px, 100vw"><source type="image/webp" srcset="src/assets/images/biochar-480.webp 480w, src/assets/images/biochar-640.webp 640w, src/assets/images/biochar-830.webp 830w, src/assets/images/biochar-1240.webp 1240w, src/assets/images/biochar-1660.webp 1660w" sizes="(min-width: 1160px) 1112px, 100vw"><img alt="A hand holding a finished biochar briquette ready for soil" class="hero-photo" decoding="async" fetchpriority="high" loading="eager" src="src/assets/images/biochar.jpg" width="1920" height="1282"/></picture>
@@ -171,11 +172,11 @@
 <!-- Checklist Phases -->
 <div id="phases">
 <!-- Phase 1 -->
-<div class="phase phase-wide active">
-<button class="phase-header" onclick="togglePhase(this)">
+<details class="phase phase-wide" open>
+<summary class="phase-header">
 <span>Phase 1: Preparation 🪵</span>
 <span class="phase-arrow">▼</span>
-</button>
+</summary>
 <div class="phase-body">
 <label class="checklist-item" for="bc_1">
 <input data-id="bc_1" id="bc_1" type="checkbox"/>
@@ -194,13 +195,13 @@
 </span>
 </label>
 </div>
-</div>
+</details>
 <!-- Phase 2 -->
-<div class="phase phase-wide">
-<button class="phase-header" onclick="togglePhase(this)">
+<details class="phase phase-wide">
+<summary class="phase-header">
 <span>Phase 2: Pyrolysis 🔥</span>
 <span class="phase-arrow">▼</span>
-</button>
+</summary>
 <div class="phase-body">
 <label class="checklist-item" for="bc_3">
 <input data-id="bc_3" id="bc_3" type="checkbox"/>
@@ -219,13 +220,13 @@
 </span>
 </label>
 </div>
-</div>
+</details>
 <!-- Phase 3 -->
-<div class="phase phase-wide">
-<button class="phase-header" onclick="togglePhase(this)">
+<details class="phase phase-wide">
+<summary class="phase-header">
 <span>Phase 3: Quenching &amp; Crushing 💧</span>
 <span class="phase-arrow">▼</span>
-</button>
+</summary>
 <div class="phase-body">
 <label class="checklist-item" for="bc_5">
 <input data-id="bc_5" id="bc_5" type="checkbox"/>
@@ -244,13 +245,13 @@
 </span>
 </label>
 </div>
-</div>
+</details>
 <!-- Phase 4 -->
-<div class="phase phase-wide">
-<button class="phase-header" onclick="togglePhase(this)">
+<details class="phase phase-wide">
+<summary class="phase-header">
 <span>Phase 4: Activation &amp; Use ✨</span>
 <span class="phase-arrow">▼</span>
-</button>
+</summary>
 <div class="phase-body">
 <label class="checklist-item" for="bc_7">
 <input data-id="bc_7" id="bc_7" type="checkbox"/>
@@ -277,16 +278,16 @@
 </span>
 </label>
 </div>
-</div>
+</details>
 </div>
 <!-- Troubleshooting -->
 <div id="troubleshoot-section">
 <div class="section-title">Troubleshooting</div>
-<div class="phase phase-wide active" style="margin-bottom: 1rem;">
-<button class="phase-header" onclick="togglePhase(this)">
+<details class="phase phase-wide" open style="margin-bottom: 1rem;">
+<summary class="phase-header">
 <span>🌱 Grass is growing through the cardboard</span>
 <span class="phase-arrow">▼</span>
-</button>
+</summary>
 <div class="phase-body">
 <p style="font-size: 0.9rem; color: var(--text-dark); line-height: 1.6;">Cardboard isn't blocking light completely — here is how to fix it:</p>
 <ul style="margin-top: 0.5rem; padding-left: 1.2rem; font-size: 0.88rem; color: var(--text-dark); line-height: 1.6;">
@@ -295,12 +296,12 @@
 <li><strong>Not enough weight on top</strong> — Add a heavier compost layer (3–4 inches) to press the cardboard flat against the soil and block all light penetration.</li>
 </ul>
 </div>
-</div>
-<div class="phase phase-wide" style="margin-bottom: 1rem;">
-<button class="phase-header" onclick="togglePhase(this)">
+</details>
+<details class="phase phase-wide" style="margin-bottom: 1rem;">
+<summary class="phase-header">
 <span>🤢 Pile smells bad or is slimy</span>
 <span class="phase-arrow">▼</span>
-</button>
+</summary>
 <div class="phase-body">
 <p style="font-size: 0.9rem; color: var(--text-dark); line-height: 1.6;">A healthy lasagna bed should smell earthy, not foul:</p>
 <ul style="margin-top: 0.5rem; padding-left: 1.2rem; font-size: 0.88rem; color: var(--text-dark); line-height: 1.6;">
@@ -309,12 +310,12 @@
 <li><strong>Too wet</strong> — Cover the bed with a tarp during heavy rain or add extra mulch on top to shed excess water.</li>
 </ul>
 </div>
-</div>
-<div class="phase phase-wide" style="margin-bottom: 1rem;">
-<button class="phase-header" onclick="togglePhase(this)">
+</details>
+<details class="phase phase-wide" style="margin-bottom: 1rem;">
+<summary class="phase-header">
 <span>🐌 Slugs or snails are eating your plants</span>
 <span class="phase-arrow">▼</span>
-</button>
+</summary>
 <div class="phase-body">
 <p style="font-size: 0.9rem; color: var(--text-dark); line-height: 1.6;">Lasagna beds are moist and slug-friendly — manage them proactively:</p>
 <ul style="margin-top: 0.5rem; padding-left: 1.2rem; font-size: 0.88rem; color: var(--text-dark); line-height: 1.6;">
@@ -323,7 +324,7 @@
 <li><strong>Hand-pick at night</strong> — Go out after dark with a flashlight and collect slugs. Place shallow beer traps around the bed perimeter to catch stragglers.</li>
 </ul>
 </div>
-</div>
+</details>
 </div>
 <!-- Related Guides -->
 <div class="section-header-wide">
@@ -361,11 +362,7 @@
 <p class="footer-copy">© 2026 World Composting</p>
 <p class="footer-copy" style="margin-top: 0.5rem;">As an Amazon Associate, I earn from qualifying purchases.</p>
 </footer>
-<script>
-        function togglePhase(button) {
-            const phase = button.parentElement;
-            phase.classList.toggle('active');
-        }
+<script>
 
         const checkboxes = document.querySelectorAll('input[type="checkbox"]');
         const progressLabel = document.getElementById('progress-label');
@@ -470,5 +467,5 @@
 <div class="footer-legal">
 <p>© 2026 World Composting. All rights reserved.</p>
 <p>As an Amazon Associate, I earn from qualifying purchases. Some product links are affiliate links at no extra cost to you.</p>
-<p cls="footer-credits"><a href="photo-credits.html">Photo credits (Wikimedia Commons, PD/CC licenses)</a></p></div>
+<p class="footer-credits"><a href="photo-credits.html">Photo credits (Wikimedia Commons, PD/CC licenses)</a></p></div>
 </footer></body></html>

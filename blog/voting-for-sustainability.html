@@ -44,7 +44,8 @@
       }
     </script>
 </head>
-<body><header class="top-nav" id="top-nav">
+<body>
+<a href="#main-content" class="skip-link">Skip to content</a><header class="top-nav" id="top-nav">
 <div class="nav-inner">
 <a aria-label="World Composting — home" class="nav-logo" href="../index.html">
 <img alt="World Composting Logo" height="40" loading="eager" onerror="this.src='https://via.placeholder.com/40?text=WC'" src="../src/assets/logo.png" width="40"/>
@@ -116,7 +117,7 @@
 <div class="page-wrapper">
 <!-- ===== SIDEBAR NAVIGATION (from reference, paths rewritten for blog/) ===== -->
 <!-- ===== MAIN CONTENT AREA ===== -->
-<main class="main-content">
+<main class="main-content" id="main-content" tabindex="-1">
 <a class="back-link-wide" href="../blog.html">← Back to Blog</a>
 <!-- Hero Section -->
 <div class="pillar-hero-wide">
@@ -156,8 +157,8 @@
 <div class="article-section-wide" id="what-environmental-votes-actually-decide">
 <h2>What Environmental Votes Actually Decide</h2>
 <p>A lot of people skip voting because they assume their vote won't matter or that all candidates sound the same on the environment. Both assumptions are wrong, especially locally.</p>
-<table class="info-table-wide">
-<thead><tr><th>Election Level</th><th>What's at Stake for Sustainability</th></tr></thead>
+<table class="info-table-wide"><caption class="sr-only">Environmental stakes by election level</caption>
+<thead><tr><th scope="col">Election Level</th><th scope="col">What's at Stake for Sustainability</th></tr></thead>
 <tbody>
 <tr><td><strong>Local (city council, mayor, school board)</strong></td><td>Zoning for composting facilities, organics collection programs, landfill siting, stormwater and green infrastructure budgets.</td></tr>
 <tr><td><strong>State</strong></td><td>Waste management law, recycling mandates, clean energy standards, agricultural policy (which drives a huge share of food waste).</td></tr>
@@ -273,7 +274,7 @@
 <div class="footer-legal">
 <p>© 2026 World Composting. All rights reserved.</p>
 <p>As an Amazon Associate, I earn from qualifying purchases. Some product links are affiliate links at no extra cost to you.</p>
-<p cls="footer-credits"><a href="../photo-credits.html">Photo credits (Wikimedia Commons, PD/CC licenses)</a></p></div>
+<p class="footer-credits"><a href="../photo-credits.html">Photo credits (Wikimedia Commons, PD/CC licenses)</a></p></div>
 </footer>
 </body>
 </html>

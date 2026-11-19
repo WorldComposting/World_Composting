@@ -55,7 +55,8 @@
     </script>
 <link href="/llms.txt" rel="alternate" title="World Composting AI Index"/>
 </head>
-<body><header class="top-nav" id="top-nav">
+<body>
+<a href="#main-content" class="skip-link">Skip to content</a><header class="top-nav" id="top-nav">
 <div class="nav-inner">
 <a aria-label="World Composting — home" class="nav-logo" href="index.html">
 <img alt="World Composting Logo" height="40" loading="eager" onerror="this.src='https://via.placeholder.com/40?text=WC'" src="src/assets/logo.png" width="40"/>
@@ -128,7 +129,7 @@
 <div class="page-wrapper">
 <!-- ===== SIDEBAR NAVIGATION ===== -->
 <!-- ===== MAIN CONTENT AREA ===== -->
-<main class="main-content">
+<main class="main-content" id="main-content" tabindex="-1">
 <a class="back-link-wide" href="/">← Back to Home</a>
 <!-- Hero Section -->
 <div class="pillar-hero-wide"><picture><source type="image/avif" srcset="src/assets/images/sift-480.avif 480w, src/assets/images/sift-640.avif 640w, src/assets/images/sift-830.avif 830w, src/assets/images/sift-1240.avif 1240w, src/assets/images/sift-1660.avif 1660w" sizes="(min-width: 1160px) 1112px, 100vw"><source type="image/webp" srcset="src/assets/images/sift-480.webp 480w, src/assets/images/sift-640.webp 640w, src/assets/images/sift-830.webp 830w, src/assets/images/sift-1240.webp 1240w, src/assets/images/sift-1660.webp 1660w" sizes="(min-width: 1160px) 1112px, 100vw"><img alt="A close view of shredded compost ready for sifting" class="hero-photo" decoding="async" fetchpriority="high" loading="eager" src="src/assets/images/sift.jpg" width="1920" height="1440"/></picture>
@@ -208,12 +209,12 @@
 <h2>The Carbon-Nitrogen Balance: Fuel for Microbial Engines</h2>
 <p>Every microbe in your compost pile needs two things to survive: carbon for energy and structure, and nitrogen for protein synthesis. The ratio of these elements determines how fast or slow decomposition proceeds.</p>
 <p>The ideal Carbon-to-Nitrogen (C:N) ratio for composting is approximately 25:1 to 30:1 by weight. This means for every one part nitrogen, there should be 25 to 30 parts carbon in the pile.</p>
-<table class="info-table-wide">
+<table class="info-table-wide"><caption class="sr-only">Material types and their approximate C:N ratios</caption>
 <thead>
 <tr>
-<th>Material Type</th>
-<th>Example Materials</th>
-<th>Approximate C:N Ratio</th>
+<th scope="col">Material Type</th>
+<th scope="col">Example Materials</th>
+<th scope="col">Approximate C:N Ratio</th>
 </tr>
 </thead>
 <tbody>
@@ -338,7 +339,7 @@
 <div class="footer-legal">
 <p>© 2026 World Composting. All rights reserved.</p>
 <p>As an Amazon Associate, I earn from qualifying purchases. Some product links are affiliate links at no extra cost to you.</p>
-<p cls="footer-credits"><a href="photo-credits.html">Photo credits (Wikimedia Commons, PD/CC licenses)</a></p></div>
+<p class="footer-credits"><a href="photo-credits.html">Photo credits (Wikimedia Commons, PD/CC licenses)</a></p></div>
 </footer>
 </body>
 </html>

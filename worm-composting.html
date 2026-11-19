@@ -103,7 +103,8 @@
     </script>
 <link href="/llms.txt" rel="alternate" title="World Composting AI Index"/>
 </head>
-<body><header class="top-nav" id="top-nav">
+<body>
+<a href="#main-content" class="skip-link">Skip to content</a><header class="top-nav" id="top-nav">
 <div class="nav-inner">
 <a aria-label="World Composting — home" class="nav-logo" href="index.html">
 <img alt="World Composting Logo" height="40" loading="eager" onerror="this.src='https://via.placeholder.com/40?text=WC'" src="src/assets/logo.png" width="40"/>
@@ -176,7 +177,7 @@
 <div class="page-wrapper">
 <!-- ===== SIDEBAR NAVIGATION ===== -->
 <!-- ===== MAIN CONTENT AREA ===== -->
-<main class="main-content">
+<main class="main-content" id="main-content" tabindex="-1">
 <a class="back-link-wide" href="/">← Back to Home</a>
 <!-- Hero Section -->
 <div class="pillar-hero-wide"><picture><source type="image/avif" srcset="src/assets/images/worm-480.avif 480w, src/assets/images/worm-640.avif 640w, src/assets/images/worm-830.avif 830w, src/assets/images/worm-1240.avif 1240w, src/assets/images/worm-1660.avif 1660w" sizes="(min-width: 1160px) 1112px, 100vw"><source type="image/webp" srcset="src/assets/images/worm-480.webp 480w, src/assets/images/worm-640.webp 640w, src/assets/images/worm-830.webp 830w, src/assets/images/worm-1240.webp 1240w, src/assets/images/worm-1660.webp 1660w" sizes="(min-width: 1160px) 1112px, 100vw"><img alt="Red wiggler compost worms (Eisenia foetida) in fresh vermicompost" class="hero-photo" decoding="async" fetchpriority="high" loading="eager" src="src/assets/images/worm.jpg" width="1920" height="1440"/></picture>
@@ -227,14 +228,14 @@
 <div class="article-section-wide" id="choosing-your-method">
 <h2>Choosing Your Bin Method</h2>
 <p>The container you choose for your worm bin significantly impacts the ease of maintenance, harvesting efficiency, and overall success of your vermicomposting system. There are three primary approaches, each with distinct advantages depending on your space, budget, and experience level.</p>
-<table class="info-table-wide">
+<table class="info-table-wide"><caption class="sr-only">Worm bin methods compared</caption>
 <thead>
 <tr>
-<th>Method</th>
-<th>Budget</th>
-<th>Airflow</th>
-<th>Harvesting</th>
-<th>Best For</th>
+<th scope="col">Method</th>
+<th scope="col">Budget</th>
+<th scope="col">Airflow</th>
+<th scope="col">Harvesting</th>
+<th scope="col">Best For</th>
 </tr>
 </thead>
 <tbody>
@@ -284,13 +285,13 @@
 <p>Red wigglers are hermaphrodites, meaning each individual possesses both male and female reproductive organs. When two worms mate, they exchange sperm using specialized structures called spermathecae. Approximately one to three weeks later, each worm produces a cocoon from the clitellum that contains two to twenty eggs. Under optimal conditions (temperatures between 60-75 degrees Fahrenheit, adequate moisture, and sufficient food), these cocoons hatch in about two to four weeks, and the juveniles reach maturity in roughly eight to ten weeks.</p>
 <p>This reproductive capacity means your worm colony can double in size every three to four months if conditions are favorable. A starting population of one pound (approximately one thousand worms) can grow to four pounds within a year, dramatically increasing your processing capacity for kitchen scraps.</p>
 <h3>Environmental Tolerances</h3>
-<table class="info-table-wide">
+<table class="info-table-wide"><caption class="sr-only">Worm environment ideal, tolerance, and danger ranges</caption>
 <thead>
 <tr>
-<th>Factor</th>
-<th>Ideal Range</th>
-<th>Tolerance Range</th>
-<th>Danger Zone</th>
+<th scope="col">Factor</th>
+<th scope="col">Ideal Range</th>
+<th scope="col">Tolerance Range</th>
+<th scope="col">Danger Zone</th>
 </tr>
 </thead>
 <tbody>
@@ -573,7 +574,7 @@
 <div class="footer-legal">
 <p>© 2026 World Composting. All rights reserved.</p>
 <p>As an Amazon Associate, I earn from qualifying purchases. Some product links are affiliate links at no extra cost to you.</p>
-<p cls="footer-credits"><a href="photo-credits.html">Photo credits (Wikimedia Commons, PD/CC licenses)</a></p></div>
+<p class="footer-credits"><a href="photo-credits.html">Photo credits (Wikimedia Commons, PD/CC licenses)</a></p></div>
 </footer>
 <!-- Video Section Loader -->
 <script>

@@ -77,7 +77,8 @@
     </script>
 <link href="/llms.txt" rel="alternate" title="World Composting AI Index"/>
 </head>
-<body><header class="top-nav" id="top-nav">
+<body>
+<a href="#main-content" class="skip-link">Skip to content</a><header class="top-nav" id="top-nav">
 <div class="nav-inner">
 <a aria-label="World Composting — home" class="nav-logo" href="index.html">
 <img alt="World Composting Logo" height="40" loading="eager" onerror="this.src='https://via.placeholder.com/40?text=WC'" src="src/assets/logo.png" width="40"/>
@@ -149,7 +150,7 @@
     </script>
 <div class="page-wrapper">
 <!-- ===== MAIN CONTENT AREA ===== -->
-<main class="main-content">
+<main class="main-content" id="main-content" tabindex="-1">
 <a class="back-link-wide" href="/">← Back to Home</a>
 <!-- Hero Section -->
 <div class="pillar-hero-wide"><picture><source type="image/avif" srcset="src/assets/images/bins2-480.avif 480w, src/assets/images/bins2-640.avif 640w, src/assets/images/bins2-830.avif 830w, src/assets/images/bins2-1240.avif 1240w, src/assets/images/bins2-1660.avif 1660w" sizes="(min-width: 1160px) 1112px, 100vw"><source type="image/webp" srcset="src/assets/images/bins2-480.webp 480w, src/assets/images/bins2-640.webp 640w, src/assets/images/bins2-830.webp 830w, src/assets/images/bins2-1240.webp 1240w, src/assets/images/bins2-1660.webp 1660w" sizes="(min-width: 1160px) 1112px, 100vw"><img alt="Compost bins with perforated liners in a backyard setup" class="hero-photo" decoding="async" fetchpriority="high" loading="eager" src="src/assets/images/bins2.jpg" width="1920" height="1440"/></picture>
@@ -231,7 +232,7 @@
 <div class="footer-legal">
 <p>© 2026 World Composting. All rights reserved.</p>
 <p>As an Amazon Associate, I earn from qualifying purchases. Some product links are affiliate links at no extra cost to you.</p>
-<p cls="footer-credits"><a href="photo-credits.html">Photo credits (Wikimedia Commons, PD/CC licenses)</a></p></div>
+<p class="footer-credits"><a href="photo-credits.html">Photo credits (Wikimedia Commons, PD/CC licenses)</a></p></div>
 </footer>
 <script>
         let imgSizes = {};
@@ -305,7 +306,7 @@
                                 const blurb = d.blurb ? `<p class="gear-card-blurb">${d.blurb}</p>` : '';
                                 const specs = d.specs ? `<span class="gear-card-specs">${d.specs}</span>` : '';
                                 const isAmazon = item['Amazon Link'] && item['Amazon Link'].includes('amzn.to');
-                                const affiliateBadge = isAmazon ? ' <small style="color:var(--text-dark);opacity:0.6;font-size:0.75rem;">(Affiliate Link)</small>' : '';
+                                const affiliateBadge = isAmazon ? ' <small style="color:var(--ink-2);font-size:0.75rem;">(Affiliate Link)</small>' : '';
                                 return `
                                     <div class="gear-card">
                                         ${img}

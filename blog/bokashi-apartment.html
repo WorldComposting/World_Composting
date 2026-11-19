@@ -44,7 +44,8 @@
       }
     </script>
 </head>
-<body><header class="top-nav" id="top-nav">
+<body>
+<a href="#main-content" class="skip-link">Skip to content</a><header class="top-nav" id="top-nav">
 <div class="nav-inner">
 <a aria-label="World Composting — home" class="nav-logo" href="../index.html">
 <img alt="World Composting Logo" height="40" loading="eager" onerror="this.src='https://via.placeholder.com/40?text=WC'" src="../src/assets/logo.png" width="40"/>
@@ -116,7 +117,7 @@
 <div class="page-wrapper">
 <!-- ===== SIDEBAR NAVIGATION (from reference, paths rewritten for blog/) ===== -->
 <!-- ===== MAIN CONTENT AREA ===== -->
-<main class="main-content">
+<main class="main-content" id="main-content" tabindex="-1">
 <a class="back-link-wide" href="../blog.html">← Back to Blog</a>
 <!-- Hero Section -->
 <div class="pillar-hero-wide">
@@ -154,8 +155,8 @@
 <li><strong>Bury in soil:</strong> The output is buried where aerobic decomposition completes the process.</li>
 </ol>
 <h3>Bokashi vs. Traditional Composting</h3>
-<table class="info-table-wide">
-<thead><tr><th>Feature</th><th>Bokashi</th><th>Traditional Composting</th></tr></thead>
+<table class="info-table-wide"><caption class="sr-only">Bokashi compared with traditional composting</caption>
+<thead><tr><th scope="col">Feature</th><th scope="col">Bokashi</th><th scope="col">Traditional Composting</th></tr></thead>
 <tbody>
 <tr><td>Space needed</td><td>1 bucket under sink</td><td>Outdoor bin or pile</td></tr>
 <tr><td>Can compost meat/dairy?</td><td>Yes</td><td>No</td></tr>
@@ -203,8 +204,8 @@
 <div class="article-section-wide" id="what-you-can-and-cannot-bokashi-compost">
 <h2>What You Can and Cannot Bokashi Compost</h2>
 <h3>YES — Everything Goes In</h3>
-<table class="info-table-wide">
-<thead><tr><th>Category</th><th>Examples</th></tr></thead>
+<table class="info-table-wide"><caption class="sr-only">Items bokashi can accept</caption>
+<thead><tr><th scope="col">Category</th><th scope="col">Examples</th></tr></thead>
 <tbody>
 <tr><td>Fruit &amp; vegetable scraps</td><td>Peels, cores, spoiled produce</td></tr>
 <tr><td>Meat &amp; fish</td><td>Bones, raw meat, fish heads</td></tr>
@@ -216,8 +217,8 @@
 </tbody>
 </table>
 <h3>NO — Avoid These Items</h3>
-<table class="info-table-wide">
-<thead><tr><th>Item</th><th>Reason</th></tr></thead>
+<table class="info-table-wide"><caption class="sr-only">Items to keep out of a bokashi bin</caption>
+<thead><tr><th scope="col">Item</th><th scope="col">Reason</th></tr></thead>
 <tbody>
 <tr><td>Large quantities of liquid</td><td>Will flood the bucket</td></tr>
 <tr><td>Oily/greasy food in bulk</td><td>Can prevent proper fermentation</td></tr>
@@ -372,7 +373,7 @@
 <div class="footer-legal">
 <p>© 2026 World Composting. All rights reserved.</p>
 <p>As an Amazon Associate, I earn from qualifying purchases. Some product links are affiliate links at no extra cost to you.</p>
-<p cls="footer-credits"><a href="../photo-credits.html">Photo credits (Wikimedia Commons, PD/CC licenses)</a></p></div>
+<p class="footer-credits"><a href="../photo-credits.html">Photo credits (Wikimedia Commons, PD/CC licenses)</a></p></div>
 </footer>
 </body>
 </html>

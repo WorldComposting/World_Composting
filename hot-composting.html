@@ -103,7 +103,8 @@
     </script>
 <link href="/llms.txt" rel="alternate" title="World Composting AI Index"/>
 </head>
-<body><header class="top-nav" id="top-nav">
+<body>
+<a href="#main-content" class="skip-link">Skip to content</a><header class="top-nav" id="top-nav">
 <div class="nav-inner">
 <a aria-label="World Composting — home" class="nav-logo" href="index.html">
 <img alt="World Composting Logo" height="40" loading="eager" onerror="this.src='https://via.placeholder.com/40?text=WC'" src="src/assets/logo.png" width="40"/>
@@ -176,7 +177,7 @@
 <div class="page-wrapper">
 <!-- ===== SIDEBAR NAVIGATION ===== -->
 <!-- ===== MAIN CONTENT AREA ===== -->
-<main class="main-content">
+<main class="main-content" id="main-content" tabindex="-1">
 <a class="back-link-wide" href="/">← Back to Home</a>
 <!-- Hero Section -->
 <div class="pillar-hero-wide"><picture><source type="image/avif" srcset="src/assets/images/hot-480.avif 480w, src/assets/images/hot-640.avif 640w, src/assets/images/hot-830.avif 830w, src/assets/images/hot-1240.avif 1240w, src/assets/images/hot-1660.avif 1660w" sizes="(min-width: 1160px) 1112px, 100vw"><source type="image/webp" srcset="src/assets/images/hot-480.webp 480w, src/assets/images/hot-640.webp 640w, src/assets/images/hot-830.webp 830w, src/assets/images/hot-1240.webp 1240w, src/assets/images/hot-1660.webp 1660w" sizes="(min-width: 1160px) 1112px, 100vw"><img alt="A steaming hot compost pile being turned with a machine" class="hero-photo" decoding="async" fetchpriority="high" loading="eager" src="src/assets/images/hot.jpg" width="1920" height="1280"/></picture>
@@ -254,12 +255,12 @@
 <p>Every organic material contains carbon and nitrogen in specific proportions. Carbon provides energy for microbial metabolism; nitrogen provides the protein-building blocks needed for cell reproduction. Microorganisms working in your pile require a C:N ratio of approximately 25 to 30 parts carbon to one part nitrogen by weight for optimal decomposition speed.</p>
 <p>If the ratio is too high (excess carbon), microbial populations grow slowly because nitrogen is limiting. The pile stays cool and decomposes at a snail's pace. If the ratio is too low (excess nitrogen), microbes reproduce rapidly but cannot process all the available nitrogen, which converts to ammonia gas and escapes as a strong odor.</p>
 <h3>C:N Ratios of Common Materials</h3>
-<table class="info-table-wide">
+<table class="info-table-wide"><caption class="sr-only">C:N ratios of common materials</caption>
 <thead>
 <tr>
-<th>Material</th>
-<th>C:N Ratio</th>
-<th>Category</th>
+<th scope="col">Material</th>
+<th scope="col">C:N Ratio</th>
+<th scope="col">Category</th>
 </tr>
 </thead>
 <tbody>
@@ -290,13 +291,13 @@
 <p>A hot compost pile must be at least three feet tall and three feet wide (a 3x3x3 foot cube) to retain sufficient heat for thermophilic bacteria. Piles smaller than this lose heat faster than microbes can generate it, remaining in the mesophilic range and decomposing slowly.</p>
 <p>The maximum practical size is approximately four to five feet across. Beyond this width, oxygen cannot reach the core effectively, even with regular turning. The ideal shape is a squat trapezoid: wide base tapering slightly toward the top, which maximizes volume while maintaining good internal airflow.</p>
 <h3>Containment Options</h3>
-<table class="info-table-wide">
+<table class="info-table-wide"><caption class="sr-only">Hot compost containment options compared</caption>
 <thead>
 <tr>
-<th>System</th>
-<th>Cost</th>
-<th>Airflow</th>
-<th>Scalability</th>
+<th scope="col">System</th>
+<th scope="col">Cost</th>
+<th scope="col">Airflow</th>
+<th scope="col">Scalability</th>
 </tr>
 </thead>
 <tbody>
@@ -392,9 +393,9 @@
 <li><strong>Heat regulation:</strong> Prevents temperatures from exceeding 160 degrees Fahrenheit, which would kill beneficial microbes and sterilize the pile.</li>
 </ul>
 <h3>Turning Schedule</h3>
-<table class="info-table-wide">
+<table class="info-table-wide"><caption class="sr-only">Pile turning schedule by phase and temperature target</caption>
 <thead>
-<tr><th>Phase</th><th>Frequency</th><th>Temperature Target</th></tr>
+<tr><th scope="col">Phase</th><th scope="col">Frequency</th><th scope="col">Temperature Target</th></tr>
 </thead>
 <tbody>
 <tr><td>Week 1-2 (Peak thermophilic)</td><td>Every 2-3 days</td><td>130-150°F</td></tr>
@@ -553,7 +554,7 @@
 <div class="footer-legal">
 <p>© 2026 World Composting. All rights reserved.</p>
 <p>As an Amazon Associate, I earn from qualifying purchases. Some product links are affiliate links at no extra cost to you.</p>
-<p cls="footer-credits"><a href="photo-credits.html">Photo credits (Wikimedia Commons, PD/CC licenses)</a></p></div>
+<p class="footer-credits"><a href="photo-credits.html">Photo credits (Wikimedia Commons, PD/CC licenses)</a></p></div>
 </footer>
 <!-- Video Section Loader -->
 <script>

@@ -68,7 +68,8 @@
     </script>
 <link href="/llms.txt" rel="alternate" title="World Composting AI Index"/>
 </head>
-<body><header class="top-nav" id="top-nav">
+<body>
+<a href="#main-content" class="skip-link">Skip to content</a><header class="top-nav" id="top-nav">
 <div class="nav-inner">
 <a aria-label="World Composting — home" class="nav-logo" href="index.html">
 <img alt="World Composting Logo" height="40" loading="eager" onerror="this.src='https://via.placeholder.com/40?text=WC'" src="src/assets/logo.png" width="40"/>
@@ -141,7 +142,7 @@
 <div class="page-wrapper">
 <!-- ===== SIDEBAR NAVIGATION ===== -->
 <!-- ===== MAIN CONTENT AREA ===== -->
-<main class="main-content">
+<main class="main-content" id="main-content" tabindex="-1">
 <a class="back-link-wide" href="/">← Back to Home</a>
 <!-- Hero Section -->
 <div class="pillar-hero-wide"><picture><source type="image/avif" srcset="src/assets/images/sift-480.avif 480w, src/assets/images/sift-640.avif 640w, src/assets/images/sift-830.avif 830w, src/assets/images/sift-1240.avif 1240w, src/assets/images/sift-1660.avif 1660w" sizes="(min-width: 1160px) 1112px, 100vw"><source type="image/webp" srcset="src/assets/images/sift-480.webp 480w, src/assets/images/sift-640.webp 640w, src/assets/images/sift-830.webp 830w, src/assets/images/sift-1240.webp 1240w, src/assets/images/sift-1660.webp 1660w" sizes="(min-width: 1160px) 1112px, 100vw"><img alt="A close view of shredded compost ready for sifting" class="hero-photo" decoding="async" fetchpriority="high" loading="eager" src="src/assets/images/sift.jpg" width="1920" height="1440"/></picture>
@@ -167,11 +168,11 @@
 </div>
 <div id="phases">
 <!-- Phase 1: Odor Problems -->
-<div class="phase phase-wide active">
-<button class="phase-header" onclick="togglePhase(this)">
+<details class="phase phase-wide" open>
+<summary class="phase-header">
 <span>Phase 1: Odor Problems 👃</span>
 <span class="phase-arrow">▼</span>
-</button>
+</summary>
 <div class="phase-body">
 <label class="checklist-item" for="t1_0">
 <input data-id="t1_0" id="t1_0" type="checkbox"/>
@@ -222,13 +223,13 @@
 </span>
 </label>
 </div>
-</div>
+</details>
 <!-- Phase 2: Moisture Issues -->
-<div class="phase phase-wide">
-<button class="phase-header" onclick="togglePhase(this)">
+<details class="phase phase-wide">
+<summary class="phase-header">
 <span>Phase 2: Moisture Issues 💧</span>
 <span class="phase-arrow">▼</span>
-</button>
+</summary>
 <div class="phase-body">
 <label class="checklist-item" for="t2_0">
 <input data-id="t2_0" id="t2_0" type="checkbox"/>
@@ -279,13 +280,13 @@
 </span>
 </label>
 </div>
-</div>
+</details>
 <!-- Phase 3: Pest Problems -->
-<div class="phase phase-wide">
-<button class="phase-header" onclick="togglePhase(this)">
+<details class="phase phase-wide">
+<summary class="phase-header">
 <span>Phase 3: Pest Problems 🐜</span>
 <span class="phase-arrow">▼</span>
-</button>
+</summary>
 <div class="phase-body">
 <label class="checklist-item" for="t3_0">
 <input data-id="t3_0" id="t3_0" type="checkbox"/>
@@ -336,13 +337,13 @@
 </span>
 </label>
 </div>
-</div>
+</details>
 <!-- Phase 4: Breakdown Problems -->
-<div class="phase phase-wide">
-<button class="phase-header" onclick="togglePhase(this)">
+<details class="phase phase-wide">
+<summary class="phase-header">
 <span>Phase 4: Breakdown Problems 🔬</span>
 <span class="phase-arrow">▼</span>
-</button>
+</summary>
 <div class="phase-body">
 <label class="checklist-item" for="t4_0">
 <input data-id="t4_0" id="t4_0" type="checkbox"/>
@@ -393,13 +394,13 @@
 </span>
 </label>
 </div>
-</div>
+</details>
 <!-- Phase 5: Advanced Diagnostics -->
-<div class="phase phase-wide">
-<button class="phase-header" onclick="togglePhase(this)">
+<details class="phase phase-wide">
+<summary class="phase-header">
 <span>Phase 5: Advanced Diagnostics 🧪</span>
 <span class="phase-arrow">▼</span>
-</button>
+</summary>
 <div class="phase-body">
 <label class="checklist-item" for="t5_0">
 <input data-id="t5_0" id="t5_0" type="checkbox"/>
@@ -450,7 +451,7 @@
 </span>
 </label>
 </div>
-</div>
+</details>
 </div>
 <div id="gear-section-wide">
 <div class="section-title">Recommended Troubleshooting Gear</div>
@@ -522,14 +523,9 @@
 <div class="footer-legal">
 <p>© 2026 World Composting. All rights reserved.</p>
 <p>As an Amazon Associate, I earn from qualifying purchases. Some product links are affiliate links at no extra cost to you.</p>
-<p cls="footer-credits"><a href="photo-credits.html">Photo credits (Wikimedia Commons, PD/CC licenses)</a></p></div>
+<p class="footer-credits"><a href="photo-credits.html">Photo credits (Wikimedia Commons, PD/CC licenses)</a></p></div>
 </footer>
 <script>
-        // Phase toggle
-        function togglePhase(btn) {
-            const phase = btn.closest('.phase');
-            phase.classList.toggle('active');
-        }
 
         // Progress tracking
         const TOTAL_ITEMS = 30;
@@ -597,7 +593,7 @@
                 });
             } catch (e) {
                 console.error('Error loading gear:', e);
-                document.getElementById('gear-list').innerHTML = '<p style="opacity:0.6;font-size:0.9rem;">Gear recommendations coming soon.</p>';
+                document.getElementById('gear-list').innerHTML = '<p style="font-size:0.9rem;color:var(--ink-2);">Gear recommendations coming soon.</p>';
             }
         }
 
