@@ -531,11 +531,10 @@
 </a>
 </div>
 <!-- Video Section -->
-<div id="video-container-tumbler"></div>
 <!-- My Recommended Gear -->
 <div id="gear-section-wide">
 <div class="section-title">My Recommended Gear</div>
-<div id="gear-list"></div>
+<div id="gear-list"><a href="https://amzn.to/3m3BlJq" class="product-link" target="_blank" data-affiliate="true"><span class="product-name">10 Gallon Tote</span></a><a href="https://amzn.to/3rXmPGY" class="product-link" target="_blank" data-affiliate="true"><span class="product-name">Blue Tarp</span></a><a href="https://amzn.to/4hSL3MU" class="product-link" target="_blank" data-affiliate="true"><span class="product-name">Bus Boy Tubs</span></a><a href="https://amzn.to/4zUcONo" class="product-link" target="_blank" data-affiliate="true"><span class="product-name">KN95 Masks</span></a><a href="https://amzn.to/3pP7vKv" class="product-link" target="_blank" data-affiliate="true"><span class="product-name">Pine Shavings</span></a><a href="https://amzn.to/3m21vfp" class="product-link" target="_blank" data-affiliate="true"><span class="product-name">Waterproof gloves</span></a><a href="https://amzn.to/3R3qYtQ" class="product-link" target="_blank" data-affiliate="true"><span class="product-name">Urban Worm Bag</span></a><a href="https://vermibag.com/?wpam_id=3" class="product-link" target="_blank"><span class="product-name">Vermibag</span></a><a href="https://amzn.to/4x7VFxl" class="product-link" target="_blank" data-affiliate="true"><span class="product-name">Bug Zapper</span></a><a href="https://amzn.to/4u1AYCn" class="product-link" target="_blank" data-affiliate="true"><span class="product-name">Diatomaceous Earth Food Grade</span></a><a href="https://amzn.to/3pZSWng" class="product-link" target="_blank" data-affiliate="true"><span class="product-name">Mosquito Bits Bti</span></a><a href="https://amzn.to/31z7fFf" class="product-link" target="_blank" data-affiliate="true"><span class="product-name">Mosquito Dunks</span></a><a href="https://amzn.to/39eLIFA" class="product-link" target="_blank" data-affiliate="true"><span class="product-name">Sticky Fly Trap</span></a><a href="https://amzn.to/39169FP" class="product-link" target="_blank" data-affiliate="true"><span class="product-name">100 Pack Utility Knife Blades</span></a><a href="https://amzn.to/4aVcRhy" class="product-link" target="_blank" data-affiliate="true"><span class="product-name">Bonsaii 12 Sheet Micr-cut Paper Shredder</span></a><a href="https://amzn.to/3baqVW4" class="product-link" target="_blank" data-affiliate="true"><span class="product-name">Folding Utility Knife</span></a><a href="https://amzn.to/2KWLpHk" class="product-link" target="_blank" data-affiliate="true"><span class="product-name">Chapin Sprayer</span></a><a href="https://amzn.to/4wGyP0X" class="product-link" target="_blank" data-affiliate="true"><span class="product-name">Ego 4 Gallon Sprayer</span></a></div>
 </div>
 </main>
 </div><!-- .page-wrapper -->
@@ -647,52 +646,13 @@
         }
 
         // Load gear products
-        async function loadGear() {
-            try {
-                const res = await fetch('src/data/products.json');
-                if (!res.ok) throw new Error('Could not load product data.');
-                const products = await res.json();
-
-                const categories = ['Worm Bin Items', 'Fly Control', 'Water Gear', 'Paper', 'Worm Bag'];
-                const filtered = products.filter(p => categories.includes(p['Category']));
-
-                const list = document.getElementById('gear-list');
-                filtered.forEach(p => {
-                    const href = (p['Amazon Link'] !== 'NaN' && p['Amazon Link']) ||
-                                 (p['Other Link'] !== 'NaN' && p['Other Link']) || '#';
-                    const link = document.createElement('a');
-                    link.href = href;
-                    link.className = 'product-link';
-                    link.target = '_blank';
-                    const isAmazon = p['Amazon Link'] && p['Amazon Link'].includes('amzn.to');
-                    if (isAmazon) {
-                        link.setAttribute('data-affiliate', 'true');
-                    }
-                    link.innerHTML = '<span class="product-name">' + p['Item'] + '</span>';
-                    list.appendChild(link);
-                });
-            } catch (e) {
-                console.error('Error loading gear:', e);
-                document.getElementById('gear-list').innerHTML = '<p style="font-size:0.9rem;color:var(--ink-2);">Gear recommendations coming soon.</p>';
-            }
-        }
+        
 
         // Init
         loadCheckboxes();
-        loadGear();
 
         // Load and render videos
-        (async function() {
-            await new Promise(function(resolve) {
-                var s = document.createElement('script');
-                s.src = 'src/js/video-renderer.js';
-                s.onload = resolve;
-                document.head.appendChild(s);
-            });
-            if (window.renderVideoSection) {
-                window.renderVideoSection('video-container-tumbler', 'tumbler');
-            }
-        })();
+        
     </script>
 </body>
 </html>

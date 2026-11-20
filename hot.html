@@ -506,11 +506,11 @@
 </details>
 </div>
 <!-- Video Section -->
-<div id="video-container-hot"></div>
+<div id="video-container-hot"><div class="video-section"><h2 class="video-section-title">Watch &amp; Learn</h2><p class="video-section-subtitle">Real-world composting updates and tips from our channel.</p><div class="video-card" role="article"><div class="video-wrapper"><iframe src="https://www.youtube.com/embed/4RAWlDsxdzE" title="How to Make Hot Pre-Compost for Faster Worm Castings" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><div class="video-info"><h3 class="video-title"><a href="https://www.youtube.com/watch?v=4RAWlDsxdzE" target="_blank" rel="noopener noreferrer">How to Make Hot Pre-Compost for Faster Worm Castings</a></h3><div class="key-takeaways"><p class="key-takeaways-title">Key Takeaways</p><ul><li>Pre-composting accelerates decomposition by weeks compared to direct feeding</li><li>Layer greens and browns in a separate bin before introducing worms</li><li>Once pre-composted material cools, add it to your worm habitat</li></ul></div></div></div><div class="video-card" role="article"><div class="video-wrapper"><iframe src="https://www.youtube.com/embed/LMO-FwynYeY" title="Hot Composting: Temperature Management and Turning Strategy" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><div class="video-info"><h3 class="video-title"><a href="https://www.youtube.com/watch?v=LMO-FwynYeY" target="_blank" rel="noopener noreferrer">Hot Composting: Temperature Management and Turning Strategy</a></h3><div class="key-takeaways"><p class="key-takeaways-title">Key Takeaways</p><ul><li>Turn the pile every 2-3 days when temperature drops 10-15 degrees from peak</li><li>Maintain moisture at wrung-out sponge level — too wet kills aerobic bacteria</li><li>A three-bin system lets you manage active, curing, and storage batches simultaneously</li></ul></div></div></div></div></div>
 <!-- My Recommended Gear -->
 <div id="gear-section-wide">
 <div class="section-title">My Recommended Gear</div>
-<div id="gear-list"></div>
+<div id="gear-list"><a href="https://amzn.to/3m3BlJq" class="product-link" target="_blank" data-affiliate="true"><span class="product-name">10 Gallon Tote</span></a><a href="https://amzn.to/3rXmPGY" class="product-link" target="_blank" data-affiliate="true"><span class="product-name">Blue Tarp</span></a><a href="https://amzn.to/4hSL3MU" class="product-link" target="_blank" data-affiliate="true"><span class="product-name">Bus Boy Tubs</span></a><a href="https://amzn.to/4zUcONo" class="product-link" target="_blank" data-affiliate="true"><span class="product-name">KN95 Masks</span></a><a href="https://amzn.to/3pP7vKv" class="product-link" target="_blank" data-affiliate="true"><span class="product-name">Pine Shavings</span></a><a href="https://amzn.to/3m21vfp" class="product-link" target="_blank" data-affiliate="true"><span class="product-name">Waterproof gloves</span></a><a href="https://amzn.to/4x7VFxl" class="product-link" target="_blank" data-affiliate="true"><span class="product-name">Bug Zapper</span></a><a href="https://amzn.to/4u1AYCn" class="product-link" target="_blank" data-affiliate="true"><span class="product-name">Diatomaceous Earth Food Grade</span></a><a href="https://amzn.to/3pZSWng" class="product-link" target="_blank" data-affiliate="true"><span class="product-name">Mosquito Bits Bti</span></a><a href="https://amzn.to/31z7fFf" class="product-link" target="_blank" data-affiliate="true"><span class="product-name">Mosquito Dunks</span></a><a href="https://amzn.to/39eLIFA" class="product-link" target="_blank" data-affiliate="true"><span class="product-name">Sticky Fly Trap</span></a><a href="https://amzn.to/2KWLpHk" class="product-link" target="_blank" data-affiliate="true"><span class="product-name">Chapin Sprayer</span></a><a href="https://amzn.to/4wGyP0X" class="product-link" target="_blank" data-affiliate="true"><span class="product-name">Ego 4 Gallon Sprayer</span></a></div>
 </div>
 </main>
 </div><!-- .page-wrapper -->
@@ -622,52 +622,13 @@
         }
 
         // Load gear products
-        async function loadGear() {
-            try {
-                const res = await fetch('src/data/products.json');
-                if (!res.ok) throw new Error('Could not load product data.');
-                const products = await res.json();
-
-                const categories = ['Worm Bin Items', 'Water Gear', 'Fly Control'];
-                const filtered = products.filter(p => categories.includes(p['Category']));
-
-                const list = document.getElementById('gear-list');
-                filtered.forEach(p => {
-                    const href = (p['Amazon Link'] !== 'NaN' && p['Amazon Link']) ||
-                                 (p['Other Link'] !== 'NaN' && p['Other Link']) || '#';
-                    const link = document.createElement('a');
-                    link.href = href;
-                    link.className = 'product-link';
-                    link.target = '_blank';
-                    const isAmazon = p['Amazon Link'] && p['Amazon Link'].includes('amzn.to');
-                    if (isAmazon) {
-                        link.setAttribute('data-affiliate', 'true');
-                    }
-                    link.innerHTML = '<span class="product-name">' + p['Item'] + '</span>';
-                    list.appendChild(link);
-                });
-            } catch (e) {
-                console.error('Error loading gear:', e);
-                document.getElementById('gear-list').innerHTML = '<p style="font-size:0.9rem;color:var(--ink-2);">Gear recommendations coming soon.</p>';
-            }
-        }
+        
 
         // Init
         loadCheckboxes();
-        loadGear();
 
         // Load and render videos
-        (async function() {
-            await new Promise(function(resolve) {
-                var s = document.createElement('script');
-                s.src = 'src/js/video-renderer.js';
-                s.onload = resolve;
-                document.head.appendChild(s);
-            });
-            if (window.renderVideoSection) {
-                window.renderVideoSection('video-container-hot', 'hot');
-            }
-        })();
+        
     </script>
 </body>
 </html>

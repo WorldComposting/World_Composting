@@ -357,11 +357,11 @@
 </details>
 </div>
 <!-- Video Section -->
-<div id="video-container-pre-compost"></div>
+<div id="video-container-pre-compost"><div class="video-section"><h2 class="video-section-title">Watch &amp; Learn</h2><p class="video-section-subtitle">Real-world composting updates and tips from our channel.</p><div class="video-card" role="article"><div class="video-wrapper"><iframe src="https://www.youtube.com/embed/4RAWlDsxdzE" title="How to Make Hot Pre-Compost for Faster Worm Castings" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><div class="video-info"><h3 class="video-title"><a href="https://www.youtube.com/watch?v=4RAWlDsxdzE" target="_blank" rel="noopener noreferrer">How to Make Hot Pre-Compost for Faster Worm Castings</a></h3><div class="key-takeaways"><p class="key-takeaways-title">Key Takeaways</p><ul><li>Pre-composting accelerates decomposition by weeks compared to direct feeding</li><li>Layer greens and browns in a separate bin before introducing worms</li><li>Once pre-composted material cools, add it to your worm habitat</li></ul></div></div></div><div class="video-card" role="article"><div class="video-wrapper"><iframe src="https://www.youtube.com/embed/a1mq4ZhQqJY" title="How to Get Faster Worm Castings: Pre-Compost System for Advanced Bins" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><div class="video-info"><h3 class="video-title"><a href="https://www.youtube.com/watch?v=a1mq4ZhQqJY" target="_blank" rel="noopener noreferrer">How to Get Faster Worm Castings: Pre-Compost System for Advanced Bins</a></h3><div class="key-takeaways"><p class="key-takeaways-title">Key Takeaways</p><ul><li>Pre-composting food scraps before adding them to the worm bin accelerates castings production significantly</li><li>Blend or process scraps with a carbon-rich bedding mix at roughly 1:4 ratio for best results</li><li>Adding microbe-rich liquid like fish tank water jumpstarts microbial colonization</li></ul></div></div></div><div class="video-card" role="article"><div class="video-wrapper"><iframe src="https://www.youtube.com/embed/9k5CjbNZ37U" title="7-Day Pre-Compost Result: It Worked (But There&#x27;s a Catch!) | Feb 10, 2026" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><div class="video-info"><h3 class="video-title"><a href="https://www.youtube.com/watch?v=9k5CjbNZ37U" target="_blank" rel="noopener noreferrer">7-Day Pre-Compost Result: It Worked (But There&#x27;s a Catch!) | Feb 10, 2026</a></h3><div class="key-takeaways"><p class="key-takeaways-title">Key Takeaways</p><ul><li>A seven-day pre-compost cycle shows visible breakdown and temperature spike past 110 degrees</li><li>The catch is timing — you must wait for the downswing before adding to worms or risk cooking them</li><li>Properly colonized material smells earthy, not sour, when ready for the bin</li></ul></div></div></div></div></div>
 <!-- My Recommended Gear -->
 <div id="gear-section-wide">
 <div class="section-title">My Recommended Gear</div>
-<div id="gear-list"></div>
+<div id="gear-list"><a href="https://amzn.to/3m21vfp" class="product-link" target="_blank" data-affiliate="true"><span class="product-name">Waterproof gloves</span></a><a href="https://amzn.to/3m3BlJq" class="product-link" target="_blank" data-affiliate="true"><span class="product-name">10 Gallon Tote</span></a></div>
 </div>
 </main>
 </div><!-- .page-wrapper -->
@@ -473,52 +473,13 @@
         }
 
         // Load gear products
-        async function loadGear() {
-            try {
-                const res = await fetch('src/data/products.json');
-                if (!res.ok) throw new Error('Could not load product data.');
-                const products = await res.json();
-
-                const categories = ['Pre-Compost Items'];
-                const filtered = products.filter(p => categories.includes(p['Category']));
-
-                const list = document.getElementById('gear-list');
-                filtered.forEach(p => {
-                    const href = (p['Amazon Link'] !== 'NaN' && p['Amazon Link']) ||
-                                 (p['Other Link'] !== 'NaN' && p['Other Link']) || '#';
-                    const link = document.createElement('a');
-                    link.href = href;
-                    link.className = 'product-link';
-                    link.target = '_blank';
-                    const isAmazon = p['Amazon Link'] && p['Amazon Link'].includes('amzn.to');
-                    if (isAmazon) {
-                        link.setAttribute('data-affiliate', 'true');
-                    }
-                    link.innerHTML = '<span class="product-name">' + p['Item'] + '</span>';
-                    list.appendChild(link);
-                });
-            } catch (e) {
-                console.error('Error loading gear:', e);
-                document.getElementById('gear-list').innerHTML = '<p style="font-size:0.9rem;color:var(--ink-2);">Gear recommendations coming soon.</p>';
-            }
-        }
+        
 
         // Init
         loadCheckboxes();
-        loadGear();
 
         // Load and render videos
-        (async function() {
-            await new Promise(function(resolve) {
-                var s = document.createElement('script');
-                s.src = 'src/js/video-renderer.js';
-                s.onload = resolve;
-                document.head.appendChild(s);
-            });
-            if (window.renderVideoSection) {
-                window.renderVideoSection('video-container-pre-compost', 'pre-compost');
-            }
-        })();
+        
     </script>
 </body>
 </html>

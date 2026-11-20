@@ -204,7 +204,6 @@
 <a class="back-link-wide" href="/">← Back to Home</a>
 </div>
 <!-- Video Section -->
-<div id="video-container-start-here"></div>
 </main>
 </div><!-- .page-wrapper -->
 <!-- FOOTER: outside grid, spans full width -->
@@ -410,17 +409,22 @@
 
         function renderRecommendations() {
             const recs = getRecommendations();
-            recContainer.innerHTML = '';
-
+            recContainer.replaceChildren();
             recs.forEach(rec => {
                 const card = document.createElement('a');
                 card.href = rec.href;
                 card.className = 'rec-card-wide';
-                card.innerHTML = `
-                    <div class="rec-icon-wide">${rec.icon}</div>
-                    <h3>${rec.title}</h3>
-                    <p>${rec.desc}</p>
-                    <span class="rec-link-wide">Read the guide →</span>`;
+                const icon = document.createElement('div');
+                icon.className = 'rec-icon-wide';
+                icon.textContent = rec.icon;
+                const title = document.createElement('h3');
+                title.textContent = rec.title;
+                const desc = document.createElement('p');
+                desc.textContent = rec.desc;
+                const link = document.createElement('span');
+                link.className = 'rec-link-wide';
+                link.textContent = 'Read the guide →';
+                card.append(icon, title, desc, link);
                 recContainer.appendChild(card);
             });
         }
@@ -479,15 +483,7 @@
         // ===== INIT =====
         updateProgress();
         // Video Section Loader
-        (async function() {
-            await new Promise(function(resolve) {
-                var s = document.createElement('script');
-                s.src = 'src/js/video-renderer.js?v=10';
-                s.onload = resolve;
-                document.head.appendChild(s);
-            });
-            window.renderVideoSection('video-container-start-here', 'start-here');
-        })();
+        
 
     </script>
 </body>

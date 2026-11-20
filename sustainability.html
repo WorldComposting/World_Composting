@@ -248,7 +248,7 @@
 </details>
 </div>
 <!-- Video Section -->
-<div id="video-container-sustainability"></div>
+<div id="video-container-sustainability"><div class="video-section"><h2 class="video-section-title">Watch &amp; Learn</h2><p class="video-section-subtitle">Real-world composting updates and tips from our channel.</p><div class="video-card" role="article"><div class="video-wrapper"><iframe src="https://www.youtube.com/embed/0QvS2l6zWYk" title="Urban Worm Bag Update: Healthy Worms &amp; 35-Day Progress | April 17, 2026" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><div class="video-info"><h3 class="video-title"><a href="https://www.youtube.com/watch?v=0QvS2l6zWYk" target="_blank" rel="noopener noreferrer">Urban Worm Bag Update: Healthy Worms &amp; 35-Day Progress | April 17, 2026</a></h3><div class="key-takeaways"><p class="key-takeaways-title">Key Takeaways</p><ul><li>Healthy worms are active and moving through bedding quickly</li><li>35-day progress shows steady castings production</li><li>Regular feeding schedule keeps the system in balance</li></ul></div></div></div><div class="video-card" role="article"><div class="video-wrapper"><iframe src="https://www.youtube.com/embed/ej9gRwssrgk" title="African Nightcrawler Worm Bin Update: Solving 14 Gallon Tote Issues | April 10, 2026" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><div class="video-info"><h3 class="video-title"><a href="https://www.youtube.com/watch?v=ej9gRwssrgk" target="_blank" rel="noopener noreferrer">African Nightcrawler Worm Bin Update: Solving 14 Gallon Tote Issues | April 10, 2026</a></h3><div class="key-takeaways"><p class="key-takeaways-title">Key Takeaways</p><ul><li>14-gallon totes work well for African Nightcrawlers with proper drainage</li><li>Common issues include moisture management and airflow</li><li>Solutions involve adjusting bedding depth and ventilation holes</li></ul></div></div></div></div></div>
 </main>
 </div><!-- .page-wrapper -->
 <!-- FOOTER: outside grid, spans full width -->
@@ -395,7 +395,8 @@ function renderChecklist() {
             window.totalChecklistItems = totalItems;
             updateProgress();
         }
-
+
+
 
         function updateProgress() {
             const checkboxes = document.querySelectorAll('input[type="checkbox"]');
@@ -422,15 +423,7 @@ function renderChecklist() {
         window.onload = renderChecklist;
 
         // Video Section Loader
-        (async function() {
-            await new Promise(function(resolve) {
-                var s = document.createElement('script');
-                s.src = 'src/js/video-renderer.js?v=10';
-                s.onload = resolve;
-                document.head.appendChild(s);
-            });
-            window.renderVideoSection('video-container-sustainability', 'sustainability');
-        })();
+        
 
     </script>
 </body>

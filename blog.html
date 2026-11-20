@@ -168,9 +168,7 @@
 <!-- Blog List -->
 <div id="blog-list-container" style="margin-top: 2rem;">
 <div class="section-title">Latest Blog Posts</div>
-<div id="blog-list">
-<!-- Populated by JS -->
-</div>
+<div id="blog-list"><a class="video-card" href="blog/worm-composting-beginner.html" style="cursor: pointer;"><div class="video-info"><span style="font-size: 0.8rem; color: var(--forest-green); font-weight: bold;">2026-08-24</span><div class="video-title" style="font-size: 1.1rem;">How to Start a Worm Bin Indoors: Complete Beginner&#x27;s Guide</div><p style="margin: 0; font-size: 0.9rem; color: #555;">Everything you need to know about setting up your first indoor worm composting system, from choosing the right bin to feeding and maintaining healthy worms.</p></div></a><a class="video-card" href="blog/biochar-guide.html" style="cursor: pointer;"><div class="video-info"><span style="font-size: 0.8rem; color: var(--forest-green); font-weight: bold;">2026-08-24</span><div class="video-title" style="font-size: 1.1rem;">Biochar for Composters: How to Make, Grind &amp; Use It in Your Worm Bin</div><p style="margin: 0; font-size: 0.9rem; color: #555;">A complete guide to making biochar at home, grinding it properly, and using it as a soil amendment in your worm bin or compost pile.</p></div></a><a class="video-card" href="blog/bokashi-apartment.html" style="cursor: pointer;"><div class="video-info"><span style="font-size: 0.8rem; color: var(--forest-green); font-weight: bold;">2026-08-24</span><div class="video-title" style="font-size: 1.1rem;">Bokashi Composting for Apartments: Complete Guide to Fermentation</div><p style="margin: 0; font-size: 0.9rem; color: #555;">How to compost all food waste indoors using the bokashi fermentation method, perfect for apartments and small spaces.</p></div></a><a class="video-card" href="blog/voting-for-sustainability.html" style="cursor: pointer;"><div class="video-info"><span style="font-size: 0.8rem; color: var(--forest-green); font-weight: bold;">2026-09-10</span><div class="video-title" style="font-size: 1.1rem;">Why Voting Is a Sustainability Skill (and How to Get More People to the Polls)</div><p style="margin: 0; font-size: 0.9rem; color: #555;">Why voting is a sustainability skill: what environmental votes actually decide, how to research candidates, and practical ways to get more people to the polls.</p></div></a></div>
 </div>
 </main>
 </div><!-- .page-wrapper -->
@@ -240,42 +238,6 @@
 <p>As an Amazon Associate, I earn from qualifying purchases. Some product links are affiliate links at no extra cost to you.</p>
 <p class="footer-credits"><a href="photo-credits.html">Photo credits (Wikimedia Commons, PD/CC licenses)</a></p></div>
 </footer>
-<script>
-        async function loadBlogPosts() {
-            const listContainer = document.getElementById('blog-list');
-            try {
-                const response = await fetch('src/data/blog.json');
-                if (!response.ok) throw new Error("Blog posts not found");
-                const posts = await response.json();
 
-                if (posts.length === 0) {
-                    listContainer.innerHTML = '<p>No posts available yet.</p>';
-                    return;
-                }
-
-                // Clear container first
-                listContainer.innerHTML = '';
-
-                posts.forEach(post => {
-                    const card = document.createElement('a');
-                    card.className = 'video-card'; // Use existing video-card styling for consistency!
-                    card.href = `blog/${post.slug}.html`;
-                    card.style.cursor = 'pointer';
-                    card.innerHTML = `
-                        <div class="video-info">
-                            <span style="font-size: 0.8rem; color: var(--forest-green); font-weight: bold;">${post.date}</span>
-                            <div class="video-title" style="font-size: 1.1rem;">${post.title}</div>
-                            <p style="margin: 0; font-size: 0.9rem; color: #555;">${post.summary}</p>
-                        </div>
-                    `;
-                    listContainer.appendChild(card);
-                });
-            } catch (e) {
-                console.error("Error loading blog posts:", e);
-                listContainer.innerHTML = '<p>Error loading blog posts. Please check back later.</p>';
-            }
-        }
-        loadBlogPosts();
-    </script>
 </body>
 </html>

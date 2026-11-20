@@ -171,7 +171,6 @@
 </div>
 </section>
 <!-- Video Section -->
-<div id="video-container-about"></div>
 </main>
 </div><!-- .page-wrapper -->
 <!-- FOOTER — outside grid, spans full width -->
@@ -240,17 +239,5 @@
 <p>As an Amazon Associate, I earn from qualifying purchases. Some product links are affiliate links at no extra cost to you.</p>
 <p class="footer-credits"><a href="photo-credits.html">Photo credits (Wikimedia Commons, PD/CC licenses)</a></p></div>
 </footer>
-<!-- Video Section Loader -->
-<script>
-        (async function() {
-            await new Promise(function(resolve) {
-                var s = document.createElement('script');
-                s.src = 'src/js/video-renderer.js?v=10';
-                s.onload = resolve;
-                document.head.appendChild(s);
-            });
-            window.renderVideoSection('video-container-about', 'about');
-        })();
-    </script>
 </body>
 </html>

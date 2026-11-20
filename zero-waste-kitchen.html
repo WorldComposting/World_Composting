@@ -227,11 +227,11 @@
 </details>
 </div>
 <!-- Video Section -->
-<div id="video-container-zero-waste-kitchen"></div>
+<div id="video-container-zero-waste-kitchen"><div class="video-section"><h2 class="video-section-title">Watch &amp; Learn</h2><p class="video-section-subtitle">Real-world composting updates and tips from our channel.</p><div class="video-card" role="article"><div class="video-wrapper"><iframe src="https://www.youtube.com/embed/HJLxpc3UFFg" title="Bokashi Bucket Single Bucket Method with Indoor Soil Factory" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><div class="video-info"><h3 class="video-title"><a href="https://www.youtube.com/watch?v=HJLxpc3UFFg" target="_blank" rel="noopener noreferrer">Bokashi Bucket Single Bucket Method with Indoor Soil Factory</a></h3></div></div><div class="video-card" role="article"><div class="video-wrapper"><iframe src="https://www.youtube.com/embed/-_ELuS7Lgwg" title="Starting a Homemade Bokashi System Cheaply Second Attempt (Day 0)" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><div class="video-info"><h3 class="video-title"><a href="https://www.youtube.com/watch?v=-_ELuS7Lgwg" target="_blank" rel="noopener noreferrer">Starting a Homemade Bokashi System Cheaply Second Attempt (Day 0)</a></h3></div></div></div></div>
 <!-- Gear Section -->
 <div id="gear-section-wide">
 <div class="section-title">Recommended Zero-Waste Gear</div>
-<div id="gear-list"></div>
+<div id="gear-list"><a href="https://amzn.to/39169FP" class="product-link" target="_blank" data-affiliate="true"><span class="product-name">100 Pack Utility Knife Blades</span></a><a href="https://amzn.to/4aVcRhy" class="product-link" target="_blank" data-affiliate="true"><span class="product-name">Bonsaii 12 Sheet Micr-cut Paper Shredder</span></a><a href="https://amzn.to/3baqVW4" class="product-link" target="_blank" data-affiliate="true"><span class="product-name">Folding Utility Knife</span></a></div>
 </div>
 </main>
 </div><!-- .page-wrapper -->
@@ -301,7 +301,8 @@
 <p>As an Amazon Associate, I earn from qualifying purchases. Some product links are affiliate links at no extra cost to you.</p>
 <p class="footer-credits"><a href="photo-credits.html">Photo credits (Wikimedia Commons, PD/CC licenses)</a></p></div>
 </footer>
-<script>
+<script>
+
 
 // Progress tracking
         let TOTAL_ITEMS = 0;
@@ -344,54 +345,13 @@
         }
 
         // Load gear products
-        async function loadGear() {
-            try {
-                const res = await fetch('src/data/products.json');
-                if (!res.ok) throw new Error('Could not load product data.');
-                const products = await res.json();
-
-                const categories = ['Paper'];
-                const filtered = products.filter(p => categories.includes(p['Category']));
-
-                const list = document.getElementById('gear-list');
-                if (filtered.length === 0) {
-                    list.innerHTML = '<p style="font-size:0.9rem;color:var(--ink-2);">Gear recommendations coming soon.</p>';
-                    return;
-                }
-                filtered.forEach(p => {
-                    const href = (p['Amazon Link'] !== 'NaN' && p['Amazon Link']) ||
-                                 (p['Other Link'] !== 'NaN' && p['Other Link']) || '#';
-                    const link = document.createElement('a');
-                    link.href = href;
-                    link.className = 'product-link';
-                    link.target = '_blank';
-                    const isAmazon = p['Amazon Link'] && p['Amazon Link'].includes('amzn.to');
-                    if (isAmazon) {
-                        link.setAttribute('data-affiliate', 'true');
-                    }
-                    link.innerHTML = '<span class="product-name">' + p['Item'] + '</span>';
-                    list.appendChild(link);
-                });
-            } catch (e) {
-                console.error('Error loading gear:', e);
-                document.getElementById('gear-list').innerHTML = '<p style="font-size:0.9rem;color:var(--ink-2);">Gear recommendations coming soon.</p>';
-            }
-        }
+        
 
         // Init
         loadCheckboxes();
-        loadGear();
 
         // Video Section Loader
-        (async function() {
-            await new Promise(function(resolve) {
-                var s = document.createElement('script');
-                s.src = 'src/js/video-renderer.js?v=10';
-                s.onload = resolve;
-                document.head.appendChild(s);
-            });
-            window.renderVideoSection('video-container-zero-waste-kitchen', 'zero-waste-kitchen');
-        })();
+        
     </script>
 </body>
 </html>

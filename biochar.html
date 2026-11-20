@@ -354,7 +354,7 @@
 </a>
 </div>
 <!-- Video Section -->
-<div id="video-container-biochar"></div>
+<div id="video-container-biochar"><div class="video-section"><h2 class="video-section-title">Watch &amp; Learn</h2><p class="video-section-subtitle">Real-world composting updates and tips from our channel.</p><div class="video-card" role="article"><div class="video-wrapper"><iframe src="https://www.youtube.com/embed/AE8A2kCJYkY" title="Ultimate Biochar Grinding &amp; Preparation for Worm Bins and Soil — DIY Methods, Tools, &amp; Tips (2025)" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><div class="video-info"><h3 class="video-title"><a href="https://www.youtube.com/watch?v=AE8A2kCJYkY" target="_blank" rel="noopener noreferrer">Ultimate Biochar Grinding &amp; Preparation for Worm Bins and Soil — DIY Methods, Tools, &amp; Tips (2025)</a></h3><div class="key-takeaways"><p class="key-takeaways-title">Key Takeaways</p><ul><li>Biochar must be ground to small particles before it can effectively charge with nutrients</li><li>Soaking in compost tea for 24-48 hours activates the porous structure</li><li>Charged biochar should never be added fresh — it will rob soil nitrogen</li></ul></div></div></div><div class="video-card" role="article"><div class="video-wrapper"><iframe src="https://www.youtube.com/embed/iLrkTxMZWMA" title="Small Batch Biochar for Composters" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><div class="video-info"><h3 class="video-title"><a href="https://www.youtube.com/watch?v=iLrkTxMZWMA" target="_blank" rel="noopener noreferrer">Small Batch Biochar for Composters</a></h3><div class="key-takeaways"><p class="key-takeaways-title">Key Takeaways</p><ul><li>Small batch production is ideal for home gardeners with limited feedstock</li><li>A simple drum kiln can produce enough biochar for a typical composting setup</li><li>Batch size should match your charging capacity — don&#x27;t make more than you can prepare</li></ul></div></div></div></div></div>
 </main>
 </div><!-- .page-wrapper -->
 <!-- FOOTER: outside grid, spans full width -->
@@ -362,7 +362,8 @@
 <p class="footer-copy">© 2026 World Composting</p>
 <p class="footer-copy" style="margin-top: 0.5rem;">As an Amazon Associate, I earn from qualifying purchases.</p>
 </footer>
-<script>
+<script>
+
 
         const checkboxes = document.querySelectorAll('input[type="checkbox"]');
         const progressLabel = document.getElementById('progress-label');
@@ -393,15 +394,7 @@
         updateProgress(); // Init
 
         // Video Section Loader
-        (async function() {
-            await new Promise(function(resolve) {
-                var s = document.createElement('script');
-                s.src = 'src/js/video-renderer.js?v=11';
-                s.onload = resolve;
-                document.head.appendChild(s);
-            });
-            window.renderVideoSection('video-container-biochar', 'biochar');
-        })();
+        
 
     </script>
 <section aria-label="Get started" class="cta-band">

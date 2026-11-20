@@ -304,11 +304,10 @@
 </a>
 </div>
 <!-- Video Section -->
-<div id="video-container-energy-efficiency"></div>
 <!-- My Recommended Gear -->
 <div id="gear-section-wide">
 <div class="section-title">My Recommended Gear</div>
-<div id="gear-list"></div>
+<div id="gear-list"><a href="https://amzn.to/4hgKjBi" class="product-link" target="_blank" data-affiliate="true"><span class="product-name">ecobee Smart Thermostat</span></a><a href="https://amzn.to/4rmfqA6" class="product-link" target="_blank" data-affiliate="true"><span class="product-name">Smart Plug Wi-Fi, Energy Monitoring</span></a><a href="https://amzn.to/4rjOlxo" class="product-link" target="_blank" data-affiliate="true"><span class="product-name">Cree LED A19 Bulb, 60W, Soft White</span></a><a href="https://amzn.to/4xvc0wc" class="product-link" target="_blank" data-affiliate="true"><span class="product-name">Window Insulation Shrink Kit</span></a><a href="https://amzn.to/4AfQNcl" class="product-link" target="_blank" data-affiliate="true"><span class="product-name">Foam Weather Stripping</span></a><a href="https://amzn.to/4xweI4I" class="product-link" target="_blank" data-affiliate="true"><span class="product-name">Outlet Gaskets, Foam insulation</span></a><a href="https://amzn.to/4AirMNr" class="product-link" target="_blank" data-affiliate="true"><span class="product-name">Smart Power Strip Wi-Fi, Energy Monitoring</span></a><a href="https://amzn.to/475kQ94" class="product-link" target="_blank" data-affiliate="true"><span class="product-name">Low-Flow Showerhead</span></a></div>
 </div>
 </main>
 </div><!-- .page-wrapper -->
@@ -420,56 +419,13 @@
         }
 
         // Load gear products
-        async function loadGear() {
-            try {
-                const res = await fetch('src/data/products.json');
-                if (!res.ok) throw new Error('Could not load product data.');
-                const products = await res.json();
-
-                const categories = ['Home Efficiency'];
-                const filtered = products.filter(p => categories.includes(p['Category']));
-
-                const list = document.getElementById('gear-list');
-                if (filtered.length === 0) {
-                    list.innerHTML = '<p style="font-size:0.9rem;color:var(--ink-2);">Gear recommendations coming soon.</p>';
-                    return;
-                }
-                filtered.forEach(p => {
-                    const href = (p['Amazon Link'] !== 'NaN' && p['Amazon Link']) ||
-                                 (p['Other Link'] !== 'NaN' && p['Other Link']) || '#';
-                    const link = document.createElement('a');
-                    link.href = href;
-                    link.className = 'product-link';
-                    link.target = '_blank';
-                    const isAmazon = p['Amazon Link'] && p['Amazon Link'].includes('amzn.to');
-                    if (isAmazon) {
-                        link.setAttribute('data-affiliate', 'true');
-                    }
-                    link.innerHTML = '<span class="product-name">' + p['Item'] + '</span>';
-                    list.appendChild(link);
-                });
-            } catch (e) {
-                console.error('Error loading gear:', e);
-                document.getElementById('gear-list').innerHTML = '<p style="font-size:0.9rem;color:var(--ink-2);">Gear recommendations coming soon.</p>';
-            }
-        }
+        
 
         // Init
         loadCheckboxes();
-        loadGear();
 
         // Load and render videos (empty for now, wired for future)
-        (async function() {
-            await new Promise(function(resolve) {
-                var s = document.createElement('script');
-                s.src = 'src/js/video-renderer.js';
-                s.onload = resolve;
-                document.head.appendChild(s);
-            });
-            if (window.renderVideoSection) {
-                window.renderVideoSection('video-container-energy-efficiency', 'energy-efficiency');
-            }
-        })();
+        
 
         // Checklist data injected at runtime to keep page manageable
         const checklistData = {
