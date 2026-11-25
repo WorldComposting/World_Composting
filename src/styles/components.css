@@ -1160,3 +1160,9 @@ a.related-card-wide:hover {
   .wizard-nav-wide { flex-direction: column-reverse; }
   .wizard-nav-wide .btn { width: 100%; }
 }
+
+/* product-name affiliate links on best-electric-composters.html */
+.unit-link { color: inherit; text-decoration: underline; text-decoration-color: var(--gold); text-decoration-thickness: .13em; text-underline-offset: 5px; }
+.unit-link:hover, .unit-link:focus-visible { color: var(--leaf); text-decoration-color: var(--leaf); }
+.unit-link .go-arrow { text-decoration: none; color: var(--gold); font-weight: 600; }
+.unit-link:hover .go-arrow, .unit-link:focus-visible .go-arrow { color: var(--leaf); }
