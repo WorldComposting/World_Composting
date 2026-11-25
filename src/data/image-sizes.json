@@ -1,1 +1,401 @@
-{"src/assets/gear/amz-10-gallon-tote.jpg": [480, 640], "src/assets/gear/amz-100-pack-utility-knife-blades.jpg": [480, 640], "src/assets/gear/amz-5-gallon-bucket-and-gamma-seal-lid.jpg": [480, 640], "src/assets/gear/amz-blue-tarp.jpg": [480, 640], "src/assets/gear/amz-bokashi-bran.jpg": [480, 640], "src/assets/gear/amz-bonsaii-12-sheet-micr-cut-paper-shredder.jpg": [480, 640], "src/assets/gear/amz-bug-zapper.jpg": [480, 640], "src/assets/gear/amz-bus-boy-tubs.jpg": [480, 640], "src/assets/gear/amz-canon-ef-s-24mm-f-2-8-stm-lens.jpg": [480, 640], "src/assets/gear/amz-canon-eos-90d.jpg": [480, 640], "src/assets/gear/amz-chapin-sprayer.jpg": [480, 640], "src/assets/gear/amz-cree-led-a19-bulb.jpg": [400], "src/assets/gear/amz-davinci-resolve.jpg": [480, 640], "src/assets/gear/amz-diatomaceous-earth-food-grade.jpg": [480, 640], "src/assets/gear/amz-ecobee-smart-thermostat.jpg": [400], "src/assets/gear/amz-ego-4-gallon-sprayer.jpg": [480, 597], "src/assets/gear/amz-foam-weather-stripping.jpg": [400], "src/assets/gear/amz-folding-utility-knife.jpg": [480, 640], "src/assets/gear/amz-foodcycler-eco-3.jpg": [400], "src/assets/gear/amz-foodcycler-eco-5.jpg": [400], "src/assets/gear/amz-fujifilm-x-t5.jpg": [480, 640], "src/assets/gear/amz-geekoto-tripd.jpg": [480, 640], "src/assets/gear/amz-gopro-hero-8-black.jpg": [480, 640], "src/assets/gear/amz-kn95-masks.jpg": [480, 640], "src/assets/gear/amz-low-flow-showerhead.jpg": [400], "src/assets/gear/amz-mosquito-bits-bti.jpg": [480, 640], "src/assets/gear/amz-mosquito-dunks.jpg": [480, 524], "src/assets/gear/amz-neewer-advanced-660-led-studio-lighting.jpg": [480, 640], "src/assets/gear/amz-outlet-gaskets.jpg": [400], "src/assets/gear/amz-panasonic-4k-camcorder.jpg": [480, 640], "src/assets/gear/amz-pine-shavings.jpg": [480, 640], "src/assets/gear/amz-smart-plug-wifi-energy-monitoring.jpg": [300], "src/assets/gear/amz-smart-power-strip.jpg": [400], "src/assets/gear/amz-sticky-fly-trap.jpg": [480, 640], "src/assets/gear/amz-urban-worm-bag.jpg": [480, 640], "src/assets/gear/amz-vermibag.jpg": [480, 640], "src/assets/gear/amz-waterproof-gloves.jpg": [480, 640], "src/assets/gear/amz-window-insulation-kit.jpg": [400], "src/assets/gear/geme-pro.png": [480, 640, 800], "src/assets/gear/geme-terra2.png": [480, 640, 800], "src/assets/gear/hungry-worms-african-nightcrawlers.png": [480, 640, 830, 1200], "src/assets/gear/hungry-worms-european-nightcrawlers.jpg": [480, 640, 830, 1200], "src/assets/gear/hungry-worms-red-wigglers.png": [480, 640, 750], "src/assets/images/about.jpg": [480, 640, 830, 1240, 1660], "src/assets/images/bins.jpg": [480, 640, 830, 1240, 1660], "src/assets/images/bins2.jpg": [480, 640, 830, 1240, 1660], "src/assets/images/biochar.jpg": [480, 640, 830, 1240, 1660], "src/assets/images/bokashi.jpg": [480, 640, 830, 1240, 1660], "src/assets/images/bsf.jpg": [480, 640, 830, 1240, 1660], "src/assets/images/bucket.jpg": [480, 640, 830, 1240, 1660], "src/assets/images/garden.jpg": [480, 640, 830, 1240, 1660], "src/assets/images/home.jpg": [480, 640, 830, 1240, 1660], "src/assets/images/hot.jpg": [480, 640, 830, 1240, 1660], "src/assets/images/lasagna.jpg": [480, 640, 830, 1240, 1660], "src/assets/images/nyc.jpg": [480, 640, 830, 1240, 1660], "src/assets/images/sift.jpg": [480, 640, 830, 1240, 1660], "src/assets/images/start.jpg": [480, 640, 830, 1240, 1660], "src/assets/images/windrow.jpg": [480, 640, 830, 1240, 1660], "src/assets/images/worm.jpg": [480, 640, 830, 1240, 1660]}
+{
+  "src/assets/gear/amz-10-gallon-tote.jpg": [
+    480,
+    640
+  ],
+  "src/assets/gear/amz-100-pack-utility-knife-blades.jpg": [
+    480,
+    640
+  ],
+  "src/assets/gear/amz-5-gallon-bucket-and-gamma-seal-lid.jpg": [
+    480,
+    640
+  ],
+  "src/assets/gear/amz-blue-tarp.jpg": [
+    480,
+    640
+  ],
+  "src/assets/gear/amz-bokashi-bran.jpg": [
+    480,
+    640
+  ],
+  "src/assets/gear/amz-bonsaii-12-sheet-micr-cut-paper-shredder.jpg": [
+    480,
+    640
+  ],
+  "src/assets/gear/amz-bug-zapper.jpg": [
+    480,
+    640
+  ],
+  "src/assets/gear/amz-bus-boy-tubs.jpg": [
+    480,
+    640
+  ],
+  "src/assets/gear/amz-canon-ef-s-24mm-f-2-8-stm-lens.jpg": [
+    480,
+    640
+  ],
+  "src/assets/gear/amz-canon-eos-90d.jpg": [
+    480,
+    640
+  ],
+  "src/assets/gear/amz-chapin-sprayer.jpg": [
+    480,
+    640
+  ],
+  "src/assets/gear/amz-cree-led-a19-bulb.jpg": [
+    400
+  ],
+  "src/assets/gear/amz-davinci-resolve.jpg": [
+    480,
+    640
+  ],
+  "src/assets/gear/amz-diatomaceous-earth-food-grade.jpg": [
+    480,
+    640
+  ],
+  "src/assets/gear/amz-ecobee-smart-thermostat.jpg": [
+    400
+  ],
+  "src/assets/gear/amz-ego-4-gallon-sprayer.jpg": [
+    480,
+    597
+  ],
+  "src/assets/gear/amz-foam-weather-stripping.jpg": [
+    400
+  ],
+  "src/assets/gear/amz-folding-utility-knife.jpg": [
+    480,
+    640
+  ],
+  "src/assets/gear/amz-foodcycler-eco-3.jpg": [
+    400
+  ],
+  "src/assets/gear/amz-foodcycler-eco-5.jpg": [
+    400
+  ],
+  "src/assets/gear/amz-fujifilm-x-t5.jpg": [
+    480,
+    640
+  ],
+  "src/assets/gear/amz-geekoto-tripd.jpg": [
+    480,
+    640
+  ],
+  "src/assets/gear/amz-gopro-hero-8-black.jpg": [
+    480,
+    640
+  ],
+  "src/assets/gear/amz-kn95-masks.jpg": [
+    480,
+    640
+  ],
+  "src/assets/gear/amz-low-flow-showerhead.jpg": [
+    400
+  ],
+  "src/assets/gear/amz-mosquito-bits-bti.jpg": [
+    480,
+    640
+  ],
+  "src/assets/gear/amz-mosquito-dunks.jpg": [
+    480,
+    524
+  ],
+  "src/assets/gear/amz-neewer-advanced-660-led-studio-lighting.jpg": [
+    480,
+    640
+  ],
+  "src/assets/gear/amz-outlet-gaskets.jpg": [
+    400
+  ],
+  "src/assets/gear/amz-panasonic-4k-camcorder.jpg": [
+    480,
+    640
+  ],
+  "src/assets/gear/amz-pine-shavings.jpg": [
+    480,
+    640
+  ],
+  "src/assets/gear/amz-smart-plug-wifi-energy-monitoring.jpg": [
+    300
+  ],
+  "src/assets/gear/amz-smart-power-strip.jpg": [
+    400
+  ],
+  "src/assets/gear/amz-sticky-fly-trap.jpg": [
+    480,
+    640
+  ],
+  "src/assets/gear/amz-urban-worm-bag.jpg": [
+    480,
+    640
+  ],
+  "src/assets/gear/amz-vermibag.jpg": [
+    480,
+    640
+  ],
+  "src/assets/gear/amz-waterproof-gloves.jpg": [
+    480,
+    640
+  ],
+  "src/assets/gear/amz-window-insulation-kit.jpg": [
+    400
+  ],
+  "src/assets/gear/geme-pro.png": [
+    480,
+    640,
+    800
+  ],
+  "src/assets/gear/geme-terra2.png": [
+    480,
+    640,
+    800
+  ],
+  "src/assets/gear/hungry-worms-african-nightcrawlers.png": [
+    480,
+    640,
+    830,
+    1200
+  ],
+  "src/assets/gear/hungry-worms-european-nightcrawlers.jpg": [
+    480,
+    640,
+    830,
+    1200
+  ],
+  "src/assets/gear/hungry-worms-red-wigglers.png": [
+    480,
+    640,
+    750
+  ],
+  "src/assets/images/about.jpg": [
+    480,
+    640,
+    830,
+    1240,
+    1660
+  ],
+  "src/assets/images/bins.jpg": [
+    480,
+    640,
+    830,
+    1240,
+    1660
+  ],
+  "src/assets/images/bins2.jpg": [
+    480,
+    640,
+    830,
+    1240,
+    1660
+  ],
+  "src/assets/images/biochar.jpg": [
+    480,
+    640,
+    830,
+    1240,
+    1660
+  ],
+  "src/assets/images/bokashi.jpg": [
+    480,
+    640,
+    830,
+    1240,
+    1660
+  ],
+  "src/assets/images/bsf.jpg": [
+    480,
+    640,
+    830,
+    1240,
+    1660
+  ],
+  "src/assets/images/bucket.jpg": [
+    480,
+    640,
+    830,
+    1240,
+    1660
+  ],
+  "src/assets/images/garden.jpg": [
+    480,
+    640,
+    830,
+    1240,
+    1660
+  ],
+  "src/assets/images/home.jpg": [
+    480,
+    640,
+    830,
+    1240,
+    1660
+  ],
+  "src/assets/images/hot.jpg": [
+    480,
+    640,
+    830,
+    1240,
+    1660
+  ],
+  "src/assets/images/lasagna.jpg": [
+    480,
+    640,
+    830,
+    1240,
+    1660
+  ],
+  "src/assets/images/nyc.jpg": [
+    480,
+    640,
+    830,
+    1240,
+    1660
+  ],
+  "src/assets/images/sift.jpg": [
+    480,
+    640,
+    830,
+    1240,
+    1660
+  ],
+  "src/assets/images/start.jpg": [
+    480,
+    640,
+    830,
+    1240,
+    1660
+  ],
+  "src/assets/images/windrow.jpg": [
+    480,
+    640,
+    830,
+    1240,
+    1660
+  ],
+  "src/assets/images/worm.jpg": [
+    480,
+    640,
+    830,
+    1240,
+    1660
+  ],
+  "src/assets/images/electric-composter-lineup.jpg": {
+    "w": 1984,
+    "h": 560,
+    "variants": {
+      "300": {
+        "avif": 2,
+        "webp": 4
+      },
+      "400": {
+        "avif": 3,
+        "webp": 5
+      },
+      "480": {
+        "avif": 4,
+        "webp": 7
+      },
+      "640": {
+        "avif": 6,
+        "webp": 10
+      },
+      "830": {
+        "avif": 8,
+        "webp": 14
+      },
+      "1240": {
+        "avif": 15,
+        "webp": 24
+      },
+      "1660": {
+        "avif": 21,
+        "webp": 35
+      }
+    }
+  },
+  "src/assets/gear/mill-food-recycler.jpg": {
+    "w": 900,
+    "h": 644,
+    "variants": {
+      "300": {
+        "avif": 4,
+        "webp": 7
+      },
+      "400": {
+        "avif": 6,
+        "webp": 10
+      },
+      "480": {
+        "avif": 7,
+        "webp": 12
+      },
+      "640": {
+        "avif": 11,
+        "webp": 18
+      },
+      "830": {
+        "avif": 16,
+        "webp": 25
+      }
+    }
+  },
+  "src/assets/gear/foodcycler-eco-5.jpg": {
+    "w": 900,
+    "h": 631,
+    "variants": {
+      "300": {
+        "avif": 3,
+        "webp": 4
+      },
+      "400": {
+        "avif": 4,
+        "webp": 5
+      },
+      "480": {
+        "avif": 5,
+        "webp": 7
+      },
+      "640": {
+        "avif": 7,
+        "webp": 10
+      },
+      "830": {
+        "avif": 9,
+        "webp": 13
+      }
+    }
+  },
+  "src/assets/gear/reencle-prime.jpg": {
+    "w": 515,
+    "h": 696,
+    "variants": {
+      "300": {
+        "avif": 4,
+        "webp": 7
+      },
+      "400": {
+        "avif": 6,
+        "webp": 10
+      },
+      "480": {
+        "avif": 8,
+        "webp": 13
+      }
+    }
+  },
+  "src/assets/gear/geme-terra2-unit.jpg": {
+    "w": 445,
+    "h": 556,
+    "variants": {
+      "300": {
+        "avif": 3,
+        "webp": 5
+      },
+      "400": {
+        "avif": 5,
+        "webp": 8
+      }
+    }
+  }
+}
